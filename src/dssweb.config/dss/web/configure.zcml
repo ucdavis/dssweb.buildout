@@ -9,8 +9,8 @@
     <include package="plone.resource" file="meta.zcml"/>
 
     <plone:static 
-            name="ucdavis.psych"
-            directory="theme/ucdavis.psych" 
+            name="dss.web-psych"
+            directory="theme/dss.web-psych" 
             type="theme" />
 		  
     <genericsetup:registerProfile
