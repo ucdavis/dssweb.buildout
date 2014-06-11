@@ -13,6 +13,11 @@
             directory="theme/dss.web-psych" 
             type="theme" />
 		  
+    <plone:static
+    		  name="dss.web-econ"
+		  directory="theme/dss.web-econ"
+		  type="theme" />
+		  
     <genericsetup:registerProfile
           name="default"
           title="dss.web"
