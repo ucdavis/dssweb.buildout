@@ -1,7 +1,21 @@
+
+/* 2014-06-12 RAK: This file contains theme CSS and mediaquery for responsive (at end of file). 
+
+  TODO: 
+    - Move to SASS
+    
+*/
+
 body {
   padding-top: 20px;
 }
-
+head{
+	font-family:'XS';
+}
+body:after{ 
+	content:"XS"; 
+	display:none;
+}
 .footer {
   padding-top: 40px;
   padding-bottom: 40px;
@@ -13,8 +27,22 @@ body {
 .contact{
 	margin-top:15px;	
 }
-#logo{
-	width:50%;
+.content-main{
+	font-size:16px;
+}
+.content-main h2{
+	font-size:25px;
+	font-weight:bold;
+	padding-top:15px;
+	padding-bottom:15px;
+	
+}
+#alphabet{
+	margin-top:20px;
+	text-size:16px;
+	text-align:center;	
+}
+#logo{	
 	margin-left:auto;
 	margin-right:auto;
 }
@@ -25,7 +53,9 @@ body {
   background-color: transparent;
   border:2px solid black;
 }
-
+.jumbotron h1{
+	font-weight:normal;
+}
 /* Customize the nav-justified links to be fill the entire space of the .navbar */
 
 .nav-justified {
@@ -86,30 +116,14 @@ body {
 	margin-top:1px;
 	list-style-type:none;
 }
-/*--------Carol--------*/
-#portal-searchbox {
-    float: none;
-	vertical-align: none;
-	display: inline;
-	text-align: left;
-	clear: right;
-	margin: 0 0 0 0;
-	font-size: 80%;
-	width: 13em;
-	margin-top: -1px;
-	}
-	
-.LSBox input.searchButton {
-	border:0;
-	background:transparent url(../images/search.gif) no-repeat;
-     height:32px;
-     width:32px;
-     color:transparent;
+
+.nav-tabs{
+	display:none;
+	font-size:20px;	
 }
 
-
 /* ----- BIO PAGE ----*/
-.content-bio{
+.content-bio-container{
 	margin-top:50px;
 	margin-left:16px;	
 }
@@ -128,20 +142,24 @@ body {
 	background-color:#e5e5e5;
 	
 }
+
 .sidebar-bio img{
 	height:225px;
 	width:100%;	
 }
 .sidebar-info{
 	text-align:left;
+	margin-left:35px;
+	margin-bottom:15px;
 	padding-top:10px;
+	list-style-type:circle;
 }
 .sidebar-bio-right{
 	height:100%;
 	float:right;
 	width:228px;	
 	height:auto;
-	text-align:left;
+	text-align:center;
 	background-color:#e5e5e5;
 		
 }
@@ -149,8 +167,18 @@ body {
 	border-bottom:1px solid black;
 	height:auto;
 }
+
+#overview ul{
+	margin:5px 5px 5px 18px;
+	list-style-type:square;
+}
+.sb-right-section h3{
+	font-size:20px;
+	height:auto;
+	margin-bottom:10px;
+}
 .more_text{
-	display:none;	
+	
 }
 
 #sidebar-contact{
@@ -158,32 +186,63 @@ body {
 }
 
 .about-bio{
-	/*padding: 15px 10px 0 250px;*/
 	width:62%;
+	font-family:arial;	
 	float:left;
-	padding-right:10px;
-	background:#fff;
-	
+	padding-right:10px;	
+}
+.about-bio h3{
+
+	font-size:20px;
+	padding-top:25px;
+	padding-bottom:25px;
 }
 .bio-people{
 	height:auto;
 }
+.sb-right-items li{
+	margin-left:25px;
+	list-style-type:circle;
+	text-align:left;
+
+}
+.sb-right-items{
+	margin-bottom:10px;	
+}
+
+.collapse.in{
+	display:inline-block;
+		
+}
+.collapse div, .collapsing div{
+	padding:15px;
+}
+
 /*------END BIO------*/
 
 /*------OUR PEOPLE---*/
 .table{
 	margin-top:10px;
-	width:80%;
+	width:80% !important;
 	height:auto;	
 
 }
 .table th{
 	background-color:#6a747c;
+	border-left:1px solid black;
 	text-align:center;	
+	
 }
 .table td{
 	text-align:center;
+	border:1px solid black;
 	vertical-align:middle !important;	
+}
+.icon-chevron-up glyphicon, .glyphicon-chevron-up, .icon-chevron-down, .glyphicon-chevron-down{
+	float:right;
+}
+.glyphicon-sort{
+	float:right;	
 }
 .info{
 	padding-top:5px;
@@ -201,6 +260,10 @@ body {
 }
 #search{
 	width:100px;
+}
+#utility img{
+	position:relative;
+	top:5px;
 }
 #utility ul li{
 	text-align:center;
@@ -240,13 +303,41 @@ body {
   }
 }
 
-@media screen and (max-width: 624px) {
+@media screen and (max-width: 768px) {
   /* Remove the padding we set earlier */
   .sidebar-bio-right{
-		float:left;	
-		width:100%;  
+		float:left;	  
+		text-align:center;
+		margin-left:16px;
+		margin-top:10px;
+		clear:both;
   }
-  .about-bio{
-		width:100%;  
-  }
+
+}
+
+
+/*---- EXAMPLE QUERIES-----*/
+
+@media screen and (min-width: 450px) {
+	head { font-family:"S";}
+	body:after{content:"S";}
+
+	/* Custom Styles for this breakpoint */
+
+}
+
+@media screen and (min-width: 600px) {
+	head { font-family:"M";}
+	body:after{content:"M";}
+
+	/* Custom Styles for this breakpoint */
+	
+}
+
+@media screen and (min-width: 960px) {	
+	head { font-family:"L";}
+	body:after{content:"L";}
+
+	/* Custom Styles for this breakpoint */
+
 }
