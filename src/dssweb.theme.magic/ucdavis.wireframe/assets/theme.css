@@ -29,6 +29,7 @@ body:after{
 }
 .content-main{
 	font-size:16px;
+	
 }
 .content-main h2{
 	font-size:25px;
@@ -64,9 +65,46 @@ body:after{
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+.sidebar-right h3, .sidebar-left h3{
+	font-size:20px;
+	height:auto;
+	background:#e5e5e5;
+}
 
-
-
+.sidebar-right, .sidebar-left{
+	height:100%;
+	float:right;	
+	height:auto;
+	text-align:center;
+	background-color:#e5e5e5;
+	min-width:190px;
+	
+		
+}
+.panel{
+	min-width:190px;
+		
+}
+.sidebar-left{	
+	float:left;		
+}
+.panel-body{
+	background:#e5e5e5;	
+	
+}
+more_text{
+	display:none;	
+}
+.sidebar-block-items{
+	background:#e5e5e5;	
+	padding-bottom:10px;
+	text-align:left;
+	width:auto;
+	height:100%;
+	border-bottom:1px solid black;
+	padding-left:15px;
+	list-style-type:circle;	
+}
 .nav-justified > li > a {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -98,160 +136,21 @@ body:after{
   border-bottom: 0;
   border-radius: 0 0 5px 5px;
 }
-.sidebar{	
-	margin-right:12px;
-	float:left;	
-	width:215px;
-	height:100%;
-	
-}
-.sidebar ul{
-	padding-left:0;
 
+.panel-title a{
+	text-decoration:none;
 }
-.sidebar ul li {
-	height:30px;
-	background-color:#eee;
-	text-align:center;
-	margin-top:1px;
-	list-style-type:none;
+.panel-collapse{
+	overflow:hidden;	
 }
-
 .nav-tabs{
 	display:none;
 	font-size:20px;	
 }
 
-/* ----- BIO PAGE ----*/
-.content-bio-container{
-	margin-top:50px;
-	margin-left:16px;	
-}
-
-.portrait{
-	float:left;	
-	margin-right:50px;
-}
-.sidebar-bio{
-	height:100%;
-	padding:0;	
-	float:left;
-	width:210px;
-	height:auto;
-	text-align:center;
-	background-color:#e5e5e5;
-	
-}
-
-.sidebar-bio img{
-	height:225px;
-	width:100%;	
-}
-.sidebar-info{
-	text-align:left;
-	margin-left:35px;
-	margin-bottom:15px;
-	padding-top:10px;
-	list-style-type:circle;
-}
-.sidebar-bio-right{
-	height:100%;
-	float:right;
-	width:228px;	
-	height:auto;
-	text-align:center;
-	background-color:#e5e5e5;
-		
-}
-.sb-right-section{
-	border-bottom:1px solid black;
-	height:auto;
-}
-
-#overview ul{
-	margin:5px 5px 5px 18px;
-	list-style-type:square;
-}
-.sb-right-section h3{
-	font-size:20px;
-	height:auto;
-	margin-bottom:10px;
-}
-.more_text{
-	
-}
-
-#sidebar-contact{
-	border-bottom: 1px solid black;	
-}
-
-.about-bio{
-	width:62%;
-	font-family:arial;	
-	float:left;
-	padding-right:10px;	
-}
-.about-bio h3{
-
-	font-size:20px;
-	padding-top:25px;
-	padding-bottom:25px;
-}
-.bio-people{
-	height:auto;
-}
-.sb-right-items li{
-	margin-left:25px;
-	list-style-type:circle;
-	text-align:left;
-
-}
-.sb-right-items{
-	margin-bottom:10px;	
-}
-
-.collapse.in{
-	display:inline-block;
-		
-}
 .collapse div, .collapsing div{
 	padding:15px;
 }
-
-/*------END BIO------*/
-
-/*------OUR PEOPLE---*/
-.table{
-	margin-top:10px;
-	width:80% !important;
-	height:auto;	
-
-}
-.table th{
-	background-color:#6a747c;
-	border-left:1px solid black;
-	text-align:center;	
-	
-}
-.table td{
-	text-align:center;
-	border:1px solid black;
-	vertical-align:middle !important;	
-}
-.icon-chevron-up glyphicon, .glyphicon-chevron-up, .icon-chevron-down, .glyphicon-chevron-down{
-	float:right;
-}
-.glyphicon-sort{
-	float:right;	
-}
-.info{
-	padding-top:5px;
-}
-.info p{
-	margin-bottom: 2px !important;
-}
-
-/*------END PEOPLE------*/
 
 #utility ul{
 	padding-top:100px;
@@ -261,9 +160,9 @@ body:after{
 #search{
 	width:100px;
 }
+
 #utility img{
 	position:relative;
-	top:5px;
 }
 #utility ul li{
 	text-align:center;
@@ -289,39 +188,34 @@ body:after{
     border-right: 0;
     border-radius: 0 5px 5px 0;
   }
-
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
-  .masthead,
+    .masthead,
   .marketing,
   .footer {
     padding-right: 0;
     padding-left: 0;
   }
+
 }
 
+/* All Media Queries */
 @media screen and (max-width: 768px) {
   /* Remove the padding we set earlier */
-  .sidebar-bio-right{
-		float:left;	  
-		text-align:center;
-		margin-left:16px;
+  #sidebar-bio-right{
+		float:left;	  		
+		margin-left:0;
 		margin-top:10px;
 		clear:both;
   }
-
+	
 }
-
-
-/*---- EXAMPLE QUERIES-----*/
 
 @media screen and (min-width: 450px) {
 	head { font-family:"S";}
 	body:after{content:"S";}
-
+	.panel-title a:hover{
+		cursor:pointer;
+	}
+	
 	/* Custom Styles for this breakpoint */
 
 }

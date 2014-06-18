@@ -125,7 +125,8 @@ $(window).load(function() {
 		var globalGraphSettings = {animation : Modernizr.canvas};
 		
 		setIntroChart();
-		
+		showDoughnutChart();
+		showPieChart();
 		function setIntroChart(){		
 			var ctx = document.getElementById("introChart").getContext("2d");
 			
@@ -164,6 +165,7 @@ $(window).load(function() {
 			var $this = $(this);
 			$this.removeClass("hidden").off("inview");
 			setTimeout(showLineChart,graphInitDelay);
+			
 		});
 		$("#barChart").on("inview",function(){
 			var $this = $(this);
