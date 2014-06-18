@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!-- #BeginEditable "title" -->
+    <title></title>
+    <!-- #EndEditable -->
+
+    <link href="../assets/reset.css" rel="stylesheet">
+    <link href="../assets/reset_all.css" rel="stylesheet">
+    <link href="../assets/styles.css" rel="stylesheet">
+	<link href="../assets/theme.css" rel="stylesheet">
+
+    <!-- #BeginEditable "header" -->
+	
+    <!-- #EndEditable -->
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/contrib/html5shiv.js"></script>
+    <script src="js/contrib/respond.min.js"></script>
+    <![endif]-->
+    
+  </head>
+	<!-- #BeginEditable "body-tag" -->
+	 <body>
+    <!-- #EndEditable -->
+ 
+
+    <div class="container">
+	
+      <div class="masthead">  
+        <a href="index.html"><img id="logo" src="../images/logo.png" alt="logo" /></a>
+        <ul class="nav nav-justified">
+          <li ><a href="#">Connect</a></li>
+          <li><a href="../t2_ourpeople.html">Our People</a></li>
+          <li><a href="#">Students</a></li>
+          <li><a href="#">Research</a></li>
+          <li><a href="#">Facilities and Services</a></li>
+        </ul>
+      </div>
+      
+      
+      <!-- #BeginEditable "content" -->
+	
+      <!-- #EndEditable -->
+
+      <div id="utility">
+        <ul>
+        	<li><a href="#">Latest News</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Give</a></li>
+          <li><input type="text" id="search"><img src="../images/search.gif" alt="search"/></li>
+        </ul>
+      </div>
+      
+      <!-- Site footer -->
+      <div class="footer">
+        <p>&copy; Company 2014</p>
+      </div>
+
+    </div> <!-- /container -->
+
+    	<!-- Bootstrap core JavaScript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="../js/contrib/jquery.min.js"></script>
+      <!-- #BeginEditable "custom-footer-js" -->
+      <!-- #EndEditable -->
+  </body>
+</html>

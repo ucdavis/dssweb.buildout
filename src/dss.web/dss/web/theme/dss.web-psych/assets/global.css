@@ -1,0 +1,26 @@
+/* This file will hold styles for the mobile version of your website (mobile first). */
+/* This also can include ANY global CSS that applies site-wide. Unless overwritten by a more specific style rule, CSS declarations in global.css will apply site-wide. Updated: 12/3/13 */
+/* 2013-05-12 RAK: Bootstrap overrides moved from default gem installation that placed overrides directly in the _variables.scss file */
+#breadcrumb .breadcrumb { padding: 0; margin-bottom: 0; list-style: none; background-color: transparent; border-radius: 0; }
+#breadcrumb .breadcrumb > li { display: auto; }
+#breadcrumb .breadcrumb > li + li:before { padding: 0; color: auto; content: auto; }
+#breadcrumb .breadcrumb > .active { color: auto; }
+
+/*Used for overriding underlined text */
+.nounderline > a { color: inherit; text-decoration: none; }
+
+.panel-body-overriden { padding-top: 15px; padding-right: 15px; padding-bottom: 0px; padding-left: 15px; }
+
+body, div, p, li { color: #333333; }
+
+@-ms-viewport { width: device-width; }
+
+html, body { color: #333333; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.3125em; font-family: Arial, Helvetica, sans-serif; line-height: 1.313em; }
+
+strong { font-weight: bold !important; }
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: Arial, Helvetica, sans-serif; font-weight: 400; line-height: 1.313em; }
+
+h1 { margin: 0; }
+
+h3, h2 { letter-spacing: 0; line-height: 1.1em; }
