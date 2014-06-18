@@ -3,7 +3,7 @@
 
 body{
     font-size: 14px !important;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;    
+    font-family: Arial,sans-serif !important;    
 }
 .col-lg-4 h2{
     font-weight:bold !important;
@@ -11,9 +11,17 @@ body{
     margin-bottom:15px;
     
 }
+.about-bio h3{
+	font-weight:bold;	
+}
+
 .btn-primary{
  margin-top:15px;   
 }
 .btn-primary{
     color:#fff !important;   
+}
+.sidebar-info h4{
+	font-weight:bold;
+	font-size:16px;
 }
