@@ -4,7 +4,7 @@ Cake Farm Wireframe Sandbox
 Wire Frames structure:
 
 <ul>
-  <li>ucdavis.wireframe/
+  <li>dss.web/dss/web/theme/dss.web-psych/
     <ul>
       <li>assets/ - style sheets and fonts</li>
       <li>images/ - images</li>

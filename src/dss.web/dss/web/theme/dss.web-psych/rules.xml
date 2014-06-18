@@ -26,17 +26,10 @@
         <after css:theme-children="html body" css:content="html head script" />
 
         <!-- Insert your own rules here -->
-	   <!--copy content="//ul[@id='portal-globalnav']/li/a" theme="//ul[@id='nav1']/li/a" /-->
-	   <!--replace theme-children="//*[@id='nav1']/" content-children="//*[@id='portal-globalnav']/" /-->
-	   <!--replace css:theme-children="#nav1" css:content="#portal-globalnav li" /-->
-	   <replace css:content="#portal-globalnav li" css:theme-children="#nav ul" />
+        <copy css:content="#portal-globalnav" css:theme=".nav nav-justified" />
+         <replace css:content="#portal-globalnav li" css:theme-children="#nav ul" />
         <drop css:content=".searchSection" />
         <replace css:content="#portal-searchbox" css:theme="#search" />
-	   
-
     </rules>
 
 </rules>
-
-
-
