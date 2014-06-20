@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* Our People */
+
+/*------OUR PEOPLE---*/
+.table{
+	margin-top:15px;	
+	height:auto;
+	th{
+		width:25%;
+		background-color:#6a747c;
+		border-left:1px solid black;
+		text-align:center;	
+	}
+	td{
+		text-align:center;
+		border:1px solid black;
+		vertical-align:middle !important;	
+	}	
+}
+
+.icon-chevron-up glyphicon, .glyphicon-chevron-up, .icon-chevron-down, .glyphicon-chevron-down{
+	float:right;
+}
+.glyphicon-sort{
+	float:right;	
+}
+.info{
+	padding-top:5px;
+	p{
+		margin-bottom: 2px !important;
+	}
+}
+
+
+/*------END PEOPLE------*/

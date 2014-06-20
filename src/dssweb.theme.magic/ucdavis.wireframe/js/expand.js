@@ -100,35 +100,28 @@ $(function () {
             if (activeMQ == 'XS') {
                 currentMQ = activeMQ;
                 console.log('XS');
-                if ($("body.bio").length == 0) {
-                    collapsedView();
-                } else {
-                   
-                }
+								utilStack();
+                collapsedView();
 
             }
             if (activeMQ == 'S') {
                 currentMQ = activeMQ;
                 console.log('S');
-                if ($("body.bio").length == 0) {
-                    collapsedView();
-                } else {
-                    	
-                }
-
+								utilStack();
+                collapsedView();
             }
             if (activeMQ == 'M') {
                 currentMQ = activeMQ;
                 console.log('M');
-                if ($("body.bio").length != 0) {
-                    collapsedView();
-                } else {
-                    expandedView();
-                }
+								rmvStack();
+                collapsedView();
+
 
             }
             if (activeMQ == 'L') {
                 currentMQ = activeMQ;
+                console.log('L');
+								rmvStack();
                 expandedView();
 
             }
@@ -159,31 +152,30 @@ $(function () {
         $(".landscape").removeClass("span12");
         $(".nav-tabs").hide();
 
-
-        $(".collapse > div").removeClass("panel-body");
-
-        $("#about-bio").removeClass("panel panel-default");
-        $(".content-bio-container").removeClass(".panel-group");
-        $(".btn-more").show();
+        $(".collapsible").children().removeClass("panel-body");
         if ($("body.bio").length != 0) {
-            $(".panel-heading").hide();
-			$(".content div").children().removeClass("panel-collapse collapse active")
-           // $("#contB").addClass("more_text");
+            $("#about-bio").removeClass("panel panel-default");
+            $(".content-bio-container").removeClass(".panel-group");
+            $(".btn-more").show();                                     
             $("#contC,#contB").addClass("more_text");
-			$("#contA,#contC,#contB").css("height","auto"); //Fix for contA height not being reset to auto
+            
         }
-        if (($("body.bio").length == 0)) {
-            $(".panel-title a").removeAttr('data-toggle');
-            $(".sidebar-panel").removeClass("panel-collapse");
-            $(".sidebar-panel").removeClass("collapse");
-            $(".sidebar-panel").removeClass("in");
-            $(".sidebar-right").children().removeClass("panel");
-            $(".sidebar-right").children().removeClass("panel-default");
-        }
+        
+				$(".panel-title a").removeAttr('data-toggle');
+				$(".sidebar-panel").removeClass("panel-collapse");
+				$(".sidebar-panel").removeClass("collapse");
+				$(".sidebar-panel").removeClass("in");
+            			
+				$(".sidebar").children().removeClass("panel");
+        $(".sidebar").children().removeClass("panel-default");
+				$(".collapsible").css("height", "auto"); //Fix for contA height not being reset to auto	
+				$(".content div").children().removeClass("panel-collapse collapse active");
+				$(".content .panel-heading").hide();
+				$(".panel-group").children().removeClass("panel panel-default")
         $("#about-bio div").removeClass("panel panel-default");
         $(".more_text").hide();
         $("#about-bio h3").show();
-		console.log("init");
+
     }
 
     function collapsedView() {
@@ -197,37 +189,48 @@ $(function () {
         $(".nav-tabs").show();
 
         $(".panel-heading").show();
-        $(".collapse > div").addClass("panel-body");
         $(".more_text").hide();
-        if ($("body.bio").length != 0) {
-            $("#contA").addClass("panel-collapse collapse in");
-			
-        }
+        //$(".panel-group > .panel a").addClass('in');
 
         if ($("body.bio").length == 0) {
-            $('.panel-title a').attr('data-toggle', 'collapse');
-            $(".sidebar-right").children().addClass("panel panel-default");
+					  
+            $(".sidebar").children().addClass("panel panel-default");
+						$(".panel-group").children().addClass("panel panel-default");
             $(".sidebar-panel").addClass("panel-collapse collapse");
             $(".collapse div").addClass("panel-body");
 
         }
-        $("#contB").addClass("panel-collapse collapse");
-        $("#contC").addClass("panel-collapse collapse");
-        $(".content-bio-container").addClass("panel-group");
-        $("#about-bio > div").addClass("panel panel-default");
+				else if ($("body.bio").length != 0) {
+            $(".content-bio-container").addClass("panel-group");
+						$("#about-bio > div").addClass("panel panel-default");
+						$("#sidebar-bio-right > div").addClass("panel panel-default");
+						$(".btn-bio").hide();
+        }
+				$(".panel-title a").attr('data-toggle','collapse');
+        $(".collapsible").addClass("panel-collapse collapse");
+        $(".collapsible").addClass("panel-collapse collapse");
+        $(".collapse > div").addClass("panel-body");
+				
+				$(".sub-menu li")
+        
+        
 
         $(".panel-title a").click(function (e) {
             e.preventDefault();
             $($(this).data("target")).show();
-        });
-
-        $(".btn-bio").hide();
+				
+				});
 
         /* FIX: cannot target panel-body h3 element directly, work-around ".about-bio h3" used */
         //alert($(".panel-body > h3").text());
 
         $("#about-bio h3").hide();
-	console.log("init2");
 
     }
+		function utilStack(){
+		  $("#utility nav ul li").addClass("col-xs-3 col-sm-3 col-md-3 col-lg-3");				
+		}
+		function rmvStack(){
+			$("#utility nav ul li").removeClass("col-xs-3 col-sm-3 col-md-3 col-lg-3");					
+		}
 });
