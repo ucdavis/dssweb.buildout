@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- #BeginEditable "title" -->
+    <title></title>
+    <!-- #EndEditable -->
+    <link href="../assets/reset.css" rel="stylesheet">
+    <link href="../assets/reset_all.css" rel="stylesheet">
+    <link href="../assets/styles.css" rel="stylesheet">
+    <link href="../assets/theme.css" rel="stylesheet">
+    <!-- #BeginEditable "header" -->
+    <!-- #EndEditable -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/contrib/html5shiv.js"></script>
+    <script src="js/contrib/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="masthead">
+        <a href="../index.html"><img alt="logo" id="logo" src="../images/logo.png"></a>
+  
+        <ul class="nav nav-justified">
+          <li><a href="#">Connect</a>  
+            <ul class="nav-justified-dropdown">
+              <li id="contact"><a href="../t9_contact.html">Contact</a></li>
+            </ul>
+          </li>
+  
+          <li id="our-people"><a href="#">Our People</a>
+          	<ul class="nav-justified-dropdown">
+              <li><a href="../t2_ourpeople.html">Staff</a></li>  
+            </ul>
+          </li>
+  
+          <li id="students"><a href="#">Students</a>  
+            <ul class="nav-justified-dropdown">
+              <li><a href="../t11_prospective_students.html">Prospective Students</a></li>  
+              <li><a href="../t12_grad_program.html">Graduate Program</a></li>
+            </ul>
+          </li>
+  
+          <li id="research"><a href="#">Research</a>  
+            <ul class="nav-justified-dropdown">
+              <li class="nav-list-item">Reseach Areas<b class="caret"></b>
+                <ul class="sub-menu">
+                  <li><a href="../t6_research_area.html">Area A</a></li>
+                  <li><a href="../t6_research_area.html">Area B</a></li>
+                </ul>                
+              </li>  
+              <li class="nav-list-item">Research Labs<b class="caret"></b>  
+                <ul class="sub-menu">
+                  <li><a href="../t7_research_lab.html">Lab A</a></li> 
+                  <li><a href="../t7_research_lab.html">Lab B</a></li>                  
+                  <li><a href="../t7_research_lab.html">Lab C</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>  
+          <li id="facilities"><a href="#">Facilities and Services</a></li>
+        </ul>
+      </div><!-- End .masthead -->
+      
+     <div class="panel-group" id="accordion">
+        <div class="sidebar sidebar-left col-xs-12 col-sm-4 col-md-3 col-lg-2">
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><a data-parent="#accordionB" data-target=
+                "#sbA" data-toggle="collapse">Block 1</a></h3>
+              </div>
+    
+              <div class="collapsible sidebar-panel panel-collapse collapse" id=
+              "sbA">
+                <div class="panel-body">
+                  <ul class="sidebar-block-items">
+                    <li>Item A</li>
+    
+                    <li>Item B</li>
+    
+                    <li>Item C</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+    
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><a data-parent="#accordionB" data-target=
+                "#sbB" data-toggle="collapse">Block 2</a></h3>
+              </div>
+    
+              <div class="collapsible sidebar-panel panel-collapse collapse" id=
+              "sbB">
+                <div class="panel-body">
+                  <ul class="sidebar-block-items">
+                    <li>Item A</li>
+    
+                    <li>Item B</li>
+    
+                    <li>Item C</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+    
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><a data-parent="#accordionB" data-target=
+                "#sbC" data-toggle="collapse">Block 3</a></h3>
+              </div>
+    
+              <div class="collapsible sidebar-panel panel-collapse collapse" id=
+              "sbC">
+                <div class="panel-body">
+                  <ul class="sidebar-block-items">
+                    <li>Item A</li>
+    
+                    <li>Item B</li>
+    
+                    <li>Item C</li>
+                  </ul>
+                </div>
+              </div>
+          </div>
+         </div><!--End .sidebar-left -->
+        </div><!-- End .panel-group-->
+      
+      <!-- #BeginEditable "content" -->
+      <div class="content col-xs-12 col-sm-4 col-md-6 col-lg-8" >
+        <h1 class="content-title">TITLE</h1>
+        <div class="content-block">
+          <div class="panel-group" id="content-accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><a data-target="#content-a" data-toggle="collapse" data-parent="#content-accordion">Lorem</a></h3>
+              </div>
+              <div id="content-a" class="collapsible panel-collapse collapse">
+                <div class="panel-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec congue eros. Nullam vehicula enim ut ligula vulputate vulputate. Phasellus tempor, metus ultricies condimentum dapibus, enim dui volutpat lacus, id posuere tortor ipsum eget tortor. Cras luctus porta interdum. Morbi tempus mauris at vulputate iaculis. Ut blandit bibendum leo, a posuere nisi bibendum vitae. Cras et est eu est aliquam dignissim. Curabitur varius libero id lorem cursus, ac elementum risus auctor. Suspendisse tincidunt lorem vitae metus elementum facilisis. Aliquam porttitor orci quis purus imperdiet consectetur.</p>
+                  <nav>
+                    <ul class="list-unstyled">
+                      <li><a href="#">Lorem</a></li>
+                      <li><a href="#">Lorem</a></li>
+                      <li><a href="#">Lorem</a></li>
+                      <li>
+                        <ul class="list-unstyled">
+                          <li><a href="#">ipsum</a></li>
+                          <li><a href="#">ipsum</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><a data-target="#content-b" data-toggle="collapse" data-parent="#content-accordion">Lorem Ipsum</a></h3>
+              </div>
+              <div id="content-b" class="collapsible panel-collapse collapse">
+                <div class="panel-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec congue eros. Nullam vehicula enim ut ligula vulputate vulputate. Phasellus tempor, metus ultricies condimentum dapibus, enim dui volutpat lacus, id posuere tortor ipsum eget tortor. Cras luctus porta interdum. Morbi tempus mauris at vulputate iaculis. Ut blandit bibendum leo, a posuere nisi bibendum vitae. Cras et est eu est aliquam dignissim. Curabitur varius libero id lorem cursus, ac elementum risus auctor. Suspendisse tincidunt lorem vitae metus elementum facilisis. Aliquam porttitor orci quis purus imperdiet consectetur.</p>
+                  <nav>
+                    <ul class="list-unstyled">
+                      <li><a href="#">Lorem</a></li>
+                      <li><a href="#">Lorem</a></li>
+                      <li><a href="#">Lorem</a></li>
+                      <li>
+                        <ul class="list-unstyled">
+                          <li><a href="#">ipsum</a></li>
+                          <li><a href="#">ipsum</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><a data-target="#content-c" data-toggle="collapse" data-parent="#content-accordion">Lorem Ipsum</a></h3>
+              </div>
+              <div id="content-c" class="collapsible panel-collapse collapse">
+                <div class="panel-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec congue eros. Nullam vehicula enim ut ligula vulputate vulputate. Phasellus tempor, metus ultricies condimentum dapibus, enim dui volutpat lacus, id posuere tortor ipsum eget tortor. Cras luctus porta interdum. Morbi tempus mauris at vulputate iaculis. Ut blandit bibendum leo, a posuere nisi bibendum vitae. Cras et est eu est aliquam dignissim. Curabitur varius libero id lorem cursus, ac elementum risus auctor. Suspendisse tincidunt lorem vitae metus elementum facilisis. Aliquam porttitor orci quis purus imperdiet consectetur.</p>
+                  <nav>
+                    <ul class="list-unstyled">
+                      <li><a href="#">Lorem</a></li>
+                      <li><a href="#">Lorem</a></li>
+                      <li><a href="#">Lorem</a></li>
+                      <li>
+                        <ul class="list-unstyled">
+                          <li><a href="#">ipsum</a></li>
+                          <li><a href="#">ipsum</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div><!--End .panel-group -->         
+        </div> <!--End .content-block -->               
+      </div><!-- End .content -->      
+      <!-- #EndEditable -->           
+    
+      
+      
+      
+      <div class="panel-group" id="accordionB">
+        <div class="sidebar sidebar-right  col-xs-12 col-sm-4 col-md-3 col-lg-2">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><a data-target="#contA" data-toggle="collapse" data-parent="#accordionB">Block 1</a></h3>
+            </div>
+            <div id="contA" class="collapsible sidebar-panel panel-collapse collapse">
+              <div class="panel-body">
+                <ul class="sidebar-block-items">
+                  <li>Item A</li>
+                  <li>Item B</li>
+                  <li>Item C</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><a data-target="#contB" data-toggle="collapse" data-parent="#accordionB">Block 2</a></h3>
+            </div>
+            <div id="contB" class="collapsible sidebar-panel panel-collapse collapse">
+              <div class="panel-body">
+                <ul class="sidebar-block-items">
+                  <li>Item A</li>
+                  <li>Item B</li>
+                  <li>Item C</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><a data-target="#contC" data-toggle="collapse" data-parent="#accordionB">Block 3</a></h3>
+            </div>
+            <div id="contC" class="collapsible sidebar-panel panel-collapse collapse">
+              <div class="panel-body">
+                <ul class="sidebar-block-items">
+                  <li>Item A</li>
+                  <li>Item B</li>
+                  <li>Item C</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><a data-target="#contD" data-toggle="collapse" data-parent="#accordionB">Block 4</a></h3>
+            </div>
+            <div id="contD" class="collapsible sidebar-panel panel-collapse collapse">
+              <div class="panel-body">
+                <ul class="sidebar-block-items">
+                  <li>Item A</li>
+                  <li>Item B</li>
+                  <li>Item C</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><a data-target="#contE" data-toggle="collapse" data-parent="#accordionB">Block 5</a></h3>
+            </div>
+            <div id="contE" class="collapsible sidebar-panel panel-collapse collapse">
+              <div class="panel-body">
+                <ul class="sidebar-block-items">
+                  <li>Item A</li>
+                  <li>Item B</li>
+                  <li><a href="#">See More &gt;</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><a data-target="#contF" data-toggle="collapse" data-parent="#accordionB">Block 6</a></h3>
+            </div>
+            <div id="contF" class="collapsible sidebar-panel panel-collapse collapse">
+              <div class="panel-body">
+                <ul class="sidebar-block-items">
+                  <li>Item A</li>
+                  <li>Item B</li>
+                  <li>Item C</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End .sidebar-right -->                  
+      </div>
+      <!-- End .panel-group --> 
+      
+    <div id="utility">
+    	<nav>
+        <ul>
+        	<li><a href="t13_news.html">Latest News</a></li>
+          <li><a href="t14_events.html">Events</a></li>
+          <li><a href="t4_adhoc.html">Give</a></li>
+          <li><input type="text" id="search" ><img src="../images/search.gif" alt="search"/></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer">
+      <p>&copy; Company 2014</p>
+    </div>
+    </div> <!-- /container -->   
+    <!-- Bootstrap core JavaScript
+      ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/contrib/jquery.min.js"></script>
+    <script src="../js/contrib/bootstrap.min.js"></script>
+    <script src="../js/bootstrap/collapse.js"></script> 
+    <script src="../js/expand.js"></script>
+    <!-- #BeginEditable "custom-footer-js" -->
+    <!-- #EndEditable -->
+  </body>
+</html>

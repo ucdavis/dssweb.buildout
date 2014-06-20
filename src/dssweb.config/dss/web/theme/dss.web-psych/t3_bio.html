@@ -8,7 +8,7 @@
     <meta name="author" content="">
     
     <!-- #BeginEditable "title" -->
-    <title></title>
+    <title>About</title>
     <!-- #EndEditable -->
 
     <link href="assets/reset.css" rel="stylesheet">
@@ -35,24 +35,55 @@
  
 
     <div class="container">
-	
-      <div class="masthead">  
-        <a href="index.html"><img id="logo" src="images/logo.png" alt="logo" /></a>
+      <div class="masthead">
+        <a href="index.html"><img alt="logo" id="logo" src="images/logo.png"></a>
+  
         <ul class="nav nav-justified">
-          <li ><a href="#">Connect</a></li>
-          <li><a href="t2_ourpeople.html">Our People</a></li>
-          <li><a href="#">Students</a></li>
-          <li><a href="#">Research</a></li>
-          <li><a href="#">Facilities and Services</a></li>
+          <li><a href="#">Connect</a>  
+            <ul class="nav-justified-dropdown">
+              <li id="contact"><a href="t9_contact.html">Contact</a></li>
+            </ul>
+          </li>
+  
+          <li id="our-people"><a href="#">Our People</a>
+          	<ul class="nav-justified-dropdown">
+              <li><a href="t2_ourpeople.html">Staff</a></li>  
+            </ul>
+          </li>
+  
+          <li id="students"><a href="#">Students</a>  
+            <ul class="nav-justified-dropdown">
+              <li><a href="t11_prospective_students.html">Prospective Students</a></li>  
+              <li><a href="t12_grad_program.html">Graduate Program</a></li>
+            </ul>
+          </li>
+  
+          <li id="research"><a href="#">Research</a>  
+            <ul class="nav-justified-dropdown">
+              <li class="nav-list-item">Reseach Areas<b class="caret"></b>
+                <ul class="sub-menu">
+                  <li><a href="t6_research_area.html">Area A</a></li>
+                  <li><a href="t6_research_area.html">Area B</a></li>
+                </ul>                
+              </li>  
+              <li class="nav-list-item">Research Labs<b class="caret"></b>  
+                <ul class="sub-menu">
+                  <li><a href="t7_research_lab.html">Lab A</a></li> 
+                  <li><a href="t7_research_lab.html">Lab B</a></li>                  
+                  <li><a href="t7_research_lab.html">Lab C</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>  
+          <li id="facilities"><a href="#">Facilities and Services</a></li>
         </ul>
-      </div>
+      </div><!-- End .masthead -->
       
       
       <!-- #BeginEditable "content" -->
-      <div class="row">
       <div class="content-bio-container">
-        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" id="sidebar-bio">
-          <img src="images/dummy.jpg" alt="portrait"/>
+        <div class="col-xs-12 col-sm-2 col-md-3 col-lg-2" id="sidebar-bio">
+          <img src="images/dummy.jpg" alt="portrait" id="portrait"/>
           <div id="sidebar-contact">
             <h4>name</h4>
             <p><i>title</i></p>
@@ -69,18 +100,18 @@
             </ul>
           </div>
         </div>
-        <div class="panel-group" id="accordion">
-          <div class="content col-xs-8 col-sm-5 col-md-7 col-lg-8" id="about-bio">
+        <div class="panel-group" id="content-accordion">
+          <div class="content col-xs-12 col-sm-5 col-md-6 col-lg-8" id="about-bio">
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                  <a data-target="#contA" data-toggle="collapse" data-parent="#accordion" 
+                  <a data-target="#container-A" data-toggle="collapse" data-parent="#content-accordion" 
                     >
                   Lorem
                   </a>
                 </h4>
               </div>
-              <div id="contA" class="panel-collapse collapse in">
+              <div class=" collapsible panel-collapse collapse in" id="container-A">
                 <div class="panel-body">
                   <h3>Lorem</h3>
                   <p>Lorem ipsum dolor sit amet, consectetur </p>
@@ -92,13 +123,13 @@
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                  <a data-target="#contB" data-toggle="collapse" data-parent="#accordion" 
+                  <a data-target="#container-B" data-toggle="collapse" data-parent="#content-accordion" 
                     >
                   Ipsum
                   </a>
                 </h4>
               </div>
-              <div class="more_text panel-collapse collapse" id="contB">
+              <div class="more_text collapsible panel-collapse collapse" id="container-B">
                 <div class="panel-body">
                   <h3>Ipsum</h3>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ullamcorper, libero in viverra imperdiet, quam neque pellentesque sem, eu pharetra magna purus in dui. Curabitur rhoncus viverra molestie. Nam pharetra, tortor euismod dapibus imperdiet, velit erat posuere sem, vel mattis enim nibh eu neque. Donec nec posuere orci, at mollis sapien. Aenean faucibus aliquet neque, quis vehicula nisi elementum et. Proin porta odio blandit, volutpat nibh id, bibendum orci. Quisque pretium pellentesque odio sed tincidunt. Suspendisse pulvinar rhoncus elit ac convallis. Duis imperdiet interdum urna ut laoreet. Quisque luctus erat mauris, at vulputate tortor congue sit amet. Cras ut neque nec tellus euismod interdum sed quis mi. Sed nec odio pharetra, faucibus quam ut, vestibulum erat.</p>
@@ -108,13 +139,13 @@
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                  <a data-target="#contC" data-toggle="collapse" data-parent="#accordion" 
+                  <a data-target="#container-C" data-toggle="collapse" data-parent="#content-accordion" 
                     >
                   Lorem2
                   </a>
                 </h4>
               </div>
-              <div class="more_text panel-collapse collapse" id="contC">
+              <div class="collapsible more_text panel-collapse collapse" id="container-C">
                 <div class="panel-body" >
                   <h3>Lorem2</h3>
                   <p>Etiam ac placerat quam, non luctus metus. Maecenas sit amet sodales ipsum, non pretium tortor. Donec sem orci, tempor at nisl vel, tempus eleifend sapien. Phasellus placerat tristique mattis. Quisque sed mi quis risus sodales ultrices sit amet quis arcu. Cras eget elit vestibulum, faucibus eros sit amet, luctus sem. Proin sagittis sagittis risus a gravida. Maecenas scelerisque at nulla sit amet aliquam. Mauris sodales ante ut risus facilisis aliquam. Nullam vel suscipit turpis. Nunc iaculis neque quis risus tincidunt pulvinar.</p>
@@ -125,59 +156,125 @@
               </div>
             </div>
           </div>
-        </div><!-- End .panel-group -->
-        <div class="sidebar-right col-xs-2 col-sm-2 col-md-2 col-lg-2" id="sidebar-bio-right">
-          <h3>Courses</h3>
-          <ul class="sidebar-block-items">
-            <li>Course A</li>
-            <li>Course B</li>
-            <li>Course C</li>
-          </ul>
-          <h3>Twitter feed</h3>
-          <ul class="sidebar-block-items">
-            <li>Item A</li>
-            <li>Item B</li>
-            <li><a href="#">See More &gt;</a></li>
-          </ul>
-          <h3>Events</h3>
-          <ul class="sidebar-block-items">
-            <li>Item A</li>
-            <li>Course B</li>
-            <li><a href="#">See More &gt;</a></li>
-          </ul>
-          <h3>Labs/Research</h3>
-          <ul class="sidebar-block-items">
-            <li>Item A</li>
-            <li>Item B</li>
-            <li><a href="#">See More &gt;</a></li>
-          </ul>
-          <h3>Publications</h3>
-          <ul class="sidebar-block-items">
-            <li>Item A</li>
-            <li>Item B</li>
-            <li><a href="#">See More &gt;</a></li>
-          </ul>
-          <h3>In The News</h3>
-          <ul class="sidebar-block-items">
-            <li>Item A</li>
-            <li>Item B</li>
-            <li><a href="#">See More &gt;</a></li>
-          </ul>
-        </div><!-- end .sidebar-right -->
-      </div><!-- end .content-bio-container -->
-    </div><!-- end .row -->
+        </div>
+        <!-- End .panel-group -->
+      </div>
+      <!-- End .content-bio-container --> 
+      <div class="panel-group" id="accordion">
+        <div class="sidebar sidebar-right col-xs-12 col-sm-3 col-md-3 col-lg-2" id="sidebar-bio-right">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><a data-parent="#accordion" data-target=
+                "#sbA" data-toggle="collapse">Courses</a></h3>
+            </div>
+            <div class="collapsible sidebar-panel panel-collapse collapse" id=
+              "sbA">
+              <div class="panel-body">
+                <ul class="sidebar-block-items">
+                  <li>Course A</li>
+                  <li>Course B</li>
+                  <li>Course C</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><a data-parent="#accordion" data-target=
+                "#sbB" data-toggle="collapse">Twitter</a></h3>
+            </div>
+            <div class="collapsible sidebar-panel panel-collapse collapse" id=
+              "sbB">
+              <div class="panel-body">
+                <ul class="sidebar-block-items">
+                  <li>Item A</li>
+                  <li>Item B</li>
+                  <li>Item C</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><a data-parent="#accordion" data-target=
+                "#sbC" data-toggle="collapse">Events</a></h3>
+            </div>
+            <div class="collapsible sidebar-panel panel-collapse collapse" id=
+              "sbC">
+              <div class="panel-body">
+                <ul class="sidebar-block-items">
+                  <li>Item A</li>
+                  <li>Item B</li>
+                  <li>Item C</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><a data-parent="#accordion" data-target=
+                "#sbD" data-toggle="collapse">Speakers</a></h3>
+            </div>
+            <div class="collapsible sidebar-panel panel-collapse collapse" id=
+              "sbD">
+              <div class="panel-body">
+                <ul class="sidebar-block-items">
+                  <li>Item A</li>
+                  <li>Item B</li>
+                  <li>Item C</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><a data-parent="#accordion" data-target=
+                "#sbE" data-toggle="collapse">Labs/Research</a></h3>
+            </div>
+            <div class="collapsible sidebar-panel panel-collapse collapse" id=
+              "sbE">
+              <div class="panel-body">
+                <ul class="sidebar-block-items">
+                  <li>Item A</li>
+                  <li>Item B</li>
+                  <li><a href="#">See More &gt;</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><a data-parent="#accordion" data-target=
+                "#sbF" data-toggle="collapse">In The News</a></h3>
+            </div>
+            <div class="collapsible sidebar-panel panel-collapse collapse" id=
+              "sbF">
+              <div class="panel-body">
+                <ul class="sidebar-block-items">
+                  <li>Item A</li>
+                  <li>Item B</li>
+                  <li>Item C</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End .sidebar-right -->
+      </div>
+      <!-- End .panel-group -->
 
       <!-- #EndEditable -->
-
       <div id="utility">
+      <nav>
         <ul>
-        	<li><a href="#">Latest News</a></li>
-          <li><a href="#">Events</a></li>
-          <li><a href="#">Give</a></li>
-          <li><input type="text" id="search"><img src="images/search.gif" alt="search"/></li>
+        	<li><a href="t13_news.html">Latest News</a></li>
+          <li><a href="t14_events.html">Events</a></li>
+          <li><a href="t4_adhoc.html">Give</a></li>
+          <li><input type="text" id="search" ><img src="images/search.gif" alt="search"/></li>
         </ul>
+       </nav>
       </div>
-      
+       
       <!-- Site footer -->
       <div class="footer">
         <p>&copy; Company 2014</p>
@@ -190,11 +287,12 @@
       <!-- Placed at the end of the document so the pages load faster -->
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
       <script src="js/contrib/jquery.min.js"></script>
+      <script src="js/contrib/bootstrap.min.js"></script>
+      <script src="js/expand.js"></script>
       <!-- #BeginEditable "custom-footer-js" -->
-  		 <script src="js/contrib/bootstrap.min.js"></script> 
-         <script src="js/expand.js"></script>
-         <script src="js/bootstrap/collapse.js"></script>
-         <script src="js/jumplinks.js"></script>
+		  <script src="js/expand.js"></script>
+      <script src="js/bootstrap/collapse.js"></script>
+      <script src="js/jumplinks.js"></script>
       <!-- #EndEditable -->
   </body>
 <!-- #EndTemplate --></html>
