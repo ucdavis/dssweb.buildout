@@ -2,7 +2,7 @@
 css_dir = "assets"
 sass_dir = "sass"
 images_dir = "images"
-font_dir = "font"
+font_dir = "assets/font"
 javascripts_dir = "js"
 
 # Require any additional compass plugins installed on your system.

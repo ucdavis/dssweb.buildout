@@ -114,8 +114,7 @@ $(function () {
                 currentMQ = activeMQ;
                 console.log('M');
 								rmvStack();
-                collapsedView();
-
+                collapsedView();								
 
             }
             if (activeMQ == 'L') {
@@ -147,34 +146,29 @@ $(function () {
     function expandedView() {
         $(".ls-content").removeClass("tab-content");
         $(".landscape div").removeClass("tab-pane");
-        $(".landscape div").addClass("col-lg-4");
-        $(".ls-content").removeClass("col-lg-4");
-        $(".landscape").removeClass("span12");
         $(".nav-tabs").hide();
 
         $(".collapsible").children().removeClass("panel-body");
-        if ($("body.bio").length != 0) {
+        /* If Bio Page */
+				if ($("body.bio").length != 0) {
             $("#about-bio").removeClass("panel panel-default");
             $(".content-bio-container").removeClass(".panel-group");
             $(".btn-more").show();                                     
             $("#contC,#contB").addClass("more_text");
-            
+            $("#about-bio div").removeClass("panel panel-default");
+						$("#about-bio h3").show();
         }
         
 				$(".panel-title a").removeAttr('data-toggle');
-				$(".sidebar-panel").removeClass("panel-collapse");
-				$(".sidebar-panel").removeClass("collapse");
-				$(".sidebar-panel").removeClass("in");
-            			
-				$(".sidebar").children().removeClass("panel");
-        $(".sidebar").children().removeClass("panel-default");
+				$(".sidebar-panel").removeClass("panel-collapse collapse in");;
+          							
+				$(".sidebar").children().removeClass("panel panel-default");
 				$(".collapsible").css("height", "auto"); //Fix for contA height not being reset to auto	
 				$(".content div").children().removeClass("panel-collapse collapse active");
 				$(".content .panel-heading").hide();
-				$(".panel-group").children().removeClass("panel panel-default")
-        $("#about-bio div").removeClass("panel panel-default");
+				$(".panel-group").children().removeClass("panel panel-default")        
         $(".more_text").hide();
-        $("#about-bio h3").show();
+       
 
     }
 
@@ -184,37 +178,30 @@ $(function () {
         $(".landscape div").addClass("tab-pane");
         $(".landscape").removeClass("tab-content");
         $("#contA").addClass("active");
-        $(".landscape div").removeClass("col-lg-4");
-        $(".landscape").addClass("span12");
         $(".nav-tabs").show();
-
+								
         $(".panel-heading").show();
-        $(".more_text").hide();
-        //$(".panel-group > .panel a").addClass('in');
+        $(".more_text").hide();				
 
-        if ($("body.bio").length == 0) {
-					  
+        if ($("body.bio").length == 0) {					  
             $(".sidebar").children().addClass("panel panel-default");
 						$(".panel-group").children().addClass("panel panel-default");
             $(".sidebar-panel").addClass("panel-collapse collapse");
             $(".collapse div").addClass("panel-body");
 
         }
+				/* If Bio Page */
 				else if ($("body.bio").length != 0) {
             $(".content-bio-container").addClass("panel-group");
 						$("#about-bio > div").addClass("panel panel-default");
 						$("#sidebar-bio-right > div").addClass("panel panel-default");
 						$(".btn-bio").hide();
+						 $("#about-bio h3").hide();
         }
-				$(".panel-title a").attr('data-toggle','collapse');
-        $(".collapsible").addClass("panel-collapse collapse");
+				$(".panel-title a").attr("data-toggle","collapse");
         $(".collapsible").addClass("panel-collapse collapse");
         $(".collapse > div").addClass("panel-body");
-				
-				$(".sub-menu li")
-        
-        
-
+     
         $(".panel-title a").click(function (e) {
             e.preventDefault();
             $($(this).data("target")).show();
@@ -224,7 +211,7 @@ $(function () {
         /* FIX: cannot target panel-body h3 element directly, work-around ".about-bio h3" used */
         //alert($(".panel-body > h3").text());
 
-        $("#about-bio h3").hide();
+       
 
     }
 		function utilStack(){
