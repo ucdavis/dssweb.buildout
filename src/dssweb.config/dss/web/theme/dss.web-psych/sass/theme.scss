@@ -71,7 +71,6 @@ input{
 	height:auto;
 	margin-top:15px;
 	text-align:center;
-	min-width:185px;
 	background:#e5e5e5;
 	h3{
 		font-size:20px;
@@ -140,19 +139,43 @@ more_text{
 	  border-bottom: 0;
 	  border-radius: 0 0 5px 5px;
 	}	
+	
 	.dropdown-menu{
-		top:49px !important;
+		top: 49px;
 		width:100%;	
 	}
-	
+	.dropdown .dropdown-menu{
+		top: 49px;		
+		li:hover > ul{
+			display:block;
+		}		
+	}
+	.no-drop:hover{
+    > ul{
+		display:none;	
+	}
+}
 	.leaf{
 		text-align:center;
+		padding:5px;
 	}
 	
 }
 .submenu{
-	left:100px;
+	display:none;
+	box-shadow:0 6px 12px rgba(0, 0, 0, 0.175);
+	position:absolute;
+	width:100px;
+	left: 100% !important;
+	top:auto;
+	margin-left:1px;
+	margin-top:-20px;
+	padding:0;	
+	border:1px solid rgba(0, 0, 0, 0.15);
+	border-radius: 5px 5px 5px 5px;
+	background:#fff;
 }
+
 .caret{
 	margin-left:15px;
 }

@@ -31,46 +31,59 @@
      <div class="masthead">
         <a href="index.html"><img alt="logo" id="logo" src="images/logo.png"></a>
   
-        <ul class="nav nav-justified">
-          <li id="connect"><a href="#">Connect</a>  
-            <ul class="nav-justified-dropdown nav-trans">
-              <li class="leaf leaf-first" id="contact"><a data-toggle='collapse' href="t9_contact.html">Contact</a></li>
-            </ul>
-          </li>
-  
-          <li id="our-people"><a href="#">Our People</a>
-          	<ul class="nav-justified-dropdown nav-trans">
-              <li class="leaf leaf-first"><a href="t2_ourpeople.html">Staff</a></li>  
-            </ul>
-          </li>
-  
-          <li id="students"><a href="#">Students</a>  
-            <ul class="nav-justified-dropdown nav-trans">
-              <li  class="leaf leaf-first"><a href="t11_prospective_students.html">Prospective Students</a></li>  
-              <li  class="leaf leaf-last"><a href="t12_grad_program.html">Graduate Program</a></li>
-            </ul>
-          </li>
-  
-          <li id="research"><a href="#">Research</a>  
-            <ul class="nav-justified-dropdown nav-trans">
-              <li class="leaf leaf-first nav-trans-child">Reseach Areas<b class="caret"></b>
-                <ul class="sub-menu">
-                  <li class="leaf leaf-first"><a href="t6_research_area.html">Area A</a></li>
-                  <li class="leaf leaf-last"><a href="t6_research_area.html">Area B</a></li>
-                </ul>                
-              </li>  
-              <li class="leaf leaf-last nav-trans-child">Research Labs<b class="caret"></b>  
-                <ul class="sub-menu">
-                  <li class="leaf leaf-first"><a href="t7_research_lab.html">Lab A</a></li> 
-                  <li class="leaf"><a href="t7_research_lab.html">Lab B</a></li>                  
-                  <li class="leaf leaf-last"><a href="t7_research_lab.html">Lab C</a></li>
-                </ul> 
-              </li>
-            </ul>	
-          </li>  
-          <li id="facilities"><a href="#">Facilities and Services</a></li>
-        </ul>
-      </div><!-- End .masthead -->
+         <!-- Static navbar -->
+        <div class="navbar navbar-default" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+              <div class="navbar-collapse collapse">
+                <ul class="nav nav-justified">
+                  <li id="connect"><a href="#">Connect</a>
+                    <ul class="dropdown-menu">
+                      <li class="leaf leaf-first"><a href="t9_contact.html">Contact</a></li>
+                    </ul>
+                  </li>
+                  <li id="our-people"><a href="#">Our People<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li class="leaf leaf-first"><a href="t2_ourpeople.html">Staff</a></li>
+                    </ul>
+                  </li>
+                  <li id="students"><a href="#" >Students<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li class="leaf leaf-first"><a href="t11_prospective_students.html">Prospective Students</a></li>
+                      <li class="leaf leaf-last"><a href="t12_grad_program.html">Graduate Program</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown" id="research">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Research<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li class="leaf leaf-first" >Research Areas<b class="caret"></b>
+                        <ul class="submenu">
+                          <li class="leaf leaf-first"><a href="t6_research_area.html">Area A</a></li>
+                          <li class="leaf leaf-last"><a href="t6_research_area.html">Area B</a></li>
+                        </ul>
+                      </li>
+                      <li class="leaf leaf-last">Research Labs<b class="caret"></b>
+                        <ul class="submenu">
+                          <li class="leaf leaf-first"><a href="t7_research_lab.html">Lab A</a></li>
+                          <li class="leaf leaf-last"><a href="t7_research_lab.html">Lab B</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <li id="fac-serv"><a href="./">Facilities and Service</a></li>
+                  </li>
+                </ul>
+              </div><!--/.nav-collapse -->
+            </div><!--/.container-fluid -->
+          </div>
+        </div><!-- End .masthead -->
+      
       <div class="panel-group" id="accordion">
         <div class="sidebar sidebar-left col-xs-12 col-sm-4 col-md-3 col-lg-2">
           <div class="panel panel-default">

@@ -28,7 +28,7 @@ input { text-align: center; }
 .jumbotron { text-align: center; margin-top: 20px; background-color: transparent; border: 2px solid black; }
 .jumbotron h1 { font-weight: normal; }
 
-.sidebar { height: 100%; height: auto; margin-top: 15px; text-align: center; min-width: 185px; background: #e5e5e5; }
+.sidebar { height: 100%; height: auto; margin-top: 15px; text-align: center; background: #e5e5e5; }
 .sidebar h3 { font-size: 20px; height: auto; background: #e5e5e5; }
 .sidebar .collapsible { background: #e5e5e5; }
 .sidebar .panel-title a:hover { cursor: text; }
@@ -44,10 +44,13 @@ more_text { display: none; }
 .nav-justified li:hover > ul { display: block; left: 0; }
 .nav-justified > li:first-child > a { border-radius: 5px 5px 0 0; }
 .nav-justified > li:last-child > a { border-bottom: 0; border-radius: 0 0 5px 5px; }
-.nav-justified .dropdown-menu { top: 49px !important; width: 100%; }
-.nav-justified .leaf { text-align: center; }
+.nav-justified .dropdown-menu { top: 49px; width: 100%; }
+.nav-justified .dropdown .dropdown-menu { top: 49px; }
+.nav-justified .dropdown .dropdown-menu li:hover > ul { display: block; }
+.nav-justified .no-drop:hover > ul { display: none; }
+.nav-justified .leaf { text-align: center; padding: 5px; }
 
-.submenu { left: 100px; }
+.submenu { display: none; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175); position: absolute; width: 100px; left: 100% !important; top: auto; margin-left: 1px; margin-top: -20px; padding: 0; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 5px 5px 5px 5px; background: #fff; }
 
 .caret { margin-left: 15px; }
 
