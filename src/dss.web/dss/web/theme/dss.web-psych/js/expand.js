@@ -160,8 +160,11 @@ $(function () {
         }
         
 				$(".panel-title a").removeAttr('data-toggle');
+				$(".nav > li a").removeAttr('data-toggle');
+				$(".nav > li").removeClass("no-drop");
+			
 				$(".sidebar-panel").removeClass("panel-collapse collapse in");;
-          							
+         							
 				$(".sidebar").children().removeClass("panel panel-default");
 				$(".collapsible").css("height", "auto"); //Fix for contA height not being reset to auto	
 				$(".content div").children().removeClass("panel-collapse collapse active");
@@ -199,6 +202,9 @@ $(function () {
 						 $("#about-bio h3").hide();
         }
 				$(".panel-title a").attr("data-toggle","collapse");
+				$(".nav > li").addClass("no-drop");
+
+				$(".nav > li a").attr("data-toggle","dropdown");
         $(".collapsible").addClass("panel-collapse collapse");
         $(".collapse > div").addClass("panel-body");
      
@@ -206,11 +212,7 @@ $(function () {
             e.preventDefault();
             $($(this).data("target")).show();
 				
-				});
-
-        /* FIX: cannot target panel-body h3 element directly, work-around ".about-bio h3" used */
-        //alert($(".panel-body > h3").text());
-
+				});	
        
 
     }
