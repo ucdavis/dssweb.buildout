@@ -1,18 +1,23 @@
-// KS: JavaScript Document
 /* Change history: 
-
+	  KS: JavaScript Document
+		
   - 2014-06-12 RAK: Fix style assignment error and add debug and toggleActive mode
   - 
   TODO:
   
   - Refactor ...
-  
+	-- Evaluate  exposing activeMq to backbone event queue 
+	  
 */
+
 /* toggles the text shown on bio */
+
 $(function () {
     var debug = false;
     var toggleActive = true;
-
+		var activeMQ;  // Stores the screen size
+		var currentMQ = "unknown"; // set the default screen size
+		 
     $('.btn-more').click(function (event) {
 
         event.preventDefault(); /* prevent the a from changing the url */
@@ -56,18 +61,18 @@ $(function () {
     };
 
     // Set default
-    var currentMQ = "unknown";
+   
 
     // Checks CSS value in active media query and syncs Javascript functionality
     var mqSync = function () {
-
+			
         // Fix for Opera issue when using font-family to store value
         if (window.opera) {
-            var activeMQ = window.getComputedStyle(document.body, ':after').getPropertyValue('content');
+           activeMQ = window.getComputedStyle(document.body, ':after').getPropertyValue('content');
         }
         // For all other modern browsers
         else if (window.getComputedStyle) {
-            var activeMQ = window.getComputedStyle(document.head, null).getPropertyValue('font-family');
+           activeMQ = window.getComputedStyle(document.head, null).getPropertyValue('font-family');
         }
         // For oldIE
         else {
@@ -87,7 +92,7 @@ $(function () {
                 return this;
             }
             var compStyle = window.getCompStyle(document.getElementsByTagName('head')[0], "");
-            var activeMQ = compStyle.getPropertyValue("font-family");
+            activeMQ = compStyle.getPropertyValue("font-family");
         }
 
         activeMQ = activeMQ.replace(/"/g, "");
@@ -99,27 +104,28 @@ $(function () {
 
             if (activeMQ == 'XS') {
                 currentMQ = activeMQ;
-                console.log('XS');
+                console.log('expand.js detected screen size: XS');
 								utilStack();
                 collapsedView();
 
             }
             if (activeMQ == 'S') {
                 currentMQ = activeMQ;
-                console.log('S');
+                console.log('expand.js detected screen size: S');
 								utilStack();
                 collapsedView();
+								
             }
             if (activeMQ == 'M') {
                 currentMQ = activeMQ;
-                console.log('M');
+                console.log('expand.js detected screen size: M');
 								rmvStack();
                 collapsedView();								
 
             }
             if (activeMQ == 'L') {
                 currentMQ = activeMQ;
-                console.log('L');
+                console.log('expand.js detected screen size: L');
 								rmvStack();
                 expandedView();
 
@@ -161,9 +167,10 @@ $(function () {
         
 				$(".panel-title a").removeAttr('data-toggle');
 				$(".nav > li a").removeAttr('data-toggle');
-				$(".nav > li").removeClass("no-drop");
+				// drop-on class added to element to manage desktop/monile hover/no-hover
+				$(".nav > li").addClass("drop-on");
 			
-				$(".sidebar-panel").removeClass("panel-collapse collapse in");;
+				$(".sidebar-panel").removeClass("panel-collapse collapse in");
          							
 				$(".sidebar").children().removeClass("panel panel-default");
 				$(".collapsible").css("height", "auto"); //Fix for contA height not being reset to auto	
@@ -171,9 +178,8 @@ $(function () {
 				$(".content .panel-heading").hide();
 				$(".panel-group").children().removeClass("panel panel-default")        
         $(".more_text").hide();
-       
-
-    }
+				$(".nav li").removeClass("open");
+	   }
 
     function collapsedView() {
 
@@ -199,21 +205,26 @@ $(function () {
 						$("#about-bio > div").addClass("panel panel-default");
 						$("#sidebar-bio-right > div").addClass("panel panel-default");
 						$(".btn-bio").hide();
-						 $("#about-bio h3").hide();
+						$("#about-bio h3").hide();
         }
 				$(".panel-title a").attr("data-toggle","collapse");
-				$(".nav > li").addClass("no-drop");
+				$(".nav > li").removeClass("drop-on");
 
 				$(".nav > li a").attr("data-toggle","dropdown");
         $(".collapsible").addClass("panel-collapse collapse");
         $(".collapse > div").addClass("panel-body");
-     
+     		
         $(".panel-title a").click(function (e) {
             e.preventDefault();
             $($(this).data("target")).show();
 				
 				});	
        
+			 // Work around to allow the menu dropdown links to work
+			 // TODO: This is a temporary workaround
+			 $('ul.nav li').find('a').on('click', function() {
+						window.location = $(this).attr('href');
+				});
 
     }
 		function utilStack(){
