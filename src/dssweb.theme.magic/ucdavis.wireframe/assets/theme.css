@@ -1,250 +1,94 @@
 /* 2014-06-12 RAK: This file contains theme CSS and mediaquery for responsive (at end of file). 
-
-  TODO: 
-    - Move to SASS
-    
+ TODO:  - Move to SASS 
 */
-body {
-  padding-top: 20px; }
+body { padding-top: 20px; }
 
-head {
-  font-family: 'XS'; }
+head { font-family: 'XS'; }
 
-body:after {
-  content: "XS";
-  display: none; }
+body:after { content: "XS"; display: none; }
 
-.footer {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  margin-top: 20px;
-  border-top: 1px solid #eee;
-  text-align: center;
-  clear: both; }
+.footer { padding-top: 40px; padding-bottom: 40px; margin-top: 20px; border-top: 1px solid #eee; text-align: center; clear: both; }
 
-.contact {
-  margin-top: 15px; }
+input { text-align: center; }
 
-.content {
-  margin-top: 15px; }
+.contact { margin-top: 15px; }
 
-.content-title {
-  padding-bottom: 20px; }
+.content { margin-top: 15px; }
 
-.content-main {
-  font-size: 16px; }
-  .content-main h2 {
-    font-size: 25px;
-    font-weight: bold;
-    padding-top: 15px;
-    padding-bottom: 15px; }
+.content-title { padding-bottom: 20px; text-align: center; }
 
-#alphabet {
-  margin-top: 20px;
-  text-size: 16px;
-  text-align: center; }
+.content-main { font-size: 16px; }
+.content-main h2 { font-size: 25px; font-weight: bold; padding-top: 15px; padding-bottom: 15px; }
 
-#logo {
-  margin-left: auto;
-  margin-right: auto; }
+#alphabet { margin-top: 20px; text-size: 16px; text-align: center; }
+
+#logo { margin-left: auto; margin-right: auto; }
 
 /* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  margin-top: 20px;
-  background-color: transparent;
-  border: 2px solid black; }
-  .jumbotron h1 {
-    font-weight: normal; }
+.jumbotron { text-align: center; margin-top: 20px; background-color: transparent; border: 2px solid black; }
+.jumbotron h1 { font-weight: normal; }
 
-/* Customize the nav-justified links to be fill the entire space of the .navbar */
-.nav-justified {
-  background-color: #eee;
-  margin-top: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px; }
+.sidebar { height: 100%; height: auto; margin-top: 15px; text-align: center; background: #e5e5e5; }
+.sidebar h3 { font-size: 20px; height: auto; background: #e5e5e5; }
+.sidebar .collapsible { background: #e5e5e5; }
+.sidebar .panel-title a:hover { cursor: text; }
 
-.sidebar {
-  height: 100%;
-  height: auto;
-  margin-top: 15px;
-  text-align: center;
-  min-width: 185px;
-  background: #e5e5e5; }
-  .sidebar h3 {
-    font-size: 20px;
-    height: auto;
-    background: #e5e5e5; }
-  .sidebar .collapsible {
-    background: #e5e5e5; }
-  .sidebar .panel-title a:hover {
-    cursor: text; }
+more_text { display: none; }
 
-more_text {
-  display: none; }
+.sidebar-block-items { background: #e5e5e5; padding-bottom: 10px; text-align: left; width: auto; height: 100%; padding-left: 15px; list-style-type: circle; }
 
-.sidebar-block-items {
-  background: #e5e5e5;
-  padding-bottom: 10px;
-  text-align: left;
-  width: auto;
-  height: 100%;
-  padding-left: 15px;
-  list-style-type: circle; }
+.navbar { margin-top: 10px; border: 1px solid #ccc; border-radius: 5px; background-color: #e5e5e5; /* Old browsers */ background-image: -moz-linear-gradient(top, whitesmoke 0%, #e5e5e5 100%); /* FF3.6+ */ background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, whitesmoke), color-stop(100%, #e5e5e5)); /* Chrome,Safari4+ */ background-image: -webkit-linear-gradient(top, whitesmoke 0%, #e5e5e5 100%); /* Chrome 10+,Safari 5.1+ */ background-image: -o-linear-gradient(top, whitesmoke 0%, #e5e5e5 100%); /* Opera 11.10+ */ background-image: linear-gradient(top, #f5f5f5 0%, #e5e5e5 100%); /* W3C */ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */ background-repeat: repeat-x; /* Repeat the gradient */ border-bottom: 1px solid #d5d5d5; }
 
-.nav-justified > li > a {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  margin-bottom: 0;
-  font-weight: bold;
-  color: #777;
-  text-align: center;
-  background-color: #e5e5e5;
-  /* Old browsers */
-  background-image: -moz-linear-gradient(top, whitesmoke 0%, #e5e5e5 100%);
-  /* FF3.6+ */
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, whitesmoke), color-stop(100%, #e5e5e5));
-  /* Chrome,Safari4+ */
-  background-image: -webkit-linear-gradient(top, whitesmoke 0%, #e5e5e5 100%);
-  /* Chrome 10+,Safari 5.1+ */
-  background-image: -o-linear-gradient(top, whitesmoke 0%, #e5e5e5 100%);
-  /* Opera 11.10+ */
-  background-image: linear-gradient(top, whitesmoke 0%, #e5e5e5 100%);
-  /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#e5e5e5',GradientType=0 );
-  /* IE6-9 */
-  background-repeat: repeat-x;
-  /* Repeat the gradient */
-  border-bottom: 1px solid #d5d5d5; }
-.nav-justified > .active > a, .nav-justified > .active > a:hover, .nav-justified > .active > a:focus {
-  background-color: #ddd;
-  background-image: none;
-  box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15); }
-.nav-justified li:hover > ul {
-  display: block;
-  left: 0; }
-.nav-justified > li:first-child > a {
-  border-radius: 5px 5px 0 0; }
-.nav-justified > li:last-child > a {
-  border-bottom: 0;
-  border-radius: 0 0 5px 5px; }
+.navbar-title { float: right; padding-right: 10px; padding-top: 10px; font-size: 23px; color: #777; display: none; }
 
-.nav-justified-dropdown {
-  position: absolute;
-  background: #e5e5e5;
-  left: -9999px;
-  width: 100%;
-  text-align: center;
-  z-index: 200; }
-  .nav-justified-dropdown > li {
-    height: 50px;
-    padding-top: 15px;
-    margin-top: 0;
-    border: 1px solid black; }
-  .nav-justified-dropdown .sub-menu {
-    display: none; }
+.nav-justified > li > a { padding-top: 15px; padding-bottom: 15px; margin-bottom: 0; font-weight: bold; color: #777; text-align: center; }
+.nav-justified > .active > a, .nav-justified > .active > a:hover, .nav-justified > .active > a:focus { background-color: #ddd; background-image: none; box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15); }
+.nav-justified > li:first-child > a { border-radius: 5px 5px 0 0; }
+.nav-justified > li:last-child > a { border-bottom: 0; border-radius: 0 0 5px 5px; }
+.nav-justified .drop-on .dropdown-menu { top: 48px; width: 100%; }
+.nav-justified .dropdown-menu { top: 48px !important; width: 100%; }
+.nav-justified .dropdown-menu li:hover > ul { display: block; }
+.nav-justified li.open { height: auto !important; }
+.nav-justified li.open .dropdown-menu { position: static; float: none !important; }
+.nav-justified .drop-on:hover > ul { display: block; left: 0; }
+.nav-justified .leaf { text-align: center; padding: 5px; }
 
-.caret {
-  margin-left: 15px; }
+.submenu { display: none; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175); position: absolute; width: 100px; left: 100% !important; margin-top: -25px; padding: 0; top: auto; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 5px 5px 5px 5px; background: #fff; }
 
-.panel-title a {
-  text-decoration: none; }
+.caret { margin-left: 15px; }
 
-.panel-collapse {
-  overflow: hidden; }
+.panel-title a { text-decoration: none; }
 
-.nav-tabs {
-  display: none;
-  font-size: 20px; }
+.panel-collapse { overflow: hidden; }
 
-.collapse div, .collapsing div {
-  padding: 15px; }
+.nav-tabs { display: none; font-size: 20px; }
 
-#utility ul {
-  padding-top: 100px;
-  text-align: center;
-  clear: both; }
+.collapse div, .collapsing div { padding: 15px; }
 
-#search {
-  width: 100px; }
+#utility ul { padding-top: 100px; text-align: center; clear: both; }
 
-#utility img {
-  position: relative; }
-#utility ul li {
-  text-align: center;
-  display: inline;
-  list-style-type: none;
-  padding-right: 50px;
-  width: 100%; }
+#search { width: 100px; }
 
-@media (min-width: 768px) {
-  .nav-justified {
-    max-height: 52px; }
+#utility img { position: relative; }
+#utility ul li { text-align: center; display: inline; list-style-type: none; padding-right: 50px; width: 100%; }
 
-  .nav-justified > li > a {
-    border-right: 1px solid #d5d5d5;
-    border-left: 1px solid #fff; }
-
-  .nav-justified > li:first-child > a {
-    border-left: 0;
-    border-radius: 5px 0 0 5px; }
-
-  .nav-justified > li:last-child > a {
-    border-right: 0;
-    border-radius: 0 5px 5px 0; }
-
-  .masthead,
-  .marketing,
-  .footer {
-    padding-right: 0;
-    padding-left: 0; } }
+@media (min-width: 768px) { .masthead, .marketing, .footer { padding-right: 0; padding-left: 0; } }
 /* All Media Queries */
-@media screen and (max-width: 768px) {
-  /* Remove the padding we set earlier */
-  #sidebar-bio-right {
-    float: left;
-    margin-left: 0;
-    margin-top: 10px;
-    clear: both; }
-
-  .sidebar {
-    background: transparent; }
-
-  .sidebar-right {
-    margin-top: 15px;
-    clear: both;
-    float: left !important; }
-
-  .content {
-    min-width: 192px;
-    clear: both; } }
-@media screen and (min-width: 450px) {
-  head {
-    font-family: "S"; }
-
-  body:after {
-    content: "S"; }
-
-  .panel-title a:hover {
-    cursor: pointer; }
-
-  .sidebar-right {
-    float: right; }
-
+@media screen and (max-width: 768px) { /* Remove the padding we set earlier */
+  #sidebar-bio-right { float: left; margin-left: 0; margin-top: 10px; clear: both; }
+  .sidebar { background: transparent; }
+  .sidebar-right { margin-top: 15px; clear: both; float: left !important; }
+  .content { min-width: 192px; clear: both; }
+  .navbar-title { display: inline; }
+  .submenu { position: absolute; left: -999px !important; z-index: 10; } }
+@media screen and (min-width: 450px) { head { font-family: "S"; }
+  body:after { content: "S"; }
+  .panel-title a:hover { cursor: pointer; }
+  .sidebar-right { float: right; }
   /* Custom Styles for this breakpoint */ }
-@media screen and (min-width: 600px) {
-  head {
-    font-family: "M"; }
-
-  body:after {
-    content: "M"; }
-
+@media screen and (min-width: 600px) { head { font-family: "M"; }
+  body:after { content: "M"; }
   /* Custom Styles for this breakpoint */ }
-@media screen and (min-width: 960px) {
-  head {
-    font-family: "L"; }
-
-  body:after {
-    content: "L"; }
-
+@media screen and (min-width: 960px) { head { font-family: "L"; }
+  body:after { content: "L"; }
   /* Custom Styles for this breakpoint */ }

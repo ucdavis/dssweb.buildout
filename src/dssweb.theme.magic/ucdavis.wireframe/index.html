@@ -14,7 +14,7 @@
     <link href="assets/reset.css" rel="stylesheet">
     <link href="assets/reset_all.css" rel="stylesheet">
     <link href="assets/styles.css" rel="stylesheet">
-	<link href="assets/theme.css" rel="stylesheet">
+	  <link href="assets/theme.css" rel="stylesheet">
 
     <!-- #BeginEditable "header" -->
 		<link href="assets/index.css" rel="stylesheet">
@@ -31,109 +31,121 @@
 	 <body>
     <!-- #EndEditable -->
  
-
     <div class="container">
       <div class="masthead">
         <a href="index.html"><img alt="logo" id="logo" src="images/logo.png"></a>
   
-        <ul class="nav nav-justified">
-          <li><a href="#">Connect</a>  
-            <ul class="nav-justified-dropdown">
-              <li id="contact"><a href="t9_contact.html">Contact</a></li>
-            </ul>
-          </li>
-  
-          <li id="our-people"><a href="#">Our People</a>
-          	<ul class="nav-justified-dropdown">
-              <li><a href="t2_ourpeople.html">Staff</a></li>  
-            </ul>
-          </li>
-  
-          <li id="students"><a href="#">Students</a>  
-            <ul class="nav-justified-dropdown">
-              <li><a href="t11_prospective_students.html">Prospective Students</a></li>  
-              <li><a href="t12_grad_program.html">Graduate Program</a></li>
-            </ul>
-          </li>
-  
-          <li id="research"><a href="#">Research</a>  
-            <ul class="nav-justified-dropdown">
-              <li class="nav-list-item">Reseach Areas<b class="caret"></b>
-                <ul class="sub-menu">
-                  <li><a href="t6_research_area.html">Area A</a></li>
-                  <li><a href="t6_research_area.html">Area B</a></li>
-                </ul>                
-              </li>  
-              <li class="nav-list-item">Research Labs<b class="caret"></b>  
-                <ul class="sub-menu">
-                  <li><a href="t7_research_lab.html">Lab A</a></li> 
-                  <li><a href="t7_research_lab.html">Lab B</a></li>                  
-                  <li><a href="t7_research_lab.html">Lab C</a></li>
+         <!-- Static navbar -->
+        <div class="navbar navbar-default" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <p class="navbar-title">Menu</p>
+              </div>
+              
+              <div class="navbar-collapse collapse">
+                <ul class="nav nav-justified">
+                  <li id="connect" class="par"><a href="#">Connect<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li class="leaf leaf-first"><a href="t9_contact.html">Contact</a></li>
+                    </ul>
+                  </li>
+                  <li id="our-people" class="par"><a href="#">Our People<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li class="leaf leaf-first"><a href="t2_ourpeople.html">Staff</a></li>
+                    </ul>
+                  </li>
+                  <li id="students" class="par"><a href="#" >Students<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li class="leaf leaf-first"><a href="t11_prospective_students.html">Prospective Students</a></li>
+                      <li class="leaf leaf-last"><a href="t12_grad_program.html">Graduate Program</a></li>
+                    </ul>
+                  </li>
+                  <li id="research" class="par">
+                    <a href="#">Research<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li class="leaf leaf-first" ><a href="t6_research_area.html">Research Areas<b class="hidden-xs hidden-s caret"></b></a>
+                        <ul class="submenu">
+                          <li class="leaf leaf-first"><a href="t6_research_area.html">Area A</a></li>
+                          <li class="leaf leaf-last"><a href="t6_research_area.html">Area B</a></li>
+                        </ul>
+                      </li>
+                      <li class="leaf leaf-last"><a href="t7_research_lab.html">Research Labs<b class="hidden-xs hidden-s caret"></b></a>
+                        <ul class="submenu">
+                          <li class="leaf leaf-first"><a href="t7_research_lab.html">Lab A</a></li>
+                          <li class="leaf leaf-last"><a href="t7_research_lab.html">Lab B</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                   </li>
+                  <li id="fac-serv" class="par"><a href="#">Facilities and Service</a></li>                 
                 </ul>
-              </li>
-            </ul>
-          </li>  
-          <li id="facilities"><a href="#">Facilities and Services</a></li>
-        </ul>
-      </div><!-- End .masthead -->
-      
-      
+              </div><!--/.nav-collapse -->
+            </div><!--/.container-fluid -->
+          </div>
+        </div><!-- End .masthead -->      
       <!-- #BeginEditable "content" --> 	
       <div class="jumbotron">
         <h1>Banner</h1>
-        </div>
-        <div class="row">
-          <div class="landscape">
-            <ul class="nav nav-tabs">
-              <li class="active"><a href="#contA" data-toggle="tab">Lorem</a></li>
-              <li><a href="#contB" data-toggle="tab">Ipsum</a></li>
-              <li><a href="#contC" data-toggle="tab">Lorem</a></li>
+      </div>    
+      <div class="landscape">
+        <ul  id="myTab" class="nav nav-tabs">
+          <li class="active"><a href="#contA" data-toggle="tab">Lorem</a></li>
+          <li><a href="#contB" data-toggle="tab">Site Map</a></li>
+          <li><a href="#contC" data-toggle="tab">Lorem</a></li>
+        </ul>
+        <div class="ls-content">
+          <div class="col-xs-12 col-sm 12 col-md-12 col-lg-4 content-main"  id="contA">
+            <h2>Lorem Ipsum</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec malesuada lectus. Curabitur pharetra velit sit amet lectus porta auctor. Curabitur laoreet nisl ullamcorper ante posuere malesuada. </p>
+            <p><a class="btn btn-primary btn-home" href="#" role="button">View details »</a></p>
+          </div>
+          <div class="col-xs-12 col-sm 12 col-md-12 col-lg-4 content-main"  id="contB">
+            <h2>Site Map</h2>
+            <ul>
+              <li><a href="t1_charts.html">t1_charts.html</a></li>
+              <li><a href="t2_ourpeople.html">t2_ourpeople.html</a></li>
+              <li><a href="t3_bio.html">t3_bio.html</a></li>
+              <li><a href="t4_adhoc.html">t4_adhoc.html</a></li>
+              <li><a href="t5_research.html">t5_research.html</a></li>
+              <li><a href="t6_research_area.html">t6_research_area.html</a></li>
+              <li><a href="t7_research_lab.html">t7_research_lab.html</a></li>
+              <li><a href="t8_research_project.html">t8_research_project.html</a></li>
+              <li><a href="t9_contact.html">t9_contact.html</a></li>
+              <li><a href="t10_students.html">t10_students.html</a></li>
+              <li><a href="t11_prospective_students.html">t11_prospective_students.html</a></li>
+              <li><a href="t12_grad_program.html">t12_grad_program.html</a></li>
+              <li><a href="t13_news.html">t13_news.html</a></li>
+              <li><a href="t14_events.html">t14_events.html</a></li>
+              <li><a href="t15_search.html">t15_search.html</a></li>
             </ul>
-            <div class="ls-content">
-              <div class="col-lg-4 content-main"  id="contA">
-                <h2>Lorem Ipsum</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec malesuada lectus. Curabitur pharetra velit sit amet lectus porta auctor. Curabitur laoreet nisl ullamcorper ante posuere malesuada. </p>
-                <p><a class="btn btn-primary btn-home" href="#" role="button">View details »</a></p>
-              </div>
-              <div class="col-lg-4 content-main"  id="contB">
-                <h2>Site Map</h2>
-                <ul>
-                  <li><a href="t1_charts.html">t1_charts.html</a></li>
-                  <li><a href="t2_ourpeople.html">t2_ourpeople.html</a></li>
-                  <li><a href="t3_bio.html">t3_bio.html</a></li>
-                  <li><a href="t4_adhoc.html">t4_adhoc.html</a></li>
-                  <li><a href="t5_research.html">t5_research.html</a></li>
-                  <li><a href="t6_research_area.html">t6_research_area.html</a></li>
-                  <li><a href="t7_research_lab.html">t7_research_lab.html</a></li>
-                  <li><a href="t8_research_project.html">t8_research_project.html</a></li>
-                  <li><a href="t9_contact.html">t9_contact.html</a></li>
-                  <li><a href="t10_students.html">t10_students.html</a></li>
-                  <li><a href="t11_prospective_students.html">t11_prospective_students.html</a></li>
-                  <li><a href="t12_grad_program.html">t12_grad_program.html</a></li>
-                  <li><a href="t13_news.html">t13_news.html</a></li>
-                  <li><a href="t14_events.html">t14_events.html</a></li>
-                  <li><a href="t15_search.html">t15_search.html</a></li>
-                </ul>
-              </div>
-              <div class="col-lg-4 content-main"  id="contC">
-                <h2>Lorem Ipsum</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec malesuada lectus. Curabitur pharetra velit sit amet lectus porta auctor. Curabitur laoreet nisl ullamcorper ante posuere malesuada. Etiam vehicula consectetur ipsum, sit amet rhoncus magna euismod eu. Integer consectetur, eros sed tincidunt eleifend, ligula risus dignissim enim, sit amet dapibus sem lectus nec lectus. Quisque in tempor est. Mauris pulvinar lobortis sapien ac volutpat.</p>
-                <p><a class="btn btn-primary btn-home" href="#" role="button">View details »</a></p>
-              </div>
-            </div>
+          </div>
+          <div class="col-xs-12 col-sm 12 col-md-12 col-lg-4 content-main"  id="contC">
+            <h2>Lorem Ipsum</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec malesuada lectus. Curabitur pharetra velit sit amet lectus porta auctor. Curabitur laoreet nisl ullamcorper ante posuere malesuada. Etiam vehicula consectetur ipsum, sit amet rhoncus magna euismod eu. Integer consectetur, eros sed tincidunt eleifend, ligula risus dignissim enim, sit amet dapibus sem lectus nec lectus. Quisque in tempor est. Mauris pulvinar lobortis sapien ac volutpat.</p>
+            <p><a class="btn btn-primary btn-home" href="#" role="button">View details »</a></p>
           </div>
         </div>
+      </div>
  <!-- #EndEditable -->
       <div id="utility">
-      <nav>
-        <ul>
-        	<li><a href="t13_news.html">Latest News</a></li>
-          <li><a href="t14_events.html">Events</a></li>
-          <li><a href="t4_adhoc.html">Give</a></li>
-          <li><input type="text" id="search" ><img src="images/search.gif" alt="search"/></li>
-        </ul>
-       </nav>
+        <nav>
+          <ul>
+            <li><a href="t13_news.html">Latest News</a></li>
+            <li><a href="t14_events.html">Events</a></li>
+            <li><a href="t4_adhoc.html">Give</a></li>
+            <li>            
+                <input type="text" id="search" placeholder="Search">
+             </li>
+          </ul>
+         </nav>
       </div>
+
        
       <!-- Site footer -->
       <div class="footer">
