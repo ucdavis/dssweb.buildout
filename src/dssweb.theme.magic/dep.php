@@ -6,6 +6,7 @@ set_time_limit(0);
 
 // Note: We're not getting json data in a $_REQUEST['payload'] parameter so using file_get_contents()
 //echo "Post is: <pre>".print_r(file_get_contents('php://input'),true)."</pre>";
+// Updated: RAK
 
 try {
 
