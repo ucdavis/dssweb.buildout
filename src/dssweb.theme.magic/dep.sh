@@ -1,1 +1,1 @@
-cd /var/www/vhosts/cakefarm.com/subdomains/ucd/httpdocs/dss/wireframe-git/dss-plone-sandbox && /usr/local/libexec/git-core pull && cd -
+cd /var/www/vhosts/cakefarm.com/subdomains/ucd/httpdocs/dss/wireframe-git/dss-plone-sandbox && /usr/local/libexec/git-core/git pull && cd -
