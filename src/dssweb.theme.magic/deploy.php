@@ -31,13 +31,13 @@ if ( $_POST['payload'] ) {
     // If there is already a repo, just run a git pull to grab the latest changes
     shell_exec("cd {$LOCAL_REPO} && git pull");
 
-    die("done " . mktime());
+    die("pull done " . mktime());
   } else {
 
     // If the repo does not exist, then clone it into the parent directory
     shell_exec("cd {$LOCAL_ROOT} && git clone {$REMOTE_REPO}");
 
-    die("done " . mktime());
+    die("clone done " . mktime());
   }
 }
 
