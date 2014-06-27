@@ -1,6 +1,11 @@
 /* This file will hold styles for the mobile version of your website (mobile first). */
 /* This also can include ANY global CSS that applies site-wide. Unless overwritten by a more specific style rule, CSS declarations in global.css will apply site-wide. Updated: 12/3/13 */
 /* 2013-05-12 RAK: Bootstrap overrides moved from default gem installation that placed overrides directly in the _variables.scss file */
+/* Example use case:
+ %abstract-class { font-family: Verdana; }  #my-div { @extend %abstract-class; }  #my-other-div { @extend %abstract-class; }
+ ... compiles as: #my-div, #my-other-div { font-family: Verdana; }
+
+*/
 #breadcrumb .breadcrumb { padding: 0; margin-bottom: 0; list-style: none; background-color: transparent; border-radius: 0; }
 #breadcrumb .breadcrumb > li { display: auto; }
 #breadcrumb .breadcrumb > li + li:before { padding: 0; color: auto; content: auto; }
