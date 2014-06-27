@@ -338,11 +338,11 @@
       ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../js/contrib/jquery.min.js"></script>
-    <script src="../js/contrib/bootstrap.min.js"></script>
-   <script src="../js/bootstrap/collapse.js"></script>
+    <script src="../js/contrib/jquery.min.js"></script>  
 		<script src="../js/expand.js"></script>
-  
+    <script src="../js/bootstrap/dropdown.js"></script>
+  	<script src="../js/bootstrap/collapse.js"></script>
+    <script src="../js/bootstrap/transition.js"></script>
     <!-- #BeginEditable "custom-footer-js" -->
     <!-- #EndEditable -->
   </body>
