@@ -9,19 +9,15 @@
 	<!-- #BeginEditable "title" -->
 
   <title>Lab</title><!-- #EndEditable -->
-  <link href="assets/reset.css"
-  rel="stylesheet">
-  <link href="assets/reset_all.css"
-  rel="stylesheet">
-  <link href="assets/styles.css"
-  rel="stylesheet">
-  <link href="assets/theme.css"
-  rel="stylesheet">
+  <link href="assets/reset.css" rel="stylesheet">
+  <link href="assets/reset_all.css" rel="stylesheet"> 
+  <link href="assets/styles.css" rel="stylesheet">
+  <link href="assets/theme.css" rel="stylesheet">
 	<!-- #BeginEditable "header" -->
   <!-- #EndEditable -->
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
-    <script src="js/contrib/html5shiv.js"></script>
+    <script src="js/contrib/html5shiv.min.js"></script>
     <script src="js/contrib/respond.min.js"></script>
     <![endif]-->
 </head>
@@ -29,10 +25,10 @@
 <body>
   <div class="container">
      <div class="masthead">
-        <a href="index.html"><img alt="logo" id="logo" src="images/logo.png"></a>
+         <a href="index.html" ><img class="img-responsive" alt="logo" id="logo" src="images/logo.png"></a>
   
          <!-- Static navbar -->
-        <div class="navbar navbar-default" role="navigation">
+        <div class="navbar navbar-default" role="navigation" id="navbar">
           <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -46,32 +42,32 @@
               
               <div class="navbar-collapse collapse">
                 <ul class="nav nav-justified">
-                  <li id="connect" class="par"><a href="#">Connect<b class="caret"></b></a>
+                  <li id="connect" class="par"><a href="t4_adhoc.html">Connect<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                       <li class="leaf leaf-first"><a href="t9_contact.html">Contact</a></li>
                     </ul>
                   </li>
-                  <li id="our-people" class="par"><a href="#">Our People<b class="caret"></b></a>
+                  <li id="our-people" class="par"><a href="t4_adhoc.html">Our People<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                       <li class="leaf leaf-first"><a href="t2_ourpeople.html">Staff</a></li>
                     </ul>
                   </li>
-                  <li id="students" class="par"><a href="#" >Students<b class="caret"></b></a>
+                  <li id="students" class="par"><a href="t4_adhoc.html" >Students<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                       <li class="leaf leaf-first"><a href="t11_prospective_students.html">Prospective Students</a></li>
                       <li class="leaf leaf-last"><a href="t12_grad_program.html">Graduate Program</a></li>
                     </ul>
                   </li>
                   <li id="research" class="par">
-                    <a href="#">Research<b class="caret"></b></a>
+                    <a href="t5_research.html">Research<b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                      <li class="leaf leaf-first" ><a href="t6_research_area.html">Research Areas<b class="hidden-xs hidden-s caret"></b></a>
+                      <li class="leaf leaf-first" ><a href="t6_research_area.html">Research Areas<b class="hidden-xs hidden-sm caret"></b></a>
                         <ul class="submenu">
                           <li class="leaf leaf-first"><a href="t6_research_area.html">Area A</a></li>
                           <li class="leaf leaf-last"><a href="t6_research_area.html">Area B</a></li>
                         </ul>
                       </li>
-                      <li class="leaf leaf-last"><a href="t7_research_lab.html">Research Labs<b class="hidden-xs hidden-s caret"></b></a>
+                      <li class="leaf leaf-last"><a href="t7_research_lab.html">Research Labs<b class="hidden-xs hidden-sm caret"></b></a>
                         <ul class="submenu">
                           <li class="leaf leaf-first"><a href="t7_research_lab.html">Lab A</a></li>
                           <li class="leaf leaf-last"><a href="t7_research_lab.html">Lab B</a></li>
@@ -79,12 +75,12 @@
                       </li>
                     </ul>
                    </li>
-                  <li id="fac-serv" class="par"><a href="#">Facilities and Service</a></li>                 
+                  <li id="fac-serv" class="par"><a href="t4_adhoc.html">Facilities and Service</a></li>                 
                 </ul>
               </div><!--/.nav-collapse -->
             </div><!--/.container-fluid -->
-          </div>
-        </div><!-- End .masthead -->           
+          </div><!--/.navbar -->
+        </div><!-- End .masthead -->            
       <div class="panel-group" id="accordion">
         <div class="sidebar sidebar-left col-xs-12 col-sm-2 col-md-3 col-lg-2">
           <div class="panel panel-default">
@@ -96,7 +92,7 @@
               <div class="collapsible sidebar-panel panel-collapse collapse" id=
               "sbA">
                 <div class="panel-body">
-                  <ul class="sidebar-block-items">
+                  <ul class="sidebar-block-items"> 
                     <li>Item A</li>
     
                     <li>Item B</li>
@@ -311,7 +307,9 @@
         	<li><a href="t13_news.html">Latest News</a></li>
           <li><a href="t14_events.html">Events</a></li>
           <li><a href="t4_adhoc.html">Give</a></li>
-          <li><input type="text" id="search" placeholder="Search" ></li>
+          <li>
+          	<input type="text" id="search" placeholder="Search" >
+          </li>
         </ul>
       </nav>
  	</div>

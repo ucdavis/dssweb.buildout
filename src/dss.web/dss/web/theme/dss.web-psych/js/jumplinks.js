@@ -11,11 +11,11 @@ $(function () {
         $('#about-bio h3').each(function () {
             var anchorTxt = 'about-bio-anchor-' + idx;
             if ((idx > 1) && (idx < cnt)) {
-                anchorsTxt += '<li class="leaf first">';
+                anchorsTxt += '<li class="leaf first hidden-sm hidden-xs">';
             } else if (idx == cnt) {
-                anchorsTxt += '<li class="leaf last">';
+                anchorsTxt += '<li class="leaf last hidden-sm hidden-xs">';
             } else {
-                anchorsTxt += '<li class="leaf">';
+                anchorsTxt += '<li class="leaf hidden-sm hidden-xs">';
             }
             anchorsTxt += '<a href="#' + anchorTxt + '">' + $(this).html() + '</a>';
             anchorsTxt += '</li>' + "\n";
