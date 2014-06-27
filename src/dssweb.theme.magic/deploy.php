@@ -1,6 +1,6 @@
 <?php
 /** 
-* Updated: 2014-06-27 RAK
+* Updated: 2014-06-27 RAK: upd5
 * 
   * This script is for easily deploying updates to Github repos to your local server. It will automatically git clone or 
   * git pull in your repo directory every time an update is pushed to your $BRANCH (configured below).
