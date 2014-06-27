@@ -1,6 +1,9 @@
 Cake Farm Wireframe Sandbox
 =================
 
+Development notes:
+2014-06-27 RAK: Updated basic navigation treatments. Testing on IE9 reveals compatibility issues between Bootstrap collapse and nav functionality.
+
 Wire Frames structure:
 
 <ul>
