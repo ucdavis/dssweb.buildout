@@ -1,0 +1,1 @@
+cd /var/www/vhosts/cakefarm.com/subdomains/ucd/httpdocs/dss/wireframe-git && /usr/local/libexec/git-core pull && cd -
