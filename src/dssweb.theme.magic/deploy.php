@@ -1,11 +1,7 @@
 <?php
-/* old version:
- if ( $_POST['payload'] ) {
-shell_exec( 'cd /var/www/vhosts/cakefarm.com/subdomains/ucd/httpdocs/dss/wireframe-git/dss-plone-sandbox && git reset --hard HEAD && git pull' );
-}
-*/
-
 /** 
+* Updated: 2014-06-27 RAK
+* 
   * This script is for easily deploying updates to Github repos to your local server. It will automatically git clone or 
   * git pull in your repo directory every time an update is pushed to your $BRANCH (configured below).
   * 
