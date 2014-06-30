@@ -29,7 +29,7 @@ $BRANCH             = "master";
     // If there is already a repo, just run a git pull to grab the latest changes
     // /usr/local/libexec/git-core/git pull
     
-    $res = exec("cd {$LOCAL_REPO} && echo `whoami`");
+    $res = exec("cd {$LOCAL_REPO} && /usr/local/libexec/git-core/git pull && cd -");
 
     echo "pull done res: $res, time: " . mktime();
     
