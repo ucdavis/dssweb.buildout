@@ -1,8 +1,5 @@
 <?php
 
-apache ALL = (root) /usr/local/libexec/git-core/git
-  
-  
 /** 
 * Updated: 2014-06-27 RAK: upd5
 * 
