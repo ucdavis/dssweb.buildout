@@ -25,7 +25,7 @@ catch(Exception $e) {
 
 if ($payload->ref === 'refs/heads/master') {
 
-    $project_directory = '/var/www/vhosts/cakefarm.com/subdomains/ucd/httpdocs/dss/wireframe-git/';
+    $project_directory = '/var/www/vhosts/cakefarm.com/subdomains/ucd/httpdocs/dss/wireframe-git/dss-plone-sandbox/';
 
     $output = shell_exec("/var/www/vhosts/cakefarm.com/subdomains/ucd/httpdocs/dss/wireframe-git/dep.sh");
 
