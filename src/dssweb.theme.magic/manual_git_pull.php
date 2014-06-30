@@ -27,7 +27,7 @@ $BRANCH             = "master";
   if( file_exists($LOCAL_REPO) ) {
 
     // If there is already a repo, just run a git pull to grab the latest changes
-    $res = shell_exec("cd {$LOCAL_REPO} && /usr/local/libexec/git-core/git pull");
+    $res = exec("cd {$LOCAL_REPO} && /usr/local/libexec/git-core/git pull");
 
     echo "pull done res: $res, time: " . mktime();
     
