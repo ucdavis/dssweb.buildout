@@ -30,8 +30,7 @@ if ($payload->ref === 'refs/heads/master') {
     $output = exec("/var/www/vhosts/cakefarm.com/subdomains/ucd/httpdocs/dss/wireframe-git/dep.sh");
 
     //log the request
-    file_put_contents('/var/www/vhosts/cakefarm.com/subdomains/ucd/httpdocs/dss/wireframe-git/dss-plone-sandbox/logs/
-github.txt', $output, FILE_APPEND);
+    file_put_contents('/var/www/vhosts/cakefarm.com/subdomains/ucd/httpdocs/dss/wireframe-git/dss-plone-sandbox/logs/github.txt', $output, FILE_APPEND);
 
     echo "<p>Success: $output</p>";
 }
