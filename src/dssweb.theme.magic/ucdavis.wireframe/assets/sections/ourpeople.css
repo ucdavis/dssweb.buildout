@@ -1,14 +1,25 @@
 /* Our People */
 /*------OUR PEOPLE---*/
-.table { margin-top: 15px; height: auto; }
-.table th { width: 25%; background-color: #6a747c; border-left: 1px solid black; text-align: center; }
-.table td { text-align: center; border: 1px solid black; vertical-align: middle !important; }
+.table { margin-top: 15px; height: auto; border-collapse: separate; border-spacing: 5px; }
+.table th { background-color: #6a747c; border-left: 1px solid black; text-align: left; }
 
-.icon-chevron-up glyphicon, .glyphicon-chevron-up, .icon-chevron-down, .glyphicon-chevron-down { float: right; }
+.listing > td { background-color: #E5E5E5; padding: 0px !important; }
+.listing > td img { float: left; height: 65px; width: 75px; }
 
-.glyphicon-sort { float: right; }
+.caption { position: relative; left: 10px; }
+.caption p { font-size: 12px; margin: 0px; }
 
-.info { padding-top: 5px; }
-.info p { margin-bottom: 2px !important; }
+.labs { position: relative; left: 10px; padding: 10px; }
+
+.faceted_letter { border-right: 1px solid black; padding-right: 3px; }
+
+.checkForm { text-align: left; }
+.checkForm label { font-weight: normal; }
+
+.jobTitle { font-style: italic; }
+
+.officeLocation { padding-left: 75px; }
+
+.personName { padding-top: 5px; }
 
 /*------END PEOPLE------*/

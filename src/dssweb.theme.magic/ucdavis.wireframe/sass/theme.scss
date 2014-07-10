@@ -17,7 +17,21 @@ body:after{
 	display:none;
 }
 
-.footer {
+#utility {
+	ul li{	
+		text-align:center;
+		display: inline;
+		list-style-type: none;
+		padding-right: 50px;	
+		width:100%;
+	}
+	ul{
+		padding-top:100px;
+		text-align:center;	
+		clear:both;
+	}
+}
+.footer {	
   padding-top: 40px;
   padding-bottom: 40px;
   margin-top: 20px;
@@ -25,6 +39,7 @@ body:after{
   text-align:center;
   clear:both;
 }
+
 input{
    text-align:center;
 }
@@ -48,13 +63,6 @@ input{
 	}
 }
 
-#alphabet{
-	margin-top:20px;
-	text-size:16px;	
-	text-align:center;	
-}
-
-/* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
   margin-top:20px;
@@ -111,15 +119,18 @@ more_text{
 	border-bottom: 1px solid #d5d5d5;
 }
 .navbar-title{
-	float:right;
+	float:left;
+	display:none;
+	text-transform:uppercase;
 	padding-right:10px;
 	padding-top:10px;
 	font-size:23px;
 	color:#777;
-	display:none;
 }
 .nav-justified{
-	
+	>li {
+		margin:10px;
+	}
 	> li > a {
 	  padding-top: 15px;
 	  padding-bottom: 15px;
@@ -144,9 +155,8 @@ more_text{
 	}	
 	.drop-on{	
 		.dropdown-menu{
-			top:48px;
-			width:100%;
-				
+			top:47px;
+			width:100%;			
 		}
 	}
 	.dropdown-menu{
@@ -218,20 +228,6 @@ more_text{
 	width:100px;
 }
 
-#utility {
-	ul li{	
-		text-align:center;
-		display: inline;
-		list-style-type: none;
-		padding-right: 50px;	
-		width:100%;
-	}
-	ul{
-		padding-top:100px;
-		text-align:center;	
-		clear:both;
-	}
-}
 @media (min-width: 768px) {
   .masthead,
   .marketing,
