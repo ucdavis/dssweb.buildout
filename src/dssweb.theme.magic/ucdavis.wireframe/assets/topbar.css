@@ -1004,13 +1004,18 @@ meta.foundation-data-attribute-namespace {
 
 /* Lists */
 ul, ol, dl {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.6;
   margin-bottom: 1.11111rem;
   list-style-position: outside;
   font-family: inherit; 
 	}
-
+meta.foundation-mq-topbar {
+  font-family: "/only screen and (min-width:40.063em)/";
+  width: 40.063em; }
+	
+.right {
+  float: right !important; }
 .top-bar {
   overflow: hidden;
   height: 45px;
