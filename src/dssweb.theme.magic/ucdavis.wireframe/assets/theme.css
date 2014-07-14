@@ -74,12 +74,15 @@ more_text { display: none; }
   .sidebar-right { margin-top: 15px; clear: both; float: left !important; }
   .content { min-width: 192px; clear: both; }
   .navbar-title { display: inline; }
-  .submenu { position: absolute; left: -999px !important; } }
-@media screen and (min-width: 450px) { head { font-family: "S"; }
+  .submenu { position: absolute; left: -999px !important; }
+  .headshot { padding: 0 !important; height: 100% !important; }
+  .facultyStaffDirectory { padding: 15px 20px; } }
+@media screen and (min-width: 0px) and (max-width: 768px) { head { font-family: "S"; }
   body:after { content: "S"; }
   .panel-title a:hover { cursor: pointer; }
-  .sidebar-right { float: right; } }
-@media screen and (min-width: 600px) { head { font-family: "M"; }
+  .sidebar-right { float: right; }
+  .op-sidebar-title { text-align: left !important; } }
+@media screen and (min-width: 768px) { head { font-family: "M"; }
   body:after { content: "M"; } }
-@media screen and (min-width: 960px) { head { font-family: "L"; }
+@media screen and (min-width: 992px) { head { font-family: "L"; }
   body:after { content: "L"; } }

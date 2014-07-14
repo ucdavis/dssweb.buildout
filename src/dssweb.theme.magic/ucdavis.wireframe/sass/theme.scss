@@ -240,6 +240,7 @@ more_text{
 
 /* All Media Queries */
 @media screen and (max-width: 768px) {
+		
   /* Remove the padding we set earlier */
     #sidebar-bio-right{
 		float:left;	  		
@@ -266,9 +267,17 @@ more_text{
 		position:absolute;
 		left:-999px !important;
 	}
+	.headshot{
+		padding:0 !important;
+		height:100% !important;		
+	}
+	
+	.facultyStaffDirectory{
+		padding:15px 20px;
+	}
 }
 
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 0px) and (max-width: 768px) {
 	head { font-family:"S";}
 	body:after{content:"S";}
 	.panel-title {
@@ -279,15 +288,18 @@ more_text{
 	.sidebar-right{	
 		float:right;		
 	}
+	.op-sidebar-title {
+		text-align:left !important;
+	}
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
 	head { font-family:"M";}
 	body:after{content:"M";}	
 	
 }
 
-@media screen and (min-width: 960px) {	
+@media screen and (min-width: 992px) {	
 	head { font-family:"L";}
 	body:after{content:"L";}
 

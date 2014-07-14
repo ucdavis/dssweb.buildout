@@ -3,23 +3,29 @@
 .table { margin-top: 15px; height: auto; border-collapse: separate; border-spacing: 5px; }
 .table th { background-color: #6a747c; border-left: 1px solid black; text-align: left; }
 
-.listing > td { background-color: #E5E5E5; padding: 0px !important; }
-.listing > td img { float: left; height: 65px; width: 75px; }
+.listing { padding-left: 0; border: 3px solid white; background-color: #E5E5E5; }
+.listing .headshot { top: 0; left: 0; height: 80px; float: left; }
 
-.caption { position: relative; left: 10px; }
+.facultyStaffDirectory { padding-left: 20px; }
+
+.op-sidebar-title { text-align: center; }
+
+.checkForm h4 { text-align: center; }
+
+.caption { position: relative; margin-top: 10px; left: 10px; }
 .caption p { font-size: 12px; margin: 0px; }
 
-.labs { position: relative; left: 10px; padding: 10px; }
+#dropdown-icon { float: right; }
+
+.labs { position: relative; left: 10px; padding: 10px 0; padding-right: 30px; }
 
 .faceted_letter { border-right: 1px solid black; padding-right: 3px; }
 
 .checkForm { text-align: left; }
 .checkForm label { font-weight: normal; }
 
+.table-header { margin-bottom: 10px; background: #e5e5e5; padding-top: 5px; height: 35px; }
+
 .jobTitle { font-style: italic; }
-
-.officeLocation { padding-left: 75px; }
-
-.personName { padding-top: 5px; }
 
 /*------END PEOPLE------*/

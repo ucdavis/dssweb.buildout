@@ -15,7 +15,8 @@
   <link href="assets/theme.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/bootstrap.min.css">
 	<!-- #BeginEditable "header" -->
-  <!-- #EndEditable -->
+  <link href="assets/topbar.css" rel="stylesheet" />
+	<!-- #EndEditable -->
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
     <script src="js/contrib/html5shiv.min.js"></script>
@@ -25,63 +26,105 @@
 
 <body>
   <div class="container">
-     <div class="masthead">
-         <a href="index.html" ><img class="img-responsive" alt="logo" id="logo" src="images/logo.png"></a>
-  
-         <!-- Static navbar -->
-        <div class="navbar navbar-default" role="navigation" id="navbar">
-          <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-                <p class="navbar-title">Menu</p>
+     <nav class="top-bar" data-topbar>
+        <!-- Title -->
+        <ul class="title-area">
+          <li class="name">
+            <h1><a href="#">Psychology</a></h1>
+          </li>
+          <!-- Mobile Menu Toggle -->
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+        <!-- Top Bar Section -->
+        <section class="top-bar-section">
+          <!-- Top Bar Left Nav Elements -->
+          <ul class="left">
+            <!-- Search | has-form wrapper -->
+            <li class="has-form">
+              <div class="row collapse">
+                <div class="large-8 small-9 columns">
+                  <input type="text" placeholder="Find Stuff">
+                </div>
+                <div class="large-4 small-3 columns">
+                  <a href="#" class="alert button expand">Search</a>
+                </div>
               </div>
-              
-              <div class="navbar-collapse collapse">
-                <ul class="nav nav-justified">
-                  <li id="connect" class="par"><a href="t4_adhoc.html">Connect<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                      <li class="leaf leaf-first"><a href="t9_contact.html">Contact</a></li>
-                    </ul>
-                  </li>
-                  <li id="our-people" class="par"><a href="t4_adhoc.html">Our People<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                      <li class="leaf leaf-first"><a href="t2_ourpeople.html">Staff</a></li>
-                    </ul>
-                  </li>
-                  <li id="students" class="par"><a href="t4_adhoc.html" >Students<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                      <li class="leaf leaf-first"><a href="t11_prospective_students.html">Prospective Students</a></li>
-                      <li class="leaf leaf-last"><a href="t12_grad_program.html">Graduate Program</a></li>
-                    </ul>
-                  </li>
-                  <li id="research" class="par">
-                    <a href="t5_research.html">Research<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                      <li class="leaf leaf-first" ><a href="t6_research_area.html">Research Areas<b class="hidden-xs hidden-sm caret"></b></a>
-                        <ul class="submenu">
-                          <li class="leaf leaf-first"><a href="t6_research_area.html">Area A</a></li>
-                          <li class="leaf leaf-last"><a href="t6_research_area.html">Area B</a></li>
-                        </ul>
-                      </li>
-                      <li class="leaf leaf-last"><a href="t7_research_lab.html">Research Labs<b class="hidden-xs hidden-sm caret"></b></a>
-                        <ul class="submenu">
-                          <li class="leaf leaf-first"><a href="t7_research_lab.html">Lab A</a></li>
-                          <li class="leaf leaf-last"><a href="t7_research_lab.html">Lab B</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                   </li>
-                  <li id="fac-serv" class="par"><a href="t4_adhoc.html">Facilities and Service</a></li>                 
-                </ul>
-              </div><!--/.nav-collapse -->
-            </div><!--/.container-fluid -->
-          </div><!--/.navbar -->
-        </div><!-- End .masthead -->            
+            </li>
+          </ul>
+          <!-- Top Bar Right Nav Elements -->
+          <ul class="right">
+            <!-- Divider -->
+            <li class="divider"></li>
+            <!-- Dropdown -->
+            <li class="has-dropdown">
+              <a href="#">Item 1</a>
+              <ul class="dropdown">
+                <li><a href="#">Sub-item 1</a></li>
+                <li><a href="#">Sub-item 2</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Sub-item 3</a></li>
+                <li class="has-dropdown">
+                  <a href="#">Sub-item 4</a>
+                  <!-- Nested Dropdown -->
+                  <ul class="dropdown">
+                    <li><a href="#">Sub-item 2</a></li>
+                    <li><a href="#">Sub-item 3</a></li>
+                    <li><a href="#">Sub-item 4</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Sub-item 5</a></li>
+              </ul>
+            </li>
+						   <li class="has-dropdown">
+              <a href="#">Item 1</a>
+              <ul class="dropdown">
+                <li><a href="#">Sub-item 1</a></li>
+                <li><a href="#">Sub-item 2</a></li>               
+              </ul>
+            </li>
+						   <li class="has-dropdown">
+              <a href="#">Item 1</a>
+              <ul class="dropdown">
+                <li><a href="#">Sub-item 1</a></li>
+                <li><a href="#">Sub-item 2</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Sub-item 3</a></li>                
+              </ul>
+            </li>
+						   <li class="has-dropdown">
+              <a href="#">Item 1</a>
+              <ul class="dropdown">
+                <li><a href="#">Sub-item 1</a></li>
+                <li><a href="#">Sub-item 2</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Sub-item 3</a></li>
+                <li class="has-dropdown">
+                  <a href="#">Sub-item 4</a>
+                  <!-- Nested Dropdown -->
+                  <ul class="dropdown">
+                    <li><a href="#">Sub-item 2</a></li>
+                    <li><a href="#">Sub-item 3</a></li>
+                    <li><a href="#">Sub-item 4</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Sub-item 5</a></li>
+              </ul>
+            </li>
+						   <li class="has-dropdown">
+              <a href="#">Item 1</a>
+              <ul class="dropdown">
+                <li><a href="#">Sub-item 1</a></li>
+                <li><a href="#">Sub-item 2</a></li>
+                <li><a href="#">Sub-item 5</a></li>
+              </ul>
+            </li>
+            <li class="divider"></li>
+            <!-- Anchor -->
+            <li class="divider"></li>
+            <!-- Button -->
+          </ul>
+        </section>
+      </nav><!-- End .masthead -->            
       <div class="panel-group" id="accordion">
         <div class="sidebar sidebar-left col-xs-12 col-sm-2 col-md-3 col-lg-2">
           <div class="panel panel-default">
@@ -328,6 +371,11 @@
   <script src="js/bootstrap/collapse.js"></script>
   <script src="js/bootstrap/transition.js"></script>
 	<script src="js/expand.js"></script>
+	<script src="js/foundation/js/foundation/foundation.js" rel="text/javascript"></script>
+	<script src="js/foundation/js/foundation/foundation.topbar.js" rel="text/javascript"></script>
+	<script>
+		$(document).foundation();
+	</script>
   <!--[if lt IE 9]>
       	<script src="js/contrib/respond.min.js"></script>
       <![endif]-->
