@@ -26,10 +26,11 @@ input { text-align: center; }
 .jumbotron { text-align: center; margin-top: 20px; background-color: transparent; border: 2px solid black; }
 .jumbotron h1 { font-weight: normal; }
 
-.sidebar { height: 100%; height: auto; margin-top: 15px; text-align: center; background: #e5e5e5; }
-.sidebar h3 { font-size: 20px; height: auto; background: #e5e5e5; }
-.sidebar .collapsible { background: #e5e5e5; }
+.sidebar { height: auto; margin-top: 15px; text-align: center; background: #e5e5e5; }
+.sidebar h3 { height: auto; }
 .sidebar .panel-title a:hover { cursor: text; }
+.sidebar .panel-heading { padding: 0; }
+.sidebar .collapsible { background: #e5e5e5; }
 
 more_text { display: none; }
 
@@ -79,7 +80,10 @@ more_text { display: none; }
   .facultyStaffDirectory { padding: 15px 20px; } }
 @media screen and (min-width: 0px) and (max-width: 768px) { head { font-family: "S"; }
   body:after { content: "S"; }
+  .panel { border: none; }
+  .panel-title { padding: 15px; }
   .panel-title a:hover { cursor: pointer; }
+  .glyphicon { position: relative; top: -18px; }
   .sidebar-right { float: right; }
   .op-sidebar-title { text-align: left !important; } }
 @media screen and (min-width: 768px) { head { font-family: "M"; }

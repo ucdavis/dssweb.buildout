@@ -1,35 +1,67 @@
 @charset "utf-8";
 /* Our People */
 
-/*------OUR PEOPLE---*/
-.table{
-	margin-top:15px;	
-	height:auto;
-	border-collapse:separate;
-	border-spacing: 5px;
-	th{
-		background-color:#6a747c;
-		border-left:1px solid black;
-		text-align:left;	
-	}
+/* Colors */
+$rec_blue:#008EAA;
+$cardbg_blue:#e5e9ef;
+$empty_blue:#ccd4e0;
+$ucdtxt_blue:#4D688C;
 
-}
-.listing {
+
+
+/*------OUR PEOPLE---*/
+.genericTile {
 	padding-left:0;
 	border: 3px solid white;
-	background-color:#E5E5E5;
+	background-color:$cardbg_blue;
 	.headshot{
-		top:0;
+		top:-10px;
 		left:0;
-		height:80px;	
+		background:$empty_blue;
+		width:90px;
+		position:relative;
+		height:90px !important;	
 		float:left;
 	}
 }
 .facultyStaffDirectory{
-	padding-left:20px;
+	padding-right:0;
 }
 .op-sidebar-title {
-	text-align:center;
+	text-align:left;
+	text-transform:uppercase;
+	
+	span{
+		font-size:16px;
+		color:#000;
+	}
+}
+.sidebar{
+	background:none;
+	margin-top:20px;
+	color:$ucdtxt_blue;
+	.collapsible{
+		background:none;
+	}
+}
+#devel-psy{
+	float:right;
+	p{
+		margin:0;
+	}
+}
+#c5{
+	text-align:left;
+}
+#c5-all{
+	text-align:left;
+	border:none;
+	color:#000;
+	text-transform:uppercase;
+	letter-spacing:1px;
+	margin-top:10px;
+	//margin-left:3px;
+	margin-bottom:3px;
 }
 .checkForm{
 	h4{
@@ -40,6 +72,12 @@
 	position:relative;
 	margin-top:10px;
 	left:10px;
+	.personName{
+		padding-bottom:5px;
+	}
+	a{
+		color:$ucdtxt_blue;
+	}
 	p{
 		font-size:12px;
 		margin:0px;
@@ -48,31 +86,60 @@
 #dropdown-icon{
 	float:right;
 }
-.labs{
-	position:relative;
-	left:10px;
-	padding:10px 0;
-	padding-right:30px;
+.lab{
+	clear:left;
+	padding:5px 0;
+	padding-left:30px;
+
 }
 .faceted_letter{
 	border-right: 1px solid black;
-	padding-right:3px;
+	padding-right:6px;
+	padding-left:2px;
 }
 .checkForm{
 	text-align:left;
+	font-size:12px;
 	label{
 		font-weight:normal;
+	}
+	h4{
+		text-align:left;
+		color:#000;
+		font-size:12px;
+		text-transform:uppercase;
+		
+	}
+	#help{
+		color:#000;
 	}
 }
 .table-header{
 	margin-bottom:10px;
-	background:#e5e5e5;
-	padding-top:5px;
+	background:$rec_blue;
+	color:#fff;
+	padding-top:7px;
+	padding-left:10px;
 	height:35px;
 }
-.jobTitle{
+.job{
 	font-style:italic;
 }
-
+@media screen and (min-width: 0px) and (max-width: 768px) {
+	.sidebar{
+		background:#e5e5e5;
+	}
+	.collapsible{
+		background:#e5e5e5;
+	}
+	.facultyStaffDirectory{
+		padding:20px 20px;
+	
+	}
+	
+	.panel-body{
+		padding:10px 0 !important;
+	}
+}
 
 /*------END PEOPLE------*/

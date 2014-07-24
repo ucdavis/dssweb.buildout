@@ -74,22 +74,23 @@ input{
   }
 }
 .sidebar{
-	height:100%;
+
 	height:auto;
 	margin-top:15px;
 	text-align:center;
 	background:#e5e5e5;
 	h3{
-		font-size:20px;
 		height:auto;
-		background:#e5e5e5;
+	}
+	.panel-title a:hover{
+		cursor:text;
+	}
+	.panel-heading{
+			padding:0;
 	}
 	.collapsible{
 		background:#e5e5e5;
 	}
-	.panel-title a:hover{
-		cursor:text;
-	 }
 }
 
 more_text{
@@ -207,8 +208,11 @@ more_text{
 .caret{
 	margin-left:15px;
 }
-.panel-title a{
-	text-decoration:none;
+.panel-title {
+
+	a{
+		text-decoration:none;
+	}
 }
 .panel-collapse{
 	overflow:hidden;	
@@ -280,10 +284,18 @@ more_text{
 @media screen and (min-width: 0px) and (max-width: 768px) {
 	head { font-family:"S";}
 	body:after{content:"S";}
+	.panel{
+		border:none;
+	}
 	.panel-title {
+		padding:15px;
 		a:hover{
 			cursor:pointer;
 		}		
+	}
+	.glyphicon{
+		position:relative;
+		top:-18px;
 	}
 	.sidebar-right{	
 		float:right;		
@@ -291,6 +303,7 @@ more_text{
 	.op-sidebar-title {
 		text-align:left !important;
 	}
+	
 }
 
 @media screen and (min-width: 768px) {
