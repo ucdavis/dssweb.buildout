@@ -11,6 +11,7 @@ $(function () {
         $('#about-bio h3').each(function () {
             var anchorTxt = 'about-bio-anchor-' + idx;
             if ((idx > 1) && (idx < cnt)) {
+							  // hidden-xs bootstrap attribute added to hide on mobile
                 anchorsTxt += '<li class="leaf first hidden-sm hidden-xs">';
             } else if (idx == cnt) {
                 anchorsTxt += '<li class="leaf last hidden-sm hidden-xs">';
