@@ -114,15 +114,17 @@ $(function () {
 						// If the detected screen size is Tablet 600px-959px
             if (activeMQ == 'M') {
                 currentMQ = activeMQ;
-								if ($("body.ourpeople").length != 0) {
+								if  ( ($("body.ourpeople").length != 0) || ($("body.home").length != 0) ) {
 									 expandedView();
 													
 								}
+								/*
 								else if($("body.ourpeople").length != 0){
 								collapsedView();	
 								rmvStack();
 								
 								}
+								*/
             }
 						// If the detected screen size is Desktop 960px and up
             if (activeMQ == 'L') {
@@ -151,9 +153,9 @@ $(function () {
 
     function expandedView() {
        	// Index page
-			  $(".ls-content").removeClass("tab-content");
-        $(".landscape div").removeClass("tab-pane");
-        $(".nav-tabs").hide();
+			  //$(".ls-content").removeClass("tab-content");
+       // $(".landscape div").removeClass("tab-pane");
+        //$(".nav-tabs").hide();
 				
         /* If Bio Page */
 				if ($("body.bio").length != 0) {
@@ -197,11 +199,11 @@ $(function () {
 
     function collapsedView() {
 				// Index page
-        $(".ls-content").addClass("tab-content");
-        $(".landscape div").addClass("tab-pane");
-        $(".landscape").removeClass("tab-content");
+        //$(".ls-content").addClass("tab-content");
+        //$(".landscape div").addClass("tab-pane");
+        //$(".landscape").removeClass("tab-content");
         $("#contA").addClass("active");
-        $(".nav-tabs").show();
+       // $(".nav-tabs").show();
 							  			     
         if ($("body.bio").length == 0) {		
 						// Add accordion effects to sidebar			  

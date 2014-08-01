@@ -1,0 +1,360 @@
+
+/* 2014-06-12 RAK: This file contains theme CSS and mediaquery for responsive (at end of file). 
+
+  TODO: 
+    - Move to SASS
+    
+*/
+
+body {
+  padding-top: 20px;
+}
+head{
+	font-family:'XS';
+}
+body:after{ 
+	content:"XS"; 
+	display:none;
+}
+
+#utility {
+	ul li{	
+		text-align:center;
+		display: inline;
+		list-style-type: none;
+		padding-right: 50px;	
+		width:100%;
+	}
+	ul{
+		padding-top:100px;
+		text-align:center;	
+		clear:both;
+	}
+}
+.footer {	
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: 20px;
+  border-top: 1px solid #eee;
+  text-align:center;
+  clear:both;
+}
+
+input{
+   text-align:center;
+}
+.contact{
+	margin-top:15px;	
+}
+.content{
+	margin-top:15px;
+}
+.content-title{
+	padding-bottom:20px;
+	text-align:center;
+}
+.content-main{
+	font-size:16px;
+	 h2{
+		font-size:25px;
+		font-weight:bold;
+		padding-top:15px;
+		padding-bottom:15px;
+	}
+}
+
+
+.jumbotron {
+  text-align: center;
+  margin-top:20px;
+  background-color: transparent;
+  border:2px solid black;
+  h1{
+	font-weight:normal;
+  }
+}
+.sidebar{
+
+	height:auto;
+	margin-top:15px;
+	text-align:center;
+	background:#e5e5e5;
+	h3{
+		height:auto;
+	}
+	.panel-title a:hover{
+		cursor:text;
+	}
+	.panel-heading{
+			padding:0;
+	}
+	.collapsible{
+		background:#e5e5e5;
+	}
+}
+
+more_text{
+	display:none;	
+}
+.sidebar-block-items{
+	background:#e5e5e5;	
+	padding-bottom:10px;
+	text-align:left;
+	width:auto;
+	height:100%;
+	padding-left:15px;
+	list-style-type:circle;	
+}
+.top-bar{
+	background:#002855 !important;
+	height:75px !important;
+	
+	.title-area{	
+		top:15px;
+		.name{
+			letter-spacing:.15em;
+			h1{
+				a{					
+					font-size:1.5rem;
+					text-transform:uppercase;
+					font-family: lucida sans;
+					font-weight:bold;
+					text-decoration:none;
+				}
+			}
+		}
+	}
+	.top-bar-section{
+		height:100%;
+		.right{
+			width:60%;
+			height:100% !important;
+			// Parent level buttons
+			 > li{
+				background:#002855 !important;
+				height:100%;
+				text-align:center;
+				width:20%;
+				&:hover{
+						background:#4d688c !important;
+					}
+				a{
+					position:relative;	
+					width:100%;
+					background:transparent !important;
+					top:17px;
+					padding:0 !important;
+					
+					// gets rid of carets in nav
+					&:after{
+						display:none !important;
+					}
+					
+				}
+				// First level dropdown
+				.dropdown{
+					top:100%;
+					li{
+						background:#002855 !important;
+					}
+				}
+			}
+		}
+	}
+}
+.util-bar{
+	max-width:730px;
+	background:#C99700;	
+	height:40px;
+	margin-left:auto;
+	margin-right:15px;
+	ul{
+		height:100%;
+		
+		li{
+			float:left;
+			padding-left:3px;
+			padding-right:3px;
+			display:inline;
+			height:100%;
+			a{
+				display:block;
+				margin-left:auto;
+				margin-right:auto;
+				position:relative;
+				text-decoration:none;
+				color:#000;
+				top:8px;
+				text-align:center;
+			}
+			input{
+				width:100%;
+				position:relative;
+				top:5px;
+				text-align:left;
+				padding-left:10px;
+			}
+		}
+	}
+	#uti-news{
+		width:21.92%; //160px
+		border-right:1px solid #fff;
+	}
+	#uti-events{
+		width:10.96%; //80px
+		border-right:1px solid #fff;
+		border-left:1px solid #fff;
+	}
+	#uti-give{
+		width:10.96%; //80px
+		border-right:1px solid #fff;
+		border-left:1px solid #fff;
+	}
+	#uti-search{
+		width:28.36%;//207px
+		border-right:1px solid #fff;
+		border-left:1px solid #fff;
+	}
+	#uti-share{
+		width:6.03%; //44px
+		border-right:1px solid #fff;
+		border-left:1px solid #fff;
+	}
+	#uti-logo{
+		width:21.23%;//155px
+		border-left:1px solid #fff;
+	}
+}
+.caret{
+	margin-left:15px;
+}
+.menu-icon{
+	display:block;
+	background:#e5e5e5;
+	position:relative;
+	top:-25px;
+
+	span::after {
+			content: "";
+			position: absolute;
+			display: block;
+			height: 0;			
+			box-shadow: 0 0px 0 2px #000, 0 7px 0 2px #000, 0 14px 0 2px #000, 0 21px 0 2px #000  !important;
+			width: 25px !important; 
+		}
+}
+.panel-title {
+
+	a{
+		text-decoration:none;
+	}
+}
+.panel-collapse{
+	overflow:hidden;	
+}
+.nav-tabs{
+	display:none;
+	font-size:20px;	
+}
+
+.collapse , .collapsing {
+	div{
+		padding:15px;
+	}
+} 
+
+#search{
+	width:100px;
+}
+
+@media (min-width: 768px) {
+  .masthead,
+  .marketing,
+  .footer {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+}
+
+/*------ All Media Queries ----------*/
+
+/*----- Mobile breakpoint -------*/
+@media screen and (max-width: 768px) {
+	head { font-family:"S";}
+	body:after{content:"S";}
+ 
+  #sidebar-bio-right{
+		float:left;	  		
+		margin-left:0;
+		margin-top:10px;
+		clear:both;
+  }
+	.sidebar{	
+		background:transparent;
+	}
+	.sidebar-right{	
+		margin-top:15px;
+		clear:both;
+		float:left !important;
+	}
+	.util-bar{
+		margin-left:14px;
+	}
+	.top-bar{
+		height:40px !important;
+		overflow:visible !important;	
+	}
+	.content{
+	  min-width:192px;
+		clear:both;
+	}
+	.submenu{
+		position:absolute;
+		left:-999px !important;
+	}
+	.headshot{
+		padding:0 !important;
+		height:100% !important;		
+	}
+	.facultyStaffDirectory{
+		padding:15px 20px;
+	}
+	.panel{
+		border:none;
+	}
+	.panel-title {
+		padding:15px;
+		a:hover{
+			cursor:pointer;
+		}		
+	}
+	.menu-icon{
+		height:80px;
+		top:-39px !important;
+	}
+	.glyphicon{
+		position:relative;
+		top:-18px;
+	}
+	.sidebar-right{	
+		float:right;		
+	}
+	.op-sidebar-title {
+		text-align:left !important;
+	}
+	
+}
+/*----- Tablet breakpoint -------*/
+@media screen and (min-width: 768px)and (max-width: 992px) {
+	head { font-family:"M";}
+	body:after{content:"M";}	
+
+	
+}
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: 992px) {	
+	head { font-family:"L";}
+	body:after{content:"L";}
+
+}

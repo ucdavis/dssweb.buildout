@@ -1,222 +1,346 @@
 <!DOCTYPE html>
-<html lang="en"><!-- #BeginTemplate "/Templates/wireframe.dwt" --><!-- DW6 -->
+<html lang="en">
+  <!-- #BeginTemplate "/Templates/wireframe.dwt" -->
+  <!-- DW6 -->
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    
+    <meta name="generator"
+    content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
     <!-- #BeginEditable "title" -->
-      <title>Home</title>
+    <title>Home</title>
     <!-- #EndEditable -->
-
-    <link href="assets/reset.css" rel="stylesheet">
-    <link href="assets/reset_all.css" rel="stylesheet"> 
-    <link href="assets/styles.css" rel="stylesheet">
-	  <link href="assets/theme.css" rel="stylesheet">
-
+    <link href="assets/reset.css" rel="stylesheet" />
+    <link href="assets/reset_all.css" rel="stylesheet" />
+    <link href="assets/styles.css" rel="stylesheet" />
+    <link href="assets/theme.css" rel="stylesheet" />
     <!-- #BeginEditable "header" -->
-		<link href="assets/index.css" rel="stylesheet">
-		<link href="assets/topbar.css" rel="stylesheet" />
+    <link href="assets/index.css" rel="stylesheet" />
+    <link href="assets/topbar.css" rel="stylesheet" />
     <!-- #EndEditable -->
-    
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="js/contrib/html5shiv.min.js"></script>
     <script src="js/contrib/respond.min.js"></script>
     <![endif]-->
-    
   </head>
-	<!-- #BeginEditable "body-tag" -->
-	 <body>
-    <!-- #EndEditable -->
- 
-    <div class="container">
-      <nav class="top-bar" data-topbar>
-        <!-- Title -->
-        <ul class="title-area">
-          <li class="name">
-            <h1><a href="#">Psychology</a></h1>
+  <!-- #BeginEditable "body-tag" -->
+  <body class="home">
+  <!-- #EndEditable -->
+  <div class="container">
+    <div class="row">
+      <nav class="util-bar">
+        <ul>
+          <li class="hidden-xs" id="uti-news">
+            <a href="#">Latest News</a>
           </li>
-          <!-- Mobile Menu Toggle -->
-          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+          <li class="hidden-xs" id="uti-events">
+            <a href="#">Events</a>
+          </li>
+          <li class="hidden-xs" id="uti-give">
+            <a href="#">Give</a>
+          </li>
+          <li class="hidden-xs" id="uti-search">
+            <form action=".">
+              <input type="search" name="search" placeholder="Search" />
+            </form>
+          </li>
+          <li class="hidden-xs" id="uti-share">
+            <a href="#"></a>
+          </li>
+          <li id="uti-logo">
+            <a href="#">
+              <img src="images/nav-logo.png" />
+            </a>
+          </li>
         </ul>
-        <!-- Top Bar Section -->
-        <section class="top-bar-section">
-          <!-- Top Bar Left Nav Elements -->
-          <ul class="left">
-            <!-- Search | has-form wrapper -->
-            <li class="has-form">
-              <div class="row collapse">
-                <div class="large-8 small-9 columns">
-                  <input type="text" placeholder="Find Stuff">
-                </div>
-                <div class="large-4 small-3 columns">
-                  <a href="#" class="alert button expand">Search</a>
-                </div>
-              </div>
-            </li>
-          </ul>
-          <!-- Top Bar Right Nav Elements -->
-          <ul class="right">
-            <!-- Divider -->
-            <li class="divider"></li>
-            <!-- Dropdown -->
-            <li class="has-dropdown">
-              <a href="#">Item 1</a>
-              <ul class="dropdown">
-                <li><a href="#">Sub-item 1</a></li>
-                <li><a href="#">Sub-item 2</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Sub-item 3</a></li>
-                <li class="has-dropdown">
-                  <a href="#">Sub-item 4</a>
-                  <!-- Nested Dropdown -->
-                  <ul class="dropdown">
-                    <li><a href="#">Sub-item 2</a></li>
-                    <li><a href="#">Sub-item 3</a></li>
-                    <li><a href="#">Sub-item 4</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Sub-item 5</a></li>
-              </ul>
-            </li>
-						   <li class="has-dropdown">
-              <a href="#">Item 1</a>
-              <ul class="dropdown">
-                <li><a href="#">Sub-item 1</a></li>
-                <li><a href="#">Sub-item 2</a></li>               
-              </ul>
-            </li>
-						   <li class="has-dropdown">
-              <a href="#">Item 1</a>
-              <ul class="dropdown">
-                <li><a href="#">Sub-item 1</a></li>
-                <li><a href="#">Sub-item 2</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Sub-item 3</a></li>                
-              </ul>
-            </li>
-						   <li class="has-dropdown">
-              <a href="#">Item 1</a>
-              <ul class="dropdown">
-                <li><a href="#">Sub-item 1</a></li>
-                <li><a href="#">Sub-item 2</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Sub-item 3</a></li>
-                <li class="has-dropdown">
-                  <a href="#">Sub-item 4</a>
-                  <!-- Nested Dropdown -->
-                  <ul class="dropdown">
-                    <li><a href="#">Sub-item 2</a></li>
-                    <li><a href="#">Sub-item 3</a></li>
-                    <li><a href="#">Sub-item 4</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Sub-item 5</a></li>
-              </ul>
-            </li>
-						   <li class="has-dropdown">
-              <a href="#">Item 1</a>
-              <ul class="dropdown">
-                <li><a href="#">Sub-item 1</a></li>
-                <li><a href="#">Sub-item 2</a></li>
-                <li><a href="#">Sub-item 5</a></li>
-              </ul>
-            </li>
-            <li class="divider"></li>
-            <!-- Anchor -->
-            <li class="divider"></li>
-            <!-- Button -->
-          </ul>
-        </section>
       </nav>
-      <!-- #BeginEditable "content" --> 	
-      <div class="jumbotron">
-        <h1>Banner</h1>
-      </div>    
-      <div class="landscape">
-        <ul  id="myTab" class="nav nav-tabs">
-          <li class="active"><a href="#contA" data-toggle="tab">Lorem</a></li>
-          <li><a href="#contB" data-toggle="tab">Site Map</a></li>
-          <li><a href="#contC" data-toggle="tab">Lorem</a></li>
-        </ul>
-        <div class="ls-content">
-          <div class="col-xs-12 col-sm 12 col-md-12 col-lg-4 content-main"  id="contA">
-            <h2>Lorem Ipsum</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec malesuada lectus. Curabitur pharetra velit sit amet lectus porta auctor. Curabitur laoreet nisl ullamcorper ante posuere malesuada. </p>
-            <p><a class="btn btn-primary btn-home" href="#" role="button">View details »</a></p>
-          </div>
-          <div class="col-xs-12 col-sm 12 col-md-12 col-lg-4 content-main"  id="contB">
-            <h2>Site Map</h2>
-            <ul>
-              <li><a href="t1_charts.html">t1_charts.html</a></li>
-              <li><a href="t2_ourpeople.html">t2_ourpeople.html</a></li>
-              <li><a href="t3_bio.html">t3_bio.html</a></li>
-              <li><a href="t4_adhoc.html">t4_adhoc.html</a></li>
-              <li><a href="t5_research.html">t5_research.html</a></li>
-              <li><a href="t6_research_area.html">t6_research_area.html</a></li>
-              <li><a href="t7_research_lab.html">t7_research_lab.html</a></li>
-              <li><a href="t8_research_project.html">t8_research_project.html</a></li>
-              <li><a href="t9_contact.html">t9_contact.html</a></li>
-              <li><a href="t10_students.html">t10_students.html</a></li>
-              <li><a href="t11_prospective_students.html">t11_prospective_students.html</a></li>
-              <li><a href="t12_grad_program.html">t12_grad_program.html</a></li>
-              <li><a href="t13_news.html">t13_news.html</a></li>
-              <li><a href="t14_events.html">t14_events.html</a></li>
-              <li><a href="t15_search.html">t15_search.html</a></li>
+    </div>
+		<div class="toggle-topbar menu-icon">
+			<a href="#">
+				<span></span>
+			</a>
+		</div>
+    <nav class="top-bar" data-topbar="">
+      <!-- Title -->
+      <ul class="title-area">
+        <li class="name">
+          <h1>
+            <a href="#">Psychology</a>
+          </h1>
+        </li>
+        <!-- Mobile Menu Toggle -->
+      </ul>
+      <!-- Top Bar Section -->
+      <section class="top-bar-section">
+        <!-- Top Bar Right Nav Elements -->
+        <ul class="right">
+          <!-- Dropdown -->
+          <li class="has-dropdown">
+            <a href="#">Connect</a>
+            <ul class="dropdown">
+              <li>
+                <a href="#">Sub-item 1</a>
+              </li>
+              <li>
+                <a href="#">Sub-item 2</a>
+              </li>
+              <li>
+                <a href="#">Sub-item 3</a>
+              </li>
+              <li class="has-dropdown">
+              <a href="#">Sub-item 4</a> 
+              <!-- Nested Dropdown -->
+              <ul class="dropdown">
+                <li>
+                  <a href="#">Sub-item 2</a>
+                </li>
+                <li>
+                  <a href="#">Sub-item 3</a>
+                </li>
+                <li>
+                  <a href="#">Sub-item 4</a>
+                </li>
+              </ul></li>
+              <li>
+                <a href="#">Sub-item 5</a>
+              </li>
             </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="#">Students</a>
+            <ul class="dropdown">
+              <li>
+                <a href="#">Sub-item 1</a>
+              </li>
+              <li>
+                <a href="#">Sub-item 2</a>
+              </li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="#">Research</a>
+            <ul class="dropdown">
+              <li>
+                <a href="#">Sub-item 1</a>
+              </li>
+              <li>
+                <a href="#">Sub-item 2</a>
+              </li>
+              <li>
+                <a href="#">Sub-item 3</a>
+              </li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="#">Our People</a>
+            <ul class="dropdown">
+              <li>
+                <a href="#">Sub-item 1</a>
+              </li>
+              <li>
+                <a href="#">Sub-item 2</a>
+              </li>
+              <li>
+                <a href="#">Sub-item 3</a>
+              </li>
+              <li class="has-dropdown">
+              <a href="#">Sub-item 4</a> 
+              <!-- Nested Dropdown -->
+              <ul class="dropdown">
+                <li>
+                  <a href="#">Sub-item 2</a>
+                </li>
+                <li>
+                  <a href="#">Sub-item 3</a>
+                </li>
+                <li>
+                  <a href="#">Sub-item 4</a>
+                </li>
+              </ul></li>
+              <li>
+                <a href="#">Sub-item 5</a>
+              </li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="#">Facilities &amp; Services</a>
+            <ul class="dropdown">
+              <li>
+                <a href="#">Sub-item 1</a>
+              </li>
+              <li>
+                <a href="#">Sub-item 2</a>
+              </li>
+              <li>
+                <a href="#">Sub-item 5</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </nav>
+    <!-- #BeginEditable "content" -->
+    <div class="jumbotron">
+      <h1>Banner</h1>
+    </div>
+    <div class="landscape">
+      <div class="content">
+        <div class="panel-group" id="content-accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-target="#container-A" data-toggle="collapse" data-parent="#content-accordion">Lorem</a>
+              </h4>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4 content-main collapsible panel-collapse collapse"
+            id="container-A">
+              <h2>Lorem Ipsum</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec malesuada lectus. Curabitur pharetra velit
+              sit amet lectus porta auctor. Curabitur laoreet nisl ullamcorper ante posuere malesuada.</p>
+              <p>
+                <a class="btn btn-primary btn-home" href="#" role="button">View details »</a>
+              </p>
+            </div>
           </div>
-          <div class="col-xs-12 col-sm 12 col-md-12 col-lg-4 content-main"  id="contC">
-            <h2>Lorem Ipsum</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec malesuada lectus. Curabitur pharetra velit sit amet lectus porta auctor. Curabitur laoreet nisl ullamcorper ante posuere malesuada. Etiam vehicula consectetur ipsum, sit amet rhoncus magna euismod eu. Integer consectetur, eros sed tincidunt eleifend, ligula risus dignissim enim, sit amet dapibus sem lectus nec lectus. Quisque in tempor est. Mauris pulvinar lobortis sapien ac volutpat.</p>
-            <p><a class="btn btn-primary btn-home" href="#" role="button">View details »</a></p>
+          <!--/.panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-target="#container-B" data-toggle="collapse" data-parent="#content-accordion">Lorem</a>
+              </h4>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4 content-main collapsible panel-collapse collapse"
+            id="container-B">
+              <div class="panel-body">
+                <h2>Site Map</h2>
+                <ul>
+                  <li>
+                    <a href="t1_charts.html">t1_charts.html</a>
+                  </li>
+                  <li>
+                    <a href="t2_ourpeople.html">t2_ourpeople.html</a>
+                  </li>
+                  <li>
+                    <a href="t3_bio.html">t3_bio.html</a>
+                  </li>
+                  <li>
+                    <a href="t4_adhoc.html">t4_adhoc.html</a>
+                  </li>
+                  <li>
+                    <a href="t5_research.html">t5_research.html</a>
+                  </li>
+                  <li>
+                    <a href="t6_research_area.html">t6_research_area.html</a>
+                  </li>
+                  <li>
+                    <a href="t7_research_lab.html">t7_research_lab.html</a>
+                  </li>
+                  <li>
+                    <a href="t8_research_project.html">t8_research_project.html</a>
+                  </li>
+                  <li>
+                    <a href="t9_contact.html">t9_contact.html</a>
+                  </li>
+                  <li>
+                    <a href="t10_students.html">t10_students.html</a>
+                  </li>
+                  <li>
+                    <a href="t11_prospective_students.html">t11_prospective_students.html</a>
+                  </li>
+                  <li>
+                    <a href="t12_grad_program.html">t12_grad_program.html</a>
+                  </li>
+                  <li>
+                    <a href="t13_news.html">t13_news.html</a>
+                  </li>
+                  <li>
+                    <a href="t14_events.html">t14_events.html</a>
+                  </li>
+                  <li>
+                    <a href="t15_search.html">t15_search.html</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
+          <!--/.panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-target="#container-C" data-toggle="collapse" data-parent="#content-accordion">Lorem</a>
+              </h4>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4 content-main collapsible panel-collapse collapse" id="container-C">
+              <div class="panel-body">
+                <h2>Lorem Ipsum</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec malesuada lectus. Curabitur pharetra velit
+                sit amet lectus porta auctor. Curabitur laoreet nisl ullamcorper ante posuere malesuada. Etiam vehicula consectetur
+                ipsum, sit amet rhoncus magna euismod eu. Integer consectetur, eros sed tincidunt eleifend, ligula risus dignissim
+                enim, sit amet dapibus sem lectus nec lectus. Quisque in tempor est. Mauris pulvinar lobortis sapien ac
+                volutpat.</p>
+                <p>
+                  <a class="btn btn-primary btn-home" href="#" role="button">View details »</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--/.panel -->
         </div>
       </div>
- <!-- #EndEditable -->
-      <div id="utility">
-        <nav>
-          <ul>
-            <li><a href="t13_news.html">Latest News</a></li>
-            <li><a href="t14_events.html">Events</a></li>
-            <li><a href="t4_adhoc.html">Give</a></li>
-            <li>            
-                <input type="text" id="search" placeholder="Search">
-             </li>
-          </ul>
-         </nav>
-      </div>       
-      <!-- Site footer -->
-       <!-- #BeginEditable "custom-footer" -->
-      <div class="footer">
-        <p>&copy; Company 2014 | Updated 27 June 2014</p>
-      </div>
-
-      <!-- #EndEditable -->
-     
-    </div> <!-- /container -->
-
-    	<!-- Bootstrap core JavaScript
+    </div>
+    <!-- #EndEditable -->
+    <div id="utility">
+      <nav>
+        <ul>
+          <li>
+            <a href="t13_news.html">Latest News</a>
+          </li>
+          <li>
+            <a href="t14_events.html">Events</a>
+          </li>
+          <li>
+            <a href="t4_adhoc.html">Give</a>
+          </li>
+          <li>
+            <input type="text" id="search" placeholder="Search" />
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- Site footer -->
+    <!-- #BeginEditable "custom-footer" -->
+    <div class="footer">
+      <p>� Company 2014 | Updated 27 June 2014</p>
+    </div>
+    <!-- #EndEditable -->
+  </div>
+  <!-- /container -->
+  <!-- Bootstrap core JavaScript
       ================================================== -->
-      <!-- Placed at the end of the document so the pages load faster -->
-      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="js/contrib/jquery.min.js"></script>
-			<script src="js/expand.js"></script>
-      <script src="js/bootstrap/collapse.js"></script>
- 			<script src="js/contrib/bootstrap.min.js"></script>
-			<script src="js/foundation/js/foundation/foundation.js" rel="text/javascript"></script>
-			<script src="js/foundation/js/foundation/foundation.topbar.js" rel="text/javascript"></script>
-      <script>
-				$(document).foundation();
-			</script>
-      <!--[if lt IE 9]>
-      	<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+  <!-- Placed at the end of the document so the pages load faster -->
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="js/contrib/jquery.min.js"></script> 
+  <script src="js/expand.js"></script> 
+  <script src="js/bootstrap/collapse.js"></script> 
+  <script src="js/contrib/bootstrap.min.js"></script> 
+  <script src="js/foundation/js/foundation/foundation.js" rel="text/javascript"></script> 
+  <script src="js/foundation/js/foundation/foundation.topbar.js" rel="text/javascript"></script> 
+  <script>
+    $(document).foundation();
+	</script> 
+  <script src="js/bootstrap/dropdown.js"></script> 
+  <script src="js/bootstrap/transition.js"></script> 
+  <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
       <![endif]-->
-      <!-- #BeginEditable "custom-footer-js" -->
-      
-      <script src="js/bootstrap/tab.js" rel="text/javascript"></script>     
-      <!-- #EndEditable -->
-  </body>
-<!-- #EndTemplate --></html>
+   
+  <!-- #BeginEditable "custom-footer-js" -->
+   
+  <!-- #EndEditable -->
+   
+  <!-- #EndTemplate --></body>
+</html>
