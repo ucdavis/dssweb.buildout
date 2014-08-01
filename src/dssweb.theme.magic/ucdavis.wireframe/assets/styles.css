@@ -64,7 +64,7 @@ more_text { display: none; }
 
 .caret { margin-left: 15px; }
 
-.menu-icon { display: block; background: #e5e5e5; position: relative; top: -25px; }
+.menu-icon { display: none; background: #e5e5e5; position: relative; top: -25px; }
 .menu-icon span::after { content: ""; position: absolute; display: block; height: 0; box-shadow: 0 0px 0 2px #000, 0 7px 0 2px #000, 0 14px 0 2px #000, 0 21px 0 2px #000  !important; width: 25px !important; }
 
 .panel-title a { text-decoration: none; }
