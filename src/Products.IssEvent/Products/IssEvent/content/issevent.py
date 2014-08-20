@@ -58,7 +58,9 @@ IssEventSchema['title'].storage = atapi.AnnotationStorage()
 IssEventSchema['description'].storage = atapi.AnnotationStorage()
 
 schemata.finalizeATCTSchema(IssEventSchema, moveDiscussion=False)
-
+# finalizeATCTSchema moves 'location' into 'categories', we move it back:
+IssEventSchema.changeSchemataForField('location', 'default')
+IssEventSchema.moveField('location', before='startDate')
 
 class IssEvent(base.ATCTContent):
     """Event for ISS website"""
