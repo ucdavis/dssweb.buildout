@@ -1,13 +1,14 @@
+/* _theme.scss */
 
+@import "ucd-variables";
 /* 2014-06-12 RAK: This file contains theme CSS and mediaquery for responsive (at end of file). 
-
   TODO: 
     - Move to SASS
     
 */
 
 body {
-  padding-top: 20px;
+  /*padding-top: 20px;*/
 }
 head{
 	font-family:'XS';
@@ -63,15 +64,29 @@ input{
 	}
 }
 
+#main {
+	margin-top: -450px;
+}
 
 .jumbotron {
-  text-align: center;
-  margin-top:20px;
-  background-color: transparent;
-  border:2px solid black;
+	padding: 0 !important;
+	margin: 0 !important;
+	text-align: center; 
+	margin-top: 20px; 
+	background-color: transparent;
+	
   h1{
-	font-weight:normal;
+		font-weight: normal;
+		display: none;
   }
+}
+// Fix wallpaper placement
+.wall {
+	position: absolute;
+	z-index: -100; // arrange wallpaper to back position
+	top: 0;
+	width: 100%;
+	height: 500px !important;
 }
 .sidebar{
 
@@ -93,7 +108,7 @@ input{
 	}
 }
 
-more_text{
+.more_text{
 	display:none;	
 }
 .sidebar-block-items{
@@ -105,6 +120,7 @@ more_text{
 	padding-left:15px;
 	list-style-type:circle;	
 }
+// primary blue menu
 .top-bar{
 	background:#002855 !important;
 	height:75px !important;
@@ -162,6 +178,7 @@ more_text{
 		}
 	}
 }
+// Secondary gold menu
 .util-bar{
 	max-width:730px;
 	background:#C99700;	
@@ -356,5 +373,46 @@ more_text{
 @media screen and (min-width: 992px) {	
 	head { font-family:"L";}
 	body:after{content:"L";}
-
+	.top-panel {
+		.content-main {
+			border: 1px solid red;
+			.narrow-col {
+				width: 80%;
+				color: #FFF;
+				background-color: $ucd_blue_100;
+				border: 1px solid black;
+				.btn {
+					width: 100%;
+				}
+			}
+		}
+		&.left-panel {
+			.content-main {
+				padding-right: 0;
+			}
+			.narrow-col {
+				margin-left: auto;
+			}
+		}
+		&.middle-panel {
+			.content-main {
+				padding-left: 0;
+				padding-right: 0;
+			}
+			.narrow-col {
+				margin: 0 auto;
+			}
+		}
+		&.right-panel {
+			.content-main {
+				padding-left: 0;
+			}
+			.narrow-col {
+				margin-right: auto;
+				margin-left: 0;
+			}
+		}
+	}
 }
+
+/* /_theme.scss */

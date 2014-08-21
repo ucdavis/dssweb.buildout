@@ -12,11 +12,9 @@
     <!-- #BeginEditable "title" -->
     <title>Our People</title>
     <!-- #EndEditable -->
-    <link href="assets/reset.css" rel="stylesheet" />
-    <link href="assets/reset_all.css" rel="stylesheet" />
+    <link href="assets/vendor/reset.css" rel="stylesheet" />
     <link href="assets/styles.css" rel="stylesheet" />
-    <link href="assets/theme.css" rel="stylesheet" />
-    <link href="assets/topbar.css" rel="stylesheet" />
+    <link href="assets/vendor/topbar.css" rel="stylesheet" />
     <!-- #BeginEditable "header" -->
     <link href="assets/sections/ourpeople.css" rel="stylesheet" />
     <!-- #EndEditable -->
@@ -30,6 +28,39 @@
   <body class="ourpeople">
   <!-- #EndEditable -->
   <div class="container">
+    <div class="row">
+      <nav class="util-bar">
+        <ul>
+          <li class="hidden-xs" id="uti-news">
+            <a href="#">Latest News</a>
+          </li>
+          <li class="hidden-xs" id="uti-events">
+            <a href="#">Events</a>
+          </li>
+          <li class="hidden-xs" id="uti-give">
+            <a href="#">Give</a>
+          </li>
+          <li class="hidden-xs" id="uti-search">
+            <form action=".">
+              <input type="search" name="search" placeholder="Search" />
+            </form>
+          </li>
+          <li class="hidden-xs" id="uti-share">
+            <a href="#"></a>
+          </li>
+          <li id="uti-logo">
+            <a href="#">
+              <img src="images/nav-logo.png" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+		<div class="toggle-topbar menu-icon">
+			<a href="#">
+				<span></span>
+			</a>
+		</div>
     <nav class="top-bar" data-topbar="">
       <!-- Title -->
       <ul class="title-area">
@@ -39,24 +70,14 @@
           </h1>
         </li>
         <!-- Mobile Menu Toggle -->
-        <li class="toggle-topbar menu-icon">
-          <a href="#">
-            <span>Menu</span>
-          </a>
-        </li>
       </ul>
       <!-- Top Bar Section -->
       <section class="top-bar-section">
-        <!-- Top Bar Left Nav Elements -->
-        <ul class="left">
-          <!-- Search | has-form wrapper -->
-        </ul>
         <!-- Top Bar Right Nav Elements -->
         <ul class="right">
-          <!-- Divider -->
           <!-- Dropdown -->
           <li class="has-dropdown">
-            <a href="index.html">Contact</a>
+            <a href="#">Connect</a>
             <ul class="dropdown">
               <li>
                 <a href="#">Sub-item 1</a>
@@ -143,7 +164,7 @@
             </ul>
           </li>
           <li class="has-dropdown">
-            <a href="#">Facilities and Services</a>
+            <a href="#">Facilities &amp; Services</a>
             <ul class="dropdown">
               <li>
                 <a href="#">Sub-item 1</a>
@@ -156,8 +177,6 @@
               </li>
             </ul>
           </li>
-          <!-- Anchor -->
-          <!-- Button -->
         </ul>
       </section>
     </nav>

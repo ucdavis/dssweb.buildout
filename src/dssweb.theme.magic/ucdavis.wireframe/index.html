@@ -3,34 +3,45 @@
   <!-- #BeginTemplate "/Templates/wireframe.dwt" -->
   <!-- DW6 -->
   <head>
-    <meta name="generator"
-    content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
+		
     <!-- #BeginEditable "title" -->
     <title>Home</title>
     <!-- #EndEditable -->
-    <link href="assets/reset.css" rel="stylesheet" />
-    <link href="assets/reset_all.css" rel="stylesheet" />
+		
+    <link href="assets/vendor/reset.css" rel="stylesheet" />
     <link href="assets/styles.css" rel="stylesheet" />
-    <link href="assets/theme.css" rel="stylesheet" />
+		
     <!-- #BeginEditable "header" -->
-    <link href="assets/index.css" rel="stylesheet" />
-    <link href="assets/topbar.css" rel="stylesheet" />
+    <link href="assets/sections/index.css" rel="stylesheet" />
+    <link href="assets/vendor/topbar.css" rel="stylesheet" />
+		<link href="bower_components/Wallpaper/jquery.fs.wallpaper.css" rel="stylesheet">
     <!-- #EndEditable -->
+		
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="js/contrib/html5shiv.min.js"></script>
     <script src="js/contrib/respond.min.js"></script>
     <![endif]-->
+			
   </head>
+	
   <!-- #BeginEditable "body-tag" -->
   <body class="home">
   <!-- #EndEditable -->
-  <div class="container">
+	
+  <div class="row jumbotron">
+		<div class="wall">
+    	<h1>Banner</h1>
+		</div>
+  </div>
+	
+  <div class="container" id="main">
+    
     <div class="row">
       <nav class="util-bar">
         <ul>
@@ -184,35 +195,135 @@
       </section>
     </nav>
     <!-- #BeginEditable "content" -->
-    <div class="jumbotron">
-      <h1>Banner</h1>
-    </div>
+
     <div class="landscape">
       <div class="content">
+				
         <div class="panel-group" id="content-accordion">
-          <div class="panel panel-default">
+					
+					<!-- top panels -->
+          <div class="panel panel-default top-panel left-panel">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-target="#container-1" data-toggle="collapse" data-parent="#content-accordion">News</a>
+              </h4>
+            </div>
+						
+						<!-- Left bootstrap column -->
+            <div class="col-sm-4 col-md-4 col-lg-4 content-main collapsible panel-collapse collapse"
+            id="container-1">
+							<div class="panel-body">
+								<div class="narrow-col">
+									<h2>News</h2>
+	              	<h3><a href="#">Meet the Experts: CMB research leads to new FDA-approved treatment for severe ...</a></h3>
+	              	<p>
+	                	<a class="btn btn-primary btn-home" href="#" role="button">Read More</a>
+	             	 </p>
+								</div>
+							</div>
+            </div>
+						<!-- /Left bootstrap column -->
+          </div>
+          <!--/.panel -->
+					
+          <div class="panel panel-default top-panel middle-panel">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-target="#container-2" data-toggle="collapse" data-parent="#content-accordion">About</a>
+              </h4>
+            </div>
+						
+						<!-- Middle bootstrap column -->
+            <div class="col-sm-4 col-md-4 col-lg-4 content-main collapsible panel-collapse collapse"
+            id="container-2">
+              <div class="panel-body">
+								<div class="narrow-col">
+									<div class="content">
+										<h2>About</h2>
+										<p>
+											Psychology &ndash; a multifaceted program that looks at humans, animals and computer models, from neurons to relationships to cultures, and examples the scientific bases of behavior, thought and emotions.
+										</p>
+								
+		                <h3>Quick Facts</h3>
+		                <ul>
+		                  <li>
+		                    Nationally ranked faculty
+		                  </li>
+		                  <li>
+		                    Cutting-edge research
+		                  </li>
+		                  <li>
+		                    Most popular major at UC Davis
+		                  </li>
+		                </ul>
+		                <p>
+		                  <a class="btn btn-primary btn-home" href="#" role="button">Read More</a>
+		                </p>
+									</div>
+								</div>
+              </div>
+            </div>
+						<!-- /Middle bootstrap column -->
+          </div>
+          <!--/.panel -->
+					
+          <div class="panel panel-default top-panel right-panel">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-target="#container-3" data-toggle="collapse" data-parent="#content-accordion">Events</a>
+              </h4>
+            </div>
+						
+						<!-- Right bootstrap column -->
+            <div class="col-sm-4 col-md-4 col-lg-4 content-main collapsible panel-collapse collapse" id="container-3">
+              <div class="panel-body">
+								<div class="narrow-col">
+									<h2>Events</h2>
+	                <h3><a href="#">Biological Psychology Brown Bag Series</a></h3>
+	                <h3><a href="#">Wed 06-11-2014</a></h3>
+	                <p>
+	                  <a class="btn btn-primary btn-home" href="#" role="button">Read More</a>
+	                </p>
+								</div>
+              </div>
+            </div>
+						<!-- Right bootstrap column -->
+          </div>
+          <!--/.panel -->
+					<!-- /top panels -->
+					
+					<!-- bottom panels -->
+          <div class="panel panel-default bottom-panel">
             <div class="panel-heading">
               <h4 class="panel-title">
                 <a data-target="#container-A" data-toggle="collapse" data-parent="#content-accordion">Lorem</a>
               </h4>
             </div>
+						
+						<!-- Left bootstrap column -->
             <div class="col-sm-4 col-md-4 col-lg-4 content-main collapsible panel-collapse collapse"
             id="container-A">
-              <h2>Lorem Ipsum</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec malesuada lectus. Curabitur pharetra velit
+							<div class="panel-body">
+              	<h2>Lorem Ipsum</h2>
+              	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec malesuada lectus. Curabitur pharetra velit
               sit amet lectus porta auctor. Curabitur laoreet nisl ullamcorper ante posuere malesuada.</p>
-              <p>
-                <a class="btn btn-primary btn-home" href="#" role="button">View details »</a>
-              </p>
+              	<p>
+                	<a class="btn btn-primary btn-home" href="#" role="button">View details »</a>
+              	</p>
+							</div>
             </div>
+						<!-- /Left bootstrap column -->
           </div>
           <!--/.panel -->
-          <div class="panel panel-default">
+					
+          <div class="panel panel-default bottom-panel">
             <div class="panel-heading">
               <h4 class="panel-title">
                 <a data-target="#container-B" data-toggle="collapse" data-parent="#content-accordion">Lorem</a>
               </h4>
             </div>
+						
+						<!-- Middle bootstrap column -->
             <div class="col-sm-4 col-md-4 col-lg-4 content-main collapsible panel-collapse collapse"
             id="container-B">
               <div class="panel-body">
@@ -266,14 +377,18 @@
                 </ul>
               </div>
             </div>
+						<!-- /Middle bootstrap column -->
           </div>
           <!--/.panel -->
-          <div class="panel panel-default">
+					
+          <div class="panel panel-default bottom-panel">
             <div class="panel-heading">
               <h4 class="panel-title">
                 <a data-target="#container-C" data-toggle="collapse" data-parent="#content-accordion">Lorem</a>
               </h4>
             </div>
+						
+						<!-- Right bootstrap column -->
             <div class="col-sm-4 col-md-4 col-lg-4 content-main collapsible panel-collapse collapse" id="container-C">
               <div class="panel-body">
                 <h2>Lorem Ipsum</h2>
@@ -287,11 +402,14 @@
                 </p>
               </div>
             </div>
+						<!-- Right bootstrap column -->
           </div>
           <!--/.panel -->
+					<!-- /bottom panels -->
+					
         </div>
       </div>
-    </div>
+    </div><!-- /container -->
     <!-- #EndEditable -->
     <div id="utility">
       <nav>
@@ -314,7 +432,7 @@
     <!-- Site footer -->
     <!-- #BeginEditable "custom-footer" -->
     <div class="footer">
-      <p>� Company 2014 | Updated 27 June 2014</p>
+      <p>Copyright &copy; 2014  All Rights Reserved.</p>
     </div>
     <!-- #EndEditable -->
   </div>
@@ -329,8 +447,13 @@
   <script src="js/contrib/bootstrap.min.js"></script> 
   <script src="js/foundation/js/foundation/foundation.js" rel="text/javascript"></script> 
   <script src="js/foundation/js/foundation/foundation.topbar.js" rel="text/javascript"></script> 
+	<script src="bower_components/Wallpaper/jquery.fs.wallpaper.js"></script>
+	
   <script>
     $(document).foundation();
+		$(".wall").wallpaper({
+			source: "images/nasa-bw-1.jpg"
+		});
 	</script> 
   <script src="js/bootstrap/dropdown.js"></script> 
   <script src="js/bootstrap/transition.js"></script> 
