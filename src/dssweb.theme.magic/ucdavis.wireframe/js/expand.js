@@ -172,7 +172,7 @@ $(function () {
            
         }
 				// Remove the panel body effect 
-				$(".collapsible").children().removeClass("panel-body");
+				//$(".collapsible").children().removeClass("panel-body");
 				
         // Remove the data-toggle attribute to allow the links to work in desktop
 				$(".panel-title a").removeAttr('data-toggle');

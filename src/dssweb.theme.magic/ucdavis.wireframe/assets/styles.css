@@ -12,10 +12,35 @@ body { font-size: 14px !important; font-family: Arial,sans-serif !important; }
 .sidebar-left .panel { background: #e5e5e5; }
 
 .panel-group { margin-bottom: 0 !important; }
+.panel-group .panel-body .narrow-col .content { padding: 15px; }
 .panel-group .sidebar { border: none !important; }
+
+#top-panel-row h2, #top-panel-row h3, #top-panel-row p, #top-panel-row li, #top-panel-row div { color: #FFF; }
 
 /* /end reset_all.scss */
 /* 2013-05-12 RAK: Bootstrap overrides moved from default gem installation that placed overrides directly in the _variables.scss file */
+#breadcrumb .breadcrumb { padding: 0; margin-bottom: 0; list-style: none; background-color: transparent; border-radius: 0; }
+#breadcrumb .breadcrumb > li { display: auto; }
+#breadcrumb .breadcrumb > li + li:before { padding: 0; color: auto; content: auto; }
+#breadcrumb .breadcrumb > .active { color: auto; }
+
+/*Used for overriding underlined text */
+.nounderline > a { color: inherit; text-decoration: none; }
+
+.panel-body-overriden { padding-top: 15px; padding-right: 15px; padding-bottom: 0px; padding-left: 15px; }
+
+.panel-group .panel + .panel { margin-top: 0 !important; }
+
+.panel { outline: none; border: none !important; -webkit-box-shadow: none !important; -moz-box-shadow: none !important; box-shadow: none !important; }
+
+body, div, p, li { color: #333333; }
+
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: 992px) { .top-panel .content-main .narrow-col { color: #FFF; }
+  .top-panel .content-main .narrow-col h3, .top-panel .content-main .narrow-col p { text-align: left !important; }
+  .top-panel.left-panel { text-align: right; }
+  .top-panel.middle-panel { text-align: center; }
+  .top-panel.right-panel { text-align: left; } }
 /* _theme.scss */
 /* 2014-06-12 RAK: This file contains theme CSS and mediaquery for responsive (at end of file).  TODO:  - Move to SASS 
 */
@@ -125,9 +150,9 @@ input { text-align: center; }
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: 992px) { head { font-family: "L"; }
   body:after { content: "L"; }
-  .top-panel .content-main { border: 1px solid red; }
-  .top-panel .content-main .narrow-col { width: 80%; color: #FFF; background-color: #002855; border: 1px solid black; }
+  .top-panel .content-main .narrow-col { width: 80%; color: #FFF; background-color: #002855; border: 1px solid #002855; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95); opacity: 0.95; }
   .top-panel .content-main .narrow-col .btn { width: 100%; }
+  .top-panel .content-main .narrow-col:hover { background-color: #335379; cursor: pointer; }
   .top-panel.left-panel .content-main { padding-right: 0; }
   .top-panel.left-panel .narrow-col { margin-left: auto; }
   .top-panel.middle-panel .content-main { padding-left: 0; padding-right: 0; }
@@ -1838,9 +1863,9 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 
 .list-group-item-text { margin-bottom: 0; line-height: 1.3; }
 
-.panel { margin-bottom: 20px; background-color: white; border: 1px solid transparent; border-radius: 4px; -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); }
+.panel { margin-bottom: 20px; background-color: transparent; border: 1px solid transparent; border-radius: 4px; -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); }
 
-.panel-body { padding: 15px; }
+.panel-body { padding: 0; }
 .panel-body:before, .panel-body:after { content: " "; display: table; }
 .panel-body:after { clear: both; }
 
@@ -1885,11 +1910,11 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 .panel-group .panel-footer { border-top: 0; }
 .panel-group .panel-footer + .panel-collapse .panel-body { border-bottom: 1px solid #dddddd; }
 
-.panel-default { border-color: #dddddd; }
-.panel-default > .panel-heading { color: #333333; background-color: whitesmoke; border-color: #dddddd; }
-.panel-default > .panel-heading + .panel-collapse > .panel-body { border-top-color: #dddddd; }
+.panel-default { border-color: transparent; }
+.panel-default > .panel-heading { color: #333333; background-color: whitesmoke; border-color: transparent; }
+.panel-default > .panel-heading + .panel-collapse > .panel-body { border-top-color: transparent; }
 .panel-default > .panel-heading .badge { color: whitesmoke; background-color: #333333; }
-.panel-default > .panel-footer + .panel-collapse > .panel-body { border-bottom-color: #dddddd; }
+.panel-default > .panel-footer + .panel-collapse > .panel-body { border-bottom-color: transparent; }
 
 .panel-primary { border-color: #428bca; }
 .panel-primary > .panel-heading { color: white; background-color: #428bca; border-color: #428bca; }
@@ -2252,9 +2277,9 @@ input { text-align: center; }
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: 992px) { head { font-family: "L"; }
   body:after { content: "L"; }
-  .top-panel .content-main { border: 1px solid red; }
-  .top-panel .content-main .narrow-col { width: 80%; color: #FFF; background-color: #002855; border: 1px solid black; }
+  .top-panel .content-main .narrow-col { width: 80%; color: #FFF; background-color: #002855; border: 1px solid #002855; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95); opacity: 0.95; }
   .top-panel .content-main .narrow-col .btn { width: 100%; }
+  .top-panel .content-main .narrow-col:hover { background-color: #335379; cursor: pointer; }
   .top-panel.left-panel .content-main { padding-right: 0; }
   .top-panel.left-panel .narrow-col { margin-left: auto; }
   .top-panel.middle-panel .content-main { padding-left: 0; padding-right: 0; }

@@ -32,3 +32,13 @@
   padding-bottom: 0px;
   padding-left: 15px;
 }
+.panel-group .panel+.panel{
+	margin-top:0 !important;
+}
+.panel {
+	outline: none;
+	border: none !important;
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	box-shadow: none !important;
+}

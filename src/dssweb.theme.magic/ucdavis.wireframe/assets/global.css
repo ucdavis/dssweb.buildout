@@ -1,6 +1,29 @@
+/* Legacy Drupal Omega 3 mobile styles file */
 /* This file will hold styles for the mobile version of your website (mobile first). */
 /* This also can include ANY global CSS that applies site-wide. Unless overwritten by a more specific style rule, CSS declarations in global.css will apply site-wide. Updated: 12/3/13 */
 /* 2013-05-12 RAK: Bootstrap overrides moved from default gem installation that placed overrides directly in the _variables.scss file */
+#breadcrumb .breadcrumb { padding: 0; margin-bottom: 0; list-style: none; background-color: transparent; border-radius: 0; }
+#breadcrumb .breadcrumb > li { display: auto; }
+#breadcrumb .breadcrumb > li + li:before { padding: 0; color: auto; content: auto; }
+#breadcrumb .breadcrumb > .active { color: auto; }
+
+/*Used for overriding underlined text */
+.nounderline > a { color: inherit; text-decoration: none; }
+
+.panel-body-overriden { padding-top: 15px; padding-right: 15px; padding-bottom: 0px; padding-left: 15px; }
+
+.panel-group .panel + .panel { margin-top: 0 !important; }
+
+.panel { outline: none; border: none !important; -webkit-box-shadow: none !important; -moz-box-shadow: none !important; box-shadow: none !important; }
+
+body, div, p, li { color: #333333; }
+
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: 992px) { .top-panel .content-main .narrow-col { color: #FFF; }
+  .top-panel .content-main .narrow-col h3, .top-panel .content-main .narrow-col p { text-align: left !important; }
+  .top-panel.left-panel { text-align: right; }
+  .top-panel.middle-panel { text-align: center; }
+  .top-panel.right-panel { text-align: left; } }
 /* _theme.scss */
 /* 2014-06-12 RAK: This file contains theme CSS and mediaquery for responsive (at end of file).  TODO:  - Move to SASS 
 */
@@ -110,9 +133,9 @@ input { text-align: center; }
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: 992px) { head { font-family: "L"; }
   body:after { content: "L"; }
-  .top-panel .content-main { border: 1px solid red; }
-  .top-panel .content-main .narrow-col { width: 80%; color: #FFF; background-color: #002855; border: 1px solid black; }
+  .top-panel .content-main .narrow-col { width: 80%; color: #FFF; background-color: #002855; border: 1px solid #002855; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95); opacity: 0.95; }
   .top-panel .content-main .narrow-col .btn { width: 100%; }
+  .top-panel .content-main .narrow-col:hover { background-color: #335379; cursor: pointer; }
   .top-panel.left-panel .content-main { padding-right: 0; }
   .top-panel.left-panel .narrow-col { margin-left: auto; }
   .top-panel.middle-panel .content-main { padding-left: 0; padding-right: 0; }
@@ -125,24 +148,6 @@ input { text-align: center; }
  ... compiles as: #my-div, #my-other-div { font-family: Verdana; }
 
 */
-#breadcrumb .breadcrumb { padding: 0; margin-bottom: 0; list-style: none; background-color: transparent; border-radius: 0; }
-#breadcrumb .breadcrumb > li { display: auto; }
-#breadcrumb .breadcrumb > li + li:before { padding: 0; color: auto; content: auto; }
-#breadcrumb .breadcrumb > .active { color: auto; }
-
-/*Used for overriding underlined text */
-.nounderline > a { color: inherit; text-decoration: none; }
-
-.panel-body-overriden { padding-top: 15px; padding-right: 15px; padding-bottom: 0px; padding-left: 15px; }
-
-body, div, p, li { color: #333333; }
-
-/*----- Desktop breakpoint -------*/
-@media screen and (min-width: 992px) { .top-panel .content-main .narrow-col { color: #FFF; }
-  .top-panel .content-main .narrow-col h3, .top-panel .content-main .narrow-col p { text-align: left !important; }
-  .top-panel.left-panel { text-align: right; }
-  .top-panel.middle-panel { text-align: center; }
-  .top-panel.right-panel { text-align: left; } }
 @-ms-viewport { width: device-width; }
 html, body { color: #333333; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.3125em; font-family: Arial, Helvetica, sans-serif; line-height: 1.313em; }
 

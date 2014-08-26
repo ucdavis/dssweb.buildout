@@ -5,39 +5,51 @@ body{
 }
 .col-lg-4{
 	h2{
-    font-weight:bold !important;
-    font-size:30px !important;
-    margin-bottom:15px;
+    font-weight: bold !important;
+    font-size: 30px !important;
+    margin-bottom: 15px;
 	}
     
 }
 .about-bio {
 	h3{
-	font-weight:bold;
+	font-weight: bold;
 	}	
 }
 
 .btn-primary{
- margin-top:15px;   
- color:#fff !important;   
+ margin-top: 15px;   
+ color: #fff !important;   
 }
 .sidebar-info{
 	h4{
-	font-weight:bold;
-	font-size:16px;
+	font-weight: bold;
+	font-size: 16px;
 	}
 }
 .sidebar-left{
 	.panel{
-		background:#e5e5e5;
+		background: #e5e5e5;
 	}
 
 }
 
 .panel-group{
-	margin-bottom:0 !important;
+	margin-bottom: 0 !important;
+	.panel-body {
+		.narrow-col {
+			.content {
+				padding: 15px;
+			}
+		}
+	}
 	.sidebar{
-		border:none !important;
+		border: none !important;
+	}
+}
+#top-panel-row {
+	h2, h3, p, li, div {
+		color: #FFF;
 	}
 }
 /* /end reset_all.scss */

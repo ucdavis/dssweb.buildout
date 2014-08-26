@@ -1,6 +1,8 @@
 /* _theme.scss */
 
 @import "ucd-variables";
+@import "compass/css3/opacity";
+
 /* 2014-06-12 RAK: This file contains theme CSS and mediaquery for responsive (at end of file). 
   TODO: 
     - Move to SASS
@@ -373,16 +375,21 @@ input{
 @media screen and (min-width: 992px) {	
 	head { font-family:"L";}
 	body:after{content:"L";}
+	
 	.top-panel {
 		.content-main {
-			border: 1px solid red;
 			.narrow-col {
 				width: 80%;
 				color: #FFF;
 				background-color: $ucd_blue_100;
-				border: 1px solid black;
+				border: 1px solid $ucd_blue_100;
+				@include opacity(0.95);
 				.btn {
 					width: 100%;
+				}
+				&:hover {
+					background-color: $ucd_blue_80;
+					cursor: pointer;
 				}
 			}
 		}
