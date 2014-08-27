@@ -35,12 +35,18 @@ body:after{
 	}
 }
 .footer {	
-  padding-top: 40px;
-  padding-bottom: 40px;
-  margin-top: 20px;
-  border-top: 1px solid #eee;
-  text-align:center;
-  clear:both;
+	background-color:$ucd_blue_70;
+	height:250px;
+	clear:both;
+	.footer-nav, p{
+		float:left;
+		color:#fff;
+		text-decoration:none;
+	}
+	p{
+		margin-left:90px;
+		margin-right:175px;
+	}
 }
 
 input{
@@ -93,11 +99,20 @@ input{
 .sidebar{
 
 	height:auto;
+	width:250px !important;
 	margin-top:15px;
 	text-align:center;
 	background:#e5e5e5;
 	h3{
-		height:auto;
+		height:30px;
+		a{
+			color:#fff;
+			text-transform:uppercase;
+			line-height:22px;
+			letter-spacing:.1em;
+			font-size:13px;
+			
+		}
 	}
 	.panel-title a:hover{
 		cursor:text;
@@ -124,7 +139,7 @@ input{
 }
 // primary blue menu
 .top-bar{
-	background:#002855 !important;
+	background:$ucd_blue_100 !important;
 	height:75px !important;
 	
 	.title-area{	
@@ -137,6 +152,7 @@ input{
 					text-transform:uppercase;
 					font-family: lucida sans;
 					font-weight:bold;
+					line-height:20px;
 					text-decoration:none;
 				}
 			}
@@ -148,19 +164,27 @@ input{
 			width:60%;
 			height:100% !important;
 			// Parent level buttons
+			 .last{
+					a{
+						font-size:14px;
+					}
+				}
 			 > li{
 				background:#002855 !important;
 				height:100%;
 				text-align:center;
 				width:20%;
+					
 				&:hover{
 						background:#4d688c !important;
 					}
+				
 				a{
 					position:relative;	
 					width:100%;
 					background:transparent !important;
 					top:17px;
+					font-size:17px;
 					padding:0 !important;
 					
 					// gets rid of carets in nav
@@ -183,9 +207,10 @@ input{
 // Secondary gold menu
 .util-bar{
 	max-width:730px;
-	background:#C99700;	
+	background:$ucd_bright_gold;	
 	height:40px;
 	margin-left:auto;
+	margin-top:56px;
 	margin-right:15px;
 	ul{
 		height:100%;
@@ -203,7 +228,10 @@ input{
 				position:relative;
 				text-decoration:none;
 				color:#000;
+				text-transform:uppercase;
 				top:8px;
+				font-family:lucida sans;
+				font-size:14px;
 				text-align:center;
 			}
 			input{
@@ -263,7 +291,8 @@ input{
 		}
 }
 .panel-title {
-
+	background: $rec_blue;
+	width:250px;
 	a{
 		text-decoration:none;
 	}

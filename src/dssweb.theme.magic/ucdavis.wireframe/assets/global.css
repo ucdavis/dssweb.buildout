@@ -36,7 +36,9 @@ body:after { content: "XS"; display: none; }
 #utility ul li { text-align: center; display: inline; list-style-type: none; padding-right: 50px; width: 100%; }
 #utility ul { padding-top: 100px; text-align: center; clear: both; }
 
-.footer { padding-top: 40px; padding-bottom: 40px; margin-top: 20px; border-top: 1px solid #eee; text-align: center; clear: both; }
+.footer { background-color: #4d688c; height: 250px; clear: both; }
+.footer .footer-nav, .footer p { float: left; color: #fff; text-decoration: none; }
+.footer p { margin-left: 90px; margin-right: 175px; }
 
 input { text-align: center; }
 
@@ -56,8 +58,9 @@ input { text-align: center; }
 
 .wall { position: absolute; z-index: -100; top: 0; width: 100%; height: 500px !important; }
 
-.sidebar { height: auto; margin-top: 15px; text-align: center; background: #e5e5e5; }
-.sidebar h3 { height: auto; }
+.sidebar { height: auto; width: 250px !important; margin-top: 15px; text-align: center; background: #e5e5e5; }
+.sidebar h3 { height: 30px; }
+.sidebar h3 a { color: #fff; text-transform: uppercase; line-height: 22px; letter-spacing: .1em; font-size: 13px; }
 .sidebar .panel-title a:hover { cursor: text; }
 .sidebar .panel-heading { padding: 0; }
 .sidebar .collapsible { background: #e5e5e5; }
@@ -69,20 +72,21 @@ input { text-align: center; }
 .top-bar { background: #002855 !important; height: 75px !important; }
 .top-bar .title-area { top: 15px; }
 .top-bar .title-area .name { letter-spacing: .15em; }
-.top-bar .title-area .name h1 a { font-size: 1.5rem; text-transform: uppercase; font-family: lucida sans; font-weight: bold; text-decoration: none; }
+.top-bar .title-area .name h1 a { font-size: 1.5rem; text-transform: uppercase; font-family: lucida sans; font-weight: bold; line-height: 20px; text-decoration: none; }
 .top-bar .top-bar-section { height: 100%; }
 .top-bar .top-bar-section .right { width: 60%; height: 100% !important; }
+.top-bar .top-bar-section .right .last a { font-size: 14px; }
 .top-bar .top-bar-section .right > li { background: #002855 !important; height: 100%; text-align: center; width: 20%; }
 .top-bar .top-bar-section .right > li:hover { background: #4d688c !important; }
-.top-bar .top-bar-section .right > li a { position: relative; width: 100%; background: transparent !important; top: 17px; padding: 0 !important; }
+.top-bar .top-bar-section .right > li a { position: relative; width: 100%; background: transparent !important; top: 17px; font-size: 17px; padding: 0 !important; }
 .top-bar .top-bar-section .right > li a:after { display: none !important; }
 .top-bar .top-bar-section .right > li .dropdown { top: 100%; }
 .top-bar .top-bar-section .right > li .dropdown li { background: #002855 !important; }
 
-.util-bar { max-width: 730px; background: #C99700; height: 40px; margin-left: auto; margin-right: 15px; }
+.util-bar { max-width: 730px; background: #daaa00; height: 40px; margin-left: auto; margin-top: 56px; margin-right: 15px; }
 .util-bar ul { height: 100%; }
 .util-bar ul li { float: left; padding-left: 3px; padding-right: 3px; display: inline; height: 100%; }
-.util-bar ul li a { display: block; margin-left: auto; margin-right: auto; position: relative; text-decoration: none; color: #000; top: 8px; text-align: center; }
+.util-bar ul li a { display: block; margin-left: auto; margin-right: auto; position: relative; text-decoration: none; color: #000; text-transform: uppercase; top: 8px; font-family: lucida sans; font-size: 14px; text-align: center; }
 .util-bar ul li input { width: 100%; position: relative; top: 5px; text-align: left; padding-left: 10px; }
 .util-bar #uti-news { width: 21.92%; border-right: 1px solid #fff; }
 .util-bar #uti-events { width: 10.96%; border-right: 1px solid #fff; border-left: 1px solid #fff; }
@@ -96,6 +100,7 @@ input { text-align: center; }
 .menu-icon { display: none; background: #e5e5e5; position: relative; top: -25px; }
 .menu-icon span::after { content: ""; position: absolute; display: block; height: 0; box-shadow: 0 0px 0 2px #000, 0 7px 0 2px #000, 0 14px 0 2px #000, 0 21px 0 2px #000  !important; width: 25px !important; }
 
+.panel-title { background: #008eaa; width: 250px; }
 .panel-title a { text-decoration: none; }
 
 .panel-collapse { overflow: hidden; }
@@ -149,6 +154,7 @@ input { text-align: center; }
 
 */
 @-ms-viewport { width: device-width; }
+
 html, body { color: #333333; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.3125em; font-family: Arial, Helvetica, sans-serif; line-height: 1.313em; }
 
 strong { font-weight: bold !important; }
