@@ -2,8 +2,13 @@ body, div, p, li {
   color: $ucd_black_80;
 }
 
-
-
+@font-face{
+		font-family: 'lucida sans bold';
+    src: url('fonts/lucida/LucidaSansBold.ttf');
+    font-weight: normal;
+    font-style: normal;
+		
+}
 
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: 992px) {	

@@ -6,7 +6,7 @@
 /* 2014-06-12 RAK: This file contains theme CSS and mediaquery for responsive (at end of file). 
   TODO: 
     - Move to SASS
-    
+     
 */
 
 body {
@@ -19,7 +19,19 @@ body:after{
 	content:"XS"; 
 	display:none;
 }
-
+.container{
+	width:1280px;
+	padding:0;
+}
+.body-img{
+	border:1px solid red;
+	height:120px;
+	width:200px;
+	float:left;
+}
+.content{
+	margin-left:90px;
+}
 #utility {
 	ul li{	
 		text-align:center;
@@ -37,15 +49,64 @@ body:after{
 .footer {	
 	background-color:$ucd_blue_70;
 	height:250px;
+	width:100%;
 	clear:both;
+	.foot-wrap{
+		margin-right: 0 90px;
+		width:100%;
+	}
 	.footer-nav, p{
-		float:left;
+		float:left;		
 		color:#fff;
 		text-decoration:none;
+		margin-top:36px;
+	}
+	#copyright{
+		clear:both;
+	}
+	.footer-nav{
+		border-left:1px solid white;
+		width:150px;		
+		li{		
+			
+			padding-left:10px;
+			a{
+			
+				color:#fff;
+			}
+		}
 	}
 	p{
-		margin-left:90px;
-		margin-right:175px;
+		margin-right:135px;
+		font-size:14px;
+		font-family:lucida;
+		a{
+			color:#fff;
+			text-decoration: underline;
+			letter-spacing:.014em;
+		}
+	}
+
+	#foot-social{
+		width:217px;
+		float:left;
+		margin-top:35px;
+		margin-left:85px;
+		li{
+			display:inline;
+			width:50px;
+			a{
+			border-left: 1px solid white;
+			padding: 0 15px;
+			color:#fff;
+			
+			}
+		}	
+		.last{
+				a{
+					border-right:1px solid white;
+				}
+			}
 	}
 }
 
@@ -56,11 +117,21 @@ input{
 	margin-top:15px;	
 }
 .content{
-	margin-top:15px;
+	margin-top:47px;
+	margin-bottom:40px;
+	padding:0;
+}
+
+.breadcrumb{
+	background:none;
+	padding:0 0 !important;
+	margin-bottom:10px;
 }
 .content-title{
 	padding-bottom:20px;
-	text-align:center;
+	font-size:36px;
+	letter-spacing:.01em;
+	margin-top:0px !important;
 }
 .content-main{
 	font-size:16px;
@@ -97,12 +168,11 @@ input{
 	height: 500px !important;
 }
 .sidebar{
-
 	height:auto;
 	width:250px !important;
 	margin-top:15px;
-	text-align:center;
-	background:#e5e5e5;
+	text-align:left;
+	background:#f2f2f2;
 	h3{
 		height:30px;
 		a{
@@ -111,7 +181,9 @@ input{
 			line-height:22px;
 			letter-spacing:.1em;
 			font-size:13px;
-			
+			padding-left:38px;
+			position:relative;
+			top:4px;
 		}
 	}
 	.panel-title a:hover{
@@ -121,12 +193,58 @@ input{
 			padding:0;
 	}
 	.collapsible{
-		background:#e5e5e5;
+		background:#f2f2f2;
 	}
 }
-
+.sidebar-right{
+	position:relative;
+	top:140px;
+	float:right;
+	margin-right:90px;
+}
 .more_text{
 	display:none;	
+}
+.body-list, .sub-list{
+	list-style-type:circle;
+	margin-left:20px;
+	li{
+		padding-bottom:10px;
+	}
+}
+.download{
+	font-weight:bold;
+}
+#downloads{
+	a{
+		text-decoration:underline;
+		color:$ucd_blue_80;
+	}
+}
+#sidebar-block-contact{
+	margin-top:20px;
+	li{
+		text-align:left;
+		padding-left:38px;
+	}
+	#name{
+		text-transform:uppercase;
+		color:$ucd_blue_80;
+		font-family:lucida bold;
+	}
+	#position{
+		font-style:italic;
+		font-size:12px;
+		letter-spacing:.01em;
+	}
+	#phone{
+		font-size:13px;
+		letter-spacing:.01em;
+	}
+	#email{
+		font-size:13px;
+		letter-spacing:.01em;
+	}
 }
 .sidebar-block-items{
 	background:#e5e5e5;	
@@ -135,13 +253,14 @@ input{
 	width:auto;
 	height:100%;
 	padding-left:15px;
+	margin-left:35px;
 	list-style-type:circle;	
 }
 // primary blue menu
 .top-bar{
 	background:$ucd_blue_100 !important;
-	height:75px !important;
-	
+	height:80px !important;
+	margin:0 90px;
 	.title-area{	
 		top:15px;
 		.name{
@@ -150,9 +269,9 @@ input{
 				a{					
 					font-size:1.5rem;
 					text-transform:uppercase;
-					font-family: lucida sans;
+					font-family:lucida sans bold;
 					font-weight:bold;
-					line-height:20px;
+					//line-height:20px;
 					text-decoration:none;
 				}
 			}
@@ -160,20 +279,21 @@ input{
 	}
 	.top-bar-section{
 		height:100%;
+		
 		.right{
 			width:60%;
 			height:100% !important;
 			// Parent level buttons
 			 .last{
-					a{
-						font-size:14px;
-					}
+									
+					width:28% !important;
+					
 				}
 			 > li{
 				background:#002855 !important;
 				height:100%;
 				text-align:center;
-				width:20%;
+				width:18%;
 					
 				&:hover{
 						background:#4d688c !important;
@@ -211,7 +331,7 @@ input{
 	height:40px;
 	margin-left:auto;
 	margin-top:56px;
-	margin-right:15px;
+	margin-right:105px;
 	ul{
 		height:100%;
 		
@@ -233,6 +353,7 @@ input{
 				font-family:lucida sans;
 				font-size:14px;
 				text-align:center;
+				
 			}
 			input{
 				width:100%;
@@ -297,6 +418,22 @@ input{
 		text-decoration:none;
 	}
 }
+.panel-body{
+	h2{
+		font-size:18px;
+		letter-spacing:.03em;		
+	}
+	h3{
+		font-size:15px;
+		letter-spacing:.01em;
+		font-weight:bold;
+		margin-top:0;
+	}
+
+	.body-img{
+		margin-right:20px;
+	}
+}
 .panel-collapse{
 	overflow:hidden;	
 }
@@ -342,7 +479,7 @@ input{
 		background:transparent;
 	}
 	.sidebar-right{	
-		margin-top:15px;
+		margin-top:100px;
 		clear:both;
 		float:left !important;
 	}
@@ -386,7 +523,8 @@ input{
 		top:-18px;
 	}
 	.sidebar-right{	
-		float:right;		
+		float:right;
+		margin-top:100px;		
 	}
 	.op-sidebar-title {
 		text-align:left !important;
