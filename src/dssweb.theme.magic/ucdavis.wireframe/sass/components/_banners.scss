@@ -1,4 +1,26 @@
 /* components/_banners.scss */
+
+.jumbotron {
+	padding: 0 !important;
+	margin: 0 !important;
+	text-align: center; 
+	margin-top: 20px; 
+	background-color: transparent;
+	
+  h1{
+		font-weight: normal;
+		display: none;
+  }
+}
+// Fix wallpaper placement
+.wall {
+	position: absolute;
+	z-index: -100; // arrange wallpaper to back position
+	top: 0;
+	width: 100%;
+	height: 500px !important;
+}
+
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: 992px) {	
 

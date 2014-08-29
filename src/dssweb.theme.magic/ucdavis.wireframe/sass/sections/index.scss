@@ -21,6 +21,11 @@
 	.wall {
 		height: 741px !important;
 	}
+	#middle-row {
+		h2 {
+			text-align: center;
+		}
+	}
 }
 
 @media screen and (min-width: 1200px) {	

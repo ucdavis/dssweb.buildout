@@ -4,6 +4,7 @@
   .content-main h2 { text-align: center; } }
 @media screen and (min-width: 768px) { /* Style adjustments for the partial-cover home wall component */
   #main { margin-top: -701px; /* wall height 741 - 30 px top margin */ }
-  .wall { height: 741px !important; } }
+  .wall { height: 741px !important; }
+  #middle-row h2 { text-align: center; } }
 @media screen and (min-width: 1200px) { .content-main h2 { text-align: center; }
   /* Custom Styles for this breakpoint */ }
