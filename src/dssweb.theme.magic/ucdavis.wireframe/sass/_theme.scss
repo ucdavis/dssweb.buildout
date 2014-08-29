@@ -143,10 +143,6 @@ input{
 	}
 }
 
-#main {
-	margin-top: -450px;
-}
-
 .jumbotron {
 	padding: 0 !important;
 	margin: 0 !important;
@@ -543,50 +539,6 @@ input{
 	head { font-family:"L";}
 	body:after{content:"L";}
 	
-	.top-panel {
-		.content-main {
-			.narrow-col {
-				width: 80%;
-				color: #FFF;
-				background-color: $ucd_blue_100;
-				border: 1px solid $ucd_blue_100;
-				@include opacity(0.95);
-				.btn {
-					width: 100%;
-				}
-				&:hover {
-					background-color: $ucd_blue_80;
-					cursor: pointer;
-				}
-			}
-		}
-		&.left-panel {
-			.content-main {
-				padding-right: 0;
-			}
-			.narrow-col {
-				margin-left: auto;
-			}
-		}
-		&.middle-panel {
-			.content-main {
-				padding-left: 0;
-				padding-right: 0;
-			}
-			.narrow-col {
-				margin: 0 auto;
-			}
-		}
-		&.right-panel {
-			.content-main {
-				padding-left: 0;
-			}
-			.narrow-col {
-				margin-right: auto;
-				margin-left: 0;
-			}
-		}
-	}
 }
 
 /* /_theme.scss */

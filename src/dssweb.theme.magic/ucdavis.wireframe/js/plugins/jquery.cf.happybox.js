@@ -14,6 +14,7 @@
 						action_element_class: '.happy-content',
 						canvas_element_class: '.happy-canvas',
 						button_class: 'happy-btn',
+						button_height: 50,
 						pclass: "cf-happybox-processed",
 						height: 200
         };
@@ -90,7 +91,7 @@
 						}, 900, "easeOutBounce");*/
 						
 						$(this).animate({
-						'paddingTop': -270
+						'paddingTop': (happy_parent.options.button_height - happy_parent.options.height) // (how much of the box should peek out)
 						}, 900, "easeOutBounce", function() {
 							// $( this ).after( "<div>Animation complete.</div>" );
 						});
@@ -100,15 +101,16 @@
 					// Hover event - Get happy feet
 					$(canvas_element).hover(function() {
 						var animObj = $(this).parent().parent();
+						var height = $(this).height();
 						if(typeof window.console == "object") window.console.log("Happybox: class="+$(this).attr('class')+", easeOutBounce1 event");
 						animObj.stop().animate({
-							'paddingTop': 0
+							'paddingTop': (happy_parent.options.height - height) // stick boxes to bottom: TODO: Have max-height 
 						}, 900, "easeOutBounce");
 						}, function() {
 						var animObj = $(this).parent().parent();
 						if(typeof window.console == "object") window.console.log("Happybox: class="+$(this).attr('class')+", easeOutBounce2 event");
 						animObj.stop().animate({
-							'paddingTop': 270
+							'paddingTop': (happy_parent.options.height - happy_parent.options.button_height)
 						}, 900, "easeOutBounce");
 					});
 							
@@ -120,7 +122,7 @@
 					happy_parent._happy();
 					
 					// Temporary: TODO: Remove ...
-					action_element.css('padding-top', (happy_parent.options.height-50));
+					action_element.css('padding-top', (happy_parent.options.height-happy_parent.options.button_height));
 					//action_element.css('border','1px solid blue');
 					
 				});

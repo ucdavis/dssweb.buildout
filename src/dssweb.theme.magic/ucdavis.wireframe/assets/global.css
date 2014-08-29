@@ -19,7 +19,6 @@
 body, div, p, li { color: #333333; }
 
 @font-face { font-family: 'lucida sans bold'; src: url("fonts/lucida/LucidaSansBold.ttf"); font-weight: normal; font-style: normal; }
-
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: 992px) { .top-panel .content-main .narrow-col { color: #FFF; }
   .top-panel .content-main .narrow-col h3, .top-panel .content-main .narrow-col p { text-align: left !important; }
@@ -70,8 +69,6 @@ input { text-align: center; }
 
 .content-main { font-size: 16px; }
 .content-main h2 { font-size: 25px; font-weight: bold; padding-top: 15px; padding-bottom: 15px; }
-
-#main { margin-top: -450px; }
 
 .jumbotron { padding: 0 !important; margin: 0 !important; text-align: center; margin-top: 20px; background-color: transparent; }
 .jumbotron h1 { font-weight: normal; display: none; }
@@ -177,16 +174,7 @@ input { text-align: center; }
   body:after { content: "M"; } }
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: 992px) { head { font-family: "L"; }
-  body:after { content: "L"; }
-  .top-panel .content-main .narrow-col { width: 80%; color: #FFF; background-color: #002855; border: 1px solid #002855; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95); opacity: 0.95; }
-  .top-panel .content-main .narrow-col .btn { width: 100%; }
-  .top-panel .content-main .narrow-col:hover { background-color: #335379; cursor: pointer; }
-  .top-panel.left-panel .content-main { padding-right: 0; }
-  .top-panel.left-panel .narrow-col { margin-left: auto; }
-  .top-panel.middle-panel .content-main { padding-left: 0; padding-right: 0; }
-  .top-panel.middle-panel .narrow-col { margin: 0 auto; }
-  .top-panel.right-panel .content-main { padding-left: 0; }
-  .top-panel.right-panel .narrow-col { margin-right: auto; margin-left: 0; } }
+  body:after { content: "L"; } }
 /* /_theme.scss */
 /* Example use case:
  %abstract-class { font-family: Verdana; }  #my-div { @extend %abstract-class; }  #my-other-div { @extend %abstract-class; }
@@ -194,7 +182,6 @@ input { text-align: center; }
 
 */
 @-ms-viewport { width: device-width; }
-
 html, body { color: #333333; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.3125em; font-family: Arial, Helvetica, sans-serif; line-height: 1.313em; }
 
 strong { font-weight: bold !important; }

@@ -38,7 +38,6 @@ body { font-size: 14px !important; font-family: Arial,sans-serif !important; }
 body, div, p, li { color: #333333; }
 
 @font-face { font-family: 'lucida sans bold'; src: url("fonts/lucida/LucidaSansBold.ttf"); font-weight: normal; font-style: normal; }
-
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: 992px) { .top-panel .content-main .narrow-col { color: #FFF; }
   .top-panel .content-main .narrow-col h3, .top-panel .content-main .narrow-col p { text-align: left !important; }
@@ -89,8 +88,6 @@ input { text-align: center; }
 
 .content-main { font-size: 16px; }
 .content-main h2 { font-size: 25px; font-weight: bold; padding-top: 15px; padding-bottom: 15px; }
-
-#main { margin-top: -450px; }
 
 .jumbotron { padding: 0 !important; margin: 0 !important; text-align: center; margin-top: 20px; background-color: transparent; }
 .jumbotron h1 { font-weight: normal; display: none; }
@@ -196,16 +193,7 @@ input { text-align: center; }
   body:after { content: "M"; } }
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: 992px) { head { font-family: "L"; }
-  body:after { content: "L"; }
-  .top-panel .content-main .narrow-col { width: 80%; color: #FFF; background-color: #002855; border: 1px solid #002855; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95); opacity: 0.95; }
-  .top-panel .content-main .narrow-col .btn { width: 100%; }
-  .top-panel .content-main .narrow-col:hover { background-color: #335379; cursor: pointer; }
-  .top-panel.left-panel .content-main { padding-right: 0; }
-  .top-panel.left-panel .narrow-col { margin-left: auto; }
-  .top-panel.middle-panel .content-main { padding-left: 0; padding-right: 0; }
-  .top-panel.middle-panel .narrow-col { margin: 0 auto; }
-  .top-panel.right-panel .content-main { padding-left: 0; }
-  .top-panel.right-panel .narrow-col { margin-right: auto; margin-left: 0; } }
+  body:after { content: "L"; } }
 /* /_theme.scss */
 /* Example use case:
  %abstract-class { font-family: Verdana; }  #my-div { @extend %abstract-class; }  #my-other-div { @extend %abstract-class; }
@@ -311,8 +299,7 @@ td, th { padding: 0; }
   .label { border: 1px solid #000; }
   .table { border-collapse: collapse !important; }
   .table-bordered th, .table-bordered td { border: 1px solid #ddd !important; } }
-@font-face { font-family: 'Glyphicons Halflings'; src: url("fonts/bootstrap/glyphicons-halflings-regular.eot"); src: url("fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
-
+@font-face { font-family: 'Glyphicons Halflings'; src: url("fonts/bootstrap/glyphicons-halflings-regular.eot?1402610095"); src: url("fonts/bootstrap/glyphicons-halflings-regular.eot?&1402610095#iefix") format("embedded-opentype"), url("fonts/bootstrap/glyphicons-halflings-regular.woff?1402610095") format("woff"), url("fonts/bootstrap/glyphicons-halflings-regular.ttf?1402610095") format("truetype"), url("fonts/bootstrap/glyphicons-halflings-regular.svg?1402610095#glyphicons_halflingsregular") format("svg"); }
 .glyphicon { position: relative; top: 1px; display: inline-block; font-family: 'Glyphicons Halflings'; font-style: normal; font-weight: normal; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 .glyphicon-asterisk:before { content: "\2a"; }
@@ -719,7 +706,7 @@ td, th { padding: 0; }
 
 *:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
-html { font-size: 62.5%; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+html { font-size: 62.5%; -webkit-tap-highlight-color: transparent; }
 
 body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.428571429; color: #333333; background-color: white; }
 
@@ -1801,7 +1788,6 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active { border-color: #428bca
 
 @keyframes progress-bar-stripes { from { background-position: 40px 0; }
   to { background-position: 0 0; } }
-
 .progress { overflow: hidden; height: 20px; margin-bottom: 20px; background-color: whitesmoke; border-radius: 4px; -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); }
 
 .progress-bar { float: left; width: 0%; height: 100%; font-size: 12px; line-height: 20px; color: white; text-align: center; background-color: #428bca; -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15); box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15); -webkit-transition: width 0.6s ease; -o-transition: width 0.6s ease; transition: width 0.6s ease; }
@@ -2089,7 +2075,7 @@ button.close { padding: 0; cursor: pointer; background: transparent; border: 0; 
 .carousel-control .icon-next:before { content: '\203a'; }
 
 .carousel-indicators { position: absolute; bottom: 10px; left: 50%; z-index: 15; width: 60%; margin-left: -30%; padding-left: 0; list-style: none; text-align: center; }
-.carousel-indicators li { display: inline-block; width: 10px; height: 10px; margin: 1px; text-indent: -999px; border: 1px solid white; border-radius: 10px; cursor: pointer; background-color: #000 \9; background-color: rgba(0, 0, 0, 0); }
+.carousel-indicators li { display: inline-block; width: 10px; height: 10px; margin: 1px; text-indent: -999px; border: 1px solid white; border-radius: 10px; cursor: pointer; background-color: #000 \9; background-color: transparent; }
 .carousel-indicators .active { margin: 0; width: 12px; height: 12px; background-color: white; }
 
 .carousel-caption { position: absolute; left: 15%; right: 15%; bottom: 20px; z-index: 10; padding-top: 20px; padding-bottom: 20px; color: white; text-align: center; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); }
@@ -2122,7 +2108,6 @@ button.close { padding: 0; cursor: pointer; background: transparent; border: 0; 
 .affix { position: fixed; }
 
 @-ms-viewport { width: device-width; }
-
 .visible-xs, .visible-sm, .visible-md, .visible-lg { display: none !important; }
 
 .visible-xs-block, .visible-xs-inline, .visible-xs-inline-block, .visible-sm-block, .visible-sm-inline, .visible-sm-inline-block, .visible-md-block, .visible-md-inline, .visible-md-inline-block, .visible-lg-block, .visible-lg-inline, .visible-lg-inline-block { display: none !important; }
@@ -2232,8 +2217,6 @@ input { text-align: center; }
 .content-main { font-size: 16px; }
 .content-main h2 { font-size: 25px; font-weight: bold; padding-top: 15px; padding-bottom: 15px; }
 
-#main { margin-top: -450px; }
-
 .jumbotron { padding: 0 !important; margin: 0 !important; text-align: center; margin-top: 20px; background-color: transparent; }
 .jumbotron h1 { font-weight: normal; display: none; }
 
@@ -2338,8 +2321,14 @@ input { text-align: center; }
   body:after { content: "M"; } }
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: 992px) { head { font-family: "L"; }
-  body:after { content: "L"; }
+  body:after { content: "L"; } }
+/* /_theme.scss */
+/* components/_banners.scss */
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: 992px) { /* 3-column banner panel set - intended to use happybox behavior / plugin */
   .top-panel .content-main .narrow-col { width: 80%; color: #FFF; background-color: #002855; border: 1px solid #002855; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95); opacity: 0.95; }
+  .top-panel .content-main .narrow-col h2 { margin-top: 0 !important; }
+  .top-panel .content-main .narrow-col .content { margin-left: 0; }
   .top-panel .content-main .narrow-col .btn { width: 100%; }
   .top-panel .content-main .narrow-col:hover { background-color: #335379; cursor: pointer; }
   .top-panel.left-panel .content-main { padding-right: 0; }
@@ -2348,4 +2337,4 @@ input { text-align: center; }
   .top-panel.middle-panel .narrow-col { margin: 0 auto; }
   .top-panel.right-panel .content-main { padding-left: 0; }
   .top-panel.right-panel .narrow-col { margin-right: auto; margin-left: 0; } }
-/* /_theme.scss */
+/* /components/_banners.scss */

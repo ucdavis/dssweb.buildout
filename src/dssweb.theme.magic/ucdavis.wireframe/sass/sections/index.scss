@@ -11,6 +11,18 @@
 	/* Custom Styles for this breakpoint */
 	}
 }
+
+@media screen and (min-width: 768px) {
+	
+	/* Style adjustments for the partial-cover home wall component */
+	#main {
+		margin-top: -701px; /* wall height 741 - 30 px top margin */
+	}
+	.wall {
+		height: 741px !important;
+	}
+}
+
 @media screen and (min-width: 1200px) {	
 	.content-main h2{
 		text-align:center;

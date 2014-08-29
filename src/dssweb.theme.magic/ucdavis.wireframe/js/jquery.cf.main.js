@@ -10,7 +10,7 @@ $(function(){
 					'action_element_class': '.content-main',
 					'canvas_element_class': '.narrow-col',
 					'button_class': ".btn-primary",
-					'height': 320 // total height of the happy viewport
+					'height': 478 // total height of the happy viewport
 				}
 			);
 		}
