@@ -36,6 +36,7 @@ body{
 	width:250px;
 	height:30px;
 	padding-left:0 !important; 
+	padding-right:0 !important;
 }
 
 .panel-group{
@@ -60,6 +61,7 @@ body{
 
 // customize bootstrap variables here:
 @import "variables";
-@import "bootstrap";
 @import "theme";
+@import "vendor/bootstrap";
 @import "components/banners";
+$container-large-desktop: 1280px;

@@ -1,11 +1,11 @@
-@import "bootstrap/variables";
+//@import "bootstrap/variables";
 @import "vendor/bootstrap-override-variables"; // RAK: Override Bootstrap variables here (defaults from bootstrap-sass v3.1.1.1) ... move from default gem installation placing overrides directly into _variables.scss
 @import "ucd-variables";
 
 @import "vendor/bootstrap_overrides";
 @import "components/typography/typography";
 
-@import "theme";
+
 // Fonts
 // Conversion: 16px = 1.0 em
 $BASE: 16px;

@@ -2,12 +2,16 @@
 
 @import "ucd-variables";
 @import "compass/css3/opacity";
+@import "compass/css3/transition";
+@import "compass/css3/box-shadow";
+@import "compass/css3/border-radius";
+@import "compass/css3/transform";
 
 /* 2014-06-12 RAK: This file contains theme CSS and mediaquery for responsive (at end of file). 
   TODO: 
     - Move to SASS
      
-*/
+*/ 
 
 body {
   /*padding-top: 20px;*/
@@ -20,7 +24,7 @@ body:after{
 	display:none;
 }
 .container{
-	width:1280px;
+	
 	padding:0;
 }
 .body-img{
@@ -29,9 +33,7 @@ body:after{
 	width:200px;
 	float:left;
 }
-.content{
-	margin-left:90px;
-}
+
 #utility {
 	ul li{	
 		text-align:center;
@@ -237,7 +239,7 @@ input{
 .top-bar{
 	background:$ucd_blue_100 !important;
 	height:80px !important;
-	margin:0 90px;
+	
 	.title-area{	
 		top:15px;
 		.name{
@@ -308,7 +310,7 @@ input{
 	height:40px;
 	margin-left:auto;
 	margin-top:56px;
-	margin-right:105px;
+	//margin-right:105px;
 	ul{
 		height:100%;
 		
@@ -366,7 +368,7 @@ input{
 		border-left:1px solid #fff;
 	}
 	#uti-logo{
-		width:21.23%;//155px
+		//width:21.23%;//155px
 		border-left:1px solid #fff;
 	}
 }
@@ -462,6 +464,7 @@ input{
 	}
 	.util-bar{
 		margin-left:14px;
+		margin-right:15px;
 	}
 	.top-bar{
 		height:40px !important;
