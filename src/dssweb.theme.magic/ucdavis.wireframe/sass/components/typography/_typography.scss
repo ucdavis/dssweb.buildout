@@ -1,5 +1,7 @@
+
 body, div, p, li {
-  color: $ucd_black_80;
+  color: #000; //$ucd_black_80;
+	@include standard_font;
 }
 
 @font-face{
@@ -7,7 +9,6 @@ body, div, p, li {
     src: url('fonts/lucida/LucidaSansBold.ttf');
     font-weight: normal;
     font-style: normal;
-		
 }
 
 /*----- Desktop breakpoint -------*/

@@ -24,8 +24,10 @@ body:after{
 	display:none;
 }
 .container{
-	
 	padding:0;
+	&#main {
+		padding:0 !important;
+	}
 }
 .body-img{
 	border:1px solid red;
@@ -53,15 +55,23 @@ body:after{
 	height:250px;
 	width:100%;
 	clear:both;
+	a {
+		text-decoration: none;
+	}
 	.foot-wrap{
-		margin-right: 0 90px;
+		margin: 90px;
 		width:100%;
 	}
-	.footer-nav, p{
+	.footer-nav, #copyright, #vcard{
 		float:left;		
 		color:#fff;
 		text-decoration:none;
 		margin-top:36px;
+	}
+	#email-phone {
+		a {
+			text-decoration: underline;
+		}
 	}
 	#copyright{
 		clear:both;
@@ -69,22 +79,20 @@ body:after{
 	.footer-nav{
 		border-left:1px solid white;
 		width:150px;		
-		li{		
-			
+		li{
 			padding-left:10px;
 			a{
-			
 				color:#fff;
 			}
 		}
 	}
-	p{
+	#copyright, #vcard {
 		margin-right:135px;
 		font-size:14px;
-		font-family:lucida;
-		a{
+		line-height: 1.4em;
+		//font-family:lucida;
+		a, p{
 			color:#fff;
-			text-decoration: underline;
 			letter-spacing:.014em;
 		}
 	}
@@ -95,8 +103,8 @@ body:after{
 		margin-top:35px;
 		margin-left:85px;
 		li{
-			display:inline;
-			width:50px;
+			display:inline-block;
+			width:40px;
 			a{
 			border-left: 1px solid white;
 			padding: 0 15px;
@@ -131,21 +139,40 @@ input{
 }
 .content-title{
 	padding-bottom:20px;
-	font-size:36px;
+	@include font_size(36px);
 	letter-spacing:.01em;
 	margin-top:0px !important;
 }
 .content-main{
-	font-size:16px;
+	margin-top: 45px;
+	padding-left: 0 !important;
+	//font-size: 16px; // 16px is the default and should already be set
+	p {
+		@include font_size(15px);
+		@include line_height(18px);
+		&.intro {
+			@include font_size(18px);
+			@include line_height(30px);
+		}
+	}
 	 h2{
-		font-size:25px;
-		font-weight:bold;
+		@include font_size(24px);
+		font-weight:normal;
+		padding-top:15px;
+		padding-bottom:15px;
+		border: 1px solid blue;
+	}
+	h3 {
+		@include font_size(15px);
+		@include line_height(25px);
 		padding-top:15px;
 		padding-bottom:15px;
 	}
 }
 
-
+#gutter-column {
+	background-color: red;
+}
 .sidebar{
 	height:auto;
 	width:250px !important;
@@ -157,9 +184,9 @@ input{
 		a{
 			color:#fff;
 			text-transform:uppercase;
-			line-height:22px;
+			@include font_size(13px);
+			@include line_height(22px);
 			letter-spacing:.1em;
-			font-size:13px;
 			padding-left:38px;
 			position:relative;
 			top:4px;
@@ -176,11 +203,15 @@ input{
 	}
 }
 .sidebar-right{
-	position:relative;
-	top:140px;
-	float:right;
-	margin-right:90px;
+	margin-top: 135px;
+	//margin-left: 160px; // TODO: moving sidebar to right should be done another way. float:right not solution
+	// TODO: these styles are not necessary
+	//position:relative;
+	//top:140px;
+	//float:right;
+	// margin-right:90px; // TODO: Why ?
 }
+
 .more_text{
 	display:none;	
 }
@@ -209,7 +240,7 @@ input{
 	#name{
 		text-transform:uppercase;
 		color:$ucd_blue_80;
-		font-family:lucida bold;
+		//font-family:lucida bold;
 	}
 	#position{
 		font-style:italic;
@@ -238,17 +269,18 @@ input{
 // primary blue menu
 .top-bar{
 	background:$ucd_blue_100 !important;
-	height:80px !important;
+	
+	/* height: 80px !important; THIS BLOWS HIDING THE SUB MENU */
 	
 	.title-area{	
-		top:15px;
-		.name{
+		/* top:15px; THIS NEGATIVELY IMPACTS THE FORMAT OF THE TOPBAR MENU */
+		.name {
 			letter-spacing:.15em;
 			h1{
 				a{					
 					font-size:1.5rem;
 					text-transform:uppercase;
-					font-family:lucida sans bold;
+					//font-family:lucida sans bold;
 					font-weight:bold;
 					//line-height:20px;
 					text-decoration:none;
@@ -329,7 +361,7 @@ input{
 				color:#000;
 				text-transform:uppercase;
 				top:8px;
-				font-family:lucida sans;
+				//font-family:lucida sans;
 				font-size:14px;
 				text-align:center;
 				
@@ -376,7 +408,7 @@ input{
 	margin-left:15px;
 }
 .menu-icon{
-	display:none;
+	//display:none;
 	background:#e5e5e5;
 	position:relative;
 	top:-25px;
@@ -390,6 +422,7 @@ input{
 			width: 25px !important; 
 		}
 }
+
 .panel-title {
 	background: $rec_blue;
 	width:250px;
@@ -398,12 +431,15 @@ input{
 	}
 }
 .panel-body{
-	h2{
+	h2 {
+		@include font_size(18px);
+		//@include line_height(24px);
 		font-size:18px;
 		letter-spacing:.03em;		
 	}
 	h3{
-		font-size:15px;
+		@include font_size(15px);
+		@include line_height(18px);
 		letter-spacing:.01em;
 		font-weight:bold;
 		margin-top:0;
@@ -467,8 +503,8 @@ input{
 		margin-right:15px;
 	}
 	.top-bar{
-		height:40px !important;
-		overflow:visible !important;	
+		/*height:40px !important;
+		overflow:visible !important;*/
 	}
 	.content{
 	  min-width:192px;
@@ -495,16 +531,16 @@ input{
 		}		
 	}
 	.menu-icon{
-		height:80px;
-		top:-39px !important;
+		/* height:80px;
+		top:-39px !important;*/
 	}
 	.glyphicon{
 		position:relative;
 		top:-18px;
 	}
 	.sidebar-right{	
-		float:right;
-		margin-top:100px;		
+		//float:right;
+		//margin-top: 100px;	//TODO: margin-top reveals formatting error
 	}
 	.op-sidebar-title {
 		text-align:left !important;
@@ -512,7 +548,7 @@ input{
 	
 }
 /*----- Tablet breakpoint -------*/
-@media screen and (min-width: 768px)and (max-width: 992px) {
+@media screen and (min-width: 768px) and (max-width: 992px) {
 	head { font-family:"M";}
 	body:after{content:"M";}	
 
@@ -523,6 +559,12 @@ input{
 	head { font-family:"L";}
 	body:after{content:"L";}
 	
+}
+
+/* Override default grid gutter, which was broke on home/index bottom panel row. */
+.no-gutter {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
 }
 
 /* /_theme.scss */

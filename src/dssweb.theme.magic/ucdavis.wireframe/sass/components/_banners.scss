@@ -11,6 +11,11 @@
 		font-weight: normal;
 		display: none;
   }
+	
+	// Make absolute so we don't need negative margin on home/index
+	position: absolute;
+	width: 100%;
+	
 }
 // Fix wallpaper placement
 .wall {
@@ -26,7 +31,7 @@
 
 	/* 3-column banner panel set - intended to use happybox behavior / plugin */
 	.top-panel {
-		.content-main {
+		.action-element {
 			.narrow-col {
 				width: 80%;
 				color: #FFF;
@@ -49,7 +54,7 @@
 			}
 		}
 		&.left-panel {
-			.content-main {
+			.action-element {
 				padding-right: 0;
 			}
 			.narrow-col {
@@ -57,7 +62,7 @@
 			}
 		}
 		&.middle-panel {
-			.content-main {
+			.action-element {
 				padding-left: 0;
 				padding-right: 0;
 			}
@@ -66,7 +71,7 @@
 			}
 		}
 		&.right-panel {
-			.content-main {
+			.action-element {
 				padding-left: 0;
 			}
 			.narrow-col {

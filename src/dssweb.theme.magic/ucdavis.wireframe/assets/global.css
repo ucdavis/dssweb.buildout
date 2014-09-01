@@ -1,6 +1,11 @@
 /* Legacy Drupal Omega 3 mobile styles file */
 /* This file will hold styles for the mobile version of your website (mobile first). */
 /* This also can include ANY global CSS that applies site-wide. Unless overwritten by a more specific style rule, CSS declarations in global.css will apply site-wide. Updated: 12/3/13 */
+/* Example use case:
+ %abstract-class { font-family: Verdana; }  #my-div { @extend %abstract-class; }  #my-other-div { @extend %abstract-class; }
+ ... compiles as: #my-div, #my-other-div { font-family: Verdana; }
+
+*/
 /* 2013-05-12 RAK: Bootstrap overrides moved from default gem installation that placed overrides directly in the _variables.scss file */
 #breadcrumb .breadcrumb { padding: 0; margin-bottom: 0; list-style: none; background-color: transparent; border-radius: 0; }
 #breadcrumb .breadcrumb > li { display: auto; }
@@ -16,24 +21,17 @@
 
 .panel { outline: none; border: none !important; -webkit-box-shadow: none !important; -moz-box-shadow: none !important; box-shadow: none !important; }
 
-body, div, p, li { color: #333333; }
+body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.3125em; }
 
 @font-face { font-family: 'lucida sans bold'; src: url("fonts/lucida/LucidaSansBold.ttf"); font-weight: normal; font-style: normal; }
-
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: 992px) { .top-panel .content-main .narrow-col { color: #FFF; }
   .top-panel .content-main .narrow-col h3, .top-panel .content-main .narrow-col p { text-align: left !important; }
   .top-panel.left-panel { text-align: right; }
   .top-panel.middle-panel { text-align: center; }
   .top-panel.right-panel { text-align: left; } }
-/* Example use case:
- %abstract-class { font-family: Verdana; }  #my-div { @extend %abstract-class; }  #my-other-div { @extend %abstract-class; }
- ... compiles as: #my-div, #my-other-div { font-family: Verdana; }
-
-*/
 @-ms-viewport { width: device-width; }
-
-html, body { color: #333333; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.3125em; font-family: Arial, Helvetica, sans-serif; line-height: 1.313em; }
+html, body { color: #000; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.3125em; font-family: Arial, Helvetica, sans-serif; line-height: 1.313em; }
 
 strong { font-weight: bold !important; }
 

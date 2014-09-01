@@ -3,8 +3,11 @@
 @media screen and (max-width: 440px) { .content-main { /* Custom Styles for this breakpoint */ }
   .content-main h2 { text-align: center; } }
 @media screen and (min-width: 768px) { /* Style adjustments for the partial-cover home wall component */
-  #main { margin-top: -701px; /* wall height 741 - 30 px top margin */ }
   .wall { height: 741px !important; }
-  #middle-row h2 { text-align: center; } }
+  #middle-row h2 { text-align: center; }
+  #bottom-panel-row .narrow-col { width: 80%; }
+  #bottom-panel-row .left-panel .narrow-col { margin-left: auto; }
+  #bottom-panel-row .middle-panel .narrow-col { margin: 0 auto; }
+  #bottom-panel-row .right-panel .narrow-col { margin: 0 auto; } }
 @media screen and (min-width: 1200px) { .content-main h2 { text-align: center; }
   /* Custom Styles for this breakpoint */ }

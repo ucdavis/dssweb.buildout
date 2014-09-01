@@ -62,7 +62,7 @@ $(function () {
 			
         // Fix for Opera issue when using font-family to store value
         if (window.opera) {
-           activeMQ = window.getComputedStyle(document.body, ':after').getPropertyValue('content');
+           activeMQ = window.getComputedStyle(document.body, ':after').getPropertyValue('content-main');
         }
         // For all other modern browsers
         else if (window.getComputedStyle) {
@@ -188,8 +188,8 @@ $(function () {
 				// Fix for contA height not being reset to auto	
 				$(".collapsible").css("height", "auto");
 				
-				$(".content div").children().removeClass("panel-collapse collapse active");
-				$(".content .panel-heading").hide();
+				$(".content-main div").children().removeClass("panel-collapse collapse active");
+				$(".content-main .panel-heading").hide();
 				$(".panel-group").children().removeClass("panel panel-default")        
         $(".more_text").hide();
 				
