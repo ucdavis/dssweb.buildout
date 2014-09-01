@@ -3,8 +3,7 @@ $(function(){
 		
 		$(document).foundation();
 		
-		if (typeof window.console == "object") 
-			window.console.log("JQuery version:  " + $.fn.jquery);
+		if (typeof window.console == "object") window.console.log("JQuery version:  " + $.fn.jquery);
 		
 		if($('body.home #top-panel-row').length != 0) {
 			$('body.home #top-panel-row').happybox(

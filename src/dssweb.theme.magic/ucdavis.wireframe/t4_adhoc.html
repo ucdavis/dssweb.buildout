@@ -182,7 +182,7 @@
     <!-- #BeginEditable "content" -->
 			
   <div class="content-main col-xs-12 col-sm-12 col-md-8 col-lg-8"> <!-- was md-6 lg-7 -->
-		<p class="breadcrumb">Home</p>
+		<div class="breadcrumb"><p><a href="index.html">Home</a> <span class="bread-divider">|</span> <a href="#">TBD</a></p></div>
     <h1 class="content-title">Lorem ipsum dolor sit amet</h1>
     <div class="panel-group" id="accordionB">
       <div class="panel panel-default">
@@ -201,8 +201,10 @@
 						<h2>Nullam id purus gravida</h2>
 						<p>
 						Donec semper sit amet tellus non lobortis. Integer aliquet libero diam, nec vestibulum nisl imperdiet sit amet. Ut mattis et felis a eleifend. Fusce vulputate interdum sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus lacus ante, fringilla vel blandit eget, finibus vitae lacus. Ut eu felis nec ipsum tincidunt vulputate vel quis elit. Maecenas blandit, elit at cursus fermentum, mauris nisl facilisis ante, vitae blandit risus felis a neque.
-						
 						</p>
+						<div class="picture">
+							<img class="img-responsive" width="100%" src="images/temp/t4-adhoc-image.jpg" alt="Photo Alt Tag" title="Photo Caption" />
+						</div>
 						<h3>Donec ut elit et diam suscipit</h3>
 			
 						<ul class="body-list">
@@ -223,15 +225,15 @@
 							<li>
 							Donec ut elit et diam suscipit cursus id id elit. Suspendisse in ligula sed est gravida rhoncus at id nisl. Fusce erat sem, tempor non aliquam eu, sagittis ut arcu. Etiam et nisi porttitor, ullamcorper nisl eu, consectetur mauris. 
 							</li>							
-							<p>
-								Maecenas vel massa gravida nisi dapibus porttitor. Curabitur luctus eros turpis, a faucibus purus semper at. Aliquam ornare risus eget eros elementum interdum. Donec non tempus magna. Pellentesque fringilla, eros vel feugiat ultrices, orci justo euismod nibh, eu rhoncus massa mi ac nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							</p>
 						</ul>
-						<h4>Downloads</h4>
+						<p>
+							Maecenas vel massa gravida nisi dapibus porttitor. Curabitur luctus eros turpis, a faucibus purus semper at. Aliquam ornare risus eget eros elementum interdum. Donec non tempus magna. Pellentesque fringilla, eros vel feugiat ultrices, orci justo euismod nibh, eu rhoncus massa mi ac nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						</p>
+						<h3>Downloads:</h3>
 						<ul class="body-list" id="downloads">
-							<li><a href="#">Download A</a> (PDF 556K)</li>
-							<li><a href="#">Download B</a> (PDF 556K)</li>
-							<li><a href="#">Download C</a> (PDF 556K)</li>
+							<li><a href="#">Download A</a> <span class="nobr filetype">(PDF, 556K)</span></li>
+							<li><a href="#">Download B</a> <span class="nobr filetype">(PDF, 556K)</span></li>
+							<li><a href="#">Download C</a> <span class="nobr filetype">(PDF, 556K)</span></li>
 						</ul>
           </div>
         </div>
@@ -255,11 +257,11 @@
         <div class="collapsible sidebar-panel panel-collapse collapse" id=
         "contA">
           <div class="panel-body">
-            <ul id="sidebar-block-contact">
-              <li id="name">Firstname Lastname</li>
-              <li id="position">Position</li>
-              <li id="phone">(530)391-9165</li>
-							<li id="email">Email</li>
+            <ul id="sidebar-block-contact" class="vcard">
+              <li class="fn"><a href="#">Firstname Lastname</a></li>
+              <li class="category">Position</li>
+              <li class="tel">(530) 391-9165</li>
+							<li class="email"><a href="mailto:email@ucdavis.edu">Email</a></li>
             </ul>
           </div>
         </div>
@@ -304,14 +306,14 @@
 				<li><a href="#">Login</a></li>
 			</ul>
 			<ul id="foot-social">
-				<li class="first"><a href="#">F</a></li>
-				<li><a href="#">T</a></li>
-				<li><a href="#">P</a></li>
-				<li><a href="#">Y</a></li>
-				<li class="last"><a href="#">L</a></li>
+				<li class="first"><a id="facebook-icon" href="#"><span class="btn-txt">Facebook</span></a></li>
+				<li><a id="twitter-icon" href="#"><span class="btn-txt">Twitter</span></a></li>
+				<li><a id="pinterest-icon" href="#"><span class="btn-txt">Pinterest</span></a></li>
+				<li><a id="youtube-icon" href="#"><span class="btn-txt">YouTube</span></a></li>
+				<li class="last"><a id="linkedin-icon" href="#"><span class="btn-txt">LinkedIn</span></a></li>
 			</ul>
 			<p id="copyright">
-				Copyright &copy 2007 All Rights Reserved
+				Copyright &copy 2014 &nbsp;All Rights Reserved
 			</p>
 		</div>
   </div>
@@ -326,9 +328,7 @@
 	<script src="js/expand.js"></script>
 	<script src="js/foundation/js/foundation/foundation.js" rel="text/javascript"></script>
 	<script src="js/foundation/js/foundation/foundation.topbar.js" rel="text/javascript"></script>
-	<script>
-		$(document).foundation();
-	</script>
+	<script src="js/jquery.cf.main.js"></script>
   <!--[if lt IE 9]>
       	<script src="js/contrib/respond.min.js"></script>
       <![endif]-->

@@ -63,10 +63,16 @@ body:after { content: "XS"; display: none; }
 
 .body-img { border: 1px solid red; height: 120px; width: 200px; float: left; }
 
+.btn-txt { display: none; }
+
+.nobr { white-space: nowrap; }
+
+p { margin-bottom: 15px; }
+
 #utility ul li { text-align: center; display: inline; list-style-type: none; padding-right: 50px; width: 100%; }
 #utility ul { padding-top: 100px; text-align: center; clear: both; }
 
-.footer { background-color: #4d688c; height: 250px; width: 100%; clear: both; }
+.footer { background-color: #4d688c; height: 250px; width: 100%; padding-bottom: 25px; margin-bottom: 15px; clear: both; }
 .footer a { text-decoration: none; }
 .footer .foot-wrap { margin: 90px; width: 100%; }
 .footer .footer-nav, .footer #copyright, .footer #vcard { float: left; color: #fff; text-decoration: none; margin-top: 36px; }
@@ -78,9 +84,14 @@ body:after { content: "XS"; display: none; }
 .footer #copyright, .footer #vcard { margin-right: 135px; font-size: 14px; line-height: 1.4em; }
 .footer #copyright a, .footer #copyright p, .footer #vcard a, .footer #vcard p { color: #fff; letter-spacing: .014em; }
 .footer #foot-social { width: 217px; float: left; margin-top: 35px; margin-left: 85px; }
-.footer #foot-social li { display: inline-block; width: 40px; }
-.footer #foot-social li a { border-left: 1px solid white; padding: 0 15px; color: #fff; }
-.footer #foot-social .last a { border-right: 1px solid white; }
+.footer #foot-social li { display: inline-block; text-align: center; padding-left: 7px; padding-right: 7px; border-left: 1px solid white; }
+.footer #foot-social li a { display: inline-block; height: 24px; width: 24px; color: #fff; }
+.footer #foot-social li a#facebook-icon { background: url(../images/icons/sm-icon-sprites.png) 0 0 no-repeat; }
+.footer #foot-social li a#twitter-icon { background: url(../images/icons/sm-icon-sprites.png) -24px 0 no-repeat; }
+.footer #foot-social li a#pinterest-icon { background: url(../images/icons/sm-icon-sprites.png) -48px 0 no-repeat; }
+.footer #foot-social li a#youtube-icon { background: url(../images/icons/sm-icon-sprites.png) -72px 0 no-repeat; }
+.footer #foot-social li a#linkedin-icon { background: url(../images/icons/sm-icon-sprites.png) -96px 0 no-repeat; }
+.footer #foot-social li.last { border-right: 1px solid white; }
 
 input { text-align: center; }
 
@@ -88,15 +99,22 @@ input { text-align: center; }
 
 .content { margin-top: 47px; margin-bottom: 40px; padding: 0; }
 
-.breadcrumb { background: none; padding: 0 0 !important; margin-bottom: 10px; }
-
-.content-title { padding-bottom: 20px; font-size: 36px; font-size: 2.25rem; letter-spacing: .01em; margin-top: 0px !important; }
+.content-title { padding-bottom: 30px; font-size: 36px; font-size: 2.25rem; line-height: 43px; line-height: 2.6875rem; letter-spacing: 0.01em; margin-top: 0 !important; }
 
 .content-main { margin-top: 45px; padding-left: 0 !important; }
 .content-main p { font-size: 15px; font-size: 0.9375rem; line-height: 18px; line-height: 1.125rem; }
 .content-main p.intro { font-size: 18px; font-size: 1.125rem; line-height: 30px; line-height: 1.875rem; }
-.content-main h2 { font-size: 24px; font-size: 1.5rem; font-weight: normal; padding-top: 15px; padding-bottom: 15px; border: 1px solid blue; }
+.content-main .breadcrumb { background: none; padding: 0 0 !important; margin-bottom: 0; color: #335379; }
+.content-main .breadcrumb p { font-size: 12px; font-size: 0.75rem; line-height: 15px; line-height: 0.9375rem; margin-bottom: 0; }
+.content-main .breadcrumb p a { text-decoration: none; }
+.content-main .breadcrumb p a:hover { text-decoration: underline; }
+.content-main .breadcrumb .bread-divider { font-size: 15px; font-size: 0.9375rem; }
+.content-main .panel-body h2 { font-size: 24px !important; font-size: 1.5rem !important; font-weight: normal; padding-top: 15px; padding-bottom: 15px; }
+.content-main h2 { font-size: 24px !important; font-size: 1.5rem !important; font-weight: normal; padding-top: 15px; padding-bottom: 15px; }
 .content-main h3 { font-size: 15px; font-size: 0.9375rem; line-height: 25px; line-height: 1.5625rem; padding-top: 15px; padding-bottom: 15px; }
+.content-main ul { list-style-type: none; padding: 0; margin: 0; margin-bottom: 15px; }
+.content-main ul li { background-image: url(../images/bullets/black-square.gif); background-repeat: no-repeat; background-position: 0px 5px; padding-left: 14px; }
+.content-main ul li ul { margin-top: 7px; margin-bottom: 0 !important; }
 
 #gutter-column { background-color: red; }
 
@@ -118,12 +136,16 @@ input { text-align: center; }
 
 #downloads a { text-decoration: underline; color: #335379; }
 
-#sidebar-block-contact { margin-top: 20px; }
-#sidebar-block-contact li { text-align: left; padding-left: 38px; }
-#sidebar-block-contact #name { text-transform: uppercase; color: #335379; }
-#sidebar-block-contact #position { font-style: italic; font-size: 12px; letter-spacing: .01em; }
-#sidebar-block-contact #phone { font-size: 13px; letter-spacing: .01em; }
-#sidebar-block-contact #email { font-size: 13px; letter-spacing: .01em; }
+/* Contact uses hCard microformat / vCard RFC2426 */
+#sidebar-block-contact { margin-top: 20px; padding-left: 38px; }
+#sidebar-block-contact li { text-align: left; font-size: 13px; font-size: 0.8125rem; letter-spacing: 0.01em; }
+#sidebar-block-contact li a { text-decoration: none; color: #335379; }
+#sidebar-block-contact li a:hover { text-decoration: underline; }
+#sidebar-block-contact .fn { text-transform: uppercase; color: #335379; font-weight: bold; letter-spacing: 0.1em; }
+#sidebar-block-contact .category { font-style: italic; font-size: 12px; font-size: 0.75rem; margin-bottom: 5px; }
+#sidebar-block-contact .tel { margin-bottom: 5px; }
+#sidebar-block-contact .email { text-transform: uppercase; }
+#sidebar-block-contact .email a { display: block; height: 16px; padding-left: 22px; background: url(../images/icons/email.gif) 0 60% no-repeat; }
 
 .sidebar-block-items { background: #e5e5e5; padding-bottom: 10px; text-align: left; width: auto; height: 100%; padding-left: 15px; margin-left: 35px; list-style-type: circle; }
 
@@ -182,9 +204,10 @@ input { text-align: center; }
   .sidebar { background: transparent; }
   .sidebar-right { margin-top: 100px; clear: both; float: left !important; }
   .util-bar { margin-left: 14px; margin-right: 15px; }
+  .util-bar ul li#uti-logo { padding-left: 15px; }
   .top-bar { /*height:40px !important;
 overflow:visible !important;*/ }
-  .content { min-width: 192px; clear: both; }
+  .content-main { min-width: 192px; clear: both; }
   .submenu { position: absolute; left: -999px !important; }
   .headshot { padding: 0 !important; height: 100% !important; }
   .facultyStaffDirectory { padding: 15px 20px; }

@@ -36,6 +36,16 @@ body:after{
 	float:left;
 }
 
+.btn-txt {
+	//left-indent: -10000px;
+	display: none;
+}
+.nobr {
+	white-space: nowrap;
+}
+p {
+	margin-bottom: 15px;
+}
 #utility {
 	ul li{	
 		text-align:center;
@@ -54,6 +64,8 @@ body:after{
 	background-color:$ucd_blue_70;
 	height:250px;
 	width:100%;
+	padding-bottom: 25px;
+	margin-bottom: 15px;
 	clear:both;
 	a {
 		text-decoration: none;
@@ -103,20 +115,37 @@ body:after{
 		margin-top:35px;
 		margin-left:85px;
 		li{
-			display:inline-block;
-			width:40px;
-			a{
+			display: inline-block;
+			text-align: center;
+			padding-left: 7px;
+			padding-right: 7px;
 			border-left: 1px solid white;
-			padding: 0 15px;
-			color:#fff;
-			
-			}
-		}	
-		.last{
-				a{
-					border-right:1px solid white;
+			a{
+				display: inline-block;
+				height: 24px;
+				width: 24px;
+				color:#fff;
+				&#facebook-icon {
+					background: url(../images/icons/sm-icon-sprites.png) 0 0 no-repeat;
+				}
+				&#twitter-icon {
+					background: url(../images/icons/sm-icon-sprites.png) -24px 0 no-repeat;
+				}
+				&#pinterest-icon {
+					background: url(../images/icons/sm-icon-sprites.png) -48px 0 no-repeat;
+				}
+				&#youtube-icon {
+					background: url(../images/icons/sm-icon-sprites.png) -72px 0 no-repeat;
+				}
+				&#linkedin-icon {
+					background: url(../images/icons/sm-icon-sprites.png) -96px 0 no-repeat;
 				}
 			}
+			&.last{ 
+				border-right: 1px solid white;
+			}
+		}	
+
 	}
 }
 
@@ -132,16 +161,12 @@ input{
 	padding:0;
 }
 
-.breadcrumb{
-	background:none;
-	padding:0 0 !important;
-	margin-bottom:10px;
-}
 .content-title{
-	padding-bottom:20px;
+	padding-bottom:30px;
 	@include font_size(36px);
-	letter-spacing:.01em;
-	margin-top:0px !important;
+	@include line_height(43px);
+	letter-spacing: 0.01em;
+	margin-top: 0 !important;
 }
 .content-main{
 	margin-top: 45px;
@@ -155,18 +180,64 @@ input{
 			@include line_height(30px);
 		}
 	}
-	 h2{
-		@include font_size(24px);
+	.breadcrumb {
+		background: none;
+		padding:0 0 !important;
+		margin-bottom:0;
+		color: $ucd_blue_80;
+		p {
+			@include font_size(12px);
+			@include line_height(15px);
+			margin-bottom: 0;
+			a {
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+		.bread-divider {
+			@include font_size(15px);
+		}
+	}
+	.panel-body {
+		h2 {
+			@include font_size(24px, !important);
+			font-weight:normal;
+			padding-top:15px;
+			padding-bottom:15px;
+		}
+	}
+	h2{
+		@include font_size(24px, !important);
 		font-weight:normal;
 		padding-top:15px;
 		padding-bottom:15px;
-		border: 1px solid blue;
 	}
 	h3 {
 		@include font_size(15px);
 		@include line_height(25px);
 		padding-top:15px;
 		padding-bottom:15px;
+	}
+	ul {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		margin-bottom: 15px;
+		li {
+			background-image: url(../images/bullets/black-square.gif);
+			background-repeat: no-repeat;
+			background-position: 0px 5px;
+			padding-left: 14px; 
+			ul {
+				margin-top: 7px;
+				margin-bottom: 0 !important;
+				li {
+					
+				}
+			}
+		}
 	}
 }
 
@@ -231,29 +302,44 @@ input{
 		color:$ucd_blue_80;
 	}
 }
-#sidebar-block-contact{
+/* Contact uses hCard microformat / vCard RFC2426 */
+#sidebar-block-contact {
 	margin-top:20px;
+	padding-left: 38px;
 	li{
 		text-align:left;
-		padding-left:38px;
+		@include font_size(13px);
+		letter-spacing: 0.01em;
+		a {
+			text-decoration: none;
+			color:$ucd_blue_80;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
-	#name{
+	.fn { // full name
 		text-transform:uppercase;
 		color:$ucd_blue_80;
-		//font-family:lucida bold;
+		font-weight: bold;
+		letter-spacing: 0.1em;
 	}
-	#position{
-		font-style:italic;
-		font-size:12px;
-		letter-spacing:.01em;
+	.category { // position
+		font-style: italic;
+		@include font_size(12px);
+		margin-bottom: 5px;
 	}
-	#phone{
-		font-size:13px;
-		letter-spacing:.01em;
+	.tel { // phone
+		margin-bottom: 5px;
 	}
-	#email{
-		font-size:13px;
-		letter-spacing:.01em;
+	.email {
+		text-transform:uppercase;
+		a {
+			display: block;
+			height: 16px;
+			padding-left: 22px;
+			background: url(../images/icons/email.gif) 0 60% no-repeat;
+		}
 	}
 }
 .sidebar-block-items{
@@ -430,6 +516,7 @@ input{
 		text-decoration:none;
 	}
 }
+
 .panel-body{
 	h2 {
 		@include font_size(18px);
@@ -449,6 +536,7 @@ input{
 		margin-right:20px;
 	}
 }
+
 .panel-collapse{
 	overflow:hidden;	
 }
@@ -501,12 +589,19 @@ input{
 	.util-bar{
 		margin-left:14px;
 		margin-right:15px;
+		ul {
+			li {
+				&#uti-logo {
+					padding-left: 15px;
+				}
+			}
+		}
 	}
 	.top-bar{
 		/*height:40px !important;
 		overflow:visible !important;*/
 	}
-	.content{
+	.content-main {
 	  min-width:192px;
 		clear:both;
 	}
