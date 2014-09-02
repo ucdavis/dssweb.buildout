@@ -1,0 +1,115 @@
+/* components/_banners.scss */
+
+.jumbotron {
+	padding: 0 !important;
+	margin: 0 !important;
+	text-align: center; 
+	margin-top: 20px; 
+	background-color: transparent;
+	
+  h1{
+		font-weight: normal;
+		display: none;
+  }
+	
+	// Make absolute so we don't need negative margin on home/index
+	position: absolute;
+	width: 100%;
+	
+}
+// Fix wallpaper placement
+.wall {
+	position: absolute;
+	z-index: -100; // arrange wallpaper to back position
+	top: 0;
+	width: 100%;
+	height: 500px !important;
+}
+
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: 992px) {	
+
+	/* 3-column banner panel set - intended to use happybox behavior / plugin */
+	.top-panel {
+		.action-element {
+			.narrow-col {
+				width: 80%;
+				color: #FFF;
+				background-color: $ucd_blue_100;
+				border: 1px solid $ucd_blue_100;
+				@include opacity(0.70);
+				a {
+					color: #FFF;
+					text-decoration: none;
+				}
+				h2 {
+					margin-top: 0 !important;
+					font-weight: normal !important;
+					margin-bottom: 0;
+				}
+				h3 { // Note: These are headlines within the happy boxes
+					
+				}
+				.content {
+					margin-left: 0;
+					h3:first-child {
+						padding-top: 0 !important;
+						margin-top: 0;
+					}
+				}
+				.bcontroller {
+					.btn-home.btn-primary {
+						@include opacity(1);
+						width: 100%;
+						height: 40px;
+						line-height: 40px;
+						display: inline-block;
+						background-color: $ucd_green_80;
+						text-align: center;
+						color: #000 !important;
+					}
+				}
+				
+				&:hover {
+					//background-color: $ucd_blue_80;
+					cursor: pointer;
+				}
+			}
+		}
+		&.left-panel {
+			.action-element {
+				padding-right: 0;
+			}
+			.narrow-col {
+				margin-left: auto;
+			}
+		}
+		&.middle-panel {
+			.action-element {
+				padding-left: 0;
+				padding-right: 0;
+			}
+			.narrow-col {
+				margin: 0 auto;
+				text-align: left !important;
+				h2 {
+					text-align: center !important;
+				}
+			}
+		}
+		&.right-panel {
+			.action-element {
+				padding-left: 0;
+			}
+			.narrow-col {
+				margin-right: auto;
+				margin-left: 0;
+				h2 {
+					text-align: center !important;
+				}
+			}
+		}
+	}
+	
+}
+/* /components/_banners.scss */

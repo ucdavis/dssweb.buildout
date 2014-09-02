@@ -2,7 +2,7 @@
 /* Colors */
 /*------OUR PEOPLE---*/
 .genericTile { padding-left: 0; border: 3px solid white; background-color: #e5e9ef; }
-.genericTile .headshot { top: -10px; left: 0; background: #ccd4e0; width: 90px; position: relative; height: 90px !important; float: left; }
+.genericTile .personEntryWrapper { top: -10px; left: 0; background: #ccd4e0; width: 90px; position: relative; height: 90px !important; float: left; }
 
 .facultyStaffDirectory { padding-right: 0; }
 
