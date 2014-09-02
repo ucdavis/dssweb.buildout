@@ -359,7 +359,7 @@ input{
 	
 	// WARNING: Setting top-bar height is problem for the foundation top-bar function across responsive breakpoints ... be careful
 	// height: 80px; // WARNING: THIS BLOWS HIDING THE SUB MENU
-	padding-bottom: 40px; 
+	padding-bottom: 35px; // TODO: Why not 40px? 
 	
 	.title-area{	
 		
@@ -396,7 +396,9 @@ input{
 	.top-bar-section{
 		height:100%;
 		
-		.right{
+		/* .right {} if we have markup with left drops */
+		
+		.left {
 			// Determins width of primary menu to right of name image
 			width: 65%; // was 60px
 			height: 100% !important;
@@ -404,21 +406,26 @@ input{
 			// Parent level buttons
 			 > li{
 				background: $ucd_blue_100 !important;
-				width: 18%;
+				width: 11%; // was 18% with .right. width of primary menu items
 				height: 80px; // was 100%
 				text-align: center;
 				
 				&#fac-serv-btn {
-					width: 28%;
+					width: 18%; // was 28% with .right. 
 				}
 				// Menu hover medium blue
 				&:hover{
 					background:$ucd_blue_70 !important;
 				}
 				
+				> a {
+					//margin-top: 17px;
+					height: 80px;
+					line-height: 80px !important;
+				}
 				a{
-					position:relative;
-					top:17px;
+					//position:relative;
+					//top:17px;
 					
 					width:100%;
 					background:transparent !important;
@@ -431,7 +438,7 @@ input{
 					padding:0 !important;
 					
 					&:hover {
-						text-decoration: underline;
+						//text-decoration: underline;
 					}
 					
 					// gets rid of carets in nav
@@ -439,14 +446,43 @@ input{
 						display:none !important;
 					}
 					
+					white-space: normal;
+					
 				}
 				// First level dropdown
-				.dropdown{
+				ul {
+					//top: 100%; // expand height of primary menus: TODO: Do this another way since it kills the menu feature and address next level UL
+					li {
+						background:$ucd_blue_100 !important;
+						
+						a {
+							padding: 6px 0 !important;
+							line-height: 24px;
+							&:after{
+								display:block !important;
+								margin-top: 0;
+								line-height: 0.5 !important;
+							}
+							&:hover {
+								background:$ucd_blue_70 !important;
+							}
+						}
+						&:last-child {
+							a {
+								padding-bottom: 12px !important;
+							}
+						}
+						ul { // third level
+							top: 0 !important;
+						}
+					}
+				}
+				/*.dropdown{ // TODO: Don't need this specific selector ...
 					top:100%;
 					li{
 						background:$ucd_blue_100 !important;
 					}
-				}
+				}*/
 			}
 		}
 	}
@@ -637,6 +673,7 @@ input{
 			}
 		}
 	}
+	
 	.top-bar{
 		// Setting top-bar height is problematic across responsive breakpoints ... be careful
 		/*height:40px !important;*/
@@ -672,6 +709,19 @@ input{
 		&.expanded {
 			.title-area {
 				background-color: $ucd_blue_100;
+			}
+			.top-bar-section {
+				.left {
+					width: 100%;
+					> li {
+						width: 100% !important;
+						height: 40px;
+						> a {
+							margin-top: 0 !important;
+							line-height: 40px !important;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -724,12 +774,22 @@ input{
 	.top-bar {
 		// Make title abs to pull up right menu items
 		.title-area {
-			position: absolute;
+			// Undo with .left foundation menu
+			/*position: absolute;
 			top: 0;
-			left: 0;
+			left: 0;*/
+			.name {
+				h1{
+					a{
+						padding-left: 0;
+						width: 200px !important;
+						height: 40px !important;
+					}
+				}
+			}
 		}
 		.top-bar-section {
-			ul.right {
+			ul.left {
 				li {
 					
 				}

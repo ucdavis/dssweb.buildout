@@ -147,21 +147,30 @@ input { text-align: center; }
 
 .sidebar-block-items { background: #e5e5e5; padding-bottom: 10px; text-align: left; width: auto; height: 100%; padding-left: 15px; margin-left: 35px; list-style-type: circle; }
 
-.top-bar { background: #002855; padding-bottom: 40px; }
+.top-bar { background: #002855; padding-bottom: 35px; }
 .top-bar .title-area { /* top:15px; THIS NEGATIVELY IMPACTS THE FORMAT OF THE TOPBAR MENU */ }
 .top-bar .title-area .name h1 { padding: 0; margin: 0; }
 .top-bar .title-area .name h1 a { border-right: 1px solid white; display: inline-block; width: 430px; height: 80px; padding-left: 0; text-decoration: none; }
 .top-bar .title-area .name h1 a#name-icon img { height: 100%; display: block; }
-.top-bar .top-bar-section { height: 100%; }
-.top-bar .top-bar-section .right { width: 65%; height: 100% !important; }
-.top-bar .top-bar-section .right > li { background: #002855 !important; width: 18%; height: 80px; text-align: center; }
-.top-bar .top-bar-section .right > li#fac-serv-btn { width: 28%; }
-.top-bar .top-bar-section .right > li:hover { background: #4d688c !important; }
-.top-bar .top-bar-section .right > li a { position: relative; top: 17px; width: 100%; background: transparent !important; text-decoration: none; font-size: 17px; font-size: 1.0625rem; line-height: 28px; line-height: 1.75rem; letter-spacing: 0.025em; padding: 0 !important; }
-.top-bar .top-bar-section .right > li a:hover { text-decoration: underline; }
-.top-bar .top-bar-section .right > li a:after { display: none !important; }
-.top-bar .top-bar-section .right > li .dropdown { top: 100%; }
-.top-bar .top-bar-section .right > li .dropdown li { background: #002855 !important; }
+.top-bar .top-bar-section { height: 100%; /* .right {} if we have markup with left drops */ }
+.top-bar .top-bar-section .left { width: 65%; height: 100% !important; }
+.top-bar .top-bar-section .left > li { background: #002855 !important; width: 11%; height: 80px; text-align: center; /*.dropdown{ // TODO: Don't need this specific selector ...
+	top:100%;
+	li{
+		background:$ucd_blue_100 !important;
+	}
+}*/ }
+.top-bar .top-bar-section .left > li#fac-serv-btn { width: 18%; }
+.top-bar .top-bar-section .left > li:hover { background: #4d688c !important; }
+.top-bar .top-bar-section .left > li > a { height: 80px; line-height: 80px !important; }
+.top-bar .top-bar-section .left > li a { width: 100%; background: transparent !important; text-decoration: none; font-size: 17px; font-size: 1.0625rem; line-height: 28px; line-height: 1.75rem; letter-spacing: 0.025em; padding: 0 !important; white-space: normal; }
+.top-bar .top-bar-section .left > li a:after { display: none !important; }
+.top-bar .top-bar-section .left > li ul li { background: #002855 !important; }
+.top-bar .top-bar-section .left > li ul li a { padding: 6px 0 !important; line-height: 24px; }
+.top-bar .top-bar-section .left > li ul li a:after { display: block !important; margin-top: 0; line-height: 0.5 !important; }
+.top-bar .top-bar-section .left > li ul li a:hover { background: #4d688c !important; }
+.top-bar .top-bar-section .left > li ul li:last-child a { padding-bottom: 12px !important; }
+.top-bar .top-bar-section .left > li ul li ul { top: 0 !important; }
 
 .util-bar { max-width: 730px; background: #daaa00; height: 40px; margin-top: 56px; margin-left: auto; margin-right: 15px; }
 .util-bar ul { height: 100%; }
@@ -212,6 +221,9 @@ input { text-align: center; }
   .top-bar .title-area .name h1 a { padding-left: 0; width: 215px !important; height: 40px !important; }
   .top-bar .toggle-topbar.menu-icon { margin-top: 0; top: 0; height: 42px; padding-top: 3px; }
   .top-bar.expanded .title-area { background-color: #002855; }
+  .top-bar.expanded .top-bar-section .left { width: 100%; }
+  .top-bar.expanded .top-bar-section .left > li { width: 100% !important; height: 40px; }
+  .top-bar.expanded .top-bar-section .left > li > a { margin-top: 0 !important; line-height: 40px !important; }
   .content-main { min-width: 192px; clear: both; }
   .submenu { position: absolute; left: -999px !important; }
   .headshot { padding: 0 !important; height: 100% !important; }
@@ -226,7 +238,10 @@ top:-39px !important;*/ }
 /*----- Tablet breakpoint -------*/
 @media screen and (min-width: 768px) and (max-width: 1200px) { head { font-family: "M"; }
   body:after { content: "M"; }
-  .top-bar .title-area { position: absolute; top: 0; left: 0; } }
+  .top-bar .title-area { /*position: absolute;
+top: 0;
+left: 0;*/ }
+  .top-bar .title-area .name h1 a { padding-left: 0; width: 200px !important; height: 40px !important; } }
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: 1200px) { head { font-family: "L"; }
   body:after { content: "L"; } }
