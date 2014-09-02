@@ -7,9 +7,14 @@
   font-size: ($px / $BASE) * 1rem $important;
 }
 
-@mixin standard_font {
-  color: $ucd_black_80;
-  font-family: Arial, Helvetica, sans-serif;
+@mixin line_height($px, $important: null) {
+  line-height: $px $important; //Fallback in px
+  line-height: ($px / $BASE) * 1rem $important;
+}
+
+@mixin standard_font() {
+  color: #000;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   @include font_size(16px);
   line-height: em(21px);
 }

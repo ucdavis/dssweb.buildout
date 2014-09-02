@@ -1,6 +1,56 @@
+/* Example use case:
+ %abstract-class { font-family: Verdana; }  #my-div { @extend %abstract-class; }  #my-other-div { @extend %abstract-class; }
+ ... compiles as: #my-div, #my-other-div { font-family: Verdana; }
+
+*/
+/* 2013-05-12 RAK: Bootstrap overrides moved from default gem installation that placed overrides directly in the _variables.scss file */
+#breadcrumb .breadcrumb { padding: 0; margin-bottom: 0; list-style: none; background-color: transparent; border-radius: 0; }
+#breadcrumb .breadcrumb > li { display: auto; }
+#breadcrumb .breadcrumb > li + li:before { padding: 0; color: auto; content: auto; }
+#breadcrumb .breadcrumb > .active { color: auto; }
+
+/*Used for overriding underlined text */
+.nounderline > a { color: inherit; text-decoration: none; }
+
+.panel-body-overriden { padding-top: 15px; padding-right: 15px; padding-bottom: 0px; padding-left: 15px; }
+
+.panel-group .panel + .panel { margin-top: 0 !important; }
+
+.panel { outline: none; border: none !important; -webkit-box-shadow: none !important; -moz-box-shadow: none !important; box-shadow: none !important; }
+
+body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.3125em; }
+
+@font-face { font-family: 'lucida sans bold'; src: url("fonts/lucida/LucidaSansBold.ttf"); font-weight: normal; font-style: normal; }
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: 992px) { .top-panel { /*
+&.left-panel {
+	//text-align: right;
+}
+&.middle-panel {
+	//text-align: center;
+}
+&.right-panel {
+	//text-align: left;
+}
+*/ }
+  .top-panel .content-main .narrow-col { color: #FFF; }
+  .top-panel .content-main .narrow-col h2 { text-align: center !important; }
+  .top-panel .content-main .narrow-col h3, .top-panel .content-main .narrow-col p { text-align: left !important; }
+  .top-panel.left-panel h2, .top-panel.left-panel h2, .top-panel.left-panel h2 { text-align: center !important; } }
 /* CSS Document */
 /* index css */
+.content-main > div, .content-main > h1 { margin-left: 0; }
+
+.right-panel .panel-body .narrow-col { float: left; }
+
 @media screen and (max-width: 440px) { .content-main { /* Custom Styles for this breakpoint */ }
   .content-main h2 { text-align: center; } }
+@media screen and (min-width: 768px) { /* Style adjustments for the partial-cover home wall component */
+  .wall { height: 741px !important; }
+  #middle-row h2 { font-size: 36px !important; font-size: 2.25rem !important; line-height: 25px; line-height: 1.5625rem; margin-top: 35px; margin-bottom: 25px; text-align: center; }
+  #bottom-panel-row .narrow-col { width: 80%; }
+  #bottom-panel-row .left-panel .narrow-col { margin-left: auto; }
+  #bottom-panel-row .middle-panel .narrow-col { margin: 0 auto; }
+  #bottom-panel-row .right-panel .narrow-col { margin: 0 auto; } }
 @media screen and (min-width: 1200px) { .content-main h2 { text-align: center; }
   /* Custom Styles for this breakpoint */ }

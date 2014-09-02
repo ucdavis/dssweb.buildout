@@ -62,7 +62,7 @@ $(function () {
 			
         // Fix for Opera issue when using font-family to store value
         if (window.opera) {
-           activeMQ = window.getComputedStyle(document.body, ':after').getPropertyValue('content');
+           activeMQ = window.getComputedStyle(document.body, ':after').getPropertyValue('content-main');
         }
         // For all other modern browsers
         else if (window.getComputedStyle) {
@@ -114,15 +114,17 @@ $(function () {
 						// If the detected screen size is Tablet 600px-959px
             if (activeMQ == 'M') {
                 currentMQ = activeMQ;
-								if ($("body.ourpeople").length != 0) {
+								if  ( ($("body.ourpeople").length != 0) || ($("body.home").length != 0) ) {
 									 expandedView();
 													
 								}
+								/*
 								else if($("body.ourpeople").length != 0){
 								collapsedView();	
 								rmvStack();
 								
 								}
+								*/
             }
 						// If the detected screen size is Desktop 960px and up
             if (activeMQ == 'L') {
@@ -151,9 +153,9 @@ $(function () {
 
     function expandedView() {
        	// Index page
-			  $(".ls-content").removeClass("tab-content");
-        $(".landscape div").removeClass("tab-pane");
-        $(".nav-tabs").hide();
+			  //$(".ls-content").removeClass("tab-content");
+       // $(".landscape div").removeClass("tab-pane");
+        //$(".nav-tabs").hide();
 				
         /* If Bio Page */
 				if ($("body.bio").length != 0) {
@@ -170,7 +172,7 @@ $(function () {
            
         }
 				// Remove the panel body effect 
-				$(".collapsible").children().removeClass("panel-body");
+				//$(".collapsible").children().removeClass("panel-body");
 				
         // Remove the data-toggle attribute to allow the links to work in desktop
 				$(".panel-title a").removeAttr('data-toggle');
@@ -186,8 +188,8 @@ $(function () {
 				// Fix for contA height not being reset to auto	
 				$(".collapsible").css("height", "auto");
 				
-				$(".content div").children().removeClass("panel-collapse collapse active");
-				$(".content .panel-heading").hide();
+				$(".content-main div").children().removeClass("panel-collapse collapse active");
+				$(".content-main .panel-heading").hide();
 				$(".panel-group").children().removeClass("panel panel-default")        
         $(".more_text").hide();
 				
@@ -197,11 +199,11 @@ $(function () {
 
     function collapsedView() {
 				// Index page
-        $(".ls-content").addClass("tab-content");
-        $(".landscape div").addClass("tab-pane");
-        $(".landscape").removeClass("tab-content");
+        //$(".ls-content").addClass("tab-content");
+        //$(".landscape div").addClass("tab-pane");
+        //$(".landscape").removeClass("tab-content");
         $("#contA").addClass("active");
-        $(".nav-tabs").show();
+       // $(".nav-tabs").show();
 							  			     
         if ($("body.bio").length == 0) {		
 						// Add accordion effects to sidebar			  
