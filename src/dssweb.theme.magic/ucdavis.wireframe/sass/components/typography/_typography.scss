@@ -17,6 +17,9 @@ body, div, p, li {
 		.content-main {
 			.narrow-col {
 				color: #FFF;
+				h2 {
+					text-align: center !important;
+				}
 				h3, p {
 					text-align: left !important;
 				}
@@ -25,14 +28,21 @@ body, div, p, li {
 				}
 			}
 		}
+		&.left-panel, &.left-panel, &.left-panel {
+			h2 {
+				text-align: center !important;
+			}
+		}
+		/*
 		&.left-panel {
-			text-align: right;
+			//text-align: right;
 		}
 		&.middle-panel {
-			text-align: center;
+			//text-align: center;
 		}
 		&.right-panel {
-			text-align: left;
+			//text-align: left;
 		}
+		*/
 	}
 }

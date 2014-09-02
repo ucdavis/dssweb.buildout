@@ -42,11 +42,21 @@ body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode",
 
 @font-face { font-family: 'lucida sans bold'; src: url("fonts/lucida/LucidaSansBold.ttf"); font-weight: normal; font-style: normal; }
 /*----- Desktop breakpoint -------*/
-@media screen and (min-width: 992px) { .top-panel .content-main .narrow-col { color: #FFF; }
+@media screen and (min-width: 992px) { .top-panel { /*
+&.left-panel {
+	//text-align: right;
+}
+&.middle-panel {
+	//text-align: center;
+}
+&.right-panel {
+	//text-align: left;
+}
+*/ }
+  .top-panel .content-main .narrow-col { color: #FFF; }
+  .top-panel .content-main .narrow-col h2 { text-align: center !important; }
   .top-panel .content-main .narrow-col h3, .top-panel .content-main .narrow-col p { text-align: left !important; }
-  .top-panel.left-panel { text-align: right; }
-  .top-panel.middle-panel { text-align: center; }
-  .top-panel.right-panel { text-align: left; } }
+  .top-panel.left-panel h2, .top-panel.left-panel h2, .top-panel.left-panel h2 { text-align: center !important; } }
 /* _theme.scss */
 /* 2014-06-12 RAK: This file contains theme CSS and mediaquery for responsive (at end of file).  TODO:  - Move to SASS 
 */
@@ -744,6 +754,8 @@ tbody.collapse.in { display: table-row-group; }
   .top-panel.left-panel .narrow-col { margin-left: auto; }
   .top-panel.middle-panel .action-element { padding-left: 0; padding-right: 0; }
   .top-panel.middle-panel .narrow-col { margin: 0 auto; text-align: left !important; }
+  .top-panel.middle-panel .narrow-col h2 { text-align: center !important; }
   .top-panel.right-panel .action-element { padding-left: 0; }
-  .top-panel.right-panel .narrow-col { margin-right: auto; margin-left: 0; } }
+  .top-panel.right-panel .narrow-col { margin-right: auto; margin-left: 0; }
+  .top-panel.right-panel .narrow-col h2 { text-align: center !important; } }
 /* /components/_banners.scss */
