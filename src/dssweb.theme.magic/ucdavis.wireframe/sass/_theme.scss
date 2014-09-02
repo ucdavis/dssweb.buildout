@@ -352,24 +352,43 @@ input{
 	margin-left:35px;
 	list-style-type:circle;	
 }
-// primary blue menu
+
+// Blue primary menu
 .top-bar{
-	background:$ucd_blue_100 !important;
+	background:$ucd_blue_100;
 	
-	/* height: 80px !important; THIS BLOWS HIDING THE SUB MENU */
+	// WARNING: Setting top-bar height is problem for the foundation top-bar function across responsive breakpoints ... be careful
+	// height: 80px; // WARNING: THIS BLOWS HIDING THE SUB MENU
+	padding-bottom: 40px; 
 	
 	.title-area{	
+		
 		/* top:15px; THIS NEGATIVELY IMPACTS THE FORMAT OF THE TOPBAR MENU */
 		.name {
-			letter-spacing:.15em;
 			h1{
-				a{					
-					font-size:1.5rem;
-					text-transform:uppercase;
-					//font-family:lucida sans bold;
-					font-weight:bold;
-					//line-height:20px;
-					text-decoration:none;
+				// If using text title
+				//@include font_size(24px);
+				//letter-spacing: 0.15em;
+				//text-transform: uppercase;
+				//font-weight: bold;
+				//@include line_height(20px);
+				padding: 0;
+				margin: 0;
+				a{
+					border-right: 1px solid white;
+					display: inline-block;
+					width: 430px;
+					height: 80px;	
+					padding-left: 0;
+					
+					text-decoration: none;
+					&#name-icon {
+						//background: url(../images/name.gif) top left no-repeat; // set image in HTML code to retain scalable/responsive image
+						img {
+							height: 100%;
+							display: block;
+						}
+					}
 				}
 			}
 		}
@@ -378,31 +397,42 @@ input{
 		height:100%;
 		
 		.right{
-			width:60%;
-			height:100% !important;
+			// Determins width of primary menu to right of name image
+			width: 65%; // was 60px
+			height: 100% !important;
+			
 			// Parent level buttons
-			 .last{
-									
-					width:28% !important;
-					
-				}
 			 > li{
-				background:#002855 !important;
-				height:100%;
-				text-align:center;
-				width:18%;
-					
+				background: $ucd_blue_100 !important;
+				width: 18%;
+				height: 80px; // was 100%
+				text-align: center;
+				
+				&#fac-serv-btn {
+					width: 28%;
+				}
+				// Menu hover medium blue
 				&:hover{
-						background:#4d688c !important;
-					}
+					background:$ucd_blue_70 !important;
+				}
 				
 				a{
-					position:relative;	
+					position:relative;
+					top:17px;
+					
 					width:100%;
 					background:transparent !important;
-					top:17px;
-					font-size:17px;
+					
+					text-decoration: none;
+					@include font_size(17px);
+					@include line_height(28px);
+					
+					letter-spacing: 0.025em;
 					padding:0 !important;
+					
+					&:hover {
+						text-decoration: underline;
+					}
 					
 					// gets rid of carets in nav
 					&:after{
@@ -414,7 +444,7 @@ input{
 				.dropdown{
 					top:100%;
 					li{
-						background:#002855 !important;
+						background:$ucd_blue_100 !important;
 					}
 				}
 			}
@@ -426,9 +456,10 @@ input{
 	max-width:730px;
 	background:$ucd_bright_gold;	
 	height:40px;
-	margin-left:auto;
+
 	margin-top:56px;
-	//margin-right:105px;
+	margin-left:auto;
+	margin-right:15px; // was disabled 105px
 	ul{
 		height:100%;
 		
@@ -436,26 +467,32 @@ input{
 			float:left;
 			padding-left:3px;
 			padding-right:3px;
-			display:inline;
+			//display:inline;
 			height:100%;
+			text-align: center;
+			border-right:1px solid #fff;
 			a{
-				display:block;
-				margin-left:auto;
+				display:inline-block;
+				margin-top: 12px;
+				
 				margin-right:auto;
-				position:relative;
+				margin-left:auto;
+				
 				text-decoration:none;
 				color:#000;
-				text-transform:uppercase;
-				top:8px;
-				//font-family:lucida sans;
-				font-size:14px;
-				text-align:center;
+				text-transform: uppercase;
+				@include font_size(14px);
+				letter-spacing: 0.050em;
+				text-align: center;
 				
 			}
 			input{
-				width:100%;
-				position:relative;
-				top:5px;
+				width:190px;
+				height: 27px;
+				text-transform: uppercase;
+				@include font_size(14px);
+				letter-spacing: 0.050em;
+				margin-top: 2px;
 				text-align:left;
 				padding-left:10px;
 			}
@@ -463,31 +500,28 @@ input{
 	}
 	#uti-news{
 		width:21.92%; //160px
-		border-right:1px solid #fff;
 	}
 	#uti-events{
 		width:10.96%; //80px
-		border-right:1px solid #fff;
-		border-left:1px solid #fff;
 	}
 	#uti-give{
 		width:10.96%; //80px
-		border-right:1px solid #fff;
-		border-left:1px solid #fff;
 	}
 	#uti-search{
 		width:28.36%;//207px
-		border-right:1px solid #fff;
-		border-left:1px solid #fff;
 	}
 	#uti-share{
-		width:6.03%; //44px
-		border-right:1px solid #fff;
-		border-left:1px solid #fff;
+		width: 5%; //44px
+		a {
+			display: inline-block;
+			width: 15px;
+			height: 17px;
+			background: url(../images/icons/share.png) top left no-repeat;
+		}
 	}
 	#uti-logo{
-		//width:21.23%;//155px
-		border-left:1px solid #fff;
+		border-right-width: 0;
+		width: 125px;
 	}
 }
 .caret{
@@ -586,20 +620,60 @@ input{
 		clear:both;
 		float:left !important;
 	}
-	.util-bar{
-		margin-left:14px;
-		margin-right:15px;
+	.util-bar{ // at this breakpoint, yellow bar containing only the UC Davis logo
+		margin: 0;
+		height: 27px; // 17px logo + 5px top/bottom margin
 		ul {
+			margin: 0;
+			padding: 0;
 			li {
 				&#uti-logo {
 					padding-left: 15px;
+					border-left-width: 0;
+					a {
+						margin-top: 5px;
+					}
 				}
 			}
 		}
 	}
 	.top-bar{
-		/*height:40px !important;
-		overflow:visible !important;*/
+		// Setting top-bar height is problematic across responsive breakpoints ... be careful
+		/*height:40px !important;*/
+		
+		//overflow:visible !important;
+		
+		// stretch top-bar across container margins
+		margin-left: -15px;
+		margin-right: -15px;
+		
+		//height: 40px; 
+		padding-bottom: 0;
+		// Downscale name.gif 
+		.title-area{	
+			.name {
+				h1{
+					a{
+						padding-left: 0;
+						width: 215px !important;
+						height: 40px !important;
+					}
+				}
+			}
+		}
+		.toggle-topbar {
+			&.menu-icon {
+		    margin-top: 0;
+		    top: 0;
+				height: 42px;
+				padding-top: 3px;
+			}
+		}
+		&.expanded {
+			.title-area {
+				background-color: $ucd_blue_100;
+			}
+		}
 	}
 	.content-main {
 	  min-width:192px;
@@ -643,14 +717,29 @@ input{
 	
 }
 /*----- Tablet breakpoint -------*/
-@media screen and (min-width: 768px) and (max-width: 992px) {
+@media screen and (min-width: 768px) and (max-width: 1200px) { // was max-width: 992px
 	head { font-family:"M";}
-	body:after{content:"M";}	
-
+	body:after{content:"M";}
 	
+	.top-bar {
+		// Make title abs to pull up right menu items
+		.title-area {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.top-bar-section {
+			ul.right {
+				li {
+					
+				}
+			}
+		}
+	}
 }
+
 /*----- Desktop breakpoint -------*/
-@media screen and (min-width: 992px) {	
+@media screen and (min-width: 1200px) {	// was min-width: 992px
 	head { font-family:"L";}
 	body:after{content:"L";}
 	
