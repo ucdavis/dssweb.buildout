@@ -14,13 +14,15 @@
     <!-- #EndEditable -->
 		
     <link href="assets/vendor/reset.css" rel="stylesheet" />
-    <link href="assets/styles.css" rel="stylesheet" />
-		
-    <!-- #BeginEditable "header" -->
-    <link href="assets/sections/index.css" rel="stylesheet" />
     <link href="assets/vendor/topbar.css" rel="stylesheet" />
 		<link href="assets/vendor/jquery.cf.happybox.css" rel="stylesheet">
 		<link href="bower_components/Wallpaper/jquery.fs.wallpaper.css" rel="stylesheet">
+		
+	  <link type="text/css" href="assets/styles.css" rel="stylesheet" />
+	  <link type="text/css" href="assets/sub-org.css" rel="stylesheet" />
+		
+    <!-- #BeginEditable "header" -->
+    <link href="assets/sections/index.css" rel="stylesheet" />
 		
     <!-- #EndEditable -->
 		
@@ -38,10 +40,10 @@
 	
   <div class="row jumbotron">
 		<div class="siders">
-		<div class="wall">
-    	<h1>Banner</h1>
+			<div class="wall">
+	    	<h1>Banner</h1>
+			</div>
 		</div>
-	</div>
   </div>
 	
   <div class="container" id="main">
@@ -68,7 +70,7 @@
           </li>
           <li id="uti-logo">
             <a href="#">
-              <img src="images/nav-logo.png" />
+              <img src="images/logos/nav-logo.png" />
             </a>
           </li>
         </ul>
@@ -80,7 +82,7 @@
       <ul class="title-area">
         <li class="name">
           <h1>
-            <a href="#">Psychology</a>
+            <a id="name-icon" href="index.html"><img src="images/logos/psychology-logo.gif" alt="Psychology" title="Psychology" /></a>
           </h1>
         </li>
         <!-- Mobile Menu Toggle -->
@@ -93,13 +95,13 @@
       <!-- Top Bar Section -->
       <section class="top-bar-section">
         <!-- Top Bar Right Nav Elements -->
-        <ul class="right">
+        <ul class="left">
           <!-- Dropdown -->
-          <li class="has-dropdown">
-            <a href="#">Connect</a>
+          <li id="contact-btn" class="has-dropdown">
+            <a href="#">Contact</a>
             <ul class="dropdown">
               <li>
-                <a href="#">Sub-item 1</a>
+                <a href="#">This is a super long item to demonstrate button text flow</a>
               </li>
               <li>
                 <a href="#">Sub-item 2</a>
@@ -126,7 +128,7 @@
               </li>
             </ul>
           </li>
-          <li class="has-dropdown">
+          <li id="students-btn" class="has-dropdown">
             <a href="#">Students</a>
             <ul class="dropdown">
               <li>
@@ -137,7 +139,7 @@
               </li>
             </ul>
           </li>
-          <li class="has-dropdown">
+          <li id="researc-btn" class="has-dropdown">
             <a href="#">Research</a>
             <ul class="dropdown">
               <li>
@@ -151,7 +153,7 @@
               </li>
             </ul>
           </li>
-          <li class="has-dropdown">
+          <li id="people-btn" class="has-dropdown">
             <a href="#">Our People</a>
             <ul class="dropdown">
               <li>
@@ -182,7 +184,7 @@
               </li>
             </ul>
           </li>
-          <li class="has-dropdown">
+          <li id="fac-serv-btn" class="has-dropdown">
             <a href="#">Facilities &amp; Services</a>
             <ul class="dropdown">
               <li>
@@ -224,10 +226,10 @@
 									<h2>News</h2>
 									<div class="content">
 	              		<h3><a href="#">Meet the Experts: CMB research leads to new FDA-approved treatment for severe ...</a></h3>
-	              		<p>
-	                		<a class="btn btn-primary btn-home" href="#" role="button">Read More</a>
-	             	 	 </p>
 								 </div>
+              		<div class="bcontroller">
+                		<a class="btn btn-primary btn-home" href="#" role="button">Read More</a>
+             	 	 </div>
 								</div>
 							</div>
             </div>
@@ -265,10 +267,10 @@
 		                    Most popular major at UC Davis
 		                  </li>
 		                </ul>
-		                <p>
-		                  <a class="btn btn-primary btn-home" href="#" role="button">Read More</a>
-		                </p>
 									</div>
+              		<div class="bcontroller">
+                		<a class="btn btn-primary btn-home" href="#" role="button">Read More</a>
+             	 	 </div>
 								</div>
               </div>
             </div>
@@ -291,10 +293,10 @@
 									<div class="content">
 	                	<h3><a href="#">Biological Psychology Brown Bag Series</a></h3>
 	                	<h3><a href="#">Wed 06-11-2014</a></h3>
-		                <p>
-		                  <a class="btn btn-primary btn-home" href="#" role="button">Read More</a>
-		                </p>
 									</div>
+              		<div class="bcontroller">
+                		<a class="btn btn-primary btn-home" href="#" role="button">Read More</a>
+             	 	 </div>
 								</div>
               </div>
             </div>
@@ -348,6 +350,7 @@
               <div class="panel-body">
 								<div class="narrow-col">
 	                <h2>Quick Facts</h2>
+									<p>Note: Following does not reflect current list of templates</p>
 	                <ul>
 	                  <li>
 	                    <a href="t1_charts.html">t1_charts.html</a>
@@ -435,31 +438,57 @@
       </div><!-- /content -->
     </div><!-- /landscape -->
     <!-- #EndEditable -->
-    <div id="utility">
-      <nav>
-        <ul>
-          <li>
-            <a href="t13_news.html">Latest News</a>
-          </li>
-          <li>
-            <a href="t14_events.html">Events</a>
-          </li>
-          <li>
-            <a href="t4_adhoc.html">Give</a>
-          </li>
-          <li>
-            <input type="text" id="search" placeholder="Search" />
-          </li>
-        </ul>
-      </nav>
-    </div>
+
+		<!-- Row below 3-column if needed -->
+		
+		<!-- /Row below -->
+		
     <!-- Site footer -->
     <!-- #BeginEditable "custom-footer" -->
-    <div class="footer">
+	  <div class="footer">
 			<div class="foot-wrap">
-      	<p>Copyright &copy; 2014  All Rights Reserved.</p>
+				<div id="vcard">
+					<p>
+						Department of Psychology<br />
+						University of California, Davis<br />
+						135 Young Hall<br />
+						One Shields Avenue<br />
+						Davis, CA 95616
+					</p>
+					<p id="email-phone">
+						<a href="#">Email</a> | (530) 752-1880
+					</p>
+				</div>
+				<ul class="footer-nav" id="foot-cont">
+					<li><a href="#">Contact</a></li>
+					<li><a href="#">Students</a></li>
+					<li><a href="#">Research</a></li>
+					<li><a href="#">Our People</a></li>
+					<li><a href="#">Facilities & Services</a></li>
+				</ul>
+				<ul class="footer-nav">
+					<li><a href="#">Latest News</a></li>
+					<li><a href="#">Events</a></li>
+					<li><a href="#">Give</a></li>
+				</ul>
+				<ul class="footer-nav">
+					<li><a href="#">Admissions</a></li>
+					<li><a href="#">Advising</a></li>
+					<li><a href="#">Student Clubs</a></li>
+					<li><a href="#">Login</a></li>
+				</ul>
+				<ul id="foot-social">
+					<li class="first"><a id="facebook-icon" href="#"><span class="btn-txt">Facebook</span></a></li>
+					<li><a id="twitter-icon" href="#"><span class="btn-txt">Twitter</span></a></li>
+					<li><a id="pinterest-icon" href="#"><span class="btn-txt">Pinterest</span></a></li>
+					<li><a id="youtube-icon" href="#"><span class="btn-txt">YouTube</span></a></li>
+					<li class="last"><a id="linkedin-icon" href="#"><span class="btn-txt">LinkedIn</span></a></li>
+				</ul>
+				<p id="copyright">
+					Copyright &copy 2014 &nbsp;All Rights Reserved
+				</p>
 			</div>
-    </div>
+	  </div>
     <!-- #EndEditable -->
   </div>
   <!-- /container -->
@@ -479,7 +508,7 @@
   <script>
     $(document).foundation();
 		$(".wall").wallpaper({ 
-			source: "images/nasa-bw-1.jpg"
+			source: "images/banners/psychology-home-page-image1.jpg"
 		});
 	</script>
 	

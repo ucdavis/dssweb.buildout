@@ -1,7 +1,7 @@
 $(function(){	
 	$(document).ready(function() {
 		
-		$(document).foundation();
+		$(document).foundation(); // foundation top-bar support
 		
 		if (typeof window.console == "object") window.console.log("JQuery version:  " + $.fn.jquery);
 		
@@ -12,7 +12,7 @@ $(function(){
 					'action_element_class': '.action-element',
 					'canvas_element_class': '.narrow-col',
 					'button_class': ".btn-primary",
-					'height': 478 // total height of the happy viewport
+					'height': 520 // total height of the happy viewport
 				}
 			);
 		}

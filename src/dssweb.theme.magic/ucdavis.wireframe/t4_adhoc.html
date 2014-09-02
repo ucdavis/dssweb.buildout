@@ -11,9 +11,10 @@
 	    <!-- #EndEditable -->
 	  <link type="text/css" href="assets/vendor/reset.css" rel="stylesheet" />
 		<link type="text/css" href="assets/vendor/topbar.css" rel="stylesheet" />
+		<link href="bower_components/Wallpaper/jquery.fs.wallpaper.css" rel="stylesheet">
 	  <link type="text/css" href="assets/styles.css" rel="stylesheet" />
 	  <link type="text/css" href="assets/sub-org.css" rel="stylesheet" />
-	
+		
 		<!-- #BeginEditable "header" -->
 		
 	  <!-- #EndEditable -->
@@ -25,9 +26,18 @@
 	    <![endif]-->
 	</head>
 
-<body>
-  <div class="container">
-    <div class="row">
+<body class="">
+	
+  <div class="row jumbotron">
+		<div class="siders">
+			<div class="wall">
+	    	<h1>Banner</h1>
+			</div>
+		</div>
+  </div>
+	
+  <div id="main-container" class="container">
+    <div id="util-bar-wrap" class="row">
       <nav class="util-bar">
         <ul>
           <li class="hidden-xs" id="uti-news">
@@ -49,19 +59,20 @@
           </li>
           <li id="uti-logo">
             <a href="#">
-              <img src="images/nav-logo.png" />
+              <img src="images/logos/nav-logo.png" />
             </a>
           </li>
         </ul>
       </nav>
     </div>
 
+		<div id="top-bar-wrap" class="row">
     <nav class="top-bar" data-topbar="">
       <!-- Title -->
       <ul class="title-area">
         <li class="name">
           <h1>
-            <a id="name-icon" href="index.html"><img src="images/name.gif" alt="Psychology" title="Psychology" /></a>
+            <a id="name-icon" href="index.html"><img src="images/logos/psychology-logo.gif" alt="Psychology" title="Psychology" /></a>
           </h1>
         </li>
         <!-- Mobile Menu Toggle -->
@@ -180,6 +191,7 @@
         </ul>
       </section>
     </nav>
+	</div>
     <!-- #BeginEditable "content" -->
 			
   <div class="content-main col-xs-12 col-sm-12 col-md-8 col-lg-8"> <!-- was md-6 lg-7 -->
@@ -189,7 +201,7 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="panel-title"><a data-parent="#accordionB" data-target=
-            "#content-a" data-toggle="collapse">Lorem</a></h4>
+            "#content-a" data-toggle="collapse">Temp: Lorem ipsum dolor sit amet [default open]</a></h4>
         </div>
         <div class=" collapsible panel-collapse collapse in" id="content-a">
           <div class="panel-body">
@@ -248,7 +260,7 @@
 	
     <!-- #EndEditable -->
   <div class="panel-group" id="accordionC">
-    <div class="sidebar sidebar-right col-xs-12 col-sm-2 col-md-3">
+    <div class="sidebar sidebar-right col-xs-12 col-sm-12 col-md-3">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title"><a data-parent="#accordionC" data-target=
@@ -329,6 +341,14 @@
 	<script src="js/expand.js"></script>
 	<script src="js/foundation/js/foundation/foundation.js" rel="text/javascript"></script>
 	<script src="js/foundation/js/foundation/foundation.topbar.js" rel="text/javascript"></script>
+	
+	<script src="bower_components/Wallpaper/jquery.fs.wallpaper.js"></script>
+		
+  <script>
+    $(document).foundation();
+		$(".wall").wallpaper();
+	</script>
+	
 	<script src="js/jquery.cf.main.js"></script>
   <!--[if lt IE 9]>
       	<script src="js/contrib/respond.min.js"></script>

@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import "variables";
 /* CSS Document */
 
 /* index css */
@@ -23,6 +24,10 @@
 	}
 	#middle-row {
 		h2 {
+			@include font_size(36px, !important);
+			@include line_height(25px);
+			margin-top: 35px;
+			margin-bottom: 25px;
 			text-align: center;
 		}
 	}

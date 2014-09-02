@@ -23,12 +23,13 @@ body:after{
 	content:"XS"; 
 	display:none;
 }
-.container{
+.container {
 	padding:0;
 	&#main {
 		padding:0 !important;
 	}
 }
+
 .body-img{
 	border:1px solid red;
 	height:120px;
@@ -155,11 +156,14 @@ input{
 .contact{
 	margin-top:15px;	
 }
+
+/* TODO: Careful with global treatment of .content
 .content{
 	margin-top:47px;
 	margin-bottom:40px;
 	padding:0;
 }
+*/
 
 .content-title{
 	padding-bottom:30px;
@@ -170,6 +174,7 @@ input{
 }
 .content-main{
 	margin-top: 45px;
+	margin-bottom: 30px;
 	padding-left: 0 !important;
 	//font-size: 16px; // 16px is the default and should already be set
 	p {
@@ -246,10 +251,16 @@ input{
 }
 .sidebar{
 	height:auto;
-	width:250px !important;
+	width:250px; // !important; 
 	margin-top:15px;
 	text-align:left;
-	background:#f2f2f2;
+	
+	> div {
+		margin-left: 70px;
+		.panel-body {
+			background: #f2f2f2;
+		}
+	}
 	h3{
 		height:30px;
 		a{
@@ -272,15 +283,16 @@ input{
 	.collapsible{
 		background:#f2f2f2;
 	}
-}
-.sidebar-right{
-	margin-top: 135px;
-	//margin-left: 160px; // TODO: moving sidebar to right should be done another way. float:right not solution
-	// TODO: these styles are not necessary
-	//position:relative;
-	//top:140px;
-	//float:right;
-	// margin-right:90px; // TODO: Why ?
+
+	&.sidebar-right{
+		margin-top: 135px;
+		//margin-left: 160px; // TODO: moving sidebar to right should be done another way. float:right not solution
+		// TODO: these styles are not necessary or have no affect
+		//position:relative;
+		//top:140px;
+		//float:right;
+		// margin-right:90px; // TODO: Why ?
+	}
 }
 
 .more_text{
@@ -383,7 +395,7 @@ input{
 					
 					text-decoration: none;
 					&#name-icon {
-						//background: url(../images/name.gif) top left no-repeat; // set image in HTML code to retain scalable/responsive image
+						//background: url(../images/logos/name.gif) top left no-repeat; // set image in HTML code to retain scalable/responsive image
 						img {
 							height: 100%;
 							display: block;
@@ -393,6 +405,10 @@ input{
 			}
 		}
 	}
+	
+	// NOTE: To MODIFY POSITION OF PRIMARY MENU ITEMS use the width % below under > li and &#fac-serv-btn
+	// fac-serv-btn is an example for a button title that needs special width.
+	
 	.top-bar-section{
 		height:100%;
 		
@@ -406,12 +422,12 @@ input{
 			// Parent level buttons
 			 > li{
 				background: $ucd_blue_100 !important;
-				width: 11%; // was 18% with .right. width of primary menu items
+				width: 9.6%; // was 18% with .right. width of primary menu items
 				height: 80px; // was 100%
 				text-align: center;
 				
 				&#fac-serv-btn {
-					width: 18%; // was 28% with .right. 
+					width: 17%; // was 28% with .right. 
 				}
 				// Menu hover medium blue
 				&:hover{
@@ -489,13 +505,13 @@ input{
 }
 // Secondary gold menu
 .util-bar{
-	max-width:730px;
+	max-width: 768px; // was 730px;
 	background:$ucd_bright_gold;	
 	height:40px;
 
 	margin-top:56px;
 	margin-left:auto;
-	margin-right:15px; // was disabled 105px
+	//margin-right:15px; // changes with addition of row wrap ... 105px was previous disabled value 
 	ul{
 		height:100%;
 		
@@ -581,7 +597,7 @@ input{
 
 .panel-title {
 	background: $rec_blue;
-	width:250px;
+	//width:250px;
 	a{
 		text-decoration:none;
 	}
@@ -655,6 +671,7 @@ input{
 		margin-top:100px;
 		clear:both;
 		float:left !important;
+		
 	}
 	.util-bar{ // at this breakpoint, yellow bar containing only the UC Davis logo
 		margin: 0;
@@ -743,11 +760,26 @@ input{
 	.panel{
 		border:none;
 	}
-	.panel-title {
-		padding:15px;
-		a:hover{
-			cursor:pointer;
-		}		
+	.panel-heading {
+		height: 40px;
+		.panel-title {
+			height: 40px;
+			width: auto; // undo general 250 width
+			a {
+				display: inline-block;
+				width: 100%;
+				height: 40px;
+
+				padding-right: 15px;
+				padding-left: 15px !important;
+				
+				text-align: center;
+				line-height: 40px;
+				&:hover{
+					cursor: pointer !important;
+				}
+			}
+		}
 	}
 	.menu-icon{
 		/* height:80px;
@@ -757,15 +789,82 @@ input{
 		position:relative;
 		top:-18px;
 	}
-	.sidebar-right{	
-		//float:right;
-		//margin-top: 100px;	//TODO: margin-top reveals formatting error
+	.sidebar {
+		&.sidebar-right{	
+			//float:right;
+			//margin-top: 100px;	//TODO: margin-top reveals formatting error
+			margin-top: 0;
+		}
 	}
 	.op-sidebar-title {
 		text-align:left !important;
 	}
 	
 }
+
+
+@media screen and (min-width: 768px) {
+	
+	// Add margins on small devices
+	.container#main-container {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+	
+	#util-bar-wrap {
+		padding-right: 105px;
+	}
+	
+	#top-bar-wrap {
+		padding-left: 105px; // 90 + 15 px
+		padding-right: 105px;
+	}
+	
+	.content-main {
+		> div, > h1 {
+	  	margin-left: 90px;
+		}
+	}
+	
+}
+
+// Temporary: TODO: Identify and manage breakpoint at 992
+@media screen and (max-width: 992px) {
+	// Remove margins from smaller than 992
+	#util-bar-wrap {
+		padding-right: 0;
+	}
+	#top-bar-wrap {
+		padding-right: 0;
+	}
+	#top-bar-wrap {
+		padding-left: 0; // 90 + 15 px
+		padding-right: 0;
+	}
+	.content-main {
+		> div, > h1 {
+	  	margin-left: 0;
+		}
+	}
+	.sidebar {
+		&.sidebar-right {
+			> div {
+				margin-left: 0;
+			}
+		}
+	}
+	
+}
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+	.sidebar {
+		&.sidebar-right {
+			> div {
+				margin-left: 0;
+			}
+		}
+	}
+}
+
 /*----- Tablet breakpoint -------*/
 @media screen and (min-width: 768px) and (max-width: 1200px) { // was max-width: 992px
 	head { font-family:"M";}
@@ -796,13 +895,14 @@ input{
 			}
 		}
 	}
+
 }
 
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: 1200px) {	// was min-width: 992px
 	head { font-family:"L";}
 	body:after{content:"L";}
-	
+
 }
 
 /* Override default grid gutter, which was broke on home/index bottom panel row. */

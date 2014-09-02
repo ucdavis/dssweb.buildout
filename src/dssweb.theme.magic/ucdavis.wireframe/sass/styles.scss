@@ -1,3 +1,4 @@
+@charset "utf-8";
 /* From reset_all.scss ... TODO: Why? */
 body{
     //font-size: 14px !important;
@@ -65,4 +66,6 @@ body{
 @import "theme";
 @import "vendor/bootstrap";
 @import "components/banners";
+
 $container-large-desktop: 1280px;
+
