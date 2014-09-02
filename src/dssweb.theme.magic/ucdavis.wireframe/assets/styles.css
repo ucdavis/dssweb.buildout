@@ -221,9 +221,9 @@ input { text-align: center; }
   .sidebar-right { margin-top: 100px; clear: both; float: left !important; }
   .util-bar { margin: 0; height: 27px; }
   .util-bar ul { margin: 0; padding: 0; }
-  .util-bar ul li#uti-logo { padding-left: 15px; border-left-width: 0; }
+  .util-bar ul li#uti-logo { border-left-width: 0; }
   .util-bar ul li#uti-logo a { margin-top: 5px; }
-  .top-bar { /*height:40px !important;*/ margin-left: -15px; margin-right: -15px; padding-bottom: 0; }
+  .top-bar { /*height:40px !important;*/ margin-right: -15px; padding-bottom: 0; }
   .top-bar .title-area .name h1 a { padding-left: 0; width: 215px !important; height: 40px !important; }
   .top-bar .toggle-topbar.menu-icon { margin-top: 0; top: 0; height: 42px; padding-top: 3px; }
   .top-bar.expanded .title-area { background-color: #002855; }
@@ -249,7 +249,6 @@ top:-39px !important;*/ }
   #top-bar-wrap { padding-left: 105px; padding-right: 105px; }
   .content-main > div, .content-main > h1 { margin-left: 90px; } }
 @media screen and (max-width: 992px) { #util-bar-wrap { padding-right: 0; }
-  #top-bar-wrap { padding-right: 0; }
   #top-bar-wrap { padding-left: 0; padding-right: 0; }
   .content-main > div, .content-main > h1 { margin-left: 0; }
   .sidebar.sidebar-right > div { margin-left: 0; } }
