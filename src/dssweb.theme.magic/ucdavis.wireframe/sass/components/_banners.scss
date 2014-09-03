@@ -92,6 +92,9 @@
 			.narrow-col {
 				margin: 0 auto;
 				text-align: left !important;
+				h2 {
+					text-align: center !important;
+				}
 			}
 		}
 		&.right-panel {
@@ -101,6 +104,9 @@
 			.narrow-col {
 				margin-right: auto;
 				margin-left: 0;
+				h2 {
+					text-align: center !important;
+				}
 			}
 		}
 	}

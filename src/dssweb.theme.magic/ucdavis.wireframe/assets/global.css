@@ -25,11 +25,21 @@ body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode",
 
 @font-face { font-family: 'lucida sans bold'; src: url("fonts/lucida/LucidaSansBold.ttf"); font-weight: normal; font-style: normal; }
 /*----- Desktop breakpoint -------*/
-@media screen and (min-width: 992px) { .top-panel .content-main .narrow-col { color: #FFF; }
+@media screen and (min-width: 992px) { .top-panel { /*
+&.left-panel {
+	//text-align: right;
+}
+&.middle-panel {
+	//text-align: center;
+}
+&.right-panel {
+	//text-align: left;
+}
+*/ }
+  .top-panel .content-main .narrow-col { color: #FFF; }
+  .top-panel .content-main .narrow-col h2 { text-align: center !important; }
   .top-panel .content-main .narrow-col h3, .top-panel .content-main .narrow-col p { text-align: left !important; }
-  .top-panel.left-panel { text-align: right; }
-  .top-panel.middle-panel { text-align: center; }
-  .top-panel.right-panel { text-align: left; } }
+  .top-panel.left-panel h2, .top-panel.left-panel h2, .top-panel.left-panel h2 { text-align: center !important; } }
 @-ms-viewport { width: device-width; }
 html, body { color: #000; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.3125em; font-family: Arial, Helvetica, sans-serif; line-height: 1.313em; }
 

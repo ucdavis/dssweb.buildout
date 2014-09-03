@@ -4,6 +4,17 @@
 
 /* index css */
 
+// undo left margin for home page
+.content-main > div, .content-main > h1 {
+    margin-left: 0;
+}
+.right-panel {
+	.panel-body {
+		.narrow-col {
+			float: left;
+		}
+	}
+}
 @media screen and (max-width: 440px) {		
 	.content-main {
 	h2{
