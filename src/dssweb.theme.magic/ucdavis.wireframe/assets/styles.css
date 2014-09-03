@@ -41,6 +41,7 @@
 body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.3125em; }
 
 @font-face { font-family: 'lucida sans bold'; src: url("fonts/lucida/LucidaSansBold.ttf"); font-weight: normal; font-style: normal; }
+
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: 992px) { .top-panel { /*
 &.left-panel {
@@ -554,7 +555,7 @@ left: 0;*/ }
   .col-lg-offset-10 { margin-left: 83.33333%; }
   .col-lg-offset-11 { margin-left: 91.66667%; }
   .col-lg-offset-12 { margin-left: 100%; } }
-.fade { opacity: 0; -moz-transition: opacity 0.15s linear; -o-transition: opacity 0.15s linear; -webkit-transition: opacity 0.15s linear; transition: opacity 0.15s linear; }
+.fade { opacity: 0; -webkit-transition: opacity 0.15s linear; -moz-transition: opacity 0.15s linear; -o-transition: opacity 0.15s linear; transition: opacity 0.15s linear; }
 .fade.in { opacity: 1; }
 
 .collapse { display: none; }
@@ -564,9 +565,9 @@ tr.collapse.in { display: table-row; }
 
 tbody.collapse.in { display: table-row-group; }
 
-.collapsing { position: relative; height: 0; overflow: hidden; -moz-transition: height 0.35s ease; -o-transition: height 0.35s ease; -webkit-transition: height 0.35s ease; transition: height 0.35s ease; }
+.collapsing { position: relative; height: 0; overflow: hidden; -webkit-transition: height 0.35s ease; -moz-transition: height 0.35s ease; -o-transition: height 0.35s ease; transition: height 0.35s ease; }
 
-.panel { margin-bottom: 20px; background-color: transparent; border: 1px solid transparent; border-radius: 4px; -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); }
+.panel { margin-bottom: 20px; background-color: transparent; border: 1px solid transparent; border-radius: 4px; -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); }
 
 .panel-body { padding: 0; }
 .panel-body:before, .panel-body:after { content: " "; display: table; }
@@ -668,9 +669,10 @@ tbody.collapse.in { display: table-row-group; }
 
 .hidden { display: none !important; visibility: hidden !important; }
 
-.affix { position: fixed; -moz-transform: translate3d(0, 0, 0); -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+.affix { position: fixed; -webkit-transform: translate3d(0, 0, 0); -moz-transform: translate3d(0, 0, 0); -ms-transform: translate3d(0, 0, 0); -o-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
 
 @-ms-viewport { width: device-width; }
+
 .visible-xs, .visible-sm, .visible-md, .visible-lg { display: none !important; }
 
 .visible-xs-block, .visible-xs-inline, .visible-xs-inline-block, .visible-sm-block, .visible-sm-inline, .visible-sm-inline-block, .visible-md-block, .visible-md-inline, .visible-md-inline-block, .visible-lg-block, .visible-lg-inline, .visible-lg-inline-block { display: none !important; }
@@ -748,7 +750,7 @@ tbody.collapse.in { display: table-row-group; }
   .top-panel .action-element .narrow-col h2 { margin-top: 0 !important; font-weight: normal !important; margin-bottom: 0; }
   .top-panel .action-element .narrow-col .content { margin-left: 0; }
   .top-panel .action-element .narrow-col .content h3:first-child { padding-top: 0 !important; margin-top: 0; }
-  .top-panel .action-element .narrow-col .bcontroller .btn-home.btn-primary { filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; width: 100%; height: 40px; line-height: 40px; display: inline-block; background-color: #336e64; text-align: center; color: #000 !important; }
+  .top-panel .action-element .narrow-col .bcontroller .btn-home.btn-primary { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; width: 100%; height: 40px; line-height: 40px; display: inline-block; background-color: #336e64; text-align: center; color: #000 !important; }
   .top-panel .action-element .narrow-col:hover { cursor: pointer; }
   .top-panel.left-panel .action-element { padding-right: 0; }
   .top-panel.left-panel .narrow-col { margin-left: auto; }

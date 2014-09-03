@@ -1,5 +1,5 @@
 /* _theme.scss */
-
+ 
 @import "ucd-variables";
 @import "compass/css3/opacity";
 @import "compass/css3/transition";
@@ -804,7 +804,7 @@ input{
 
 
 @media screen and (min-width: 768px) {
-	
+
 	// Add margins on small devices
 	.container#main-container {
 		padding-left: 0 !important;
@@ -850,7 +850,6 @@ input{
 			}
 		}
 	}
-	
 }
 @media screen and (min-width: 992px) and (max-width: 1200px) {
 	.sidebar {
@@ -866,7 +865,7 @@ input{
 @media screen and (min-width: 768px) and (max-width: 1200px) { // was max-width: 992px
 	head { font-family:"M";}
 	body:after{content:"M";}
-	
+
 	.top-bar {
 		// Make title abs to pull up right menu items
 		.title-area {
