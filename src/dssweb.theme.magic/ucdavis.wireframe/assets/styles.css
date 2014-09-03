@@ -1,23 +1,3 @@
-/* From reset_all.scss ... TODO: Why? */
-.col-lg-4 h2 { font-weight: bold !important; font-size: 30px !important; margin-bottom: 15px; }
-
-.about-bio h3 { font-weight: bold; }
-
-.btn-primary { margin-top: 15px; color: #fff !important; }
-
-.sidebar-info h4 { font-weight: bold; font-size: 16px; }
-
-.sidebar-left .panel { background: #e5e5e5; }
-
-.sidebar-right { width: 250px; height: 30px; padding-left: 0 !important; padding-right: 0 !important; }
-
-.panel-group { margin-bottom: 0 !important; }
-.panel-group .panel-body .narrow-col .content { padding: 15px; }
-.panel-group .sidebar { border: none !important; }
-
-#top-panel-row h2, #top-panel-row h3, #top-panel-row p, #top-panel-row li, #top-panel-row div { color: #FFF; }
-
-/* /end reset_all.scss */
 /* Example use case:
  %abstract-class { font-family: Verdana; }  #my-div { @extend %abstract-class; }  #my-other-div { @extend %abstract-class; }
  ... compiles as: #my-div, #my-other-div { font-family: Verdana; }
@@ -38,9 +18,17 @@
 
 .panel { outline: none; border: none !important; -webkit-box-shadow: none !important; -moz-box-shadow: none !important; box-shadow: none !important; }
 
+/* _typography.scss */
 body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.3125em; }
 
 @font-face { font-family: 'lucida sans bold'; src: url("fonts/lucida/LucidaSansBold.ttf"); font-weight: normal; font-style: normal; }
+.content-main p, .content-main li, .content-main ol, .content-main div, .content-main span { line-height: 24px !important; line-height: 1.5rem !important; }
+.content-main p { font-size: 15px; font-size: 0.9375rem; line-height: 18px; line-height: 1.125rem; }
+.content-main p.intro { font-size: 18px; font-size: 1.125rem; line-height: 30px !important; line-height: 1.875rem !important; }
+.content-main .breadcrumb p { font-size: 12px; font-size: 0.75rem; line-height: 15px; line-height: 0.9375rem; margin-bottom: 0; }
+.content-main .breadcrumb p a { text-decoration: none; }
+.content-main .breadcrumb p a:hover { text-decoration: underline; }
+.content-main figure figcaption { text-align: right; font-size: 10.65px; font-size: 0.66563rem; text-transform: uppercase; }
 
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: 992px) { .top-panel { /*
@@ -58,6 +46,27 @@ body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode",
   .top-panel .content-main .narrow-col h2 { text-align: center !important; }
   .top-panel .content-main .narrow-col h3, .top-panel .content-main .narrow-col p { text-align: left !important; }
   .top-panel.left-panel h2, .top-panel.left-panel h2, .top-panel.left-panel h2 { text-align: center !important; } }
+/* /_typography.scss */
+/* From reset_all.scss ... TODO: Why? */
+.col-lg-4 h2 { font-weight: bold !important; font-size: 30px !important; font-size: 1.875rem !important; margin-bottom: 15px; }
+
+.about-bio h3 { font-weight: bold; }
+
+.btn-primary { margin-top: 15px; color: #fff !important; }
+
+.sidebar-info h4 { font-weight: bold; font-size: 16px; }
+
+.sidebar-left .panel { background: #e5e5e5; }
+
+.sidebar-right { width: 250px; height: 30px; padding-left: 0 !important; padding-right: 0 !important; }
+
+.panel-group { margin-bottom: 0 !important; }
+.panel-group .panel-body .narrow-col .content { padding: 15px; }
+.panel-group .sidebar { border: none !important; }
+
+#top-panel-row h2, #top-panel-row h3, #top-panel-row p, #top-panel-row li, #top-panel-row div { color: #FFF; }
+
+/* /end reset_all.scss */
 /* _theme.scss */
 /* 2014-06-12 RAK: This file contains theme CSS and mediaquery for responsive (at end of file).  TODO:  - Move to SASS 
 */
@@ -116,12 +125,7 @@ input { text-align: center; }
 .content-title { padding-bottom: 30px; font-size: 36px; font-size: 2.25rem; line-height: 43px; line-height: 2.6875rem; letter-spacing: 0.01em; margin-top: 0 !important; }
 
 .content-main { margin-top: 45px; margin-bottom: 30px; padding-left: 0 !important; }
-.content-main p { font-size: 15px; font-size: 0.9375rem; line-height: 18px; line-height: 1.125rem; }
-.content-main p.intro { font-size: 18px; font-size: 1.125rem; line-height: 30px; line-height: 1.875rem; }
 .content-main .breadcrumb { background: none; padding: 0 0 !important; margin-bottom: 0; color: #335379; }
-.content-main .breadcrumb p { font-size: 12px; font-size: 0.75rem; line-height: 15px; line-height: 0.9375rem; margin-bottom: 0; }
-.content-main .breadcrumb p a { text-decoration: none; }
-.content-main .breadcrumb p a:hover { text-decoration: underline; }
 .content-main .breadcrumb .bread-divider { font-size: 15px; font-size: 0.9375rem; }
 .content-main .panel-body h2 { font-size: 24px !important; font-size: 1.5rem !important; font-weight: normal; padding-top: 15px; padding-bottom: 15px; }
 .content-main h2 { font-size: 24px !important; font-size: 1.5rem !important; font-weight: normal; padding-top: 15px; padding-bottom: 15px; }
@@ -258,7 +262,9 @@ top:-39px !important;*/ }
 @media screen and (min-width: 768px) { .container#main-container { padding-left: 0 !important; padding-right: 0 !important; }
   #util-bar-wrap { padding-right: 105px; }
   #top-bar-wrap { padding-left: 105px; padding-right: 105px; }
-  .content-main > div, .content-main > h1 { margin-left: 90px; } }
+  .content-main > div, .content-main > h1 { margin-left: 90px; }
+  .dropdown { width: 220px !important; }
+  .dropdown li a { padding-left: 25px !important; padding-right: 15px !important; } }
 @media screen and (max-width: 992px) { #util-bar-wrap { padding-right: 0; }
   #top-bar-wrap { padding-left: 0; padding-right: 0; }
   .content-main > div, .content-main > h1 { margin-left: 0; }
@@ -555,7 +561,7 @@ left: 0;*/ }
   .col-lg-offset-10 { margin-left: 83.33333%; }
   .col-lg-offset-11 { margin-left: 91.66667%; }
   .col-lg-offset-12 { margin-left: 100%; } }
-.fade { opacity: 0; -webkit-transition: opacity 0.15s linear; -moz-transition: opacity 0.15s linear; -o-transition: opacity 0.15s linear; transition: opacity 0.15s linear; }
+.fade { opacity: 0; -moz-transition: opacity 0.15s linear; -o-transition: opacity 0.15s linear; -webkit-transition: opacity 0.15s linear; transition: opacity 0.15s linear; }
 .fade.in { opacity: 1; }
 
 .collapse { display: none; }
@@ -565,9 +571,9 @@ tr.collapse.in { display: table-row; }
 
 tbody.collapse.in { display: table-row-group; }
 
-.collapsing { position: relative; height: 0; overflow: hidden; -webkit-transition: height 0.35s ease; -moz-transition: height 0.35s ease; -o-transition: height 0.35s ease; transition: height 0.35s ease; }
+.collapsing { position: relative; height: 0; overflow: hidden; -moz-transition: height 0.35s ease; -o-transition: height 0.35s ease; -webkit-transition: height 0.35s ease; transition: height 0.35s ease; }
 
-.panel { margin-bottom: 20px; background-color: transparent; border: 1px solid transparent; border-radius: 4px; -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); }
+.panel { margin-bottom: 20px; background-color: transparent; border: 1px solid transparent; border-radius: 4px; -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); }
 
 .panel-body { padding: 0; }
 .panel-body:before, .panel-body:after { content: " "; display: table; }
@@ -669,10 +675,9 @@ tbody.collapse.in { display: table-row-group; }
 
 .hidden { display: none !important; visibility: hidden !important; }
 
-.affix { position: fixed; -webkit-transform: translate3d(0, 0, 0); -moz-transform: translate3d(0, 0, 0); -ms-transform: translate3d(0, 0, 0); -o-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+.affix { position: fixed; -moz-transform: translate3d(0, 0, 0); -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
 
 @-ms-viewport { width: device-width; }
-
 .visible-xs, .visible-sm, .visible-md, .visible-lg { display: none !important; }
 
 .visible-xs-block, .visible-xs-inline, .visible-xs-inline-block, .visible-sm-block, .visible-sm-inline, .visible-sm-inline-block, .visible-md-block, .visible-md-inline, .visible-md-inline-block, .visible-lg-block, .visible-lg-inline, .visible-lg-inline-block { display: none !important; }
@@ -742,15 +747,18 @@ tbody.collapse.in { display: table-row-group; }
 .jumbotron h1 { font-weight: normal; display: none; }
 
 .wall { position: absolute; z-index: -100; top: 0; width: 100%; height: 500px !important; }
+.wall.shadow-graphic { height: 176px !important; }
 
+/*----- Mobile breakpoint --------*/
+@media screen and (max-width: 768px) { .wall { display: none; } }
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: 992px) { /* 3-column banner panel set - intended to use happybox behavior / plugin */
-  .top-panel .action-element .narrow-col { width: 80%; color: #FFF; background-color: #002855; border: 1px solid #002855; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
+  .top-panel .action-element .narrow-col { width: 80%; color: #FFF; background-color: #002855; }
   .top-panel .action-element .narrow-col a { color: #FFF; text-decoration: none; }
   .top-panel .action-element .narrow-col h2 { margin-top: 0 !important; font-weight: normal !important; margin-bottom: 0; }
   .top-panel .action-element .narrow-col .content { margin-left: 0; }
   .top-panel .action-element .narrow-col .content h3:first-child { padding-top: 0 !important; margin-top: 0; }
-  .top-panel .action-element .narrow-col .bcontroller .btn-home.btn-primary { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; width: 100%; height: 40px; line-height: 40px; display: inline-block; background-color: #336e64; text-align: center; color: #000 !important; }
+  .top-panel .action-element .narrow-col .bcontroller .btn-home.btn-primary { width: 100%; height: 40px; line-height: 40px; display: inline-block; background-color: #008eaa; text-align: center; color: #000 !important; }
   .top-panel .action-element .narrow-col:hover { cursor: pointer; }
   .top-panel.left-panel .action-element { padding-right: 0; }
   .top-panel.left-panel .narrow-col { margin-left: auto; }
