@@ -24,6 +24,17 @@
 	top: 0;
 	width: 100%;
 	height: 500px !important;
+	&.shadow-graphic {
+		height: 176px !important;
+	}
+}
+
+/*----- Mobile breakpoint --------*/
+@media screen and (max-width: 768px) {
+	// handle banners on mobile 
+	.wall {
+		display: none;
+	}
 }
 
 /*----- Desktop breakpoint -------*/
@@ -36,8 +47,8 @@
 				width: 80%;
 				color: #FFF;
 				background-color: $ucd_blue_100;
-				border: 1px solid $ucd_blue_100;
-				@include opacity(0.70);
+				//border: 1px solid $ucd_blue_100;
+				//@include opacity(0.70);
 				a {
 					color: #FFF;
 					text-decoration: none;
@@ -59,12 +70,11 @@
 				}
 				.bcontroller {
 					.btn-home.btn-primary {
-						@include opacity(1);
 						width: 100%;
 						height: 40px;
 						line-height: 40px;
 						display: inline-block;
-						background-color: $ucd_green_80;
+						background-color: $rec_blue;
 						text-align: center;
 						color: #000 !important;
 					}
