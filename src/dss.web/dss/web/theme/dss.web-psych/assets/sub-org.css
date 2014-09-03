@@ -1,1 +1,12 @@
 /* Sub organization overrides */
+@media screen and (min-width: 768px) { .footer #vcard { margin-right: 25px; }
+  .footer #foot-social { position: relative; left: -190px; float: right !important; } }
+@media screen and (max-width: 768px) { .footer #vcard { text-align: center; }
+  .footer .footer-nav { border-left: none; }
+  .footer .footer-nav li { border-top: 1px solid white; }
+  .footer .footer-nav .last { border-bottom: 1px solid white; } }
+@media screen and (max-width: 992px) { #foot-social { margin-left: 55px !important; } }
+@media screen and (min-width: 768px) and (max-width: 1200px) { .footer .foot-wrap { margin: 40px; }
+  .footer #vcard { margin-right: 25px; } }
+@media screen and (min-width: 1200px) { head { font-family: "L"; }
+  body:after { content: "L"; } }

@@ -1,5 +1,5 @@
 /* _theme.scss */
-
+ 
 @import "ucd-variables";
 @import "compass/css3/opacity";
 @import "compass/css3/transition";
@@ -176,31 +176,12 @@ input{
 	margin-top: 45px;
 	margin-bottom: 30px;
 	padding-left: 0 !important;
-	//font-size: 16px; // 16px is the default and should already be set
-	p {
-		@include font_size(15px);
-		@include line_height(18px);
-		&.intro {
-			@include font_size(18px);
-			@include line_height(30px);
-		}
-	}
+
 	.breadcrumb {
 		background: none;
 		padding:0 0 !important;
 		margin-bottom:0;
 		color: $ucd_blue_80;
-		p {
-			@include font_size(12px);
-			@include line_height(15px);
-			margin-bottom: 0;
-			a {
-				text-decoration: none;
-				&:hover {
-					text-decoration: underline;
-				}
-			}
-		}
 		.bread-divider {
 			@include font_size(15px);
 		}
@@ -473,7 +454,7 @@ input{
 						
 						a {
 							padding: 6px 0 !important;
-							line-height: 24px;
+							@include line_height(24px);
 							&:after{
 								display:block !important;
 								margin-top: 0;
@@ -804,7 +785,7 @@ input{
 
 
 @media screen and (min-width: 768px) {
-	
+
 	// Add margins on small devices
 	.container#main-container {
 		padding-left: 0 !important;
@@ -825,6 +806,35 @@ input{
 	  	margin-left: 90px;
 		}
 	}
+	
+	.top-bar {
+		.top-bar-section {
+			 li {
+				ul { // .dropdown
+					width: 220px !important;
+					li {
+						a {
+							padding: 25px;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	/*
+		.dropdown {
+			 width: 220px !important;
+			 
+			 li {
+				 a {
+					 display: inline-block !important;
+					 border: 1px solid red !important;
+					 padding:25px;
+				 }
+			 }
+		}
+	*/
 	
 }
 
@@ -850,7 +860,6 @@ input{
 			}
 		}
 	}
-	
 }
 @media screen and (min-width: 992px) and (max-width: 1200px) {
 	.sidebar {
@@ -866,7 +875,7 @@ input{
 @media screen and (min-width: 768px) and (max-width: 1200px) { // was max-width: 992px
 	head { font-family:"M";}
 	body:after{content:"M";}
-	
+
 	.top-bar {
 		// Make title abs to pull up right menu items
 		.title-area {
