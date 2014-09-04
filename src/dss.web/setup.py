@@ -5,7 +5,7 @@ import os
 version = open(os.path.join("dss", "web", "version.txt")).read().strip()
 
 setup(name='dss.web',
-      version=version,
+      version=1.0dev2,
       description="Themes for Plone/Diazo powered sites",
       long_description=open(os.path.join("README.md")).read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
