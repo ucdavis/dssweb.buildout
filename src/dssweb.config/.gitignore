@@ -8,6 +8,13 @@ __pycache__/
 #osX
 .DS_Store
 
+#sass
+*.sass-cache
+
+#codekit
+config.codekit
+config.rb
+
 # Distribution / packaging
 .Python
 env/
