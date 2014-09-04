@@ -168,49 +168,6 @@ input { text-align: center; }
 
 .sidebar-block-items { background: #e5e5e5; padding-bottom: 10px; text-align: left; width: auto; height: 100%; padding-left: 15px; margin-left: 35px; list-style-type: circle; }
 
-.top-bar { background: #002855; padding-bottom: 35px; }
-.top-bar .title-area { /* top:15px; THIS NEGATIVELY IMPACTS THE FORMAT OF THE TOPBAR MENU */ }
-.top-bar .title-area .name h1 { padding: 0; margin: 0; }
-.top-bar .title-area .name h1 a { border-right: 1px solid white; display: inline-block; width: 430px; height: 80px; padding-left: 0; text-decoration: none; }
-.top-bar .title-area .name h1 a#name-icon img { height: 100%; display: block; }
-.top-bar .top-bar-section { height: 100%; /* .right {} if we have markup with left drops */ }
-.top-bar .top-bar-section .left { width: 65%; height: 100% !important; }
-.top-bar .top-bar-section .left > li { background: #002855 !important; width: 9.6%; height: 80px; text-align: center; /*.dropdown{ // TODO: Don't need this specific selector ...
-	top:100%;
-	li{
-		background:$ucd_blue_100 !important;
-	}
-}*/ }
-.top-bar .top-bar-section .left > li#fac-serv-btn { width: 17%; }
-.top-bar .top-bar-section .left > li:hover { background: #4d688c !important; }
-.top-bar .top-bar-section .left > li > a { height: 80px; line-height: 80px !important; }
-.top-bar .top-bar-section .left > li a { width: 100%; background: transparent !important; text-decoration: none; font-size: 17px; font-size: 1.0625rem; line-height: 28px; line-height: 1.75rem; letter-spacing: 0.025em; padding: 0 !important; white-space: normal; }
-.top-bar .top-bar-section .left > li a:after { display: none !important; }
-.top-bar .top-bar-section .left > li ul li { background: #002855 !important; }
-.top-bar .top-bar-section .left > li ul li a { padding: 6px 0 !important; line-height: 24px; }
-.top-bar .top-bar-section .left > li ul li a:after { display: block !important; margin-top: 0; line-height: 0.5 !important; }
-.top-bar .top-bar-section .left > li ul li a:hover { background: #4d688c !important; }
-.top-bar .top-bar-section .left > li ul li:last-child a { padding-bottom: 12px !important; }
-.top-bar .top-bar-section .left > li ul li ul { top: 0 !important; }
-
-.util-bar { max-width: 768px; background: #daaa00; height: 40px; margin-top: 56px; margin-left: auto; }
-.util-bar ul { height: 100%; }
-.util-bar ul li { float: left; padding-left: 3px; padding-right: 3px; height: 100%; text-align: center; border-right: 1px solid #fff; }
-.util-bar ul li a { display: inline-block; margin-top: 12px; margin-right: auto; margin-left: auto; text-decoration: none; color: #000; text-transform: uppercase; font-size: 14px; font-size: 0.875rem; letter-spacing: 0.050em; text-align: center; }
-.util-bar ul li input { width: 190px; height: 27px; text-transform: uppercase; font-size: 14px; font-size: 0.875rem; letter-spacing: 0.050em; margin-top: 2px; text-align: left; padding-left: 10px; }
-.util-bar #uti-news { width: 21.92%; }
-.util-bar #uti-events { width: 10.96%; }
-.util-bar #uti-give { width: 10.96%; }
-.util-bar #uti-search { width: 28.36%; }
-.util-bar #uti-share { width: 5%; }
-.util-bar #uti-share a { display: inline-block; width: 15px; height: 17px; background: url(../images/icons/share.png) top left no-repeat; }
-.util-bar #uti-logo { border-right-width: 0; width: 125px; }
-
-.caret { margin-left: 15px; }
-
-.menu-icon { background: #e5e5e5; position: relative; top: -25px; }
-.menu-icon span::after { content: ""; position: absolute; display: block; height: 0; box-shadow: 0 0px 0 2px #000, 0 7px 0 2px #000, 0 14px 0 2px #000, 0 21px 0 2px #000  !important; width: 25px !important; }
-
 .panel-title { background: #008eaa; }
 .panel-title a { text-decoration: none; }
 
@@ -238,13 +195,6 @@ input { text-align: center; }
   .util-bar ul { margin: 0; padding: 0; }
   .util-bar ul li#uti-logo { border-left-width: 0; }
   .util-bar ul li#uti-logo a { margin-top: 5px; }
-  .top-bar { /*height:40px !important;*/ margin-right: -15px; padding-bottom: 0; }
-  .top-bar .title-area .name h1 a { padding-left: 0; width: 215px !important; height: 40px !important; }
-  .top-bar .toggle-topbar.menu-icon { margin-top: 0; top: 0; height: 42px; padding-top: 3px; }
-  .top-bar.expanded .title-area { background-color: #002855; }
-  .top-bar.expanded .top-bar-section .left { width: 100%; }
-  .top-bar.expanded .top-bar-section .left > li { width: 100% !important; height: 40px; }
-  .top-bar.expanded .top-bar-section .left > li > a { margin-top: 0 !important; line-height: 40px !important; }
   .content-main { min-width: 192px; clear: both; }
   .submenu { position: absolute; left: -999px !important; }
   .headshot { padding: 0 !important; height: 100% !important; }
@@ -263,8 +213,9 @@ top:-39px !important;*/ }
   #util-bar-wrap { padding-right: 105px; }
   #top-bar-wrap { padding-left: 105px; padding-right: 105px; }
   .content-main > div, .content-main > h1 { margin-left: 90px; }
-  .dropdown { width: 220px !important; }
-  .dropdown li a { padding-left: 25px !important; padding-right: 15px !important; } }
+  .top-bar .top-bar-section li ul { width: 220px !important; }
+  .top-bar .top-bar-section li ul li a { padding: 25px; }
+  /* 	.dropdown { 		 width: 220px !important; 		  		 li { 			 a { 				 display: inline-block !important; 				 border: 1px solid red !important; 				 padding:25px; 			 } 		 } 	} */ }
 @media screen and (max-width: 992px) { #util-bar-wrap { padding-right: 0; }
   #top-bar-wrap { padding-left: 0; padding-right: 0; }
   .content-main > div, .content-main > h1 { margin-left: 0; }
@@ -272,11 +223,7 @@ top:-39px !important;*/ }
 @media screen and (min-width: 992px) and (max-width: 1200px) { .sidebar.sidebar-right > div { margin-left: 0; } }
 /*----- Tablet breakpoint -------*/
 @media screen and (min-width: 768px) and (max-width: 1200px) { head { font-family: "M"; }
-  body:after { content: "M"; }
-  .top-bar .title-area { /*position: absolute;
-top: 0;
-left: 0;*/ }
-  .top-bar .title-area .name h1 a { padding-left: 0; width: 200px !important; height: 40px !important; } }
+  body:after { content: "M"; } }
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: 1200px) { head { font-family: "L"; }
   body:after { content: "L"; } }
@@ -755,10 +702,11 @@ tbody.collapse.in { display: table-row-group; }
 @media screen and (min-width: 992px) { /* 3-column banner panel set - intended to use happybox behavior / plugin */
   .top-panel .action-element .narrow-col { width: 80%; color: #FFF; background-color: #002855; }
   .top-panel .action-element .narrow-col a { color: #FFF; text-decoration: none; }
+  .top-panel .action-element .narrow-col li { background-image: url(../images/bullets/white-square.gif); }
   .top-panel .action-element .narrow-col h2 { margin-top: 0 !important; font-weight: normal !important; margin-bottom: 0; }
   .top-panel .action-element .narrow-col .content { margin-left: 0; }
   .top-panel .action-element .narrow-col .content h3:first-child { padding-top: 0 !important; margin-top: 0; }
-  .top-panel .action-element .narrow-col .bcontroller .btn-home.btn-primary { width: 100%; height: 40px; line-height: 40px; display: inline-block; background-color: #008eaa; text-align: center; color: #000 !important; }
+  .top-panel .action-element .narrow-col .bcontroller .btn-home.btn-primary { width: 100%; height: 40px; line-height: 40px; display: inline-block; background: url(../images/icons/white-arrow-up.png) 50% 100% no-repeat #008eaa; text-align: center; }
   .top-panel .action-element .narrow-col:hover { cursor: pointer; }
   .top-panel.left-panel .action-element { padding-right: 0; }
   .top-panel.left-panel .narrow-col { margin-left: auto; }
@@ -769,3 +717,58 @@ tbody.collapse.in { display: table-row-group; }
   .top-panel.right-panel .narrow-col { margin-right: auto; margin-left: 0; }
   .top-panel.right-panel .narrow-col h2 { text-align: center !important; } }
 /* /components/_banners.scss */
+/* _navigation.scss */
+.util-bar { max-width: 768px; background: #daaa00; height: 40px; margin-top: 56px; margin-left: auto; }
+.util-bar ul { height: 100%; }
+.util-bar ul li { float: left; padding-left: 3px; padding-right: 3px; height: 100%; text-align: center; border-right: 1px solid #fff; }
+.util-bar ul li a { display: inline-block; margin-top: 12px; margin-right: auto; margin-left: auto; text-decoration: none; color: #000; text-transform: uppercase; font-size: 14px; font-size: 0.875rem; letter-spacing: 0.050em; text-align: center; }
+.util-bar ul li input { width: 190px; height: 27px; text-transform: uppercase; font-size: 14px; font-size: 0.875rem; letter-spacing: 0.050em; margin-top: 2px; text-align: left; padding-left: 10px; }
+.util-bar #uti-news { width: 21.92%; }
+.util-bar #uti-events { width: 10.96%; }
+.util-bar #uti-give { width: 10.96%; }
+.util-bar #uti-search { width: 28.36%; }
+.util-bar #uti-share { width: 5%; }
+.util-bar #uti-share a { display: inline-block; width: 15px; height: 17px; background: url(../images/icons/share.png) top left no-repeat; }
+.util-bar #uti-logo { border-right-width: 0; width: 125px; }
+
+.caret { margin-left: 15px; }
+
+.menu-icon { background: #e5e5e5; position: relative; top: -25px; }
+.menu-icon span::after { content: ""; position: absolute; display: block; height: 0; box-shadow: 0 0px 0 2px #000, 0 7px 0 2px #000, 0 14px 0 2px #000, 0 21px 0 2px #000  !important; width: 25px !important; }
+
+.top-bar { background: #002855; padding-bottom: 35px; }
+.top-bar .title-area { /* top:15px; THIS NEGATIVELY IMPACTS THE FORMAT OF THE TOPBAR MENU */ }
+.top-bar .title-area .name h1 { padding: 0; margin: 0; }
+.top-bar .title-area .name h1 a { border-right: 1px solid white; display: inline-block; width: 430px; height: 80px; padding-left: 0; text-decoration: none; }
+.top-bar .title-area .name h1 a#name-icon img { height: 100%; display: block; }
+.top-bar .top-bar-section { height: 100%; /* .right {} if we have markup with left drops */ }
+.top-bar .top-bar-section .left { width: 65%; height: 100% !important; }
+.top-bar .top-bar-section .left > li { background: #002855 !important; width: 9.6%; height: 80px; text-align: center; /*.dropdown{ // TODO: Don't need this specific selector ...
+	top:100%;
+	li{
+		background:$ucd_blue_100 !important;
+	}
+}*/ }
+.top-bar .top-bar-section .left > li#fac-serv-btn { width: 17%; }
+.top-bar .top-bar-section .left > li:hover { background: #4d688c !important; }
+.top-bar .top-bar-section .left > li > a { height: 80px; line-height: 80px !important; }
+.top-bar .top-bar-section .left > li a { width: 100%; background: transparent !important; text-decoration: none; font-size: 17px; font-size: 1.0625rem; line-height: 28px; line-height: 1.75rem; letter-spacing: 0.025em; padding: 0 !important; white-space: normal; }
+.top-bar .top-bar-section .left > li a:after { display: none !important; }
+.top-bar .top-bar-section .left > li ul li { background: #002855 !important; }
+.top-bar .top-bar-section .left > li ul li a { padding: 6px 0 !important; line-height: 24px; line-height: 1.5rem; }
+.top-bar .top-bar-section .left > li ul li a:after { display: block !important; margin-top: 0; line-height: 0.5 !important; }
+.top-bar .top-bar-section .left > li ul li a:hover { background: #4d688c !important; }
+.top-bar .top-bar-section .left > li ul li:last-child a { padding-bottom: 12px !important; }
+.top-bar .top-bar-section .left > li ul li ul { top: 0 !important; }
+
+/*----- Mobile breakpoint -------*/
+@media screen and (max-width: 768px) { .top-bar { /*height:40px !important;*/ margin-right: -15px; padding-bottom: 0; }
+  .top-bar .title-area .name h1 a { padding-left: 0; width: 215px !important; height: 40px !important; }
+  .top-bar .toggle-topbar.menu-icon { margin-top: 0; top: 0; height: 42px; padding-top: 3px; }
+  .top-bar.expanded .title-area { background-color: #002855; }
+  .top-bar.expanded .top-bar-section .left { width: 100%; }
+  .top-bar.expanded .top-bar-section .left > li { width: 100% !important; height: 40px; }
+  .top-bar.expanded .top-bar-section .left > li > a { margin-top: 0 !important; line-height: 40px !important; } }
+/*----- Tablet breakpoint -------*/
+@media screen and (min-width: 768px) and (max-width: 1200px) { .top-bar .title-area .name h1 a { padding-left: 0; width: 200px !important; height: 40px !important; } }
+/* /_navigation.scss */

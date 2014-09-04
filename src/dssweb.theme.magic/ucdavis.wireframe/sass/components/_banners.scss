@@ -53,6 +53,9 @@
 					color: #FFF;
 					text-decoration: none;
 				}
+				li {
+					background-image: url(../images/bullets/white-square.gif);
+				}
 				h2 {
 					margin-top: 0 !important;
 					font-weight: normal !important;
@@ -74,9 +77,9 @@
 						height: 40px;
 						line-height: 40px;
 						display: inline-block;
-						background-color: $rec_blue;
+						background: url(../images/icons/white-arrow-up.png) 50% 100% no-repeat $rec_blue;
 						text-align: center;
-						color: #000 !important;
+						//color: #000 !important;
 					}
 				}
 				

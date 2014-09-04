@@ -3,7 +3,9 @@ $(function(){
 		
 		$(document).foundation(); // foundation top-bar support
 		
-		if (typeof window.console == "object") window.console.log("JQuery version:  " + $.fn.jquery);
+		if (typeof window.console == "object") {
+			window.console.log("JQuery version:  " + $.fn.jquery);
+		}
 		
 		// Get happy ...
 		if($('body.home #top-panel-row').length != 0) {
@@ -24,7 +26,7 @@ $(function(){
       $('.picture img').each(function () {
 				var title = $(this).attr('title');
 				$(this).wrap('<figure class="picture-processed" />');
-				$(this).parent().append("<figcaption>"+title+"</figcaption>")
+				$(this).parent().append("<figcaption>"+title+"</figcaption>");
       });
 		}		
 		
