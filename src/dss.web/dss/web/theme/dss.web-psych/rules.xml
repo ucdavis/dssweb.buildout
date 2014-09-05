@@ -26,10 +26,17 @@
         <after css:theme-children="html body" css:content="html head script" />
 
         <!-- Insert your own rules here -->
-        <copy css:content="#portal-globalnav" css:theme=".nav nav-justified" />
-         <replace css:content="#portal-globalnav li" css:theme-children="#nav ul" />
-        <drop css:content=".searchSection" />
-        <replace css:content="#portal-searchbox" css:theme="#search" />
+	   
+	   <!--swap in portal-globalnav -->
+         <replace css:content="#portal-globalnav li" css:theme-children="#top-bar-wrap > nav > section > ul" />
+	    <!--overkill rule to replace the plain class on the menu li - unnecessary use of force, but fun! -->
+	    <replace content="//li[contains(@class,'plain')]/@class">
+	    <xsl:attribute name="class">
+	    <xsl:if test='contains(current(),"plain")'>has-dropdown not-click</xsl:if>
+	    </xsl:attribute>
+	    </replace>
+	    
+        
     </rules>
 
 </rules>
