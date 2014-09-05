@@ -5,7 +5,7 @@ import os
 version = open(os.path.join("dss", "web", "version.txt")).read().strip()
 
 setup(name='dss.web',
-      version=1.0dev2,
+      version=version,
       description="Themes for Plone/Diazo powered sites",
       long_description=open(os.path.join("README.md")).read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
@@ -30,6 +30,7 @@ setup(name='dss.web',
           'setuptools',
           # -*- Extra requirements: -*-
           'plone.app.theming',
+          'webcouturier.dropdownmenu'
       ],
       entry_points={
           'z3c.autoinclude.plugin': 'target = plone',
