@@ -1,4 +1,4 @@
-$(function(){	
+(function($){	
 	$(document).ready(function() {
 		
 		$(document).foundation(); // foundation top-bar support
@@ -29,4 +29,4 @@ $(function(){
 		}		
 		
 	});
-});
+})(jQuery);
