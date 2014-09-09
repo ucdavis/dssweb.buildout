@@ -1,13 +1,14 @@
 $(function(){	
 	$(document).ready(function() {
 		
-		$(document).foundation(); // foundation top-bar support
+		// foundation top-bar support. Note: Add after any JavaScript constructed markup that relies on foundation
+		$(document).foundation(); 
 		
 		if (typeof window.console == "object") {
 			window.console.log("JQuery version:  " + $.fn.jquery);
 		}
 		
-		// Get happy ...
+		// Activate home page happy boxes
 		if($('body.home #top-panel-row').length != 0) {
 			$('body.home #top-panel-row').happybox(
 				{
