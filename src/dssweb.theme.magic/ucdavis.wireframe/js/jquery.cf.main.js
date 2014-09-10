@@ -1,4 +1,5 @@
-$(function(){	
+(function($){
+  /* code here runs instantly as opposed to $(function(){ ... }); which waits for DOM making ready function unness */	
 	$(document).ready(function() {
 		
 		// foundation top-bar support. Note: Add after any JavaScript constructed markup that relies on foundation
@@ -32,4 +33,4 @@ $(function(){
 		}		
 		
 	});
-});
+})(jQuery);
