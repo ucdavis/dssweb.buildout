@@ -30,6 +30,7 @@ setup(name='dss.web',
           'setuptools',
           # -*- Extra requirements: -*-
           'plone.app.theming',
+          'webcouturier.dropdownmenu'
       ],
       entry_points={
           'z3c.autoinclude.plugin': 'target = plone',
