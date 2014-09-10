@@ -1,11 +1,15 @@
-$(function(){	
+(function($){
+  /* code here runs instantly as opposed to $(function(){ ... }); which waits for DOM making ready function unness */	
 	$(document).ready(function() {
 		
-		$(document).foundation(); // foundation top-bar support
+		// foundation top-bar support. Note: Add after any JavaScript constructed markup that relies on foundation
+		$(document).foundation(); 
 		
-		if (typeof window.console == "object") window.console.log("JQuery version:  " + $.fn.jquery);
+		if (typeof window.console == "object") {
+			window.console.log("JQuery version:  " + $.fn.jquery);
+		}
 		
-		// Get happy ...
+		// Activate home page happy boxes
 		if($('body.home #top-panel-row').length != 0) {
 			$('body.home #top-panel-row').happybox(
 				{
@@ -24,9 +28,9 @@ $(function(){
       $('.picture img').each(function () {
 				var title = $(this).attr('title');
 				$(this).wrap('<figure class="picture-processed" />');
-				$(this).parent().append("<figcaption>"+title+"</figcaption>")
+				$(this).parent().append("<figcaption>"+title+"</figcaption>");
       });
 		}		
 		
 	});
-});
+})(jQuery);

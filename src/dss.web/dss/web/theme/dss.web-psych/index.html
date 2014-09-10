@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- #BeginTemplate "/Templates/wireframe.dwt" -->
-  <!-- DW6 -->
+  <!-- #BeginTemplate "/Templates/home.dwt" -->
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,16 +12,16 @@
     <title>Home</title>
     <!-- #EndEditable -->
 		
-    <link href="assets/vendor/reset.css" rel="stylesheet" />
-    <link href="assets/vendor/topbar.css" rel="stylesheet" />
-		<link href="assets/vendor/jquery.cf.happybox.css" rel="stylesheet">
-		<link href="bower_components/Wallpaper/jquery.fs.wallpaper.css" rel="stylesheet">
+    <link type="text/css" href="assets/vendor/reset.css" rel="stylesheet" />
+    <link type="text/css" href="assets/vendor/topbar.css" rel="stylesheet" />
 		
 	  <link type="text/css" href="assets/styles.css" rel="stylesheet" />
 	  <link type="text/css" href="assets/sub-org.css" rel="stylesheet" />
 		
     <!-- #BeginEditable "header" -->
-    <link href="assets/sections/index.css" rel="stylesheet" />
+		<link type="text/css" href="assets/vendor/jquery.cf.happybox.css" rel="stylesheet">
+		<link type="text/css" href="bower_components/Wallpaper/jquery.fs.wallpaper.css" rel="stylesheet">
+    <link type="text/css" href="assets/sections/index.css" rel="stylesheet" />
 		
     <!-- #EndEditable -->
 		
@@ -52,13 +51,13 @@
       <nav class="util-bar">
         <ul>
           <li class="hidden-xs" id="uti-news">
-            <a href="#">Latest News</a>
+            <a href="news">Latest News</a>
           </li>
           <li class="hidden-xs" id="uti-events">
-            <a href="#">Events</a>
+            <a href="events">Events</a>
           </li>
           <li class="hidden-xs" id="uti-give">
-            <a href="#">Give</a>
+            <a href="give">Give</a>
           </li>
           <li class="hidden-xs" id="uti-search">
             <form action=".">
@@ -230,7 +229,7 @@
 	              		<h3><a href="#">Meet the Experts: CMB research leads to new FDA-approved treatment for severe ...</a></h3>
 								 </div>
               		<div class="bcontroller">
-                		<a class="btn btn-primary btn-home" href="#" role="button">Read More</a>
+                		<a class="btn btn-primary btn-home" href="#" role="button">Read&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;More</a>
              	 	 </div>
 								</div>
 							</div>
@@ -271,7 +270,7 @@
 		                </ul>
 									</div>
               		<div class="bcontroller">
-                		<a class="btn btn-primary btn-home" href="#" role="button">Read More</a>
+                		<a class="btn btn-primary btn-home" href="#" role="button">Read&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;More</a>
              	 	 </div>
 								</div>
               </div>
@@ -297,7 +296,7 @@
 	                	<h3><a href="#">Wed 06-11-2014</a></h3>
 									</div>
               		<div class="bcontroller">
-                		<a class="btn btn-primary btn-home" href="#" role="button">Read More</a>
+                		<a class="btn btn-primary btn-home" href="#" role="button">Read&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;More</a>
              	 	 </div>
 								</div>
               </div>
@@ -449,81 +448,83 @@
     <!-- #BeginEditable "custom-footer" -->
 	  <div class="footer">
 			<div class="foot-wrap">
-				<div id="vcard">
-					<p>
-						Department of Psychology<br />
-						University of California, Davis<br />
-						135 Young Hall<br />
-						One Shields Avenue<br />
-						Davis, CA 95616
-					</p>
-					<p id="email-phone">
-						<a href="#">Email</a> | (530) 752-1880
+				<div class="row">
+					<ul id="foot-social">
+						<li class="first"><a id="facebook-icon" href="#"><span class="btn-txt">Facebook</span></a></li>
+						<li><a id="twitter-icon" href="#"><span class="btn-txt">Twitter</span></a></li>
+						<li><a id="pinterest-icon" href="#"><span class="btn-txt">Pinterest</span></a></li>
+						<li><a id="youtube-icon" href="#"><span class="btn-txt">YouTube</span></a></li>
+						<li class="last"><a id="linkedin-icon" href="#"><span class="btn-txt">LinkedIn</span></a></li>
+					</ul>
+					<div class=""id="vcard">
+						<p>
+							Department of Psychology<br />
+							University of California, Davis<br />
+							135 Young Hall<br />
+							One Shields Avenue<br />
+							Davis, CA 95616
+						</p>
+						<p id="email-phone">
+							<a href="#">Email</a> | (530) 752-1880
+						</p>
+					</div>
+					<ul class="footer-nav hidden-xs" id="foot-cont">
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">Students</a></li>
+						<li><a href="#">Research</a></li>
+						<li><a href="#">Our People</a></li>
+						<li><a href="#">Facilities & Services</a></li>
+					</ul>
+					<ul class="footer-nav hidden-xs">
+						<li><a href="#">Latest News</a></li>
+						<li><a href="#">Events</a></li>
+						<li><a href="#">Give</a></li>
+					</ul>
+					<ul class="footer-nav">
+						<li><a href="#">Admissions</a></li>
+						<li><a href="#">Advising</a></li>
+						<li><a href="#">Student Clubs</a></li>
+						<li><a href="#">Login</a></li>
+					</ul>
+			
+					<p id="copyright">
+						Copyright &copy 2014 &nbsp;All Rights Reserved
 					</p>
 				</div>
-				<ul class="footer-nav" id="foot-cont">
-					<li><a href="#">Contact</a></li>
-					<li><a href="#">Students</a></li>
-					<li><a href="#">Research</a></li>
-					<li><a href="#">Our People</a></li>
-					<li><a href="#">Facilities & Services</a></li>
-				</ul>
-				<ul class="footer-nav">
-					<li><a href="#">Latest News</a></li>
-					<li><a href="#">Events</a></li>
-					<li><a href="#">Give</a></li>
-				</ul>
-				<ul class="footer-nav">
-					<li><a href="#">Admissions</a></li>
-					<li><a href="#">Advising</a></li>
-					<li><a href="#">Student Clubs</a></li>
-					<li><a href="#">Login</a></li>
-				</ul>
-				<ul id="foot-social">
-					<li class="first"><a id="facebook-icon" href="#"><span class="btn-txt">Facebook</span></a></li>
-					<li><a id="twitter-icon" href="#"><span class="btn-txt">Twitter</span></a></li>
-					<li><a id="pinterest-icon" href="#"><span class="btn-txt">Pinterest</span></a></li>
-					<li><a id="youtube-icon" href="#"><span class="btn-txt">YouTube</span></a></li>
-					<li class="last"><a id="linkedin-icon" href="#"><span class="btn-txt">LinkedIn</span></a></li>
-				</ul>
-				<p id="copyright">
-					Copyright &copy 2014 &nbsp;All Rights Reserved
-				</p>
 			</div>
 	  </div>
     <!-- #EndEditable -->
   </div>
   <!-- /container -->
-  <!-- Bootstrap core JavaScript
-      ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="js/contrib/jquery.min.js"></script>
-	<script type="text/javascript" src="js/contrib/jquery.easing.1.3.js"></script>
 	
-  <script src="js/bootstrap/collapse.js"></script> 
-  <script src="js/contrib/bootstrap.min.js"></script> 
-  <script src="js/foundation/js/foundation/foundation.js" rel="text/javascript"></script> 
-  <script src="js/foundation/js/foundation/foundation.topbar.js" rel="text/javascript"></script> 
-	<script src="bower_components/Wallpaper/jquery.fs.wallpaper.js"></script>
+  <!-- JQuery & FX -->
+  <script type="text/javascript" src="js/contrib/jquery.min.js"></script>
+	<script type="text/javascript" src="js/contrib/jquery.easing.1.3.js"></script>
+
+	<!-- Bootstrap grid & widgets -->
+  <script type="text/javascript" src="js/contrib/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap/collapse.js"></script> 
+  <script type="text/javascript" src="js/bootstrap/dropdown.js"></script> 
+  <script type="text/javascript" src="js/bootstrap/transition.js"></script>
+	
+	<!-- Foundation topbar menu -->
+  <script type="text/javascript" src="js/foundation/js/foundation.min.js" rel="text/javascript"></script> 
+	<script type="text/javascript" src="js/foundation/js/foundation/foundation.topbar.js" rel="text/javascript"></script>
+	
+	<!-- Wallpaper -->
+	<script type="text/javascript" src="bower_components/Wallpaper/jquery.fs.wallpaper.js"></script>
 		
   <script>
-    $(document).foundation();
+    //$(document).foundation();
 		$(".wall").wallpaper({ 
 			source: "images/banners/psychology-home-page-image1.jpg"
 		});
 	</script>
 	
-  <script src="js/bootstrap/dropdown.js"></script> 
-  <script src="js/bootstrap/transition.js"></script> 
-	
-	<!-- Home page FX -->
-	
-	<script src="js/plugins/jquery.cf.happybox.js"></script>
-	
 	<!-- Custom scripts -->
-	<script src="js/expand.js"></script>
-	<script src="js/jquery.cf.main.js"></script>
+	<script type="text/javascript" src="js/expand.js"></script> <!-- MQ / Bootstrap widgets -->
+	<script type="text/javascript" src="js/plugins/jquery.cf.happybox.js"></script> <!-- Home page happy boxes -->
+	<script type="text/javascript" src="js/jquery.cf.main.js"></script> <!-- Main custom JS file -->
 	
   <!--[if lt IE 9]>
         <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
