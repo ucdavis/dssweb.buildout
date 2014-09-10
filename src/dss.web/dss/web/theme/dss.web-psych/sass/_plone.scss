@@ -1,1 +1,28 @@
 /*Plone Styles */
+
+#portal-globalnav {
+list-style-image: none;
+position: relative;
+background-color: none;
+zoom: 1;
+z-index: 2;
+}
+#portal-globalnav li a {
+	font-size: 1.0625rem;
+	letter-spacing: 0.025em;
+	line-height: 1.80rem;
+	padding-top: 20px;
+	padding-right: 1em;
+	padding-bottom: 0;
+	padding-left: 1em;
+	border-top:none;
+	background-color: $ucd_blue_100;
+	
+}
+#portal-globalnav > li > a {
+	padding-top:15%;
+
+} 
+nav.top-bar {
+	background-color: $ucd_blue_100;
+}
