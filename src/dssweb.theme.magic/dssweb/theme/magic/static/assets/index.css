@@ -1,0 +1,12 @@
+/* CSS Document */
+/* index css */
+@media screen and (max-width: 440px) {
+  .content-main {
+    /* Custom Styles for this breakpoint */ }
+    .content-main h2 {
+      text-align: center; } }
+@media screen and (min-width: 1200px) {
+  .content-main h2 {
+    text-align: center; }
+
+  /* Custom Styles for this breakpoint */ }

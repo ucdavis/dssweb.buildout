@@ -1,0 +1,84 @@
+/* _typography.scss */
+body, div, p, li {
+  color: #000;
+	@include standard_font;
+}
+
+@font-face{
+		font-family: 'lucida sans bold';
+    src: url('fonts/lucida/LucidaSansBold.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.content-main {
+	p, li, ol, div, span {
+		@include line_height(24px,!important);
+	}
+	p {
+		@include font_size(15px);
+		@include line_height(18px);
+		&.intro {
+			@include font_size(18px);
+			@include line_height(30px,!important);
+		}
+	}
+	.breadcrumb {
+		p {
+			@include font_size(12px);
+			@include line_height(15px);
+			margin-bottom: 0;
+			a {
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	figure {
+		figcaption {
+			text-align: right;
+			@include font_size(10.65px);
+			text-transform: uppercase;
+		}
+	}
+}
+
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: 992px) {	
+	.top-panel {
+		.content-main {
+			.narrow-col {
+				color: #FFF;
+				h2 {
+					text-align: center !important;
+				}
+				h3, p {
+					text-align: left !important;
+				}
+				.btn {
+					
+				}
+			}
+		}
+		&.left-panel, &.left-panel, &.left-panel {
+			h2 {
+				text-align: center !important;
+			}
+		}
+		/*
+		&.left-panel {
+			//text-align: right;
+		}
+		&.middle-panel {
+			//text-align: center;
+		}
+		&.right-panel {
+			//text-align: left;
+		}
+		*/
+	}
+}
+
+/* /_typography.scss */
