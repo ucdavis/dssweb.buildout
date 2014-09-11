@@ -417,7 +417,6 @@
   <script type="text/javascript" src="../js/foundation/js/foundation/foundation.topbar.js"></script>
 
 	<!-- Custom scripts -->
-	<script type="text/javascript" src="../js/expand.js"></script> <!-- MQ / Bootstrap widgets -->
 	
   <!--[if lt IE 9]>
         <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>

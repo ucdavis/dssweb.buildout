@@ -32,10 +32,10 @@
 }
 
 /*----- Mobile breakpoint --------*/
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $screen-sm-min) {
 	// handle banners on mobile 
 	.wall {
-		display: none;
+		//display: none;
 	}
 	#util-bar-wrap {
 		.util-bar {
@@ -44,8 +44,8 @@
 	}
 }
 
-/*----- Desktop breakpoint -------*/
-@media screen and (min-width: 992px) {	
+/*----- Desktop or tablet breakpoint -------*/
+@media screen and (min-width: $screen-sm-min) { // $screen-lg-min: 1200px / $screen-md-min: 992px
 
 	/* 3-column banner panel set - intended to use happybox behavior / plugin */
 	.top-panel {

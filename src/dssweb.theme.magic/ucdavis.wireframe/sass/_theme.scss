@@ -1,11 +1,12 @@
 /* _theme.scss */
- 
+
 @import "ucd-variables";
 @import "compass/css3/opacity";
 @import "compass/css3/transition";
 @import "compass/css3/box-shadow";
 @import "compass/css3/border-radius";
 @import "compass/css3/transform";
+@import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
 
 /* 2014-06-12 RAK: This file contains theme CSS and mediaquery for responsive (at end of file). 
   TODO: 
@@ -101,7 +102,7 @@ p {
 	}
 	#copyright, #vcard {
 		margin-right:135px;
-		font-size:14px;
+		@include font_size(14px);
 		line-height: 1.4em;
 		//font-family:lucida;
 		a, p{
@@ -299,6 +300,7 @@ input{
 #sidebar-block-contact {
 	margin-top:20px;
 	padding-left: 38px;
+	padding-right: 15px;
 	li{
 		text-align:left;
 		@include font_size(13px);
@@ -359,7 +361,6 @@ input{
 	h2 {
 		@include font_size(18px);
 		//@include line_height(24px);
-		font-size:18px;
 		letter-spacing:.03em;		
 	}
 	h3{
@@ -380,7 +381,7 @@ input{
 }
 .nav-tabs{
 	display:none;
-	font-size:20px;	
+	@include font_size(20px);
 }
 
 .collapse , .collapsing {
@@ -406,7 +407,7 @@ input{
 /*------ All Media Queries ----------*/
 
 /*----- Mobile breakpoint -------*/
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $screen-sm-max) {
 	head { font-family:"S";}
 	body:after{content:"S";}
  
@@ -504,7 +505,7 @@ input{
 }
 
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $screen-sm-min) {
 
 	// Add margins on small devices
 	.container#main-container {
@@ -559,7 +560,7 @@ input{
 }
 
 // Temporary: TODO: Identify and manage breakpoint at 992
-@media screen and (max-width: 992px) {
+@media screen and (max-width: $screen-md-max) {
 	// Remove margins from smaller than 992
 	#util-bar-wrap {
 		padding-right: 0;
@@ -581,7 +582,7 @@ input{
 		}
 	}
 }
-@media screen and (min-width: 992px) and (max-width: 1200px) {
+@media screen and (min-width: $screen-md-min) and (max-width: $screen-lg-min) { // 1200px max-width
 	.sidebar {
 		&.sidebar-right {
 			> div {
@@ -592,18 +593,24 @@ input{
 }
 
 /*----- Tablet breakpoint -------*/
-@media screen and (min-width: 768px) and (max-width: 1200px) { // was max-width: 992px
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 1200px max-width, was 992px
 	head { font-family:"M";}
 	body:after{content:"M";}
 
 }
 
 /*----- Desktop breakpoint -------*/
-@media screen and (min-width: 1200px) {	// was min-width: 992px
+@media screen and (min-width: $screen-lg-min) { // 1200px max-width, was 992px
 	head { font-family:"L";}
 	body:after{content:"L";}
 
 }
+
+/*----- Foundation adjustments -----*/
+// Define correct menu collapse breakpoint. 
+// This change also requires adding .topbar-breakpoint to the topbar.js and foundation.css
+// where .foundation-mq-topbar is also found
+//.topbar-breakpoint { font-family: "/only screen and (min-width:62.000em)/"; width: 62.000em; }
 
 /* Override default grid gutter, which was broke on home/index bottom panel row. */
 .no-gutter {

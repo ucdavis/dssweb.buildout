@@ -1,9 +1,12 @@
 /* _navigation.scss */
+@import "variables"; // for BASE font size and mixin font_size()
+@import "ucd-variables";
+@import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
 
 // Secondary (top) gold menu
 .util-bar{
-	max-width: 768px; // was 730px;
-	background:$ucd_bright_gold;	
+	max-width: 768px; // Note: not same as breakpoint. was 730px
+	background: $ucd_bright_gold;	
 	height:40px;
 
 	margin-top:56px;
@@ -232,7 +235,7 @@
 }
 
 /*----- Mobile breakpoint -------*/
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $screen-sm-max) {
 	.top-bar{
 		// Setting top-bar height is problematic across responsive breakpoints ... be careful
 		/*height:40px !important;*/
@@ -241,7 +244,7 @@
 		
 		// stretch top-bar across container margins
 		//margin-left: -15px;
-		margin-right: -15px;
+		//margin-right: -15px;
 		
 		//height: 40px; 
 		padding-bottom: 0;
@@ -288,7 +291,7 @@
 }
 
 /*----- Tablet breakpoint -------*/
-@media screen and (min-width: 768px) and (max-width: 1200px) { // was max-width: 992px
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-md-min) { // 1200px max-width, was 992px
 
 	.top-bar {
 		// Make title abs to pull up right menu items
@@ -300,13 +303,6 @@
 						width: 200px !important;
 						height: 40px !important;
 					}
-				}
-			}
-		}
-		.top-bar-section {
-			ul.left {
-				li {
-					
 				}
 			}
 		}

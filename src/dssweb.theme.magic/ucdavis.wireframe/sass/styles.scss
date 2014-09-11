@@ -63,12 +63,7 @@ body{
 
 /* /end reset_all.scss */
 
-// customize bootstrap variables here:
-
 @import "theme";
 @import "vendor/bootstrap";
 @import "components/banners";
 @import "components/navigation";
-
-$container-large-desktop: 1280px;
-

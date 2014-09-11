@@ -34,7 +34,7 @@ body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode",
 .content-main figure figcaption { text-align: right; font-size: 10.65px; font-size: 0.66563rem; text-transform: uppercase; }
 
 /*----- Desktop breakpoint -------*/
-@media screen and (min-width: 992px) { .top-panel { /*
+@media screen and (min-width: 768px) { .top-panel { /*
 &.left-panel {
 	//text-align: right;
 }
