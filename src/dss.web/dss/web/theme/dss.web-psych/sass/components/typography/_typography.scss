@@ -1,4 +1,6 @@
 /* _typography.scss */
+@import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
+
 body, div, p, li {
   color: #000;
 	@include standard_font;
@@ -46,7 +48,7 @@ body, div, p, li {
 }
 
 /*----- Desktop breakpoint -------*/
-@media screen and (min-width: 992px) {	
+@media screen and (min-width: $screen-sm-min) {	// was $screen-md-min: 992
 	.top-panel {
 		.content-main {
 			.narrow-col {
