@@ -188,7 +188,6 @@ input { text-align: center; }
 /*----- Mobile breakpoint -------*/
 @media screen and (max-width: 991px) { head { font-family: "S"; }
   body:after { content: "S"; }
-  .siders .wall.shadow-graphic { height: 85px !important; }
   #sidebar-bio-right { float: left; margin-left: 0; margin-top: 10px; clear: both; }
   .sidebar { background: transparent; }
   .sidebar-right { margin-top: 100px; clear: both; float: left !important; }
@@ -702,6 +701,7 @@ tbody.collapse.in { display: table-row-group; }
 
 @media screen and (max-width: 992px) { #util-bar-wrap .util-bar { margin-top: 0; } }
 /*----- Mobile breakpoint --------*/
+@media screen and (max-width: 768px) { .siders { margin-right: -12px !important; } }
 /*----- Tablet breakpoint -------*/
 @media screen and (min-width: 768px) and (max-width: 992px) { .siders .wall.shadow-graphic { height: 85px !important; } }
 /*----- Desktop or tablet breakpoint -------*/

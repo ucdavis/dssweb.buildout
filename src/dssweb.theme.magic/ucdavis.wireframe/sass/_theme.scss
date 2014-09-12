@@ -420,11 +420,7 @@ input{
 @media screen and (max-width: $screen-sm-max) {
 	head { font-family:"S";}
 	body:after{content:"S";}
-	
-	.siders .wall.shadow-graphic {
-	    height: 85px !important;
-	}
-	
+ 	
   #sidebar-bio-right{
 		float:left;	  		
 		margin-left:0;

@@ -43,8 +43,13 @@
 /*----- Mobile breakpoint --------*/
 @media screen and (max-width: $screen-sm-min) {
 	// handle banners on mobile 
-	.wall {
-		//display: none;
+	.siders {
+		// Note: This removes the 15px white strip to right of the wallpaper when 
+		// initial-scale=1.0 is removed from the meta
+		margin-right: -12px !important; 
+		.wall {
+			//display: none;
+		}
 	}
 }
 
