@@ -8,7 +8,7 @@
 	var front_banner_height = 520;
 
 	$(document).ready(function() {
-		if (typeof window.console == "object") {
+		if (typeof window.console === "object") {
 			window.console.log("JQuery version:  " + $.fn.jquery);
 		}
 		
@@ -16,7 +16,7 @@
 		$(document).foundation(); 
 				
 		// Activate home page happy boxes
-		if($('body.home #top-panel-row').length != 0) {
+		if($('body.home #top-panel-row').length !== 0) {
 			$('body.home #top-panel-row').happybox(
 				{
 					'type': '.panel', // element type to make happy
@@ -31,7 +31,7 @@
 		
 		// Get picture figure/figcaption
 		// TODO: Plugin
-		if($('.picture').length != 0) {
+		if($('.picture').length !== 0) {
       $('.picture img').each(function () {
 				var title = $(this).attr('title');
 				$(this).wrap('<figure class="picture-processed" />');
@@ -46,10 +46,11 @@
                 elem['e' + type + fn] = fn;
                 elem[type + fn] = function () {
                     elem['e' + type + fn](window.event);
-                }
+                };
                 elem.attachEvent('on' + type, elem[type + fn]);
-            } else
+            } else {
                 elem.addEventListener(type, fn, false);
+						}
         }
     };
 
@@ -73,16 +74,18 @@
                 this.el = el;
                 this.getPropertyValue = function (prop) {
                     var re = /(\-([a-z]){1})/g;
-                    if (prop == 'float') prop = 'styleFloat';
+                    if (prop === 'float') {
+											prop = 'styleFloat';
+										}
                     if (re.test(prop)) {
                         prop = prop.replace(re, function () {
                             return arguments[2].toUpperCase();
                         });
                     }
                     return el.currentStyle[prop] ? el.currentStyle[prop] : null;
-                }
+                };
                 return this;
-            }
+            };
             var compStyle = window.getCompStyle(document.getElementsByTagName('head')[0], "");
             activeMQ = compStyle.getPropertyValue("font-family");
         }
@@ -93,17 +96,17 @@
 		var expand = function () {
 
       // Conditions for each breakpoint
-      if (activeMQ != currentMQ) {
+      if (activeMQ !== currentMQ) {
 
 					// If the detected screen size is Mobile Extra Small 0px-449px
-          if (activeMQ == 'XS') {
+          if (activeMQ === 'XS') {
               currentMQ = activeMQ;
 							utilStack();
               collapsedView();
 
           }
 					// If the detected screen size is Mobile 450px-599px
-          if (activeMQ == 'S') {
+          if (activeMQ === 'S') {
               currentMQ = activeMQ;
 							$('body.home #top-panel-row').height("auto");
 							utilStack();
@@ -113,14 +116,14 @@
 							
           }
 					// If the detected screen size is Tablet 600px-959px
-          if (activeMQ == 'M') {
+          if (activeMQ === 'M') {
               currentMQ = activeMQ;
-							if  ( ($("body.ourpeople").length != 0) || ($("body.home").length != 0) ) {
+							if  ( ($("body.ourpeople").length !== 0) || ($("body.home").length !== 0) ) {
 								$('body.home #top-panel-row').height(front_banner_height);
 								 expandedView();
 							}
 							/*
-							else if($("body.ourpeople").length != 0){
+							else if($("body.ourpeople").length !== 0){
 							collapsedView();	
 							rmvStack();
 							
@@ -128,7 +131,7 @@
 							*/
           }
 					// If the detected screen size is Desktop 960px and up
-          if (activeMQ == 'L') {
+          if (activeMQ === 'L') {
               currentMQ = activeMQ;
 							rmvStack();
 							$('body.home #top-panel-row').height(front_banner_height);
@@ -136,7 +139,12 @@
           }
       }
 		};
-		
+
+		function myResize() {
+      mqSync();
+			expand();
+		}
+				
     if (toggleActive) {
 				myResize();
         // Run on resize
@@ -150,11 +158,6 @@
         });
     }
 		
-		function myResize() {
-      mqSync();
-			expand();
-		}
-		
     function expandedView() {
        	// Index page
 			  //$(".ls-content").removeClass("tab-content");
@@ -162,7 +165,7 @@
         //$(".nav-tabs").hide();
 				
         /* If Bio Page */
-				if ($("body.bio").length != 0) {
+				if ($("body.bio").length !== 0) {
             // Remove the panel effects and then show the headers
 						$("#about-bio").removeClass("panel panel-default");
             $(".content-bio-container").removeClass(".panel-group");
@@ -194,7 +197,7 @@
 				
 				$(".content-main div").children().removeClass("panel-collapse collapse active");
 				$(".content-main .panel-heading").hide();
-				$(".panel-group").children().removeClass("panel panel-default")        
+				$(".panel-group").children().removeClass("panel panel-default");
         $(".more_text").hide();
 				
 				// Remove the open class from an open dropdown list to prevent an open dropdown list on desktop view
@@ -209,7 +212,7 @@
         $("#contA").addClass("active");
        // $(".nav-tabs").show();
 							  			     
-        if ($("body.bio").length == 0) {		
+        if ($("body.bio").length === 0) {		
 						// Add accordion effects to sidebar			  
             $(".sidebar").children().addClass("panel panel-default");
 						$(".panel-group").children().addClass("panel panel-default");
@@ -218,7 +221,7 @@
 
         }
 				/* If Bio Page */
-				else if ($("body.bio").length != 0) {
+				else if ($("body.bio").length !== 0) {
 						// Add accordion effects to sidebar			  
             $(".content-bio-container").addClass("panel-group");
 						$("#about-bio > div").addClass("panel panel-default");

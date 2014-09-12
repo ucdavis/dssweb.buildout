@@ -27,7 +27,7 @@ body:after{
 .container {
 	padding:0;
 	&#main {
-		padding:0 !important;
+		//padding:0 !important; // TODO: Breaks fit alignment on mobile
 	}
 }
 
@@ -62,6 +62,8 @@ p {
 		clear:both;
 	}
 }
+
+
 .footer {	
 	background-color:$ucd_blue_70;
 	height:250px;
@@ -72,10 +74,12 @@ p {
 	a {
 		text-decoration: none;
 	}
+	
 	.foot-wrap{
 		margin: 90px;
-		width:100%;
+		//width:100%; // TODO: Tablet/Mobile right white margin
 	}
+	
 	.footer-nav, #copyright, #vcard{
 		float:left;		
 		color:#fff;
@@ -112,7 +116,7 @@ p {
 	}
 
 	#foot-social{
-		width:217px;
+		//width:217px; // TODO: Tablet/Mobile right white margin
 		float:left;
 		margin-top:35px;
 		margin-left:85px;
@@ -150,6 +154,7 @@ p {
 
 	}
 }
+
 
 input{
    text-align:center;
@@ -469,7 +474,7 @@ input{
 			width: auto; // undo general 250 width
 			a {
 				display: inline-block;
-				width: 100%;
+				//width: 100%; //TODO: margin-top reveals formatting error
 				height: 40px;
 
 				padding-right: 15px;
@@ -532,7 +537,8 @@ input{
 		.top-bar-section {
 			 li {
 				ul { // .dropdown
-					width: 220px !important;
+					// TODO: Tablet/Mobile right white margin
+					//width: 220px !important;
 					li {
 						a {
 							padding: 25px;
@@ -610,7 +616,7 @@ input{
 // Define correct menu collapse breakpoint. 
 // This change also requires adding .topbar-breakpoint to the topbar.js and foundation.css
 // where .foundation-mq-topbar is also found
-//.topbar-breakpoint { font-family: "/only screen and (min-width:62.000em)/"; width: 62.000em; }
+//.topbar-breakpoint { font-family: "/only screen and (min-width:62.000em)/"; width: 62.000em; } 
 
 /* Override default grid gutter, which was broke on home/index bottom panel row. */
 .no-gutter {
