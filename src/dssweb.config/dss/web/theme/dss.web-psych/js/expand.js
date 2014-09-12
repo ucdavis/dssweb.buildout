@@ -106,7 +106,7 @@ $(function () {
             if (activeMQ == 'S') {
                 currentMQ = activeMQ;
 								utilStack();
-              
+							 
 								collapsedView();					
 								
 								
@@ -116,7 +116,7 @@ $(function () {
                 currentMQ = activeMQ;
 								if  ( ($("body.ourpeople").length != 0) || ($("body.home").length != 0) ) {
 									 expandedView();
-													
+									 
 								}
 								/*
 								else if($("body.ourpeople").length != 0){

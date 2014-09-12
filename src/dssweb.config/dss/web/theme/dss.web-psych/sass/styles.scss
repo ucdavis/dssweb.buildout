@@ -1,7 +1,6 @@
 @charset "utf-8";
 @import "variables";
 
-
 /* From reset_all.scss ... TODO: Why? */
 body{
     //font-size: 14px !important;
@@ -64,13 +63,7 @@ body{
 
 /* /end reset_all.scss */
 
-// customize bootstrap variables here:
-
 @import "theme";
-@import "plone";
 @import "vendor/bootstrap";
 @import "components/banners";
 @import "components/navigation";
-
-$container-large-desktop: 1280px;
-

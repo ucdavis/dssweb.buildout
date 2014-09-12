@@ -138,7 +138,7 @@ Wire Frames structure:
 						<ul>
 							<li>bootstrap/ - bootstrap folder</li>
 							<li>bootstrap.scss</li>
-	          	<li>_bootstrap-override-variables.scss - Moved out of _variables.scss; override bootstrap here</li>
+	          	<li>_bootstrap-override-variables.scss - Imported into _variables.scss from whence it came; override bootstrap here</li>
 	          	<li>_bootstrap_overrides.scss - Override bootstrap CSS here</li>
 							<li>jquery.cf.happybox.scss - happybox plugin styles</li>
 						</ul>

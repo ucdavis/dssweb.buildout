@@ -5,6 +5,12 @@ $panel-bg:                    transparent;
 $panel-default-border:        transparent;
 $panel-body-padding:          0;
 
+//$screen-md-min: 1000px; // 1000px, was 992px 
+$screen-lg-min: 1310px; // 1310px, was 1200
+
+$container-desktop: 					 970px; // 1000px, was 970px
+$container-large-desktop:      1280px; // 1280px, was 1170px
+
 // a flag to toggle asset pipeline / compass integration
 // defaults to true if twbs-font-path function is present (no function => twbs-font-path('') parsed as string == right side)
 // in Sass 3.3 this can be improved with: function-exists(twbs-font-path)
@@ -297,7 +303,7 @@ $panel-body-padding:          0;
 //* Number of columns in the grid.
 // $grid-columns:              12
 //* Padding between columns. Gets divided in half for the left and right.
- $grid-gutter-width:         30px;
+ //$grid-gutter-width:         30px;
 // Navbar collapse
 //* Point at which the navbar becomes uncollapsed.
 // $grid-float-breakpoint:     $screen-sm-min
@@ -319,7 +325,7 @@ $panel-body-padding:          0;
 // $container-md:                 $container-desktop
 
 // Large screen / wide desktop
- $container-large-desktop:      ((1250px + $grid-gutter-width));
+// $container-large-desktop:      ((1170px + $grid-gutter-width));
 //* For `$screen-lg-min` and up.
 // $container-lg:                 $container-large-desktop
 
