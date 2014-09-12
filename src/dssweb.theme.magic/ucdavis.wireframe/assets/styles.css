@@ -89,18 +89,18 @@ p { margin-bottom: 15px; }
 #utility ul li { text-align: center; display: inline; list-style-type: none; padding-right: 50px; width: 100%; }
 #utility ul { padding-top: 100px; text-align: center; clear: both; }
 
-.footer { background-color: #4d688c; height: 250px; width: 100%; padding-bottom: 25px; margin-bottom: 15px; clear: both; }
+.footer { background-color: #4d688c; min-height: 250px; width: 100%; padding-bottom: 25px; margin-bottom: 15px; clear: both; }
 .footer a { text-decoration: none; }
-.footer .foot-wrap { margin: 90px; }
+.footer .foot-wrap { margin: 90px; margin-bottom: 0 !important; }
 .footer .footer-nav, .footer #copyright, .footer #vcard { float: left; color: #fff; text-decoration: none; margin-top: 36px; }
 .footer #email-phone a { text-decoration: underline; }
 .footer #copyright { clear: both; }
-.footer .footer-nav { border-left: 1px solid white; width: 150px; }
+.footer .footer-nav { border-left: 1px solid white; width: 140px; }
 .footer .footer-nav li { padding-left: 10px; }
 .footer .footer-nav li a { color: #fff; }
 .footer #copyright, .footer #vcard { margin-right: 135px; font-size: 14px; font-size: 0.875rem; line-height: 1.4em; }
 .footer #copyright a, .footer #copyright p, .footer #vcard a, .footer #vcard p { color: #fff; letter-spacing: .014em; }
-.footer #foot-social { float: left; margin-top: 35px; margin-left: 85px; }
+.footer #foot-social { float: left; margin-top: 35px; }
 .footer #foot-social li { display: inline-block; text-align: center; padding-left: 7px; padding-right: 7px; border-left: 1px solid white; }
 .footer #foot-social li a { display: inline-block; height: 24px; width: 24px; color: #fff; }
 .footer #foot-social li a#facebook-icon { background: url(../images/icons/sm-icon-sprites.png) 0 0 no-repeat; }
@@ -182,18 +182,19 @@ input { text-align: center; }
 
 #search { width: 100px; }
 
-@media (min-width: 768px) { .masthead, .marketing, .footer { padding-right: 0; padding-left: 0; } }
+@media screen and (min-width: 768px) { .masthead, .marketing, .footer { padding-right: 0; padding-left: 0; }
+  .masthead .foot-wrap #foot-cont, .marketing .foot-wrap #foot-cont, .footer .foot-wrap #foot-cont { margin-left: 10%; } }
 /*------ All Media Queries ----------*/
 /*----- Mobile breakpoint -------*/
 @media screen and (max-width: 991px) { head { font-family: "S"; }
   body:after { content: "S"; }
+  .siders .wall.shadow-graphic { height: 85px !important; }
   #sidebar-bio-right { float: left; margin-left: 0; margin-top: 10px; clear: both; }
   .sidebar { background: transparent; }
   .sidebar-right { margin-top: 100px; clear: both; float: left !important; }
   .util-bar { margin: 0; height: 27px; }
   .util-bar ul { margin: 0; padding: 0; }
   .util-bar ul li#uti-logo { border-left-width: 0; }
-  .util-bar ul li#uti-logo a { margin-top: 5px; }
   .content-main { min-width: 192px; clear: both; }
   .submenu { position: absolute; left: -999px !important; }
   .headshot { padding: 0 !important; height: 100% !important; }
@@ -207,7 +208,10 @@ input { text-align: center; }
 top:-39px !important;*/ }
   .glyphicon { position: relative; top: -18px; }
   .sidebar.sidebar-right { margin-top: 0; }
-  .op-sidebar-title { text-align: left !important; } }
+  .op-sidebar-title { text-align: left !important; }
+  .footer .foot-wrap { margin: 10px; }
+  .footer .foot-wrap p, .footer .foot-wrap ul, .footer .foot-wrap div { margin-left: 0; margin-right: 0; width: 100%; text-align: center; }
+  .footer .foot-wrap #foot-social { margin-left: 0 !important; margin-right: 0 !important; float: none; } }
 @media screen and (min-width: 768px) { .container#main-container { padding-left: 0 !important; padding-right: 0 !important; }
   #util-bar-wrap { padding-right: 105px; }
   #top-bar-wrap { padding-left: 105px; padding-right: 105px; }
@@ -217,13 +221,14 @@ top:-39px !important;*/ }
 @media screen and (max-width: 1309px) { #util-bar-wrap { padding-right: 0; }
   #top-bar-wrap { padding-left: 0; padding-right: 0; }
   .content-main > div, .content-main > h1 { margin-left: 0; }
-  .sidebar.sidebar-right > div { margin-left: 0; } }
+  .sidebar.sidebar-right > div { margin-left: 0; }
+  .footer .foot-wrap #foot-cont { margin-left: 0; } }
 @media screen and (min-width: 992px) and (max-width: 1310px) { .sidebar.sidebar-right > div { margin-left: 10px; } }
 /*----- Tablet breakpoint -------*/
 @media screen and (min-width: 768px) and (max-width: 991px) { head { font-family: "M"; }
   body:after { content: "M"; } }
 /*----- Desktop breakpoint -------*/
-@media screen and (min-width: 1310px) { head { font-family: "L"; }
+@media screen and (min-width: 992px) { head { font-family: "L"; }
   body:after { content: "L"; } }
 /*----- Foundation adjustments -----*/
 /* Override default grid gutter, which was broke on home/index bottom panel row. */
@@ -695,8 +700,10 @@ tbody.collapse.in { display: table-row-group; }
 .wall { top: 0; width: 100%; height: 500px !important; }
 .wall.shadow-graphic { height: 176px !important; }
 
+@media screen and (max-width: 992px) { #util-bar-wrap .util-bar { margin-top: 0; } }
 /*----- Mobile breakpoint --------*/
-@media screen and (max-width: 768px) { #util-bar-wrap .util-bar { margin-top: 0; } }
+/*----- Tablet breakpoint -------*/
+@media screen and (min-width: 768px) and (max-width: 992px) { .siders .wall.shadow-graphic { height: 85px !important; } }
 /*----- Desktop or tablet breakpoint -------*/
 @media screen and (min-width: 768px) { /* 3-column banner panel set - intended to use happybox behavior / plugin */
   .top-panel .action-element .narrow-col { width: 80%; color: #FFF; background-color: #002855; }

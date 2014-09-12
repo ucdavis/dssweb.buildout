@@ -66,7 +66,7 @@ p {
 
 .footer {	
 	background-color:$ucd_blue_70;
-	height:250px;
+	min-height:250px;
 	width:100%;
 	padding-bottom: 25px;
 	margin-bottom: 15px;
@@ -77,6 +77,7 @@ p {
 	
 	.foot-wrap{
 		margin: 90px;
+		margin-bottom: 0 !important;
 		//width:100%; // TODO: Tablet/Mobile right white margin
 	}
 	
@@ -96,7 +97,7 @@ p {
 	}
 	.footer-nav{
 		border-left:1px solid white;
-		width:150px;		
+		width:140px;		
 		li{
 			padding-left:10px;
 			a{
@@ -119,7 +120,7 @@ p {
 		//width:217px; // TODO: Tablet/Mobile right white margin
 		float:left;
 		margin-top:35px;
-		margin-left:85px;
+		//margin-left:85px;
 		li{
 			display: inline-block;
 			text-align: center;
@@ -389,7 +390,7 @@ input{
 	@include font_size(20px);
 }
 
-.collapse , .collapsing {
+.collapse, .collapsing {
 	div{
 		padding:15px;
 	}
@@ -399,14 +400,18 @@ input{
 	width:100px;
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: $screen-sm-min) { // was 768px
   .masthead,
   .marketing,
   .footer {
     padding-right: 0;
     padding-left: 0;
+		.foot-wrap {
+			#foot-cont {
+				margin-left: 10%;
+			}
+		}
   }
-
 }
 
 /*------ All Media Queries ----------*/
@@ -415,7 +420,11 @@ input{
 @media screen and (max-width: $screen-sm-max) {
 	head { font-family:"S";}
 	body:after{content:"S";}
- 
+	
+	.siders .wall.shadow-graphic {
+	    height: 85px !important;
+	}
+	
   #sidebar-bio-right{
 		float:left;	  		
 		margin-left:0;
@@ -442,7 +451,7 @@ input{
 					//padding-left: 15px;
 					border-left-width: 0;
 					a {
-						margin-top: 5px;
+						//margin-top: 5px;
 					}
 				}
 			}
@@ -506,7 +515,23 @@ input{
 	.op-sidebar-title {
 		text-align:left !important;
 	}
-	
+	.footer {	
+		.foot-wrap{
+			margin: 10px;
+			p, ul, div {
+				margin-left: 0;
+				margin-right: 0;
+				width: 100%;
+				text-align: center;
+			}
+			#foot-social {
+				margin-left: 0 !important;
+				margin-right: 0 !important;
+				float: none;
+			}
+
+		}
+	}
 }
 
 
@@ -568,6 +593,7 @@ input{
 // Temporary: TODO: Identify and manage breakpoint at 992
 @media screen and (max-width: $screen-md-max) {
 	// Remove margins from smaller than 992
+
 	#util-bar-wrap {
 		padding-right: 0;
 	}
@@ -587,7 +613,15 @@ input{
 			}
 		}
 	}
+	.footer {
+		.foot-wrap {
+			#foot-cont {
+				margin-left: 0;
+			}
+		}
+	}
 }
+
 @media screen and (min-width: $screen-md-min) and (max-width: $screen-lg-min) { // 1200px max-width
 	.sidebar {
 		&.sidebar-right {
@@ -606,7 +640,7 @@ input{
 }
 
 /*----- Desktop breakpoint -------*/
-@media screen and (min-width: $screen-lg-min) { // 1200px max-width, was 992px
+@media screen and (min-width: $screen-md-min) { // was $screen-lg-min, 1200px max-width, was 992px
 	head { font-family:"L";}
 	body:after{content:"L";}
 
