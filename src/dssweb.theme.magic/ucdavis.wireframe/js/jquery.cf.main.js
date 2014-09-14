@@ -8,26 +8,12 @@
 	var front_banner_height = 520;
 
 	$(document).ready(function() {
-		if (typeof window.console === "object") {
+		if(typeof window.console !== "undefined") {
 			window.console.log("JQuery version:  " + $.fn.jquery);
 		}
 		
 		// foundation top-bar support. Note: Add after any JavaScript constructed markup that relies on foundation
 		$(document).foundation(); 
-				
-		// Activate home page happy boxes
-		if($('body.home #top-panel-row').length !== 0) {
-			$('body.home #top-panel-row').happybox(
-				{
-					'type': '.panel', // element type to make happy
-					'action_element_class': '.action-element',
-					'canvas_element_class': '.narrow-col',
-					'button_class': ".btn-primary",
-					'height': front_banner_height // total height of the happy viewport
-				}
-			);
-			front = true;
-		}
 		
 		// Get picture figure/figcaption
 		// TODO: Plugin
@@ -71,6 +57,7 @@
         else {
             // Use .getCompStyle instead of .getComputedStyle so above check for window.getComputedStyle never fires true for old browsers
             window.getCompStyle = function (el, pseudo) {
+							this.pseudo = pseudo;
                 this.el = el;
                 this.getPropertyValue = function (prop) {
                     var re = /(\-([a-z]){1})/g;
@@ -151,10 +138,28 @@
         event.add(window, "resize", myResize);
     }
 
+		// Activate home page happy boxes
+		if ((activeMQ === 'L') || (activeMQ === 'M')) {
+			if($('body.home #top-panel-row').length !== 0) {
+				$('body.home #top-panel-row').happybox(
+					{
+						'type': '.panel', // element type to make happy
+						'action_element_class': '.action-element',
+						'canvas_element_class': '.narrow-col',
+						'button_class': ".btn-primary",
+						'height': front_banner_height // total height of the happy viewport
+					}
+				);
+				front = true;
+			}
+		}
+		
     if (debug) {
         $(window).resize(function () {
-            console.log($(this).width());
-						console.log('expand.js detected screen size: ' + currentMQ);
+					if(typeof window.console !== "undefined") {
+            window.console.log($(this).width());
+						window.console.log('CF etected screen size: ' + currentMQ);
+					}
         });
     }
 		

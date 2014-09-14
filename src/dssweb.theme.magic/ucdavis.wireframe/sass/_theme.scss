@@ -1,13 +1,5 @@
 /* _theme.scss */
 
-@import "ucd-variables";
-@import "compass/css3/opacity";
-@import "compass/css3/transition";
-@import "compass/css3/box-shadow";
-@import "compass/css3/border-radius";
-@import "compass/css3/transform";
-@import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
-
 /* 2014-06-12 RAK: This file contains theme CSS and mediaquery for responsive (at end of file). 
   TODO: 
     - Move to SASS
@@ -189,6 +181,7 @@ input{
 		padding:0 0 !important;
 		margin-bottom:0;
 		color: $ucd_blue_80;
+		text-transform: uppercase;
 		.bread-divider {
 			@include font_size(15px);
 		}
@@ -234,9 +227,6 @@ input{
 	}
 }
 
-#gutter-column {
-	background-color: red;
-}
 .sidebar{
 	height:auto;
 	width:250px; // !important; 
@@ -400,7 +390,7 @@ input{
 	width:100px;
 }
 
-@media screen and (min-width: $screen-sm-min) { // was 768px
+@media screen and (min-width: $screen-sm-min) { // width > 768
   .masthead,
   .marketing,
   .footer {
@@ -416,8 +406,18 @@ input{
 
 /*------ All Media Queries ----------*/
 
+/*----- Mobile breakpoint --------*/
+// At point that left and right margins are gone
+@media screen and (max-width: $screen-sm-min) { // width < 768
+	.content-main {
+		h1, .breadcrumb {
+			margin-left: 15px;
+		}
+	}
+}
+
 /*----- Mobile breakpoint -------*/
-@media screen and (max-width: $screen-sm-max) {
+@media screen and (max-width: $screen-sm-max) { // width < 991px
 	head { font-family:"S";}
 	body:after{content:"S";}
  	
@@ -531,26 +531,26 @@ input{
 }
 
 
-@media screen and (min-width: $screen-sm-min) {
+@media screen and (min-width: $screen-sm-min) { // width > 768px
 
-	// Add margins on small devices
+	// Add margins on small devices (TODO?)
 	.container#main-container {
-		padding-left: 0 !important;
-		padding-right: 0 !important;
+		//padding-left: 0 !important;
+		//padding-right: 0 !important;
 	}
 	
 	#util-bar-wrap {
 		padding-right: 105px;
 	}
 	
-	#top-bar-wrap {
+	#top-bar-wrap, #content-row {
 		padding-left: 105px; // 90 + 15 px
 		padding-right: 105px;
 	}
 	
 	.content-main {
 		> div, > h1 {
-	  	margin-left: 90px;
+	  	//margin-left: 90px; // TODO: remove since now using .row 15+90=105 applied to content-row
 		}
 	}
 	
@@ -587,19 +587,19 @@ input{
 }
 
 // Temporary: TODO: Identify and manage breakpoint at 992
-@media screen and (max-width: $screen-md-max) {
+@media screen and (max-width: $screen-md-max) { // < 1999
 	// Remove margins from smaller than 992
 
 	#util-bar-wrap {
 		padding-right: 0;
 	}
-	#top-bar-wrap {
+	#top-bar-wrap, #content-row {
 		padding-left: 0; // 90 + 15 px
 		padding-right: 0;
 	}
 	.content-main {
 		> div, > h1 {
-	  	margin-left: 0;
+	  	//margin-left: 0;
 		}
 	}
 	.sidebar {
@@ -618,7 +618,7 @@ input{
 	}
 }
 
-@media screen and (min-width: $screen-md-min) and (max-width: $screen-lg-min) { // 1200px max-width
+@media screen and (min-width: $screen-md-min) and (max-width: $screen-lg-min) { // 991 < width < 1200
 	.sidebar {
 		&.sidebar-right {
 			> div {
@@ -629,14 +629,14 @@ input{
 }
 
 /*----- Tablet breakpoint -------*/
-@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 1200px max-width, was 992px
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
 	head { font-family:"M";}
 	body:after{content:"M";}
 
 }
 
 /*----- Desktop breakpoint -------*/
-@media screen and (min-width: $screen-md-min) { // was $screen-lg-min, 1200px max-width, was 992px
+@media screen and (min-width: $screen-md-min) { // width > 992
 	head { font-family:"L";}
 	body:after{content:"L";}
 

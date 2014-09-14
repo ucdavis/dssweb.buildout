@@ -47,6 +47,8 @@ body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode",
   .top-panel .content-main .narrow-col h3, .top-panel .content-main .narrow-col p { text-align: left !important; }
   .top-panel.left-panel h2, .top-panel.left-panel h2, .top-panel.left-panel h2 { text-align: center !important; } }
 /* /_typography.scss */
+*, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
 /* From reset_all.scss ... TODO: Why? */
 .col-lg-4 h2 { font-weight: bold !important; font-size: 30px !important; font-size: 1.875rem !important; margin-bottom: 15px; }
 
@@ -124,7 +126,7 @@ input { text-align: center; }
 .content-title { padding-bottom: 30px; font-size: 36px; font-size: 2.25rem; line-height: 43px; line-height: 2.6875rem; letter-spacing: 0.01em; margin-top: 0 !important; }
 
 .content-main { margin-top: 45px; margin-bottom: 30px; padding-left: 0 !important; }
-.content-main .breadcrumb { background: none; padding: 0 0 !important; margin-bottom: 0; color: #335379; }
+.content-main .breadcrumb { background: none; padding: 0 0 !important; margin-bottom: 0; color: #335379; text-transform: uppercase; }
 .content-main .breadcrumb .bread-divider { font-size: 15px; font-size: 0.9375rem; }
 .content-main .panel-body h2 { font-size: 24px !important; font-size: 1.5rem !important; font-weight: normal; padding-top: 15px; padding-bottom: 15px; }
 .content-main h2 { font-size: 24px !important; font-size: 1.5rem !important; font-weight: normal; padding-top: 15px; padding-bottom: 15px; }
@@ -132,8 +134,6 @@ input { text-align: center; }
 .content-main ul { list-style-type: none; padding: 0; margin: 0; margin-bottom: 15px; }
 .content-main ul li { background-image: url(../images/bullets/black-square.gif); background-repeat: no-repeat; background-position: 0px 5px; padding-left: 14px; }
 .content-main ul li ul { margin-top: 7px; margin-bottom: 0 !important; }
-
-#gutter-column { background-color: red; }
 
 .sidebar { height: auto; width: 250px; margin-top: 15px; text-align: left; }
 .sidebar > div { margin-left: 70px; }
@@ -185,6 +185,8 @@ input { text-align: center; }
 @media screen and (min-width: 768px) { .masthead, .marketing, .footer { padding-right: 0; padding-left: 0; }
   .masthead .foot-wrap #foot-cont, .marketing .foot-wrap #foot-cont, .footer .foot-wrap #foot-cont { margin-left: 10%; } }
 /*------ All Media Queries ----------*/
+/*----- Mobile breakpoint --------*/
+@media screen and (max-width: 768px) { .content-main h1, .content-main .breadcrumb { margin-left: 15px; } }
 /*----- Mobile breakpoint -------*/
 @media screen and (max-width: 991px) { head { font-family: "S"; }
   body:after { content: "S"; }
@@ -211,15 +213,12 @@ top:-39px !important;*/ }
   .footer .foot-wrap { margin: 10px; }
   .footer .foot-wrap p, .footer .foot-wrap ul, .footer .foot-wrap div { margin-left: 0; margin-right: 0; width: 100%; text-align: center; }
   .footer .foot-wrap #foot-social { margin-left: 0 !important; margin-right: 0 !important; float: none; } }
-@media screen and (min-width: 768px) { .container#main-container { padding-left: 0 !important; padding-right: 0 !important; }
-  #util-bar-wrap { padding-right: 105px; }
-  #top-bar-wrap { padding-left: 105px; padding-right: 105px; }
-  .content-main > div, .content-main > h1 { margin-left: 90px; }
+@media screen and (min-width: 768px) { #util-bar-wrap { padding-right: 105px; }
+  #top-bar-wrap, #content-row { padding-left: 105px; padding-right: 105px; }
   .top-bar .top-bar-section li ul li a { padding: 25px; }
   /* 	.dropdown { 		 width: 220px !important; 		  		 li { 			 a { 				 display: inline-block !important; 				 border: 1px solid red !important; 				 padding:25px; 			 } 		 } 	} */ }
 @media screen and (max-width: 1309px) { #util-bar-wrap { padding-right: 0; }
-  #top-bar-wrap { padding-left: 0; padding-right: 0; }
-  .content-main > div, .content-main > h1 { margin-left: 0; }
+  #top-bar-wrap, #content-row { padding-left: 0; padding-right: 0; }
   .sidebar.sidebar-right > div { margin-left: 0; }
   .footer .foot-wrap #foot-cont { margin-left: 0; } }
 @media screen and (min-width: 992px) and (max-width: 1310px) { .sidebar.sidebar-right > div { margin-left: 10px; } }
@@ -701,9 +700,10 @@ tbody.collapse.in { display: table-row-group; }
 
 @media screen and (max-width: 992px) { #util-bar-wrap .util-bar { margin-top: 0; } }
 /*----- Mobile breakpoint --------*/
-@media screen and (max-width: 768px) { .siders { margin-right: -12px !important; } }
+@media screen and (max-width: 768px) { .siders .wall.shadow-graphic { height: 85px !important; } }
 /*----- Tablet breakpoint -------*/
-@media screen and (min-width: 768px) and (max-width: 992px) { .siders .wall.shadow-graphic { height: 85px !important; } }
+@media screen and (min-width: 768px) and (max-width: 992px) { .siders .wall.shadow-graphic { height: 85px !important; }
+  body.home .siders { margin-right: -12px !important; } }
 /*----- Desktop or tablet breakpoint -------*/
 @media screen and (min-width: 768px) { /* 3-column banner panel set - intended to use happybox behavior / plugin */
   .top-panel .action-element .narrow-col { width: 80%; color: #FFF; background-color: #002855; }
@@ -724,55 +724,6 @@ tbody.collapse.in { display: table-row-group; }
   .top-panel.right-panel .narrow-col h2 { text-align: center !important; } }
 /* /components/_banners.scss */
 /* _navigation.scss */
-/* Example use case:
- %abstract-class { font-family: Verdana; }  #my-div { @extend %abstract-class; }  #my-other-div { @extend %abstract-class; }
- ... compiles as: #my-div, #my-other-div { font-family: Verdana; }
-
-*/
-/* 2013-05-12 RAK: Bootstrap overrides moved from default gem installation that placed overrides directly in the _variables.scss file */
-#breadcrumb .breadcrumb { padding: 0; margin-bottom: 0; list-style: none; background-color: transparent; border-radius: 0; }
-#breadcrumb .breadcrumb > li { display: auto; }
-#breadcrumb .breadcrumb > li + li:before { padding: 0; color: auto; content: auto; }
-#breadcrumb .breadcrumb > .active { color: auto; }
-
-/*Used for overriding underlined text */
-.nounderline > a { color: inherit; text-decoration: none; }
-
-.panel-body-overriden { padding-top: 15px; padding-right: 15px; padding-bottom: 0px; padding-left: 15px; }
-
-.panel-group .panel + .panel { margin-top: 0 !important; }
-
-.panel { outline: none; border: none !important; -webkit-box-shadow: none !important; -moz-box-shadow: none !important; box-shadow: none !important; }
-
-/* _typography.scss */
-body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.3125em; }
-
-@font-face { font-family: 'lucida sans bold'; src: url("fonts/lucida/LucidaSansBold.ttf"); font-weight: normal; font-style: normal; }
-.content-main p, .content-main li, .content-main ol, .content-main div, .content-main span { line-height: 24px !important; line-height: 1.5rem !important; }
-.content-main p { font-size: 15px; font-size: 0.9375rem; line-height: 18px; line-height: 1.125rem; }
-.content-main p.intro { font-size: 18px; font-size: 1.125rem; line-height: 30px !important; line-height: 1.875rem !important; }
-.content-main .breadcrumb p { font-size: 12px; font-size: 0.75rem; line-height: 15px; line-height: 0.9375rem; margin-bottom: 0; }
-.content-main .breadcrumb p a { text-decoration: none; }
-.content-main .breadcrumb p a:hover { text-decoration: underline; }
-.content-main figure figcaption { text-align: right; font-size: 10.65px; font-size: 0.66563rem; text-transform: uppercase; }
-
-/*----- Desktop breakpoint -------*/
-@media screen and (min-width: 768px) { .top-panel { /*
-&.left-panel {
-	//text-align: right;
-}
-&.middle-panel {
-	//text-align: center;
-}
-&.right-panel {
-	//text-align: left;
-}
-*/ }
-  .top-panel .content-main .narrow-col { color: #FFF; }
-  .top-panel .content-main .narrow-col h2 { text-align: center !important; }
-  .top-panel .content-main .narrow-col h3, .top-panel .content-main .narrow-col p { text-align: left !important; }
-  .top-panel.left-panel h2, .top-panel.left-panel h2, .top-panel.left-panel h2 { text-align: center !important; } }
-/* /_typography.scss */
 .util-bar { max-width: 768px; background: #DAAA00; height: 40px; margin-top: 56px; margin-left: auto; }
 .util-bar ul { height: 100%; }
 .util-bar ul li { float: left; padding-left: 3px; padding-right: 3px; height: 100%; text-align: center; border-right: 1px solid #fff; }
@@ -791,7 +742,7 @@ body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode",
 .menu-icon { background: #e5e5e5; position: relative; top: -25px; }
 .menu-icon span::after { content: ""; position: absolute; display: block; height: 0; box-shadow: 0 0px 0 2px #000, 0 7px 0 2px #000, 0 14px 0 2px #000, 0 21px 0 2px #000  !important; width: 25px !important; }
 
-.top-bar { background: #002855; padding-bottom: 35px; }
+.top-bar { background: #002855; padding-bottom: 80px; }
 .top-bar .title-area { /* top:15px; THIS NEGATIVELY IMPACTS THE FORMAT OF THE TOPBAR MENU */ }
 .top-bar .title-area .name h1 { padding: 0; margin: 0; }
 .top-bar .title-area .name h1 a { border-right: 1px solid white; display: inline-block; width: 430px; height: 80px; padding-left: 0; text-decoration: none; }
@@ -826,4 +777,7 @@ body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode",
   .top-bar.expanded .top-bar-section .left > li > a { margin-top: 0 !important; line-height: 40px !important; } }
 /*----- Tablet breakpoint -------*/
 @media screen and (min-width: 768px) and (max-width: 992px) { .top-bar .title-area .name h1 a { padding-left: 0; width: 200px !important; height: 40px !important; } }
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: 992px) { .top-bar .top-bar-section ul ul.dropdown { width: 200px !important; }
+  .top-bar .top-bar-section ul ul.dropdown li a { padding: 4px !important; } }
 /* /_navigation.scss */

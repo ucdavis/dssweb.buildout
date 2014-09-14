@@ -1,5 +1,19 @@
 @charset "utf-8";
 @import "variables";
+@import "ucd-variables";
+@import "compass/css3/opacity";
+@import "compass/css3/transition";
+@import "compass/css3/box-shadow";
+@import "compass/css3/border-radius";
+@import "compass/css3/transform";
+@import "compass/css3/box-sizing";
+@import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
+
+*,
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
 
 /* From reset_all.scss ... TODO: Why? */
 body{

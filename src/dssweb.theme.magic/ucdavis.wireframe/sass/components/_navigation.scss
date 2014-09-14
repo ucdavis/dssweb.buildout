@@ -1,11 +1,11 @@
 /* _navigation.scss */
-@import "variables"; // for BASE font size and mixin font_size()
-@import "ucd-variables";
-@import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
+//@import "variables"; // for BASE font size and mixin font_size()
+//@import "ucd-variables";
+//@import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
 
 // Secondary (top) gold menu
 .util-bar{
-	max-width: 768px; // Note: not same as breakpoint. was 730px
+	max-width: 768px; // Note: not same as breakpoint! was 730px
 	background: $ucd_bright_gold;	
 	height:40px;
 
@@ -101,7 +101,8 @@
 	
 	// WARNING: Setting top-bar height is problem for the foundation top-bar function across responsive breakpoints ... be careful
 	// height: 80px; // WARNING: THIS BLOWS HIDING THE SUB MENU
-	padding-bottom: 35px; // TODO: Why not 40px? 
+	// padding-bottom: 35px; // without box-sizing
+	padding-bottom: 80px; // with box-sizing
 	
 	.title-area{	
 		
@@ -291,10 +292,8 @@
 }
 
 /*----- Tablet breakpoint -------*/
-@media screen and (min-width: $screen-sm-min) and (max-width: $screen-md-min) { // 1200px max-width, was 992px
-
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-md-min) { // 768px < width < 992px
 	.top-bar {
-		// Make title abs to pull up right menu items
 		.title-area {
 			.name {
 				h1{
@@ -309,4 +308,25 @@
 	}
 
 }
+
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: $screen-md-min) { // > 992px
+
+	.top-bar {
+		.top-bar-section {
+			ul {
+				ul.dropdown {
+					width: 200px !important;
+					li {
+						a {
+							padding: 4px !important;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
 /* /_navigation.scss */
