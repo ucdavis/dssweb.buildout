@@ -917,4 +917,22 @@ body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode",
   .top-bar .top-bar-section ul ul.dropdown { width: 200px !important; }
   .top-bar .top-bar-section ul ul.dropdown li a { padding: 4px !important; } }
 /* /_navigation.scss */
+/* _icons.scss */
+a.pdf-icon { padding-left: 25px; background: url(../images/icons/filetype/pdf.gif) 0 50% no-repeat; }
+a.doc-icon { padding-left: 25px; background: url(../images/icons/filetype/doc.gif) 0 50% no-repeat; }
+a.docx-icon { padding-left: 25px; background: url(../images/icons/filetype/docx.gif) 0 50% no-repeat; }
+a.txt-icon { padding-left: 25px; background: url(../images/icons/filetype/txt.gif) 0 50% no-repeat; }
+a.ppt-icon { padding-left: 25px; background: url(../images/icons/filetype/ppt.gif) 0 50% no-repeat; }
+a.pptx-icon { padding-left: 25px; background: url(../images/icons/filetype/pptx.gif) 0 50% no-repeat; }
+a.xls-icon { padding-left: 25px; background: url(../images/icons/filetype/xls.gif) 0 50% no-repeat; }
+a.xlsx-icon { padding-left: 25px; background: url(../images/icons/filetype/xlsx.gif) 0 50% no-repeat; }
+a.zip-icon { padding-left: 25px; background: url(../images/icons/filetype/zip.gif) 0 50% no-repeat; }
+a.gif-icon { padding-left: 25px; background: url(../images/icons/filetype/gif.gif) 0 50% no-repeat; }
+a.jpg-icon { padding-left: 25px; background: url(../images/icons/filetype/jpg.gif) 0 50% no-repeat; }
+a.bmp-icon { padding-left: 25px; background: url(../images/icons/filetype/bmp.gif) 0 50% no-repeat; }
+a.swf-icon { padding-left: 25px; background: url(../images/icons/filetype/swf.gif) 0 50% no-repeat; }
+a.mp3-icon { padding-left: 25px; background: url(../images/icons/filetype/mp3.gif) 0 50% no-repeat; }
+a.ogg-icon { padding-left: 25px; background: url(../images/icons/filetype/ogg.gif) 0 50% no-repeat; }
+
+/* /_icons.scss */
 /* /styles.scss */
