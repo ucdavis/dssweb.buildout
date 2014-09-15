@@ -13,7 +13,7 @@ body, div, p, li {
     font-style: normal;
 }
 
-.content-main {
+#content-main {
 	p, li, ol, div, span {
 		@include line_height(24px,!important);
 	}
@@ -48,9 +48,9 @@ body, div, p, li {
 }
 
 /*----- Desktop breakpoint -------*/
-@media screen and (min-width: $screen-sm-min) {	// was $screen-md-min: 992
+@media screen and (min-width: $screen-sm-min) {	// width > 768
 	.top-panel {
-		.content-main {
+		#content-main {
 			.narrow-col {
 				color: #FFF;
 				h2 {

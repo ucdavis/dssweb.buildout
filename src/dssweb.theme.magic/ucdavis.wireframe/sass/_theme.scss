@@ -6,22 +6,125 @@
      
 */ 
 
-body {
-  /*padding-top: 20px;*/
+/* formerly global.scss */
+// Fix Windows Phone 8 / IE 10 viewport bug
+@-ms-viewport {
+    width: device-width;
 }
-head{
-	font-family:'XS';
+
+/* 
+html, body {
+  @include standard_font;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.313em;
 }
+
+strong {
+  font-weight: bold !important;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 1.313em;
+}
+h1 {
+  margin: 0;
+}
+h3, h2 {
+ letter-spacing: 0;
+ line-height: 1.1em;
+}
+/formerly global.scss */
+
+
 body:after{ 
 	content:"XS"; 
 	display:none;
 }
+head{
+	font-family:'XS';
+}
+
+/* WAI level-1 compliancy - Bypass Blocks 2.4.1 */
+#skip-link {
+    left: 50%;
+    margin-left: -5.25em;
+    margin-top: 0;
+    position: absolute;
+    width: auto;
+    z-index: 50;
+		a, a:link, a:visited {
+		    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.6);
+		    border-radius: 0 0 10px 10px;
+		    color: #fff;
+		    display: block;
+		    padding: 1px 10px 2px;
+		    text-decoration: none;
+		}
+}
+
 .container {
 	padding:0;
 	&#main {
 		//padding:0 !important; // TODO: Breaks fit alignment on mobile
 	}
 }
+
+/* formerly reset-all */
+.col-lg-4{
+	h2{
+    font-weight: bold !important;
+    @include font_size(30px, !important);
+    margin-bottom: 15px;
+	}
+    
+}
+.about-bio {
+	h3{
+	font-weight: bold;
+	}	
+}
+
+.btn-primary{
+ margin-top: 15px;   
+ color: #fff !important;   
+}
+.sidebar-info{
+	h4{
+	font-weight: bold;
+	font-size: 16px;
+	}
+}
+.sidebar-left{
+	.panel{
+		background: #e5e5e5;
+	}
+}
+.sidebar-right{
+	//width:250px;
+	height:30px;
+}
+
+.panel-group{
+	margin-bottom: 0 !important;
+	.panel-body {
+		.narrow-col {
+			.content {
+				padding: 15px;
+			}
+		}
+	}
+	.sidebar{
+		border: none !important;
+	}
+}
+#top-panel-row {
+	h2, h3, p, li, div {
+		color: #FFF;
+	}
+}
+/* /formerly reset-all */
 
 .body-img{
 	border:1px solid red;
@@ -56,10 +159,10 @@ p {
 }
 
 
-.footer {	
+#footer {	
 	background-color:$ucd_blue_70;
 	min-height:250px;
-	width:100%;
+	//width:100%;
 	padding-bottom: 25px;
 	margin-bottom: 15px;
 	clear:both;
@@ -68,7 +171,7 @@ p {
 	}
 	
 	.foot-wrap{
-		margin: 90px;
+		margin: 35px 90px;
 		margin-bottom: 0 !important;
 		//width:100%; // TODO: Tablet/Mobile right white margin
 	}
@@ -77,6 +180,9 @@ p {
 		float:left;		
 		color:#fff;
 		text-decoration:none;
+		//margin-top:36px;
+	}
+	#copyright {
 		margin-top:36px;
 	}
 	#email-phone {
@@ -88,7 +194,7 @@ p {
 		clear:both;
 	}
 	.footer-nav{
-		border-left:1px solid white;
+		border-left: 1px solid white;
 		width:140px;		
 		li{
 			padding-left:10px;
@@ -111,7 +217,7 @@ p {
 	#foot-social{
 		//width:217px; // TODO: Tablet/Mobile right white margin
 		float:left;
-		margin-top:35px;
+		//margin-top:35px;
 		//margin-left:85px;
 		li{
 			display: inline-block;
@@ -171,10 +277,10 @@ input{
 	letter-spacing: 0.01em;
 	margin-top: 0 !important;
 }
-.content-main{
-	margin-top: 45px;
-	margin-bottom: 30px;
-	padding-left: 0 !important;
+#content-row {
+	margin-bottom: 45px;
+}
+#content-main{
 
 	.breadcrumb {
 		background: none;
@@ -229,14 +335,14 @@ input{
 
 .sidebar{
 	height:auto;
-	width:250px; // !important; 
+	//width:250px; // !important; 
 	margin-top:15px;
 	text-align:left;
 	
 	> div {
 		margin-left: 70px;
 		.panel-body {
-			background: #f2f2f2;
+			background: #f2f2f2; // TODO: Where's this color from?
 		}
 	}
 	h3{
@@ -252,14 +358,20 @@ input{
 			top:4px;
 		}
 	}
-	.panel-title a:hover{
-		cursor:text;
-	}
+
 	.panel-heading{
-			padding:0;
+		padding:0;
+		.panel-title {
+			background-color: $rec_blue;
+			a {
+				&:hover{
+					//cursor:text;
+				}
+			}
+		}
 	}
 	.collapsible{
-		background:#f2f2f2;
+		background:#f2f2f2; // TODO: Where's this color from?
 	}
 
 	&.sidebar-right{
@@ -346,7 +458,7 @@ input{
 
 
 .panel-title {
-	background: $rec_blue;
+	background: $ucd_bright_gold; // was  $rec_blue;
 	//width:250px;
 	a{
 		text-decoration:none;
@@ -391,17 +503,31 @@ input{
 }
 
 @media screen and (min-width: $screen-sm-min) { // width > 768
+	
+	// pull content left on larger screens so flush left with top-bar
+	#content-main {
+		padding-left: 0 !important;
+		margin-top: 45px;
+		margin-bottom: 30px;
+		h1, .breadcrumb {
+			//margin-left: 15px;
+		}
+	}
   .masthead,
   .marketing,
-  .footer {
+  #footer {
     padding-right: 0;
     padding-left: 0;
 		.foot-wrap {
-			#foot-cont {
+			#foot-left {
 				margin-left: 10%;
 			}
 		}
   }
+	.sidebar-right{
+		padding-left:0 !important; 
+		padding-right:0 !important;
+	}
 }
 
 /*------ All Media Queries ----------*/
@@ -409,9 +535,43 @@ input{
 /*----- Mobile breakpoint --------*/
 // At point that left and right margins are gone
 @media screen and (max-width: $screen-sm-min) { // width < 768
-	.content-main {
-		h1, .breadcrumb {
-			margin-left: 15px;
+	.row#content-row {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		#content-main {
+			margin-top: 10px;
+			h1, .breadcrumb {
+				//margin-left: 15px;
+			}
+		}
+	}
+
+	#content-main {
+		margin-bottom: 15px;
+	}
+	
+	.panel-heading {
+		margin-bottom: 5px;
+		.panel-title {
+			a {
+				background: url(../images/icons/blue-100-right-arrow-down.png) 98% 50% no-repeat;
+				&.collapsed {
+					background: url(../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat;
+				}
+			}
+		}
+	}
+	.sidebar {
+		.panel-heading {
+			.panel-title {
+				a {
+					top: 0;
+					background: url(../images/icons/white-arrow-right-sm.png) 98% 50% no-repeat;
+					&.collapsed {
+						background: url(../images/icons/white-arrow-down-sm.png) 98% 50% no-repeat;
+					}
+				}
+			}
 		}
 	}
 }
@@ -454,7 +614,7 @@ input{
 		}
 	}
 	
-	.content-main {
+	#content-main {
 	  min-width:192px;
 		clear:both;
 	}
@@ -473,20 +633,22 @@ input{
 		border:none;
 	}
 	.panel-heading {
-		height: 40px;
+		//height: 40px;
+		padding:0;
 		.panel-title {
-			height: 40px;
+			min-height: 40px;
 			width: auto; // undo general 250 width
 			a {
 				display: inline-block;
-				//width: 100%; //TODO: margin-top reveals formatting error
-				height: 40px;
+				width: 100%; //TODO: margin-top reveals formatting error
+				min-height: 40px;
 
-				padding-right: 15px;
-				padding-left: 15px !important;
+				padding-right: 20px;
+				padding-left: 20px !important;
 				
 				text-align: center;
-				line-height: 40px;
+				//line-height: 40px;
+				@include line_height(40px);
 				&:hover{
 					cursor: pointer !important;
 				}
@@ -511,7 +673,7 @@ input{
 	.op-sidebar-title {
 		text-align:left !important;
 	}
-	.footer {	
+	#footer {	
 		.foot-wrap{
 			margin: 10px;
 			p, ul, div {
@@ -548,7 +710,7 @@ input{
 		padding-right: 105px;
 	}
 	
-	.content-main {
+	#content-main {
 		> div, > h1 {
 	  	//margin-left: 90px; // TODO: remove since now using .row 15+90=105 applied to content-row
 		}
@@ -597,7 +759,7 @@ input{
 		padding-left: 0; // 90 + 15 px
 		padding-right: 0;
 	}
-	.content-main {
+	#content-main {
 		> div, > h1 {
 	  	//margin-left: 0;
 		}
@@ -609,10 +771,32 @@ input{
 			}
 		}
 	}
-	.footer {
+	#footer {
 		.foot-wrap {
-			#foot-cont {
+			#foot-left {
 				margin-left: 0;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $screen-lg-min) { // width < 1200
+	#footer {
+		.footer-nav{
+			border-left-width: 0;
+			&#foot-left, &#foot-center {
+				display: none;
+			}
+			&#foot-right {
+				li {
+					width: 160px;
+					margin: 0 auto;
+					border-bottom: 1px solid #FFF;
+					@include line_height(40px);
+				}
+				li:last-child {
+					border-bottom-width: 0;
+				}
 			}
 		}
 	}
@@ -632,14 +816,20 @@ input{
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
 	head { font-family:"M";}
 	body:after{content:"M";}
-
+	#content-main {
+		padding-right: 0 !important;
+	}
 }
 
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: $screen-md-min) { // width > 992
 	head { font-family:"L";}
 	body:after{content:"L";}
-
+	#content-main {
+		h1, .breadcrumb {
+			//margin-left: 15px;
+		}
+	}
 }
 
 /*----- Foundation adjustments -----*/

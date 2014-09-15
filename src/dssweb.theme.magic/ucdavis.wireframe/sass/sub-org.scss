@@ -3,20 +3,20 @@
 /* Sub organization overrides */
 
 @media screen and (min-width: $screen-sm-min) { // was 768px
-	.footer{
+	#footer{
 		#vcard{
 			margin-right:25px;
 		}
 		#foot-social{
-		position:relative;
-		//left:-190px;
-		float:right !important;
-	}
+			position:relative;
+			//left:-190px;
+			float:right !important;
+		}
 	} 
 }
 
 @media screen and (max-width: $screen-sm-min) { // was 768px
-	.footer{
+	#footer{
 		#vcard{
 			text-align:center;
 		}
@@ -38,7 +38,7 @@
 	}
 }
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-lg-min) { // or $screen-md-max 1199, was max-width: 992px
-	.footer{
+	#footer{
 		.foot-wrap{
 			margin:40px;
 		}

@@ -6,16 +6,21 @@
 	var currentMQ = "unknown"; // set the default screen size
 	var front = false;
 	var front_banner_height = 520;
-
+	
 	$(document).ready(function() {
-		if(typeof window.console !== "undefined") {
-			window.console.log("JQuery version:  " + $.fn.jquery);
+		
+		// JQuery version
+		if(debug) {
+			if(typeof window.console !== "undefined") {
+				window.console.log("JQuery version:  " + $.fn.jquery);
+			}
 		}
 		
-		// foundation top-bar support. Note: Add after any JavaScript constructed markup that relies on foundation
+		// foundation top-bar support. 
+		// Note: Add after any JavaScript constructed markup that relies on foundation
 		$(document).foundation(); 
 		
-		// Get picture figure/figcaption
+		// Process .picture into figure/figcaption
 		// TODO: Plugin
 		if($('.picture').length !== 0) {
       $('.picture img').each(function () {
@@ -27,26 +32,40 @@
 		
     // Add Events Cross-browser
     var event = {
-        add: function (elem, type, fn) {
-            if (elem.attachEvent) {
-                elem['e' + type + fn] = fn;
-                elem[type + fn] = function () {
-                    elem['e' + type + fn](window.event);
-                };
-                elem.attachEvent('on' + type, elem[type + fn]);
-            } else {
-                elem.addEventListener(type, fn, false);
-						}
-        }
+	    add: function (elem, type, fn) {
+        if (elem.attachEvent) {
+	        elem['e' + type + fn] = fn;
+	        elem[type + fn] = function () {
+	        	elem['e' + type + fn](window.event);
+	        };
+	        elem.attachEvent('on' + type, elem[type + fn]);
+        } else {
+        	elem.addEventListener(type, fn, false);
+				}
+	    }
     };
 
-    // Set default
+		
+		// WAI level-1 compliancy - Bypass Blocks 2.4.1
+		// Nic Zakas "skip to content" next focus fix
+		// See http://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/
+		// TEST Checkpoint: https://code.google.com/p/chromium/issues/detail?id=37721
+		window.addEventListener("hashchange", function(event) {
+	    var element = document.getElementById(location.hash.substring(1));
+	    if (element) {
+	      if (!/^(?:a|select|input|button|textarea)$/i.test(element.tagName)) {
+	      	element.tabIndex = -1;
+	      }
+	      element.focus();
+	    }
+		}, false);
    
 
     // Check CSS value in active media query and sync Javascript functionality
     var mqSync = function () {
         // Fix for Opera issue when using font-family to store value
         if (window.opera) {
+					// TODO: Check that content-main is available after changing this from class to id
            activeMQ = window.getComputedStyle(document.body, ':after').getPropertyValue('content-main');
         }
         // For all other modern browsers
@@ -158,7 +177,7 @@
         $(window).resize(function () {
 					if(typeof window.console !== "undefined") {
             window.console.log($(this).width());
-						window.console.log('CF etected screen size: ' + currentMQ);
+						window.console.log('Screen size: ' + currentMQ);
 					}
         });
     }
@@ -200,8 +219,8 @@
 				// Fix for contA height not being reset to auto	
 				$(".collapsible").css("height", "auto");
 				
-				$(".content-main div").children().removeClass("panel-collapse collapse active");
-				$(".content-main .panel-heading").hide();
+				$("#content-main div").children().removeClass("panel-collapse collapse active");
+				$("#content-main .panel-heading").hide();
 				$(".panel-group").children().removeClass("panel panel-default");
         $(".more_text").hide();
 				
