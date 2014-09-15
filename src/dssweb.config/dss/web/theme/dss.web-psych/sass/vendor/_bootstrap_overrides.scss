@@ -1,4 +1,37 @@
 
+/* _bootstrap_overrides.scss */
+/* Override existing bootstrap styles or add styles for which we haven't imported the entire bootstrap.css for */
+
+@import "compass/css3/box-sizing";
+
+*,
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
+
+/* Bootstrap styles to use for screen readers */
+/* Used for skip to content and form elements where labels should only appear to screen readers */
+.sr-only{
+	position:absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+}
+.sr-only-focusable:active, .sr-only-focusable:focus {
+	position: static;
+	width: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	clip: auto;
+}
+
+/* Overriden styles */
 #breadcrumb {
   .breadcrumb {
     padding: 0;
@@ -25,7 +58,6 @@
   color: inherit;
   text-decoration: none;
 }
-
 .panel-body-overriden {
   padding-top: 15px;
   padding-right: 15px;
