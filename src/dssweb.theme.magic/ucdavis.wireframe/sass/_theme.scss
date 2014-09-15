@@ -740,6 +740,10 @@ input{
 		}
 	}
 	
+	.panel-heading#content-panel-heading {
+		display:none;
+	}
+	
 	/*
 		.dropdown {
 			 width: 220px !important;
@@ -825,7 +829,7 @@ input{
 	.sidebar {
 		&.sidebar-right {
 			> div {
-				margin-left: 10px;
+				margin-left: 60px;
 			}
 		}
 	}
@@ -850,12 +854,6 @@ input{
 		}
 	}
 }
-
-/*----- Foundation adjustments -----*/
-// Define correct menu collapse breakpoint. 
-// This change also requires adding .topbar-breakpoint to the topbar.js and foundation.css
-// where .foundation-mq-topbar is also found
-//.topbar-breakpoint { font-family: "/only screen and (min-width:62.000em)/"; width: 62.000em; } 
 
 /* Override default grid gutter, which was broke on home/index bottom panel row. */
 .no-gutter {
