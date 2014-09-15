@@ -15,6 +15,7 @@ body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode",
 #content-main p, #content-main li, #content-main ol, #content-main div, #content-main span { line-height: 24px !important; line-height: 1.5rem !important; }
 #content-main p { font-size: 15px; font-size: 0.9375rem; line-height: 18px; line-height: 1.125rem; }
 #content-main p.intro { font-size: 18px; font-size: 1.125rem; line-height: 30px !important; line-height: 1.875rem !important; }
+#content-main li, #content-main ol { font-size: 15px; font-size: 0.9375rem; line-height: 18px; line-height: 1.125rem; }
 #content-main .breadcrumb p { font-size: 12px; font-size: 0.75rem; line-height: 15px; line-height: 0.9375rem; margin-bottom: 0; }
 #content-main .breadcrumb p a { text-decoration: none; }
 #content-main .breadcrumb p a:hover { text-decoration: underline; }
@@ -579,6 +580,8 @@ head { font-family: 'XS'; }
 
 p { margin-bottom: 15px; }
 
+a.pdf-icon { padding-left: 25px; background: url(../images/icons/pdf.gif) 0 50% no-repeat; }
+
 #utility ul li { text-align: center; display: inline; list-style-type: none; padding-right: 50px; width: 100%; }
 #utility ul { padding-top: 100px; text-align: center; clear: both; }
 
@@ -759,6 +762,7 @@ body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode",
 #content-main p, #content-main li, #content-main ol, #content-main div, #content-main span { line-height: 24px !important; line-height: 1.5rem !important; }
 #content-main p { font-size: 15px; font-size: 0.9375rem; line-height: 18px; line-height: 1.125rem; }
 #content-main p.intro { font-size: 18px; font-size: 1.125rem; line-height: 30px !important; line-height: 1.875rem !important; }
+#content-main li, #content-main ol { font-size: 15px; font-size: 0.9375rem; line-height: 18px; line-height: 1.125rem; }
 #content-main .breadcrumb p { font-size: 12px; font-size: 0.75rem; line-height: 15px; line-height: 0.9375rem; margin-bottom: 0; }
 #content-main .breadcrumb p a { text-decoration: none; }
 #content-main .breadcrumb p a:hover { text-decoration: underline; }
@@ -796,6 +800,7 @@ body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode",
 #content-main p, #content-main li, #content-main ol, #content-main div, #content-main span { line-height: 24px !important; line-height: 1.5rem !important; }
 #content-main p { font-size: 15px; font-size: 0.9375rem; line-height: 18px; line-height: 1.125rem; }
 #content-main p.intro { font-size: 18px; font-size: 1.125rem; line-height: 30px !important; line-height: 1.875rem !important; }
+#content-main li, #content-main ol { font-size: 15px; font-size: 0.9375rem; line-height: 18px; line-height: 1.125rem; }
 #content-main .breadcrumb p { font-size: 12px; font-size: 0.75rem; line-height: 15px; line-height: 0.9375rem; margin-bottom: 0; }
 #content-main .breadcrumb p a { text-decoration: none; }
 #content-main .breadcrumb p a:hover { text-decoration: underline; }

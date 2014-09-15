@@ -21,6 +21,7 @@
 		// Note: Add after any JavaScript constructed markup that relies on foundation
 		$(document).foundation(); 
 		
+		// PLUGIN CANDIDATES /////////////////////////////////////////////
 		// Process .picture into figure/figcaption
 		// TODO: Plugin
 		if($('.picture').length !== 0) {
@@ -28,6 +29,25 @@
 				var title = $(this).attr('title');
 				$(this).wrap('<figure class="picture-processed" />');
 				$(this).parent().append("<figcaption>"+title+"</figcaption>");
+      });
+		}		
+		
+		// Process download file icons
+		// TODO: Plugin ... with option to add id's which should be checked for file type icon placement
+		if($('#downloads').length !== 0) {
+      $('#downloads li').each(function () {
+				// Method using href
+				var a = $(this).find('a');
+				var c = a.attr('href').split(".");
+				if( c.length === 1 || ( c[0] === "" && c.length === 2 ) ) {
+				    // handle errors
+				} else {
+					a.addClass(c.pop()+'-icon icon-processed');
+				}
+				// Method using filetype class in cases where PDF or other extension not available
+				/*if($(this).has('span.pdf-filetype')) {
+					$(this).find('a').addClass('pdf-icon icon-processed');
+				}*/
       });
 		}		
 		

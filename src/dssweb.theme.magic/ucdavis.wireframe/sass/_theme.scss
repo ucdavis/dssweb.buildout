@@ -143,6 +143,12 @@ head{
 p {
 	margin-bottom: 15px;
 }
+a {
+	&.pdf-icon {
+		padding-left: 25px;
+		background: url(../images/icons/pdf.gif) 0 50% no-repeat;
+	}
+}
 #utility {
 	ul li{	
 		text-align:center;
@@ -860,5 +866,6 @@ input{
 	padding-left: 0 !important;
 	padding-right: 0 !important;
 }
+
 
 /* /_theme.scss */

@@ -25,6 +25,10 @@ body, div, p, li {
 			@include line_height(30px,!important);
 		}
 	}
+	li, ol {
+		@include font_size(15px);
+		@include line_height(18px);
+	}
 	.breadcrumb {
 		p {
 			@include font_size(12px);
