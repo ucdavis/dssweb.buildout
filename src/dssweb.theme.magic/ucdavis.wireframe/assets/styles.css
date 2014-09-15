@@ -580,8 +580,6 @@ head { font-family: 'XS'; }
 
 p { margin-bottom: 15px; }
 
-a.pdf-icon { padding-left: 25px; background: url(../images/icons/pdf.gif) 0 50% no-repeat; }
-
 #utility ul li { text-align: center; display: inline; list-style-type: none; padding-right: 50px; width: 100%; }
 #utility ul { padding-top: 100px; text-align: center; clear: both; }
 
