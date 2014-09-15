@@ -3,36 +3,9 @@
 /* This also can include ANY global CSS that applies site-wide. Unless overwritten by a more specific style rule, CSS declarations in global.css will apply site-wide. Updated: 12/3/13 */
 
 //@import "reset";
-@import "variables";
+//@import "variables";
 //@import "vendor/bootstrap_overrides";
 //@import "components/typography/typography";
 //@import "components/blocks/block";
 //@import "components/calendar";
 
-// Fix Windows Phone 8 / IE 10 viewport bug
-@-ms-viewport {
-    width: device-width;
-}
-
-html, body {
-  @include standard_font;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.313em;
-}
-
-strong {
-  font-weight: bold !important;
-}
-
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 400;
-  line-height: 1.313em;
-}
-h1 {
-  margin: 0;
-}
-h3, h2 {
- letter-spacing: 0;
- line-height: 1.1em;
-}

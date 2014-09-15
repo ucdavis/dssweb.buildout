@@ -1,12 +1,45 @@
+/* Example use case:
+ %abstract-class { font-family: Verdana; }  #my-div { @extend %abstract-class; }  #my-other-div { @extend %abstract-class; }
+ ... compiles as: #my-div, #my-other-div { font-family: Verdana; }
+
+*/
+/* 2013-05-12 RAK: Bootstrap overrides moved from default gem installation that placed overrides directly in the _variables.scss file */
+/* _typography.scss */
+body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.3125em; }
+
+@font-face { font-family: 'lucida sans bold'; src: url("fonts/lucida/LucidaSansBold.ttf"); font-weight: normal; font-style: normal; }
+#content-main p, #content-main li, #content-main ol, #content-main div, #content-main span { line-height: 24px !important; line-height: 1.5rem !important; }
+#content-main p { font-size: 15px; font-size: 0.9375rem; line-height: 18px; line-height: 1.125rem; }
+#content-main p.intro { font-size: 18px; font-size: 1.125rem; line-height: 30px !important; line-height: 1.875rem !important; }
+#content-main .breadcrumb p { font-size: 12px; font-size: 0.75rem; line-height: 15px; line-height: 0.9375rem; margin-bottom: 0; }
+#content-main .breadcrumb p a { text-decoration: none; }
+#content-main .breadcrumb p a:hover { text-decoration: underline; }
+#content-main figure figcaption { text-align: right; font-size: 10.65px; font-size: 0.66563rem; text-transform: uppercase; }
+
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: 768px) { .top-panel { /*
+&.left-panel {
+	//text-align: right;
+}
+&.middle-panel {
+	//text-align: center;
+}
+&.right-panel {
+	//text-align: left;
+}
+*/ }
+  .top-panel #content-main .narrow-col { color: #FFF; }
+  .top-panel #content-main .narrow-col h2 { text-align: center !important; }
+  .top-panel #content-main .narrow-col h3, .top-panel #content-main .narrow-col p { text-align: left !important; }
+  .top-panel.left-panel h2, .top-panel.left-panel h2, .top-panel.left-panel h2 { text-align: center !important; } }
+/* /_typography.scss */
 /* Sub organization overrides */
 @media screen and (min-width: 768px) { .footer #vcard { margin-right: 25px; }
-  .footer #foot-social { position: relative; left: -190px; float: right !important; } }
+  .footer #foot-social { position: relative; float: right !important; } }
 @media screen and (max-width: 768px) { .footer #vcard { text-align: center; }
   .footer .footer-nav { border-left: none; }
   .footer .footer-nav li { border-top: 1px solid white; }
   .footer .footer-nav .last { border-bottom: 1px solid white; } }
-@media screen and (max-width: 992px) { #foot-social { margin-left: 55px !important; } }
-@media screen and (min-width: 768px) and (max-width: 1200px) { .footer .foot-wrap { margin: 40px; }
+@media screen and (max-width: 991px) { #foot-social { margin-left: 55px !important; } }
+@media screen and (min-width: 768px) and (max-width: 1310px) { .footer .foot-wrap { margin: 40px; }
   .footer #vcard { margin-right: 25px; } }
-@media screen and (min-width: 1200px) { head { font-family: "L"; }
-  body:after { content: "L"; } }

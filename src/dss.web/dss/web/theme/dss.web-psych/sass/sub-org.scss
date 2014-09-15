@@ -1,43 +1,44 @@
+@charset "utf-8";
+@import "variables";
 /* Sub organization overrides */
 
-
-@media screen and (min-width: 768px) {
-	.footer{
+@media screen and (min-width: $screen-sm-min) { // was 768px
+	#footer{
 		#vcard{
 			margin-right:25px;
 		}
 		#foot-social{
-		position:relative;
-		left:-190px;
-		float:right !important;
-	}
+			position:relative;
+			//left:-190px;
+			float:right !important;
+		}
 	} 
 }
 
-@media screen and (max-width: 768px) {
-	.footer{
+@media screen and (max-width: $screen-sm-min) { // was 768px
+	#footer{
 		#vcard{
 			text-align:center;
 		}
 		.footer-nav{
-			border-left:none;
+			//border-left:none;
 			li{				
-				border-top:1px solid white;
+				//border-top:1px solid white;
 			}
 			.last{
-				border-bottom:1px solid white;
+				//border-bottom:1px solid white;
 			}
 		}
 	}
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: $screen-sm-max) { // was 992px
 	#foot-social{
 		margin-left:55px !important;
 	}
 }
-@media screen and (min-width: 768px) and (max-width: 1200px) { // was max-width: 992px
-	.footer{
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-lg-min) { // or $screen-md-max 1199, was max-width: 992px
+	#footer{
 		.foot-wrap{
 			margin:40px;
 		}
@@ -45,9 +46,4 @@
 			margin-right:25px;		
 		}
 	} 
-}
-@media screen and (min-width: 1200px) {	// was min-width: 992px
-	head { font-family:"L";}
-	body:after{content:"L";}
-	
 }

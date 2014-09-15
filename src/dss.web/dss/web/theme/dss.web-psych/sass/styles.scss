@@ -1,69 +1,41 @@
 @charset "utf-8";
-@import "variables";
+/* styles.scss */
+/* This is the main website stylesheet. The imported code below expands into the assets/styles.css file. */
 
-/* From reset_all.scss ... TODO: Why? */
-body{
-    //font-size: 14px !important;
-    //font-family: Arial,sans-serif !important;    
-}
-.col-lg-4{
-	h2{
-    font-weight: bold !important;
-    @include font_size(30px, !important);
-    margin-bottom: 15px;
-	}
-    
-}
-.about-bio {
-	h3{
-	font-weight: bold;
-	}	
-}
 
-.btn-primary{
- margin-top: 15px;   
- color: #fff !important;   
-}
-.sidebar-info{
-	h4{
-	font-weight: bold;
-	font-size: 16px;
-	}
-}
-.sidebar-left{
-	.panel{
-		background: #e5e5e5;
-	}
-}
-.sidebar-right{
-	width:250px;
-	height:30px;
-	padding-left:0 !important; 
-	padding-right:0 !important;
-}
+/* *** COMPASS - custom imports **** */
+// Note: If using compass commandline compiler, make sure the config.rb has bootstrap-sass line commented out
+@import "compass/css3/opacity";
+@import "compass/css3/transition";
+@import "compass/css3/box-shadow";
+@import "compass/css3/border-radius";
+@import "compass/css3/transform";
 
-.panel-group{
-	margin-bottom: 0 !important;
-	.panel-body {
-		.narrow-col {
-			.content {
-				padding: 15px;
-			}
-		}
-	}
-	.sidebar{
-		border: none !important;
-	}
-}
-#top-panel-row {
-	h2, h3, p, li, div {
-		color: #FFF;
-	}
-}
 
-/* /end reset_all.scss */
+/* *** VARIABLES - Modularized imports needed to compile partials **** */
+@import "variables"; // includes: base font, abstractions, bootstrap overrides, ucd variables, and typography
 
+
+/* *** BOOTSTRAP **** */
+// Note: we override variables and styles imported from variables above
+@import "vendor/bootstrap"; // custom import of only bootstrap components organized in the vendor/bootstrap folder
+@import "vendor/bootstrap_overrides"; // override or add missing bootstrap styles here
+
+
+/* *** THEME - place main styles for the DSS pilot site here. **** */
+// IMPORTANT: If you are creating someting that is self-contained, like a calendar application, add a component and include it below under the partials
 @import "theme";
-@import "vendor/bootstrap";
-@import "components/banners";
-@import "components/navigation";
+
+/* *** UNIT - sub-organization or unit styles. Place unit custom styles here **** */
+@import "sub-org";
+
+
+/* *** PARTIALS - Modular partial styles **** */
+// Note: Partials not imported here are specific to sections (e.g., index (home), about, and ourpeople)
+// Section partials should only be linked on pages that directly need them to minimize overhead
+@import "components/typography/typography";
+@import "components/banners"; // styles for banners
+@import "components/navigation"; // styles for menu / navigation
+@import "components/icons"; // icon styles in conjunction with JS processing
+
+/* /styles.scss */
