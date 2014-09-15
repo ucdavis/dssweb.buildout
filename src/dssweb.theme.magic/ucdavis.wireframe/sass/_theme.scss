@@ -198,6 +198,7 @@ p {
 		width:140px;		
 		li{
 			padding-left:10px;
+			@include line_height(35px);
 			a{
 				color:#fff;
 			}
@@ -674,8 +675,9 @@ input{
 		text-align:left !important;
 	}
 	#footer {	
+		padding-bottom: 5px;
 		.foot-wrap{
-			margin: 10px;
+			margin: 25px;
 			p, ul, div {
 				margin-left: 0;
 				margin-right: 0;
@@ -688,6 +690,12 @@ input{
 				float: none;
 			}
 
+		}
+		#vcard p, #copyright {
+			@include font_size(11px);
+		}
+		#copyright {
+			margin-top: 0;
 		}
 	}
 }
@@ -783,16 +791,27 @@ input{
 @media screen and (max-width: $screen-lg-min) { // width < 1200
 	#footer {
 		.footer-nav{
-			border-left-width: 0;
+			
 			&#foot-left, &#foot-center {
 				display: none;
 			}
 			&#foot-right {
+				margin-left: 160px !important;
+			}
+		}
+	}
+}
+@media screen and (max-width: $screen-sm-max) { // width < 991
+	#footer {
+		.footer-nav{
+			border-left-width: 0;
+			text-align: center;
+			&#foot-right {
+				margin-left: 0 !important;
 				li {
-					width: 160px;
-					margin: 0 auto;
+					width: 220px;
+					margin: 0 auto !important;
 					border-bottom: 1px solid #FFF;
-					@include line_height(40px);
 				}
 				li:last-child {
 					border-bottom-width: 0;

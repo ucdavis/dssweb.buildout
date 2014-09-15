@@ -6,6 +6,7 @@
 	var currentMQ = "unknown"; // set the default screen size
 	var front = false;
 	var front_banner_height = 520;
+	var vcardiced = false;
 	
 	$(document).ready(function() {
 		
@@ -99,6 +100,20 @@
         activeMQ = activeMQ.replace(/'/g, "");
     }; // End mqSync
 		
+		var bend = function () {
+			if(($('#footer #vcard').length !== 0) && !vcardiced) {
+				$('#footer #vcard').insertBefore($('#footer #copyright'));
+				vcardiced = true;
+			}
+		};
+		
+		var unbend = function () {
+			if(vcardiced) {
+				$('#footer #vcard').insertAfter($('#footer #foot-social'));
+				vcardiced = false;
+			}
+		};
+		
 		var expand = function () {
 
       // Conditions for each breakpoint
@@ -109,6 +124,8 @@
               currentMQ = activeMQ;
 							utilStack();
               collapsedView();
+							
+							bend();
 
           }
 					// If the detected screen size is Mobile 450px-599px
@@ -119,6 +136,7 @@
 						 
 							collapsedView();					
 							
+							bend();
 							
           }
 					// If the detected screen size is Tablet 600px-959px
@@ -135,6 +153,7 @@
 							
 							}
 							*/
+							bend();
           }
 					// If the detected screen size is Desktop 960px and up
           if (activeMQ === 'L') {
@@ -142,6 +161,8 @@
 							rmvStack();
 							$('body.home #top-panel-row').height(front_banner_height);
               expandedView();
+							
+							unbend();
           }
       }
 		};
