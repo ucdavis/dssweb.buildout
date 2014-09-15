@@ -4,6 +4,8 @@
 
 @import "compass/css3/box-sizing";
 
+$screen-xs-max: 767px;
+
 *,
 *:before,
 *:after {
@@ -40,15 +42,15 @@
     background-color: transparent;
     border-radius: 0;
     > li {
-      display: auto;
+      display: inline; /* Changed for CSS validation, was auto */
     }
     > li + li:before {
       padding: 0;
-      color: auto;
-      content: auto;
+      color: inherit; /* Changed for CSS validation, was auto */
+      content: normal;  /* Changed for CSS validation, was auto */
     }
     > .active {
-      color: auto;
+      color: inherit; /* Changed for CSS validation, was auto */
     }
   }
 }
@@ -74,3 +76,76 @@
 	-moz-box-shadow: none !important;
 	box-shadow: none !important;
 }
+
+// Note use of \9 below is a hack applying value to IE 7/8/9 only, meaning lte IE9
+.img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img {
+	display:block;
+	width:100% \9;
+	max-width:100%;
+	height:auto;
+}
+
+@media screen and (max-width: $screen-xs-max){
+	.hidden-xs{display:none!important;}
+	.visible-xs{display:block!important;}
+	table.visible-xs {display:table;}
+	tr.visible-xs{display: table-row !important;}
+	th.visible-xs, td.visible-xs {display: table-cell !important;}
+	.visible-xs-block{display:block!important;}
+	.visible-xs-inline{display:inline!important;}
+	.visible-xs-inline-block{display:inline-block!important;}
+}
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { 		
+	.visible-sm{display:block!important;}
+	table.visible-sm{display:table;}
+	tr.visible-sm{display:table-row!important;}
+	th.visible-sm,td.visible-sm{display:table-cell!important;}
+}
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+	.visible-sm-block{display:block!important}
+	.visible-sm-inline{display:inline!important}
+	.visible-sm-inline-block{display:inline-block!important}
+}
+@media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+	.visible-md{display:block!important}
+	table.visible-md{display:table}
+	tr.visible-md{display:table-row!important}
+	th.visible-md,td.visible-md{display:table-cell!important}
+	.visible-md-block{display:block!important}
+	.visible-md-inline{display:inline!important}
+	.visible-md-inline-block{display:inline-block!important}
+}
+@media screen and (min-width: $screen-lg-min) {
+	.visible-lg{display:block!important}
+	table.visible-lg{display:table}
+	tr.visible-lg{display:table-row!important}
+	th.visible-lg,td.visible-lg{display:table-cell!important}
+	.visible-lg-block{display:block!important}
+	.visible-lg-inline{display:inline!important}
+	.visible-lg-inline-block{display:inline-block!important}
+}
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max){
+	.hidden-sm{display:none!important}
+}
+@media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max){
+	.hidden-md{display:none!important}
+}
+@media screen and (min-width: $screen-lg-min){
+	.hidden-lg{display:none!important}
+}
+
+@media print {
+	.visible-print{display:block!important}
+	table.visible-print{display:table}
+	tr.visible-print{display:table-row!important}
+	th.visible-print,td.visible-print{display:table-cell!important}
+	.visible-print-block{display:block!important}
+	.visible-print-inline{display:inline!important}
+	.visible-print-inline-block{display:inline-block!important}
+	.hidden-print{display:none!important}
+}
+
+.visible-print{display:none!important}
+.visible-print-block{display:none!important}
+.visible-print-inline{display:none!important}
+.visible-print-inline-block{display:none!important}

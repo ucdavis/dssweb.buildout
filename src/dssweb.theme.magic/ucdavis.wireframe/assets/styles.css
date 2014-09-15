@@ -509,9 +509,9 @@ tbody.collapse.in { display: table-row-group; }
 
 /* Overriden styles */
 #breadcrumb .breadcrumb { padding: 0; margin-bottom: 0; list-style: none; background-color: transparent; border-radius: 0; }
-#breadcrumb .breadcrumb > li { display: auto; }
-#breadcrumb .breadcrumb > li + li:before { padding: 0; color: auto; content: auto; }
-#breadcrumb .breadcrumb > .active { color: auto; }
+#breadcrumb .breadcrumb > li { display: inline; /* Changed for CSS validation, was auto */ }
+#breadcrumb .breadcrumb > li + li:before { padding: 0; color: inherit; /* Changed for CSS validation, was auto */ content: normal; /* Changed for CSS validation, was auto */ }
+#breadcrumb .breadcrumb > .active { color: inherit; /* Changed for CSS validation, was auto */ }
 
 /*Used for overriding underlined text */
 .nounderline > a { color: inherit; text-decoration: none; }
@@ -522,12 +522,66 @@ tbody.collapse.in { display: table-row-group; }
 
 .panel { outline: none; border: none !important; -webkit-box-shadow: none !important; -moz-box-shadow: none !important; box-shadow: none !important; }
 
+.img-responsive, .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img { display: block; width: 100% \9; max-width: 100%; height: auto; }
+
+@media screen and (max-width: 767px) { .hidden-xs { display: none !important; }
+  .visible-xs { display: block !important; }
+  table.visible-xs { display: table; }
+  tr.visible-xs { display: table-row !important; }
+  th.visible-xs, td.visible-xs { display: table-cell !important; }
+  .visible-xs-block { display: block !important; }
+  .visible-xs-inline { display: inline !important; }
+  .visible-xs-inline-block { display: inline-block !important; } }
+@media screen and (min-width: 768px) and (max-width: 991px) { .visible-sm { display: block !important; }
+  table.visible-sm { display: table; }
+  tr.visible-sm { display: table-row !important; }
+  th.visible-sm, td.visible-sm { display: table-cell !important; } }
+@media screen and (min-width: 768px) and (max-width: 991px) { .visible-sm-block { display: block !important; }
+  .visible-sm-inline { display: inline !important; }
+  .visible-sm-inline-block { display: inline-block !important; } }
+@media screen and (min-width: 992px) and (max-width: 1309px) { .visible-md { display: block !important; }
+  table.visible-md { display: table; }
+  tr.visible-md { display: table-row !important; }
+  th.visible-md, td.visible-md { display: table-cell !important; }
+  .visible-md-block { display: block !important; }
+  .visible-md-inline { display: inline !important; }
+  .visible-md-inline-block { display: inline-block !important; } }
+@media screen and (min-width: 1310px) { .visible-lg { display: block !important; }
+  table.visible-lg { display: table; }
+  tr.visible-lg { display: table-row !important; }
+  th.visible-lg, td.visible-lg { display: table-cell !important; }
+  .visible-lg-block { display: block !important; }
+  .visible-lg-inline { display: inline !important; }
+  .visible-lg-inline-block { display: inline-block !important; } }
+@media screen and (min-width: 768px) and (max-width: 991px) { .hidden-sm { display: none !important; } }
+@media screen and (min-width: 992px) and (max-width: 1309px) { .hidden-md { display: none !important; } }
+@media screen and (min-width: 1310px) { .hidden-lg { display: none !important; } }
+@media print { .visible-print { display: block !important; }
+  table.visible-print { display: table; }
+  tr.visible-print { display: table-row !important; }
+  th.visible-print, td.visible-print { display: table-cell !important; }
+  .visible-print-block { display: block !important; }
+  .visible-print-inline { display: inline !important; }
+  .visible-print-inline-block { display: inline-block !important; }
+  .hidden-print { display: none !important; } }
+.visible-print { display: none !important; }
+
+.visible-print-block { display: none !important; }
+
+.visible-print-inline { display: none !important; }
+
+.visible-print-inline-block { display: none !important; }
+
 /* *** THEME - place main styles for the DSS pilot site here. **** */
 /* _theme.scss */
 /* 2014-06-12 RAK: This file contains theme CSS and mediaquery for responsive (at end of file).  TODO:  - Move to SASS 
 */
 /* formerly global.scss */
+@-webkit-viewport { width: device-width; }
+@-moz-viewport { width: device-width; }
 @-ms-viewport { width: device-width; }
+@-o-viewport { width: device-width; }
+@viewport { width: device-width; }
 /* 
 html, body { @include standard_font; font-family: Arial, Helvetica, sans-serif; line-height: 1.313em;
 }

@@ -2,7 +2,6 @@
 <html lang="en"><!-- #BeginTemplate "/Templates/adhoc.dwt" --><!-- DW6 -->
 	<head>
 	  <meta charset="utf-8" />
-	  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
 	  <meta name="viewport" content="width=device-width" />
 	  <meta content="" name="description" />
 	  <meta content="" name="author" />
@@ -34,7 +33,7 @@
   <div class="row jumbotron">
 		<div class="siders">
 			<div class="wall shadow-graphic">
-	    	<h1>Banner</h1>
+	    	&nbsp;
 			</div>
 		</div>
   </div>
@@ -54,6 +53,7 @@
           </li>
           <li class="hidden-xs" id="uti-search">
             <form action=".">
+							<label for="search" class="sr-only">Search</label>
               <input type="search" name="search" placeholder="Search" />
             </form>
           </li>
@@ -62,7 +62,7 @@
           </li>
           <li id="uti-logo">
             <a href="#">
-              <img src="images/logos/nav-logo.png" />
+              <img src="images/logos/nav-logo.png" alt="UC Davis" />
             </a>
           </li>
         </ul>
@@ -71,20 +71,22 @@
 
 		<div id="top-bar-wrap" class="row">
     <nav class="top-bar" data-topbar="">
+			
       <!-- Title -->
       <ul class="title-area">
         <li class="name">
-          <h1>
-            <a id="name-icon" href="index.html"><img src="images/logos/psychology-logo.gif" alt="Psychology" title="Psychology" /></a>
-          </h1>
+            <a id="name-icon" href="index.html"><img src="images/logos/psychology-logo.gif" alt="UC Davis Department of Psychology" title="UC Davis Department of Psychology" /></a>
         </li>
-        <!-- Mobile Menu Toggle -->
-				<div class="toggle-topbar menu-icon">
-					<a href="#">
-						<span></span>
-					</a>
-				</div>
+				<li id="toggle-topbar-item">
+	        <!-- Mobile Menu Toggle -->
+					<div class="toggle-topbar menu-icon">
+						<a href="#">
+							<span></span>
+						</a>
+					</div>
+				</li>
       </ul>
+			
       <!-- Top Bar Section -->
       <section class="top-bar-section">
         <!-- Top Bar Right Nav Elements -->
@@ -223,7 +225,7 @@
 							Donec semper sit amet tellus non lobortis. Integer aliquet libero diam, nec vestibulum nisl imperdiet sit amet. Ut mattis et felis a eleifend. Fusce vulputate interdum sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus lacus ante, fringilla vel blandit eget, finibus vitae lacus. Ut eu felis nec ipsum tincidunt vulputate vel quis elit. Maecenas blandit, elit at cursus fermentum, mauris nisl facilisis ante, vitae blandit risus felis a neque.
 							</p>
 							<div class="picture">
-								<img class="img-responsive" width="100%" src="images/temp/t4-adhoc-image.jpg" alt="Photo Alt Tag" title="Photo Caption" />
+								<img class="img-responsive" src="images/temp/t4-adhoc-image.jpg" alt="Photo Alt Tag" title="Photo Caption" />
 							</div>
 							<h3>Donec ut elit et diam suscipit</h3>
 			
@@ -303,16 +305,16 @@
 				<li><a id="youtube-icon" href="#"><span class="btn-txt">YouTube</span></a></li>
 				<li class="last"><a id="linkedin-icon" href="#"><span class="btn-txt">LinkedIn</span></a></li>
 			</ul>
-			<div class=""id="vcard">
+			<div id="vcard">
 				<p>
-					Department of Psychology<br />
-					University of California, Davis<br />
-					135 Young Hall<br />
-					One Shields Avenue<br />
-					Davis, CA 95616
+					<span class="org">Department of Psychology <br />
+					University of California, Davis</span><br />
+					<span class="street-address">135 Young Hall</span> <br />
+					One Shields Avenue</span><br />
+					<span class="locality">Davis</span>, <abbr class="region" title="California">CA</abbr> <span class="postal-code">95616</span>
 				</p>
 				<p id="email-phone">
-					<a href="#">Email</a> | (530) 752-1880
+					<span class="email"><a href="mailto:">Email</a></span> | <span class="tel">(530) 752-1880</span>
 				</p>
 			</div>
 			<ul class="footer-nav hidden-xs" id="foot-left">
@@ -335,11 +337,15 @@
 			</ul>
 		
 			<p id="copyright">
-				Copyright &copy 2014 &nbsp;All Rights Reserved
+				Copyright &copy; 2014 &nbsp;All Rights Reserved
 			</p>
 		</div>
   </div>
-  </div><!-- /container --><!-- Bootstrap core JavaScript
+  </div><!-- /container -->
+	
+	
+	
+	<!-- Bootstrap core JavaScript
       ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

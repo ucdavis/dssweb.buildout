@@ -17,6 +17,40 @@
 			}
 		}
 		
+		// Misc. Fixes
+		var apply_fixes = function () {
+			var msViewportStyle = null;
+			/// SNAP MODE FIXES
+			
+			// MS Surface snap fix
+			// See http://www.mobilexweb.com/blog/windows-8-surface-ie10-html5
+			if (navigator.userAgent.match(/Windows NT 6.2; ARM(.+)Touch/)) {
+		    msViewportStyle = document.createElement("style");
+		    msViewportStyle.appendChild(
+		      document.createTextNode(
+		          "@-ms-viewport{width:device-width}"
+		      )
+		    );
+		    document.getElementsByTagName("head")[0].
+		    	appendChild(msViewportStyle);
+			}
+			
+			// Lumia 820 and HTC 8X fix
+			// See http://timkadlec.com/2013/01/windows-phone-8-and-device-width/
+			if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+		    msViewportStyle = document.createElement("style");
+		    msViewportStyle.appendChild(
+	        document.createTextNode(
+	            "@-ms-viewport{width:auto!important}"
+	        )
+		    );
+		    document.getElementsByTagName("head")[0].
+		    	appendChild(msViewportStyle);
+			}
+			
+		};
+		apply_fixes();
+		
 		// foundation top-bar support. 
 		// Note: Add after any JavaScript constructed markup that relies on foundation
 		$(document).foundation(); 
@@ -187,6 +221,7 @@
       }
 		};
 
+		
 		function myResize() {
       mqSync();
 			expand();

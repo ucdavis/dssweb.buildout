@@ -1049,7 +1049,7 @@ meta.foundation-mq-topbar {
   .top-bar .name {
     height: 45px;
     margin: 0;
-    font-size: 18; }
+    font-size: 18px; }
     .top-bar .name h1 {
       line-height: 45px;
       font-size: 12px;
@@ -1311,7 +1311,7 @@ meta.foundation-mq-topbar {
     margin: 0 auto;
     margin-bottom: 0; }
   .top-bar-section {
-    transition: none 0 0;
+    transition: none;
     left: 0 !important; }
     .top-bar-section ul {
       width: auto;

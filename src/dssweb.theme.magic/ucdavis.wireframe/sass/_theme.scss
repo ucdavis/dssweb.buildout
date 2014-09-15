@@ -7,10 +7,12 @@
 */ 
 
 /* formerly global.scss */
-// Fix Windows Phone 8 / IE 10 viewport bug
-@-ms-viewport {
-    width: device-width;
-}
+// See JS for Windows Phone 8 / IE 10 viewport issues
+@-webkit-viewport{width:device-width}
+@-moz-viewport{width:device-width}
+@-ms-viewport{width:device-width}
+@-o-viewport{width:device-width}
+@viewport{width:device-width}
 
 /* 
 html, body {
