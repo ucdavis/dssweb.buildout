@@ -7,6 +7,7 @@
 	var front = false;
 	var front_banner_height = 520;
 	var vcardiced = false;
+	var processed = false;
 	
 	$(document).ready(function() {
 		
@@ -49,11 +50,63 @@
 			}
 			
 		};
+		
 		apply_fixes();
 		
 		// foundation top-bar support. 
 		// Note: Add after any JavaScript constructed markup that relies on foundation
 		$(document).foundation(); 
+		
+		// BOOTSTRAPIFY //////////////////////////////////////////////////
+		// Process .portlet for bootstrap collapse
+		var bootstrapify = function (mq) {
+			
+			// Sidebar-right ...
+			if($('.sidebar-right .portlet').length !== 0) {
+				var i = 20;
+				var contentClassName = '.portlet-content';
+				
+				$('.sidebar-right').wrapInner('<div id="accordion-sr" class="panel-group"></div>');
+				
+	      $('.sidebar-right .portlet').each(function () {
+				
+					var mobile = ((mq === "XS") || (mq === "S")) ? true : false;
+					var el = $(this);
+					//var id = ('accordion'+i);
+					var aid = ('acont'+i);
+					var pid = ('panel'+i);
+					
+					//el.addClass('panel-group');
+					//el.attr('id',('accordion'+i));
+					//el.wrapInner('<div id="'+pid+'" class="panel panel-default" />');
+				
+					el.addClass('panel panel-default');
+					el.attr('id',pid);
+										
+					var titleEl = el.find('h3');
+					// TODO: Handle cases where h3 heading not available
+					titleEl.wrap('<div class="panel-heading" />');
+					titleEl.addClass("panel-title");
+					titleEl.wrapInner('<a data-parent="#accordion-sr" data-target="#'+aid+'" data-toggle="collapse"></div>');
+				
+					var bodyEl = el.find(contentClassName);
+					bodyEl.addClass('panel-body');
+					//if(mobile) {
+						// Mobile (closed)
+						bodyEl.wrap('<div class="collapsible panel-collapse collapse" id="'+aid+'"></div>');
+						//} else {
+						// Desktop / tablet (open)
+						//bodyEl.wrap('<div class="collapsible panel-collapse collapse in" id="'+aid+'"></div>');
+						//}
+					
+					if(typeof window.console !== "undefined") {
+            window.console.log("ActiveMQ: " + activeMQ + ", Mobile: "+ mobile);
+					}
+					++i;
+	      });
+			}		
+			processed = true;
+		};
 		
 		// PLUGIN CANDIDATES /////////////////////////////////////////////
 		// Process .picture into figure/figcaption
@@ -198,8 +251,9 @@
               currentMQ = activeMQ;
 							if  ( ($("body.ourpeople").length !== 0) || ($("body.home").length !== 0) ) {
 								$('body.home #top-panel-row').height(front_banner_height);
-								 expandedView();
+								 
 							}
+							expandedView(); // was previously in conditional above
 							/*
 							else if($("body.ourpeople").length !== 0){
 							collapsedView();	
@@ -223,8 +277,15 @@
 
 		
 		function myResize() {
+
+			
       mqSync();
+			if(!processed) {
+				bootstrapify(activeMQ);
+			}
 			expand();
+			
+			
 		}
 				
     if (toggleActive) {
@@ -289,15 +350,17 @@
 				$(".nav > li").addClass("drop-on");
 				
 				// Prevent the sidebars from behaving like panels when in desktop view
-				$(".sidebar-panel").removeClass("panel-collapse collapse in");       							
-				$(".sidebar").children().removeClass("panel panel-default");
-				
-				// Fix for contA height not being reset to auto	
+				//$(".sidebar .panel").removeClass("panel-collapse collapse in"); // NOTE: Changed from .sidebar-panel					
+				$(".sidebar .panel-group").children().removeClass("panel panel-default"); // deactivates acc behavior. TODO: Possibly make global, so .panel-group
+
+				// Fix for panel-collapse height not being reset to auto	
 				$(".collapsible").css("height", "auto");
 				
 				$("#content-main div").children().removeClass("panel-collapse collapse active");
-				$("#content-main .panel-heading").hide();
-				$(".panel-group").children().removeClass("panel panel-default");
+				$("#content-main .panel-heading").hide(); // TODO: Home page needs this
+				
+				$(".panel-group .collapsible").addClass("in"); // New: Open panels 
+				
         $(".more_text").hide();
 				
 				// Remove the open class from an open dropdown list to prevent an open dropdown list on desktop view
@@ -309,15 +372,16 @@
         //$(".ls-content").addClass("tab-content");
         //$(".landscape div").addClass("tab-pane");
         //$(".landscape").removeClass("tab-content");
-        $("#contA").addClass("active");
+        $("#contA", ".panel .panel-collapse").addClass("active"); // TODO: Are we using this?
        // $(".nav-tabs").show();
 							  			     
+			 // TODO: Update the bio conditional; we really don't want a conditional for only a page type
         if ($("body.bio").length === 0) {		
 						// Add accordion effects to sidebar			  
-            $(".sidebar").children().addClass("panel panel-default");
+            $(".sidebar .panel-group").children().addClass("panel panel-default"); // activates acc behavior
 						$(".panel-group").children().addClass("panel panel-default");
-            $(".sidebar-panel").addClass("panel-collapse collapse");
-            $(".collapse div").addClass("panel-body");
+            //$(".sidebar .panel").addClass("panel-collapse collapse"); // Note: Changed from .sidebar-panel
+            //$(".collapse div").addClass("panel-body"); // TODO: Do we need this?
 
         }
 				/* If Bio Page */
@@ -329,14 +393,19 @@
 						$(".btn-bio").hide();
 						$("#about-bio h3").hide();
         }
+				
+				
+				// NOTE: Following changes are global
+				
 				// Add the collapse on toggle attribute to the panel headers
-				$(".panel-title a").attr("data-toggle","collapse");
-				$(".collapsible").addClass("panel-collapse collapse");
+				//$(".panel-title a").attr("data-toggle","collapse");
+				$(".panel-group .collapsible").addClass("panel-collapse collapse"); // Note: global
+				$(".panel-group .collapsible").removeClass("in"); // New: Close panels
         $(".collapse > div").addClass("panel-body");
 				
 				// Remove the dropdown on hover effect from the navbar parent items
 				$(".nav > li").removeClass("drop-on");
-				$(".panel-heading").show();
+				//$(".panel-heading").show();
         $(".more_text").hide();			
 				// Add the dropdown on toggle attribute to the panel headers	
 				$(".par > a").attr("data-toggle","dropdown");

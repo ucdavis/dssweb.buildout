@@ -773,8 +773,41 @@ top:-39px !important;*/ }
   #footer .foot-wrap #foot-social { margin-left: 0 !important; margin-right: 0 !important; float: none; }
   #footer #vcard p, #footer #copyright { font-size: 11px; font-size: 0.6875rem; }
   #footer #copyright { margin-top: 0; } }
-@media screen and (min-width: 768px) { #util-bar-wrap { padding-right: 105px; }
+@media screen and (min-width: 768px) { .portlet { margin-bottom: 35px; }
+  .portlet .portlet-items { margin: 15px; margin-bottom: 25px; margin-left: 38px; }
+  .portlet .portlet-items li { margin-bottom: 5px; font-size: 10px; font-size: 0.625rem; }
+  .portlet .portlet-items li a { font-size: 13px; font-size: 0.8125rem; line-height: 17px; line-height: 1.0625rem; text-decoration: none; color: #008EAA; }
+  .portlet .portlet-items li a:hover { text-decoration: underline; }
+  .portlet .portlet-items li .event-date { font-size: 13px; font-size: 0.8125rem; display: block; padding-top: 4px; }
+  .portlet .portlet-items.with-bullets { margin-left: 47px; }
+  .portlet .portlet-items.with-bullets li { list-style: square; }
+  .portlet .panel-body { padding: 0; }
+  .portlet .panel-body .vcard { padding: 0; }
+  .portlet .panel-body .vcard div { font-size: 12px; font-size: 0.75rem; margin-left: 35px; margin-right: 15px; padding: 0; }
+  .portlet .panel-body .vcard div div { margin-left: 0; }
+  .portlet .panel-body .vcard div.adr { margin-top: 15px; }
+  .portlet .panel-body .vcard div.office-hours { margin-bottom: 15px; }
+  .portlet .panel-body .vcard.office h4 { min-height: 28px; background-color: #CCC; padding: 8px; padding-left: 35px; letter-spacing: 0.05em; font-weight: bold; }
+  .portlet .panel-body .vcard.office h4 a { font-size: 13px; font-size: 0.8125rem; text-decoration: none; }
+  .portlet .panel-body .vcard.office h4 a:hover { text-decoration: underline; }
+  body.bio .sidebar.sidebar-right { margin-top: 45px; }
+  body.bio .sidebar.sidebar-right .bio-card .panel-body .vcard { position: relative; }
+  body.bio .sidebar.sidebar-right .bio-card .panel-body .vcard img.photo { margin-top: 6px; margin-bottom: 25px; margin-left: auto; margin-right: auto; display: block; }
+  body.bio .sidebar.sidebar-right .bio-card .panel-body .vcard h4 { font-size: 13px; font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: bold; margin-left: 35px; }
+  body.bio .sidebar.sidebar-right .bio-card .panel-body .vcard .title.org { margin-left: 35px; margin-right: 35px; padding-left: 0; margin-top: 15px; margin-bottom: 25px; }
+  body.bio .sidebar.sidebar-right .bio-card .panel-body .vcard .title.org p { font-size: 12px; font-size: 0.75rem; line-height: 14px; line-height: 0.875rem; font-style: italic; margin-bottom: 5px; }
+  body.bio .sidebar.sidebar-right .bio-card .panel-body .vcard ul.portlet-items { margin: 0; border-top: 1px solid #FFF; height: 40px; }
+  body.bio .sidebar.sidebar-right .bio-card .panel-body .vcard ul.portlet-items li { float: left; height: 40px; border-right: 1px solid #FFF; width: 33.33%; text-align: center; }
+  body.bio .sidebar.sidebar-right .bio-card .panel-body .vcard ul.portlet-items li:last-child { margin-right-weight: 0; }
+  body.bio .sidebar.sidebar-right .bio-card .panel-body .vcard ul.portlet-items li a { display: inline-block; margin-left: auto; margin-right: auto; height: 40px; font-size: 12px; font-size: 0.75rem; line-height: 40px; line-height: 2.5rem; letter-spacing: 0.05em; padding-left: 35px; text-decoration: none; background-position: 20% 50%; background-repeat: no-repeat !important; }
+  body.bio .sidebar.sidebar-right .bio-card .panel-body .vcard ul.portlet-items li a:hover { text-decoration: underline; }
+  body.bio .sidebar.sidebar-right .bio-card .panel-body .vcard ul.portlet-items li .email a { background-image: url(../images/icons/email.gif); }
+  body.bio .sidebar.sidebar-right .bio-card .panel-body .vcard ul.portlet-items li .cv a { background-image: url(../images/icons/filetype/pdf.gif); }
+  body.bio .sidebar.sidebar-right .bio-card .panel-body .vcard ul.portlet-items li .vcard-file a { background-image: url(../images/icons/calendar-icon-t.png); }
+  #util-bar-wrap { padding-right: 105px; }
   #top-bar-wrap, #content-row { padding-left: 105px; padding-right: 105px; }
+  #content-main #summary #jumplinks, #content-main #summary #education { width: 50%; }
+  #content-main #summary .left { float: left; }
   .top-bar .top-bar-section li ul li a { padding: 25px; }
   .panel-heading#content-panel-heading { display: none; }
   /* 	.dropdown { 		 width: 220px !important; 		  		 li { 			 a { 				 display: inline-block !important; 				 border: 1px solid red !important; 				 padding:25px; 			 } 		 } 	} */ }
@@ -795,7 +828,9 @@ top:-39px !important;*/ }
   #content-main { padding-right: 0 !important; } }
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: 992px) { head { font-family: "L"; }
-  body:after { content: "L"; } }
+  body:after { content: "L"; }
+  body.bio .sidebar.sidebar-right { margin-top: 45px; }
+  body.bio .sidebar.sidebar-right .bio-card img.photo { margin-top: 15px; } }
 /* Override default grid gutter, which was broke on home/index bottom panel row. */
 .no-gutter { padding-left: 0 !important; padding-right: 0 !important; }
 
@@ -928,9 +963,8 @@ body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode",
 
 .top-bar { background: #002855; padding-bottom: 80px; }
 .top-bar .title-area { /* top:15px; THIS NEGATIVELY IMPACTS THE FORMAT OF THE TOPBAR MENU */ }
-.top-bar .title-area .name h1 { padding: 0; margin: 0; }
-.top-bar .title-area .name h1 a { border-right: 1px solid white; display: inline-block; width: 430px; height: 80px; padding-left: 0; text-decoration: none; }
-.top-bar .title-area .name h1 a#name-icon img { height: 100%; display: block; }
+.top-bar .title-area .name a { border-right: 1px solid white; display: inline-block; width: 430px; height: 80px; padding-left: 0; text-decoration: none; }
+.top-bar .title-area .name a#name-icon img { height: 100%; display: block; }
 .top-bar .top-bar-section { height: 100%; /* .right {} if we have markup with left drops */ }
 .top-bar .top-bar-section .left { width: 65%; height: 100% !important; }
 .top-bar .top-bar-section .left > li { background: #002855 !important; width: 9.6%; height: 80px; text-align: center; /*.dropdown{ // TODO: Don't need this specific selector ...
@@ -956,7 +990,7 @@ body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode",
   .util-bar { max-width: 650px; }
   .util-bar ul li input { width: 170px; }
   .top-bar { padding-bottom: 0; }
-  .top-bar .title-area .name h1 a { width: 215px !important; height: 40px !important; }
+  .top-bar .title-area .name a { width: 215px !important; height: 40px !important; }
   .top-bar .toggle-topbar.menu-icon { margin-top: 0; top: 0; height: 45px; padding-top: 3px; }
   .top-bar.expanded .title-area { background-color: #002855; }
   .top-bar.expanded .top-bar-section .left { width: 100%; }
@@ -965,12 +999,17 @@ body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode",
 /*----- Tablet breakpoint -------*/
 @media screen and (min-width: 768px) and (max-width: 992px) { #util-bar-wrap, #top-bar-wrap { margin-left: -10px !important; margin-right: -20px !important; }
   /*#util-bar-wrap { 	border: 1px solid red; 	margin-left: -9px !important; 	margin-right: -21px !important; 	.util-bar { 		margin-left: 0 !important; 	} } #top-bar-wrap { 	margin-left: -15px !important; 	margin-right: -5px !important; // TODO: 5px??? }  .util-bar { 	border: 1px solid red; 	//width: 100%; }*/
-  .top-bar .title-area .name h1 a { padding-left: 0; width: 200px !important; height: 40px !important; } }
+  .top-bar .title-area .name a { padding-left: 0; width: 200px !important; height: 40px !important; } }
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: 992px) { .util-bar { max-width: 768px; }
   .top-bar .top-bar-section ul ul.dropdown { width: 200px !important; }
   .top-bar .top-bar-section ul ul.dropdown li a { padding: 4px !important; } }
 /* /_navigation.scss */
+/* _block.scss */
+/* Styles for block-level components like portlets */
+#spotlight-block { background-color: #CCC; border: 1px solid #000; }
+
+/* /_block.scss */
 /* _icons.scss */
 a.pdf-icon { padding-left: 25px; background: url(../images/icons/filetype/pdf.gif) 0 50% no-repeat; }
 a.doc-icon { padding-left: 25px; background: url(../images/icons/filetype/doc.gif) 0 50% no-repeat; }
