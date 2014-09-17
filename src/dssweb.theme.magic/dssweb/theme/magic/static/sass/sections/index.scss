@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import "variables";
+@import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
 /* CSS Document */
 
 /* index css */
@@ -21,6 +22,8 @@
 		}
 	}
 }
+
+// 2014-09-09 RAK: TODO: Possibly remove ... we want to keep resolution of Bootstrap variables intact
 @media screen and (max-width: 440px) {		
 	.content-main {
 	h2{
@@ -30,7 +33,7 @@
 	}
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $screen-sm-min) {
 	
 	/* Style adjustments for the partial-cover home wall component */
 	#main {
@@ -66,7 +69,7 @@
 	
 }
 
-@media screen and (min-width: 1200px) {	
+@media screen and (min-width: $screen-lg-min) {	
 	.content-main h2{
 		text-align:center;
 	}

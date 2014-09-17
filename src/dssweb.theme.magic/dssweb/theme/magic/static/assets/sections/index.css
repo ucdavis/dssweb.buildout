@@ -31,7 +31,7 @@ body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode",
 .content-main figure figcaption { text-align: right; font-size: 10.65px; font-size: 0.66563rem; text-transform: uppercase; }
 
 /*----- Desktop breakpoint -------*/
-@media screen and (min-width: 992px) { .top-panel { /*
+@media screen and (min-width: 768px) { .top-panel { /*
 &.left-panel {
 	//text-align: right;
 }
@@ -62,5 +62,5 @@ body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode",
   #bottom-panel-row .left-panel .narrow-col { margin-left: auto; }
   #bottom-panel-row .middle-panel .narrow-col { margin: 0 auto; }
   #bottom-panel-row .right-panel .narrow-col { margin: 0 auto; } }
-@media screen and (min-width: 1200px) { .content-main h2 { text-align: center; }
+@media screen and (min-width: 1310px) { .content-main h2 { text-align: center; }
   /* Custom Styles for this breakpoint */ }

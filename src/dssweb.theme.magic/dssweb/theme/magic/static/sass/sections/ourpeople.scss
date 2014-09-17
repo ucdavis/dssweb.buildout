@@ -1,13 +1,15 @@
 @charset "utf-8";
+@import "variables"; // for BASE font size and mixin font_size()
 @import "ucd-variables";
+@import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
 
 /* Our People */
 
 /* Colors */
-$rec_blue:#008EAA;
-$cardbg_blue:#e5e9ef;
-$empty_blue:#ccd4e0;
-$ucdtxt_blue:#4D688C;
+$cardbg_blue: $ucd_blue_10;
+$empty_blue: $ucd_blue_20;
+$cardbg_gray: #e5e5e5;
+$ucdtxt_blue: #4D688C; // based on?
 
 
 
@@ -34,7 +36,7 @@ $ucdtxt_blue:#4D688C;
 	text-transform:uppercase;
 	
 	span{
-		font-size:16px;
+		@include font_size(16px);
 		color:#000;
 	}
 }
@@ -81,7 +83,7 @@ $ucdtxt_blue:#4D688C;
 		color:$ucdtxt_blue;
 	}
 	p{
-		font-size:12px;
+		@include font_size(12px);
 		margin:0px;
 	}
 }
@@ -101,14 +103,14 @@ $ucdtxt_blue:#4D688C;
 }
 .checkForm{
 	text-align:left;
-	font-size:12px;
+	@include font_size(12px);
 	label{
 		font-weight:normal;
 	}
 	h4{
 		text-align:left;
 		color:#000;
-		font-size:12px;
+		@include font_size(12px);
 		text-transform:uppercase;
 		
 	}
@@ -127,18 +129,18 @@ $ucdtxt_blue:#4D688C;
 .job{
 	font-style:italic;
 }
-@media screen and (min-width: 0px) and (max-width: 768px) {
+// Hmm, do we need min-width ... it should be implied with a max-width
+@media screen and (min-width: 0px) and (max-width: $screen-sm-min) {
 	.sidebar{
-		background:#e5e5e5;
+		background:$cardbg_gray;
 	}
 	.collapsible{
-		background:#e5e5e5;
+		background:$cardbg_gray;
 	}
 	.facultyStaffDirectory{
 		padding:20px 20px;
 	
 	}
-	
 	.panel-body{
 		padding:10px 0 !important;
 	}

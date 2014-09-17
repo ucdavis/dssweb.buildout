@@ -31,21 +31,56 @@
 	}
 }
 
-/*----- Mobile breakpoint --------*/
-@media screen and (max-width: 768px) {
-	// handle banners on mobile 
-	.wall {
-		display: none;
-	}
-	#util-bar-wrap {
+@media screen and (max-width: $screen-md-min) {
+	#util-bar-wrap { 
 		.util-bar {
 			margin-top: 0;
 		}
 	}
 }
 
-/*----- Desktop breakpoint -------*/
-@media screen and (min-width: 992px) {	
+
+/*----- Mobile breakpoint --------*/
+@media screen and (max-width: $screen-sm-min) { // width < 768
+	// handle banners on mobile 
+	body.home {
+		.siders {
+			.wall {
+				//display: none;
+			}
+		}
+	}
+	.siders {
+		.wall {
+			&.shadow-graphic {
+	    	height: 85px !important;
+			}
+		}
+	}
+
+}
+
+/*----- Tablet breakpoint -------*/
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-md-min) { // 1200px max-width, was 992px
+	.siders {
+		.wall {
+			&.shadow-graphic {
+	    	height: 85px !important;
+			}
+		}
+	}
+	body.home {
+		.siders {
+			// Note: This removes the 15px white strip to right of the wallpaper when 
+			// initial-scale=1.0 is removed from the meta
+			// TODO: Determine underlying cause -> test on other tablets
+			margin-right: -12px !important; 
+		}
+	}
+	
+}
+/*----- Desktop or tablet breakpoint -------*/
+@media screen and (min-width: $screen-sm-min) { // $screen-lg-min: 1200px / $screen-md-min: 992px
 
 	/* 3-column banner panel set - intended to use happybox behavior / plugin */
 	.top-panel {
