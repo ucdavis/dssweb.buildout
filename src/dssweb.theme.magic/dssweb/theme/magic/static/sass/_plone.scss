@@ -1,4 +1,10 @@
 /*Plone Styles */
+#portal-logo {
+	#portal-logo {
+	    display: inline-block;
+	    margin: 0 0; 
+	}
+}
 
 #portal-globalnav {
 list-style-image: none;
@@ -7,22 +13,89 @@ background-color: none;
 zoom: 1;
 z-index: 2;
 }
+
 #portal-globalnav li a {
 	font-size: 1.0625rem;
 	letter-spacing: 0.025em;
 	line-height: 1.80rem;
-	padding-top: 20px;
-	padding-right: 1em;
-	padding-bottom: 0;
-	padding-left: 1em;
-	border-top:none;
-	background-color: $ucd_blue_100;
-	
+    display: inline-block;
+    padding: 1.5em 1em 1.5em 1em;
+	min-width: 2em;
+    white-space: normal;
+    /*TODO: Once we have removed the whitespace from the nav template, this can be put back*/
+   border-bottom: None;
+    border-right: None;
 }
-#portal-globalnav > li > a {
-	padding-top:15%;
+#portal-globalnav li {
+}
 
+#portal-globalnav > li > a {
+	
+	
+} 
+#portal-globalnav .selected a,
+#portal-globalnav a:hover {
+    background: $ucd_blue_70;
+    color: White;
 } 
 nav.top-bar {
 	background-color: $ucd_blue_100;
+}
+/* - dropdown-menu.css - */
+@media screen {
+/* DropDown Menu Styles */
+
+#portal-top {
+  z-index:1;
+  }
+  /*----------Dropdown Menu----------------*/
+/*---------- BASIC STYLE one level ----------*/
+#portal-globalnav {
+  list-style-image:none;
+  position:relative; /* fix ie */
+  zoom:1; /* fix ie */
+  }
+#portal-globalnav:after {
+  content:"";
+  clear:both;
+  display:block;
+  visibility:hidden;
+  }
+#portal-globalnav li {
+  float:left;
+  position:relative;
+  }
+#portal-globalnav li a {
+  display:block;
+  background: $ucd_blue_100;
+  border-top: none;
+  }
+
+/*----- DropDown -----*/
+ul.submenu {
+  display:none;
+  left:0;
+  position:absolute;
+  top:100%;
+  }
+#portal-globalnav li:hover > ul.submenu {
+  display:block;
+  }
+ul.submenu li {
+  float:none;
+  margin:0;
+  }
+#portal-globalnav ul.submenu li a {
+  padding:0.5em 1.5em 0.5em 1em;
+  width:12em;
+  }
+ul.submenu ul {
+  top:0;
+  left:100%;
+  }
+ul.submenu a.state-published:hover,
+.selected ul.submenu .state-published {
+    color: #fff !important;
+}
+
 }
