@@ -1,40 +1,46 @@
 <!DOCTYPE html>
-<html lang="en"><!-- #BeginTemplate "file:///C|/Users/Kevan/Documents/GitHub/dss-plone-sandbox/ucdavis.wireframe/Templates/wireframe.dwt" --><!-- DW6 -->
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<html lang="en"><!-- #BeginTemplate "/Templates/bio.dwt" -->
+	<head>
+	  <meta charset="utf-8" />
+	  <meta name="viewport" content="width=device-width" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    
-    <!-- #BeginEditable "title" -->
-    <title>About</title>
-    <!-- #EndEditable -->
-
-    <link type="text/css" href="assets/vendor/reset.css" rel="stylesheet" />
-    <link type="text/css" href="assets/styles.css" rel="stylesheet" />
-    <link type="text/css" href="assets/vendor/bootstrap.min.css" rel="stylesheet" />
-
-    <!-- #BeginEditable "header" -->
-		<link type="text/css" href="assets/sections/about.css" rel="stylesheet" /> 
+		
+		<!-- #BeginEditable "title" -->
+	    <title>Susan M. Rivera, Professor of Psychology, UC Davis Department of Psychology</title>
+	  <!-- #EndEditable -->
+	  <link type="text/css" href="assets/vendor/reset.css" rel="stylesheet" />
 		<link type="text/css" href="assets/vendor/topbar.css" rel="stylesheet" />
-      
-      	
-    <!-- #EndEditable -->
-    
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="js/contrib/html5shiv.min.js"></script>
-    <script src="js/contrib/respond.min.js"></script>
-    <![endif]-->
-    
-  </head>
-	<!-- #BeginEditable "body-tag" -->
-	 <body class="bio">
-    <!-- #EndEditable -->
- 
-    <div class="container">
-	    <div class="row">
+		<link type="text/css" href="bower_components/Wallpaper/jquery.fs.wallpaper.css" rel="stylesheet">
+	  <link type="text/css" href="assets/styles.css" rel="stylesheet" />
+	  <link type="text/css" href="assets/sub-org.css" rel="stylesheet" />
+		
+		<!-- #BeginEditable "header" -->
+		
+	  <!-- #EndEditable -->
+	
+	  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	  <!--[if lt IE 9]>
+	    <script src="js/contrib/html5shiv.min.js"></script>
+	    <script src="js/contrib/respond.min.js"></script>
+		<![endif]-->
+	</head>
+
+  <!-- #BeginEditable "body-tag" -->
+  <body class="bio">
+  <!-- #EndEditable -->
+		<div id="skip-link"><a href="#content-main" class="sr-only sr-only-focusable">Skip to main content</a></div>
+	
+	  <div class="row jumbotron">
+			<div class="siders">
+				<div class="wall shadow-graphic">
+		    	&nbsp;
+				</div>
+			</div>
+	  </div>
+	
+	  <div id="main-container" class="container">
+	    <div id="util-bar-wrap" class="row">
 	      <nav class="util-bar">
 	        <ul>
 	          <li class="hidden-xs" id="uti-news">
@@ -48,7 +54,8 @@
 	          </li>
 	          <li class="hidden-xs" id="uti-search">
 	            <form action=".">
-	              <input type="search" name="search" placeholder="Search" />
+								<label for="searchi" class="sr-only">Search</label>
+	              <input type="search" name="searchi" id="searchi" placeholder="Search" />
 	            </form>
 	          </li>
 	          <li class="hidden-xs" id="uti-share">
@@ -56,363 +63,423 @@
 	          </li>
 	          <li id="uti-logo">
 	            <a href="#">
-	              <img src="images/nav-logo.png" />
+	              <img src="images/logos/nav-logo.png" alt="UC Davis" />
 	            </a>
 	          </li>
 	        </ul>
 	      </nav>
 	    </div>
-			<div class="toggle-topbar menu-icon">
-				<a href="#">
-					<span></span>
-				</a>
+
+			<div id="top-bar-wrap" class="row">
+		    <nav class="top-bar" data-topbar="">
+			
+		      <!-- Title -->
+		      <ul class="title-area">
+		        <li class="name">
+		            <a id="name-icon" href="index.html"><img src="images/logos/psychology-logo.gif" alt="UC Davis Department of Psychology" title="UC Davis Department of Psychology" /></a>
+		        </li>
+						<li id="toggle-topbar-item">
+			        <!-- Mobile Menu Toggle -->
+							<div class="toggle-topbar menu-icon">
+								<a href="#">
+									<span></span>
+								</a>
+							</div>
+						</li>
+		      </ul>
+			
+		      <!-- Top Bar Section -->
+		      <section class="top-bar-section">
+		        <!-- Top Bar Right Nav Elements -->
+		        <ul class="left">
+		          <!-- Dropdown -->
+		          <li id="contact-btn" class="has-dropdown">
+		            <a href="#">Contact</a>
+		            <ul class="dropdown">
+		              <li>
+		                <a href="#">This is a super long item to demonstrate button text flow</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 2</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 3</a>
+		              </li>
+		              <li class="has-dropdown">
+		              <a href="#">Sub-item 4</a> 
+		              <!-- Nested Dropdown -->
+		              <ul class="dropdown">
+		                <li>
+		                  <a href="#">Sub-item 2</a>
+		                </li>
+		                <li>
+		                  <a href="#">Sub-item 3</a>
+		                </li>
+		                <li>
+		                  <a href="#">Sub-item 4</a>
+		                </li>
+		              </ul></li>
+		              <li>
+		                <a href="#">Sub-item 5</a>
+		              </li>
+		            </ul>
+		          </li>
+		          <li id="students-btn" class="has-dropdown">
+		            <a href="#">Students</a>
+		            <ul class="dropdown">
+		              <li>
+		                <a href="#">Sub-item 1</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 2</a>
+		              </li>
+		            </ul>
+		          </li>
+		          <li id="researc-btn" class="has-dropdown">
+		            <a href="#">Research</a>
+		            <ul class="dropdown">
+		              <li>
+		                <a href="#">Sub-item 1</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 2</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 3</a>
+		              </li>
+		            </ul>
+		          </li>
+		          <li id="people-btn" class="has-dropdown">
+		            <a href="#">Our People</a>
+		            <ul class="dropdown">
+		              <li>
+		                <a href="#">Sub-item 1</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 2</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 3</a>
+		              </li>
+		              <li class="has-dropdown">
+		              <a href="#">Sub-item 4</a> 
+		              <!-- Nested Dropdown -->
+		              <ul class="dropdown">
+		                <li>
+		                  <a href="#">Sub-item 2</a>
+		                </li>
+		                <li>
+		                  <a href="#">Sub-item 3</a>
+		                </li>
+		                <li>
+		                  <a href="#">Sub-item 4</a>
+		                </li>
+		              </ul></li>
+		              <li>
+		                <a href="#">Sub-item 5</a>
+		              </li>
+		            </ul>
+		          </li>
+		          <li id="fac-serv-btn" class="has-dropdown">
+		            <a href="#">Facilities &amp; Services</a>
+		            <ul class="dropdown">
+		              <li>
+		                <a href="#">Sub-item 1</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 2</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 5</a>
+		              </li>
+		            </ul>
+		          </li>
+		        </ul>
+		      </section>
+		    </nav>
 			</div>
-	    <nav class="top-bar" data-topbar="">
-	      <!-- Title -->
-	      <ul class="title-area">
-	        <li class="name">
-	          <h1>
-	            <a href="#">Psychology</a>
-	          </h1>
-	        </li>
-	        <!-- Mobile Menu Toggle -->
-	      </ul>
-	      <!-- Top Bar Section -->
-	      <section class="top-bar-section">
-	        <!-- Top Bar Right Nav Elements -->
-	        <ul class="right">
-	          <!-- Dropdown -->
-	          <li class="has-dropdown">
-	            <a href="#">Connect</a>
-	            <ul class="dropdown">
-	              <li>
-	                <a href="#">Sub-item 1</a>
-	              </li>
-	              <li>
-	                <a href="#">Sub-item 2</a>
-	              </li>
-	              <li>
-	                <a href="#">Sub-item 3</a>
-	              </li>
-	              <li class="has-dropdown">
-	              <a href="#">Sub-item 4</a> 
-	              <!-- Nested Dropdown -->
-	              <ul class="dropdown">
-	                <li>
-	                  <a href="#">Sub-item 2</a>
-	                </li>
-	                <li>
-	                  <a href="#">Sub-item 3</a>
-	                </li>
-	                <li>
-	                  <a href="#">Sub-item 4</a>
-	                </li>
-	              </ul></li>
-	              <li>
-	                <a href="#">Sub-item 5</a>
-	              </li>
-	            </ul>
-	          </li>
-	          <li class="has-dropdown">
-	            <a href="#">Students</a>
-	            <ul class="dropdown">
-	              <li>
-	                <a href="#">Sub-item 1</a>
-	              </li>
-	              <li>
-	                <a href="#">Sub-item 2</a>
-	              </li>
-	            </ul>
-	          </li>
-	          <li class="has-dropdown">
-	            <a href="#">Research</a>
-	            <ul class="dropdown">
-	              <li>
-	                <a href="#">Sub-item 1</a>
-	              </li>
-	              <li>
-	                <a href="#">Sub-item 2</a>
-	              </li>
-	              <li>
-	                <a href="#">Sub-item 3</a>
-	              </li>
-	            </ul>
-	          </li>
-	          <li class="has-dropdown">
-	            <a href="#">Our People</a>
-	            <ul class="dropdown">
-	              <li>
-	                <a href="#">Sub-item 1</a>
-	              </li>
-	              <li>
-	                <a href="#">Sub-item 2</a>
-	              </li>
-	              <li>
-	                <a href="#">Sub-item 3</a>
-	              </li>
-	              <li class="has-dropdown">
-	              <a href="#">Sub-item 4</a> 
-	              <!-- Nested Dropdown -->
-	              <ul class="dropdown">
-	                <li>
-	                  <a href="#">Sub-item 2</a>
-	                </li>
-	                <li>
-	                  <a href="#">Sub-item 3</a>
-	                </li>
-	                <li>
-	                  <a href="#">Sub-item 4</a>
-	                </li>
-	              </ul></li>
-	              <li>
-	                <a href="#">Sub-item 5</a>
-	              </li>
-	            </ul>
-	          </li>
-	          <li class="has-dropdown">
-	            <a href="#">Facilities &amp; Services</a>
-	            <ul class="dropdown">
-	              <li>
-	                <a href="#">Sub-item 1</a>
-	              </li>
-	              <li>
-	                <a href="#">Sub-item 2</a>
-	              </li>
-	              <li>
-	                <a href="#">Sub-item 5</a>
-	              </li>
-	            </ul>
-	          </li>
-	        </ul>
-	      </section>
-	    </nav>      
-      <!-- #BeginEditable "content" -->
-      <div class="content-bio-container">
-        <div class="col-xs-12 col-sm-2 col-md-3 col-lg-2" id="sidebar-bio">
-          <img src="images/dummy.jpg" alt="portrait" id="portrait"/>
-          <div id="sidebar-contact">
-            <h4>name</h4>
-            <p><i>title</i></p>
-            <p>email</p>
-            <p>555-555-5555</p>
-          </div>
-          <div>
-            <ul class="sidebar-info">
-              <li id="overview">
-                <h4>Overview</h4>
-              </li>
-              <li><a href="#"> Publications</a></li>
-              <li> <a href="#">Information</a> </li>
-            </ul>
-          </div>
-        </div>
-        <div class="panel-group" id="content-accordion">
-          <div class="content col-xs-12 col-sm-6 col-md-6 col-lg-8" id="about-bio">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a data-target="#container-A" data-toggle="collapse" data-parent="#content-accordion" 
-                    >
-                  Lorem
-                  </a>
-                </h4>
-              </div>
-              <div class=" collapsible panel-collapse collapse in" id="container-A">
-                <div class="panel-body">
-                  <h3>Lorem</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur </p>
-                  <p>adipiscing elit. Proin quis odio imperdiet, venenatis dolor quis, tincidunt ante. Nullam id purus gravida, consectetur odio et, adipiscing tortor. Ut facilisis ipsum sed lacus dapibus volutpat. Aenean gravida lectus eu sodales vestibulum. Donec ultricies lectus id interdum imperdiet. Praesent laoreet lacus sit amet lacus varius interdum. Morbi sagittis accumsan dolor, quis facilisis sem tempus a. Etiam imperdiet aliquet gravida. Aliquam in orci eget massa ornare commodo quis eu risus. Nulla facilisi. Nunc tincidunt in arcu sed elementum. Ut rutrum sagittis nibh, non consequat tortor ornare a. Donec a orci vel nisi posuere vehicula eget ac eros.</p>
-                  <a class="btn-bio btn btn-primary btn-more" href="#" role="button">Read More »</a>
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a data-target="#container-B" data-toggle="collapse" data-parent="#content-accordion" 
-                    >
-                  Ipsum
-                  </a>
-                </h4>
-              </div>
-              <div class="more_text collapsible panel-collapse collapse" id="container-B">
-                <div class="panel-body">
-                  <h3>Ipsum</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ullamcorper, libero in viverra imperdiet, quam neque pellentesque sem, eu pharetra magna purus in dui. Curabitur rhoncus viverra molestie. Nam pharetra, tortor euismod dapibus imperdiet, velit erat posuere sem, vel mattis enim nibh eu neque. Donec nec posuere orci, at mollis sapien. Aenean faucibus aliquet neque, quis vehicula nisi elementum et. Proin porta odio blandit, volutpat nibh id, bibendum orci. Quisque pretium pellentesque odio sed tincidunt. Suspendisse pulvinar rhoncus elit ac convallis. Duis imperdiet interdum urna ut laoreet. Quisque luctus erat mauris, at vulputate tortor congue sit amet. Cras ut neque nec tellus euismod interdum sed quis mi. Sed nec odio pharetra, faucibus quam ut, vestibulum erat.</p>
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a data-target="#container-C" data-toggle="collapse" data-parent="#content-accordion" 
-                    >
-                  Lorem2
-                  </a>
-                </h4>
-              </div>
-              <div class="collapsible more_text panel-collapse collapse" id="container-C">
-                <div class="panel-body" >
-                  <h3>Lorem2</h3>
-                  <p>Etiam ac placerat quam, non luctus metus. Maecenas sit amet sodales ipsum, non pretium tortor. Donec sem orci, tempor at nisl vel, tempus eleifend sapien. Phasellus placerat tristique mattis. Quisque sed mi quis risus sodales ultrices sit amet quis arcu. Cras eget elit vestibulum, faucibus eros sit amet, luctus sem. Proin sagittis sagittis risus a gravida. Maecenas scelerisque at nulla sit amet aliquam. Mauris sodales ante ut risus facilisis aliquam. Nullam vel suscipit turpis. Nunc iaculis neque quis risus tincidunt pulvinar.</p>
-                  <p>Morbi nec condimentum dolor, non tristique nunc. Proin a dapibus nisl. In ultricies, lorem a accumsan pretium, nisi tortor fermentum enim, a convallis tellus nisi bibendum nunc. Mauris tempor ut ante vel imperdiet. Suspendisse molestie, est non aliquet viverra, urna lorem imperdiet massa, et ultricies ipsum odio at diam. Donec aliquam sapien vel tortor dapibus, non gravida enim dictum. Sed in sollicitudin nulla.</p>
-                  <p>Ut fermentum massa eu lacus lobortis tempor. Vestibulum sagittis tincidunt metus vitae placerat. Vivamus dolor est, aliquam ut porttitor non, pretium at ante. Sed gravida rhoncus vulputate. Etiam eleifend, tellus vitae venenatis vehicula, justo urna vestibulum enim, vel venenatis sapien elit in enim. Fusce interdum quam at elit euismod tincidunt. Integer nec nisl a tortor tincidunt sodales id ut mi. Quisque mauris quam, feugiat eu turpis et, pharetra aliquet eros. Ut luctus nulla ac sapien accumsan, sed interdum est pharetra.</p>
-                  <a class="btn-bio btn btn-primary btn-less" href="#" role="button">Read Less »</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End .panel-group -->
-      </div>
-      <!-- End .content-bio-container --> 
-      <div class="panel-group" id="accordion">
-        <div class="sidebar sidebar-right col-xs-12 col-sm-2 col-md-3 col-lg-2" id="sidebar-bio-right">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title"><a data-parent="#accordion" data-target=
-                "#sbA" data-toggle="collapse">Courses</a></h3>
-            </div>
-            <div class="collapsible sidebar-panel panel-collapse collapse" id=
-              "sbA">
-              <div class="panel-body">
-                <ul class="sidebar-block-items">
-                  <li>Course A</li>
-                  <li>Course B</li>
-                  <li>Course C</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title"><a data-parent="#accordion" data-target=
-                "#sbB" data-toggle="collapse">Twitter</a></h3>
-            </div>
-            <div class="collapsible sidebar-panel panel-collapse collapse" id=
-              "sbB">
-              <div class="panel-body">
-                <ul class="sidebar-block-items">
-                  <li>Item A</li>
-                  <li>Item B</li>
-                  <li>Item C</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title"><a data-parent="#accordion" data-target=
-                "#sbC" data-toggle="collapse">Events</a></h3>
-            </div>
-            <div class="collapsible sidebar-panel panel-collapse collapse" id=
-              "sbC">
-              <div class="panel-body">
-                <ul class="sidebar-block-items">
-                  <li>Item A</li>
-                  <li>Item B</li>
-                  <li>Item C</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title"><a data-parent="#accordion" data-target=
-                "#sbD" data-toggle="collapse">Speakers</a></h3>
-            </div>
-            <div class="collapsible sidebar-panel panel-collapse collapse" id=
-              "sbD">
-              <div class="panel-body">
-                <ul class="sidebar-block-items">
-                  <li>Item A</li>
-                  <li>Item B</li>
-                  <li>Item C</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title"><a data-parent="#accordion" data-target=
-                "#sbE" data-toggle="collapse">Labs/Research</a></h3>
-            </div>
-            <div class="collapsible sidebar-panel panel-collapse collapse" id=
-              "sbE">
-              <div class="panel-body">
-                <ul class="sidebar-block-items">
-                  <li>Item A</li>
-                  <li>Item B</li>
-                  <li><a href="#">See More &gt;</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title"><a data-parent="#accordion" data-target=
-                "#sbF" data-toggle="collapse">In The News</a></h3>
-            </div>
-            <div class="collapsible sidebar-panel panel-collapse collapse" id=
-              "sbF">
-              <div class="panel-body">
-                <ul class="sidebar-block-items">
-                  <li>Item A</li>
-                  <li>Item B</li>
-                  <li>Item C</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End .sidebar-right -->
-      </div>
-      <!-- End .panel-group -->
+	    <!-- #BeginEditable "content" -->
+			
+			<div id="content-row" class="row no-gutter-lg">
+		
+			  <div id="content-main" class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+					<div class="breadcrumb"><p><a href="index.html">Home</a> <span class="bread-divider">|</span> <a href="#">TBD</a></p></div>
+			    <h1 class="content-title">Susan M. Rivera</h1>
+					
+					<div id="summary" class="clearfix">
+						<div id="jumplinks" class="left">
+							<!-- autogenerated from h2 headings -->
+						</div>
+						<div id="education" class="right">
+							<h4>Education</h4>
+							<ul class="content-items education-items">
+								<li>Ph.D., Developmental Psychology, University of California, Berkeley</li>
+								<li>B.A., Psychology, Indiana University</li>
+							</ul>
+						</div>
+					</div><!-- /summary -->
+					
+						<section>
+							<h2>About</h2>
+							<p>Susan Rivera is Professor of Psychology at the University of California, Davis, and an affiliated faculty with the UC Davis Center for Neuroscience, which seeks to understand the function of the human brain in health and in illness. She also is a faculty member in the Center for Mind and Brain and a member of the M.I.N.D. Institute, both at UC Davis. In addition, Dr. Rivera serves as a member of a number of professional organizations, including the Cognitive Neuroscience Society, the Cognitive Development Society, the Society for Research in Child Development, the Jean Piaget Society and the Society for Neuroscience.</p>
+						</section>
+						
+						
+						<section>
+							<h2>Research Focus</h2>
+							<p>Dr. Rivera’s research focuses on the origins and development of symbolic representation in both infants and children. Using classic behavioral as well as neuroimaging (fMRI) techniques, she investigates the development of dorsal vs. ventral visual processing, object representation, numerical cognition and affective processing. She also conducts research contrasting typical development with that of children with neurodevelopmental disorders including Autism and fragile X Syndrome. Her research centers on building a framework for integrating the previously disparate methodological and theoretical orientations of cognitive developmental and neuroscience research. By employing a variety of converging research techniques, she strives to elucidate the complex brain-behavior relationships that underlie cognitive development.</p>
+						</section>
+						
+						
+						<section>
+							<h2>Awards</h2>
+							<p>Dr. Rivera has received a number of prestigious awards throughout her career. In 2010, she was the recipient of the UC Davis School of Medicine Dean’s Award for Excellence in Collaboration. She has received several M.I.N.D. Institute Pilot Research Grant Awards and was a Faculty Research Grant Recipient at UC Davis from 2003 to 2004. Prior to her tenure at UC Davis, she received the IGA Junior Faculty Research Award and fellowships from the National Institute of Health in Postdoctoral Training and Research.  In 1998, she received the Outstanding Graduate Student Instructor award at UC Berkeley. In the mid to late 1990s, she received the American Psychological Association Dissertation Research Award, a Graduate Division Dissertation Award Fellowship at UC Berkeley, the National Research Service Award from the National Institute of Mental Health, and a National Science Foundation Graduate Research Fellowship.</p>
+						</section>
+						
 
-      <!-- #EndEditable -->
-      <div id="utility">
-        <nav>
-          <ul>
-            <li><a href="t13_news.html">Latest News</a></li>
-            <li><a href="t14_events.html">Events</a></li>
-            <li><a href="t4_adhoc.html">Give</a></li>
-            <li>            
-                <input type="text" id="search" placeholder="Search">
-             </li>
-          </ul>
-         </nav>
-      </div>       
-      <!-- Site footer -->
-       <!-- #BeginEditable "custom-footer" -->
-      <div class="footer">
-        <p>&copy; Company 2014 Updated 27 June 2014</p>
-      </div>
+						<section>
+							<h2>Publications</h2>
+							<p>Her publications include numerous articles in a range of scientific journals, including Behavioral Brain Research, Human Brain Mapping, Journal of Neurodevelopmental Disorders, Journal of Psychiatric Research, JAMA Neurology, and Journal of Developmental and Behavioral Pediatrics. She also serves as Associate Editor of Frontiers in Developmental Psychology and as an editorial board member for Human Development and Journal of Neurodevelopmental Disorders. </p>
+						</section>
+						
+											
+						<section>
+							<h2>Selected Publications</h2>
+							
+							<ul class="content-items publication-items">
+										<li>Leow, A., Harvey, D., Goodrich‐Hunsaker, N., GadElkarim, J., Kumar, A., Zhan, L., 
+								Rivera, S.M., and Simon, T. (in press). Altered structural brain connectome in young adult fragile X premutation carriers.  Human Brain Mapping.</li>
 
-      <!-- #EndEditable -->
-     
-    </div> <!-- /container -->
+										<li>Grigsby, J., Cornish, K., Hocking, D., Kraan, C., Olichney, J.M., Rivera, S.M., Schneider, 
+								A., Sherman, S., Wang, J.Y., and Yang, J.C. (in press). The cognitive neuropsychologicalphenotype of carriers of the FMR1 premutation. Journal of Neurodevelopmental Disorders.</li>
 
-    	<!-- Bootstrap core JavaScript
-      ================================================== -->
-      <!-- Placed at the end of the document so the pages load faster -->
-      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="js/contrib/jquery.min.js"></script>
-			<script src="js/expand.js"></script>
-      <script src="js/bootstrap/collapse.js"></script>
-      <script src="js/bootstrap/dropdown.js"></script>
-      <script src="js/bootstrap/transition.js"></script>
-			<script src="js/foundation/js/foundation/foundation.js" rel="text/javascript"></script>
-			<script src="js/foundation/js/foundation/foundation.topbar.js" rel="text/javascript"></script>
-      <script>
-				$(document).foundation();
-			</script>
-      <!--[if lt IE 9]>
-      	<script src="js/contrib/respond.min.js"></script>
-      <![endif]-->
-      <!-- #BeginEditable "custom-footer-js" -->
-		  <script src="js/expand.js"></script>
-      <script src="js/bootstrap/collapse.js"></script>
-      <script src="js/jumplinks.js"></script>
-      <!-- #EndEditable -->
-  </body>
-<!-- #EndTemplate --></html>
+										<li>Kim, S.Y., Tassone, F, Simon, T.J. and Rivera, S.M. (2014).  Altered neural activity in 
+								the ‘when’ pathway during temporal processing in fragile X premutation carriers. 
+								Behavioral Brain Research. doi:10.1016/j.bbr.2013.12.044. [Epub ahead of print]</li>
+
+										<li>Kim, S.Y., Hashimoto, R.I., Tassone, F., Simon, T.J. and Rivera S.M. (2013).  Altered 
+								neural activity of magnitude estimation processing in adults with the fragile X premutation. Journal of Psychiatric Research, 47(12) 1909‐1916. doi:10.1016/j.jpsychires.2013.08.014.</li>
+
+										<li>Schneider, A., Seritan, A., Tassone, F. Rivera, S.M., Hagerman, R. and Hessl, D. (2013).Psychiatric features in high‐functioning adult brothers with fragile X spectrum disorders.  The Primary Care Companion, 15(2); doi:10.4088/PCC.12l01492. </li>
+
+										<li>Wang, J.Y., Hessl, D., Schneider, A., Tassone, F., Hagerman, R.J and Rivera, S.M.  (2013). Fragile X‐associated tremor/ataxia syndrome: Influence of the FMR1 gene on 
+								motor fiber tracts in males with normal and premutation alleles.  JAMA Neurology, 
+								70(8), 1022‐1029. doi:10.1001/jamaneurol.2013.2934.</li>
+
+										<li>Wang, J.Y., Hagerman, R. & Rivera, S.M. (2013)  A multimodal imaging analysis of 
+								subcortical gray matter in fragile X premutation carriers. Movement Disorders, 28(9), 1278‐1284. doi:10.1002/mds.25473.</li>
+
+										<li>Owen, E.R., Baumgartner, H.A., and Rivera, S.M. (2013). Using infrared eye‐tracking to explore ordinal numerical processing in toddlers with fragile X syndrome. Journal of Neurodevelopmental Disorders, 5(1) doi:10.1186/1866‐1955‐5‐1.</li>
+
+										<li>Leigh, M.J., Nguyen, D.V., Mu, Y., Winarni, T.I., Schneider, A., Chechi, T., Polussa, J., Doucet, P., Tassone, F., Rivera, S.M., Hessl, D., Hagerman, R.J. (2013). A randomized 
+								double‐blind, placebo‐controlled trial of minocycline in children and adolescents 
+								with fragile X syndrome. Journal of Developmental and Behavioral Pediatrics, 34(3), 147‐155. doi:10.1097/DBP.0b013e318287cd17.</li>
+
+							</ul>
+						</section>
+					
+			  </div>
+			  <!-- /.content-main -->
+      
+
+	
+			  <!-- #EndEditable -->
+				
+				<!-- Sidebar right -->
+				<div class="sidebar sidebar-right col-xs-12 col-sm-12 col-md-4 col-lg-4">
+										
+			    <div class="portlet bio-card">
+			    	<h3 class="hidden-md hidden-lg">Contact</h3>
+						<div class="portlet-content">
+			      	<div class="vcard">
+								<img class="photo" src="images/temp/Susan-M-Rivera.jpg" width="255" height="255" alt="Susan M. Rivera Portrait" />
+								<h4 class="fn">Susan M. Rivera</h4>
+								<div class="title org">
+									<p class="category title">Professor of Psychology</p>
+									<p class="org">Center for Mind and Brain</p>
+									<p class="org">Member of UC Davis M.I.N.D. Institute</p>
+								</div>
+								
+								<ul class="portlet-items clearfix">
+									<li><span class="email"><a href="mailto:srivera@ucdavis.edu"><span class="item-label">EMAIL</span></a></span></li>
+									<li><span class="cv"><a href="cv.pdf"><span class="item-label">CV</span></a></span></li>
+									<li><span class="vcard-file file"><a href="cv.vcf"><span class="item-label">vCARD</span></a></span></li>
+								</ul>
+								
+							</div><!-- /.vcard -->
+			      </div>
+			    </div>
+			    <!-- /.portlet -->
+				
+			    <div class="portlet">
+			    	<h3>Offices &amp; Labs</h3>
+						<div class="portlet-content">
+							
+			      	<div class="vcard office">
+								<h4 class="org"><a class="url" href="http://psychology.ucdavis.edu/">UC Davis Department of Psychology</a></h4>
+								<div class="adr">
+									<span class="street-address">174K Young Hall <br />
+									One Shields Avenue</span><br />
+									<span class="locality">Davis</span>, <abbr class="region" title="California">CA</abbr> <span class="postal-code">95616</span>
+								</div>
+								<div class="tel">(530) 754-9447</div>
+								<div class="office-hours">
+									<div class="day-time-row">M - W 10:00 - 11:00AM</div>
+									<div class="day-time-row">Th 4:00 - 5:00PM</div>
+									<div class="office-hours-note">And by appointment.</div>
+								</div>
+							</div><!-- /.vcard -->
+
+			      	<div class="vcard office">
+								<h4 class="org"><a class="url" href="http://mindbrain.ucdavis.edu/" target="_blank">Center for Mind and Brain Neurocognitive Development Lab</a></h4>
+								<div class="adr">
+									<span class="street-address">202 Cousteau Pl., Suite 250 <br />
+									Room 245</span><br />
+									<span class="locality">Davis</span>, <abbr class="region" title="California">CA</abbr> <span class="postal-code">95618</span>
+								</div>
+								<div class="tel">(530) 747-3802</div>
+								<div class="office-hours">
+									<div class="day-time-row">T &amp; W 14:00 - 15:00PM</div>
+									<div class="day-time-row">Th 4:00 - 5:00PM</div>
+									<div class="office-hours-note">And by appointment.</div>
+								</div>
+							</div><!-- /.vcard -->
+							
+			      </div>
+			    </div>
+			    <!-- /.portlet -->
+				
+			    <div class="portlet">
+			    	<h3>Other Affiliations</h3>
+						<div class="portlet-content">
+							<ul class="portlet-items with-bullets">
+								<li><a href="#" target="_blank">Additional affiliation 1</a></li>
+								<li><a href="#" target="_blank">Additional affiliation 2</a></li>
+								<li><a href="#" target="_blank">Additional affiliation 3</a></li>
+								<li><a href="#" target="_blank">Additional affiliation 4</a></li>
+								<li><a href="#" target="_blank">Additional affiliation 5</a></li>
+								<li><a href="#" target="_blank">Additional affiliation 6</a></li>
+							</ul>
+			      </div>
+			    </div>
+			    <!-- /.portlet -->
+				
+			    <div class="portlet">
+			    	<h3>Related Links</h3>
+						<div class="portlet-content">
+							<ul class="portlet-items with-bullets">
+								<li><a href="#" target="_blank">Personal Website</a></li>
+								<li><a href="#" target="_blank">Google Scholar</a></li>
+								<li><a href="#" target="_blank">Blog</a></li>
+								<li><a href="#" target="_blank">Facebook</a></li>
+								<li><a href="#" target="_blank">Google+</a></li>
+								<li><a href="#" target="_blank">LinkedIn</a></li>
+							</ul>
+			      </div>
+			    </div>
+			    <!-- /.portlet -->
+					
+			    <div class="portlet">
+			    	<h3>Events</h3>
+						<div class="portlet-content">
+							<ul class="portlet-items">
+								<li class="event-item"><span class="event-date">09/24/14</span><span class="event-title"><a href="#">Susan Rivera Lorem Lorem dolar ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod</a></li>
+							 <li class="event-item"><span class="event-date">10/24/14</span><span class="event-title"><a href="#">Susan Rivera Lorem Lorem dolar ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod</a></li>
+							</ul>
+			      </div>
+			    </div>
+			    <!-- /.portlet -->
+
+
+			    <div class="portlet">
+			    	<h3>News</h3>
+						<div class="portlet-content">
+							<ul class="portlet-items">
+								<li class="news-item"><span class="news-title"><a href="#">Susan Rivera Lorem Lorem dolar ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod</a></li>
+							 <li class="news-item"><span class="event-title"><a href="#">Susan Rivera Lorem Lorem dolar ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod</a></li>
+							</ul>
+			      </div>
+			    </div>
+			    <!-- /.portlet -->
+
+		
+				</div><!-- /.sidebar-right -->
+			</div><!-- /#content-row -->
+	
+
+			<div id="footer" class="row">
+				<div class="foot-wrap">
+					<ul id="foot-social">
+						<li class="first"><a id="facebook-icon" href="#"><span class="btn-txt">Facebook</span></a></li>
+						<li><a id="twitter-icon" href="#"><span class="btn-txt">Twitter</span></a></li>
+						<li><a id="pinterest-icon" href="#"><span class="btn-txt">Pinterest</span></a></li>
+						<li><a id="youtube-icon" href="#"><span class="btn-txt">YouTube</span></a></li>
+						<li class="last"><a id="linkedin-icon" href="#"><span class="btn-txt">LinkedIn</span></a></li>
+					</ul>
+					<div id="vcard">
+						<p>
+							<span class="org">Department of Psychology <br />
+							University of California, Davis</span><br />
+							<span class="street-address">135 Young Hall <br />
+							One Shields Avenue</span><br />
+							<span class="locality">Davis</span>, <abbr class="region" title="California">CA</abbr> <span class="postal-code">95616</span>
+						</p>
+						<p id="email-phone">
+							<span class="email"><a href="mailto:">Email</a></span> | <span class="tel">(530) 752-1880</span>
+						</p>
+					</div>
+					<ul class="footer-nav hidden-xs" id="foot-left">
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">Students</a></li>
+						<li><a href="#">Research</a></li>
+						<li><a href="#">Our People</a></li>
+						<li><a href="#">Facilities & Services</a></li>
+					</ul>
+					<ul class="footer-nav hidden-xs" id="foot-center">
+						<li><a href="#">Latest News</a></li>
+						<li><a href="#">Events</a></li>
+						<li><a href="#">Give</a></li>
+					</ul>
+					<ul class="footer-nav" id="foot-right">
+						<li><a href="#">Admissions</a></li>
+						<li><a href="#">Advising</a></li>
+						<li><a href="#">Student Clubs</a></li>
+						<li><a href="#">Login</a></li>
+					</ul>
+		
+					<p id="copyright">
+						Copyright &copy; 2014 &nbsp;All Rights Reserved
+					</p>
+				</div>
+		  </div><!-- /#footer -->
+	  </div><!-- /container -->
+	
+		<!-- Bootstrap core JavaScript
+	      ================================================== -->
+	  <!-- Placed at the end of the document so the pages load faster -->
+	  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	  <script type="text/javascript" src="js/contrib/jquery.min.js"></script>
+	  <script type="text/javascript" src="js/bootstrap/dropdown.js"></script>
+	  <script type="text/javascript" src="js/bootstrap/collapse.js"></script>
+	  <script type="text/javascript" src="js/bootstrap/transition.js"></script>
+		<script type="text/javascript" src="js/foundation/js/foundation/foundation.js"></script>
+		<script type="text/javascript" src="js/foundation/js/foundation/foundation.topbar.js"></script>
+	  <!--[if lt IE 9]>
+	      	<script src="js/contrib/respond.min.js"></script>
+	  <![endif]-->
+		<!-- #BeginEditable "custom-footer-js" -->
+	
+		<script type="text/javascript" src="bower_components/Wallpaper/jquery.fs.wallpaper.js"></script>
+		
+	  <script>
+			$(".wall").wallpaper({ 
+				source: "images/banners/rec_blue_shadow.gif"
+			});
+		</script>
+	
+		<script type="text/javascript" src="js/jquery.cf.main.js"></script>
+  	<script type="text/javascript" src="js/jumplinks.js"></script>
+  	<!-- #EndEditable -->
+	</body>
+<!-- #EndTemplate -->
+</html>
