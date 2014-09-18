@@ -3,7 +3,7 @@
 @import "ucd-variables";
 @import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
 
-/* Our People */
+/* ourpeople.scss */
 
 /* Colors */
 $cardbg_blue: $ucd_blue_10;
@@ -11,9 +11,19 @@ $empty_blue: $ucd_blue_20;
 $cardbg_gray: #e5e5e5;
 $ucdtxt_blue: #4D688C; // based on?
 
+// Temp hide left and middle happy boxes
+#container-1, #container-2 {
+	visibility: hidden;
+}
 
-
-/*------OUR PEOPLE---*/
+#content-main {
+	a {
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
 .genericTile {
 	padding-left:0;
 	border: 3px solid white;
@@ -29,7 +39,7 @@ $ucdtxt_blue: #4D688C; // based on?
 	}
 }
 .facultyStaffDirectory{
-	padding-right:0;
+	padding: 15px 0 15px 20px;
 }
 .op-sidebar-title {
 	text-align:left;
@@ -41,50 +51,31 @@ $ucdtxt_blue: #4D688C; // based on?
 	}
 }
 .sidebar{
-	background:none;
-	margin-top:20px;
-	color:$ucdtxt_blue;
-	.collapsible{
-		background:none;
-	}
+	margin-top: 20px;
+	color: $ucdtxt_blue;
 }
-#devel-psy{
-	float:right;
-	p{
-		margin:0;
-	}
-}
-#c5{
-	text-align:left;
-}
-#c5-all{
-	text-align:left;
-	border:none;
-	color:#000;
-	text-transform:uppercase;
-	letter-spacing:1px;
-	margin-top:10px;
-	//margin-left:3px;
-	margin-bottom:3px;
-}
-.checkForm{
-	h4{
-		text-align:center;
-	}
-}
+
 .caption{
 	position:relative;
 	margin-top:10px;
 	left:10px;
-	.personName{
-		padding-bottom:5px;
+	.personName {
+		a {
+			@include font_size(13px);
+			font-weight: bold;
+		}
+		padding-bottom: 5px;
 	}
 	a{
 		color:$ucdtxt_blue;
 	}
 	p{
-		@include font_size(12px);
+		@include font_size(13px);
 		margin:0px;
+	}
+	.job{
+		@include font_size(11px, !important);
+		font-style:italic;
 	}
 }
 #dropdown-icon{
@@ -96,28 +87,7 @@ $ucdtxt_blue: #4D688C; // based on?
 	padding-left:30px;
 
 }
-.faceted_letter{
-	border-right: 1px solid black;
-	padding-right:6px;
-	padding-left:2px;
-}
-.checkForm{
-	text-align:left;
-	@include font_size(12px);
-	label{
-		font-weight:normal;
-	}
-	h4{
-		text-align:left;
-		color:#000;
-		@include font_size(12px);
-		text-transform:uppercase;
-		
-	}
-	#help{
-		color:#000;
-	}
-}
+
 .table-header{
 	margin-bottom:10px;
 	background:$rec_blue;
@@ -126,24 +96,26 @@ $ucdtxt_blue: #4D688C; // based on?
 	padding-left:10px;
 	height:35px;
 }
-.job{
-	font-style:italic;
-}
-// Hmm, do we need min-width ... it should be implied with a max-width
-@media screen and (min-width: 0px) and (max-width: $screen-sm-min) {
+
+
+@media screen and (max-width: $screen-xs-max) { // width < 767
 	.sidebar{
-		background:$cardbg_gray;
+		//background:  $cardbg_gray;
 	}
 	.collapsible{
-		background:$cardbg_gray;
+		background: $cardbg_gray;
 	}
 	.facultyStaffDirectory{
-		padding:20px 20px;
+		padding: 20px 20px;
 	
 	}
 	.panel-body{
-		padding:10px 0 !important;
+		padding: 10px 0 !important;
 	}
 }
-
-/*------END PEOPLE------*/
+@media screen and (min-width: $screen-sm-min) { // width > 768
+	.sidebar {
+		margin-top: 65px;
+	}
+}
+/* /ourpeople.scss */

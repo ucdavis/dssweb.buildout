@@ -1,6 +1,13 @@
 @charset "utf-8";
-@media screen and (min-width: 768px) {	// width > 768
+/* jquery.cf.happybox.scss */
+@import "variables"; // for BASE font size and mixin font_size()
+@import "ucd-variables";
+@import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
+
+@media screen and (min-width: $screen-sm-min) {	// width > 768
 	.cf-happybox-processed {
 		overflow: hidden;
 	}
 }
+
+/* /jquery.cf.happybox.scss */

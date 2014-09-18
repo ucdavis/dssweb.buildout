@@ -99,6 +99,7 @@
 .top-bar{
 	background:$ucd_blue_100;
 	
+	
 	// WARNING: Setting top-bar height is problem for the foundation top-bar function across responsive breakpoints ... be careful
 	// height: 80px; // WARNING: THIS BLOWS HIDING THE SUB MENU
 	// padding-bottom: 35px; // without box-sizing
@@ -152,7 +153,7 @@
 					width: 17%; // was 28% with .right. 
 				}
 				// Menu hover medium blue
-				&:hover{
+				&:hover {
 					background:$ucd_blue_70 !important;
 				}
 				
@@ -224,6 +225,10 @@
 			}
 		}
 	}
+}
+
+.top-bar .top-bar-section .left > li.active-trail > a {
+	background-color:$ucd_blue_70 !important;
 }
 
 /*----- Mobile breakpoint -------*/

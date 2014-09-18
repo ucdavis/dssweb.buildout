@@ -6,6 +6,7 @@
 	var currentMQ = "unknown"; // set the default screen size
 	var front = false;
 	var front_banner_height = 520;
+	var shadow_am_viewport_height = 372;
 	var vcardiced = false;
 	var processed = false;
 	
@@ -16,6 +17,11 @@
 			if(typeof window.console !== "undefined") {
 				window.console.log("JQuery version:  " + $.fn.jquery);
 			}
+		}
+		
+		// Menu active trail
+		if(typeof active_trail !== 'undefined') {
+			$(active_trail).addClass("active-trail");
 		}
 		
 		// Misc. Fixes
@@ -296,6 +302,7 @@
 
 		// Activate home page happy boxes
 		if ((activeMQ === 'L') || (activeMQ === 'M')) {
+			
 			if($('body.home #top-panel-row').length !== 0) {
 				$('body.home #top-panel-row').happybox(
 					{
@@ -308,6 +315,19 @@
 				);
 				front = true;
 			}
+			
+			if($('body.ourpeople #top-panel-row').length !== 0) {
+				$('body.ourpeople #top-panel-row').happybox(
+					{
+						'type': '.panel', // element type to make happy
+						'action_element_class': '.action-element',
+						'canvas_element_class': '.narrow-col',
+						'button_class': ".btn-primary",
+						'height': shadow_am_viewport_height // total height of the happy viewport
+					}
+				);
+			}
+			
 		}
 		
     if (debug) {
@@ -358,6 +378,12 @@
 				
 				$("#content-main div").children().removeClass("panel-collapse collapse active");
 				$("#content-main .panel-heading").hide(); // TODO: Home page needs this
+				
+				if ($("body.ourpeople").length !== 0) {
+					// TODO: Testing ourpeople happybox
+					$("#content-row div").children().removeClass("panel-collapse collapse active");
+					$("#content-row .panel-heading").hide(); 
+				}
 				
 				$(".panel-group .collapsible").addClass("in"); // New: Open panels 
 				

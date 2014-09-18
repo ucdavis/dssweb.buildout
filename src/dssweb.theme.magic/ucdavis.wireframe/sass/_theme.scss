@@ -1,44 +1,11 @@
 /* _theme.scss */
 
-/* 2014-06-12 RAK: This file contains theme CSS and mediaquery for responsive (at end of file). 
-  TODO: 
-    - Move to SASS
-     
-*/ 
-
-/* formerly global.scss */
 // See JS for Windows Phone 8 / IE 10 viewport issues
 @-webkit-viewport{width:device-width}
 @-moz-viewport{width:device-width}
 @-ms-viewport{width:device-width}
 @-o-viewport{width:device-width}
 @viewport{width:device-width}
-
-/* 
-html, body {
-  @include standard_font;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.313em;
-}
-
-strong {
-  font-weight: bold !important;
-}
-
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 400;
-  line-height: 1.313em;
-}
-h1 {
-  margin: 0;
-}
-h3, h2 {
- letter-spacing: 0;
- line-height: 1.1em;
-}
-/formerly global.scss */
-
 
 body:after{ 
 	content:"XS"; 
@@ -100,7 +67,7 @@ head{
 }
 .sidebar-left{
 	.panel{
-		background: #e5e5e5;
+		//background: #e5e5e5;
 	}
 }
 .sidebar-right{
@@ -337,6 +304,7 @@ input{
 	}
 }
 
+
 .sidebar{
 	height:auto;
 	//width:250px; // !important; 
@@ -345,9 +313,6 @@ input{
 	
 	> div {
 		margin-left: 70px;
-		.panel-body {
-			background: #f2f2f2; // TODO: Where's this color from?
-		}
 	}
 	h3{
 		height:30px;
@@ -374,18 +339,16 @@ input{
 			}
 		}
 	}
-	.collapsible{
-		background:#f2f2f2; // TODO: Where's this color from?
-	}
-
-	&.sidebar-right{
-		margin-top: 135px;
-		//margin-left: 160px; // TODO: moving sidebar to right should be done another way. float:right not solution
-		// TODO: these styles are not necessary or have no affect
-		//position:relative;
-		//top:140px;
-		//float:right;
-		// margin-right:90px; // TODO: Why ?
+	// Bio sidebar etc.
+	&.sidebar-right {
+		> div {
+			.panel-body {
+				background: #f2f2f2; // TODO: Where's this color from?
+			}
+		}
+		.collapsible{
+			background:#f2f2f2; // TODO: Where's this color from?
+		}
 	}
 }
 
@@ -517,6 +480,12 @@ input{
 			//margin-left: 15px;
 		}
 	}
+	body.has-shadow-am {
+		.facultyStaffDirectory {
+			margin-top: 60px !important;
+			margin-bottom: 30px;
+		}
+	}
   .masthead,
   .marketing,
   #footer {
@@ -630,9 +599,7 @@ input{
 		padding:0 !important;
 		height:100% !important;		
 	}
-	.facultyStaffDirectory{
-		padding:15px 20px;
-	}
+
 	.panel{
 		border:none;
 	}

@@ -13,6 +13,44 @@ body, div, p, li {
     font-style: normal;
 }
 
+.uc {
+	text-transform: uppercase;
+	letter-spacing: 0.1em !important;
+}
+
+// Bio
+body.bio {
+	#summary {
+		#jumplinks {
+			width: 30% !important;
+			ul {
+				margin-right: 35px;
+				li {
+					@include font_size(13px);
+					@include line_height(22px);
+					padding-left: 0 !important;
+					background-image: none !important;
+					text-align: right;
+				}
+			}
+		}
+		#education {
+			width: 70% !important;
+			ul {
+				margin-top: 10px;
+				li {
+					@include font_size(15px);
+					@include line_height(18px);
+					margin-bottom: 5px;
+					padding-left: 0 !important;
+					background-image: none !important;
+				}
+			}
+		}
+	}
+	
+}
+
 #content-main {
 	p, li, ol, div, span {
 		@include line_height(24px,!important);

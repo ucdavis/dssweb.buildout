@@ -26,8 +26,13 @@
 	top: 0;
 	width: 100%;
 	height: 500px !important;
+	// Example Bio page
 	&.shadow-graphic {
 		height: 176px !important;
+	}
+	// Example Our People page
+	&.shadow-am-graphic {
+		height: 594px !important;
 	}
 }
 
@@ -61,7 +66,7 @@
 }
 
 /*----- Tablet breakpoint -------*/
-@media screen and (min-width: $screen-sm-min) and (max-width: $screen-md-min) { // 1200px max-width, was 992px
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-md-min) { // 768 < width < 992px
 	.siders {
 		.wall {
 			&.shadow-graphic {
