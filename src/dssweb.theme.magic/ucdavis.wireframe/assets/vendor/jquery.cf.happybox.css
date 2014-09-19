@@ -5,10 +5,25 @@
 
 */
 /* 2013-05-12 RAK: Bootstrap overrides moved from default gem installation that placed overrides directly in the _variables.scss file */
+/* UCD Palette */
+/* Custom colors */
 /* _typography.scss */
 body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.3125em; }
 
+a { color: #4d688c; }
+
+em { font-style: italic; }
+
 @font-face { font-family: 'lucida sans bold'; src: url("fonts/lucida/LucidaSansBold.ttf"); font-weight: normal; font-style: normal; }
+.uc { text-transform: uppercase; letter-spacing: 0.1em !important; }
+
+body.bio #summary #jumplinks { width: 30% !important; }
+body.bio #summary #jumplinks ul { margin-right: 35px; }
+body.bio #summary #jumplinks ul li { font-size: 13px; font-size: 0.8125rem; line-height: 22px; line-height: 1.375rem; padding-left: 0 !important; background-image: none !important; text-align: right; }
+body.bio #summary #education { width: 70% !important; }
+body.bio #summary #education ul { margin-top: 10px; }
+body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line-height: 18px; line-height: 1.125rem; margin-bottom: 5px; padding-left: 0 !important; background-image: none !important; }
+
 #content-main p, #content-main li, #content-main ol, #content-main div, #content-main span { line-height: 24px !important; line-height: 1.5rem !important; }
 #content-main p { font-size: 15px; font-size: 0.9375rem; line-height: 18px; line-height: 1.125rem; }
 #content-main p.intro { font-size: 18px; font-size: 1.125rem; line-height: 30px !important; line-height: 1.875rem !important; }
@@ -35,5 +50,9 @@ body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode",
   .top-panel #content-main .narrow-col h3, .top-panel #content-main .narrow-col p { text-align: left !important; }
   .top-panel.left-panel h2, .top-panel.left-panel h2, .top-panel.left-panel h2 { text-align: center !important; } }
 /* /_typography.scss */
+/* UCD Palette */
+/* Custom colors */
 @media screen and (min-width: 768px) { .cf-happybox-processed { overflow: hidden; } }
+.top-panel .action-element .narrow-col { background: rgba(0, 40, 85, 0.8); }
+
 /* /jquery.cf.happybox.scss */
