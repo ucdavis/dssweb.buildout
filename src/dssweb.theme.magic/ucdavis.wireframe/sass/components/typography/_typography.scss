@@ -6,6 +6,11 @@ body, div, p, li {
 	@include standard_font;
 }
 
+a { color: $rec_blue;}
+em {
+	font-style: italic;
+}
+
 @font-face{
 		font-family: 'lucida sans bold';
     src: url('fonts/lucida/LucidaSansBold.ttf');

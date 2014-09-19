@@ -53,7 +53,7 @@ body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line
 .genericTile { padding-left: 0; border: 3px solid white; background-color: #e5e9ef; }
 .genericTile .personEntryWrapper { top: -10px; left: 0; background: #ccd4e0; width: 90px; position: relative; height: 90px !important; float: left; }
 
-.facultyStaffDirectory { padding: 15px 0 15px 20px; }
+#am-content { padding: 15px 0 15px 20px; }
 
 .op-sidebar-title { text-align: left; text-transform: uppercase; }
 .op-sidebar-title span { font-size: 16px; font-size: 1rem; color: #000; }
@@ -74,7 +74,7 @@ body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line
 .table-header { margin-bottom: 10px; background: #008EAA; color: #fff; padding-top: 7px; padding-left: 10px; height: 35px; }
 
 @media screen and (max-width: 767px) { .collapsible { background: #e5e5e5; }
-  .facultyStaffDirectory { padding: 20px 20px; }
+  #am-content { padding: 20px 20px; }
   .panel-body { padding: 10px 0 !important; } }
 @media screen and (min-width: 768px) { .sidebar { margin-top: 65px; } }
 /* /ourpeople.scss */

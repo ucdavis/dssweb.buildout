@@ -383,7 +383,7 @@
 				$("#content-main div").children().removeClass("panel-collapse collapse active");
 				$("#content-main .panel-heading").hide(); // TODO: Home page needs this
 				
-				if ($("body.ourpeople").length !== 0) {
+				if ($("body.happy-box").length !== 0) {
 					// TODO: Testing ourpeople happybox
 					$("#content-row div").children().removeClass("panel-collapse collapse active");
 					$("#content-row .panel-heading").hide(); 
