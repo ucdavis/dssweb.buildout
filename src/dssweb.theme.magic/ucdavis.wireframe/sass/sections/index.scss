@@ -39,8 +39,18 @@
 	}
 	/* Custom Styles for this breakpoint */
 	}
-}
 
+}
+@media screen and (max-width: $screen-sm-min) {
+	.tab{
+		padding:0 !important;
+	}
+	.panel-title{
+		background: rgba(0, 40, 85, 0.8);
+		
+	
+	}
+}
 @media screen and (min-width: $screen-sm-min) {
 	
 	/* Style adjustments for the partial-cover home wall component */

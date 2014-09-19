@@ -112,6 +112,50 @@
 					++i;
 	      });
 			}		
+			if($('#cm-section section').length !== 0){
+				var i = 100;
+				var contentClassName = '.inline-content';
+				
+				$('#cm-section').wrapInner('<div id="accordion-cm" class="panel-group"></div>');
+				
+	      $('#cm-section section').each(function () {
+				
+					var mobile = ((mq === "XS") || (mq === "S")) ? true : false;
+					var el = $(this);
+					//var id = ('accordion'+i);
+					var aid = ('acont'+i);
+					var pid = ('panel'+i);
+					
+					//el.addClass('panel-group');
+					//el.attr('id',('accordion'+i));
+					//el.wrapInner('<div id="'+pid+'" class="panel panel-default" />');
+				
+					el.addClass('panel panel-default');
+					el.attr('id',pid);
+										
+					var titleEl = el.find('h2');
+					// TODO: Handle cases where h3 heading not available
+					titleEl.wrap('<div class="panel-heading" />');
+					titleEl.addClass("panel-title");
+					titleEl.wrapInner('<a data-parent="#accordion-cm" data-target="#'+aid+'" data-toggle="collapse"></div>');
+				
+					var bodyEl = el.find(contentClassName);
+					bodyEl.addClass('panel-body');
+					//if(mobile) {
+						// Mobile (closed)
+						bodyEl.wrap('<div class="collapsible panel-collapse collapse" id="'+aid+'"></div>');
+						//} else {
+						// Desktop / tablet (open)
+						//bodyEl.wrap('<div class="collapsible panel-collapse collapse in" id="'+aid+'"></div>');
+						//}
+					
+					if(typeof window.console !== "undefined") {
+            window.console.log("ActiveMQ: " + activeMQ + ", Mobile: "+ mobile);
+					}
+					++i;
+	      });
+			
+			}
 			processed = true;
 		};
 		

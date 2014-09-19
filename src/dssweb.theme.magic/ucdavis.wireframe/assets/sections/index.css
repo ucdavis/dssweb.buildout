@@ -59,6 +59,8 @@ body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line
 
 @media screen and (max-width: 440px) { .content-main { /* Custom Styles for this breakpoint */ }
   .content-main h2 { text-align: center; } }
+@media screen and (max-width: 768px) { .tab { padding: 0 !important; }
+  .panel-title { background: rgba(0, 40, 85, 0.8); } }
 @media screen and (min-width: 768px) { /* Style adjustments for the partial-cover home wall component */
   .wall { height: 741px !important; }
   #middle-row h2 { font-size: 36px !important; font-size: 2.25rem !important; line-height: 25px; line-height: 1.5625rem; margin-top: 35px; margin-bottom: 25px; text-align: center; }
