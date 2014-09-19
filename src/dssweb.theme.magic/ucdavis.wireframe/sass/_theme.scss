@@ -580,6 +580,52 @@ input{
 	}
 }
 
+.sticky{
+	position: fixed;
+	
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height:70px;
+	background:#e1e1e1 !important;
+	width:100%;
+	.util-nav{
+		height:100%;
+		
+		ul.util{
+			display:block;
+			margin-left:auto;
+			margin-right:auto;
+			height:100%;
+			li{
+				float:left;
+				width:25%;
+				height:100%;
+				border-right:1px solid black;
+				padding-top:15px;
+				.util-bttn{
+					height:100%;
+					a{							
+						color: #000;	
+						text-decoration:none;
+						img{
+							display:block;
+							margin-left:auto;
+							margin-right:auto;
+						}
+					}
+					p{
+						margin-top:3px;
+						text-align:center;
+						
+					}
+					
+				}
+			}
+		}
+	}
+}
+
 /*----- Mobile breakpoint -------*/
 @media screen and (max-width: $screen-sm-max) { // width < 991px
 	head { font-family:"S";}
