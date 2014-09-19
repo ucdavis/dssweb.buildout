@@ -2,9 +2,9 @@
 // Conversion: 16px = 1.0 em
 $BASE: 16px;
 
-// Banner port heights
-$front_banner_height: 520px;
-$shadow_am_viewport_height: 372px;
+// Banner port heights. Note: Sync with values in jquery.cf.main.js
+$front_banner_height: 565px;
+$shadow_am_viewport_height: 418px;
 
 // Import the mixins and placeholders
 @import "abstractions/mixins";

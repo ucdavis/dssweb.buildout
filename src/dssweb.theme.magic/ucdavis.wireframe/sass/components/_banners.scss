@@ -20,21 +20,35 @@
 	
 }
 // Fix wallpaper placement
-.wall {
-	//position: absolute; // don't need if jumbotron is absolute
-	//z-index: -100; // arrange wallpaper to back position
+
+	.wall {
+		//position: absolute; // don't need if jumbotron is absolute
+		//z-index: -100; // arrange wallpaper to back position
+		top: 0;
+		width: 100%;
+		height: 500px !important;
+		// Example Bio page
+		&.shadow-graphic {
+			height: 176px !important;
+		}
+		// Example Our People page
+		&.shadow-am-graphic {
+			height: 594px !important;
+		}
+	
+	}
+
+
+#banner-caption {
+	position: absolute;
 	top: 0;
-	width: 100%;
-	height: 500px !important;
-	// Example Bio page
-	&.shadow-graphic {
-		height: 176px !important;
-	}
-	// Example Our People page
-	&.shadow-am-graphic {
-		height: 594px !important;
-	}
+	right: 50px;
+	@include font_size(12px);
+	text-transform: uppercase;
+	text-align: right;
+	padding: 10px 15px 0 0;
 }
+
 
 @media screen and (max-width: $screen-md-min) {
 	#util-bar-wrap { 

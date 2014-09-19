@@ -1,8 +1,7 @@
 // Colors from http://identitystandards.ucdavis.edu/graphic-standards/colors.html
 
-$heading_navy_color: #003366;
-$blue_link_color: #0062A0;
 
+/* UCD Palette */
 $ucd_black_80: #333333;
 
 $ucd_blue_100: #002855;
@@ -22,3 +21,13 @@ $ucd_green_60: #66928b;
 $ucd_bright_gold: #DAAA00;
 
 $rec_blue: #008EAA;
+
+
+/* Custom colors */
+$heading_navy_color: #003366;
+$blue_link_color: #0062A0;
+
+$box_header_blue: $ucd_blue_10;
+$box_light_gray: #f2f2f2;
+
+$sticky_nav_color: #e1e1e1;

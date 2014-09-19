@@ -5,8 +5,9 @@
 	var activeMQ;  // Stores the screen size
 	var currentMQ = "unknown"; // set the default screen size
 	var front = false;
-	var front_banner_height = 520;
-	var shadow_am_viewport_height = 372;
+	// Banner port heights. Note: Sync with values in sass/_variables.scss
+	var front_banner_height = 565;
+	var shadow_am_viewport_height = 418;
 	var vcardiced = false;
 	var processed = false;
 	
@@ -303,6 +304,7 @@
 		// Activate home page happy boxes
 		if ((activeMQ === 'L') || (activeMQ === 'M')) {
 			
+			
 			if($('body.has-front-am.happy-box #top-panel-row').length !== 0) {
 				$('#top-panel-row').happybox(
 					{
@@ -316,6 +318,7 @@
 				front = true;
 			}
 			
+			// Applies to multiple pages using T2 (tile) or T8 (landing) templates
 			if($('body.has-shadow-am.happy-box #top-panel-row').length !== 0) {
 				$('#top-panel-row').happybox(
 					{
@@ -323,14 +326,15 @@
 						'action_element_class': '.action-element',
 						'canvas_element_class': '.narrow-col',
 						'button_class': ".btn-primary",
-						'height': shadow_am_viewport_height // total height of the happy viewport
+						'height': shadow_am_viewport_height, // total height of the happy viewport
+						'frozen': true
 					}
 				);
 			}
 			
 			// Adjust content for banner viewport height if no happy-box top-panel-row is present
 			if(($('body.has-shadow-am').length !== 0) && ($('#top-panel-row').length === 0) && ($('#content-row').length !== 0)) {
-				$('#content-row').css('margin-top', shadow_am_viewport_height + 45);
+				//$('#content-row').css('margin-top', shadow_am_viewport_height + 45);
 			}
 		}
 		

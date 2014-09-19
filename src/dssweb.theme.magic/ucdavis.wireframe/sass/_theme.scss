@@ -265,10 +265,12 @@ input{
 	}
 	.panel-body {
 		h2 {
-			@include font_size(24px, !important);
-			font-weight:normal;
-			padding-top:15px;
-			padding-bottom:15px;
+			text-transform: uppercase;
+		}
+	}
+	#bottom-panel-row {
+		h2 {
+			text-transform: none;
 		}
 	}
 	h2{
@@ -343,11 +345,11 @@ input{
 	&.sidebar-right {
 		> div {
 			.panel-body {
-				background: #f2f2f2; // TODO: Where's this color from?
+				background: $box_light_gray;
 			}
 		}
 		.collapsible{
-			background:#f2f2f2; // TODO: Where's this color from?
+			background: $box_light_gray;
 		}
 	}
 }
@@ -469,12 +471,19 @@ input{
 	width:100px;
 }
 
+#middle-row {
+	position: relative;
+}
+
 @media screen and (min-width: $screen-sm-min) { // width > 768
 	
 	// pull content left on larger screens so flush left with top-bar
+	#content-row {
+		margin-top: 45px;
+	}
 	#content-main {
 		padding-left: 0 !important;
-		margin-top: 45px;
+		//margin-top: 45px;
 		margin-bottom: 30px;
 		h1, .breadcrumb {
 			//margin-left: 15px;
@@ -484,10 +493,10 @@ input{
 		/*#content-row { // Give banner graphic room
 			margin-top: 594px;
 		}*/
-		.am-content {
+		/*.am-content {
 			margin-top: 60px !important;
 			margin-bottom: 30px;
-		}
+		}*/
 	}
   .masthead,
   .marketing,
@@ -503,6 +512,7 @@ input{
 	.sidebar-right{
 		padding-left:0 !important; 
 		padding-right:0 !important;
+		margin-top: 145px; // ad-hoc
 	}
 }
 
@@ -550,51 +560,8 @@ input{
 			}
 		}
 	}
-}
-
-.sticky{
-	position: fixed;
-	
-	bottom: 0px;
-	left: 0px;
-	width: 100%;
-	height:70px;
-	background:#e1e1e1 !important;
-	width:100%;
-	.util-nav{
-		height:100%;
-		
-		ul.util{
-			display:block;
-			margin-left:auto;
-			margin-right:auto;
-			height:100%;
-			li{
-				float:left;
-				width:25%;
-				height:100%;
-				border-right:1px solid black;
-				padding-top:15px;
-				.util-btn{
-					height:100%;
-					a{							
-						color: #000;	
-						text-decoration:none;
-						img{
-							display:block;
-							margin-left:auto;
-							margin-right:auto;
-						}
-					}
-					p{
-						margin-top:3px;
-						text-align:center;
-						
-					}
-					
-				}
-			}
-		}
+	#footer {
+		margin-bottom: 60px;
 	}
 }
 
@@ -778,7 +745,7 @@ input{
 				&.office {
 					h4 {
 						min-height: 28px;
-						background-color: #CCC;
+						background-color: $box_header_blue;
 						padding: 8px;
 						padding-left: 35px;
 						letter-spacing: 0.05em;

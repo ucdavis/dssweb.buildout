@@ -4,8 +4,14 @@
 
 */
 /* 2013-05-12 RAK: Bootstrap overrides moved from default gem installation that placed overrides directly in the _variables.scss file */
+/* UCD Palette */
+/* Custom colors */
 /* _typography.scss */
 body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.3125em; }
+
+a { color: #4d688c; }
+
+em { font-style: italic; }
 
 @font-face { font-family: 'lucida sans bold'; src: url("fonts/lucida/LucidaSansBold.ttf"); font-weight: normal; font-style: normal; }
 .uc { text-transform: uppercase; letter-spacing: 0.1em !important; }
@@ -43,6 +49,8 @@ body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line
   .top-panel #content-main .narrow-col h3, .top-panel #content-main .narrow-col p { text-align: left !important; }
   .top-panel.left-panel h2, .top-panel.left-panel h2, .top-panel.left-panel h2 { text-align: center !important; } }
 /* /_typography.scss */
+/* UCD Palette */
+/* Custom colors */
 /* ourpeople.scss */
 /* Colors */
 #container-1, #container-2 { visibility: hidden; }
@@ -53,7 +61,7 @@ body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line
 .genericTile { padding-left: 0; border: 3px solid white; background-color: #e5e9ef; }
 .genericTile .personEntryWrapper { top: -10px; left: 0; background: #ccd4e0; width: 90px; position: relative; height: 90px !important; float: left; }
 
-#am-content { padding: 15px 0 15px 20px; }
+#am-content { padding: 0 0 15px 20px; }
 
 .op-sidebar-title { text-align: left; text-transform: uppercase; }
 .op-sidebar-title span { font-size: 16px; font-size: 1rem; color: #000; }
