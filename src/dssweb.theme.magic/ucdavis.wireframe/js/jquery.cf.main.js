@@ -303,8 +303,8 @@
 		// Activate home page happy boxes
 		if ((activeMQ === 'L') || (activeMQ === 'M')) {
 			
-			if($('body.home #top-panel-row').length !== 0) {
-				$('body.home #top-panel-row').happybox(
+			if($('body.has-front-am.happy-box #top-panel-row').length !== 0) {
+				$('#top-panel-row').happybox(
 					{
 						'type': '.panel', // element type to make happy
 						'action_element_class': '.action-element',
@@ -316,8 +316,8 @@
 				front = true;
 			}
 			
-			if($('body.ourpeople #top-panel-row').length !== 0) {
-				$('body.ourpeople #top-panel-row').happybox(
+			if($('body.has-shadow-am.happy-box #top-panel-row').length !== 0) {
+				$('#top-panel-row').happybox(
 					{
 						'type': '.panel', // element type to make happy
 						'action_element_class': '.action-element',
@@ -328,6 +328,10 @@
 				);
 			}
 			
+			// Adjust content for banner viewport height if no happy-box top-panel-row is present
+			if(($('body.has-shadow-am').length !== 0) && ($('#top-panel-row').length === 0) && ($('#content-row').length !== 0)) {
+				$('#content-row').css('margin-top', shadow_am_viewport_height + 45);
+			}
 		}
 		
     if (debug) {

@@ -837,6 +837,9 @@ input { text-align: center; }
 #search { width: 100px; }
 
 @media screen and (min-width: 768px) { #content-main { padding-left: 0 !important; margin-top: 45px; margin-bottom: 30px; }
+  body.has-shadow-am { /*#content-row { // Give banner graphic room
+	margin-top: 594px;
+}*/ }
   body.has-shadow-am .facultyStaffDirectory { margin-top: 60px !important; margin-bottom: 30px; }
   .masthead, .marketing, #footer { padding-right: 0; padding-left: 0; }
   .masthead .foot-wrap #foot-left, .marketing .foot-wrap #foot-left, #footer .foot-wrap #foot-left { margin-left: 10%; }
