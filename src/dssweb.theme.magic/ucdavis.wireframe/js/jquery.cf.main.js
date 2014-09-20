@@ -429,7 +429,7 @@
 				$(".collapsible").css("height", "auto");
 				
 				$("#content-main div").children().removeClass("panel-collapse collapse active");
-				$("#content-main .panel-heading").hide(); // TODO: Home page needs this
+				//$("#content-main .panel-heading").hide(); // TODO: Home page needs this
 				
 				if ($("body.happy-box").length !== 0) {
 					// TODO: Testing ourpeople happybox

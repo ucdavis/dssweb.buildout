@@ -143,6 +143,10 @@ $screen-xs-max: 767px;
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max){
 	.hidden-sm{display:none!important}
 }
+// Todo: 
+@media screen and (min-width: 768px) and (max-width: 991px){
+	.hidden-md{display:none!important}
+}
 @media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max){
 	.hidden-md{display:none!important}
 }

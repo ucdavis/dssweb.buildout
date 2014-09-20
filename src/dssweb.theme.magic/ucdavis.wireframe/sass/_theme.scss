@@ -460,12 +460,7 @@ input{
 	display:none;
 	@include font_size(20px);
 }
-
-.collapse, .collapsing {
-	div{
-		padding:15px;
-	}
-} 
+ 
 
 #search{
 	width:100px;
@@ -536,13 +531,18 @@ input{
 		margin-bottom: 15px;
 	}
 	
+	.collapse, .collapsing {
+		div{
+			padding:15px;
+		}
+	}
 	.panel-heading {
 		margin-bottom: 5px;
 		.panel-title {
 			a {
-				background: url(../images/icons/blue-100-right-arrow-down.png) 98% 50% no-repeat;
+				background: url(../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat;
 				&.collapsed {
-					background: url(../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat;
+					background: url(../images/icons/blue-100-right-arrow-down.png) 98% 50% no-repeat;
 				}
 			}
 		}
