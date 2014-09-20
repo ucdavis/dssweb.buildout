@@ -144,7 +144,7 @@
 			// Parent level buttons
 			 > li{
 				background: $ucd_blue_100 !important;
-				width: 9.6%; // was 18% with .right. width of primary menu items
+				/* width: 9.6%; // was 18% with .right. width of primary menu items */
 				height: 80px; // was 100%
 				text-align: center;
 				
@@ -173,7 +173,7 @@
 					@include line_height(28px);
 					
 					letter-spacing: 0.025em;
-					padding:0 !important;
+					/* padding:0 !important; */
 					
 					&:hover {
 						//text-decoration: underline;
@@ -194,7 +194,7 @@
 						background:$ucd_blue_100 !important;
 						
 						a {
-							padding: 6px 0 !important;
+							/* padding: 6px 0 !important; */
 							@include line_height(24px);
 							&:after{
 								display:block !important;
@@ -280,6 +280,7 @@
 						> a {
 							margin-top: 0 !important;
 							line-height: 40px !important;
+							padding-top: 0;
 						}
 					}
 				}

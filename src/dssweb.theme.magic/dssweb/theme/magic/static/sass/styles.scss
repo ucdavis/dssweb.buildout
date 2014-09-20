@@ -28,7 +28,7 @@
 
 /* *** UNIT - sub-organization or unit styles. Place unit custom styles here **** */
 @import "sub-org";
-
+@import "plone";
 
 /* *** PARTIALS - Modular partial styles **** */
 // Note: Partials not imported here are specific to sections (e.g., index (home), about, and ourpeople)
@@ -38,5 +38,6 @@
 @import "components/navigation"; // styles for menu / navigation
 @import "components/blocks/block"; // styles for blocks and portlets
 @import "components/icons"; // icon styles in conjunction with JS processing
+
 
 /* /styles.scss */

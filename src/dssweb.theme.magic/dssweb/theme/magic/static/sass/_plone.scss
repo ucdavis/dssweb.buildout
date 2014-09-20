@@ -19,14 +19,14 @@ z-index: 2;
 	letter-spacing: 0.025em;
 	line-height: 1.80rem;
     display: inline-block;
-    padding: 1.5em 1em 1.5em 1em;
-	min-width: 2em;
+   /* padding: 1.3em 1em 1.75em 1em; */
     white-space: normal;
     /*TODO: Once we have removed the whitespace from the nav template, this can be put back*/
    border-bottom: None;
     border-right: None;
 }
 #portal-globalnav li {
+	min-width: 2em;
 }
 
 #portal-globalnav > li > a {
@@ -38,6 +38,10 @@ z-index: 2;
     background: $ucd_blue_70;
     color: White;
 } 
+#portal-globalnav .selected a:hover {
+    background: $ucd_blue_70;
+    color: white;
+}
 nav.top-bar {
 	background-color: $ucd_blue_100;
 }
@@ -48,6 +52,9 @@ nav.top-bar {
 #portal-top {
   z-index:1;
   }
+/* override of foundation */  
+.top-bar-section .has-dropdown > a {
+  padding-right: 10px !important;  }
   /*----------Dropdown Menu----------------*/
 /*---------- BASIC STYLE one level ----------*/
 #portal-globalnav {
@@ -84,10 +91,12 @@ ul.submenu {
 ul.submenu li {
   float:none;
   margin:0;
+  padding-left:0;
+  padding-right:0;
   }
 #portal-globalnav ul.submenu li a {
-  padding:0.5em 1.5em 0.5em 1em;
-  width:12em;
+  padding:0.5em 1.5em 0.5em 1em; 
+  width:13em;
   }
 ul.submenu ul {
   top:0;
@@ -97,5 +106,11 @@ ul.submenu a.state-published:hover,
 .selected ul.submenu .state-published {
     color: #fff !important;
 }
-
+/*----- About Happy Box ---------*/
+dl.portlet-static-quick-facts dt {
+	padding: 0.42em 1em;
+	background: transparent;
+	line-height: normal;
+    font-size: 120%;
+}
 }
