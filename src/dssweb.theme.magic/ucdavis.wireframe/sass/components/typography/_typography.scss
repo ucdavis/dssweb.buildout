@@ -5,7 +5,14 @@ body, div, p, li {
   color: #000;
 	@include standard_font;
 }
-
+/*
+@font-face {
+	font-family: 'lucida sans bold';
+	src: url('fonts/lucida/LucidaSansBold.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+*/
 a { color: $ucd_blue_70;}
 
 em {
@@ -25,18 +32,21 @@ em {
 	font-weight: bold;
 	}	
 }
-.sidebar-info{
-	h4{
-	font-weight: bold;
-	font-size: 16px;
+.sidebar {
+	h3 {
+		a {
+			text-transform: uppercase;
+			@include font_size(13px);
+			@include line_height(22px);
+			letter-spacing: 0.1em;
+		}
 	}
 }
-
-@font-face{
-		font-family: 'lucida sans bold';
-    src: url('fonts/lucida/LucidaSansBold.ttf');
-    font-weight: normal;
-    font-style: normal;
+.sidebar-info{
+	h4{
+		font-weight: bold;
+		@include font_size(16px);
+	}
 }
 
 .uc {
@@ -142,7 +152,7 @@ body.bio {
 		}
 	}
 }
-/*----- Tablet breakpoint --------*/
+/*----- Mobile breakpoint --------*/
 // At point that left and right margins are gone
 @media screen and (max-width: $screen-sm-min) { // width < 768
 	// Bio
@@ -153,16 +163,23 @@ body.bio {
 		.bio-card {
 			h4.fn { // full name ... replacing content-title in mobile view
 				padding-bottom: 30px;
-				@include font_size(36px);
-				@include line_height(43px);
+				@include font_size(23px);
+				@include line_height(25px);
 				letter-spacing: 0.01em;
-				margin-top: 0 !important;
+				margin-top: 4px !important;
 			}
+		}
+	}
+	.sidebar {
+		h3 {
+			@include font_size(13px);
+			@include line_height(40px);
+			letter-spacing:.1em;
 		}
 	}
 }
 
-/*----- Desktop breakpoint -------*/
+/*----- tablet breakpoint -------*/
 @media screen and (min-width: $screen-sm-min) {	// width > 768
 	.top-panel {
 		#content-main {

@@ -70,6 +70,16 @@
 		    	appendChild(msViewportStyle);
 			}
 			
+			// Fix 1px jog on Bootstrap collapse animation
+			// Note: disables collapse on iPhone
+			/*$('.collapse').on('show.bs.collapse hide.bs.collapse', function(e) {
+			    e.preventDefault();
+	    });
+	    $('[data-toggle="collapse"]').on('click', function(e) {
+	        e.preventDefault();
+	        $($(this).attr('data-target')).toggleClass('in');
+	    });*/
+			
 		};
 		
 		apply_fixes();
@@ -108,8 +118,8 @@
 					// TODO: Handle cases where h3 heading not available
 					titleEl.wrap('<div class="panel-heading" />');
 					titleEl.addClass("panel-title");
-					titleEl.wrapInner('<a data-parent="#accordion-sr" data-target="#'+aid+'" data-toggle="collapse"></div>');
-				
+					titleEl.wrapInner('<a class="collapsed" data-parent="#accordion-sr" data-target="#'+aid+'" data-toggle="collapse"></a>');
+					
 					var bodyEl = el.find(contentClassName);
 					bodyEl.addClass('panel-body');
 					//if(mobile) {
@@ -151,7 +161,7 @@
 					// TODO: Handle cases where h3 heading not available
 					titleEl.wrap('<div class="panel-heading" />');
 					titleEl.addClass("panel-title");
-					titleEl.wrapInner('<a data-parent="#accordion-cm" data-target="#'+aid+'" data-toggle="collapse"></div>');
+					titleEl.wrapInner('<a class="collapsed" data-parent="#accordion-cm" data-target="#'+aid+'" data-toggle="collapse"></a>');
 				
 					var bodyEl = el.find(contentClassName);
 					bodyEl.addClass('panel-body');
@@ -283,7 +293,8 @@
 		var bendbio = function () {
 			if((activeMQ !== 'L') && (activeMQ !== 'M') && !biocardiced) {
 				$('#content-main').prepend($('.bio-card'));
-				$('.collapsible').addClass('in'); // Expand panel since it's closed in mobile
+				//$('.collapsible').addClass('in'); // Expand panel since it's closed in mobile ... no, expands on mobile
+				$('.bio-card .collapsible').addClass('in');
 				// breadcrumb
 				$('.breadcrumb').insertBefore($('#content-main .bio-card h4.fn'));
 				biocardiced = true;
@@ -308,7 +319,7 @@
 		};
 		
 		var expand = function () {
-
+			
       // Conditions for each breakpoint
       if (activeMQ !== currentMQ) {
 
@@ -369,15 +380,11 @@
 
 		
 		function myResize() {
-
-			
       mqSync();
 			if(!processed) {
 				bootstrapify(activeMQ);
 			}
 			expand();
-			
-			
 		}
 				
     if (toggleActive) {
@@ -490,6 +497,7 @@
         //$(".ls-content").addClass("tab-content");
         //$(".landscape div").addClass("tab-pane");
         //$(".landscape").removeClass("tab-content");
+				
         $("#contA", ".panel .panel-collapse").addClass("active"); // TODO: Are we using this? Should apply to all panel IDs
        // $(".nav-tabs").show();
 							  			     

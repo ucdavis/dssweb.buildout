@@ -236,7 +236,7 @@
 
 	// reset row negative margins
 	#util-bar-wrap, #top-bar-wrap {
-		margin-left: 0 !important; // logo / unit title left margin (was negative)
+		margin-left: 0 !important; // logo / unit title left margin (was negative). Note: Adding margin here makes a blue left border on mobile
 		//margin-right: 0 !important; // pulls collapsed menu icon to left in desktop but creates right margin on iphone landscape
 		//margin-right: -15px !important; // no effect across devices
 	}
@@ -246,6 +246,9 @@
 		max-width: 650px;
 		ul li input {
 			width: 170px;
+		}
+		#uti-logo{
+			margin-left: 4px; // Note: Use to adjust logo with left border of department name
 		}
 	}
 
@@ -269,6 +272,7 @@
 		    margin-top: 0;
 		    top: 0;
 				height: 45px; // was 42px without box sizing
+				margin-right: 5px;
 				padding-top: 3px;
 			}
 		}
