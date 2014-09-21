@@ -41,30 +41,12 @@ head{
 }
 
 /* formerly reset-all */
-.col-lg-4{
-	h2{
-    font-weight: bold !important;
-    @include font_size(30px, !important);
-    margin-bottom: 15px;
-	}
-    
-}
-.about-bio {
-	h3{
-	font-weight: bold;
-	}	
-}
 
 .btn-primary{
  margin-top: 15px;   
  color: #fff !important;   
 }
-.sidebar-info{
-	h4{
-	font-weight: bold;
-	font-size: 16px;
-	}
-}
+
 .sidebar-left{
 	.panel{
 		//background: #e5e5e5;
@@ -78,6 +60,7 @@ head{
 .panel-group{
 	margin-bottom: 0 !important;
 	.panel-body {
+		border-top-width: 0 !important;
 		.narrow-col {
 			.content {
 				padding: 15px;
@@ -241,13 +224,7 @@ input{
 }
 */
 
-.content-title{
-	padding-bottom:30px;
-	@include font_size(36px);
-	@include line_height(43px);
-	letter-spacing: 0.01em;
-	margin-top: 0 !important;
-}
+
 #content-row {
 	margin-bottom: 45px;
 }
@@ -273,18 +250,7 @@ input{
 			text-transform: none;
 		}
 	}
-	h2{
-		@include font_size(24px, !important);
-		font-weight:normal;
-		padding-top:15px;
-		padding-bottom:15px;
-	}
-	h3 {
-		@include font_size(15px);
-		@include line_height(25px);
-		padding-top:15px;
-		padding-bottom:15px;
-	}
+
 	ul {
 		list-style-type: none;
 		padding: 0;
@@ -353,6 +319,7 @@ input{
 		}
 	}
 }
+
 
 .more_text{
 	display:none;	
@@ -536,13 +503,52 @@ input{
 			padding:15px;
 		}
 	}
+	.panel{
+		border:none;
+	}
 	.panel-heading {
 		margin-bottom: 5px;
+		padding:0;
 		.panel-title {
+			min-height: 40px;
+			width: auto; // undo general 250 width
 			a {
+				display: inline-block;
+				width: 100%; //TODO: margin-top reveals formatting error
+				min-height: 40px;
+
+				padding-right: 20px;
+				padding-left: 20px !important;
+				
+				@include line_height(40px);
+				text-align: center;
+
 				background: url(../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat;
 				&.collapsed {
 					background: url(../images/icons/blue-100-right-arrow-down.png) 98% 50% no-repeat;
+				}
+				
+				&:hover{
+					cursor: pointer !important;
+				}
+			}
+		}
+	}
+
+	// Bio card
+	body.bio {
+		#content-row {
+			margin-top: 0;
+			#content-main {
+				margin-top: 0;			
+				.bio-card {
+					.panel-heading {
+						padding: 0 !important;
+						display: none; // remove heading
+					}
+					.portlet-content {
+						padding: 0 !important;
+					}
 				}
 			}
 		}
@@ -581,8 +587,8 @@ input{
 	}
 	.sidebar-right{	
 		margin-top:100px;
-		clear:both;
-		float:left !important;
+		//clear:both;
+		//float:left !important;
 		
 	}
 	.util-bar{ // at this breakpoint, yellow bar containing only the UC Davis logo
@@ -616,32 +622,6 @@ input{
 		height:100% !important;		
 	}
 
-	.panel{
-		border:none;
-	}
-	.panel-heading {
-		//height: 40px;
-		padding:0;
-		.panel-title {
-			min-height: 40px;
-			width: auto; // undo general 250 width
-			a {
-				display: inline-block;
-				width: 100%; //TODO: margin-top reveals formatting error
-				min-height: 40px;
-
-				padding-right: 20px;
-				padding-left: 20px !important;
-				
-				text-align: center;
-				//line-height: 40px;
-				@include line_height(40px);
-				&:hover{
-					cursor: pointer !important;
-				}
-			}
-		}
-	}
 	.menu-icon{
 		/* height:80px;
 		top:-39px !important;*/
@@ -689,6 +669,24 @@ input{
 
 @media screen and (min-width: $screen-sm-min) { // width > 768px
 
+	// Panel resets
+	#cm-section { // Important: Specific content selector since we want to keep our sidebar panel styles
+		.panel-group {
+			.panel-heading {
+				background-color: transparent !important;
+				padding: 0 !important;
+				border-top-left-radius: 0;
+				border-top-right-radius: 0;
+				.panel-title {
+					background-color: transparent !important;
+				}
+			}
+			.panel-body {
+				border-top-width: 0 !important;
+			}
+		}	
+	}
+	
 	.portlet {
 		.portlet-items {
 			margin: 15px;
@@ -976,6 +974,7 @@ input{
 	}
 }
 @media screen and (max-width: $screen-sm-max) { // width < 991
+
 	#footer {
 		.footer-nav{
 			border-left-width: 0;
@@ -1011,6 +1010,11 @@ input{
 	body:after{content:"M";}
 	#content-main {
 		padding-right: 0 !important;
+	}
+	body.bio .sidebar {
+		> div {
+			//margin-left: 0 !important; TODO: 
+		}
 	}
 }
 

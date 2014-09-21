@@ -13,8 +13,20 @@ a { color: #4d688c; }
 
 em { font-style: italic; }
 
+.col-lg-4 h2 { font-weight: bold !important; font-size: 30px !important; font-size: 1.875rem !important; margin-bottom: 15px; }
+
+.about-bio h3 { font-weight: bold; }
+
+.sidebar-info h4 { font-weight: bold; font-size: 16px; }
+
 @font-face { font-family: 'lucida sans bold'; src: url("fonts/lucida/LucidaSansBold.ttf"); font-weight: normal; font-style: normal; }
 .uc { text-transform: uppercase; letter-spacing: 0.1em !important; }
+
+.content-title { padding-bottom: 30px; font-size: 36px; font-size: 2.25rem; line-height: 43px; line-height: 2.6875rem; letter-spacing: 0.01em; margin-top: 0 !important; }
+
+#content-main h2 { font-size: 24px !important; font-size: 1.5rem !important; font-weight: normal; padding-top: 15px; padding-bottom: 15px; }
+#content-main h3 { font-size: 15px; font-size: 0.9375rem; line-height: 25px; line-height: 1.5625rem; padding-top: 15px; padding-bottom: 15px; }
+#content-main .narrow-col h2, #content-main .narrow-col h3 { padding-bottom: 0; }
 
 body.bio #summary #jumplinks { width: 30% !important; }
 body.bio #summary #jumplinks ul { margin-right: 35px; }
@@ -32,6 +44,9 @@ body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line
 #content-main .breadcrumb p a:hover { text-decoration: underline; }
 #content-main figure figcaption { text-align: right; font-size: 10.65px; font-size: 0.66563rem; text-transform: uppercase; }
 
+/*----- Tablet breakpoint --------*/
+@media screen and (max-width: 768px) { body.bio .content-title { display: none; }
+  body.bio .bio-card h4.fn { padding-bottom: 30px; font-size: 36px; font-size: 2.25rem; line-height: 43px; line-height: 2.6875rem; letter-spacing: 0.01em; margin-top: 0 !important; } }
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: 768px) { .top-panel { /*
 &.left-panel {
@@ -48,6 +63,13 @@ body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line
   .top-panel #content-main .narrow-col h2 { text-align: center !important; }
   .top-panel #content-main .narrow-col h3, .top-panel #content-main .narrow-col p { text-align: left !important; }
   .top-panel.left-panel h2, .top-panel.left-panel h2, .top-panel.left-panel h2 { text-align: center !important; } }
+/*----- Tablet breakpoint --------*/
+@media screen and (max-width: 992px) { body.home #content-main .narrow-col h2 { font-size: 17px; font-size: 1.0625rem; }
+  body.home #content-main #top-panel-row .narrow-col .bcontroller .btn-primary { font-size: 11px; font-size: 0.6875rem; line-height: 18px !important; line-height: 1.125rem !important; }
+  body.home #content-main #bottom-panel-row h2 { font-size: 18px; font-size: 1.125rem; } }
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: 992px) { body.home #content-main #top-panel-row .narrow-col .bcontroller .btn-primary { font-size: 14px; font-size: 0.875rem; line-height: 30px !important; line-height: 1.875rem !important; } }
+@media screen and (max-width: 1310px) { body.home #content-main .narrow-col a, body.home #content-main .narrow-col p, body.home #content-main .narrow-col li { font-size: 12px; font-size: 0.75rem; line-height: 15px !important; line-height: 0.9375rem !important; } }
 /* /_typography.scss */
 /* CSS Document */
 /* index css */
@@ -56,24 +78,32 @@ body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line
 .right-panel .panel-body .narrow-col { float: left; }
 
 .bottom-panel .narrow-col .btn-primary { color: #002855 !important; text-transform: uppercase; font-size: 18px; font-size: 1.125rem; text-decoration: none; }
+.bottom-panel.right-panel img { width: 100%; }
 
-@media screen and (max-width: 440px) { .content-main { /* Custom Styles for this breakpoint */ }
-  .content-main h2 { text-align: center; } }
+.tab { background-color: #e5e5e5; height: 100px; margin-bottom: 10px; width: 100%; cursor: pointer; }
+.tab img { float: left; }
+.tab .tab-title { width: 100%; height: 100%; padding-right: 8%; padding-left: 115px; position: relative; background: url(../../images/icons/blue-100-right-arrow.png) 97% 50% no-repeat; }
+.tab .tab-title a { text-decoration: none; text-align: left; position: absolute; top: 50%; transform: translate(0, -50%); margin-left: auto; margin-right: 8%; color: #002855; }
+.tab .tab-title a:hover { text-decoration: underline; }
+
+@media screen and (max-width: 440px) { .content-main h2 { text-align: center; } }
 @media screen and (max-width: 768px) { .tab { padding: 0 !important; }
   .panel-title { background: rgba(0, 40, 85, 0.8); } }
 @media screen and (min-width: 768px) { /* Style adjustments for the partial-cover home wall component */
   .wall { height: 741px !important; }
-  #middle-row h2 { font-size: 36px !important; font-size: 2.25rem !important; line-height: 25px; line-height: 1.5625rem; margin-top: 35px; margin-bottom: 25px; text-align: center; }
+  #middle-row h2 { font-size: 36px !important; font-size: 2.25rem !important; line-height: 25px; line-height: 1.5625rem; margin-top: 45px; margin-bottom: 25px; text-align: center; }
   #bottom-panel-row .narrow-col { width: 80%; }
   #bottom-panel-row .narrow-col h2 { text-align: center; }
   #bottom-panel-row .narrow-col p { color: #002855; }
   #bottom-panel-row .left-panel .narrow-col { margin-left: auto; }
   #bottom-panel-row .middle-panel .narrow-col { margin: 0 auto; }
   #bottom-panel-row .right-panel .narrow-col { margin: 0 auto; } }
-.tab { background-color: #e5e5e5; height: 100px; margin-bottom: 10px; width: 100%; }
-.tab img { float: left; }
-.tab .tab-title { width: 100%; height: 100%; padding-right: 10%; padding-left: 115px; position: relative; }
-.tab .tab-title span { text-align: left; position: absolute; top: 50%; transform: translate(0, -50%); margin-left: auto; margin-right: 10%; color: #002855; }
-
+/*----- Tablet breakpoint -------*/
+@media screen and (min-width: 768px) and (max-width: 991px) { #top-panel-row .narrow-col, #bottom-panel-row .narrow-col { width: 90% !important; }
+  #top-panel-row .narrow-col .bcontroller .btn-home.btn-primary, #bottom-panel-row .narrow-col .bcontroller .btn-home.btn-primary { height: 20px !important; font-size: 11px; font-size: 0.6875rem; line-height: 20px !important; line-height: 1.25rem !important; }
+  #top-panel-row .narrow-col h3, #bottom-panel-row .narrow-col h3 { font-weight: normal; line-height: 15px; line-height: 0.9375rem; }
+  #top-panel-row .narrow-col .tab, #bottom-panel-row .narrow-col .tab { height: 63px; }
+  #top-panel-row .narrow-col .tab img, #bottom-panel-row .narrow-col .tab img { height: 63px; width: 63px; }
+  #top-panel-row .narrow-col .tab .tab-title, #bottom-panel-row .narrow-col .tab .tab-title { margin-left: 0; padding-left: 76px; } }
 @media screen and (min-width: 1310px) { .content-main h2 { text-align: center; }
   /* Custom Styles for this breakpoint */ }

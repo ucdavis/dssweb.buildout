@@ -50,7 +50,6 @@
 	color:$rec_blue;
 }
 
-
 @media screen and (max-width: $screen-md-min) {
 	#util-bar-wrap { 
 		.util-bar {
@@ -94,7 +93,10 @@
 			// Note: This removes the 15px white strip to right of the wallpaper when 
 			// initial-scale=1.0 is removed from the meta
 			// TODO: Determine underlying cause -> test on other tablets
-			margin-right: -12px !important; 
+			margin-right: -12px !important;
+			.wall {
+				height: 650px !important;
+			}
 		}
 	}
 	
@@ -136,12 +138,12 @@
 				.bcontroller {
 					.btn-home.btn-primary {
 						width: 100%;
-						height: 40px;
-						line-height: 40px;
+						
 						display: inline-block;
 						background: url(../images/icons/white-arrow-up.png) 50% 100% no-repeat $rec_blue;
 						text-align: center;
 						//color: #000 !important;
+						
 					}
 				}
 				
@@ -187,4 +189,38 @@
 	}
 	
 }
+
+/*----- Tablet breakpoint --------*/
+@media screen and (max-width: $screen-md-min) { // width < 992
+	body.home {
+		#content-main {
+			#top-panel-row {
+				.narrow-col {
+					.bcontroller {
+						.btn-home.btn-primary {
+							background-position: 50% 8px !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/*----- Desktop breakpoint (L)-------*/
+@media screen and (min-width: $screen-md-min) { // width > 992
+	.top-panel {
+		.action-element {
+			.narrow-col {
+				.bcontroller {
+					.btn-home.btn-primary {
+						
+					}
+				}
+			}
+		}
+	}
+}
+
+
 /* /components/_banners.scss */

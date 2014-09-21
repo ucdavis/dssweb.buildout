@@ -12,6 +12,26 @@ em {
 	font-style: italic;
 }
 
+.col-lg-4 {
+	h2 {
+    font-weight: bold !important;
+    @include font_size(30px, !important);
+    margin-bottom: 15px;
+	}
+    
+}
+.about-bio {
+	h3{
+	font-weight: bold;
+	}	
+}
+.sidebar-info{
+	h4{
+	font-weight: bold;
+	font-size: 16px;
+	}
+}
+
 @font-face{
 		font-family: 'lucida sans bold';
     src: url('fonts/lucida/LucidaSansBold.ttf');
@@ -22,6 +42,34 @@ em {
 .uc {
 	text-transform: uppercase;
 	letter-spacing: 0.1em !important;
+}
+
+.content-title{
+	padding-bottom:30px;
+	@include font_size(36px);
+	@include line_height(43px);
+	letter-spacing: 0.01em;
+	margin-top: 0 !important;
+}
+
+#content-main {
+	h2{
+		@include font_size(24px, !important);
+		font-weight:normal;
+		padding-top:15px;
+		padding-bottom:15px;
+	}
+	h3 {
+		@include font_size(15px);
+		@include line_height(25px);
+		padding-top:15px;
+		padding-bottom:15px;
+	}
+	.narrow-col {
+		h2, h3 {
+			padding-bottom: 0;
+		}
+	}
 }
 
 // Bio
@@ -94,6 +142,25 @@ body.bio {
 		}
 	}
 }
+/*----- Tablet breakpoint --------*/
+// At point that left and right margins are gone
+@media screen and (max-width: $screen-sm-min) { // width < 768
+	// Bio
+	body.bio {
+		.content-title {
+			display: none;
+		}
+		.bio-card {
+			h4.fn { // full name ... replacing content-title in mobile view
+				padding-bottom: 30px;
+				@include font_size(36px);
+				@include line_height(43px);
+				letter-spacing: 0.01em;
+				margin-top: 0 !important;
+			}
+		}
+	}
+}
 
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: $screen-sm-min) {	// width > 768
@@ -128,6 +195,74 @@ body.bio {
 			//text-align: left;
 		}
 		*/
+	}
+}
+
+/*----- Tablet breakpoint --------*/
+// At point that left and right margins are gone
+@media screen and (max-width: $screen-md-min) { // width < 992
+	
+	body.home {
+		// Text below banner in thumbnail / tab boxes
+		
+		#content-main {
+			.narrow-col {
+				h2 {
+					@include font_size(17px);
+				}
+			}
+			
+			#top-panel-row {
+				.narrow-col {
+					.bcontroller {
+						.btn-primary {
+							@include font_size(11px); // See All link
+							@include line_height(18px,!important);
+						}
+					}
+				}
+			}
+			#bottom-panel-row {
+				h2 {
+					@include font_size(18px);
+				}
+			}
+		}
+	}
+}
+
+
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: $screen-md-min) { // width > 992
+	body.home {
+		// Button text at bottom of happy boxes
+		#content-main {
+			#top-panel-row {
+				.narrow-col {
+					.bcontroller {
+						.btn-primary {
+							@include font_size(14px);
+							@include line_height(30px,!important);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $screen-lg-min) { // width < 1200
+	body.home {
+		// Text below banner in thumbnail / tab boxes
+		
+		#content-main {
+			.narrow-col {
+				a, p, li {
+					@include font_size(12px);
+					@include line_height(15px,!important);
+				}
+			}
+		}
 	}
 }
 
