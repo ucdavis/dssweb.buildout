@@ -7,7 +7,7 @@
     <!-- Apply the following rules to standard Plone pages -->
        <rules css:if-content="#visual-portal-wrapper">
 
-        <theme href="index.html" />
+        <theme href="index.html" if="$home_page" />
 
         <!-- Replace title with Plone's page title  -->
         <replace css:theme="html head title" css:content="html head title" />
@@ -36,6 +36,12 @@
 	    <xsl:if test='contains(current(),"plain")'>has-dropdown not-click</xsl:if>
 	    </xsl:attribute>
 	    </replace>
+		
+	    <replace content="//h1[contains(@class,'documentFirstHeading')]/@class">
+	    <xsl:attribute name="class">
+	    <xsl:if test='contains(current(),"documentFirstHeading")'>homepage-title</xsl:if>
+	    </xsl:attribute>
+	    </replace>
 	    
 	    <!--replace content="//ul[contains(@class,'submenu')]/@class">
 	    <xsl:attribute name="class">
@@ -54,8 +60,13 @@
 		
 		<!-- Events Happy Box -->
 	    <copy css:content="#portletwrapper-706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f5765625265646f0a6576656e7473 > dl > dd.portletItem.odd" css:theme="#container-3 > div > div > div.content" />
+		<!-- Front Page -->
+		<copy css:content="#parent-fieldname-title" css:theme="#middle-row" />
 		
-		
+       <!--- Footer -->
+	   <copy  css:content="#portletwrapper-706c6f6e652e6c656674636f6c756d6e0a636f6e746578740a2f5765625265646f2f66726f6e742d706167650a636f6e74616374 > div" css:theme="#vcard" />
+	   <copy content='//*[@id="portletwrapper-706c6f6e652e6c656674636f6c756d6e0a636f6e746578740a2f5765625265646f2f66726f6e742d706167650a6e617669676174696f6e"]' theme='//*[@id="footer-nav"]'    />
+	   	
 	    <!--This should have worked.  Fall back and figure it out -->
 	    <!--xsl:template css:match="#portal-globalnav">
 		    <xsl:copy>

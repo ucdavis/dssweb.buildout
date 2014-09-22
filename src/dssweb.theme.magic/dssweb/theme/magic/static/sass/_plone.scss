@@ -113,4 +113,25 @@ dl.portlet-static-quick-facts dt {
 	line-height: normal;
     font-size: 120%;
 }
+/*----- homepage title ------*/
+.homepage-title {
+	font-size: 36px !important;
+	font-size: 2.25rem !important;
+	line-height: 1.5625rem;
+	margin-top: 35px;
+	margin-bottom: 25px;
+	text-align: center;
+	font-weight: normal;
+	}
+/*-------footer-------*/
+div#footer-nav {
+	margin-left: 30%;
+	width: 45%;
+}
+dl.portlet ul.navTreeLevel0 > .navTreeItem {
+	padding: 0.25em 1em;
+	border-bottom: none;
+	line-height: 2em;
+}
+	
 }

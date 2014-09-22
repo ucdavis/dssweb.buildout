@@ -10,6 +10,7 @@ __pycache__/
 
 #sass
 *.sass-cache
+style.css
 
 #codekit
 config.codekit
