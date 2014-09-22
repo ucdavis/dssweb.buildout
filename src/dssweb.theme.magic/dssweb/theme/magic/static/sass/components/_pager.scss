@@ -1,0 +1,34 @@
+/* _pager.scss */
+.pager {
+	width: 100%;
+	text-align: center;
+	a {
+		display: inline-block;
+		width: 20px;
+		height: 10px;
+	}
+	.pager-first {
+		a {
+			background: url(../images/icons/pager-first.gif) 0 0 no-repeat;
+		}
+	}
+	.pager-prev {
+		a {
+			background: url(../images/icons/pager-prev.gif) 0 0 no-repeat;
+		}
+	}
+	.pager-string {
+		@include font_size(13px);
+	}
+	.pager-next {
+		a {
+			background: url(../images/icons/pager-next.gif) 0 0 no-repeat;
+		}
+	}
+	.pager-last {
+		a {
+			background: url(../images/icons/pager-last.gif) 0 0 no-repeat;
+		}
+	}
+}
+/* _pager.scss */

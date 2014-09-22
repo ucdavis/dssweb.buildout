@@ -5,15 +5,163 @@ body, div, p, li {
   color: #000;
 	@include standard_font;
 }
+/*
+@font-face {
+	font-family: 'lucida sans bold';
+	src: url('fonts/lucida/LucidaSansBold.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+*/
+a { color: $ucd_blue_70;}
 
-@font-face{
-		font-family: 'lucida sans bold';
-    src: url('fonts/lucida/LucidaSansBold.ttf');
-    font-weight: normal;
-    font-style: normal;
+em {
+	font-style: italic;
 }
 
-#content-main {
+button {
+	@include font_size(14px);
+	@include line_height(24px);
+}
+
+.col-lg-4 {
+	h2 {
+    font-weight: bold !important;
+    @include font_size(30px, !important);
+    margin-bottom: 15px;
+	}
+    
+}
+.about-bio {
+	h3{
+	font-weight: bold;
+	}	
+}
+.sidebar {
+	h3 {
+		a {
+			text-transform: uppercase;
+			@include font_size(13px);
+			@include line_height(22px);
+			letter-spacing: 0.1em;
+		}
+	}
+	.panel-heading {
+		h3.panel-title {
+			padding-top: 0 !important; // override #am-content styles
+		}
+	}
+	.vcard {
+		@include font_size(13px);
+		@include line_height(18px);
+		.adr, #email-phone {
+			@include line_height(18px);
+		}
+	}
+}
+figure {
+	figcaption {
+		text-align: right;
+		@include font_size(10.65px);
+		color: $ucd_blue_100;
+		text-transform: uppercase;
+	}
+}
+.corner-box {
+	h2, h3, p, li, a {
+		color: #FFF;
+	}
+	.box-content {
+		h2 {
+			padding: 15px 0;
+			@include font_size(24px);
+			letter-spacing: 0.075em;
+		}
+		h3 {
+			padding: 0 0 8px 0;
+			@include font_size(13px);
+		}
+		p {
+			@include font_size(13px);
+			@include line_height(20px);
+		}
+	}
+}
+
+.sidebar-info{
+	h4{
+		font-weight: bold;
+		@include font_size(16px);
+	}
+}
+
+.uc {
+	text-transform: uppercase;
+	letter-spacing: 0.1em !important;
+}
+
+.content-title{
+	padding-bottom:30px;
+	@include font_size(36px);
+	@include line_height(43px);
+	letter-spacing: 0.01em;
+	margin-top: 0 !important;
+}
+
+#content-main, #am-content {
+	h2{
+		@include font_size(24px, !important);
+		font-weight:normal;
+		padding-top:15px;
+		padding-bottom:15px;
+	}
+	h3 {
+		@include font_size(15px);
+		@include line_height(25px);
+		padding-top:15px;
+		padding-bottom:15px;
+	}
+	.narrow-col {
+		h2, h3 {
+			padding-bottom: 0;
+		}
+	}
+}
+
+// Bio
+body.bio {
+	#summary {
+		#jumplinks {
+			width: 30% !important;
+			ul {
+				margin-right: 35px;
+				li {
+					@include font_size(13px);
+					@include line_height(22px);
+					padding-left: 0 !important;
+					background-image: none !important;
+					text-align: right;
+				}
+			}
+		}
+		#education {
+			width: 70% !important;
+			ul {
+				margin-top: 10px;
+				li {
+					@include font_size(15px);
+					@include line_height(18px);
+					margin-bottom: 5px;
+					padding-left: 0 !important;
+					background-image: none !important;
+				}
+			}
+		}
+	}
+	
+}
+
+#content-main, #am-content {
 	p, li, ol, div, span {
 		@include line_height(24px,!important);
 	}
@@ -42,19 +190,67 @@ body, div, p, li {
 			}
 		}
 	}
-	figure {
-		figcaption {
-			text-align: right;
-			@include font_size(10.65px);
-			text-transform: uppercase;
+}
+
+/*----- Mobile breakpoint --------*/
+// At point that left and right margins are gone
+@media screen and (max-width: $screen-sm-min) { // width < 768
+	// Bio
+	body.bio {
+		.content-title {
+			display: none;
+		}
+		.bio-card {
+			h4.fn { // full name ... replacing content-title in mobile view
+				padding-bottom: 30px;
+				@include font_size(23px);
+				@include line_height(25px);
+				letter-spacing: 0.01em;
+				margin-top: 4px !important;
+			}
+		}
+	}
+	
+	.sidebar {
+		h3 {
+			@include font_size(13px);
+			@include line_height(40px);
+			letter-spacing:.1em;
+		}
+	}
+	
+	#content-main, #am-content {
+		.panel-group {
+			.row.panel {
+				.panel-title {
+					a {
+						@include font_size(18px);
+						@include line_height(40px);
+					}
+				}
+			}
+		}
+	}
+	
+	#top-panel-row{
+		margin-top: 45px;
+	}
+	
+	.panel-group {
+
+		#middle-row {
+			h2 {
+				@include font_size(18px,!important);
+				@include line_height(24px);
+			}
 		}
 	}
 }
 
-/*----- Desktop breakpoint -------*/
+/*----- tablet breakpoint -------*/
 @media screen and (min-width: $screen-sm-min) {	// width > 768
 	.top-panel {
-		#content-main {
+		#content-main, #am-content {
 			.narrow-col {
 				color: #FFF;
 				h2 {
@@ -84,6 +280,100 @@ body, div, p, li {
 			//text-align: left;
 		}
 		*/
+	}
+}
+
+/*----- Tablet breakpoint --------*/
+// At point that left and right margins are gone
+@media screen and (max-width: $screen-md-min) { // width < 992
+	
+	body.home {
+		// Text below banner in thumbnail / tab boxes
+		
+		#content-main, #am-content {
+			.narrow-col {
+				h2 {
+					@include font_size(17px);
+				}
+			}
+			
+			#top-panel-row {
+				.narrow-col {
+					.bcontroller {
+						.btn-primary {
+							@include font_size(11px); // See All link
+							@include line_height(18px,!important);
+						}
+					}
+				}
+			}
+			#bottom-panel-row {
+				h2 {
+					@include font_size(18px);
+				}
+			}
+		}
+	}
+	
+	#content-main, #am-content {
+		.content-title {
+			@include font_size(26px);
+			@include line_height(28px);
+		}
+	}
+	
+	.corner-box {
+		.box-content {
+			h2 {
+				padding: 10px 0;
+				@include font_size(16px);
+				letter-spacing: 0.075em;
+			}
+			h3 {
+				padding: 0 0 0 0;
+				@include font_size(11px);
+			}
+			p {
+				@include font_size(11px);
+				@include line_height(15px);
+			}
+		}
+	}
+	
+}
+
+
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: $screen-md-min) { // width > 992
+	body.home {
+		// Button text at bottom of happy boxes
+		#content-main, #am-content {
+			#top-panel-row {
+				.narrow-col {
+					.bcontroller {
+						.btn-primary {
+							@include font_size(14px);
+							@include line_height(30px,!important);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $screen-lg-min) { // width < 1200
+	body.home {
+		// Text below banner in thumbnail / tab boxes
+		
+		#content-main, #am-content {
+			.narrow-col {
+				a, p, li {
+					@include font_size(12px);
+					@include line_height(15px,!important);
+				}
+			}
+		}
 	}
 }
 

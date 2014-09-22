@@ -1,44 +1,11 @@
 /* _theme.scss */
 
-/* 2014-06-12 RAK: This file contains theme CSS and mediaquery for responsive (at end of file). 
-  TODO: 
-    - Move to SASS
-     
-*/ 
-
-/* formerly global.scss */
 // See JS for Windows Phone 8 / IE 10 viewport issues
 @-webkit-viewport{width:device-width}
 @-moz-viewport{width:device-width}
 @-ms-viewport{width:device-width}
 @-o-viewport{width:device-width}
 @viewport{width:device-width}
-
-/* 
-html, body {
-  @include standard_font;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.313em;
-}
-
-strong {
-  font-weight: bold !important;
-}
-
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 400;
-  line-height: 1.313em;
-}
-h1 {
-  margin: 0;
-}
-h3, h2 {
- letter-spacing: 0;
- line-height: 1.1em;
-}
-/formerly global.scss */
-
 
 body:after{ 
 	content:"XS"; 
@@ -74,33 +41,15 @@ head{
 }
 
 /* formerly reset-all */
-.col-lg-4{
-	h2{
-    font-weight: bold !important;
-    @include font_size(30px, !important);
-    margin-bottom: 15px;
-	}
-    
-}
-.about-bio {
-	h3{
-	font-weight: bold;
-	}	
-}
 
 .btn-primary{
  margin-top: 15px;   
  color: #fff !important;   
 }
-.sidebar-info{
-	h4{
-	font-weight: bold;
-	font-size: 16px;
-	}
-}
+
 .sidebar-left{
 	.panel{
-		background: #e5e5e5;
+		//background: $box_light_gray;
 	}
 }
 .sidebar-right{
@@ -108,9 +57,14 @@ head{
 	height:30px;
 }
 
+// apply to elements needing removable float: right. Topbar has a .right class that is too specific to use
+.soft-right {
+	float: right;
+}
 .panel-group{
 	margin-bottom: 0 !important;
 	.panel-body {
+		border-top-width: 0 !important;
 		.narrow-col {
 			.content {
 				padding: 15px;
@@ -139,11 +93,24 @@ head{
 	//left-indent: -10000px;
 	display: none;
 }
+.not-visible {
+	visibility: hidden;
+}
 .nobr {
 	white-space: nowrap;
 }
 p {
 	margin-bottom: 15px;
+}
+
+button {
+	height: 40px;
+	width: 120px;
+	background-color: $ucd_bright_gold;
+	&:hover {
+		background-color: $ucd_bright_gold_40;
+		cursor: pointer;
+	}
 }
 
 #utility {
@@ -160,7 +127,6 @@ p {
 		clear:both;
 	}
 }
-
 
 #footer {	
 	background-color:$ucd_blue_70;
@@ -274,17 +240,11 @@ input{
 }
 */
 
-.content-title{
-	padding-bottom:30px;
-	@include font_size(36px);
-	@include line_height(43px);
-	letter-spacing: 0.01em;
-	margin-top: 0 !important;
-}
+
 #content-row {
 	margin-bottom: 45px;
 }
-#content-main{
+#content-main, #am-content {
 
 	.breadcrumb {
 		background: none;
@@ -298,24 +258,15 @@ input{
 	}
 	.panel-body {
 		h2 {
-			@include font_size(24px, !important);
-			font-weight:normal;
-			padding-top:15px;
-			padding-bottom:15px;
+			text-transform: uppercase;
 		}
 	}
-	h2{
-		@include font_size(24px, !important);
-		font-weight:normal;
-		padding-top:15px;
-		padding-bottom:15px;
+	#bottom-panel-row {
+		h2 {
+			text-transform: none;
+		}
 	}
-	h3 {
-		@include font_size(15px);
-		@include line_height(25px);
-		padding-top:15px;
-		padding-bottom:15px;
-	}
+
 	ul {
 		list-style-type: none;
 		padding: 0;
@@ -337,6 +288,7 @@ input{
 	}
 }
 
+
 .sidebar{
 	height:auto;
 	//width:250px; // !important; 
@@ -345,49 +297,43 @@ input{
 	
 	> div {
 		margin-left: 70px;
-		.panel-body {
-			background: #f2f2f2; // TODO: Where's this color from?
-		}
 	}
 	h3{
-		height:30px;
+		//height:30px; // Note: where possible, use _typography.scss line_height specs to determine height
 		a{
-			color:#fff;
-			text-transform:uppercase;
-			@include font_size(13px);
-			@include line_height(22px);
-			letter-spacing:.1em;
-			padding-left:38px;
-			position:relative;
-			top:4px;
+			color: #fff;
+			padding-left: 35px; // was 38px
+			position: relative;
+			top: 4px;
 		}
 	}
 
 	.panel-heading{
 		padding:0;
 		.panel-title {
-			background-color: $rec_blue;
+			//background-color: $rec_blue;
+			//height: 30px;
 			a {
+				background-color: $rec_blue;
 				&:hover{
 					//cursor:text;
 				}
 			}
 		}
 	}
-	.collapsible{
-		background:#f2f2f2; // TODO: Where's this color from?
-	}
-
-	&.sidebar-right{
-		margin-top: 135px;
-		//margin-left: 160px; // TODO: moving sidebar to right should be done another way. float:right not solution
-		// TODO: these styles are not necessary or have no affect
-		//position:relative;
-		//top:140px;
-		//float:right;
-		// margin-right:90px; // TODO: Why ?
+	// Bio sidebar etc.
+	&.sidebar-right {
+		> div {
+			.panel-body {
+				background: $box_light_gray;
+			}
+		}
+		.collapsible{
+			background: $box_light_gray;
+		}
 	}
 }
+
 
 .more_text{
 	display:none;	
@@ -408,6 +354,7 @@ input{
 		color:$ucd_blue_80;
 	}
 }
+
 /* Contact uses hCard microformat / vCard RFC2426 */
 #sidebar-block-contact {
 	margin-top:20px;
@@ -439,33 +386,45 @@ input{
 	.tel { // phone
 		margin-bottom: 5px;
 	}
+}
+
+#sidebar-block-contact, .vcard {
 	.email {
-		text-transform:uppercase;
+		text-transform: uppercase;
 		a {
 			display: block;
 			height: 16px;
 			padding-left: 22px;
 			background: url(../images/icons/email.gif) 0 60% no-repeat;
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 	}
 }
-.sidebar-block-items{
-	background:#e5e5e5;	
-	padding-bottom:10px;
-	text-align:left;
-	width:auto;
-	height:100%;
-	padding-left:15px;
-	margin-left:35px;
-	list-style-type:circle;	
+.sidebar-block-items {
+	background: $box_light_gray;	
+	padding-bottom: 10px;
+	text-align: left;
+	width: auto;
+	height: 100%;
+	padding-left: 15px;
+	margin-left: 35px;
+	list-style-type: circle;	
 }
 
 
 .panel-title {
-	background: $ucd_bright_gold; // was  $rec_blue;
-	//width:250px;
 	a{
-		text-decoration:none;
+		background-color: $ucd_bright_gold_40; 
+		text-decoration: none;
+		&.collapsed {
+			background-color: $ucd_bright_gold; 
+		}
+		&:hover {
+			background-color: $ucd_bright_gold_40; 
+		}
 	}
 }
 
@@ -495,27 +454,43 @@ input{
 	display:none;
 	@include font_size(20px);
 }
-
-.collapse, .collapsing {
-	div{
-		padding:15px;
-	}
-} 
+ 
 
 #search{
 	width:100px;
 }
 
+#middle-row {
+	position: relative;
+}
+
 @media screen and (min-width: $screen-sm-min) { // width > 768
 	
 	// pull content left on larger screens so flush left with top-bar
-	#content-main {
-		padding-left: 0 !important;
+	#content-row {
 		margin-top: 45px;
+	}
+	body.gen-landing {
+		#content-row {
+			margin-top: 30px; // accomodate for figure caption
+		}
+	}
+	#content-main, #am-content {
+		padding-left: 0 !important;
+		//margin-top: 45px;
 		margin-bottom: 30px;
 		h1, .breadcrumb {
 			//margin-left: 15px;
 		}
+	}
+	body.has-shadow-am {
+		/*#content-row { // Give banner graphic room
+			margin-top: 594px;
+		}*/
+		/*.am-content {
+			margin-top: 60px !important;
+			margin-bottom: 30px;
+		}*/
 	}
   .masthead,
   .marketing,
@@ -528,9 +503,18 @@ input{
 			}
 		}
   }
+	.sidebar{
+		.panel-heading{
+			.panel-title {
+				background-color: $rec_blue;
+				height: 30px;
+			}
+		}
+	}
 	.sidebar-right{
 		padding-left:0 !important; 
 		padding-right:0 !important;
+		//margin-top: 145px; // ad-hoc ... set position of sidebar in javascript
 	}
 }
 
@@ -539,10 +523,14 @@ input{
 /*----- Mobile breakpoint --------*/
 // At point that left and right margins are gone
 @media screen and (max-width: $screen-sm-min) { // width < 768
+	.row#banner-row, .row .row {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
 	.row#content-row {
 		margin-left: 0 !important;
 		margin-right: 0 !important;
-		#content-main {
+		#content-main, #am-content {
 			margin-top: 10px;
 			h1, .breadcrumb {
 				//margin-left: 15px;
@@ -550,17 +538,144 @@ input{
 		}
 	}
 
-	#content-main {
+	#content-main, #am-content {
 		margin-bottom: 15px;
 	}
 	
+	// Remove bootstrap animation from collapsing on small devices where it is slow.
+	.collapsing {
+		-webkit-transition: none;
+		transition: none;
+	}
+	
+	.collapse, .collapsing {
+		div {
+			padding: 15px;
+		}
+	}
+	.panel {
+		border: none;
+	}
 	.panel-heading {
 		margin-bottom: 5px;
+		padding:0;
 		.panel-title {
+			//min-height: 40px;
+			width: auto; // undo general 250 width
+			padding-top: 0 !important;
+			padding-bottom: 0 !important;
 			a {
-				background: url(../images/icons/blue-100-right-arrow-down.png) 98% 50% no-repeat;
+				display: inline-block;
+				width: 100%; //TODO: margin-top reveals formatting error
+				min-height: 40px;
+				
+				padding-right: 20px;
+				padding-left: 20px !important;
+				
+				@include font_size(16px);
+				@include line_height(40px);
+				text-align: left;
+
+				background: url(../images/icons/blue-100-right-arrow-down.png) 98% 50% no-repeat $ucd_bright_gold_40;
 				&.collapsed {
-					background: url(../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat;
+					background: url(../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat $ucd_bright_gold;
+				}
+				
+				&:hover {
+					cursor: pointer !important;
+					background-color: $ucd_bright_gold_40;
+				}
+			}
+		}
+	}
+
+	// Bio card
+	// Note: Apply negative margins to top items in order to retain padding on remaining text in mobile view
+	body.bio {
+		#content-row {
+			margin-top: 0;
+			#content-main, #am-content {
+				margin-top: 0;
+				.bio-card {
+					margin-bottom: 8px;
+					.panel-heading {
+						padding: 0 !important;
+						display: none; // remove heading
+					}
+
+					margin-left: -15px !important;
+					margin-right: -15px !important;
+					.breadcrumb, h4 {
+						margin-left: 15px; // add back margin removed to make photo/buttons flush left and right
+					}
+					h4 {
+						padding-bottom: 0;
+					}
+					.title.org {
+						p {
+							font-style: italic;
+							margin: 0;
+						}
+					}
+					.portlet-content {
+						padding: 0 !important;
+						.vcard {
+							padding: 0;
+							// Note: Change photo dimensions in conjunction with the portlet-item list span padding below
+							img.photo {
+								width: 214px; // careful
+								height: 214px; // careful
+							}
+							.portlet-items {
+								position: absolute;
+								right: -15px;
+								top: 0;
+								padding: 5px;
+								background-color: $rec_blue;
+								li {
+									background-color: $tab_light_gray;
+									background-image: none ;
+									margin-bottom: 4px;
+									&:last-child {
+										margin-bottom: 0;
+									}
+									> span {
+										// Note: Change the portlet-item list span padding in conjunction with the bio img.photo above
+										padding: 48px 22px; // careful
+										a {
+											//padding-left: 15px;
+											@include line_height(48px);
+											text-decoration: none;
+											&:hover {
+												text-decoration: underline;
+											}
+										}
+										&.email {
+											background: url(../images/icons/email-icon-m.png) 0 50% no-repeat;
+										}
+										&.cv {
+											background: url(../images/icons/pdf-icon-t.png) 0 50% no-repeat;
+										}
+										&.vcard-file {
+											background: url(../images/icons/calendar-icon-t.png) 0 50% no-repeat;
+										}
+										&.office {
+											background: url(../images/icons/office-icon-m.png) 0 50% no-repeat;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				#summary {
+					margin-bottom: 25px;
+					#jumplinks {
+						
+					}
+					#education {
+						width: 100% !important;
+					}
 				}
 			}
 		}
@@ -569,15 +684,52 @@ input{
 		.panel-heading {
 			.panel-title {
 				a {
+					color: $ucd_blue_100 !important;
 					top: 0;
-					background: url(../images/icons/white-arrow-right-sm.png) 98% 50% no-repeat;
+					background: url(../images/icons/blue-100-right-arrow-down.png) 98% 50% no-repeat $rec_blue_40;
 					&.collapsed {
-						background: url(../images/icons/white-arrow-down-sm.png) 98% 50% no-repeat;
+						color: #FFF !important;
+						background: url(../images/icons/white-arrow-right-sm.png) 98% 50% no-repeat $rec_blue;
+					}
+					&:hover {
+						color: $ucd_blue_100 !important;
+						background: url(../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat $rec_blue_40;
 					}
 				}
 			}
 		}
 	}
+	#footer {
+		margin-bottom: 60px;
+	}
+	
+	#content-row {
+		section {
+			.course-portlet {
+				padding: 0;
+				.course-info {
+					padding: 0;
+					float: left;
+					width: 75%;
+					h3 {
+						padding: 0;
+					}
+				}
+				button {
+					float:left;
+					width: 25%;
+					height: 40px;
+					width: 120px;
+					background-color: $ucd_bright_gold;
+					&:hover {
+						background-color: $ucd_bright_gold_40;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+	
 }
 
 /*----- Mobile breakpoint -------*/
@@ -596,8 +748,8 @@ input{
 	}
 	.sidebar-right{	
 		margin-top:100px;
-		clear:both;
-		float:left !important;
+		//clear:both;
+		//float:left !important;
 		
 	}
 	.util-bar{ // at this breakpoint, yellow bar containing only the UC Davis logo
@@ -618,7 +770,7 @@ input{
 		}
 	}
 	
-	#content-main {
+	#content-main, #am-content {
 	  min-width:192px;
 		clear:both;
 	}
@@ -630,35 +782,7 @@ input{
 		padding:0 !important;
 		height:100% !important;		
 	}
-	.facultyStaffDirectory{
-		padding:15px 20px;
-	}
-	.panel{
-		border:none;
-	}
-	.panel-heading {
-		//height: 40px;
-		padding:0;
-		.panel-title {
-			min-height: 40px;
-			width: auto; // undo general 250 width
-			a {
-				display: inline-block;
-				width: 100%; //TODO: margin-top reveals formatting error
-				min-height: 40px;
 
-				padding-right: 20px;
-				padding-left: 20px !important;
-				
-				text-align: center;
-				//line-height: 40px;
-				@include line_height(40px);
-				&:hover{
-					cursor: pointer !important;
-				}
-			}
-		}
-	}
 	.menu-icon{
 		/* height:80px;
 		top:-39px !important;*/
@@ -706,6 +830,33 @@ input{
 
 @media screen and (min-width: $screen-sm-min) { // width > 768px
 
+
+	#top-bar-wrap, #content-row, #banner-row {
+		padding-left: 105px; // 90 + 15 px
+		padding-right: 105px;
+	}
+	#util-bar-wrap {
+		padding-right: 105px;
+	}
+	
+	// Panel resets
+	#cm-section { // Important: Specific content selector since we want to keep our sidebar panel styles
+		.panel-group {
+			.panel-heading {
+				background-color: transparent !important;
+				padding: 0 !important;
+				border-top-left-radius: 0;
+				border-top-right-radius: 0;
+				.panel-title {
+					background-color: transparent !important;
+				}
+			}
+			.panel-body {
+				border-top-width: 0 !important;
+			}
+		}	
+	}
+	
 	.portlet {
 		.portlet-items {
 			margin: 15px;
@@ -743,6 +894,7 @@ input{
 			padding: 0;
 			.vcard {
 				padding: 0;
+				padding-bottom: 20px;
 				div {
 					@include font_size(12px);
 					margin-left: 35px;
@@ -755,13 +907,13 @@ input{
 						margin-top: 15px;
 					}
 					&.office-hours {
-						margin-bottom: 15px;
+						// margin-bottom: 15px;
 					}
 				}
 				&.office {
 					h4 {
 						min-height: 28px;
-						background-color: #CCC;
+						background-color: $box_header_blue;
 						padding: 8px;
 						padding-left: 35px;
 						letter-spacing: 0.05em;
@@ -774,6 +926,33 @@ input{
 							}
 						}
 					}
+				}
+			}
+		}	
+	}
+	
+	#content-row {
+		section {
+			margin-bottom: 25px;
+			h2 { font-weight: normal;}
+			p { }
+		
+			.course-portlet {
+				//border: 1px solid #CCC;
+				position: relative;
+				margin-bottom: 45px;
+				.course-info {
+					width: 60%;
+					h3 {}
+					p {}
+				}
+				button {
+					position: absolute;
+					right: 0;
+					bottom: 0;
+					height: 40px;
+					width: 120px;
+					background-color: $ucd_bright_gold;
 				}
 			}
 		}
@@ -859,16 +1038,7 @@ input{
 		}
 	}
 	
-	#util-bar-wrap {
-		padding-right: 105px;
-	}
-	
-	#top-bar-wrap, #content-row {
-		padding-left: 105px; // 90 + 15 px
-		padding-right: 105px;
-	}
-	
-	#content-main {
+	#content-main, #am-content {
 		> div, > h1 {
 	  	//margin-left: 90px; // TODO: remove since now using .row 15+90=105 applied to content-row
 		}
@@ -926,11 +1096,11 @@ input{
 	#util-bar-wrap {
 		padding-right: 0;
 	}
-	#top-bar-wrap, #content-row {
+	#top-bar-wrap, #content-row, #banner-row {
 		padding-left: 0; // 90 + 15 px
 		padding-right: 0;
 	}
-	#content-main {
+	#content-main, #am-content {
 		> div, > h1 {
 	  	//margin-left: 0;
 		}
@@ -964,7 +1134,9 @@ input{
 		}
 	}
 }
+/*----- Breakpoint, xs-md -------*/
 @media screen and (max-width: $screen-sm-max) { // width < 991
+
 	#footer {
 		.footer-nav{
 			border-left-width: 0;
@@ -983,7 +1155,7 @@ input{
 		}
 	}
 }
-
+/*------ Desktop (L) breakpoint --------*/
 @media screen and (min-width: $screen-md-min) and (max-width: $screen-lg-min) { // 991 < width < 1200
 	.sidebar {
 		&.sidebar-right {
@@ -998,8 +1170,13 @@ input{
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
 	head { font-family:"M";}
 	body:after{content:"M";}
-	#content-main {
-		padding-right: 0 !important;
+	#content-main, #am-content {
+		//padding-right: 0 !important;
+	}
+	body.bio .sidebar {
+		> div {
+			//margin-left: 0 !important; TODO: 
+		}
 	}
 }
 
@@ -1007,6 +1184,11 @@ input{
 @media screen and (min-width: $screen-md-min) { // width > 992
 	head { font-family:"L";}
 	body:after{content:"L";}
+	
+	.no-gutter-lg {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
 	
 	body.bio .sidebar.sidebar-right {
 		margin-top: 45px; // for top placement of bio portrait
@@ -1017,7 +1199,7 @@ input{
 		}
 	}
 	
-	#content-main {
+	#content-main, #am-content {
 		h1, .breadcrumb {
 			//margin-left: 15px;
 		}
@@ -1025,7 +1207,7 @@ input{
 }
 
 /* Override default grid gutter, which was broke on home/index bottom panel row. */
-.no-gutter {
+.no-gutter, .no-gutters {
 	padding-left: 0 !important;
 	padding-right: 0 !important;
 }

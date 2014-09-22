@@ -5,7 +5,7 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
     <!-- Apply the following rules to standard Plone pages -->
-       <rules css:if-content="#visual-portal-wrapper">
+    <rules css:if-content="#visual-portal-wrapper">
 
         <theme href="index.html" if="$home_page" />
 
@@ -26,6 +26,7 @@
         <after css:theme-children="html body" css:content="html head script" />
 
         <!-- Insert your own rules here -->
+<<<<<<< HEAD
 	   
 	   <!--swap in portal-globalnav -->
          <!--replace css:content="#portal-globalnav li" css:theme-children="#top-bar-wrap > nav > section > ul.left" /-->
@@ -75,5 +76,12 @@
 			 	<xsl:apply-templates />
 		     </xsl:copy>
 	    </xsl:template-->
+
+        
+         <replace css:content="#portal-globalnav li" css:theme-children="#nav ul" />
+        <drop css:content=".searchSection" />
+        <replace css:content="#portal-searchbox" css:theme="#search" />
+
     </rules>
+
 </rules>
