@@ -1,33 +1,44 @@
 /* _pager.scss */
 .pager {
-	width: 100%;
+	//width: 100%;
 	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	a {
+		display: block;
+		width: 50px;
+		height: 25px;
+		margin-right: 5px;
+	}
+	span {
 		display: inline-block;
-		width: 20px;
-		height: 10px;
 	}
 	.pager-first {
 		a {
-			background: url(../images/icons/pager-first.gif) 0 0 no-repeat;
+			background: url(../images/icons/d-pager-first.gif) 0 0 no-repeat;
 		}
 	}
 	.pager-prev {
 		a {
-			background: url(../images/icons/pager-prev.gif) 0 0 no-repeat;
+			margin-right: 10px;
+			width: 38px;
+			background: url(../images/icons/d-pager-prev.gif) 0 0 no-repeat;
 		}
 	}
 	.pager-string {
-		@include font_size(13px);
+		height: 25px;
+		display: inline-block;
 	}
 	.pager-next {
 		a {
-			background: url(../images/icons/pager-next.gif) 0 0 no-repeat;
+			width: 38px;
+			margin-left: 10px;
+			background: url(../images/icons/d-pager-next.gif) 0 0 no-repeat;
 		}
 	}
 	.pager-last {
 		a {
-			background: url(../images/icons/pager-last.gif) 0 0 no-repeat;
+			background: url(../images/icons/d-pager-last.gif) 0 0 no-repeat;
 		}
 	}
 }

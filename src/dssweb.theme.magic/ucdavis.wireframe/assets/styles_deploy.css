@@ -793,7 +793,7 @@ head { font-family: 'XS'; }
 
 .btn-txt { display: none; }
 
-.not-visible { visibility: hidden; }
+.invisible { visibility: hidden; }
 
 .nobr { white-space: nowrap; }
 

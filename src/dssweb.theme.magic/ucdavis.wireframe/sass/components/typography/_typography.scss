@@ -37,6 +37,12 @@ button {
 	font-weight: bold;
 	}	
 }
+.pager {
+	.pager-string {
+		@include font_size(13px);
+		@include line_height(25px);
+	}
+}
 .sidebar {
 	h3 {
 		a {

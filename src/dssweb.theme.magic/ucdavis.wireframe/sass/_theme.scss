@@ -93,7 +93,7 @@ head{
 	//left-indent: -10000px;
 	display: none;
 }
-.not-visible {
+.invisible { // TODO: Use bootstrap class .invisible
 	visibility: hidden;
 }
 .nobr {
