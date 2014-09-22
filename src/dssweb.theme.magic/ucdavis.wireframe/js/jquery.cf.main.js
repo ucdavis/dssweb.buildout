@@ -11,7 +11,6 @@
 	var vcardiced = false;
 	var biocardiced = false;
 	var processed = false;
-	var i = 0;
 	
 	$(document).ready(function() {
 		
@@ -21,13 +20,15 @@
 				window.console.log("JQuery version:  " + $.fn.jquery);
 			}
 		}
-		
-		// Menu active trail
+				
+		// Menu active trail ... variable is assigned in page. Don't worry about CodeKit error here
+		// This allows page to identify which main menu item it belongs to and that should be highlighted
 		if(typeof active_trail !== 'undefined') {
 			$(active_trail).addClass("active-trail");
 		}
 		
 		// Convenience tab buttons for home
+		// This makes the whole tab clickable and not just the text
 		if($('body.home').length !== 0) {
       $('.tab').each(function () {
 				if($(this).find('a')) {
@@ -89,19 +90,19 @@
 		$(document).foundation(); 
 		
 		// BOOTSTRAPIFY //////////////////////////////////////////////////
-		// Process .portlet for bootstrap collapse
-		var bootstrapify = function (mq) {
+		var bootstrapify_func = function (mobile, collectionSelector, itemSelector, heading, contentClassName, panelGroupID, startIndex) {
+			var hasLink = false;
+			var i = startIndex;
 			
-			// Sidebar-right ...
-			if($('.sidebar-right .portlet').length !== 0) {
-				i = 20;
-				var contentClassName = '.portlet-content';
+			if($(collectionSelector).length !== 0) {
 				
-				$('.sidebar-right').wrapInner('<div id="accordion-sr" class="panel-group"></div>');
+				// Wrap inner as panel-group
+				$(collectionSelector).wrapInner('<div id="'+panelGroupID+'" class="panel-group"></div>');
 				
-	      $('.sidebar-right .portlet').each(function () {
-				
-					var mobile = ((mq === "XS") || (mq === "S")) ? true : false;
+				// Process each item within panel-group
+				var comboSelector = collectionSelector + " " + itemSelector;
+	      $(comboSelector).each(function () {
+			
 					var el = $(this);
 					//var id = ('accordion'+i);
 					var aid = ('acont'+i);
@@ -114,74 +115,56 @@
 					el.addClass('panel panel-default');
 					el.attr('id',pid);
 										
-					var titleEl = el.find('h3');
+					var titleEl = el.find(heading);
 					// TODO: Handle cases where h3 heading not available
 					titleEl.wrap('<div class="panel-heading" />');
 					titleEl.addClass("panel-title");
-					titleEl.wrapInner('<a class="collapsed" data-parent="#accordion-sr" data-target="#'+aid+'" data-toggle="collapse"></a>');
+					
+					// Before we wrap in a link check if a link already exists, and use that instead
+					var moreUrl = titleEl.find('a').attr('href');
+					if((typeof titleEl.find('a').attr('href')) === 'string') {
+						hasLink = true;
+						titleEl.find('a').addClass('collapsed').
+							attr('data-parent',panelGroupID).
+							attr('data-target','#'+aid).
+							attr('data-toggle','collapse');
+					} else {
+						titleEl.wrapInner('<a class="collapsed" data-parent="'+panelGroupID+'" data-target="#'+aid+'" data-toggle="collapse"></a>');
+					}
 					
 					var bodyEl = el.find(contentClassName);
 					bodyEl.addClass('panel-body');
-					//if(mobile) {
-						// Mobile (closed)
 					bodyEl.wrap('<div class="collapsible panel-collapse collapse" id="'+aid+'"></div>');
-						//} else {
-						// Desktop / tablet (open)
-						//bodyEl.wrap('<div class="collapsible panel-collapse collapse in" id="'+aid+'"></div>');
-						//}
 					
-					if(typeof window.console !== "undefined") {
-            window.console.log("ActiveMQ: " + activeMQ + ", Mobile: "+ mobile);
+					if(hasLink) {
+						var readmore = $('<a />').addClass('readmore').attr('href', moreUrl).text("Read More");
+						bodyEl.find('collapsible').append(readmore);
 					}
+
 					++i;
+					hasLink = false;
 	      });
+				return i+1;
 			}		
-			if($('#cm-section section').length !== 0){
-				i = 100;
-				var contentClassName = '.inline-content';
-				
-				$('#cm-section').wrapInner('<div id="accordion-cm" class="panel-group"></div>');
-				
-	      $('#cm-section section').each(function () {
-				
-					var mobile = ((mq === "XS") || (mq === "S")) ? true : false;
-					var el = $(this);
-					//var id = ('accordion'+i);
-					var aid = ('acont'+i);
-					var pid = ('panel'+i);
-					
-					//el.addClass('panel-group');
-					//el.attr('id',('accordion'+i));
-					//el.wrapInner('<div id="'+pid+'" class="panel panel-default" />');
-				
-					el.addClass('panel panel-default');
-					el.attr('id',pid);
-										
-					var titleEl = el.find('h2');
-					// TODO: Handle cases where h3 heading not available
-					titleEl.wrap('<div class="panel-heading" />');
-					titleEl.addClass("panel-title");
-					titleEl.wrapInner('<a class="collapsed" data-parent="#accordion-cm" data-target="#'+aid+'" data-toggle="collapse"></a>');
-				
-					var bodyEl = el.find(contentClassName);
-					bodyEl.addClass('panel-body');
-					//if(mobile) {
-						// Mobile (closed)
-						bodyEl.wrap('<div class="collapsible panel-collapse collapse" id="'+aid+'"></div>');
-						//} else {
-						// Desktop / tablet (open)
-						//bodyEl.wrap('<div class="collapsible panel-collapse collapse in" id="'+aid+'"></div>');
-						//}
-					
-					if(typeof window.console !== "undefined") {
-            window.console.log("ActiveMQ: " + activeMQ + ", Mobile: "+ mobile);
-					}
-					++i;
-	      });
-			
+			return i;
+		};
+
+		var bootstrapify = function (mq) {
+			var portletNum = 20;
+			var mobile = ((mq === "XS") || (mq === "S")) ? true : false;
+			if(typeof window.console !== "undefined") {
+        window.console.log("Is mobile: ActiveMQ: " + activeMQ + ", Mobile: "+ mobile);
+			}
+			// TODO: sidebar-right relies on collapsible selectors for styling; fix that and only process for mobile
+			portletNum = bootstrapify_func(mobile, '.sidebar-right','.portlet', 'h3', '.portlet-content', 'accordion-sr', portletNum);
+			if(mobile) {
+				portletNum = bootstrapify_func(mobile, '#cm-section','section', 'h2', '.inline-content', 'accordion-cm', portletNum);
+				portletNum = bootstrapify_func(mobile, '#event-description', '', 'h3', '.inline-content', 'accordion-e', portletNum);
 			}
 			processed = true;
 		};
+		
+
 		
 		// PLUGIN CANDIDATES /////////////////////////////////////////////
 		// Process .picture into figure/figcaption
@@ -190,7 +173,9 @@
       $('.picture img').each(function () {
 				var title = $(this).attr('title');
 				$(this).wrap('<figure class="picture-processed" />');
-				$(this).parent().append("<figcaption>"+title+"</figcaption>");
+				if((typeof title !== 'undefined')) {
+					$(this).parent().append("<figcaption>"+title+"</figcaption>");
+				}
       });
 		}		
 		
@@ -378,67 +363,6 @@
 			
 		};
 
-		
-		function myResize() {
-      mqSync();
-			if(!processed) {
-				bootstrapify(activeMQ);
-			}
-			expand();
-		}
-				
-    if (toggleActive) {
-				myResize();
-        // Run on resize
-        event.add(window, "resize", myResize);
-    }
-
-		// Activate home page happy boxes
-		if ((activeMQ === 'L') || (activeMQ === 'M')) {
-			
-			
-			if($('body.has-front-am.happy-box #top-panel-row').length !== 0) {
-				$('#top-panel-row').happybox(
-					{
-						'type': '.panel', // element type to make happy
-						'action_element_class': '.action-element',
-						'canvas_element_class': '.narrow-col',
-						'button_class': ".btn-primary",
-						'height': front_banner_height // total height of the happy viewport
-					}
-				);
-				front = true;
-			}
-			
-			// Applies to multiple pages using T2 (tile) or T8 (landing) templates
-			if($('body.has-shadow-am.happy-box #top-panel-row').length !== 0) {
-				$('#top-panel-row').happybox(
-					{
-						'type': '.panel', // element type to make happy
-						'action_element_class': '.action-element',
-						'canvas_element_class': '.narrow-col',
-						'button_class': ".btn-primary",
-						'height': shadow_am_viewport_height, // total height of the happy viewport
-						'frozen': true
-					}
-				);
-			}
-			
-			// Adjust content for banner viewport height if no happy-box top-panel-row is present
-			if(($('body.has-shadow-am').length !== 0) && ($('#top-panel-row').length === 0) && ($('#content-row').length !== 0)) {
-				//$('#content-row').css('margin-top', shadow_am_viewport_height + 45);
-			}
-		}
-		
-    if (debug) {
-        $(window).resize(function () {
-					if(typeof window.console !== "undefined") {
-            window.console.log($(this).width());
-						window.console.log('Screen size: ' + currentMQ);
-					}
-        });
-    }
-		
     function expandedView() {
        	// Index page
 			  //$(".ls-content").removeClass("tab-content");
@@ -555,6 +479,82 @@
 			// Line the menu horizontally
 			$("#utility nav ul li").removeClass("col-xs-3 col-sm-3 col-md-3 col-lg-3");					
 		}
+		
+		/******************************************** MAIN ************************************** */
+		
+		function myResize() {
+      mqSync();
+			if(!processed) {
+				// Note: This only support one round of bs processing so resizing does not undo bootstrap / collapse
+				// TODO: Build undo that is applied only when going from mobile to M or L
+				bootstrapify(activeMQ);
+			}
+			expand(); // process collapse
+		}
+				
+    if (toggleActive) {
+				myResize();
+        // Run on resize
+        event.add(window, "resize", myResize);
+    }
+
+		// Set sidebar position and activate home page happy boxes
+		if ((activeMQ === 'L') || (activeMQ === 'M')) {
+			
+			// Set vert position of right sidebar
+			if(($('.content-title').length !== 0) && ($('.sidebar-right').length !== 0)) {
+				var ctpos = $('.content-title').position();
+				var cth = $('.content-title').height();
+				var ctb = ctpos.top + cth + 5; // 5 additional vert offset needed
+				if($('.breadcrumb').length !== 0) {
+					ctb += $('.breadcrumb').height();
+				}
+				$('.sidebar-right').css('margin-top',ctb);
+			}
+			
+			if($('body.has-front-am.happy-box #top-panel-row').length !== 0) {
+				$('#top-panel-row').happybox(
+					{
+						'type': '.panel', // element type to make happy
+						'action_element_class': '.action-element',
+						'canvas_element_class': '.narrow-col',
+						'button_class': ".btn-primary",
+						'height': front_banner_height // total height of the happy viewport
+					}
+				);
+				front = true;
+			}
+			
+			// Applies to multiple pages using T2 (tile) or T8 (landing) templates
+			if($('body.has-shadow-am.happy-box #top-panel-row').length !== 0) {
+				$('#top-panel-row').happybox(
+					{
+						'type': '.panel', // element type to make happy
+						'action_element_class': '.action-element',
+						'canvas_element_class': '.narrow-col',
+						'button_class': ".btn-primary",
+						'height': shadow_am_viewport_height, // total height of the happy viewport
+						'frozen': true
+					}
+				);
+			}
+			
+			// Adjust content for banner viewport height if no happy-box top-panel-row is present
+			if(($('body.has-shadow-am').length !== 0) && ($('#top-panel-row').length === 0) && ($('#content-row').length !== 0)) {
+				//$('#content-row').css('margin-top', shadow_am_viewport_height + 45);
+			}
+		}
+		
+    if (debug) {
+        $(window).resize(function () {
+					if(typeof window.console !== "undefined") {
+            window.console.log($(this).width());
+						window.console.log('Screen size: ' + currentMQ);
+					}
+        });
+    }
+
+		/******************************************** END MAIN ************************************** */
 		
 	});
 })(jQuery);

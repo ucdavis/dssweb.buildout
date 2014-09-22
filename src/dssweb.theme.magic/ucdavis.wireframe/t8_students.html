@@ -18,7 +18,7 @@
 		<!-- #BeginEditable "header" -->
 		<link type="text/css" href="assets/vendor/jquery.cf.happybox.css" rel="stylesheet">
 		<link type="text/css" href="bower_components/Wallpaper/jquery.fs.wallpaper.css" rel="stylesheet">
-		<link href="assets/sections/ourpeople.css" rel="stylesheet" />
+		<!--<link type="text/css" href="assets/sections/ourpeople.css" rel="stylesheet">-->
 	  <!-- #EndEditable -->
 	
 	  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -208,12 +208,12 @@
 					<div class="row" id="top-panel-row">
 						<!-- top panels -->
 						<div class="panel panel-default top-panel left-panel">
-							<div class="panel-heading hidden-lg hidden-md">
+							<div class="panel-heading hidden-lg hidden-md hidden-sm hidden-xs">
 								<h4 class="panel-title">
 									<a data-target="#container-1" data-toggle="collapse" data-parent="#content-accordion">Left</a>
 								</h4>
 							</div><!-- Left bootstrap column -->
-							<div class="col-sm-4 col-md-4 col-lg-4 action-element collapsible panel-collapse collapse no-gutter" id="container-1">
+							<div class="col-sm-4 col-md-4 col-lg-4 action-element collapsible panel-collapse collapse no-gutter not-visible" id="container-1">
 								<div class="panel-body">
 									<div class="narrow-col">
 										<h2>
@@ -225,12 +225,12 @@
 							</div><!-- /Left bootstrap column -->
 						</div><!--/.panel -->
 						<div class="panel panel-default top-panel middle-panel">
-							<div class="panel-heading hidden-lg hidden-md">
+							<div class="panel-heading hidden-lg hidden-md hidden-sm hidden-xs">
 								<h4 class="panel-title">
 									<a data-target="#container-2" data-toggle="collapse" data-parent="#content-accordion">Middle</a>
 								</h4>
 							</div><!-- Middle bootstrap column -->
-							<div class="col-sm-4 col-md-4 col-lg-4 action-element collapsible panel-collapse collapse no-gutter" id="container-2">
+							<div class="col-sm-4 col-md-4 col-lg-4 action-element collapsible panel-collapse collapse no-gutter not-visible" id="container-2">
 								<div class="panel-body">
 									<div class="narrow-col">
 										<h2>
@@ -244,7 +244,7 @@
 						<div class="panel panel-default top-panel right-panel">
 							<div class="panel-heading hidden-lg hidden-md">
 								<h4 class="panel-title">
-									<a data-target="#container-3" data-toggle="collapse" data-parent="#content-accordion">Right</a>
+									<a data-target="#container-3" data-toggle="collapse" data-parent="#content-accordion">Did You Know...</a>
 								</h4>
 							</div><!-- Right bootstrap column -->
 							<div class="col-sm-4 col-md-4 col-lg-4 action-element collapsible panel-collapse collapse no-gutter" id="container-3">
@@ -291,68 +291,78 @@
 									</div>
 								</div>
 							</div>
-							<div id="nested-right" class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-								<section>
-									<h2><a href="#">Prospective Students</a></h2>
-									<p>Sed pellentesque nec dolor sed volutpat. Etiam congue lectus id erat dictum, a blandit elit ullamcorper. In hac habitasse platea dictumst. Nullam vestibulum purus a ipsum ultrices venenatis. Nulla nec egestas augue. Etiam semper, lacus nec convallis ornare, tellus leo placerat tortor.</p>
-								</section>
-						
-								<section>
-									<h2><a href="#">Current Students</a></h2>
-									<p>Sed pellentesque nec dolor sed volutpat. Etiam congue lectus id erat dictum, a blandit elit ullamcorper. In hac habitasse platea dictumst. Nullam vestibulum purus a ipsum ultrices venenatis. Nulla nec egestas augue. Etiam semper, lacus nec convallis ornare, tellus leo placerat tortor.</p>
-								</section>
-						
-								<section>
-									<h2><a href="#">Graduate Students</a></h2>
-									<p>Sed pellentesque nec dolor sed volutpat. Etiam congue lectus id erat dictum, a blandit elit ullamcorper. In hac habitasse platea dictumst. Nullam vestibulum purus a ipsum ultrices venenatis. Nulla nec egestas augue. Etiam semper, lacus nec convallis ornare, tellus leo placerat tortor.</p>
-								</section>
-						
-								<section>
-									<h2>Core Group B Course Options</h2>
-									<p><em>These courses can now be used to fulfill Core Group B:</em></p>
 							
-									<div class="course-portlet">
-										<div class="course-info">
-											<h3><a href="#">Psychology 125</a></h3>
-											<p>Behavioral Genetics and Epigenetics</p>
+							<div id="cm-section">
+								<div id="nested-right" class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+									<section>
+										<h2><a href="t9_prospective_students.html">Prospective Students</a></h2>
+										<div class="inline-content">
+											<p>Sed pellentesque nec dolor sed volutpat. Etiam congue lectus id erat dictum, a blandit elit ullamcorper. In hac habitasse platea dictumst. Nullam vestibulum purus a ipsum ultrices venenatis. Nulla nec egestas augue. Etiam semper, lacus nec convallis ornare, tellus leo placerat tortor.</p>
 										</div>
-										<button>Register!</button>
-									</div><!-- ./course-portlet -->
-							
-									<div class="course-portlet">
-										<div class="course-info">
-											<h3><a href="#">Psychology 137</a></h3>
-											<p>Neurobiology of Learning and Memory</p>
+									</section>
+						
+									<section>
+										<h2><a href="#">Current Students</a></h2>
+										<div class="inline-content">
+											<p>Sed pellentesque nec dolor sed volutpat. Etiam congue lectus id erat dictum, a blandit elit ullamcorper. In hac habitasse platea dictumst. Nullam vestibulum purus a ipsum ultrices venenatis. Nulla nec egestas augue. Etiam semper, lacus nec convallis ornare, tellus leo placerat tortor.</p>
 										</div>
-										<button>Register!</button>
-									</div><!-- ./course-portlet -->
-							
-									<div class="course-portlet">
-										<div class="course-info">
-											<h3><a href="#">Psychology 159</a></h3>
-											<p>Gender and Human Reproduction</p>
+									</section>
+						
+									<section>
+										<h2><a href="t10_graduate_students.html">Graduate Students</a></h2>
+										<div class="inline-content">
+											<p>Sed pellentesque nec dolor sed volutpat. Etiam congue lectus id erat dictum, a blandit elit ullamcorper. In hac habitasse platea dictumst. Nullam vestibulum purus a ipsum ultrices venenatis. Nulla nec egestas augue. Etiam semper, lacus nec convallis ornare, tellus leo placerat tortor.</p>
 										</div>
-										<button>Register!</button>
-									</div><!-- ./course-portlet -->
+									</section>
+						
+									<section>
+										<h2>Core Group B Course Options</h2>
+										<div class="inline-content">
+											<p><em>These courses can now be used to fulfill Core Group B:</em></p>
 							
-								</section>
+											<div class="course-portlet">
+												<div class="course-info">
+													<h3><a href="#">Psychology 125</a></h3>
+													<p>Behavioral Genetics and Epigenetics</p>
+												</div>
+												<button>Register!</button>
+											</div><!-- ./course-portlet -->
+							
+											<div class="course-portlet">
+												<div class="course-info">
+													<h3><a href="#">Psychology 137</a></h3>
+													<p>Neurobiology of Learning and Memory</p>
+												</div>
+												<button>Register!</button>
+											</div><!-- ./course-portlet -->
+							
+											<div class="course-portlet">
+												<div class="course-info">
+													<h3><a href="#">Psychology 159</a></h3>
+													<p>Gender and Human Reproduction</p>
+												</div>
+												<button>Register!</button>
+											</div><!-- ./course-portlet -->
+										</div>
+									</section>
 
-								<section>
-									<h2>Core Group C Course Options</h2>
-									<p><em>These courses can now be used to fulfill Core Group C:</em></p>
-							
-									<div class="course-portlet">
-										<div class="course-info">
-											<h3><a href="#">Psychology 158</a></h3>
-											<p>Prejudice and Sexual Orientation</p>
+									<section>
+										<h2>Core Group C Course Options</h2>
+										<div class="inline-content">
+											<p><em>These courses can now be used to fulfill Core Group C:</em></p>
+											<div class="course-portlet">
+												<div class="course-info">
+													<h3><a href="#">Psychology 158</a></h3>
+													<p>Prejudice and Sexual Orientation</p>
+												</div>
+												<button>Register!</button>
+											</div><!-- ./course-portlet -->
 										</div>
-										<button>Register!</button>
-									</div><!-- ./course-portlet -->
-							
-								</section>
+									</section>
 								
-							</div>
-						</div>
+								</div><!-- /.nested-right -->
+							</div><!-- /.cm-section -->
+						</div><!-- /.row -->
 						
 						
 						

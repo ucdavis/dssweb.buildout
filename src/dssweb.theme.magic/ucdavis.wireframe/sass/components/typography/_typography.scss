@@ -19,6 +19,11 @@ em {
 	font-style: italic;
 }
 
+button {
+	@include font_size(14px);
+	@include line_height(24px);
+}
+
 .col-lg-4 {
 	h2 {
     font-weight: bold !important;
@@ -170,11 +175,39 @@ body.bio {
 			}
 		}
 	}
+	
 	.sidebar {
 		h3 {
 			@include font_size(13px);
 			@include line_height(40px);
 			letter-spacing:.1em;
+		}
+	}
+	
+	#content-main {
+		.panel-group {
+			.row.panel {
+				.panel-title {
+					a {
+						@include font_size(18px);
+						@include line_height(40px);
+					}
+				}
+			}
+		}
+	}
+	
+	#top-panel-row{
+		margin-top: 45px;
+	}
+	
+	.panel-group {
+
+		#middle-row {
+			h2 {
+				@include font_size(18px,!important);
+				@include line_height(24px);
+			}
 		}
 	}
 }
@@ -246,6 +279,14 @@ body.bio {
 			}
 		}
 	}
+	
+	#content-main {
+		.content-title {
+			@include font_size(26px);
+			@include line_height(28px);
+		}
+	}
+	
 }
 
 

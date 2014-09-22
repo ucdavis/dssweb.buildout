@@ -4,22 +4,33 @@
 
 */
 /* 2013-05-12 RAK: Bootstrap overrides moved from default gem installation that placed overrides directly in the _variables.scss file */
-/* UCD Palette */
-/* Custom colors */
+/* UCD Identity - Colors (http://identitystandards.ucdavis.edu/graphic-standards/colors.html) */
+/* Other Custom colors */
 /* _typography.scss */
 body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.3125em; }
 
+/*
+@font-face {
+	font-family: 'lucida sans bold';
+	src: url('fonts/lucida/LucidaSansBold.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+*/
 a { color: #4d688c; }
 
 em { font-style: italic; }
+
+button { font-size: 14px; font-size: 0.875rem; line-height: 24px; line-height: 1.5rem; }
 
 .col-lg-4 h2 { font-weight: bold !important; font-size: 30px !important; font-size: 1.875rem !important; margin-bottom: 15px; }
 
 .about-bio h3 { font-weight: bold; }
 
-.sidebar-info h4 { font-weight: bold; font-size: 16px; }
+.sidebar h3 a { text-transform: uppercase; font-size: 13px; font-size: 0.8125rem; line-height: 22px; line-height: 1.375rem; letter-spacing: 0.1em; }
 
-@font-face { font-family: 'lucida sans bold'; src: url("fonts/lucida/LucidaSansBold.ttf"); font-weight: normal; font-style: normal; }
+.sidebar-info h4 { font-weight: bold; font-size: 16px; font-size: 1rem; }
+
 .uc { text-transform: uppercase; letter-spacing: 0.1em !important; }
 
 .content-title { padding-bottom: 30px; font-size: 36px; font-size: 2.25rem; line-height: 43px; line-height: 2.6875rem; letter-spacing: 0.01em; margin-top: 0 !important; }
@@ -44,10 +55,15 @@ body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line
 #content-main .breadcrumb p a:hover { text-decoration: underline; }
 #content-main figure figcaption { text-align: right; font-size: 10.65px; font-size: 0.66563rem; text-transform: uppercase; }
 
-/*----- Tablet breakpoint --------*/
+/*----- Mobile breakpoint --------*/
 @media screen and (max-width: 768px) { body.bio .content-title { display: none; }
-  body.bio .bio-card h4.fn { padding-bottom: 30px; font-size: 36px; font-size: 2.25rem; line-height: 43px; line-height: 2.6875rem; letter-spacing: 0.01em; margin-top: 0 !important; } }
-/*----- Desktop breakpoint -------*/
+  body.bio .bio-card h4.fn { padding-bottom: 30px; font-size: 23px; font-size: 1.4375rem; line-height: 25px; line-height: 1.5625rem; letter-spacing: 0.01em; margin-top: 4px !important; }
+  .sidebar h3 { font-size: 13px; font-size: 0.8125rem; line-height: 40px; line-height: 2.5rem; letter-spacing: .1em; }
+  #content-main .panel-group .row.panel .panel-title { height: 40px; }
+  #content-main .panel-group .row.panel .panel-title a { font-size: 18px; font-size: 1.125rem; line-height: 40px !important; line-height: 2.5rem !important; }
+  #top-panel-row { margin-top: 45px; }
+  .panel-group #middle-row h2 { font-size: 18px !important; font-size: 1.125rem !important; line-height: 24px; line-height: 1.5rem; } }
+/*----- tablet breakpoint -------*/
 @media screen and (min-width: 768px) { .top-panel { /*
 &.left-panel {
 	//text-align: right;
@@ -66,7 +82,8 @@ body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line
 /*----- Tablet breakpoint --------*/
 @media screen and (max-width: 992px) { body.home #content-main .narrow-col h2 { font-size: 17px; font-size: 1.0625rem; }
   body.home #content-main #top-panel-row .narrow-col .bcontroller .btn-primary { font-size: 11px; font-size: 0.6875rem; line-height: 18px !important; line-height: 1.125rem !important; }
-  body.home #content-main #bottom-panel-row h2 { font-size: 18px; font-size: 1.125rem; } }
+  body.home #content-main #bottom-panel-row h2 { font-size: 18px; font-size: 1.125rem; }
+  #content-main .content-title { font-size: 26px; font-size: 1.625rem; line-height: 28px; line-height: 1.75rem; } }
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: 992px) { body.home #content-main #top-panel-row .narrow-col .bcontroller .btn-primary { font-size: 14px; font-size: 0.875rem; line-height: 30px !important; line-height: 1.875rem !important; } }
 @media screen and (max-width: 1310px) { body.home #content-main .narrow-col a, body.home #content-main .narrow-col p, body.home #content-main .narrow-col li { font-size: 12px; font-size: 0.75rem; line-height: 15px !important; line-height: 0.9375rem !important; } }
@@ -88,7 +105,15 @@ body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line
 
 @media screen and (max-width: 440px) { .content-main h2 { text-align: center; } }
 @media screen and (max-width: 768px) { .tab { padding: 0 !important; }
-  .panel-title { background: rgba(0, 40, 85, 0.8); } }
+  .panel-title a { background-color: rgba(0, 40, 85, 0.8); }
+  .row.panel { width: 70%; margin-left: auto; margin-right: auto; }
+  .row.panel .panel .panel-heading { background-color: rgba(0, 40, 85, 0.8); }
+  .row.panel .panel .panel-heading .panel-title a { text-align: center !important; text-transform: uppercase; color: #FFF !important; background-image: none; background-color: transparent; }
+  .row.panel .panel .panel-heading .panel-title a.collapsed { color: #FFF !important; background-image: none; background-color: transparent; }
+  .row.panel .panel .panel-heading .panel-title a:hover { color: #002855 !important; background-image: none; background-color: #99d2dd; }
+  .row.panel .panel .panel-body { background-color: rgba(0, 40, 85, 0.8); }
+  .row.panel .panel .panel-body h2 { display: none; }
+  #middle-row h2 { background-color: #99d2dd; text-align: center; } }
 @media screen and (min-width: 768px) { /* Style adjustments for the partial-cover home wall component */
   .wall { height: 741px !important; }
   #middle-row h2 { font-size: 36px !important; font-size: 2.25rem !important; line-height: 25px; line-height: 1.5625rem; margin-top: 45px; margin-bottom: 25px; text-align: center; }

@@ -25,10 +25,10 @@
 
 .bottom-panel{
 	.narrow-col .btn-primary{
-			color:$ucd_blue_100 !important;
-			text-transform:uppercase;
+			color: $ucd_blue_100 !important;
+			text-transform: uppercase;
 			@include font_size(18px);
-			text-decoration:none;
+			text-decoration: none;
 	}
 	&.right-panel {
 		img {
@@ -79,13 +79,60 @@
 		}
 	}
 }
-@media screen and (max-width: $screen-sm-min) {
+@media screen and (max-width: $screen-sm-min) { // width < 768
 	.tab {
 		padding:0 !important;
 	}
 	.panel-title{
-		background: rgba(0, 40, 85, 0.8);
+		a {
+			background-color: rgba(0, 40, 85, 0.8) ;
+		}
 	}
+
+	.row.panel {
+		width: 70%;
+		margin-left: auto;
+		margin-right: auto;
+		.panel {
+			.panel-heading {
+				background-color: rgba(0, 40, 85, 0.8);
+				.panel-title {
+				
+					a {
+						text-align: center !important;
+						text-transform: uppercase;
+						color: #FFF !important;
+						background-image: none;
+						background-color: transparent; //rgba(0, 40, 85, 0.8);
+						&.collapsed {
+							color: #FFF !important;
+							background-image: none;
+							background-color: transparent; //rgba(0, 40, 85, 0.8);
+						}
+						&:hover {
+							color: $ucd_blue_100 !important;
+							background-image: none;
+							background-color: $rec_blue_40; //rgba(0, 40, 85, 0.8);
+						}
+					}
+				}
+			}
+			.panel-body {
+				background-color: rgba(0, 40, 85, 0.8);
+				h2 {
+					display: none;
+				}
+			}
+		}
+	}
+	
+	#middle-row {
+		h2 {
+			background-color: $rec_blue_40;
+			text-align: center;
+		}
+	}
+	
 }
 @media screen and (min-width: $screen-sm-min) { // width > 768px
 	

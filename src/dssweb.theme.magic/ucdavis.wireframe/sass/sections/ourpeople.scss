@@ -12,9 +12,10 @@ $cardbg_gray: #e5e5e5;
 $ucdtxt_blue: #4D688C; // based on?
 
 // Temp hide left and middle happy boxes
-#container-1, #container-2 {
+// Note: Use .not-visible class in markup instead
+/*#container-1, #container-2 {
 	visibility: hidden;
-}
+}*/
 
 #content-main {
 	a {
@@ -101,10 +102,11 @@ $ucdtxt_blue: #4D688C; // based on?
 @media screen and (max-width: $screen-xs-max) { // width < 767
 	.sidebar{
 		//background:  $cardbg_gray;
+		.collapsible{
+			background: $cardbg_gray;
+		}
 	}
-	.collapsible{
-		background: $cardbg_gray;
-	}
+
 	#am-content {
 		padding: 20px 20px;
 	

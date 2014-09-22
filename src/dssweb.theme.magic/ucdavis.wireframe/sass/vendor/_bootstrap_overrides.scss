@@ -69,6 +69,9 @@ $screen-xs-max: 767px;
 .panel-group .panel+.panel{
 	margin-top:0 !important;
 }
+.panel-body {
+	background-color: transparent;
+}
 .panel {
 	outline: none;
 	border: none !important;

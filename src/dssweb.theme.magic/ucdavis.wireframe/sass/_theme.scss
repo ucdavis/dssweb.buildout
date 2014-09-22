@@ -49,7 +49,7 @@ head{
 
 .sidebar-left{
 	.panel{
-		//background: #e5e5e5;
+		//background: $box_light_gray;
 	}
 }
 .sidebar-right{
@@ -93,11 +93,24 @@ head{
 	//left-indent: -10000px;
 	display: none;
 }
+.not-visible {
+	visibility: hidden;
+}
 .nobr {
 	white-space: nowrap;
 }
 p {
 	margin-bottom: 15px;
+}
+
+button {
+	height: 40px;
+	width: 120px;
+	background-color: $ucd_bright_gold;
+	&:hover {
+		background-color: $ucd_bright_gold_40;
+		cursor: pointer;
+	}
 }
 
 #utility {
@@ -114,7 +127,6 @@ p {
 		clear:both;
 	}
 }
-
 
 #footer {	
 	background-color:$ucd_blue_70;
@@ -300,6 +312,7 @@ input{
 		padding:0;
 		.panel-title {
 			//background-color: $rec_blue;
+			//height: 30px;
 			a {
 				background-color: $rec_blue;
 				&:hover{
@@ -383,7 +396,7 @@ input{
 	}
 }
 .sidebar-block-items {
-	background: #e5e5e5;	
+	background: $box_light_gray;	
 	padding-bottom: 10px;
 	text-align: left;
 	width: auto;
@@ -400,6 +413,9 @@ input{
 		text-decoration: none;
 		&.collapsed {
 			background-color: $ucd_bright_gold; 
+		}
+		&:hover {
+			background-color: $ucd_bright_gold_40; 
 		}
 	}
 }
@@ -474,10 +490,18 @@ input{
 			}
 		}
   }
+	.sidebar{
+		.panel-heading{
+			.panel-title {
+				background-color: $rec_blue;
+				height: 30px;
+			}
+		}
+	}
 	.sidebar-right{
 		padding-left:0 !important; 
 		padding-right:0 !important;
-		margin-top: 145px; // ad-hoc
+		//margin-top: 145px; // ad-hoc ... set position of sidebar in javascript
 	}
 }
 
@@ -542,6 +566,7 @@ input{
 				
 				&:hover {
 					cursor: pointer !important;
+					background-color: $ucd_bright_gold_40;
 				}
 			}
 		}
@@ -649,6 +674,10 @@ input{
 						color: #FFF !important;
 						background: url(../images/icons/white-arrow-right-sm.png) 98% 50% no-repeat $rec_blue;
 					}
+					&:hover {
+						color: $ucd_blue_100 !important;
+						background: url(../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat $rec_blue_40;
+					}
 				}
 			}
 		}
@@ -656,6 +685,34 @@ input{
 	#footer {
 		margin-bottom: 60px;
 	}
+	
+	#content-row {
+		section {
+			.course-portlet {
+				padding: 0;
+				.course-info {
+					padding: 0;
+					float: left;
+					width: 75%;
+					h3 {
+						padding: 0;
+					}
+				}
+				button {
+					float:left;
+					width: 25%;
+					height: 40px;
+					width: 120px;
+					background-color: $ucd_bright_gold;
+					&:hover {
+						background-color: $ucd_bright_gold_40;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+	
 }
 
 /*----- Mobile breakpoint -------*/
@@ -1096,7 +1153,7 @@ input{
 	head { font-family:"M";}
 	body:after{content:"M";}
 	#content-main {
-		padding-right: 0 !important;
+		//padding-right: 0 !important;
 	}
 	body.bio .sidebar {
 		> div {
