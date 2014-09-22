@@ -46,6 +46,11 @@ button {
 			letter-spacing: 0.1em;
 		}
 	}
+	.panel-heading {
+		h3.panel-title {
+			padding-top: 0 !important; // override #am-content styles
+		}
+	}
 	.vcard {
 		@include font_size(13px);
 		@include line_height(18px);
