@@ -31,6 +31,8 @@ button { font-size: 14px; font-size: 0.875rem; line-height: 24px; line-height: 1
 
 .about-bio h3 { font-weight: bold; }
 
+.pager .pager-string { font-size: 13px; font-size: 0.8125rem; line-height: 25px; line-height: 1.5625rem; }
+
 .sidebar h3 a { text-transform: uppercase; font-size: 13px; font-size: 0.8125rem; line-height: 22px; line-height: 1.375rem; letter-spacing: 0.1em; }
 .sidebar .panel-heading h3.panel-title { padding-top: 0 !important; }
 .sidebar .vcard { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
@@ -573,6 +575,16 @@ tbody.collapse.in { display: table-row-group; }
 .sr-only-focusable:active, .sr-only-focusable:focus { position: static; width: auto; height: auto; margin: 0; overflow: visible; clip: auto; }
 
 /* Overriden styles */
+.hide { display: none !important; }
+
+.show { display: block !important; }
+
+.invisible { visibility: hidden; }
+
+.text-hide { font: 0/0 a; color: transparent; text-shadow: none; background-color: transparent; border: 0; }
+
+.hidden { display: none !important; visibility: hidden !important; }
+
 #breadcrumb .breadcrumb { padding: 0; margin-bottom: 0; list-style: none; background-color: transparent; border-radius: 0; }
 #breadcrumb .breadcrumb > li { display: inline; /* Changed for CSS validation, was auto */ }
 #breadcrumb .breadcrumb > li + li:before { padding: 0; color: inherit; /* Changed for CSS validation, was auto */ content: normal; /* Changed for CSS validation, was auto */ }
@@ -1078,6 +1090,8 @@ button { font-size: 14px; font-size: 0.875rem; line-height: 24px; line-height: 1
 
 .about-bio h3 { font-weight: bold; }
 
+.pager .pager-string { font-size: 13px; font-size: 0.8125rem; line-height: 25px; line-height: 1.5625rem; }
+
 .sidebar h3 a { text-transform: uppercase; font-size: 13px; font-size: 0.8125rem; line-height: 22px; line-height: 1.375rem; letter-spacing: 0.1em; }
 .sidebar .panel-heading h3.panel-title { padding-top: 0 !important; }
 .sidebar .vcard { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
@@ -1178,6 +1192,8 @@ button { font-size: 14px; font-size: 0.875rem; line-height: 24px; line-height: 1
 .col-lg-4 h2 { font-weight: bold !important; font-size: 30px !important; font-size: 1.875rem !important; margin-bottom: 15px; }
 
 .about-bio h3 { font-weight: bold; }
+
+.pager .pager-string { font-size: 13px; font-size: 0.8125rem; line-height: 25px; line-height: 1.5625rem; }
 
 .sidebar h3 a { text-transform: uppercase; font-size: 13px; font-size: 0.8125rem; line-height: 22px; line-height: 1.375rem; letter-spacing: 0.1em; }
 .sidebar .panel-heading h3.panel-title { padding-top: 0 !important; }
@@ -1399,13 +1415,14 @@ fieldset legend { font-size: 15px; font-size: 0.9375rem; text-align: left; color
 
 /* /_facetted-form.scss */
 /* _pager.scss */
-.pager { width: 100%; text-align: center; }
-.pager a { display: inline-block; width: 20px; height: 10px; }
-.pager .pager-first a { background: url(../images/icons/pager-first.gif) 0 0 no-repeat; }
-.pager .pager-prev a { background: url(../images/icons/pager-prev.gif) 0 0 no-repeat; }
-.pager .pager-string { font-size: 13px; font-size: 0.8125rem; }
-.pager .pager-next a { background: url(../images/icons/pager-next.gif) 0 0 no-repeat; }
-.pager .pager-last a { background: url(../images/icons/pager-last.gif) 0 0 no-repeat; }
+.pager { text-align: center; padding-top: 10px; padding-bottom: 10px; }
+.pager a { display: block; width: 50px; height: 25px; margin-right: 5px; }
+.pager span { display: inline-block; }
+.pager .pager-first a { background: url(../images/icons/d-pager-first.gif) 0 0 no-repeat; }
+.pager .pager-prev a { margin-right: 10px; width: 38px; background: url(../images/icons/d-pager-prev.gif) 0 0 no-repeat; }
+.pager .pager-string { height: 25px; display: inline-block; }
+.pager .pager-next a { width: 38px; margin-left: 10px; background: url(../images/icons/d-pager-next.gif) 0 0 no-repeat; }
+.pager .pager-last a { background: url(../images/icons/d-pager-last.gif) 0 0 no-repeat; }
 
 /* _pager.scss */
 /* _icons.scss */
