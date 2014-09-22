@@ -46,9 +46,10 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/*
 .panel-default > .panel-heading{
 	background-color:#e5e5e5 !important;	
-}
+}*/
 .table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th{
 	background-color:#e5e5e5 !important;	
 }

@@ -11,4 +11,41 @@
 	
 }
 
+#corner-box-target {
+	position: relative;
+	.corner-box {
+		display: block;
+		width: 350px;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		background-color: rgba(0, 40, 85, 0.8);
+		.box-content {
+			margin: 15px 35px 30px 40px;
+		}
+		margin-bottom: 21px; // Note: If caption height changes, so should this. TODO: Apply in JS for cases where no figcaption ... but this is not part of the design mockup
+	}
+}
+/*----- Mobile breakpoint --------*/
+// At point that left and right margins are gone
+@media screen and (max-width: $screen-sm-min) { // width < 768
+	// TODO: Widgetize the corner box. See T5 mobile mockup
+	.corner-box {
+		display: none !important;
+	}
+}
+
+/*----- Tablet breakpoint --------*/
+// At point that left and right margins are gone
+@media screen and (max-width: $screen-md-min) { // width < 992
+	#corner-box-target {
+		.corner-box {
+			width: 220px;
+			.box-content {
+				margin: 0 15px 10px 20px;
+			}
+		}
+	}
+}
+
 /* /_block.scss */

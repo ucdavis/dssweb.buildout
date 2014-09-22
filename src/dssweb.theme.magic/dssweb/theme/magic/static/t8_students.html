@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><!-- #BeginTemplate "/Templates/adhoc.dwt" -->
+<html lang="en"><!-- #BeginTemplate "/Templates/landing.dwt" -->
 	<head>
 	  <meta charset="utf-8" />
 	  <meta name="viewport" content="width=device-width" />
@@ -7,16 +7,18 @@
     <meta name="author" content="" />
 		
 		<!-- #BeginEditable "title" -->
-	    <title>Adhoc A</title>
+	    <title>Students</title>
 	  <!-- #EndEditable -->
 	  <link type="text/css" href="assets/vendor/reset.css" rel="stylesheet" />
 		<link type="text/css" href="assets/vendor/topbar.css" rel="stylesheet" />
-		<link type="text/css" href="bower_components/Wallpaper/jquery.fs.wallpaper.css" rel="stylesheet">
+		
 	  <link type="text/css" href="assets/styles.css" rel="stylesheet" />
 	  <link type="text/css" href="assets/sub-org.css" rel="stylesheet" />
 		
 		<!-- #BeginEditable "header" -->
-		
+		<link type="text/css" href="assets/vendor/jquery.cf.happybox.css" rel="stylesheet">
+		<link type="text/css" href="bower_components/Wallpaper/jquery.fs.wallpaper.css" rel="stylesheet">
+		<!--<link type="text/css" href="assets/sections/ourpeople.css" rel="stylesheet">-->
 	  <!-- #EndEditable -->
 	
 	  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -27,18 +29,18 @@
 	</head>
 
   <!-- #BeginEditable "body-tag" -->
-  <body class="ad-hoc">
+  <body class="students has-shadow-am happy-box">
   <!-- #EndEditable -->
 		<div id="skip-link"><a href="#content-main" class="sr-only sr-only-focusable">Skip to main content</a></div>
 	
 	  <div class="row jumbotron">
 			<div class="siders">
-				<div class="wall shadow-graphic">
+				<div class="wall shadow-am-graphic">
 		    	&nbsp;
 				</div>
 			</div>
 	  </div>
-	
+
 	  <div id="main-container" class="container">
 	    <div id="util-bar-wrap" class="row">
 	      <nav class="util-bar">
@@ -200,97 +202,202 @@
 			</div>
 	    <!-- #BeginEditable "content" -->
 			
-			<div id="content-row" class="row">
-		
-			  <div id="content-main" class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-					<div class="breadcrumb"><p><a href="index.html">Home</a> <span class="bread-divider">|</span> <a href="#">TBD</a></p></div>
-			    <h1 class="content-title">Lorem ipsum dolor sit amet</h1>
-					
-			    <div class="panel-group" id="accordionB">
-			      <div class="panel panel-default">
-	        
-							<div id="content-panel-heading" class="panel-heading">
-			          <h4 class="panel-title"><a data-parent="#accordionB" data-target=
-			            "#content-a" data-toggle="collapse">Hide Content which would be way to short a title to test what happens with two liners</a></h4>
-			        </div>
-					
-			        <div class=" collapsible panel-collapse collapse in" id="content-a">
-			          <div class="panel-body">
+			<div id="content-main">
 
-			            <p class="intro">adipiscing elit. Proin quis odio imperdiet, venenatis dolor
-			              quis, tincidunt ante. Nullam id purus gravida, consectetur odio
-			              et, adipiscing tortor. Ut facilisis ipsum sed lacus dapibus
-			              volutpat. Aenean gravida lectus eu sodales vestibulum.
-			            </p>
-									<h2>Nullam id purus gravida</h2>
-									<p>
-									Donec semper sit amet tellus non lobortis. Integer aliquet libero diam, nec vestibulum nisl imperdiet sit amet. Ut mattis et felis a eleifend. Fusce vulputate interdum sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus lacus ante, fringilla vel blandit eget, finibus vitae lacus. Ut eu felis nec ipsum tincidunt vulputate vel quis elit. Maecenas blandit, elit at cursus fermentum, mauris nisl facilisis ante, vitae blandit risus felis a neque.
-									</p>
-									<div class="picture">
-										<img class="img-responsive" src="images/temp/t4-adhoc-image.jpg" alt="Photo Alt Tag" title="Photo Caption" />
+				<div class="panel-group" id="content-accordion">
+					<div class="row" id="top-panel-row">
+						<!-- top panels -->
+						<div class="panel panel-default top-panel left-panel">
+							<div class="panel-heading hidden-lg hidden-md hidden-sm hidden-xs">
+								<h4 class="panel-title">
+									<a data-target="#container-1" data-toggle="collapse" data-parent="#content-accordion">Left</a>
+								</h4>
+							</div><!-- Left bootstrap column -->
+							<div class="col-sm-4 col-md-4 col-lg-4 action-element collapsible panel-collapse collapse no-gutter not-visible" id="container-1">
+								<div class="panel-body">
+									<div class="narrow-col">
+										<h2>
+											Placeholder Left
+										</h2>
+										<div class="content"></div>
 									</div>
-									<h3>Donec ut elit et diam suscipit</h3>
-			
-									<ul class="body-list">
-										<li>
-											Ut mattis et felis a eleifend. Fusce vulputate interdum sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-										</li> 
-										<li>
-											Phasellus lacus ante, fringilla vel blandit eget, finibus vitae lacus. Ut eu felis nec ipsum tincidunt vulputate vel quis elit. 
-											<ul class="sub-list">
-												<li>
-													Maecenas blandit, elit at cursus fermentum, mauris nisl facilisis ante, vitae blandit risus felis a neque.
-												</li>
-												<li>
-													Quisque euismod euismod purus et tempus. Nulla quis augue malesuada, porta dui id, sagittis nulla. Morbi id lorem et erat interdum pharetra. Proin vel gravida magna, quis faucibus mauris.
-												</li>
-											</ul>
-										</li>
-										<li>
-										Donec ut elit et diam suscipit cursus id id elit. Suspendisse in ligula sed est gravida rhoncus at id nisl. Fusce erat sem, tempor non aliquam eu, sagittis ut arcu. Etiam et nisi porttitor, ullamcorper nisl eu, consectetur mauris. 
-										</li>							
-									</ul>
-									<p>
-										Maecenas vel massa gravida nisi dapibus porttitor. Curabitur luctus eros turpis, a faucibus purus semper at. Aliquam ornare risus eget eros elementum interdum. Donec non tempus magna. Pellentesque fringilla, eros vel feugiat ultrices, orci justo euismod nibh, eu rhoncus massa mi ac nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									</p>
-									<h3>Downloads:</h3>
-									<ul class="body-list" id="downloads">
-										<li><a href="test.pdf">Download A</a> <span class="nobr filetype">(PDF, 556K)</span></li>
-										<li><a href="test.pdf">Download B</a> <span class="nobr filetype">(PDF, 556K)</span></li>
-										<li><a href="test.pdf">Download C</a> <span class="nobr filetype">(PDF, 556K)</span></li>
-									</ul>
-			          </div>
-			        </div>
-			      </div>
-			    </div>
-			    <!-- /.panel-group -->
-			  </div>
-			  <!-- /.content-main -->
-      
-
-	
-			    <!-- #EndEditable -->
-					<div class="sidebar sidebar-right col-xs-12 col-sm-12 col-md-4 col-lg-4">
+								</div>
+							</div><!-- /Left bootstrap column -->
+						</div><!--/.panel -->
+						<div class="panel panel-default top-panel middle-panel">
+							<div class="panel-heading hidden-lg hidden-md hidden-sm hidden-xs">
+								<h4 class="panel-title">
+									<a data-target="#container-2" data-toggle="collapse" data-parent="#content-accordion">Middle</a>
+								</h4>
+							</div><!-- Middle bootstrap column -->
+							<div class="col-sm-4 col-md-4 col-lg-4 action-element collapsible panel-collapse collapse no-gutter not-visible" id="container-2">
+								<div class="panel-body">
+									<div class="narrow-col">
+										<h2>
+											Placeholder Middle
+										</h2>
+										<div class="content"></div>
+									</div>
+								</div>
+							</div><!-- /Middle bootstrap column -->
+						</div><!--/.panel -->
+						<div class="panel panel-default top-panel right-panel">
+							<div class="panel-heading hidden-lg hidden-md">
+								<h4 class="panel-title">
+									<a data-target="#container-3" data-toggle="collapse" data-parent="#content-accordion">Did You Know...</a>
+								</h4>
+							</div><!-- Right bootstrap column -->
+							<div class="col-sm-4 col-md-4 col-lg-4 action-element collapsible panel-collapse collapse no-gutter" id="container-3">
+								<div class="panel-body">
+									<div class="narrow-col">
+										<h2>
+											Did You Know...
+										</h2>
+										<div class="content">
+											<h3 class="uc">
+												<a href="#">Lorem Ipsum Dolor</a>
+											</h3>
+											<p>
+												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris libero ex, maximus ut metus et, interdum elementum lorem. Proin scelerisque, leo quis ultricies lobortis, orci nisi varius magna
+											</p>
+										</div>
+									</div>
+								</div>
+							</div><!-- Right bootstrap column -->
+						</div><!--/.panel -->
+						<!-- /top panels -->
+					</div><!-- /.top-panel-row -->
+				</div><!-- /.panel-group / row wrapper -->
+				
+				<div id="content-row" class="row">
+				
+					<div id="am-content" class="col-xs-12 col-sm-12 col-md-8 col-lg-8 no-gutter-lg">
+						<div class="breadcrumb"><p><a href="index.html">Home</a></p></div>
+				    <h1 class="content-title">Students</h1>
 						
-					  <div class="portlet">
-					  	<h3>Contact</h3>
-							<div class="portlet-content">
-					      <ul id="sidebar-block-contact" class="vcard">
-					        <li class="fn"><a href="#">Firstname Lastname</a></li>
-					        <li class="category">Position</li>
-					        <li class="tel">(530) 391-9165</li>
-									<li class="email"><a href="mailto:email@ucdavis.edu">Email</a></li>
-					      </ul>
-					    </div>
-					  </div>
-					  <!-- /.portlet -->
-				
-				</div><!-- /.sidebar-right -->
-				
-			</div><!-- /#content-row -->
-	
-	
+						<p class="intro">Vestibulum laoreet nisi ex, mattis malesuada quam hendrerit quis. Curabitur porttitor blandit eros ac finibus. Maecenas scelerisque condimentum maximus. Aliquam vel elementum sapien. Donec sit amet pulvinar est. Suspendisse varius rhoncus ex et rhoncus. Maecenas ac dignissim neque, in lobortis lorem. </p>
+						
+						<div class="row">
+							<div id="nested-left" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+								<div class="student-events">
+									<h3 class="uc">Important Dates and Deadlines for Summer Session II 2014</h3>
+									<div class="event-item">
+										<h4>Last Day to Add Classes</h4>
+										<p>August 8th</p>
+									</div>
+									<div class="event-item">
+										<h4>Summer Drop Deadline:</h4>
+										<p>Monday, August 11th</p>
+									</div>
+								</div>
+							</div>
+							
+							<div id="cm-section">
+								<div id="nested-right" class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+									<section>
+										<h2><a href="t9_prospective_students.html">Prospective Students</a></h2>
+										<div class="inline-content">
+											<p>Sed pellentesque nec dolor sed volutpat. Etiam congue lectus id erat dictum, a blandit elit ullamcorper. In hac habitasse platea dictumst. Nullam vestibulum purus a ipsum ultrices venenatis. Nulla nec egestas augue. Etiam semper, lacus nec convallis ornare, tellus leo placerat tortor.</p>
+										</div>
+									</section>
+						
+									<section>
+										<h2><a href="t5_generic_landing.html">Current Students</a></h2>
+										<div class="inline-content">
+											<p>Sed pellentesque nec dolor sed volutpat. Etiam congue lectus id erat dictum, a blandit elit ullamcorper. In hac habitasse platea dictumst. Nullam vestibulum purus a ipsum ultrices venenatis. Nulla nec egestas augue. Etiam semper, lacus nec convallis ornare, tellus leo placerat tortor.</p>
+										</div>
+									</section>
+						
+									<section>
+										<h2><a href="t10_graduate_students.html">Graduate Students</a></h2>
+										<div class="inline-content">
+											<p>Sed pellentesque nec dolor sed volutpat. Etiam congue lectus id erat dictum, a blandit elit ullamcorper. In hac habitasse platea dictumst. Nullam vestibulum purus a ipsum ultrices venenatis. Nulla nec egestas augue. Etiam semper, lacus nec convallis ornare, tellus leo placerat tortor.</p>
+										</div>
+									</section>
+						
+									<section>
+										<h2>Core Group B Course Options</h2>
+										<div class="inline-content">
+											<p><em>These courses can now be used to fulfill Core Group B:</em></p>
+							
+											<div class="course-portlet">
+												<div class="course-info">
+													<h3><a href="#">Psychology 125</a></h3>
+													<p>Behavioral Genetics and Epigenetics</p>
+												</div>
+												<button>Register!</button>
+											</div><!-- ./course-portlet -->
+							
+											<div class="course-portlet">
+												<div class="course-info">
+													<h3><a href="#">Psychology 137</a></h3>
+													<p>Neurobiology of Learning and Memory</p>
+												</div>
+												<button>Register!</button>
+											</div><!-- ./course-portlet -->
+							
+											<div class="course-portlet">
+												<div class="course-info">
+													<h3><a href="#">Psychology 159</a></h3>
+													<p>Gender and Human Reproduction</p>
+												</div>
+												<button>Register!</button>
+											</div><!-- ./course-portlet -->
+										</div>
+									</section>
 
+									<section>
+										<h2>Core Group C Course Options</h2>
+										<div class="inline-content">
+											<p><em>These courses can now be used to fulfill Core Group C:</em></p>
+											<div class="course-portlet">
+												<div class="course-info">
+													<h3><a href="#">Psychology 158</a></h3>
+													<p>Prejudice and Sexual Orientation</p>
+												</div>
+												<button>Register!</button>
+											</div><!-- ./course-portlet -->
+										</div>
+									</section>
+								
+								</div><!-- /.nested-right -->
+							</div><!-- /.cm-section -->
+						</div><!-- /.row -->
+						
+						
+						
+						
+						
+					</div><!-- /#am-content -->
+				
+					<div class="sidebar sidebar-right col-xs-12 col-sm-12 col-md-4 col-lg-4">
+				    <div class="portlet">
+				    	<h3>Contact</h3>
+							<div class="portlet-content">
+							
+				      	<div class="vcard office">
+									<h4 class="org"><a class="url" href="http://psychology.ucdavis.edu/">UC Davis Department of Psychology</a></h4>
+									<div class="adr">
+										<span class="street-address">174K Young Hall <br />
+										One Shields Avenue</span><br />
+										<span class="locality">Davis</span>, <abbr class="region" title="California">CA</abbr> <span class="postal-code">95616</span>
+									</div>
+									<div class="tel">(530) 754-9447</div>
+									<div class="email"><a href="mailto:">Email</a></div>
+								</div><!-- /.vcard -->
+							
+				      </div>
+				    </div>
+				    <!-- /.portlet -->
+					</div><!-- /.sidebar -->
+				
+				</div><!-- /#content-row -->
+				
+			</div>
+	
+    <!-- #EndEditable -->
+		
+	  	<!-- #BeginEditable "custom-footer" -->
 			<div id="footer" class="row">
 				<div class="foot-wrap">
 					<ul id="foot-social">
@@ -330,13 +437,14 @@
 						<li><a href="#">Student Clubs</a></li>
 						<li><a href="#">Login</a></li>
 					</ul>
-		
+
 					<p id="copyright">
 						Copyright &copy; 2014 &nbsp;All Rights Reserved
 					</p>
 				</div>
 		  </div><!-- /#footer -->
-			
+		    <!-- #EndEditable -->
+
 			<div class="sticky hidden-lg hidden-md hidden-sm">
 	      <nav class="util-nav">
 	        <ul class="util">
@@ -391,6 +499,8 @@
 	  <!-- Placed at the end of the document so the pages load faster -->
 	  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	  <script type="text/javascript" src="js/contrib/jquery.min.js"></script>
+		<script type="text/javascript" src="js/contrib/jquery.easing.1.3.js"></script>
+		
 	  <script type="text/javascript" src="js/bootstrap/dropdown.js"></script>
 	  <script type="text/javascript" src="js/bootstrap/collapse.js"></script>
 	  <script type="text/javascript" src="js/bootstrap/transition.js"></script>
@@ -405,12 +515,12 @@
 		
 	  <script>
 			$(".wall").wallpaper({ 
-				source: "images/banners/rec_blue_shadow.gif"
+				source: "images/banners/our-people-shadow-am.jpg"
 			});
+			var active_trail = "#students-btn";
 		</script>
-	
+		<script type="text/javascript" src="js/plugins/jquery.cf.happybox.js"></script>
 		<script type="text/javascript" src="js/jquery.cf.main.js"></script>
-  
   	<!-- #EndEditable -->
 	</body>
 <!-- #EndTemplate -->

@@ -16,7 +16,10 @@
 						button_class: 'happy-btn',
 						button_height: 50,
 						pclass: "cf-happybox-processed",
-						height: 200
+						height: 200,
+						peek_offset: 0,
+						open_panel_num: 0,
+						frozen: false
         };
 
     // The actual plugin constructor
@@ -132,7 +135,7 @@
     };
 
 		Plugin.prototype._happy = function (element) {
-			window.console.log("Happybox: crazy");
+			window.console.log("Happybox: _happy");
 			$
 		};
 		

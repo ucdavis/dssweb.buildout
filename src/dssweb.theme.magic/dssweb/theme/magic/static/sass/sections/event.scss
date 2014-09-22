@@ -1,0 +1,141 @@
+@charset "utf-8";
+@import "variables"; // for BASE font size and mixin font_size()
+@import "ucd-variables";
+@import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
+
+/* event.scss */
+
+.rows {
+	border-top: 5px solid $rec_blue;
+	padding-left: 15px;
+	padding-right: 15px;
+	&.zebra {
+		.row:nth-child(even) {
+			background-color: transparent;
+		}
+		.row:nth-child(odd) {
+			background-color: $box_light_gray;
+		}
+
+			.row {
+				> div:last-child {
+					padding-top: 16px;
+				}
+			}
+
+	}
+}
+#event-cta {
+	background-color: transparent;
+
+	.portlet-items {
+		#ical-icon, #vcal-icon, #rss-icon {
+			background-image: none;
+			height: 25px;
+			a {
+				@include font_size(12px);
+				@include line_height(25px);
+				display: inline-block;
+				
+				width: 120px;
+				height: 25px;
+				padding-left: 20px;
+				background: url(../../images/icons/m-ical-icon.png) 0 50% no-repeat;
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+		#rss-icon {
+			a {
+				background: url(../../images/icons/m-RSS-icon.png) 0 50% no-repeat;
+			}
+		}
+	}
+}
+
+#accordion-e {
+	> div {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+/*----- Tablet breakpoint -------*/
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
+	#content-main {
+		padding-right: 45px;
+	}
+}
+
+@media screen and (max-width: $screen-xs-max) { // width < 767
+	.rows {
+		.row {
+			> div {
+				h3, p {
+					@include font_size(12.5px);
+				}
+			}
+		}
+	}
+	#event-cta {
+		text-align: center;
+		h3 {
+			display: none;
+		}
+		button {
+			float: none;
+			margin-bottom: 15px;
+		}
+		.portlet-items {
+			float: none;
+			li {
+				display: inline-block;
+				a {
+					width: auto !important;
+				}
+				&#vcal-icon {
+					display: none;
+				}
+			}
+		}
+	}
+	// Remove following for gold button instead of blue 
+	#accordion-e {
+		.panel-title {
+			a {
+				color: $ucd_blue_100 !important;
+				background: url(../../images/icons/blue-100-right-arrow-down.png) 98% 50% no-repeat $rec_blue_40;
+				&.collapsed {
+					color: #FFF !important;
+					background: url(../../images/icons/white-arrow-right-sm.png) 98% 50% no-repeat $rec_blue;
+				}
+				&:hover {
+					color: $ucd_blue_100 !important;
+					background: url(../../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat $rec_blue_40;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: $screen-sm-min) { // width > 768
+	.rows {
+		.row {
+			> div:first-child {
+				text-align: right;
+			}
+		}
+	}
+	#event-cta {
+		button {
+			float: left;
+		}
+		.portlet-items {
+			float: right;
+		}
+	}
+	
+}
+/* /event.scss */

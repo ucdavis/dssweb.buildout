@@ -5,9 +5,10 @@ $panel-bg:                    transparent;
 $panel-default-border:        transparent;
 $panel-body-padding:          0;
 
-//$screen-md-min: 1000px; // 1000px, was 992px 
+$screen-xs-max: 767px; // custom width
 $screen-lg-min: 1310px; // 1310px, was 1200
 
+//$container-tablet:						 850px; // was 750px
 $container-desktop: 					 970px; // 1000px, was 970px
 $container-large-desktop:      1280px; // 1280px, was 1170px
 

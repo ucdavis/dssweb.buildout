@@ -1,0 +1,49 @@
+/* _facetted-form.scss */
+
+#c5{
+	text-align: left;
+}
+#c5-all{
+	text-align: left;
+	border: none;
+	color: #000;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-top: 10px;
+	//margin-left:3px;
+	margin-bottom: 3px;
+}
+
+.faceted_letter{
+	border-right: 1px solid #000;
+	padding-right: 6px;
+	padding-left: 2px;
+}
+
+.checkForm{
+	text-align: left;
+	list-style-type: none !important;
+	li {
+		list-style: none !important;
+		padding-left: 0 !important;
+		background-image: none !important;
+	}
+	label{
+		@include font_size(13px);
+		font-weight: normal;
+	}
+	p#help{
+		@include font_size(13px, !important);
+		color: #000;
+	}
+}
+
+fieldset {
+	legend {
+		@include font_size(15px);
+		text-align: left;
+		color: #000;
+		text-transform: uppercase;
+	}
+}
+/* /_facetted-form.scss */

@@ -5,7 +5,7 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
     <!-- Apply the following rules to standard Plone pages -->
-       <rules css:if-content="#visual-portal-wrapper">
+    <rules css:if-content="#visual-portal-wrapper">
 
         <theme href="index.html" />
 
@@ -26,33 +26,10 @@
         <after css:theme-children="html body" css:content="html head script" />
 
         <!-- Insert your own rules here -->
-	   
-	   <!--swap in portal-globalnav -->
-         <!--replace css:content="#portal-globalnav li" css:theme-children="#top-bar-wrap > nav > section > ul.left" /-->
-	    <!--overkill rule to replace the plain class on the menu li - unnecessary use of force, but fun! -->
-		<!--replace css:theme="#name-icon" css:content="#portal-logo" /-->
-	    <replace content="//li[contains(@class,'plain')]/@class">
-	    <xsl:attribute name="class">
-	    <xsl:if test='contains(current(),"plain")'>menu</xsl:if>
-	    </xsl:attribute>
-	    </replace>
-	    
-	    <!--replace content="//ul[contains(@class,'submenu')]/@class">
-	    <xsl:attribute name="class">
-	    <xsl:if test='contains(current(),"submenu")'>dropdown</xsl:if>
-	    </xsl:attribute>
-	    </replace-->
-	    <!--drop css:theme="li.title.back.js-generated" /-->
-	    
-	    <replace css:content="#portal-globalnav" css:theme="#top-bar-wrap > nav > section > ul" />
-		
-	    <!--This should have worked.  Fall back and figure it out -->
-	    <!--xsl:template css:match="#portal-globalnav">
-		    <xsl:copy>
-	        	 <xsl:attribute name='class'>left</xsl:attribute>
-		      <xsl:copy-of select="@*" />
-			 	<xsl:apply-templates />
-		     </xsl:copy>
-	    </xsl:template-->
+        <copy css:content="#portal-globalnav" css:theme=".nav nav-justified" />
+         <replace css:content="#portal-globalnav li" css:theme-children="#nav ul" />
+        <drop css:content=".searchSection" />
+        <replace css:content="#portal-searchbox" css:theme="#search" />
     </rules>
+
 </rules>

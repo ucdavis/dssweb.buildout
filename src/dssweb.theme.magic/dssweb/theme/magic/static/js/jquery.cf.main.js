@@ -5,8 +5,11 @@
 	var activeMQ;  // Stores the screen size
 	var currentMQ = "unknown"; // set the default screen size
 	var front = false;
-	var front_banner_height = 520;
+	// Banner port heights. Note: Sync with values in sass/_variables.scss
+	var front_banner_height = 565;
+	var shadow_am_viewport_height = 418;
 	var vcardiced = false;
+	var biocardiced = false;
 	var processed = false;
 	
 	$(document).ready(function() {
@@ -16,6 +19,25 @@
 			if(typeof window.console !== "undefined") {
 				window.console.log("JQuery version:  " + $.fn.jquery);
 			}
+		}
+				
+		// Menu active trail ... variable is assigned in page. Don't worry about CodeKit error here
+		// This allows page to identify which main menu item it belongs to and that should be highlighted
+		if(typeof active_trail !== 'undefined') {
+			$(active_trail).addClass("active-trail");
+		}
+		
+		// Convenience tab buttons for home
+		// This makes the whole tab clickable and not just the text
+		if($('body.home').length !== 0) {
+      $('.tab').each(function () {
+				if($(this).find('a')) {
+					var url = $(this).find('a').attr('href');
+					$(this).click(function() {
+						window.open(url);
+					});
+				}
+      });
 		}
 		
 		// Misc. Fixes
@@ -49,6 +71,16 @@
 		    	appendChild(msViewportStyle);
 			}
 			
+			// Fix 1px jog on Bootstrap collapse animation
+			// Note: disables collapse on iPhone
+			/*$('.collapse').on('show.bs.collapse hide.bs.collapse', function(e) {
+			    e.preventDefault();
+	    });
+	    $('[data-toggle="collapse"]').on('click', function(e) {
+	        e.preventDefault();
+	        $($(this).attr('data-target')).toggleClass('in');
+	    });*/
+			
 		};
 		
 		apply_fixes();
@@ -58,19 +90,19 @@
 		$(document).foundation(); 
 		
 		// BOOTSTRAPIFY //////////////////////////////////////////////////
-		// Process .portlet for bootstrap collapse
-		var bootstrapify = function (mq) {
+		var bootstrapify_func = function (mobile, collectionSelector, itemSelector, heading, contentClassName, panelGroupID, startIndex) {
+			var hasLink = false;
+			var i = startIndex;
 			
-			// Sidebar-right ...
-			if($('.sidebar-right .portlet').length !== 0) {
-				var i = 20;
-				var contentClassName = '.portlet-content';
+			if($(collectionSelector).length !== 0) {
 				
-				$('.sidebar-right').wrapInner('<div id="accordion-sr" class="panel-group"></div>');
+				// Wrap inner as panel-group
+				$(collectionSelector).wrapInner('<div id="'+panelGroupID+'" class="panel-group"></div>');
 				
-	      $('.sidebar-right .portlet').each(function () {
-				
-					var mobile = ((mq === "XS") || (mq === "S")) ? true : false;
+				// Process each item within panel-group
+				var comboSelector = collectionSelector + " " + itemSelector;
+	      $(comboSelector).each(function () {
+			
 					var el = $(this);
 					//var id = ('accordion'+i);
 					var aid = ('acont'+i);
@@ -83,30 +115,56 @@
 					el.addClass('panel panel-default');
 					el.attr('id',pid);
 										
-					var titleEl = el.find('h3');
+					var titleEl = el.find(heading);
 					// TODO: Handle cases where h3 heading not available
 					titleEl.wrap('<div class="panel-heading" />');
 					titleEl.addClass("panel-title");
-					titleEl.wrapInner('<a data-parent="#accordion-sr" data-target="#'+aid+'" data-toggle="collapse"></div>');
-				
+					
+					// Before we wrap in a link check if a link already exists, and use that instead
+					var moreUrl = titleEl.find('a').attr('href');
+					if((typeof titleEl.find('a').attr('href')) === 'string') {
+						hasLink = true;
+						titleEl.find('a').addClass('collapsed').
+							attr('data-parent',panelGroupID).
+							attr('data-target','#'+aid).
+							attr('data-toggle','collapse');
+					} else {
+						titleEl.wrapInner('<a class="collapsed" data-parent="'+panelGroupID+'" data-target="#'+aid+'" data-toggle="collapse"></a>');
+					}
+					
 					var bodyEl = el.find(contentClassName);
 					bodyEl.addClass('panel-body');
-					//if(mobile) {
-						// Mobile (closed)
-						bodyEl.wrap('<div class="collapsible panel-collapse collapse" id="'+aid+'"></div>');
-						//} else {
-						// Desktop / tablet (open)
-						//bodyEl.wrap('<div class="collapsible panel-collapse collapse in" id="'+aid+'"></div>');
-						//}
+					bodyEl.wrap('<div class="collapsible panel-collapse collapse" id="'+aid+'"></div>');
 					
-					if(typeof window.console !== "undefined") {
-            window.console.log("ActiveMQ: " + activeMQ + ", Mobile: "+ mobile);
+					if(hasLink) {
+						var readmore = $('<a />').addClass('readmore').attr('href', moreUrl).text("Read More");
+						bodyEl.find('collapsible').append(readmore);
 					}
+
 					++i;
+					hasLink = false;
 	      });
+				return i+1;
 			}		
+			return i;
+		};
+
+		var bootstrapify = function (mq) {
+			var portletNum = 20;
+			var mobile = ((mq === "XS") || (mq === "S")) ? true : false;
+			if(typeof window.console !== "undefined") {
+        window.console.log("Is mobile: ActiveMQ: " + activeMQ + ", Mobile: "+ mobile);
+			}
+			// TODO: sidebar-right relies on collapsible selectors for styling; fix that and only process for mobile
+			portletNum = bootstrapify_func(mobile, '.sidebar-right','.portlet', 'h3', '.portlet-content', 'accordion-sr', portletNum);
+			if(mobile) {
+				portletNum = bootstrapify_func(mobile, '#cm-section','section', 'h2', '.inline-content', 'accordion-cm', portletNum);
+				portletNum = bootstrapify_func(mobile, '#event-description', '', 'h3', '.inline-content', 'accordion-e', portletNum);
+			}
 			processed = true;
 		};
+		
+
 		
 		// PLUGIN CANDIDATES /////////////////////////////////////////////
 		// Process .picture into figure/figcaption
@@ -115,7 +173,9 @@
       $('.picture img').each(function () {
 				var title = $(this).attr('title');
 				$(this).wrap('<figure class="picture-processed" />');
-				$(this).parent().append("<figcaption>"+title+"</figcaption>");
+				if((typeof title !== 'undefined')) {
+					$(this).parent().append("<figcaption>"+title+"</figcaption>");
+				}
       });
 		}		
 		
@@ -208,9 +268,21 @@
     }; // End mqSync
 		
 		var bend = function () {
+			
 			if(($('#footer #vcard').length !== 0) && !vcardiced) {
 				$('#footer #vcard').insertBefore($('#footer #copyright'));
 				vcardiced = true;
+			}
+		};
+		
+		var bendbio = function () {
+			if((activeMQ !== 'L') && (activeMQ !== 'M') && !biocardiced) {
+				$('#content-main').prepend($('.bio-card'));
+				//$('.collapsible').addClass('in'); // Expand panel since it's closed in mobile ... no, expands on mobile
+				$('.bio-card .collapsible').addClass('in');
+				// breadcrumb
+				$('.breadcrumb').insertBefore($('#content-main .bio-card h4.fn'));
+				biocardiced = true;
 			}
 		};
 		
@@ -220,9 +292,19 @@
 				vcardiced = false;
 			}
 		};
+
+		var unbendbio = function () {
+			if(biocardiced) {
+				$('.sidebar-right .panel-group').prepend($('#content-main .bio-card'));
+				// breadcrumb
+				$('#content-main').prepend($('.breadcrumb'));
+				
+				biocardiced = false;
+			}
+		};
 		
 		var expand = function () {
-
+			
       // Conditions for each breakpoint
       if (activeMQ !== currentMQ) {
 
@@ -233,6 +315,7 @@
               collapsedView();
 							
 							bend();
+							bendbio();
 
           }
 					// If the detected screen size is Mobile 450px-599px
@@ -244,6 +327,7 @@
 							collapsedView();					
 							
 							bend();
+							bendbio();
 							
           }
 					// If the detected screen size is Tablet 600px-959px
@@ -261,64 +345,24 @@
 							
 							}
 							*/
-							bend();
+							bend(); // If we can't change position of elements using Bootstrap push / pull, then bend it
+							unbendbio();
           }
 					// If the detected screen size is Desktop 960px and up
           if (activeMQ === 'L') {
               currentMQ = activeMQ;
 							rmvStack();
+							// happy box component
 							$('body.home #top-panel-row').height(front_banner_height);
               expandedView();
 							
-							unbend();
+							unbend(); // Set positioning back
+							unbendbio();
           }
       }
+			
 		};
 
-		
-		function myResize() {
-
-			
-      mqSync();
-			if(!processed) {
-				bootstrapify(activeMQ);
-			}
-			expand();
-			
-			
-		}
-				
-    if (toggleActive) {
-				myResize();
-        // Run on resize
-        event.add(window, "resize", myResize);
-    }
-
-		// Activate home page happy boxes
-		if ((activeMQ === 'L') || (activeMQ === 'M')) {
-			if($('body.home #top-panel-row').length !== 0) {
-				$('body.home #top-panel-row').happybox(
-					{
-						'type': '.panel', // element type to make happy
-						'action_element_class': '.action-element',
-						'canvas_element_class': '.narrow-col',
-						'button_class': ".btn-primary",
-						'height': front_banner_height // total height of the happy viewport
-					}
-				);
-				front = true;
-			}
-		}
-		
-    if (debug) {
-        $(window).resize(function () {
-					if(typeof window.console !== "undefined") {
-            window.console.log($(this).width());
-						window.console.log('Screen size: ' + currentMQ);
-					}
-        });
-    }
-		
     function expandedView() {
        	// Index page
 			  //$(".ls-content").removeClass("tab-content");
@@ -336,8 +380,6 @@
 						
 						// hide the extra text until the show more button is clicked                                    
             $("#contC,#contB").addClass("more_text");
-						
-           
         }
 				// Remove the panel body effect 
 				//$(".collapsible").children().removeClass("panel-body");
@@ -349,15 +391,22 @@
 				// drop-on class added to element to manage desktop/mobile hover/no-hover
 				$(".nav > li").addClass("drop-on");
 				
-				// Prevent the sidebars from behaving like panels when in desktop view
+				// De-activate accordion effects in all panel-groups
 				//$(".sidebar .panel").removeClass("panel-collapse collapse in"); // NOTE: Changed from .sidebar-panel					
-				$(".sidebar .panel-group").children().removeClass("panel panel-default"); // deactivates acc behavior. TODO: Possibly make global, so .panel-group
+				$(".panel-group").children().removeClass("panel panel-default"); // TODO: Was previously more specific to .sidebar but we need all
 
-				// Fix for panel-collapse height not being reset to auto	
+				// Fix for panel-collapse height not being reset to auto
 				$(".collapsible").css("height", "auto");
 				
+				// TODO: Hmm, is the selector correct? 
 				$("#content-main div").children().removeClass("panel-collapse collapse active");
-				$("#content-main .panel-heading").hide(); // TODO: Home page needs this
+				//$("#content-main .panel-heading").hide(); // TODO: remove ...  hidden-lg hidden-md placed directly on panel-heading
+				
+				if ($("body.happy-box").length !== 0) {
+					// TODO: Testing ourpeople happybox
+					$("#content-row div").children().removeClass("panel-collapse collapse active");
+					//$("#content-row .panel-heading").hide(); // TODO: remove ...  hidden-lg hidden-md placed directly on panel-heading
+				}
 				
 				$(".panel-group .collapsible").addClass("in"); // New: Open panels 
 				
@@ -372,26 +421,24 @@
         //$(".ls-content").addClass("tab-content");
         //$(".landscape div").addClass("tab-pane");
         //$(".landscape").removeClass("tab-content");
-        $("#contA", ".panel .panel-collapse").addClass("active"); // TODO: Are we using this?
+				
+        $("#contA", ".panel .panel-collapse").addClass("active"); // TODO: Are we using this? Should apply to all panel IDs
        // $(".nav-tabs").show();
 							  			     
 			 // TODO: Update the bio conditional; we really don't want a conditional for only a page type
-        if ($("body.bio").length === 0) {		
-						// Add accordion effects to sidebar			  
-            $(".sidebar .panel-group").children().addClass("panel panel-default"); // activates acc behavior
-						$(".panel-group").children().addClass("panel panel-default");
-            //$(".sidebar .panel").addClass("panel-collapse collapse"); // Note: Changed from .sidebar-panel
-            //$(".collapse div").addClass("panel-body"); // TODO: Do we need this?
-
-        }
-				/* If Bio Page */
-				else if ($("body.bio").length !== 0) {
-						// Add accordion effects to sidebar			  
+				if ($("body.bio").length !== 0) {
+						// Add accordion effects to sidebar. TODO: Do we still need this?	  
             $(".content-bio-container").addClass("panel-group");
 						$("#about-bio > div").addClass("panel panel-default");
 						$("#sidebar-bio-right > div").addClass("panel panel-default");
 						$(".btn-bio").hide();
 						$("#about-bio h3").hide();
+        } else {
+					// Activate accordion effects to all panel-groups
+					// Works in conjunction with removal of same classes in expandedView()	  
+					$(".panel-group").children().addClass("panel panel-default"); // was more specific prior with .sidebar but we need all
+          //$(".sidebar .panel").addClass("panel-collapse collapse"); // Note: Changed from .sidebar-panel
+          //$(".collapse div").addClass("panel-body"); // TODO: Do we need this?
         }
 				
 				
@@ -432,6 +479,82 @@
 			// Line the menu horizontally
 			$("#utility nav ul li").removeClass("col-xs-3 col-sm-3 col-md-3 col-lg-3");					
 		}
+		
+		/******************************************** MAIN ************************************** */
+		
+		function myResize() {
+      mqSync();
+			if(!processed) {
+				// Note: This only support one round of bs processing so resizing does not undo bootstrap / collapse
+				// TODO: Build undo that is applied only when going from mobile to M or L
+				bootstrapify(activeMQ);
+			}
+			expand(); // process collapse
+		}
+				
+    if (toggleActive) {
+				myResize();
+        // Run on resize
+        event.add(window, "resize", myResize);
+    }
+
+		// Set sidebar position and activate home page happy boxes
+		if ((activeMQ === 'L') || (activeMQ === 'M')) {
+			
+			// Set vert position of right sidebar
+			if(($('.content-title').length !== 0) && ($('.sidebar-right').length !== 0)) {
+				var ctpos = $('.content-title').position();
+				var cth = $('.content-title').height();
+				var ctb = ctpos.top + cth + 5; // 5 additional vert offset needed
+				if($('.breadcrumb').length !== 0) {
+					ctb += $('.breadcrumb').height();
+				}
+				$('.sidebar-right').css('margin-top',ctb);
+			}
+			
+			if($('body.has-front-am.happy-box #top-panel-row').length !== 0) {
+				$('#top-panel-row').happybox(
+					{
+						'type': '.panel', // element type to make happy
+						'action_element_class': '.action-element',
+						'canvas_element_class': '.narrow-col',
+						'button_class': ".btn-primary",
+						'height': front_banner_height // total height of the happy viewport
+					}
+				);
+				front = true;
+			}
+			
+			// Applies to multiple pages using T2 (tile) or T8 (landing) templates
+			if($('body.has-shadow-am.happy-box #top-panel-row').length !== 0) {
+				$('#top-panel-row').happybox(
+					{
+						'type': '.panel', // element type to make happy
+						'action_element_class': '.action-element',
+						'canvas_element_class': '.narrow-col',
+						'button_class': ".btn-primary",
+						'height': shadow_am_viewport_height, // total height of the happy viewport
+						'frozen': true
+					}
+				);
+			}
+			
+			// Adjust content for banner viewport height if no happy-box top-panel-row is present
+			if(($('body.has-shadow-am').length !== 0) && ($('#top-panel-row').length === 0) && ($('#content-row').length !== 0)) {
+				//$('#content-row').css('margin-top', shadow_am_viewport_height + 45);
+			}
+		}
+		
+    if (debug) {
+        $(window).resize(function () {
+					if(typeof window.console !== "undefined") {
+            window.console.log($(this).width());
+						window.console.log('Screen size: ' + currentMQ);
+					}
+        });
+    }
+
+		/******************************************** END MAIN ************************************** */
 		
 	});
 })(jQuery);
