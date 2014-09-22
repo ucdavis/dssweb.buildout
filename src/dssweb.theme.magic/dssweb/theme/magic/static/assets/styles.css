@@ -32,6 +32,7 @@ button { font-size: 14px; font-size: 0.875rem; line-height: 24px; line-height: 1
 .about-bio h3 { font-weight: bold; }
 
 .sidebar h3 a { text-transform: uppercase; font-size: 13px; font-size: 0.8125rem; line-height: 22px; line-height: 1.375rem; letter-spacing: 0.1em; }
+.sidebar .panel-heading h3.panel-title { padding-top: 0 !important; }
 .sidebar .vcard { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
 .sidebar .vcard .adr, .sidebar .vcard #email-phone { line-height: 18px; line-height: 1.125rem; }
 
@@ -999,7 +1000,7 @@ top:-39px !important;*/ }
   .portlet .panel-body .vcard.office h4 a:hover { text-decoration: underline; }
   #content-row section { margin-bottom: 25px; }
   #content-row section h2 { font-weight: normal; }
-  #content-row section .course-portlet { border: 1px solid #CCC; position: relative; margin-bottom: 5px; }
+  #content-row section .course-portlet { position: relative; margin-bottom: 45px; }
   #content-row section .course-portlet .course-info { width: 60%; }
   #content-row section .course-portlet button { position: absolute; right: 0; bottom: 0; height: 40px; width: 120px; background-color: #DAAA00; }
   body.bio .sidebar.sidebar-right { margin-top: 45px; }
@@ -1078,6 +1079,7 @@ button { font-size: 14px; font-size: 0.875rem; line-height: 24px; line-height: 1
 .about-bio h3 { font-weight: bold; }
 
 .sidebar h3 a { text-transform: uppercase; font-size: 13px; font-size: 0.8125rem; line-height: 22px; line-height: 1.375rem; letter-spacing: 0.1em; }
+.sidebar .panel-heading h3.panel-title { padding-top: 0 !important; }
 .sidebar .vcard { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
 .sidebar .vcard .adr, .sidebar .vcard #email-phone { line-height: 18px; line-height: 1.125rem; }
 
@@ -1178,6 +1180,7 @@ button { font-size: 14px; font-size: 0.875rem; line-height: 24px; line-height: 1
 .about-bio h3 { font-weight: bold; }
 
 .sidebar h3 a { text-transform: uppercase; font-size: 13px; font-size: 0.8125rem; line-height: 22px; line-height: 1.375rem; letter-spacing: 0.1em; }
+.sidebar .panel-heading h3.panel-title { padding-top: 0 !important; }
 .sidebar .vcard { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
 .sidebar .vcard .adr, .sidebar .vcard #email-phone { line-height: 18px; line-height: 1.125rem; }
 
