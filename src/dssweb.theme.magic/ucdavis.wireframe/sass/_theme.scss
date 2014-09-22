@@ -244,7 +244,7 @@ input{
 #content-row {
 	margin-bottom: 45px;
 }
-#content-main{
+#content-main, #am-content {
 
 	.breadcrumb {
 		background: none;
@@ -301,10 +301,10 @@ input{
 	h3{
 		//height:30px; // Note: where possible, use _typography.scss line_height specs to determine height
 		a{
-			color:#fff;
-			padding-left:38px;
-			position:relative;
-			top:4px;
+			color: #fff;
+			padding-left: 35px; // was 38px
+			position: relative;
+			top: 4px;
 		}
 	}
 
@@ -354,6 +354,7 @@ input{
 		color:$ucd_blue_80;
 	}
 }
+
 /* Contact uses hCard microformat / vCard RFC2426 */
 #sidebar-block-contact {
 	margin-top:20px;
@@ -385,6 +386,9 @@ input{
 	.tel { // phone
 		margin-bottom: 5px;
 	}
+}
+
+#sidebar-block-contact, .vcard {
 	.email {
 		text-transform: uppercase;
 		a {
@@ -392,6 +396,10 @@ input{
 			height: 16px;
 			padding-left: 22px;
 			background: url(../images/icons/email.gif) 0 60% no-repeat;
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 	}
 }
@@ -462,7 +470,12 @@ input{
 	#content-row {
 		margin-top: 45px;
 	}
-	#content-main {
+	body.gen-landing {
+		#content-row {
+			margin-top: 30px; // accomodate for figure caption
+		}
+	}
+	#content-main, #am-content {
 		padding-left: 0 !important;
 		//margin-top: 45px;
 		margin-bottom: 30px;
@@ -510,10 +523,14 @@ input{
 /*----- Mobile breakpoint --------*/
 // At point that left and right margins are gone
 @media screen and (max-width: $screen-sm-min) { // width < 768
+	.row#banner-row, .row .row {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
 	.row#content-row {
 		margin-left: 0 !important;
 		margin-right: 0 !important;
-		#content-main {
+		#content-main, #am-content {
 			margin-top: 10px;
 			h1, .breadcrumb {
 				//margin-left: 15px;
@@ -521,7 +538,7 @@ input{
 		}
 	}
 
-	#content-main {
+	#content-main, #am-content {
 		margin-bottom: 15px;
 	}
 	
@@ -577,7 +594,7 @@ input{
 	body.bio {
 		#content-row {
 			margin-top: 0;
-			#content-main {
+			#content-main, #am-content {
 				margin-top: 0;
 				.bio-card {
 					margin-bottom: 8px;
@@ -753,7 +770,7 @@ input{
 		}
 	}
 	
-	#content-main {
+	#content-main, #am-content {
 	  min-width:192px;
 		clear:both;
 	}
@@ -813,6 +830,15 @@ input{
 
 @media screen and (min-width: $screen-sm-min) { // width > 768px
 
+
+	#top-bar-wrap, #content-row, #banner-row {
+		padding-left: 105px; // 90 + 15 px
+		padding-right: 105px;
+	}
+	#util-bar-wrap {
+		padding-right: 105px;
+	}
+	
 	// Panel resets
 	#cm-section { // Important: Specific content selector since we want to keep our sidebar panel styles
 		.panel-group {
@@ -868,7 +894,7 @@ input{
 			padding: 0;
 			.vcard {
 				padding: 0;
-				padding-bottom: 15px;
+				padding-bottom: 20px;
 				div {
 					@include font_size(12px);
 					margin-left: 35px;
@@ -1012,16 +1038,7 @@ input{
 		}
 	}
 	
-	#util-bar-wrap {
-		padding-right: 105px;
-	}
-	
-	#top-bar-wrap, #content-row {
-		padding-left: 105px; // 90 + 15 px
-		padding-right: 105px;
-	}
-	
-	#content-main {
+	#content-main, #am-content {
 		> div, > h1 {
 	  	//margin-left: 90px; // TODO: remove since now using .row 15+90=105 applied to content-row
 		}
@@ -1079,11 +1096,11 @@ input{
 	#util-bar-wrap {
 		padding-right: 0;
 	}
-	#top-bar-wrap, #content-row {
+	#top-bar-wrap, #content-row, #banner-row {
 		padding-left: 0; // 90 + 15 px
 		padding-right: 0;
 	}
-	#content-main {
+	#content-main, #am-content {
 		> div, > h1 {
 	  	//margin-left: 0;
 		}
@@ -1117,6 +1134,7 @@ input{
 		}
 	}
 }
+/*----- Breakpoint, xs-md -------*/
 @media screen and (max-width: $screen-sm-max) { // width < 991
 
 	#footer {
@@ -1137,7 +1155,7 @@ input{
 		}
 	}
 }
-
+/*------ Desktop (L) breakpoint --------*/
 @media screen and (min-width: $screen-md-min) and (max-width: $screen-lg-min) { // 991 < width < 1200
 	.sidebar {
 		&.sidebar-right {
@@ -1152,7 +1170,7 @@ input{
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
 	head { font-family:"M";}
 	body:after{content:"M";}
-	#content-main {
+	#content-main, #am-content {
 		//padding-right: 0 !important;
 	}
 	body.bio .sidebar {
@@ -1167,6 +1185,11 @@ input{
 	head { font-family:"L";}
 	body:after{content:"L";}
 	
+	.no-gutter-lg {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+	
 	body.bio .sidebar.sidebar-right {
 		margin-top: 45px; // for top placement of bio portrait
 		.bio-card {
@@ -1176,7 +1199,7 @@ input{
 		}
 	}
 	
-	#content-main {
+	#content-main, #am-content {
 		h1, .breadcrumb {
 			//margin-left: 15px;
 		}
@@ -1184,7 +1207,7 @@ input{
 }
 
 /* Override default grid gutter, which was broke on home/index bottom panel row. */
-.no-gutter {
+.no-gutter, .no-gutters {
 	padding-left: 0 !important;
 	padding-right: 0 !important;
 }

@@ -46,7 +46,43 @@ button {
 			letter-spacing: 0.1em;
 		}
 	}
+	.vcard {
+		@include font_size(13px);
+		@include line_height(18px);
+		.adr, #email-phone {
+			@include line_height(18px);
+		}
+	}
 }
+figure {
+	figcaption {
+		text-align: right;
+		@include font_size(10.65px);
+		color: $ucd_blue_100;
+		text-transform: uppercase;
+	}
+}
+.corner-box {
+	h2, h3, p, li, a {
+		color: #FFF;
+	}
+	.box-content {
+		h2 {
+			padding: 15px 0;
+			@include font_size(24px);
+			letter-spacing: 0.075em;
+		}
+		h3 {
+			padding: 0 0 8px 0;
+			@include font_size(13px);
+		}
+		p {
+			@include font_size(13px);
+			@include line_height(20px);
+		}
+	}
+}
+
 .sidebar-info{
 	h4{
 		font-weight: bold;
@@ -67,7 +103,7 @@ button {
 	margin-top: 0 !important;
 }
 
-#content-main {
+#content-main, #am-content {
 	h2{
 		@include font_size(24px, !important);
 		font-weight:normal;
@@ -120,7 +156,7 @@ body.bio {
 	
 }
 
-#content-main {
+#content-main, #am-content {
 	p, li, ol, div, span {
 		@include line_height(24px,!important);
 	}
@@ -149,14 +185,8 @@ body.bio {
 			}
 		}
 	}
-	figure {
-		figcaption {
-			text-align: right;
-			@include font_size(10.65px);
-			text-transform: uppercase;
-		}
-	}
 }
+
 /*----- Mobile breakpoint --------*/
 // At point that left and right margins are gone
 @media screen and (max-width: $screen-sm-min) { // width < 768
@@ -184,7 +214,7 @@ body.bio {
 		}
 	}
 	
-	#content-main {
+	#content-main, #am-content {
 		.panel-group {
 			.row.panel {
 				.panel-title {
@@ -215,7 +245,7 @@ body.bio {
 /*----- tablet breakpoint -------*/
 @media screen and (min-width: $screen-sm-min) {	// width > 768
 	.top-panel {
-		#content-main {
+		#content-main, #am-content {
 			.narrow-col {
 				color: #FFF;
 				h2 {
@@ -255,7 +285,7 @@ body.bio {
 	body.home {
 		// Text below banner in thumbnail / tab boxes
 		
-		#content-main {
+		#content-main, #am-content {
 			.narrow-col {
 				h2 {
 					@include font_size(17px);
@@ -280,10 +310,28 @@ body.bio {
 		}
 	}
 	
-	#content-main {
+	#content-main, #am-content {
 		.content-title {
 			@include font_size(26px);
 			@include line_height(28px);
+		}
+	}
+	
+	.corner-box {
+		.box-content {
+			h2 {
+				padding: 10px 0;
+				@include font_size(16px);
+				letter-spacing: 0.075em;
+			}
+			h3 {
+				padding: 0 0 0 0;
+				@include font_size(11px);
+			}
+			p {
+				@include font_size(11px);
+				@include line_height(15px);
+			}
 		}
 	}
 	
@@ -294,7 +342,7 @@ body.bio {
 @media screen and (min-width: $screen-md-min) { // width > 992
 	body.home {
 		// Button text at bottom of happy boxes
-		#content-main {
+		#content-main, #am-content {
 			#top-panel-row {
 				.narrow-col {
 					.bcontroller {
@@ -313,7 +361,7 @@ body.bio {
 	body.home {
 		// Text below banner in thumbnail / tab boxes
 		
-		#content-main {
+		#content-main, #am-content {
 			.narrow-col {
 				a, p, li {
 					@include font_size(12px);

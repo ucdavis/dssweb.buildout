@@ -241,7 +241,7 @@
 @media screen and (max-width: $screen-sm-max) { // width < 768px
 
 	// reset row negative margins
-	#util-bar-wrap, #top-bar-wrap {
+	#util-bar-wrap, #top-bar-wrap, #banner-row {
 		margin-left: 0 !important; // logo / unit title left margin (was negative). Note: Adding margin here makes a blue left border on mobile
 		//margin-right: 0 !important; // pulls collapsed menu icon to left in desktop but creates right margin on iphone landscape
 		//margin-right: -15px !important; // no effect across devices
@@ -301,13 +301,12 @@
 			}
 		}
 	}
-
 }
 
 /*----- Tablet breakpoint -------*/
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-md-min) { // 768px < width < 992px
 
-	#util-bar-wrap, #top-bar-wrap {
+	#util-bar-wrap, #top-bar-wrap, #banner-row {
 		//border: 1px solid red;
 		margin-left: -10px !important; // fixes margin issue on ipad landscape
 		margin-right: -20px !important; // needed in iphone landscape orientation to pull in collapsed menu icon
