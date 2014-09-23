@@ -26,7 +26,7 @@
         <after css:theme-children="html body" css:content="html head script" />
 
         <!-- Insert your own rules here -->
-<<<<<<< HEAD
+
 	   
 	   <!--swap in portal-globalnav -->
          <!--replace css:content="#portal-globalnav li" css:theme-children="#top-bar-wrap > nav > section > ul.left" /-->
