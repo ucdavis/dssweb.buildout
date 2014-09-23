@@ -128,10 +128,59 @@ div#footer-nav {
 	margin-left: 30%;
 	width: 45%;
 }
-dl.portlet ul.navTreeLevel0 > .navTreeItem {
-	padding: 0.25em 1em;
-	border-bottom: none;
-	line-height: 2em;
+ /* Footer Navigation portlet */
+
+#footer-nav{
+	-webkit-column-count: 3;
+	-webkit-column-gap: 10px; 
+	column-count: 3;
+	column-gap: 10px;
+	-moz-column-count:3;
+	-moz-column-gap:10px;
+	
+	dl.portlet ul.navTree li a {
+    	border: none;
+    	display: block;
+    	zoom: 1;
+	}
+
+	dl.portlet ul.navTree li a:hover {
+		color:white !important;
+
+	}
+
+	dl.portletNavigationTree dd.portletItem {
+    	padding: 0;
+	}
+
+	dl.portlet ul.navTreeLevel0 > .navTreeItem {
+    	padding: 0.25em 1em;
+    	border-bottom: None;
+    	line-height: 2em;
+		color: white;	
+	}
+	dl.portlet li {
+		border-left: 1px solid white;
+		
+	}
+
+	dl.portlet ul.navTreeLevel1 .navTreeItem {
+    	padding-left: 0.5em;
+    	line-height: 2em;
+	}
+	.navTreeItem .state-published {
+		color: white !important;
+		
+	}
+
+	dl.portlet ul.navTree .navTreeCurrentItem {
+    	background-color: transparent;
+    	border-left: 1em solid #ddd;
+    	margin-left: -1em;
+    	margin-right: -1em;
+	}
 }
+
+/* @end */
 	
 }

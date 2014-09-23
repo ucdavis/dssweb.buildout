@@ -3856,11 +3856,50 @@ nav.top-bar {
     margin-left: 30%;
     width: 45%; }
 
-  /* line 131, ../sass/_plone.scss */
-  dl.portlet ul.navTreeLevel0 > .navTreeItem {
-    padding: 0.25em 1em;
-    border-bottom: none;
-    line-height: 2em; } }
+  /* Footer Navigation portlet */
+  /* line 133, ../sass/_plone.scss */
+  #footer-nav {
+    -webkit-column-count: 3;
+    -webkit-column-gap: 10px;
+    column-count: 3;
+    column-gap: 10px;
+    -moz-column-count: 3;
+    -moz-column-gap: 10px; }
+    /* line 141, ../sass/_plone.scss */
+    #footer-nav dl.portlet ul.navTree li a {
+      border: none;
+      display: block;
+      zoom: 1; }
+    /* line 147, ../sass/_plone.scss */
+    #footer-nav dl.portlet ul.navTree li a:hover {
+      color: white !important; }
+    /* line 152, ../sass/_plone.scss */
+    #footer-nav dl.portletNavigationTree dd.portletItem {
+      padding: 0; }
+    /* line 156, ../sass/_plone.scss */
+    #footer-nav dl.portlet ul.navTreeLevel0 > .navTreeItem {
+      padding: 0.25em 1em;
+      border-bottom: None;
+      line-height: 2em;
+      color: white; }
+    /* line 162, ../sass/_plone.scss */
+    #footer-nav dl.portlet li {
+      border-left: 1px solid white; }
+    /* line 167, ../sass/_plone.scss */
+    #footer-nav dl.portlet ul.navTreeLevel1 .navTreeItem {
+      padding-left: 0.5em;
+      line-height: 2em; }
+    /* line 171, ../sass/_plone.scss */
+    #footer-nav .navTreeItem .state-published {
+      color: white !important; }
+    /* line 176, ../sass/_plone.scss */
+    #footer-nav dl.portlet ul.navTree .navTreeCurrentItem {
+      background-color: transparent;
+      border-left: 1em solid #ddd;
+      margin-left: -1em;
+      margin-right: -1em; }
+
+  /* @end */ }
 /* *** PARTIALS - Modular partial styles **** */
 /* components/_banners.scss */
 /* line 3, ../sass/components/_banners.scss */
