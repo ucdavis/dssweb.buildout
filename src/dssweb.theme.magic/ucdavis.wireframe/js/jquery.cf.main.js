@@ -89,6 +89,35 @@
 		// Note: Add after any JavaScript constructed markup that relies on foundation
 		$(document).foundation(); 
 		
+		var thumbify = function (startTag, containerTag, targetTag) {
+			var comboSelector = startTag + ' ' + containerTag;
+			var realTarget = targetTag + " a";
+			 $(comboSelector).each(function () {
+				 var rt = $(this).find(realTarget);
+				 rt.wrapInner('<span class="thumb-txt" />');
+				 rt.prepend($(this).find('.thumb'));
+				 $(this).addClass("thumbify-processed");
+			 });
+			 collapsedSection(startTag);
+		};
+		
+		// Make collapse panel-group active ...
+    var collapsedSection = function (selector) {
+				$(selector+" .panel-group").children().addClass("panel panel-default");
+				$(selector+" .panel-group .collapsible").addClass("panel-collapse collapse");
+				$(selector+" .panel-group .collapsible").removeClass('in');
+				
+        //$(".collapse > div").addClass("panel-body"); // Check if not applied ...
+
+				$(selector+" .panel-title a").attr('data-toggle','collapse'); // for open/close
+				
+				// Prevent the panel-title headers from redirecting the page and shows .panel-body content
+        $(selector+" .panel-title a").click(function (e) {
+            e.preventDefault();
+            $($(this).data("target")).show();			
+				});	
+    };
+		
 		// BOOTSTRAPIFY //////////////////////////////////////////////////
 		var bootstrapify_func = function (mobile, collectionSelector, itemSelector, heading, contentClassName, panelGroupID, startIndex) {
 			var hasLink = false;
@@ -101,8 +130,9 @@
 				
 				// Process each item within panel-group
 				var comboSelector = collectionSelector + " " + itemSelector;
+
 	      $(comboSelector).each(function () {
-			
+					
 					var el = $(this);
 					//var id = ('accordion'+i);
 					var aid = ('acont'+i);
@@ -156,12 +186,14 @@
         window.console.log("Is mobile: ActiveMQ: " + activeMQ + ", Mobile: "+ mobile);
 			}
 			// TODO: sidebar-right relies on collapsible selectors for styling; fix that and only process for mobile
+			portletNum = bootstrapify_func(mobile, '#thumb-section','section', 'h3', '.inline-content', 'accordion-thumb', portletNum);
 			portletNum = bootstrapify_func(mobile, '.sidebar-right','.portlet', 'h3', '.portlet-content', 'accordion-sr', portletNum);
+
 			if(mobile) {
 				portletNum = bootstrapify_func(mobile, '#cm-section','section', 'h2', '.inline-content', 'accordion-cm', portletNum);
 				portletNum = bootstrapify_func(mobile, '#event-description', '', 'h3', '.inline-content', 'accordion-e', portletNum);
 			}
-			processed = true;
+			
 		};
 		
 
@@ -175,7 +207,11 @@
 				$(this).wrap('<figure class="picture-processed" />');
 				if((typeof title !== 'undefined')) {
 					$(this).parent().append("<figcaption>"+title+"</figcaption>");
+				} else if($('.picture .figcaption').length !== 0) {
+					$(this).parent().append("<figcaption>"+$('.picture .figcaption').html()+"</figcaption>");
+					$('.picture .figcaption').remove();
 				}
+				
       });
 		}		
 		
@@ -447,7 +483,7 @@
 				// Add the collapse on toggle attribute to the panel headers
 				//$(".panel-title a").attr("data-toggle","collapse");
 				$(".panel-group .collapsible").addClass("panel-collapse collapse"); // Note: global
-				$(".panel-group .collapsible").removeClass("in"); // New: Close panels
+				$(".panel-group .collapsible").removeClass('in'); // New: Close panels
         $(".collapse > div").addClass("panel-body");
 				
 				// Remove the dropdown on hover effect from the navbar parent items
@@ -490,6 +526,12 @@
 				bootstrapify(activeMQ);
 			}
 			expand(); // process collapse
+			if(!processed) {
+				if($('#thumb-section').length !== 0) {
+					thumbify('#thumb-section','section','.panel-heading');
+				}
+			}
+			processed = true;
 		}
 				
     if (toggleActive) {

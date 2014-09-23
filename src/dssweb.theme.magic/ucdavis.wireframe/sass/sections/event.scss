@@ -7,8 +7,8 @@
 
 .rows {
 	border-top: 5px solid $rec_blue;
-	padding-left: 15px;
-	padding-right: 15px;
+	//padding-left: 15px;
+	//padding-right: 15px;
 	&.zebra {
 		.row:nth-child(even) {
 			background-color: transparent;

@@ -24,6 +24,13 @@ button {
 	@include line_height(24px);
 }
 
+.portlet {
+	li, p, h4 {
+		@include font_size(13px);
+		@include line_height(18px);
+	}
+}
+
 .col-lg-4 {
 	h2 {
     font-weight: bold !important;
@@ -166,7 +173,11 @@ body.bio {
 	}
 	
 }
-
+#cm-content {
+	p.intro {
+		margin-bottom: 45px;
+	}
+}
 #content-main, #am-content {
 	p, li, ol, div, span {
 		@include line_height(24px,!important);
@@ -251,6 +262,30 @@ body.bio {
 			}
 		}
 	}
+}
+
+body.res-lab {
+	#content-row div {
+		> h2 {
+			@include font_size(24px,!important);
+			@include line_height(28px);
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+	}
+}
+// T6 Research Lab heading thumb sections
+#thumb-section {
+	.panel-group {
+		.panel-heading {
+			.panel-title {
+				a {
+					@include font_size(24px);
+					@include line_height(70px);
+				}
+			}
+		}
+	}	
 }
 
 /*----- tablet breakpoint -------*/

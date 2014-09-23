@@ -464,6 +464,10 @@ input{
 	position: relative;
 }
 
+.row .row {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+}
 @media screen and (min-width: $screen-sm-min) { // width > 768
 	
 	// pull content left on larger screens so flush left with top-bar
@@ -518,12 +522,58 @@ input{
 	}
 }
 
+// Panel resets
+#thumb-section { // Important: Specific content selector since we want to keep our sidebar panel styles
+	.panel-group {
+		
+		section {
+			margin-bottom: 10px;
+		
+			.panel-heading {
+				background-color: transparent !important;
+				padding: 0 !important;
+				border-top-left-radius: 0;
+				border-top-right-radius: 0;
+				.panel-title {
+					background-color: transparent !important;
+					a {
+						display: block;
+						height: 70px;
+						width: 100%;
+						.thumb-txt {
+							display: block;
+							margin-left: 150px;
+						}
+						img {
+							float: left;
+						}
+						background: url(../images/icons/blue-100-right-arrow-down.png) 98% 50% no-repeat $ucd_bright_gold_40;
+						&.collapsed {
+							background: url(../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat $ucd_bright_gold;
+						}
+				
+						&:hover {
+							cursor: pointer !important;
+							background-color: $ucd_bright_gold_40;
+						}
+					}
+				}
+			}
+			.panel-body {
+				//border-top-width: 0 !important;
+				margin-top: 25px;
+				margin-left: 150px;
+			}
+		}
+	}	
+}
+
 /*------ All Media Queries ----------*/
 
 /*----- Mobile breakpoint --------*/
 // At point that left and right margins are gone
 @media screen and (max-width: $screen-sm-min) { // width < 768
-	.row#banner-row, .row .row {
+	.row#banner-row {
 		margin-left: 0 !important;
 		margin-right: 0 !important;
 	}
@@ -858,11 +908,9 @@ input{
 	}
 	
 	.portlet {
+		
 		.portlet-items {
-			margin: 15px;
-			margin-bottom: 25px;
-			margin-left: 38px;
-			
+
 			li {
 				margin-bottom: 5px;
 				@include font_size(10px);
@@ -889,7 +937,7 @@ input{
 				}
 			}
 		}
-		margin-bottom: 35px;
+		
 		.panel-body {
 			padding: 0;
 			.vcard {
@@ -914,8 +962,8 @@ input{
 					h4 {
 						min-height: 28px;
 						background-color: $box_header_blue;
-						padding: 8px;
-						padding-left: 35px;
+						padding: 12px 35px;
+						padding-bottom: 10px;
 						letter-spacing: 0.05em;
 						font-weight: bold;
 						a {
@@ -1202,6 +1250,12 @@ input{
 	#content-main, #am-content {
 		h1, .breadcrumb {
 			//margin-left: 15px;
+		}
+	}
+	
+	.sidebar {
+		> div {
+			margin-left: 92px;
 		}
 	}
 }
