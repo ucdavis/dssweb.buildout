@@ -3884,15 +3884,16 @@ nav.top-bar {
       color: white; }
     /* line 162, ../sass/_plone.scss */
     #footer-nav dl.portlet li {
-      border-left: 1px solid white; }
-    /* line 167, ../sass/_plone.scss */
+      border-left: 1px solid white;
+      margin-bottom: 0; }
+    /* line 168, ../sass/_plone.scss */
     #footer-nav dl.portlet ul.navTreeLevel1 .navTreeItem {
       padding-left: 0.5em;
       line-height: 2em; }
-    /* line 171, ../sass/_plone.scss */
+    /* line 172, ../sass/_plone.scss */
     #footer-nav .navTreeItem .state-published {
       color: white !important; }
-    /* line 176, ../sass/_plone.scss */
+    /* line 177, ../sass/_plone.scss */
     #footer-nav dl.portlet ul.navTree .navTreeCurrentItem {
       background-color: transparent;
       border-left: 1em solid #ddd;
