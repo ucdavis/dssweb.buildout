@@ -42,6 +42,9 @@ button { font-size: 14px; font-size: 0.875rem; line-height: 24px; line-height: 1
 
 figure figcaption { text-align: right; font-size: 10.65px; font-size: 0.66563rem; color: #002855; text-transform: uppercase; }
 
+#content-main form input, #content-main form select, #content-main form textarea { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
+#content-main form .req-txt { font-size: 10px; font-size: 0.625rem; }
+
 .corner-box h2, .corner-box h3, .corner-box p, .corner-box li, .corner-box a { color: #FFF; }
 .corner-box .box-content h2 { padding: 15px 0; font-size: 24px; font-size: 1.5rem; letter-spacing: 0.075em; }
 .corner-box .box-content h3 { padding: 0 0 8px 0; font-size: 13px; font-size: 0.8125rem; }
@@ -953,7 +956,13 @@ input { text-align: center; }
 #thumb-section .panel-group section .panel-body { margin-top: 25px; margin-left: 150px; }
 
 body.contact-type #content-main .form-wrap { padding: 15px; position: relative; background-color: #f2f2f2; }
-body.contact-type #content-main .form-wrap form input, body.contact-type #content-main .form-wrap form select { width: 100%; }
+body.contact-type #content-main .form-wrap form .form-row { padding: 4px 0; }
+body.contact-type #content-main .form-wrap form .form-row.centered { text-align: center; }
+body.contact-type #content-main .form-wrap form input, body.contact-type #content-main .form-wrap form select, body.contact-type #content-main .form-wrap form textarea { width: 100%; }
+body.contact-type #content-main .form-wrap form input, body.contact-type #content-main .form-wrap form select { height: 35px; }
+body.contact-type #content-main .form-wrap form #contact-message { height: 160px; }
+body.contact-type #content-main .form-wrap form input[type="submit"] { height: 40px; width: 120px; background-color: #DAAA00; }
+body.contact-type #content-main .form-wrap form input[type="submit"]:hover { background-color: #f0dd99; cursor: pointer; }
 
 /*------ All Media Queries ----------*/
 /*----- Mobile breakpoint --------*/
@@ -1035,6 +1044,12 @@ top:-39px !important;*/ }
   #cm-section .panel-group .panel-heading { background-color: transparent !important; padding: 0 !important; border-top-left-radius: 0; border-top-right-radius: 0; }
   #cm-section .panel-group .panel-heading .panel-title { background-color: transparent !important; }
   #cm-section .panel-group .panel-body { border-top-width: 0 !important; }
+  .portlet.contacts .panel-body { padding-top: 15px; padding-bottom: 20px; }
+  .portlet.contacts .panel-body .vcard.office { padding-bottom: 5px; }
+  .portlet.contacts .panel-body .vcard.office h4 { background-color: transparent !important; }
+  .portlet.contacts .panel-body .vcard.office h4.fn { text-transform: uppercase; padding-bottom: 0; margin: 0; }
+  .portlet.contacts .panel-body .vcard.office .category { margin-top: 0; margin-bottom: 0; font-style: italic; }
+  .portlet.contacts .panel-body .vcard.office .adr { margin-top: 4px; }
   .portlet .portlet-items li { margin-bottom: 5px; font-size: 10px; font-size: 0.625rem; }
   .portlet .portlet-items li a { font-size: 13px; font-size: 0.8125rem; line-height: 17px; line-height: 1.0625rem; text-decoration: none; color: #008EAA; }
   .portlet .portlet-items li a:hover { text-decoration: underline; }
@@ -1073,7 +1088,8 @@ top:-39px !important;*/ }
   .top-bar .top-bar-section li ul li a { padding: 25px; }
   .panel-heading#content-panel-heading { display: none; }
   /* 	.dropdown { 		 width: 220px !important; 		  		 li { 			 a { 				 display: inline-block !important; 				 border: 1px solid red !important; 				 padding:25px; 			 } 		 } 	} */
-  body.contact-type #content-main .form-wrap { margin-right: 30px; padding: 30px 60px; } }
+  body.contact-type #content-row { margin-top: 15px; }
+  body.contact-type #content-row #content-main .form-wrap { margin-right: 30px; padding: 30px 60px; } }
 @media screen and (max-width: 1309px) { #util-bar-wrap { padding-right: 0; }
   #top-bar-wrap, #content-row, #banner-row { padding-left: 0; padding-right: 0; }
   .sidebar.sidebar-right > div { margin-left: 0; }
@@ -1149,6 +1165,9 @@ button { font-size: 14px; font-size: 0.875rem; line-height: 24px; line-height: 1
 .sidebar .vcard .adr, .sidebar .vcard #email-phone { line-height: 18px; line-height: 1.125rem; }
 
 figure figcaption { text-align: right; font-size: 10.65px; font-size: 0.66563rem; color: #002855; text-transform: uppercase; }
+
+#content-main form input, #content-main form select, #content-main form textarea { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
+#content-main form .req-txt { font-size: 10px; font-size: 0.625rem; }
 
 .corner-box h2, .corner-box h3, .corner-box p, .corner-box li, .corner-box a { color: #FFF; }
 .corner-box .box-content h2 { padding: 15px 0; font-size: 24px; font-size: 1.5rem; letter-spacing: 0.075em; }
@@ -1266,6 +1285,9 @@ button { font-size: 14px; font-size: 0.875rem; line-height: 24px; line-height: 1
 .sidebar .vcard .adr, .sidebar .vcard #email-phone { line-height: 18px; line-height: 1.125rem; }
 
 figure figcaption { text-align: right; font-size: 10.65px; font-size: 0.66563rem; color: #002855; text-transform: uppercase; }
+
+#content-main form input, #content-main form select, #content-main form textarea { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
+#content-main form .req-txt { font-size: 10px; font-size: 0.625rem; }
 
 .corner-box h2, .corner-box h3, .corner-box p, .corner-box li, .corner-box a { color: #FFF; }
 .corner-box .box-content h2 { padding: 15px 0; font-size: 24px; font-size: 1.5rem; letter-spacing: 0.075em; }
