@@ -51,7 +51,8 @@
 	    </replace-->
 	    <!--drop css:theme="li.title.back.js-generated" /-->
 	    
-	    <replace css:content="#portal-globalnav" css:theme="#top-bar-wrap > nav > section > ul" />
+	    <replace css:theme="#top-bar-wrap > nav > section > ul" css:content="#portal-globalnav" />
+	    
 		<!-- News Happy Box -->
 		<copy css:content="#portletwrapper-706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f5765625265646f0a6e657773 > dl > dd.portletItem.odd" css:theme="#container-1 > div > div > div.content" />
 		
@@ -68,17 +69,10 @@
 	   <copy  css:content="#portletwrapper-706c6f6e652e6c656674636f6c756d6e0a636f6e746578740a2f5765625265646f2f66726f6e742d706167650a636f6e74616374 > div" css:theme="#vcard" />
 	   <copy content='//*[@id="portletwrapper-706c6f6e652e6c656674636f6c756d6e0a636f6e746578740a2f5765625265646f2f66726f6e742d706167650a6e617669676174696f6e"]' theme='//*[@id="footer-nav"]'    />
 	   	
-	    <!--This should have worked.  Fall back and figure it out -->
-	    <!--xsl:template css:match="#portal-globalnav">
-		    <xsl:copy>
-	        	 <xsl:attribute name='class'>left</xsl:attribute>
-		      <xsl:copy-of select="@*" />
-			 	<xsl:apply-templates />
-		     </xsl:copy>
-	    </xsl:template-->
-
+	   
         
          <replace css:content="#portal-globalnav li" css:theme-children="#nav ul" />
+	    
         <drop css:content=".searchSection" />
         <replace css:content="#portal-searchbox" css:theme="#search" />
 
