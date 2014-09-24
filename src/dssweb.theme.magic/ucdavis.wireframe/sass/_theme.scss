@@ -244,7 +244,7 @@ input{
 #content-row {
 	margin-bottom: 45px;
 }
-#content-main, #am-content {
+#content-main, #am-content, #cm-content {
 
 	.breadcrumb {
 		background: none;
@@ -252,6 +252,15 @@ input{
 		margin-bottom:0;
 		color: $ucd_blue_80;
 		text-transform: uppercase;
+		a {
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		p {
+			margin-bottom: 0;
+		}
 		.bread-divider {
 			@include font_size(15px);
 		}
@@ -289,7 +298,7 @@ input{
 }
 
 
-.sidebar{
+.sidebar {
 	height:auto;
 	//width:250px; // !important; 
 	margin-top:15px;
@@ -303,6 +312,7 @@ input{
 		a{
 			color: #fff;
 			padding-left: 35px; // was 38px
+			padding-right: 30px;
 			position: relative;
 			top: 4px;
 		}
@@ -314,6 +324,7 @@ input{
 			//background-color: $rec_blue;
 			//height: 30px;
 			a {
+				display: block; // otherwise padding-left doesn't work where multilined title 
 				background-color: $rec_blue;
 				&:hover{
 					//cursor:text;
@@ -357,11 +368,11 @@ input{
 
 /* Contact uses hCard microformat / vCard RFC2426 */
 #sidebar-block-contact {
-	margin-top:20px;
+	margin-top: 20px;
 	padding-left: 38px;
 	padding-right: 15px;
 	li{
-		text-align:left;
+		text-align: left;
 		@include font_size(13px);
 		letter-spacing: 0.01em;
 		a {
@@ -511,7 +522,7 @@ input{
 		.panel-heading{
 			.panel-title {
 				background-color: $rec_blue;
-				height: 30px;
+				//height: 30px; // need to accommodate multiline headings
 			}
 		}
 	}
@@ -528,7 +539,20 @@ input{
 		
 		section {
 			margin-bottom: 10px;
-		
+			
+			.collapsible.in { // add bottom margin when sections expanded
+				//margin-bottom: 50px; // this margin creates an unacceptable jump when panel is opened
+			}
+			.readmore {
+				display: block;
+				margin-top: 25px;
+				margin-bottom: 40px;
+			}
+			ul {
+				li {
+					margin-bottom: 20px;
+				}
+			}
 			.panel-heading {
 				background-color: transparent !important;
 				padding: 0 !important;
@@ -568,6 +592,23 @@ input{
 	}	
 }
 
+body.contact-type {
+	#content-main {
+		
+		.form-wrap {
+			padding: 15px;
+			position: relative;
+			background-color: $box_light_gray;
+			form {
+				
+				input, select {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
 /*------ All Media Queries ----------*/
 
 /*----- Mobile breakpoint --------*/
@@ -588,7 +629,7 @@ input{
 		}
 	}
 
-	#content-main, #am-content {
+	#content-main, #am-content, #cm-content {
 		margin-bottom: 15px;
 	}
 	
@@ -775,6 +816,57 @@ input{
 						background-color: $ucd_bright_gold_40;
 						cursor: pointer;
 					}
+				}
+			}
+		}
+	}
+	
+	// Panel resets
+	#thumb-section { // Important: Specific content selector since we want to keep our sidebar panel styles
+		.panel-group {
+			section {
+				.readmore {
+					display: block;
+					margin-top: 8px;
+					margin-bottom: 15px;
+				}
+				ul {
+					li {
+						margin-bottom: 20px;
+					}
+				}
+				.panel-heading {
+					.panel-title {
+						a {
+							height: 15px;
+							.thumb-txt {
+								margin-left: 0;
+							}
+						}
+					}
+				}
+				.panel-body {
+					margin-top: 0;
+					margin-left: 0;
+					padding: 0 !important;
+					img.thumb { // Note: We're replacing the smaller thumb with the larger image in mobile via javascript. We initially load the smaller T6-autism.jpg and then look for m-T6-autism.jpg to load in mobile
+						width: 280px;
+						//height: 160px;
+						display: block;
+						margin-left: auto;
+						margin-right: auto;
+						margin-bottom: 15px;
+					}
+				}
+			}
+		}	
+	}
+	
+	#main-container {
+		#content-row {
+			.double {
+				.panel-group {
+					margin-left: 0 !important;
 				}
 			}
 		}
@@ -1135,6 +1227,16 @@ input{
 		}
 	*/
 	
+	body.contact-type {
+		#content-main {
+			.form-wrap {
+				margin-right: 30px;
+				padding: 30px 60px;
+			}
+		}
+	}
+	
+	
 }
 
 // Temporary: TODO: Identify and manage breakpoint at 992
@@ -1226,6 +1328,41 @@ input{
 			//margin-left: 0 !important; TODO: 
 		}
 	}
+	
+	// Panel resets
+	#thumb-section { // Important: Specific content selector since we want to keep our sidebar panel styles
+		.panel-group {
+			section {
+				.readmore {
+					display: block;
+					margin-top: 8px;
+					margin-bottom: 15px;
+				}
+				ul {
+					li {
+						margin-bottom: 20px;
+					}
+				}
+				.panel-heading {
+					.panel-title {
+						a {
+							height: 45px;
+							.thumb-txt {
+								margin-left: 90px;
+							}
+							img {
+								height: 45px;
+							}
+						}
+					}
+				}
+				.panel-body {
+					margin-left: 90px;
+				}
+			}
+		}	
+	}
+	
 }
 
 /*----- Desktop breakpoint -------*/
@@ -1266,5 +1403,12 @@ input{
 	padding-right: 0 !important;
 }
 
-
+// Undo left margin from sidebar treatment
+#content-row {
+	.double {
+		.panel-group {
+			margin-left: 15px !important;
+		}
+	}
+}
 /* /_theme.scss */

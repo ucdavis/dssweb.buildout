@@ -12,6 +12,14 @@
 	var biocardiced = false;
 	var processed = false;
 	
+	function splitPath(path) {
+	  var dirPart, filePart;
+	  path.replace(/^(.*\/)?([^/]*)$/, function(_, dir, file) {
+	    dirPart = dir; filePart = file;
+	  });
+	  return { dirPart: dirPart, filePart: filePart };
+	}
+	
 	$(document).ready(function() {
 		
 		// JQuery version
@@ -89,14 +97,36 @@
 		// Note: Add after any JavaScript constructed markup that relies on foundation
 		$(document).foundation(); 
 		
-		var thumbify = function (startTag, containerTag, targetTag) {
+		
+		var thumbify = function (activeMQ, startTag, containerTag, targetTag) {
 			var comboSelector = startTag + ' ' + containerTag;
-			var realTarget = targetTag + " a";
+			var MLTarget = null;
+			
 			 $(comboSelector).each(function () {
-				 var rt = $(this).find(realTarget);
-				 rt.wrapInner('<span class="thumb-txt" />');
-				 rt.prepend($(this).find('.thumb'));
-				 $(this).addClass("thumbify-processed");
+				 if((activeMQ === "M") || (activeMQ === "L")) {
+					MLTarget = targetTag + " a"; // desktop/tablet: put thumb into the gold bar left of title
+				} else {
+					MLTarget = ".panel-body"; // mobile: put thumb before text within the collapsed panel
+					// prep to retrieve "m-" version of image ...
+					var img = $(this).find('.thumb');
+					var img_src = img.attr('src');
+					
+					//var dlim_pos = img_src.substring(0, img_src.lastIndexOf("/"));
+					//var part_path = img_src.substring(0, dlim_pos);
+					var file_parts = splitPath(img_src);
+					var new_src = file_parts.dirPart + "m-" + file_parts.filePart;
+					img.attr('src',new_src);
+					
+					if(typeof window.console !== "undefined") {
+		        window.console.log("Bootstrapify_func: " + new_src + ", dirPart = " + file_parts.dirPart + ", filePart = " + file_parts.filePart);
+					}
+					
+				}
+				
+				var rt = $(this).find(MLTarget);
+			 	rt.wrapInner('<span class="thumb-txt" />');
+			 	rt.prepend($(this).find('.thumb'));
+				$(this).addClass("thumbify-processed");
 			 });
 			 collapsedSection(startTag);
 		};
@@ -166,9 +196,26 @@
 					bodyEl.addClass('panel-body');
 					bodyEl.wrap('<div class="collapsible panel-collapse collapse" id="'+aid+'"></div>');
 					
+					if(typeof window.console !== "undefined") {
+		        window.console.log("Bootstrapify_func: " + titleEl.text() + " has link: " + hasLink + ", collapsible is: " + el.find('.collapsible').length);
+					}
+					
 					if(hasLink) {
 						var readmore = $('<a />').addClass('readmore').attr('href', moreUrl).text("Read More");
-						bodyEl.find('collapsible').append(readmore);
+						if(el.find('.collapsible ' + contentClassName).length !== 0) {
+							if(el.find('.after-readmore').length !== 0) {
+								readmore.insertBefore(el.find('.after-readmore'));
+							} else {
+								el.find('.collapsible ' + contentClassName).append(readmore);
+							}
+						} else {
+							if(el.find('.after-readmore').length !== 0) {
+								readmore.insertBefore(el.find('.after-readmore'));
+							} else {
+								el.find('.collapsible').append(readmore);
+							}
+							
+						}
 					}
 
 					++i;
@@ -528,7 +575,7 @@
 			expand(); // process collapse
 			if(!processed) {
 				if($('#thumb-section').length !== 0) {
-					thumbify('#thumb-section','section','.panel-heading');
+					thumbify(activeMQ,'#thumb-section','section','.panel-heading');
 				}
 			}
 			processed = true;
