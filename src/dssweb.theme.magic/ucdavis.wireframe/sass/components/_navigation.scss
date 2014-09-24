@@ -381,6 +381,9 @@
 			margin-left: auto;
 			margin-right: auto;
 			height: 100%;
+			.last{
+				border-right:none;
+			}
 			li {
 				float: left;
 				width: 25%;

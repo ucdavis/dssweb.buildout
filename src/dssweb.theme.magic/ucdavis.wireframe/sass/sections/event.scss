@@ -5,6 +5,97 @@
 
 /* event.scss */
 
+#month {
+	border-collapse: collapse;
+	margin-bottom: 70px;
+  td {
+			border: 1px solid $ucd_black_30;
+	}
+	th{
+		font: 1em bold Arial, Helvetica, sans-serif;
+		height: 30px;
+		width: 125px;
+		padding-top: 5px;
+		border-left: 1px solid #fff;
+	}
+	.first{
+			border-left: none !important;
+		}
+ thead {
+		background-color: $rec_blue;
+		color: #fff;
+	}
+
+ td {
+		width: 125px;
+		height: 120px;
+		vertical-align: top;
+		overflow: auto;
+		padding: .2em;
+		.day {
+			width: 7em;
+			height: 6em;
+			overflow: auto;
+			margin-top: 0;
+		}
+		.date{
+			float: right;
+		}
+	}
+}
+
+.previous, .next{
+	.date{
+		color: $ucd_black_30;
+	}
+}
+
+#month tbody .next,#month tbody .previous {
+
+}
+
+.rtop {
+	display: block;
+	background: #060;
+}
+
+.rtop * {
+	display: block;
+	height: 1px;
+	overflow: hidden;
+	background: #fff;
+}
+
+.r1 {
+	margin:0 0 0 5px;
+}
+
+.r2 {
+	margin:0 0 0 3px;
+}
+
+.r3 {
+	margin: 0 0 0 2px;
+}
+
+.r4 {
+	height: 2px;
+	margin: 0 0 0 1px;
+}
+
+#container h1 {
+	font: 2em Arial, Helvetica, sans-serif;
+	color: #060;
+	margin: 0 0 .5em .5em;
+}
+
+#month th {
+font: 1em bold Arial, Helvetica, sans-serif;
+}
+
+p {
+margin-top:0;
+}
 .rows {
 	border-top: 5px solid $rec_blue;
 	//padding-left: 15px;
@@ -23,6 +114,52 @@
 				}
 			}
 
+	}
+}
+
+#month-pager{
+	float: left;
+	padding-top: 5px;
+	.pager-string{
+		margin-left: 10px;
+		margin-right: 10px;
+		font-size: 24px;
+	}
+}
+#view-filter{
+	text-align: right;
+	padding-top: 6px;
+	.vf-selector{
+		background-color: $ucd_blue_10;
+		width: 80px;
+		height: 25px;
+		padding-right:2px;
+		a{
+			text-decoration: none;
+			padding: 5px 20px 5px 20px;
+		}
+	}
+}
+.sidebar-left{
+	top: 135px;
+	#subject-all{
+		margin-top: 25px;
+		margin-bottom: 20px;
+		a{		
+			text-decoration: none;
+		}
+	}
+	.checkForm{
+		input{
+			height: 20px;
+			width: 20px;
+			margin-bottom:5px;
+			margin-top:0px;
+		}
+		label{
+			position: absolute;
+			font-size:13px;
+		}
 	}
 }
 #event-cta {
@@ -136,6 +273,8 @@
 			float: right;
 		}
 	}
-	
+	.panel{
+		margin-left:0 !important;
+	}
 }
 /* /event.scss */

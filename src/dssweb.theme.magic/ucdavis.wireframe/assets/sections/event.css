@@ -112,10 +112,52 @@ body.res-lab #content-row div > h2 { font-size: 24px !important; font-size: 1.5r
 /* UCD Identity - Colors (http://identitystandards.ucdavis.edu/graphic-standards/colors.html) */
 /* Other Custom colors */
 /* event.scss */
-.rows { border-top: 5px solid #008EAA; }
+#month { border-collapse: collapse; margin-bottom: 70px; }
+#month td { border: 1px solid #b2b2b2; }
+#month th { font: 1em bold Arial, Helvetica, sans-serif; height: 30px; width: 125px; padding-top: 5px; border-left: 1px solid #fff; }
+#month .first { border-left: none !important; }
+#month thead { background-color: #008eaa; color: #fff; }
+#month td { width: 125px; height: 120px; vertical-align: top; overflow: auto; padding: .2em; }
+#month td .day { width: 7em; height: 6em; overflow: auto; margin-top: 0; }
+#month td .date { float: right; }
+
+.previous .date, .next .date { color: #b2b2b2; }
+
+.rtop { display: block; background: #060; }
+
+.rtop * { display: block; height: 1px; overflow: hidden; background: #fff; }
+
+.r1 { margin: 0 0 0 5px; }
+
+.r2 { margin: 0 0 0 3px; }
+
+.r3 { margin: 0 0 0 2px; }
+
+.r4 { height: 2px; margin: 0 0 0 1px; }
+
+#container h1 { font: 2em Arial, Helvetica, sans-serif; color: #060; margin: 0 0 .5em .5em; }
+
+#month th { font: 1em bold Arial, Helvetica, sans-serif; }
+
+p { margin-top: 0; }
+
+.rows { border-top: 5px solid #008eaa; }
 .rows.zebra .row:nth-child(even) { background-color: transparent; }
 .rows.zebra .row:nth-child(odd) { background-color: #f2f2f2; }
 .rows.zebra .row > div:last-child { padding-top: 16px; }
+
+#month-pager { float: left; padding-top: 5px; }
+#month-pager .pager-string { margin-left: 10px; margin-right: 10px; font-size: 24px; }
+
+#view-filter { text-align: right; padding-top: 6px; }
+#view-filter .vf-selector { background-color: #e5e9ef; width: 80px; height: 25px; padding-right: 2px; }
+#view-filter .vf-selector a { text-decoration: none; padding: 5px 20px 5px 20px; }
+
+.sidebar-left { top: 135px; }
+.sidebar-left #subject-all { margin-top: 25px; margin-bottom: 20px; }
+.sidebar-left #subject-all a { text-decoration: none; }
+.sidebar-left .checkForm input { height: 20px; width: 20px; margin-bottom: 5px; margin-top: 0px; }
+.sidebar-left .checkForm label { position: absolute; font-size: 13px; }
 
 #event-cta { background-color: transparent; }
 #event-cta .portlet-items #ical-icon, #event-cta .portlet-items #vcal-icon, #event-cta .portlet-items #rss-icon { background-image: none; height: 25px; }
@@ -136,9 +178,10 @@ body.res-lab #content-row div > h2 { font-size: 24px !important; font-size: 1.5r
   #event-cta .portlet-items li a { width: auto !important; }
   #event-cta .portlet-items li#vcal-icon { display: none; }
   #accordion-e .panel-title a { color: #002855 !important; background: url(../../images/icons/blue-100-right-arrow-down.png) 98% 50% no-repeat #99d2dd; }
-  #accordion-e .panel-title a.collapsed { color: #FFF !important; background: url(../../images/icons/white-arrow-right-sm.png) 98% 50% no-repeat #008EAA; }
+  #accordion-e .panel-title a.collapsed { color: #FFF !important; background: url(../../images/icons/white-arrow-right-sm.png) 98% 50% no-repeat #008eaa; }
   #accordion-e .panel-title a:hover { color: #002855 !important; background: url(../../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat #99d2dd; } }
 @media screen and (min-width: 768px) { .rows .row > div:first-child { text-align: right; }
   #event-cta button { float: left; }
-  #event-cta .portlet-items { float: right; } }
+  #event-cta .portlet-items { float: right; }
+  .panel { margin-left: 0 !important; } }
 /* /event.scss */
