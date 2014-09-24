@@ -81,6 +81,18 @@ figure {
 		text-transform: uppercase;
 	}
 }
+#content-main {
+	form {
+		input, select, textarea {
+			@include font_size(13px);
+			@include line_height(18px);
+		}
+		.req-txt {
+			@include font_size(10px);
+		}
+	}
+}
+
 .corner-box {
 	h2, h3, p, li, a {
 		color: #FFF;

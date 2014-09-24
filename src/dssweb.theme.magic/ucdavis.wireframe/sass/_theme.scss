@@ -600,10 +600,31 @@ body.contact-type {
 			position: relative;
 			background-color: $box_light_gray;
 			form {
-				
-				input, select {
+				.form-row {
+					padding: 4px 0;
+					&.centered {
+						text-align: center;
+					}
+				}
+				input, select, textarea {
 					width: 100%;
 				}
+				input, select {
+					height: 35px;
+				}
+				#contact-message {
+					height: 160px;
+				}
+				input[type="submit"] {
+					height: 40px;
+					width: 120px;
+					background-color: $ucd_bright_gold;
+					&:hover {
+						background-color: $ucd_bright_gold_40;
+						cursor: pointer;
+					}
+				}
+				
 			}
 		}
 	}
@@ -1001,6 +1022,36 @@ body.contact-type {
 	
 	.portlet {
 		
+		// Contacts portlet ...
+		&.contacts {
+			
+			.panel-body {
+				padding-top: 15px;
+				padding-bottom: 20px;
+				.vcard {
+					&.office {
+						padding-bottom: 5px; // relies on h4 margin for spacing
+						h4 {
+							background-color: transparent !important;
+							&.fn { // headings used for individuals
+								text-transform: uppercase;
+								padding-bottom: 0;
+								margin: 0;
+							}
+						}
+						.category {
+							margin-top: 0;
+							margin-bottom: 0;
+							font-style: italic;
+						}
+						.adr {
+							margin-top: 4px;
+						}
+					}
+				}
+			}
+		}
+		
 		.portlet-items {
 
 			li {
@@ -1058,6 +1109,7 @@ body.contact-type {
 						padding-bottom: 10px;
 						letter-spacing: 0.05em;
 						font-weight: bold;
+						
 						a {
 							@include font_size(13px);
 							text-decoration: none;
@@ -1228,10 +1280,13 @@ body.contact-type {
 	*/
 	
 	body.contact-type {
-		#content-main {
-			.form-wrap {
-				margin-right: 30px;
-				padding: 30px 60px;
+		#content-row {
+			margin-top: 15px; // needed to adjust for lack of breadcrumb and top js placement of sidebars
+			#content-main {
+				.form-wrap {
+					margin-right: 30px;
+					padding: 30px 60px;
+				}
 			}
 		}
 	}
