@@ -140,9 +140,8 @@
 		
 		/* .right {} if we have markup with left drops */
 		
-		.left {
-			// Determins width of primary menu to right of name image
-			width: 65%; // was 60px
+		.left { // Note: .left and .right Foundation topbar classes which determine the position of menu items with respect to submenu dropdowns
+			width: 60.9%; // was 65%. Determines width of primary menu to right of name image
 			height: 100% !important;
 			
 			// Parent level buttons
@@ -155,7 +154,7 @@
 				text-align: center;
 				
 				&#fac-serv-btn {
-					width: 17%; // was 28% with .right. 
+					//width: 17%;
 				}
 				// Menu hover medium blue
 				&:hover {
