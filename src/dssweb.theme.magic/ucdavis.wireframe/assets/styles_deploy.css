@@ -955,14 +955,23 @@ input { text-align: center; }
 #thumb-section .panel-group section .panel-heading .panel-title a:hover { cursor: pointer !important; background-color: #f0dd99; }
 #thumb-section .panel-group section .panel-body { margin-top: 25px; margin-left: 150px; }
 
-body.contact-type #content-main .form-wrap { padding: 15px; position: relative; background-color: #f2f2f2; }
-body.contact-type #content-main .form-wrap form .form-row { padding: 4px 0; }
-body.contact-type #content-main .form-wrap form .form-row.centered { text-align: center; }
-body.contact-type #content-main .form-wrap form input, body.contact-type #content-main .form-wrap form select, body.contact-type #content-main .form-wrap form textarea { width: 100%; text-align: left; padding: 4px; }
-body.contact-type #content-main .form-wrap form input, body.contact-type #content-main .form-wrap form select { height: 35px; }
-body.contact-type #content-main .form-wrap form #contact-message { height: 160px; }
-body.contact-type #content-main .form-wrap form input[type="submit"] { height: 40px; width: 120px; background-color: #DAAA00; text-align: center; }
-body.contact-type #content-main .form-wrap form input[type="submit"]:hover { background-color: #f0dd99; cursor: pointer; }
+.form-wrap { padding: 15px; }
+.form-wrap form .form-row { padding: 4px 0; }
+.form-wrap form .form-row.centered { text-align: center; }
+.form-wrap form input, .form-wrap form select, .form-wrap form textarea { width: 100%; text-align: left; padding: 4px; }
+.form-wrap form input, .form-wrap form select { height: 35px; }
+.form-wrap form #contact-message { height: 160px; }
+.form-wrap form input[type="submit"] { height: 40px; width: 120px; background-color: #DAAA00; text-align: center; }
+.form-wrap form input[type="submit"]:hover { background-color: #f0dd99; cursor: pointer; }
+
+body.contact-type #content-main .form-wrap { position: relative; background-color: #f2f2f2; }
+
+.portlet .form-wrap { padding: 25px 15px; }
+.portlet .form-wrap input[type="submit"] { margin-top: 15px; }
+
+.col-left { border: 1px solid red; }
+
+.col-right { border: 1px solid blue; }
 
 /*------ All Media Queries ----------*/
 /*----- Mobile breakpoint --------*/
@@ -1555,6 +1564,8 @@ body.res-lab #content-row div > h2 { font-size: 24px !important; font-size: 1.5r
 .wall.shadow-am-graphic { height: 594px !important; }
 
 #banner-caption { position: absolute; top: 0; right: 88px; font-size: 12px; font-size: 0.75rem; text-transform: uppercase; text-align: right; padding-top: 10px; color: #008EAA; }
+
+.title-box { padding: 25px; border: 1px solid black; }
 
 @media screen and (max-width: 992px) { #util-bar-wrap .util-bar { margin-top: 0; } }
 /*----- Mobile breakpoint --------*/
