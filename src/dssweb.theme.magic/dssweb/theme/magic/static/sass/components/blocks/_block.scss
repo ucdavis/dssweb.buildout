@@ -8,7 +8,23 @@
 }
 
 .portlet {
+	margin-bottom: 20px;
+	p, h4 {
+		margin: 15px 35px 8px 35px;
+	}
 	
+	h4.org {
+		margin: 0;
+	}
+
+	.portlet-items {
+		margin: 15px;
+		margin-bottom: 25px;
+		margin-left: 35px;
+		li {
+			margin-bottom: 20px;
+		}
+	}
 }
 
 #corner-box-target {

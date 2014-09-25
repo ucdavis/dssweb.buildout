@@ -12,6 +12,14 @@
 	var biocardiced = false;
 	var processed = false;
 	
+	function splitPath(path) {
+	  var dirPart, filePart;
+	  path.replace(/^(.*\/)?([^/]*)$/, function(_, dir, file) {
+	    dirPart = dir; filePart = file;
+	  });
+	  return { dirPart: dirPart, filePart: filePart };
+	}
+	
 	$(document).ready(function() {
 		
 		// JQuery version
@@ -80,6 +88,14 @@
 	        e.preventDefault();
 	        $($(this).attr('data-target')).toggleClass('in');
 	    });*/
+				
+				// Input field placeholders; Just add .placeholder to the form class to have .form-row labels placed as placeholders on input items
+				if($('form.placeholders').length !== 0) {
+					$('form.placeholders .form-row').each(function () {
+						var label_txt = $(this).find('label').text();
+						$(this).find('input, textarea').attr('placeholder', label_txt);
+					});
+				}
 			
 		};
 		
@@ -88,6 +104,57 @@
 		// foundation top-bar support. 
 		// Note: Add after any JavaScript constructed markup that relies on foundation
 		$(document).foundation(); 
+		
+		
+		var thumbify = function (activeMQ, startTag, containerTag, targetTag) {
+			var comboSelector = startTag + ' ' + containerTag;
+			var MLTarget = null;
+			
+			 $(comboSelector).each(function () {
+				 if((activeMQ === "M") || (activeMQ === "L")) {
+					MLTarget = targetTag + " a"; // desktop/tablet: put thumb into the gold bar left of title
+				} else {
+					MLTarget = ".panel-body"; // mobile: put thumb before text within the collapsed panel
+					// prep to retrieve "m-" version of image ...
+					var img = $(this).find('.thumb');
+					var img_src = img.attr('src');
+					
+					//var dlim_pos = img_src.substring(0, img_src.lastIndexOf("/"));
+					//var part_path = img_src.substring(0, dlim_pos);
+					var file_parts = splitPath(img_src);
+					var new_src = file_parts.dirPart + "m-" + file_parts.filePart;
+					img.attr('src',new_src);
+					
+					if(typeof window.console !== "undefined") {
+		        window.console.log("Bootstrapify_func: " + new_src + ", dirPart = " + file_parts.dirPart + ", filePart = " + file_parts.filePart);
+					}
+					
+				}
+				
+				var rt = $(this).find(MLTarget);
+			 	rt.wrapInner('<span class="thumb-txt" />');
+			 	rt.prepend($(this).find('.thumb'));
+				$(this).addClass("thumbify-processed");
+			 });
+			 collapsedSection(startTag);
+		};
+		
+		// Make collapse panel-group active ...
+    var collapsedSection = function (selector) {
+				$(selector+" .panel-group").children().addClass("panel panel-default");
+				$(selector+" .panel-group .collapsible").addClass("panel-collapse collapse");
+				$(selector+" .panel-group .collapsible").removeClass('in');
+				
+        //$(".collapse > div").addClass("panel-body"); // Check if not applied ...
+
+				$(selector+" .panel-title a").attr('data-toggle','collapse'); // for open/close
+				
+				// Prevent the panel-title headers from redirecting the page and shows .panel-body content
+        $(selector+" .panel-title a").click(function (e) {
+            e.preventDefault();
+            $($(this).data("target")).show();			
+				});	
+    };
 		
 		// BOOTSTRAPIFY //////////////////////////////////////////////////
 		var bootstrapify_func = function (mobile, collectionSelector, itemSelector, heading, contentClassName, panelGroupID, startIndex) {
@@ -101,8 +168,9 @@
 				
 				// Process each item within panel-group
 				var comboSelector = collectionSelector + " " + itemSelector;
+
 	      $(comboSelector).each(function () {
-			
+					
 					var el = $(this);
 					//var id = ('accordion'+i);
 					var aid = ('acont'+i);
@@ -136,9 +204,26 @@
 					bodyEl.addClass('panel-body');
 					bodyEl.wrap('<div class="collapsible panel-collapse collapse" id="'+aid+'"></div>');
 					
+					if(typeof window.console !== "undefined") {
+		        window.console.log("Bootstrapify_func: " + titleEl.text() + " has link: " + hasLink + ", collapsible is: " + el.find('.collapsible').length);
+					}
+					
 					if(hasLink) {
 						var readmore = $('<a />').addClass('readmore').attr('href', moreUrl).text("Read More");
-						bodyEl.find('collapsible').append(readmore);
+						if(el.find('.collapsible ' + contentClassName).length !== 0) {
+							if(el.find('.after-readmore').length !== 0) {
+								readmore.insertBefore(el.find('.after-readmore'));
+							} else {
+								el.find('.collapsible ' + contentClassName).append(readmore);
+							}
+						} else {
+							if(el.find('.after-readmore').length !== 0) {
+								readmore.insertBefore(el.find('.after-readmore'));
+							} else {
+								el.find('.collapsible').append(readmore);
+							}
+							
+						}
 					}
 
 					++i;
@@ -156,12 +241,14 @@
         window.console.log("Is mobile: ActiveMQ: " + activeMQ + ", Mobile: "+ mobile);
 			}
 			// TODO: sidebar-right relies on collapsible selectors for styling; fix that and only process for mobile
+			portletNum = bootstrapify_func(mobile, '#thumb-section','section', 'h3', '.inline-content', 'accordion-thumb', portletNum);
 			portletNum = bootstrapify_func(mobile, '.sidebar-right','.portlet', 'h3', '.portlet-content', 'accordion-sr', portletNum);
+
 			if(mobile) {
 				portletNum = bootstrapify_func(mobile, '#cm-section','section', 'h2', '.inline-content', 'accordion-cm', portletNum);
 				portletNum = bootstrapify_func(mobile, '#event-description', '', 'h3', '.inline-content', 'accordion-e', portletNum);
 			}
-			processed = true;
+			
 		};
 		
 
@@ -175,7 +262,11 @@
 				$(this).wrap('<figure class="picture-processed" />');
 				if((typeof title !== 'undefined')) {
 					$(this).parent().append("<figcaption>"+title+"</figcaption>");
+				} else if($('.picture .figcaption').length !== 0) {
+					$(this).parent().append("<figcaption>"+$('.picture .figcaption').html()+"</figcaption>");
+					$('.picture .figcaption').remove();
 				}
+				
       });
 		}		
 		
@@ -447,7 +538,7 @@
 				// Add the collapse on toggle attribute to the panel headers
 				//$(".panel-title a").attr("data-toggle","collapse");
 				$(".panel-group .collapsible").addClass("panel-collapse collapse"); // Note: global
-				$(".panel-group .collapsible").removeClass("in"); // New: Close panels
+				$(".panel-group .collapsible").removeClass('in'); // New: Close panels
         $(".collapse > div").addClass("panel-body");
 				
 				// Remove the dropdown on hover effect from the navbar parent items
@@ -490,6 +581,12 @@
 				bootstrapify(activeMQ);
 			}
 			expand(); // process collapse
+			if(!processed) {
+				if($('#thumb-section').length !== 0) {
+					thumbify(activeMQ,'#thumb-section','section','.panel-heading');
+				}
+			}
+			processed = true;
 		}
 				
     if (toggleActive) {

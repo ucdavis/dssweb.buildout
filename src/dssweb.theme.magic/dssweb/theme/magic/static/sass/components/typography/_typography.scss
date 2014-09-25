@@ -1,7 +1,7 @@
 /* _typography.scss */
 @import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
 
-body, div, p, li {
+body, div, p, li, input, textarea, select {
   color: #000;
 	@include standard_font;
 }
@@ -24,6 +24,13 @@ button {
 	@include line_height(24px);
 }
 
+.portlet {
+	li, p, h4 {
+		@include font_size(13px);
+		@include line_height(18px);
+	}
+}
+
 .col-lg-4 {
 	h2 {
     font-weight: bold !important;
@@ -37,13 +44,20 @@ button {
 	font-weight: bold;
 	}	
 }
+.pager {
+	.pager-string {
+		@include font_size(13px);
+		@include line_height(25px);
+	}
+}
 .sidebar {
 	h3 {
-		a {
+		a { // Main selector to change sidebar headings
 			text-transform: uppercase;
 			@include font_size(13px);
-			@include line_height(22px);
+			@include line_height(18px,!important);
 			letter-spacing: 0.1em;
+			padding-bottom: 4px;
 		}
 	}
 	.panel-heading {
@@ -67,6 +81,18 @@ figure {
 		text-transform: uppercase;
 	}
 }
+#content-main {
+	form {
+		input, select, textarea {
+			@include font_size(13px);
+			@include line_height(18px);
+		}
+		.req-txt {
+			@include font_size(10px);
+		}
+	}
+}
+
 .corner-box {
 	h2, h3, p, li, a {
 		color: #FFF;
@@ -160,7 +186,11 @@ body.bio {
 	}
 	
 }
-
+#cm-content {
+	p.intro {
+		margin-bottom: 45px;
+	}
+}
 #content-main, #am-content {
 	p, li, ol, div, span {
 		@include line_height(24px,!important);
@@ -245,12 +275,66 @@ body.bio {
 			}
 		}
 	}
+	
+	// T6 Research Lab heading thumb sections
+	#thumb-section {
+		.panel-group {
+			.panel-heading {
+				.panel-title {
+					a {
+						@include font_size(18px,!important);
+						@include line_height(45px,!important);
+					}
+				}
+			}
+		}	
+	}
+	
+}
+
+body.res-lab {
+	#content-row div {
+		> h2 {
+			@include font_size(24px,!important);
+			@include line_height(28px);
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+	}
+}
+// T6 Research Lab heading thumb sections
+#thumb-section {
+	.panel-group {
+		.panel-heading {
+			.panel-title {
+				a {
+					@include font_size(24px);
+					@include line_height(70px);
+				}
+			}
+		}
+	}	
+	section {
+		h4 {
+			@include font_size(20px,!important);
+			margin-bottom: 25px;
+		}
+	}
+}
+
+#content-main, #am-content, #cm-content {
+	ul {
+		li {
+			@include font_size(15px,!important);
+			@include line_height(24px);
+		}
+	}
 }
 
 /*----- tablet breakpoint -------*/
 @media screen and (min-width: $screen-sm-min) {	// width > 768
 	.top-panel {
-		#content-main, #am-content {
+		#content-main, #am-content, #cm-content {
 			.narrow-col {
 				color: #FFF;
 				h2 {
@@ -280,6 +364,17 @@ body.bio {
 			//text-align: left;
 		}
 		*/
+	}
+	
+	.container {
+		.sidebar{
+			.panel-heading{
+				.panel-title {
+					@include font_size(16px, !important);
+					@include line_height(16px, !important);
+				}
+			}
+		}
 	}
 }
 
@@ -340,6 +435,20 @@ body.bio {
 		}
 	}
 	
+	// T6 Research Lab heading thumb sections
+	#thumb-section {
+		.panel-group {
+			.panel-heading {
+				.panel-title {
+					a {
+						@include font_size(16px,!important);
+						@include line_height(40px,!important);
+					}
+				}
+			}
+		}	
+	}
+
 }
 
 

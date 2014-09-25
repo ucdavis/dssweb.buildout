@@ -11,7 +11,7 @@
 /* UCD Identity - Colors (http://identitystandards.ucdavis.edu/graphic-standards/colors.html) */
 /* Other Custom colors */
 /* _typography.scss */
-body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.3125em; }
+body, div, p, li, input, textarea, select { color: #000; color: #000; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.3125em; }
 
 /*
 @font-face {
@@ -27,16 +27,23 @@ em { font-style: italic; }
 
 button { font-size: 14px; font-size: 0.875rem; line-height: 24px; line-height: 1.5rem; }
 
+.portlet li, .portlet p, .portlet h4 { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
+
 .col-lg-4 h2 { font-weight: bold !important; font-size: 30px !important; font-size: 1.875rem !important; margin-bottom: 15px; }
 
 .about-bio h3 { font-weight: bold; }
 
-.sidebar h3 a { text-transform: uppercase; font-size: 13px; font-size: 0.8125rem; line-height: 22px; line-height: 1.375rem; letter-spacing: 0.1em; }
+.pager .pager-string { font-size: 13px; font-size: 0.8125rem; line-height: 25px; line-height: 1.5625rem; }
+
+.sidebar h3 a { text-transform: uppercase; font-size: 13px; font-size: 0.8125rem; line-height: 18px !important; line-height: 1.125rem !important; letter-spacing: 0.1em; padding-bottom: 4px; }
 .sidebar .panel-heading h3.panel-title { padding-top: 0 !important; }
 .sidebar .vcard { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
 .sidebar .vcard .adr, .sidebar .vcard #email-phone { line-height: 18px; line-height: 1.125rem; }
 
 figure figcaption { text-align: right; font-size: 10.65px; font-size: 0.66563rem; color: #002855; text-transform: uppercase; }
+
+#content-main form input, #content-main form select, #content-main form textarea { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
+#content-main form .req-txt { font-size: 10px; font-size: 0.625rem; }
 
 .corner-box h2, .corner-box h3, .corner-box p, .corner-box li, .corner-box a { color: #FFF; }
 .corner-box .box-content h2 { padding: 15px 0; font-size: 24px; font-size: 1.5rem; letter-spacing: 0.075em; }
@@ -60,6 +67,8 @@ body.bio #summary #education { width: 70% !important; }
 body.bio #summary #education ul { margin-top: 10px; }
 body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line-height: 18px; line-height: 1.125rem; margin-bottom: 5px; padding-left: 0 !important; background-image: none !important; }
 
+#cm-content p.intro { margin-bottom: 45px; }
+
 #content-main p, #content-main li, #content-main ol, #content-main div, #content-main span, #am-content p, #am-content li, #am-content ol, #am-content div, #am-content span { line-height: 24px !important; line-height: 1.5rem !important; }
 #content-main p, #am-content p { font-size: 15px; font-size: 0.9375rem; line-height: 18px; line-height: 1.125rem; }
 #content-main p.intro, #am-content p.intro { font-size: 18px; font-size: 1.125rem; line-height: 30px !important; line-height: 1.875rem !important; }
@@ -74,7 +83,15 @@ body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line
   .sidebar h3 { font-size: 13px; font-size: 0.8125rem; line-height: 40px; line-height: 2.5rem; letter-spacing: .1em; }
   #content-main .panel-group .row.panel .panel-title a, #am-content .panel-group .row.panel .panel-title a { font-size: 18px; font-size: 1.125rem; line-height: 40px; line-height: 2.5rem; }
   #top-panel-row { margin-top: 45px; }
-  .panel-group #middle-row h2 { font-size: 18px !important; font-size: 1.125rem !important; line-height: 24px; line-height: 1.5rem; } }
+  .panel-group #middle-row h2 { font-size: 18px !important; font-size: 1.125rem !important; line-height: 24px; line-height: 1.5rem; }
+  #thumb-section .panel-group .panel-heading .panel-title a { font-size: 18px !important; font-size: 1.125rem !important; line-height: 45px !important; line-height: 2.8125rem !important; } }
+body.res-lab #content-row div > h2 { font-size: 24px !important; font-size: 1.5rem !important; line-height: 28px; line-height: 1.75rem; margin-top: 15px; margin-bottom: 15px; }
+
+#thumb-section .panel-group .panel-heading .panel-title a { font-size: 24px; font-size: 1.5rem; line-height: 70px; line-height: 4.375rem; }
+#thumb-section section h4 { font-size: 20px !important; font-size: 1.25rem !important; margin-bottom: 25px; }
+
+#content-main ul li, #am-content ul li, #cm-content ul li { font-size: 15px !important; font-size: 0.9375rem !important; line-height: 24px; line-height: 1.5rem; }
+
 /*----- tablet breakpoint -------*/
 @media screen and (min-width: 768px) { .top-panel { /*
 &.left-panel {
@@ -87,10 +104,11 @@ body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line
 	//text-align: left;
 }
 */ }
-  .top-panel #content-main .narrow-col, .top-panel #am-content .narrow-col { color: #FFF; }
-  .top-panel #content-main .narrow-col h2, .top-panel #am-content .narrow-col h2 { text-align: center !important; }
-  .top-panel #content-main .narrow-col h3, .top-panel #content-main .narrow-col p, .top-panel #am-content .narrow-col h3, .top-panel #am-content .narrow-col p { text-align: left !important; }
-  .top-panel.left-panel h2, .top-panel.left-panel h2, .top-panel.left-panel h2 { text-align: center !important; } }
+  .top-panel #content-main .narrow-col, .top-panel #am-content .narrow-col, .top-panel #cm-content .narrow-col { color: #FFF; }
+  .top-panel #content-main .narrow-col h2, .top-panel #am-content .narrow-col h2, .top-panel #cm-content .narrow-col h2 { text-align: center !important; }
+  .top-panel #content-main .narrow-col h3, .top-panel #content-main .narrow-col p, .top-panel #am-content .narrow-col h3, .top-panel #am-content .narrow-col p, .top-panel #cm-content .narrow-col h3, .top-panel #cm-content .narrow-col p { text-align: left !important; }
+  .top-panel.left-panel h2, .top-panel.left-panel h2, .top-panel.left-panel h2 { text-align: center !important; }
+  .container .sidebar .panel-heading .panel-title { font-size: 16px !important; font-size: 1rem !important; line-height: 16px !important; line-height: 1rem !important; } }
 /*----- Tablet breakpoint --------*/
 @media screen and (max-width: 992px) { body.home #content-main .narrow-col h2, body.home #am-content .narrow-col h2 { font-size: 17px; font-size: 1.0625rem; }
   body.home #content-main #top-panel-row .narrow-col .bcontroller .btn-primary, body.home #am-content #top-panel-row .narrow-col .bcontroller .btn-primary { font-size: 11px; font-size: 0.6875rem; line-height: 18px !important; line-height: 1.125rem !important; }
@@ -98,7 +116,8 @@ body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line
   #content-main .content-title, #am-content .content-title { font-size: 26px; font-size: 1.625rem; line-height: 28px; line-height: 1.75rem; }
   .corner-box .box-content h2 { padding: 10px 0; font-size: 16px; font-size: 1rem; letter-spacing: 0.075em; }
   .corner-box .box-content h3 { padding: 0 0 0 0; font-size: 11px; font-size: 0.6875rem; }
-  .corner-box .box-content p { font-size: 11px; font-size: 0.6875rem; line-height: 15px; line-height: 0.9375rem; } }
+  .corner-box .box-content p { font-size: 11px; font-size: 0.6875rem; line-height: 15px; line-height: 0.9375rem; }
+  #thumb-section .panel-group .panel-heading .panel-title a { font-size: 16px !important; font-size: 1rem !important; line-height: 40px !important; line-height: 2.5rem !important; } }
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: 992px) { body.home #content-main #top-panel-row .narrow-col .bcontroller .btn-primary, body.home #am-content #top-panel-row .narrow-col .bcontroller .btn-primary { font-size: 14px; font-size: 0.875rem; line-height: 30px !important; line-height: 1.875rem !important; } }
 @media screen and (max-width: 1310px) { body.home #content-main .narrow-col a, body.home #content-main .narrow-col p, body.home #content-main .narrow-col li, body.home #am-content .narrow-col a, body.home #am-content .narrow-col p, body.home #am-content .narrow-col li { font-size: 12px; font-size: 0.75rem; line-height: 15px !important; line-height: 0.9375rem !important; } }
@@ -573,6 +592,16 @@ tbody.collapse.in { display: table-row-group; }
 .sr-only-focusable:active, .sr-only-focusable:focus { position: static; width: auto; height: auto; margin: 0; overflow: visible; clip: auto; }
 
 /* Overriden styles */
+.hide { display: none !important; }
+
+.show { display: block !important; }
+
+.invisible { visibility: hidden; }
+
+.text-hide { font: 0/0 a; color: transparent; text-shadow: none; background-color: transparent; border: 0; }
+
+.hidden { display: none !important; visibility: hidden !important; }
+
 #breadcrumb .breadcrumb { padding: 0; margin-bottom: 0; list-style: none; background-color: transparent; border-radius: 0; }
 #breadcrumb .breadcrumb > li { display: inline; /* Changed for CSS validation, was auto */ }
 #breadcrumb .breadcrumb > li + li:before { padding: 0; color: inherit; /* Changed for CSS validation, was auto */ content: normal; /* Changed for CSS validation, was auto */ }
@@ -599,7 +628,7 @@ tbody.collapse.in { display: table-row-group; }
   .visible-xs-block { display: block !important; }
   .visible-xs-inline { display: inline !important; }
   .visible-xs-inline-block { display: inline-block !important; } }
-@media screen and (min-width: 768px) { .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 { float: left; }
+@media screen and (max-width: 768px) { .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 { float: left; }
   .col-sm-12 { width: 100%; }
   .col-sm-11 { width: 91.66666667%; }
   .col-sm-10 { width: 83.33333333%; }
@@ -698,7 +727,7 @@ tbody.collapse.in { display: table-row-group; }
   .col-lg-push-2 { left: 16.66666667%; }
   .col-lg-push-1 { left: 8.33333333%; }
   .col-lg-push-0 { left: auto; } }
-@media screen and (min-width: 768px) { .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 { float: left; }
+@media screen and (min-width: 768px) and (max-width: 991px) { .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 { float: left; }
   .col-md-12 { width: 100%; }
   .col-md-11 { width: 91.66666667%; }
   .col-md-10 { width: 83.33333333%; }
@@ -793,7 +822,7 @@ head { font-family: 'XS'; }
 
 .btn-txt { display: none; }
 
-.not-visible { visibility: hidden; }
+.invisible { visibility: hidden; }
 
 .nobr { white-space: nowrap; }
 
@@ -840,19 +869,22 @@ input { text-align: center; }
 */
 #content-row { margin-bottom: 45px; }
 
-#content-main .breadcrumb, #am-content .breadcrumb { background: none; padding: 0 0 !important; margin-bottom: 0; color: #335379; text-transform: uppercase; }
-#content-main .breadcrumb .bread-divider, #am-content .breadcrumb .bread-divider { font-size: 15px; font-size: 0.9375rem; }
-#content-main .panel-body h2, #am-content .panel-body h2 { text-transform: uppercase; }
-#content-main #bottom-panel-row h2, #am-content #bottom-panel-row h2 { text-transform: none; }
-#content-main ul, #am-content ul { list-style-type: none; padding: 0; margin: 0; margin-bottom: 15px; }
-#content-main ul li, #am-content ul li { background-image: url(../images/bullets/black-square.gif); background-repeat: no-repeat; background-position: 0px 5px; padding-left: 14px; }
-#content-main ul li ul, #am-content ul li ul { margin-top: 7px; margin-bottom: 0 !important; }
+#content-main .breadcrumb, #am-content .breadcrumb, #cm-content .breadcrumb { background: none; padding: 0 0 !important; margin-bottom: 0; color: #335379; text-transform: uppercase; }
+#content-main .breadcrumb a, #am-content .breadcrumb a, #cm-content .breadcrumb a { text-decoration: none; }
+#content-main .breadcrumb a:hover, #am-content .breadcrumb a:hover, #cm-content .breadcrumb a:hover { text-decoration: underline; }
+#content-main .breadcrumb p, #am-content .breadcrumb p, #cm-content .breadcrumb p { margin-bottom: 0; }
+#content-main .breadcrumb .bread-divider, #am-content .breadcrumb .bread-divider, #cm-content .breadcrumb .bread-divider { font-size: 15px; font-size: 0.9375rem; }
+#content-main .panel-body h2, #am-content .panel-body h2, #cm-content .panel-body h2 { text-transform: uppercase; }
+#content-main #bottom-panel-row h2, #am-content #bottom-panel-row h2, #cm-content #bottom-panel-row h2 { text-transform: none; }
+#content-main ul, #am-content ul, #cm-content ul { list-style-type: none; padding: 0; margin: 0; margin-bottom: 15px; }
+#content-main ul li, #am-content ul li, #cm-content ul li { background-image: url(../images/bullets/black-square.gif); background-repeat: no-repeat; background-position: 0px 5px; padding-left: 14px; }
+#content-main ul li ul, #am-content ul li ul, #cm-content ul li ul { margin-top: 7px; margin-bottom: 0 !important; }
 
 .sidebar { height: auto; margin-top: 15px; text-align: left; }
 .sidebar > div { margin-left: 70px; }
-.sidebar h3 a { color: #fff; padding-left: 35px; position: relative; top: 4px; }
+.sidebar h3 a { color: #fff; padding-left: 35px; padding-right: 30px; position: relative; top: 4px; }
 .sidebar .panel-heading { padding: 0; }
-.sidebar .panel-heading .panel-title a { background-color: #008EAA; }
+.sidebar .panel-heading .panel-title a { display: block; background-color: #008EAA; }
 .sidebar.sidebar-right > div .panel-body { background: #f2f2f2; }
 .sidebar.sidebar-right .collapsible { background: #f2f2f2; }
 
@@ -896,6 +928,8 @@ input { text-align: center; }
 
 #middle-row { position: relative; }
 
+.row .row { margin-left: 0 !important; margin-right: 0 !important; }
+
 @media screen and (min-width: 768px) { #content-row { margin-top: 45px; }
   body.gen-landing #content-row { margin-top: 30px; }
   #content-main, #am-content { padding-left: 0 !important; margin-bottom: 30px; }
@@ -907,14 +941,35 @@ input { text-align: center; }
 }*/ }
   .masthead, .marketing, #footer { padding-right: 0; padding-left: 0; }
   .masthead .foot-wrap #foot-left, .marketing .foot-wrap #foot-left, #footer .foot-wrap #foot-left { margin-left: 10%; }
-  .sidebar .panel-heading .panel-title { background-color: #008EAA; height: 30px; }
+  .sidebar .panel-heading .panel-title { background-color: #008EAA; }
   .sidebar-right { padding-left: 0 !important; padding-right: 0 !important; } }
+#thumb-section .panel-group section { margin-bottom: 10px; }
+#thumb-section .panel-group section .readmore { display: block; margin-top: 25px; margin-bottom: 40px; }
+#thumb-section .panel-group section ul li { margin-bottom: 20px; }
+#thumb-section .panel-group section .panel-heading { background-color: transparent !important; padding: 0 !important; border-top-left-radius: 0; border-top-right-radius: 0; }
+#thumb-section .panel-group section .panel-heading .panel-title { background-color: transparent !important; }
+#thumb-section .panel-group section .panel-heading .panel-title a { display: block; height: 70px; width: 100%; background: url(../images/icons/blue-100-right-arrow-down.png) 98% 50% no-repeat #f0dd99; }
+#thumb-section .panel-group section .panel-heading .panel-title a .thumb-txt { display: block; margin-left: 150px; }
+#thumb-section .panel-group section .panel-heading .panel-title a img { float: left; }
+#thumb-section .panel-group section .panel-heading .panel-title a.collapsed { background: url(../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat #DAAA00; }
+#thumb-section .panel-group section .panel-heading .panel-title a:hover { cursor: pointer !important; background-color: #f0dd99; }
+#thumb-section .panel-group section .panel-body { margin-top: 25px; margin-left: 150px; }
+
+body.contact-type #content-main .form-wrap { padding: 15px; position: relative; background-color: #f2f2f2; }
+body.contact-type #content-main .form-wrap form .form-row { padding: 4px 0; }
+body.contact-type #content-main .form-wrap form .form-row.centered { text-align: center; }
+body.contact-type #content-main .form-wrap form input, body.contact-type #content-main .form-wrap form select, body.contact-type #content-main .form-wrap form textarea { width: 100%; text-align: left; padding: 4px; }
+body.contact-type #content-main .form-wrap form input, body.contact-type #content-main .form-wrap form select { height: 35px; }
+body.contact-type #content-main .form-wrap form #contact-message { height: 160px; }
+body.contact-type #content-main .form-wrap form input[type="submit"] { height: 40px; width: 120px; background-color: #DAAA00; text-align: center; }
+body.contact-type #content-main .form-wrap form input[type="submit"]:hover { background-color: #f0dd99; cursor: pointer; }
+
 /*------ All Media Queries ----------*/
 /*----- Mobile breakpoint --------*/
-@media screen and (max-width: 768px) { .row#banner-row, .row .row { margin-left: 0 !important; margin-right: 0 !important; }
+@media screen and (max-width: 768px) { .row#banner-row { margin-left: 0 !important; margin-right: 0 !important; }
   .row#content-row { margin-left: 0 !important; margin-right: 0 !important; }
   .row#content-row #content-main, .row#content-row #am-content { margin-top: 10px; }
-  #content-main, #am-content { margin-bottom: 15px; }
+  #content-main, #am-content, #cm-content { margin-bottom: 15px; }
   .collapsing { -webkit-transition: none; transition: none; }
   .collapse div, .collapsing div { padding: 15px; }
   .panel { border: none; }
@@ -953,7 +1008,14 @@ input { text-align: center; }
   #content-row section .course-portlet .course-info { padding: 0; float: left; width: 75%; }
   #content-row section .course-portlet .course-info h3 { padding: 0; }
   #content-row section .course-portlet button { float: left; width: 25%; height: 40px; width: 120px; background-color: #DAAA00; }
-  #content-row section .course-portlet button:hover { background-color: #f0dd99; cursor: pointer; } }
+  #content-row section .course-portlet button:hover { background-color: #f0dd99; cursor: pointer; }
+  #thumb-section .panel-group section .readmore { display: block; margin-top: 8px; margin-bottom: 15px; }
+  #thumb-section .panel-group section ul li { margin-bottom: 20px; }
+  #thumb-section .panel-group section .panel-heading .panel-title a { height: 15px; }
+  #thumb-section .panel-group section .panel-heading .panel-title a .thumb-txt { margin-left: 0; }
+  #thumb-section .panel-group section .panel-body { margin-top: 0; margin-left: 0; padding: 0 !important; }
+  #thumb-section .panel-group section .panel-body img.thumb { width: 280px; display: block; margin-left: auto; margin-right: auto; margin-bottom: 15px; }
+  #main-container #content-row .double .panel-group { margin-left: 0 !important; } }
 /*----- Mobile breakpoint -------*/
 @media screen and (max-width: 991px) { head { font-family: "S"; }
   body:after { content: "S"; }
@@ -982,8 +1044,14 @@ top:-39px !important;*/ }
   #cm-section .panel-group .panel-heading { background-color: transparent !important; padding: 0 !important; border-top-left-radius: 0; border-top-right-radius: 0; }
   #cm-section .panel-group .panel-heading .panel-title { background-color: transparent !important; }
   #cm-section .panel-group .panel-body { border-top-width: 0 !important; }
-  .portlet { margin-bottom: 35px; }
-  .portlet .portlet-items { margin: 15px; margin-bottom: 25px; margin-left: 38px; }
+  .portlet.adr-only .panel-body { padding-top: 10px; }
+  .portlet.adr-only .panel-body .adr { padding-top: 0 !important; }
+  .portlet.contacts .panel-body { padding-top: 15px; padding-bottom: 20px; }
+  .portlet.contacts .panel-body .vcard.office { padding-bottom: 5px; }
+  .portlet.contacts .panel-body .vcard.office h4 { background-color: transparent !important; }
+  .portlet.contacts .panel-body .vcard.office h4.fn { text-transform: uppercase; padding-bottom: 0; margin: 0; }
+  .portlet.contacts .panel-body .vcard.office .category { margin-top: 0; margin-bottom: 0; font-style: italic; }
+  .portlet.contacts .panel-body .vcard.office .adr { margin-top: 4px; }
   .portlet .portlet-items li { margin-bottom: 5px; font-size: 10px; font-size: 0.625rem; }
   .portlet .portlet-items li a { font-size: 13px; font-size: 0.8125rem; line-height: 17px; line-height: 1.0625rem; text-decoration: none; color: #008EAA; }
   .portlet .portlet-items li a:hover { text-decoration: underline; }
@@ -991,11 +1059,11 @@ top:-39px !important;*/ }
   .portlet .portlet-items.with-bullets { margin-left: 47px; }
   .portlet .portlet-items.with-bullets li { list-style: square; }
   .portlet .panel-body { padding: 0; }
-  .portlet .panel-body .vcard { padding: 0; padding-bottom: 20px; }
+  .portlet .panel-body .vcard { padding: 0; padding-bottom: 25px; }
   .portlet .panel-body .vcard div { font-size: 12px; font-size: 0.75rem; margin-left: 35px; margin-right: 15px; padding: 0; }
   .portlet .panel-body .vcard div div { margin-left: 0; }
   .portlet .panel-body .vcard div.adr { margin-top: 15px; }
-  .portlet .panel-body .vcard.office h4 { min-height: 28px; background-color: #e5e9ef; padding: 8px; padding-left: 35px; letter-spacing: 0.05em; font-weight: bold; }
+  .portlet .panel-body .vcard.office h4 { min-height: 28px; background-color: #e5e9ef; padding: 12px 35px; padding-bottom: 10px; letter-spacing: 0.05em; font-weight: bold; }
   .portlet .panel-body .vcard.office h4 a { font-size: 13px; font-size: 0.8125rem; text-decoration: none; }
   .portlet .panel-body .vcard.office h4 a:hover { text-decoration: underline; }
   #content-row section { margin-bottom: 25px; }
@@ -1021,7 +1089,9 @@ top:-39px !important;*/ }
   #content-main #summary .left, #am-content #summary .left { float: left; }
   .top-bar .top-bar-section li ul li a { padding: 25px; }
   .panel-heading#content-panel-heading { display: none; }
-  /* 	.dropdown { 		 width: 220px !important; 		  		 li { 			 a { 				 display: inline-block !important; 				 border: 1px solid red !important; 				 padding:25px; 			 } 		 } 	} */ }
+  /* 	.dropdown { 		 width: 220px !important; 		  		 li { 			 a { 				 display: inline-block !important; 				 border: 1px solid red !important; 				 padding:25px; 			 } 		 } 	} */
+  body.contact-type #content-row { margin-top: 15px; }
+  body.contact-type #content-row #content-main .form-wrap { margin-right: 30px; padding: 30px 60px; } }
 @media screen and (max-width: 1309px) { #util-bar-wrap { padding-right: 0; }
   #top-bar-wrap, #content-row, #banner-row { padding-left: 0; padding-right: 0; }
   .sidebar.sidebar-right > div { margin-left: 0; }
@@ -1037,15 +1107,24 @@ top:-39px !important;*/ }
 @media screen and (min-width: 992px) and (max-width: 1310px) { .sidebar.sidebar-right > div { margin-left: 60px; } }
 /*----- Tablet breakpoint -------*/
 @media screen and (min-width: 768px) and (max-width: 991px) { head { font-family: "M"; }
-  body:after { content: "M"; } }
+  body:after { content: "M"; }
+  #thumb-section .panel-group section .readmore { display: block; margin-top: 8px; margin-bottom: 15px; }
+  #thumb-section .panel-group section ul li { margin-bottom: 20px; }
+  #thumb-section .panel-group section .panel-heading .panel-title a { height: 45px; }
+  #thumb-section .panel-group section .panel-heading .panel-title a .thumb-txt { margin-left: 90px; }
+  #thumb-section .panel-group section .panel-heading .panel-title a img { height: 45px; }
+  #thumb-section .panel-group section .panel-body { margin-left: 90px; } }
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: 992px) { head { font-family: "L"; }
   body:after { content: "L"; }
   .no-gutter-lg { padding-left: 0 !important; padding-right: 0 !important; }
   body.bio .sidebar.sidebar-right { margin-top: 45px; }
-  body.bio .sidebar.sidebar-right .bio-card img.photo { margin-top: 15px; } }
+  body.bio .sidebar.sidebar-right .bio-card img.photo { margin-top: 15px; }
+  .sidebar > div { margin-left: 92px; } }
 /* Override default grid gutter, which was broke on home/index bottom panel row. */
 .no-gutter, .no-gutters { padding-left: 0 !important; padding-right: 0 !important; }
+
+#content-row .double .panel-group { margin-left: 15px !important; }
 
 /* /_theme.scss */
 /* *** UNIT - sub-organization or unit styles. Place unit custom styles here **** */
@@ -1058,7 +1137,7 @@ top:-39px !important;*/ }
 /* UCD Identity - Colors (http://identitystandards.ucdavis.edu/graphic-standards/colors.html) */
 /* Other Custom colors */
 /* _typography.scss */
-body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.3125em; }
+body, div, p, li, input, textarea, select { color: #000; color: #000; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.3125em; }
 
 /*
 @font-face {
@@ -1074,16 +1153,23 @@ em { font-style: italic; }
 
 button { font-size: 14px; font-size: 0.875rem; line-height: 24px; line-height: 1.5rem; }
 
+.portlet li, .portlet p, .portlet h4 { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
+
 .col-lg-4 h2 { font-weight: bold !important; font-size: 30px !important; font-size: 1.875rem !important; margin-bottom: 15px; }
 
 .about-bio h3 { font-weight: bold; }
 
-.sidebar h3 a { text-transform: uppercase; font-size: 13px; font-size: 0.8125rem; line-height: 22px; line-height: 1.375rem; letter-spacing: 0.1em; }
+.pager .pager-string { font-size: 13px; font-size: 0.8125rem; line-height: 25px; line-height: 1.5625rem; }
+
+.sidebar h3 a { text-transform: uppercase; font-size: 13px; font-size: 0.8125rem; line-height: 18px !important; line-height: 1.125rem !important; letter-spacing: 0.1em; padding-bottom: 4px; }
 .sidebar .panel-heading h3.panel-title { padding-top: 0 !important; }
 .sidebar .vcard { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
 .sidebar .vcard .adr, .sidebar .vcard #email-phone { line-height: 18px; line-height: 1.125rem; }
 
 figure figcaption { text-align: right; font-size: 10.65px; font-size: 0.66563rem; color: #002855; text-transform: uppercase; }
+
+#content-main form input, #content-main form select, #content-main form textarea { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
+#content-main form .req-txt { font-size: 10px; font-size: 0.625rem; }
 
 .corner-box h2, .corner-box h3, .corner-box p, .corner-box li, .corner-box a { color: #FFF; }
 .corner-box .box-content h2 { padding: 15px 0; font-size: 24px; font-size: 1.5rem; letter-spacing: 0.075em; }
@@ -1107,6 +1193,8 @@ body.bio #summary #education { width: 70% !important; }
 body.bio #summary #education ul { margin-top: 10px; }
 body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line-height: 18px; line-height: 1.125rem; margin-bottom: 5px; padding-left: 0 !important; background-image: none !important; }
 
+#cm-content p.intro { margin-bottom: 45px; }
+
 #content-main p, #content-main li, #content-main ol, #content-main div, #content-main span, #am-content p, #am-content li, #am-content ol, #am-content div, #am-content span { line-height: 24px !important; line-height: 1.5rem !important; }
 #content-main p, #am-content p { font-size: 15px; font-size: 0.9375rem; line-height: 18px; line-height: 1.125rem; }
 #content-main p.intro, #am-content p.intro { font-size: 18px; font-size: 1.125rem; line-height: 30px !important; line-height: 1.875rem !important; }
@@ -1121,7 +1209,15 @@ body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line
   .sidebar h3 { font-size: 13px; font-size: 0.8125rem; line-height: 40px; line-height: 2.5rem; letter-spacing: .1em; }
   #content-main .panel-group .row.panel .panel-title a, #am-content .panel-group .row.panel .panel-title a { font-size: 18px; font-size: 1.125rem; line-height: 40px; line-height: 2.5rem; }
   #top-panel-row { margin-top: 45px; }
-  .panel-group #middle-row h2 { font-size: 18px !important; font-size: 1.125rem !important; line-height: 24px; line-height: 1.5rem; } }
+  .panel-group #middle-row h2 { font-size: 18px !important; font-size: 1.125rem !important; line-height: 24px; line-height: 1.5rem; }
+  #thumb-section .panel-group .panel-heading .panel-title a { font-size: 18px !important; font-size: 1.125rem !important; line-height: 45px !important; line-height: 2.8125rem !important; } }
+body.res-lab #content-row div > h2 { font-size: 24px !important; font-size: 1.5rem !important; line-height: 28px; line-height: 1.75rem; margin-top: 15px; margin-bottom: 15px; }
+
+#thumb-section .panel-group .panel-heading .panel-title a { font-size: 24px; font-size: 1.5rem; line-height: 70px; line-height: 4.375rem; }
+#thumb-section section h4 { font-size: 20px !important; font-size: 1.25rem !important; margin-bottom: 25px; }
+
+#content-main ul li, #am-content ul li, #cm-content ul li { font-size: 15px !important; font-size: 0.9375rem !important; line-height: 24px; line-height: 1.5rem; }
+
 /*----- tablet breakpoint -------*/
 @media screen and (min-width: 768px) { .top-panel { /*
 &.left-panel {
@@ -1134,10 +1230,11 @@ body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line
 	//text-align: left;
 }
 */ }
-  .top-panel #content-main .narrow-col, .top-panel #am-content .narrow-col { color: #FFF; }
-  .top-panel #content-main .narrow-col h2, .top-panel #am-content .narrow-col h2 { text-align: center !important; }
-  .top-panel #content-main .narrow-col h3, .top-panel #content-main .narrow-col p, .top-panel #am-content .narrow-col h3, .top-panel #am-content .narrow-col p { text-align: left !important; }
-  .top-panel.left-panel h2, .top-panel.left-panel h2, .top-panel.left-panel h2 { text-align: center !important; } }
+  .top-panel #content-main .narrow-col, .top-panel #am-content .narrow-col, .top-panel #cm-content .narrow-col { color: #FFF; }
+  .top-panel #content-main .narrow-col h2, .top-panel #am-content .narrow-col h2, .top-panel #cm-content .narrow-col h2 { text-align: center !important; }
+  .top-panel #content-main .narrow-col h3, .top-panel #content-main .narrow-col p, .top-panel #am-content .narrow-col h3, .top-panel #am-content .narrow-col p, .top-panel #cm-content .narrow-col h3, .top-panel #cm-content .narrow-col p { text-align: left !important; }
+  .top-panel.left-panel h2, .top-panel.left-panel h2, .top-panel.left-panel h2 { text-align: center !important; }
+  .container .sidebar .panel-heading .panel-title { font-size: 16px !important; font-size: 1rem !important; line-height: 16px !important; line-height: 1rem !important; } }
 /*----- Tablet breakpoint --------*/
 @media screen and (max-width: 992px) { body.home #content-main .narrow-col h2, body.home #am-content .narrow-col h2 { font-size: 17px; font-size: 1.0625rem; }
   body.home #content-main #top-panel-row .narrow-col .bcontroller .btn-primary, body.home #am-content #top-panel-row .narrow-col .bcontroller .btn-primary { font-size: 11px; font-size: 0.6875rem; line-height: 18px !important; line-height: 1.125rem !important; }
@@ -1145,7 +1242,8 @@ body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line
   #content-main .content-title, #am-content .content-title { font-size: 26px; font-size: 1.625rem; line-height: 28px; line-height: 1.75rem; }
   .corner-box .box-content h2 { padding: 10px 0; font-size: 16px; font-size: 1rem; letter-spacing: 0.075em; }
   .corner-box .box-content h3 { padding: 0 0 0 0; font-size: 11px; font-size: 0.6875rem; }
-  .corner-box .box-content p { font-size: 11px; font-size: 0.6875rem; line-height: 15px; line-height: 0.9375rem; } }
+  .corner-box .box-content p { font-size: 11px; font-size: 0.6875rem; line-height: 15px; line-height: 0.9375rem; }
+  #thumb-section .panel-group .panel-heading .panel-title a { font-size: 16px !important; font-size: 1rem !important; line-height: 40px !important; line-height: 2.5rem !important; } }
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: 992px) { body.home #content-main #top-panel-row .narrow-col .bcontroller .btn-primary, body.home #am-content #top-panel-row .narrow-col .bcontroller .btn-primary { font-size: 14px; font-size: 0.875rem; line-height: 30px !important; line-height: 1.875rem !important; } }
 @media screen and (max-width: 1310px) { body.home #content-main .narrow-col a, body.home #content-main .narrow-col p, body.home #content-main .narrow-col li, body.home #am-content .narrow-col a, body.home #am-content .narrow-col p, body.home #am-content .narrow-col li { font-size: 12px; font-size: 0.75rem; line-height: 15px !important; line-height: 0.9375rem !important; } }
@@ -1157,9 +1255,17 @@ body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line
 @media screen and (max-width: 991px) { #foot-social { margin-left: 55px !important; } }
 @media screen and (min-width: 768px) and (max-width: 1310px) { #footer .foot-wrap { margin: 40px; }
   #footer #vcard { margin-right: 25px; } }
-/* *** PARTIALS - Modular partial styles **** */
+/*Plone Styles */
+/* Example use case:
+ %abstract-class { font-family: Verdana; }  #my-div { @extend %abstract-class; }  #my-other-div { @extend %abstract-class; }
+ ... compiles as: #my-div, #my-other-div { font-family: Verdana; }
+
+*/
+/* 2013-05-12 RAK: Bootstrap overrides moved from default gem installation that placed overrides directly in the _variables.scss file */
+/* UCD Identity - Colors (http://identitystandards.ucdavis.edu/graphic-standards/colors.html) */
+/* Other Custom colors */
 /* _typography.scss */
-body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.3125em; }
+body, div, p, li, input, textarea, select { color: #000; color: #000; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.3125em; }
 
 /*
 @font-face {
@@ -1175,16 +1281,23 @@ em { font-style: italic; }
 
 button { font-size: 14px; font-size: 0.875rem; line-height: 24px; line-height: 1.5rem; }
 
+.portlet li, .portlet p, .portlet h4 { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
+
 .col-lg-4 h2 { font-weight: bold !important; font-size: 30px !important; font-size: 1.875rem !important; margin-bottom: 15px; }
 
 .about-bio h3 { font-weight: bold; }
 
-.sidebar h3 a { text-transform: uppercase; font-size: 13px; font-size: 0.8125rem; line-height: 22px; line-height: 1.375rem; letter-spacing: 0.1em; }
+.pager .pager-string { font-size: 13px; font-size: 0.8125rem; line-height: 25px; line-height: 1.5625rem; }
+
+.sidebar h3 a { text-transform: uppercase; font-size: 13px; font-size: 0.8125rem; line-height: 18px !important; line-height: 1.125rem !important; letter-spacing: 0.1em; padding-bottom: 4px; }
 .sidebar .panel-heading h3.panel-title { padding-top: 0 !important; }
 .sidebar .vcard { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
 .sidebar .vcard .adr, .sidebar .vcard #email-phone { line-height: 18px; line-height: 1.125rem; }
 
 figure figcaption { text-align: right; font-size: 10.65px; font-size: 0.66563rem; color: #002855; text-transform: uppercase; }
+
+#content-main form input, #content-main form select, #content-main form textarea { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
+#content-main form .req-txt { font-size: 10px; font-size: 0.625rem; }
 
 .corner-box h2, .corner-box h3, .corner-box p, .corner-box li, .corner-box a { color: #FFF; }
 .corner-box .box-content h2 { padding: 15px 0; font-size: 24px; font-size: 1.5rem; letter-spacing: 0.075em; }
@@ -1208,6 +1321,8 @@ body.bio #summary #education { width: 70% !important; }
 body.bio #summary #education ul { margin-top: 10px; }
 body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line-height: 18px; line-height: 1.125rem; margin-bottom: 5px; padding-left: 0 !important; background-image: none !important; }
 
+#cm-content p.intro { margin-bottom: 45px; }
+
 #content-main p, #content-main li, #content-main ol, #content-main div, #content-main span, #am-content p, #am-content li, #am-content ol, #am-content div, #am-content span { line-height: 24px !important; line-height: 1.5rem !important; }
 #content-main p, #am-content p { font-size: 15px; font-size: 0.9375rem; line-height: 18px; line-height: 1.125rem; }
 #content-main p.intro, #am-content p.intro { font-size: 18px; font-size: 1.125rem; line-height: 30px !important; line-height: 1.875rem !important; }
@@ -1222,7 +1337,15 @@ body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line
   .sidebar h3 { font-size: 13px; font-size: 0.8125rem; line-height: 40px; line-height: 2.5rem; letter-spacing: .1em; }
   #content-main .panel-group .row.panel .panel-title a, #am-content .panel-group .row.panel .panel-title a { font-size: 18px; font-size: 1.125rem; line-height: 40px; line-height: 2.5rem; }
   #top-panel-row { margin-top: 45px; }
-  .panel-group #middle-row h2 { font-size: 18px !important; font-size: 1.125rem !important; line-height: 24px; line-height: 1.5rem; } }
+  .panel-group #middle-row h2 { font-size: 18px !important; font-size: 1.125rem !important; line-height: 24px; line-height: 1.5rem; }
+  #thumb-section .panel-group .panel-heading .panel-title a { font-size: 18px !important; font-size: 1.125rem !important; line-height: 45px !important; line-height: 2.8125rem !important; } }
+body.res-lab #content-row div > h2 { font-size: 24px !important; font-size: 1.5rem !important; line-height: 28px; line-height: 1.75rem; margin-top: 15px; margin-bottom: 15px; }
+
+#thumb-section .panel-group .panel-heading .panel-title a { font-size: 24px; font-size: 1.5rem; line-height: 70px; line-height: 4.375rem; }
+#thumb-section section h4 { font-size: 20px !important; font-size: 1.25rem !important; margin-bottom: 25px; }
+
+#content-main ul li, #am-content ul li, #cm-content ul li { font-size: 15px !important; font-size: 0.9375rem !important; line-height: 24px; line-height: 1.5rem; }
+
 /*----- tablet breakpoint -------*/
 @media screen and (min-width: 768px) { .top-panel { /*
 &.left-panel {
@@ -1235,10 +1358,11 @@ body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line
 	//text-align: left;
 }
 */ }
-  .top-panel #content-main .narrow-col, .top-panel #am-content .narrow-col { color: #FFF; }
-  .top-panel #content-main .narrow-col h2, .top-panel #am-content .narrow-col h2 { text-align: center !important; }
-  .top-panel #content-main .narrow-col h3, .top-panel #content-main .narrow-col p, .top-panel #am-content .narrow-col h3, .top-panel #am-content .narrow-col p { text-align: left !important; }
-  .top-panel.left-panel h2, .top-panel.left-panel h2, .top-panel.left-panel h2 { text-align: center !important; } }
+  .top-panel #content-main .narrow-col, .top-panel #am-content .narrow-col, .top-panel #cm-content .narrow-col { color: #FFF; }
+  .top-panel #content-main .narrow-col h2, .top-panel #am-content .narrow-col h2, .top-panel #cm-content .narrow-col h2 { text-align: center !important; }
+  .top-panel #content-main .narrow-col h3, .top-panel #content-main .narrow-col p, .top-panel #am-content .narrow-col h3, .top-panel #am-content .narrow-col p, .top-panel #cm-content .narrow-col h3, .top-panel #cm-content .narrow-col p { text-align: left !important; }
+  .top-panel.left-panel h2, .top-panel.left-panel h2, .top-panel.left-panel h2 { text-align: center !important; }
+  .container .sidebar .panel-heading .panel-title { font-size: 16px !important; font-size: 1rem !important; line-height: 16px !important; line-height: 1rem !important; } }
 /*----- Tablet breakpoint --------*/
 @media screen and (max-width: 992px) { body.home #content-main .narrow-col h2, body.home #am-content .narrow-col h2 { font-size: 17px; font-size: 1.0625rem; }
   body.home #content-main #top-panel-row .narrow-col .bcontroller .btn-primary, body.home #am-content #top-panel-row .narrow-col .bcontroller .btn-primary { font-size: 11px; font-size: 0.6875rem; line-height: 18px !important; line-height: 1.125rem !important; }
@@ -1246,7 +1370,178 @@ body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line
   #content-main .content-title, #am-content .content-title { font-size: 26px; font-size: 1.625rem; line-height: 28px; line-height: 1.75rem; }
   .corner-box .box-content h2 { padding: 10px 0; font-size: 16px; font-size: 1rem; letter-spacing: 0.075em; }
   .corner-box .box-content h3 { padding: 0 0 0 0; font-size: 11px; font-size: 0.6875rem; }
-  .corner-box .box-content p { font-size: 11px; font-size: 0.6875rem; line-height: 15px; line-height: 0.9375rem; } }
+  .corner-box .box-content p { font-size: 11px; font-size: 0.6875rem; line-height: 15px; line-height: 0.9375rem; }
+  #thumb-section .panel-group .panel-heading .panel-title a { font-size: 16px !important; font-size: 1rem !important; line-height: 40px !important; line-height: 2.5rem !important; } }
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: 992px) { body.home #content-main #top-panel-row .narrow-col .bcontroller .btn-primary, body.home #am-content #top-panel-row .narrow-col .bcontroller .btn-primary { font-size: 14px; font-size: 0.875rem; line-height: 30px !important; line-height: 1.875rem !important; } }
+@media screen and (max-width: 1310px) { body.home #content-main .narrow-col a, body.home #content-main .narrow-col p, body.home #content-main .narrow-col li, body.home #am-content .narrow-col a, body.home #am-content .narrow-col p, body.home #am-content .narrow-col li { font-size: 12px; font-size: 0.75rem; line-height: 15px !important; line-height: 0.9375rem !important; } }
+/* /_typography.scss */
+#portal-logo { display: inline-block; margin: 0 0; }
+
+#portal-searchbox { float: none; text-align: left; clear: right; margin: 0 0; font-size: 80%; z-index: 20; }
+
+#searchGadget { width: 12em; }
+
+#LSResult { position: absolute; right: 0; background: rgba(255, 0, 0, 0.1); margin: 84px 0 0 -7em; z-index: 20; }
+
+#livesearchLegend { background-color: #E5C44D; padding: 0.3em; }
+
+#portal-globalnav { list-style-image: none; position: relative; background-color: none; zoom: 1; z-index: 2; }
+
+#portal-globalnav li a { font-size: 1.0625rem; letter-spacing: 0.025em; line-height: 1.80rem; display: inline-block; /* padding: 1.3em 1em 1.75em 1em; */ white-space: normal; /*TODO: Once we have removed the whitespace from the nav template, this can be put back*/ border-bottom: None; border-right: None; }
+
+#portal-globalnav li { min-width: 2em; }
+
+#portal-globalnav .selected a, #portal-globalnav a:hover { background: #4d688c; color: White; }
+
+#portal-globalnav .selected a:hover { background: #4d688c; color: white; }
+
+nav.top-bar { background-color: #002855; }
+
+/* - dropdown-menu.css - */
+@media screen { /* DropDown Menu Styles */
+  #portal-top { z-index: 1; }
+  /* override of foundation */
+  .top-bar-section .has-dropdown > a { padding-right: 10px !important; }
+  /*----------Dropdown Menu----------------*/
+  /*---------- BASIC STYLE one level ----------*/
+  #portal-globalnav { list-style-image: none; position: relative; /* fix ie */ zoom: 1; /* fix ie */ }
+  #portal-globalnav:after { content: ""; clear: both; display: block; visibility: hidden; }
+  #portal-globalnav li { float: left; position: relative; }
+  #portal-globalnav li a { display: block; background: #002855; border-top: none; }
+  /*----- DropDown -----*/
+  ul.submenu { display: none; left: 0; position: absolute; top: 100%; }
+  #portal-globalnav li:hover > ul.submenu { display: block; }
+  ul.submenu li { float: none; margin: 0; padding-left: 0; padding-right: 0; }
+  #portal-globalnav ul.submenu li a { padding: 0.5em 1.5em 0.5em 1em; width: 13em; }
+  ul.submenu ul { top: 0; left: 100%; }
+  ul.submenu a.state-published:hover, .selected ul.submenu .state-published { color: #fff !important; }
+  /*----- About Happy Box ---------*/
+  dl.portlet-static-quick-facts dt { padding: 0.42em 1em; background: transparent; line-height: normal; font-size: 120%; }
+  /*----- homepage title ------*/
+  .homepage-title { font-size: 36px !important; font-size: 2.25rem !important; line-height: 1.5625rem; margin-top: 35px; margin-bottom: 25px; text-align: center; font-weight: normal; }
+  /*-------footer-------*/
+  div#footer-nav { margin-left: 30%; width: 45%; }
+  /* Footer Navigation portlet */
+  #footer-nav { -webkit-column-count: 3; -webkit-column-gap: 10px; column-count: 3; column-gap: 10px; -moz-column-count: 3; -moz-column-gap: 10px; }
+  #footer-nav dl.portlet ul.navTree li a { border: none; display: block; zoom: 1; }
+  #footer-nav dl.portlet ul.navTree li a:hover { color: white !important; }
+  #footer-nav dl.portletNavigationTree dd.portletItem { padding: 0; }
+  #footer-nav dl.portlet ul.navTreeLevel0 > .navTreeItem { padding: 0.25em 1em; border-bottom: None; line-height: 2em; color: white; }
+  #footer-nav dl.portlet li { border-left: 1px solid white; margin-bottom: 0; }
+  #footer-nav dl.portlet ul.navTreeLevel1 .navTreeItem { padding-left: 0.5em; line-height: 2em; }
+  #footer-nav .navTreeItem .state-published { color: white !important; }
+  #footer-nav dl.portlet ul.navTree .navTreeCurrentItem { background-color: transparent; border-left: 1em solid #ddd; margin-left: -1em; margin-right: -1em; }
+  /* @end */ }
+/* *** PARTIALS - Modular partial styles **** */
+/* _typography.scss */
+body, div, p, li, input, textarea, select { color: #000; color: #000; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.3125em; }
+
+/*
+@font-face {
+	font-family: 'lucida sans bold';
+	src: url('fonts/lucida/LucidaSansBold.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+*/
+a { color: #4d688c; }
+
+em { font-style: italic; }
+
+button { font-size: 14px; font-size: 0.875rem; line-height: 24px; line-height: 1.5rem; }
+
+.portlet li, .portlet p, .portlet h4 { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
+
+.col-lg-4 h2 { font-weight: bold !important; font-size: 30px !important; font-size: 1.875rem !important; margin-bottom: 15px; }
+
+.about-bio h3 { font-weight: bold; }
+
+.pager .pager-string { font-size: 13px; font-size: 0.8125rem; line-height: 25px; line-height: 1.5625rem; }
+
+.sidebar h3 a { text-transform: uppercase; font-size: 13px; font-size: 0.8125rem; line-height: 18px !important; line-height: 1.125rem !important; letter-spacing: 0.1em; padding-bottom: 4px; }
+.sidebar .panel-heading h3.panel-title { padding-top: 0 !important; }
+.sidebar .vcard { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
+.sidebar .vcard .adr, .sidebar .vcard #email-phone { line-height: 18px; line-height: 1.125rem; }
+
+figure figcaption { text-align: right; font-size: 10.65px; font-size: 0.66563rem; color: #002855; text-transform: uppercase; }
+
+#content-main form input, #content-main form select, #content-main form textarea { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
+#content-main form .req-txt { font-size: 10px; font-size: 0.625rem; }
+
+.corner-box h2, .corner-box h3, .corner-box p, .corner-box li, .corner-box a { color: #FFF; }
+.corner-box .box-content h2 { padding: 15px 0; font-size: 24px; font-size: 1.5rem; letter-spacing: 0.075em; }
+.corner-box .box-content h3 { padding: 0 0 8px 0; font-size: 13px; font-size: 0.8125rem; }
+.corner-box .box-content p { font-size: 13px; font-size: 0.8125rem; line-height: 20px; line-height: 1.25rem; }
+
+.sidebar-info h4 { font-weight: bold; font-size: 16px; font-size: 1rem; }
+
+.uc { text-transform: uppercase; letter-spacing: 0.1em !important; }
+
+.content-title { padding-bottom: 30px; font-size: 36px; font-size: 2.25rem; line-height: 43px; line-height: 2.6875rem; letter-spacing: 0.01em; margin-top: 0 !important; }
+
+#content-main h2, #am-content h2 { font-size: 24px !important; font-size: 1.5rem !important; font-weight: normal; padding-top: 15px; padding-bottom: 15px; }
+#content-main h3, #am-content h3 { font-size: 15px; font-size: 0.9375rem; line-height: 25px; line-height: 1.5625rem; padding-top: 15px; padding-bottom: 15px; }
+#content-main .narrow-col h2, #content-main .narrow-col h3, #am-content .narrow-col h2, #am-content .narrow-col h3 { padding-bottom: 0; }
+
+body.bio #summary #jumplinks { width: 30% !important; }
+body.bio #summary #jumplinks ul { margin-right: 35px; }
+body.bio #summary #jumplinks ul li { font-size: 13px; font-size: 0.8125rem; line-height: 22px; line-height: 1.375rem; padding-left: 0 !important; background-image: none !important; text-align: right; }
+body.bio #summary #education { width: 70% !important; }
+body.bio #summary #education ul { margin-top: 10px; }
+body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line-height: 18px; line-height: 1.125rem; margin-bottom: 5px; padding-left: 0 !important; background-image: none !important; }
+
+#cm-content p.intro { margin-bottom: 45px; }
+
+#content-main p, #content-main li, #content-main ol, #content-main div, #content-main span, #am-content p, #am-content li, #am-content ol, #am-content div, #am-content span { line-height: 24px !important; line-height: 1.5rem !important; }
+#content-main p, #am-content p { font-size: 15px; font-size: 0.9375rem; line-height: 18px; line-height: 1.125rem; }
+#content-main p.intro, #am-content p.intro { font-size: 18px; font-size: 1.125rem; line-height: 30px !important; line-height: 1.875rem !important; }
+#content-main li, #content-main ol, #am-content li, #am-content ol { font-size: 15px; font-size: 0.9375rem; line-height: 18px; line-height: 1.125rem; }
+#content-main .breadcrumb p, #am-content .breadcrumb p { font-size: 12px; font-size: 0.75rem; line-height: 15px; line-height: 0.9375rem; margin-bottom: 0; }
+#content-main .breadcrumb p a, #am-content .breadcrumb p a { text-decoration: none; }
+#content-main .breadcrumb p a:hover, #am-content .breadcrumb p a:hover { text-decoration: underline; }
+
+/*----- Mobile breakpoint --------*/
+@media screen and (max-width: 768px) { body.bio .content-title { display: none; }
+  body.bio .bio-card h4.fn { padding-bottom: 30px; font-size: 23px; font-size: 1.4375rem; line-height: 25px; line-height: 1.5625rem; letter-spacing: 0.01em; margin-top: 4px !important; }
+  .sidebar h3 { font-size: 13px; font-size: 0.8125rem; line-height: 40px; line-height: 2.5rem; letter-spacing: .1em; }
+  #content-main .panel-group .row.panel .panel-title a, #am-content .panel-group .row.panel .panel-title a { font-size: 18px; font-size: 1.125rem; line-height: 40px; line-height: 2.5rem; }
+  #top-panel-row { margin-top: 45px; }
+  .panel-group #middle-row h2 { font-size: 18px !important; font-size: 1.125rem !important; line-height: 24px; line-height: 1.5rem; }
+  #thumb-section .panel-group .panel-heading .panel-title a { font-size: 18px !important; font-size: 1.125rem !important; line-height: 45px !important; line-height: 2.8125rem !important; } }
+body.res-lab #content-row div > h2 { font-size: 24px !important; font-size: 1.5rem !important; line-height: 28px; line-height: 1.75rem; margin-top: 15px; margin-bottom: 15px; }
+
+#thumb-section .panel-group .panel-heading .panel-title a { font-size: 24px; font-size: 1.5rem; line-height: 70px; line-height: 4.375rem; }
+#thumb-section section h4 { font-size: 20px !important; font-size: 1.25rem !important; margin-bottom: 25px; }
+
+#content-main ul li, #am-content ul li, #cm-content ul li { font-size: 15px !important; font-size: 0.9375rem !important; line-height: 24px; line-height: 1.5rem; }
+
+/*----- tablet breakpoint -------*/
+@media screen and (min-width: 768px) { .top-panel { /*
+&.left-panel {
+	//text-align: right;
+}
+&.middle-panel {
+	//text-align: center;
+}
+&.right-panel {
+	//text-align: left;
+}
+*/ }
+  .top-panel #content-main .narrow-col, .top-panel #am-content .narrow-col, .top-panel #cm-content .narrow-col { color: #FFF; }
+  .top-panel #content-main .narrow-col h2, .top-panel #am-content .narrow-col h2, .top-panel #cm-content .narrow-col h2 { text-align: center !important; }
+  .top-panel #content-main .narrow-col h3, .top-panel #content-main .narrow-col p, .top-panel #am-content .narrow-col h3, .top-panel #am-content .narrow-col p, .top-panel #cm-content .narrow-col h3, .top-panel #cm-content .narrow-col p { text-align: left !important; }
+  .top-panel.left-panel h2, .top-panel.left-panel h2, .top-panel.left-panel h2 { text-align: center !important; }
+  .container .sidebar .panel-heading .panel-title { font-size: 16px !important; font-size: 1rem !important; line-height: 16px !important; line-height: 1rem !important; } }
+/*----- Tablet breakpoint --------*/
+@media screen and (max-width: 992px) { body.home #content-main .narrow-col h2, body.home #am-content .narrow-col h2 { font-size: 17px; font-size: 1.0625rem; }
+  body.home #content-main #top-panel-row .narrow-col .bcontroller .btn-primary, body.home #am-content #top-panel-row .narrow-col .bcontroller .btn-primary { font-size: 11px; font-size: 0.6875rem; line-height: 18px !important; line-height: 1.125rem !important; }
+  body.home #content-main #bottom-panel-row h2, body.home #am-content #bottom-panel-row h2 { font-size: 18px; font-size: 1.125rem; }
+  #content-main .content-title, #am-content .content-title { font-size: 26px; font-size: 1.625rem; line-height: 28px; line-height: 1.75rem; }
+  .corner-box .box-content h2 { padding: 10px 0; font-size: 16px; font-size: 1rem; letter-spacing: 0.075em; }
+  .corner-box .box-content h3 { padding: 0 0 0 0; font-size: 11px; font-size: 0.6875rem; }
+  .corner-box .box-content p { font-size: 11px; font-size: 0.6875rem; line-height: 15px; line-height: 0.9375rem; }
+  #thumb-section .panel-group .panel-heading .panel-title a { font-size: 16px !important; font-size: 1rem !important; line-height: 40px !important; line-height: 2.5rem !important; } }
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: 992px) { body.home #content-main #top-panel-row .narrow-col .bcontroller .btn-primary, body.home #am-content #top-panel-row .narrow-col .bcontroller .btn-primary { font-size: 14px; font-size: 0.875rem; line-height: 30px !important; line-height: 1.875rem !important; } }
 @media screen and (max-width: 1310px) { body.home #content-main .narrow-col a, body.home #content-main .narrow-col p, body.home #content-main .narrow-col li, body.home #am-content .narrow-col a, body.home #am-content .narrow-col p, body.home #am-content .narrow-col li { font-size: 12px; font-size: 0.75rem; line-height: 15px !important; line-height: 0.9375rem !important; } }
@@ -1296,14 +1591,17 @@ body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line
 .util-bar ul li { float: left; padding-left: 3px; padding-right: 3px; height: 100%; text-align: center; border-right: 1px solid #fff; }
 .util-bar ul li:hover { background-color: #E5C44D; }
 .util-bar ul li a { display: inline-block; margin-top: 12px; margin-right: auto; margin-left: auto; text-decoration: none; color: #000; text-transform: uppercase; font-size: 14px; font-size: 0.875rem; letter-spacing: 0.050em; text-align: center; }
-.util-bar ul li input { width: 190px; height: 35px; text-transform: uppercase; font-size: 14px; font-size: 0.875rem; letter-spacing: 0.050em; margin-top: 2px; text-align: left; padding-left: 10px; }
+.util-bar ul li input { /*width:190px;*/ height: 35px; text-transform: uppercase; font-size: 14px; font-size: 0.875rem; letter-spacing: 0.050em; margin-top: 2px; text-align: left; padding-left: 10px; }
 .util-bar #uti-news { width: 21.92%; }
 .util-bar #uti-events { width: 10.96%; }
 .util-bar #uti-give { width: 10.96%; }
 .util-bar #uti-search { width: 28.36%; }
+.util-bar #uti-search input { width: 75%; }
+.util-bar #uti-search input[type="submit"] { height: 35px; width: 20%; background-color: #DAAA00; text-align: center; }
+.util-bar #uti-search input[type="submit"]:hover { background-color: #f0dd99; cursor: pointer; }
 .util-bar #uti-share { width: 5%; }
 .util-bar #uti-share a { display: inline-block; width: 15px; height: 17px; background: url(../images/icons/share.png) top left no-repeat; }
-.util-bar #uti-logo { border-right-width: 0; width: 125px; }
+.util-bar #uti-logo { border-right-width: 0; position: relative; overflow: hidden; width: 22%; }
 
 .caret { margin-left: 15px; }
 
@@ -1312,23 +1610,22 @@ body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line
 
 .top-bar { background-color: #002855; padding-bottom: 80px; }
 .top-bar .title-area { /* top:15px; THIS NEGATIVELY IMPACTS THE FORMAT OF THE TOPBAR MENU */ }
-.top-bar .title-area .name a { border-right: 1px solid white; display: inline-block; width: 430px; height: 80px; padding-left: 0; text-decoration: none; }
+.top-bar .title-area .name a { display: inline-block; width: 370px; height: 80px; padding-left: 0; text-decoration: none; }
 .top-bar .title-area .name a#name-icon img { height: 100%; display: block; }
 .top-bar .top-bar-section { height: 100%; /* .right {} if we have markup with left drops */ }
-.top-bar .top-bar-section .left { width: 65%; height: 100% !important; }
-.top-bar .top-bar-section .left > li { background-color: #002855 !important; width: 9.6%; height: 80px; text-align: center; /*.dropdown{ // TODO: Don't need this specific selector ...
+.top-bar .top-bar-section .left { width: 66.36%; height: 100% !important; }
+.top-bar .top-bar-section .left > li { background-color: #002855 !important; /* width: 9.6%; // was 18% with .right. width of primary menu items */ height: 80px; text-align: center; /*.dropdown{ // TODO: Don't need this specific selector ...
 	top:100%;
 	li{
 		background-color:$ucd_blue_100 !important;
 	}
 }*/ }
-.top-bar .top-bar-section .left > li#fac-serv-btn { width: 17%; }
 .top-bar .top-bar-section .left > li:hover { background-color: #4d688c !important; }
 .top-bar .top-bar-section .left > li > a { height: 80px; line-height: 80px !important; }
-.top-bar .top-bar-section .left > li a { width: 100%; background-color: transparent !important; text-decoration: none; font-size: 17px; font-size: 1.0625rem; line-height: 28px; line-height: 1.75rem; letter-spacing: 0.025em; padding: 0 !important; white-space: normal; }
+.top-bar .top-bar-section .left > li a { width: 100%; background-color: transparent !important; text-decoration: none; font-size: 17px; font-size: 1.0625rem; line-height: 28px; line-height: 1.75rem; letter-spacing: 0.025em; /* padding:0 !important; */ white-space: normal; }
 .top-bar .top-bar-section .left > li a:after { display: none !important; }
 .top-bar .top-bar-section .left > li ul li { background-color: #002855 !important; }
-.top-bar .top-bar-section .left > li ul li a { padding: 6px 0 !important; line-height: 24px; line-height: 1.5rem; }
+.top-bar .top-bar-section .left > li ul li a { /* padding: 6px 0 !important; */ line-height: 24px; line-height: 1.5rem; }
 .top-bar .top-bar-section .left > li ul li a:after { display: block !important; margin-top: 0; line-height: 0.5 !important; }
 .top-bar .top-bar-section .left > li ul li a:hover { background-color: #4d688c !important; }
 .top-bar .top-bar-section .left > li ul li:last-child a { padding-bottom: 12px !important; }
@@ -1349,18 +1646,23 @@ body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line
   .top-bar.expanded .title-area { background-color: #002855; }
   .top-bar.expanded .top-bar-section .left { width: 100%; }
   .top-bar.expanded .top-bar-section .left > li { width: 100% !important; height: 40px; }
-  .top-bar.expanded .top-bar-section .left > li > a { margin-top: 0 !important; line-height: 40px !important; } }
+  .top-bar.expanded .top-bar-section .left > li > a { margin-top: 0 !important; line-height: 40px !important; padding-top: 0; } }
 /*----- Tablet breakpoint -------*/
-@media screen and (min-width: 768px) and (max-width: 992px) { #util-bar-wrap, #top-bar-wrap, #banner-row { margin-left: -10px !important; margin-right: -20px !important; }
+@media screen and (min-width: 768px) and (max-width: 991px) { #util-bar-wrap, #top-bar-wrap, #banner-row { margin-left: -10px !important; margin-right: -20px !important; }
   /*#util-bar-wrap { 	border: 1px solid red; 	margin-left: -9px !important; 	margin-right: -21px !important; 	.util-bar { 		margin-left: 0 !important; 	} } #top-bar-wrap { 	margin-left: -15px !important; 	margin-right: -5px !important; // TODO: 5px??? }  .util-bar { 	border: 1px solid red; 	//width: 100%; }*/
   .top-bar .title-area .name a { padding-left: 0; width: 200px !important; height: 40px !important; } }
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: 992px) { .util-bar { max-width: 768px; }
   .top-bar .top-bar-section ul ul.dropdown { width: 200px !important; }
   .top-bar .top-bar-section ul ul.dropdown li a { padding: 4px !important; } }
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: 768px) and (max-width: 1310px) { .top-bar .top-bar-section ul > li a { padding-right: 17px !important; padding-left: 17px !important; } }
+/*----- Large Desktop breakpoint -------*/
+@media screen and (min-width: 1310px) { .top-bar .top-bar-section ul > li a { padding-right: 27px !important; padding-left: 27px !important; } }
 .sticky { position: fixed; bottom: 0px; left: 0px; width: 100%; height: 70px; background-color: #e1e1e1 !important; width: 100%; }
 .sticky .util-nav { height: 100%; }
 .sticky .util-nav ul.util { display: block; margin-left: auto; margin-right: auto; height: 100%; }
+.sticky .util-nav ul.util .last { border-right: none; }
 .sticky .util-nav ul.util li { float: left; width: 25%; height: 100%; border-right: 1px solid black; padding-top: 15px; }
 .sticky .util-nav ul.util li:last-child { border-right-width: 0; }
 .sticky .util-nav ul.util li .util-btn { height: 100%; }
@@ -1372,6 +1674,12 @@ body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line
 /* _block.scss */
 /* Styles for block-level components like portlets */
 #spotlight-block { background-color: #CCC; border: 1px solid #000; }
+
+.portlet { margin-bottom: 20px; }
+.portlet p, .portlet h4 { margin: 15px 35px 8px 35px; }
+.portlet h4.org { margin: 0; }
+.portlet .portlet-items { margin: 15px; margin-bottom: 25px; margin-left: 35px; }
+.portlet .portlet-items li { margin-bottom: 20px; }
 
 #corner-box-target { position: relative; }
 #corner-box-target .corner-box { display: block; width: 350px; position: absolute; bottom: 0; right: 0; background-color: rgba(0, 40, 85, 0.8); margin-bottom: 21px; }
@@ -1399,13 +1707,14 @@ fieldset legend { font-size: 15px; font-size: 0.9375rem; text-align: left; color
 
 /* /_facetted-form.scss */
 /* _pager.scss */
-.pager { width: 100%; text-align: center; }
-.pager a { display: inline-block; width: 20px; height: 10px; }
-.pager .pager-first a { background: url(../images/icons/pager-first.gif) 0 0 no-repeat; }
-.pager .pager-prev a { background: url(../images/icons/pager-prev.gif) 0 0 no-repeat; }
-.pager .pager-string { font-size: 13px; font-size: 0.8125rem; }
-.pager .pager-next a { background: url(../images/icons/pager-next.gif) 0 0 no-repeat; }
-.pager .pager-last a { background: url(../images/icons/pager-last.gif) 0 0 no-repeat; }
+.pager { text-align: center; padding-top: 10px; padding-bottom: 10px; }
+.pager a { display: block; width: 50px; height: 25px; margin-right: 5px; }
+.pager span { display: inline-block; }
+.pager .pager-first a { background: url(../images/icons/d-pager-first.gif) 0 0 no-repeat; }
+.pager .pager-prev a { margin-right: 10px; width: 38px; background: url(../images/icons/d-pager-prev.gif) 0 0 no-repeat; }
+.pager .pager-string { height: 25px; display: inline-block; }
+.pager .pager-next a { width: 38px; margin-left: 10px; background: url(../images/icons/d-pager-next.gif) 0 0 no-repeat; }
+.pager .pager-last a { background: url(../images/icons/d-pager-last.gif) 0 0 no-repeat; }
 
 /* _pager.scss */
 /* _icons.scss */

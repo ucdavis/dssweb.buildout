@@ -93,7 +93,7 @@ head{
 	//left-indent: -10000px;
 	display: none;
 }
-.not-visible {
+.invisible { // TODO: Use bootstrap class .invisible
 	visibility: hidden;
 }
 .nobr {
@@ -244,7 +244,7 @@ input{
 #content-row {
 	margin-bottom: 45px;
 }
-#content-main, #am-content {
+#content-main, #am-content, #cm-content {
 
 	.breadcrumb {
 		background: none;
@@ -252,6 +252,15 @@ input{
 		margin-bottom:0;
 		color: $ucd_blue_80;
 		text-transform: uppercase;
+		a {
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		p {
+			margin-bottom: 0;
+		}
 		.bread-divider {
 			@include font_size(15px);
 		}
@@ -289,7 +298,7 @@ input{
 }
 
 
-.sidebar{
+.sidebar {
 	height:auto;
 	//width:250px; // !important; 
 	margin-top:15px;
@@ -303,6 +312,7 @@ input{
 		a{
 			color: #fff;
 			padding-left: 35px; // was 38px
+			padding-right: 30px;
 			position: relative;
 			top: 4px;
 		}
@@ -314,6 +324,7 @@ input{
 			//background-color: $rec_blue;
 			//height: 30px;
 			a {
+				display: block; // otherwise padding-left doesn't work where multilined title 
 				background-color: $rec_blue;
 				&:hover{
 					//cursor:text;
@@ -357,11 +368,11 @@ input{
 
 /* Contact uses hCard microformat / vCard RFC2426 */
 #sidebar-block-contact {
-	margin-top:20px;
+	margin-top: 20px;
 	padding-left: 38px;
 	padding-right: 15px;
 	li{
-		text-align:left;
+		text-align: left;
 		@include font_size(13px);
 		letter-spacing: 0.01em;
 		a {
@@ -464,6 +475,10 @@ input{
 	position: relative;
 }
 
+.row .row {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+}
 @media screen and (min-width: $screen-sm-min) { // width > 768
 	
 	// pull content left on larger screens so flush left with top-bar
@@ -507,7 +522,7 @@ input{
 		.panel-heading{
 			.panel-title {
 				background-color: $rec_blue;
-				height: 30px;
+				//height: 30px; // need to accommodate multiline headings
 			}
 		}
 	}
@@ -518,12 +533,112 @@ input{
 	}
 }
 
+// Panel resets
+#thumb-section { // Important: Specific content selector since we want to keep our sidebar panel styles
+	.panel-group {
+		
+		section {
+			margin-bottom: 10px;
+			
+			.collapsible.in { // add bottom margin when sections expanded
+				//margin-bottom: 50px; // this margin creates an unacceptable jump when panel is opened
+			}
+			.readmore {
+				display: block;
+				margin-top: 25px;
+				margin-bottom: 40px;
+			}
+			ul {
+				li {
+					margin-bottom: 20px;
+				}
+			}
+			.panel-heading {
+				background-color: transparent !important;
+				padding: 0 !important;
+				border-top-left-radius: 0;
+				border-top-right-radius: 0;
+				.panel-title {
+					background-color: transparent !important;
+					a {
+						display: block;
+						height: 70px;
+						width: 100%;
+						.thumb-txt {
+							display: block;
+							margin-left: 150px;
+						}
+						img {
+							float: left;
+						}
+						background: url(../images/icons/blue-100-right-arrow-down.png) 98% 50% no-repeat $ucd_bright_gold_40;
+						&.collapsed {
+							background: url(../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat $ucd_bright_gold;
+						}
+				
+						&:hover {
+							cursor: pointer !important;
+							background-color: $ucd_bright_gold_40;
+						}
+					}
+				}
+			}
+			.panel-body {
+				//border-top-width: 0 !important;
+				margin-top: 25px;
+				margin-left: 150px;
+			}
+		}
+	}	
+}
+
+body.contact-type {
+	#content-main {
+		
+		.form-wrap {
+			padding: 15px;
+			position: relative;
+			background-color: $box_light_gray;
+			form {
+				.form-row {
+					padding: 4px 0;
+					&.centered {
+						text-align: center;
+					}
+				}
+				input, select, textarea {
+					width: 100%;
+					text-align: left;
+					padding: 4px;
+				}
+				input, select {
+					height: 35px;
+				}
+				#contact-message {
+					height: 160px;
+				}
+				input[type="submit"] {
+					height: 40px;
+					width: 120px;
+					background-color: $ucd_bright_gold;
+					text-align: center;
+					&:hover {
+						background-color: $ucd_bright_gold_40;
+						cursor: pointer;
+					}
+				}
+				
+			}
+		}
+	}
+}
+
 /*------ All Media Queries ----------*/
 
 /*----- Mobile breakpoint --------*/
 // At point that left and right margins are gone
 @media screen and (max-width: $screen-sm-min) { // width < 768
-	.row#banner-row, .row .row {
+	.row#banner-row {
 		margin-left: 0 !important;
 		margin-right: 0 !important;
 	}
@@ -538,7 +653,7 @@ input{
 		}
 	}
 
-	#content-main, #am-content {
+	#content-main, #am-content, #cm-content {
 		margin-bottom: 15px;
 	}
 	
@@ -730,6 +845,57 @@ input{
 		}
 	}
 	
+	// Panel resets
+	#thumb-section { // Important: Specific content selector since we want to keep our sidebar panel styles
+		.panel-group {
+			section {
+				.readmore {
+					display: block;
+					margin-top: 8px;
+					margin-bottom: 15px;
+				}
+				ul {
+					li {
+						margin-bottom: 20px;
+					}
+				}
+				.panel-heading {
+					.panel-title {
+						a {
+							height: 15px;
+							.thumb-txt {
+								margin-left: 0;
+							}
+						}
+					}
+				}
+				.panel-body {
+					margin-top: 0;
+					margin-left: 0;
+					padding: 0 !important;
+					img.thumb { // Note: We're replacing the smaller thumb with the larger image in mobile via javascript. We initially load the smaller T6-autism.jpg and then look for m-T6-autism.jpg to load in mobile
+						width: 280px;
+						//height: 160px;
+						display: block;
+						margin-left: auto;
+						margin-right: auto;
+						margin-bottom: 15px;
+					}
+				}
+			}
+		}	
+	}
+	
+	#main-container {
+		#content-row {
+			.double {
+				.panel-group {
+					margin-left: 0 !important;
+				}
+			}
+		}
+	}
+	
 }
 
 /*----- Mobile breakpoint -------*/
@@ -858,11 +1024,48 @@ input{
 	}
 	
 	.portlet {
-		.portlet-items {
-			margin: 15px;
-			margin-bottom: 25px;
-			margin-left: 38px;
+		
+		// Single address portlet
+		&.adr-only {
+			.panel-body {
+				padding-top: 10px;
+				.adr {
+					padding-top: 0 !important;
+				}
+			}
+		}
+		// Contacts portlet ...
+		&.contacts {
 			
+			.panel-body {
+				padding-top: 15px;
+				padding-bottom: 20px;
+				.vcard {
+					&.office {
+						padding-bottom: 5px; // relies on h4 margin for spacing
+						h4 {
+							background-color: transparent !important;
+							&.fn { // headings used for individuals
+								text-transform: uppercase;
+								padding-bottom: 0;
+								margin: 0;
+							}
+						}
+						.category {
+							margin-top: 0;
+							margin-bottom: 0;
+							font-style: italic;
+						}
+						.adr {
+							margin-top: 4px;
+						}
+					}
+				}
+			}
+		}
+		
+		.portlet-items {
+
 			li {
 				margin-bottom: 5px;
 				@include font_size(10px);
@@ -889,12 +1092,12 @@ input{
 				}
 			}
 		}
-		margin-bottom: 35px;
+		
 		.panel-body {
 			padding: 0;
 			.vcard {
 				padding: 0;
-				padding-bottom: 20px;
+				padding-bottom: 25px;
 				div {
 					@include font_size(12px);
 					margin-left: 35px;
@@ -914,10 +1117,11 @@ input{
 					h4 {
 						min-height: 28px;
 						background-color: $box_header_blue;
-						padding: 8px;
-						padding-left: 35px;
+						padding: 12px 35px;
+						padding-bottom: 10px;
 						letter-spacing: 0.05em;
 						font-weight: bold;
+						
 						a {
 							@include font_size(13px);
 							text-decoration: none;
@@ -1087,6 +1291,19 @@ input{
 		}
 	*/
 	
+	body.contact-type {
+		#content-row {
+			margin-top: 15px; // needed to adjust for lack of breadcrumb and top js placement of sidebars
+			#content-main {
+				.form-wrap {
+					margin-right: 30px;
+					padding: 30px 60px;
+				}
+			}
+		}
+	}
+	
+	
 }
 
 // Temporary: TODO: Identify and manage breakpoint at 992
@@ -1178,6 +1395,41 @@ input{
 			//margin-left: 0 !important; TODO: 
 		}
 	}
+	
+	// Panel resets
+	#thumb-section { // Important: Specific content selector since we want to keep our sidebar panel styles
+		.panel-group {
+			section {
+				.readmore {
+					display: block;
+					margin-top: 8px;
+					margin-bottom: 15px;
+				}
+				ul {
+					li {
+						margin-bottom: 20px;
+					}
+				}
+				.panel-heading {
+					.panel-title {
+						a {
+							height: 45px;
+							.thumb-txt {
+								margin-left: 90px;
+							}
+							img {
+								height: 45px;
+							}
+						}
+					}
+				}
+				.panel-body {
+					margin-left: 90px;
+				}
+			}
+		}	
+	}
+	
 }
 
 /*----- Desktop breakpoint -------*/
@@ -1204,6 +1456,12 @@ input{
 			//margin-left: 15px;
 		}
 	}
+	
+	.sidebar {
+		> div {
+			margin-left: 92px;
+		}
+	}
 }
 
 /* Override default grid gutter, which was broke on home/index bottom panel row. */
@@ -1212,5 +1470,12 @@ input{
 	padding-right: 0 !important;
 }
 
-
+// Undo left margin from sidebar treatment
+#content-row {
+	.double {
+		.panel-group {
+			margin-left: 15px !important;
+		}
+	}
+}
 /* /_theme.scss */
