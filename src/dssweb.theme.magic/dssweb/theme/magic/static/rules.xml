@@ -50,6 +50,13 @@
 	    </replace>
 	    
 
+         <drop css:content=".searchSection" />
+         <copy css:content="#portal-searchbox" css:theme="#uti-search" />
+	    <!-- change search button value to "go" -->
+	    <replace content="//div[@id='portal-searchbox']//input[@class='searchButton']/@value">
+	    <xsl:attribute name="value">GO</xsl:attribute>
+	    </replace>
+	   
 	    
 	    <replace css:theme="#top-bar-wrap > nav > section > ul" css:content="#portal-globalnav" />
 	    <!--Still doesnt' work, would be handy if it did -->
@@ -79,11 +86,8 @@
 	   <copy content='//*[@id="portletwrapper-706c6f6e652e6c656674636f6c756d6e0a636f6e746578740a2f5765625265646f2f66726f6e742d706167650a6e617669676174696f6e"]' theme='//*[@id="footer-nav"]'    />
 	   	
 	   
+ 	    
         
-         <replace css:content="#portal-globalnav li" css:theme-children="#nav ul" />
-	    
-        <drop css:content=".searchSection" />
-        <copy css:content="#portal-searchbox" css:theme="#uti-search" />
 
     </rules>
 

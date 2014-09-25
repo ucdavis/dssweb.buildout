@@ -6,6 +6,7 @@
 //
 // We don't use the `.opacity()` mixin here since it causes a bug with text
 // fields in IE7-8. Source: https://github.com/twbs/bootstrap/pull/3552.
+@import "compass/css3/transition";
 
 .fade {
   opacity: 0;
