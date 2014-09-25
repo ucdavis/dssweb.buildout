@@ -42,7 +42,7 @@
 				
 			}
 			input{
-				width:190px;
+				/*width:190px;*/
 				height: 35px;
 				text-transform: uppercase;
 				@include font_size(14px);
@@ -147,8 +147,10 @@
 			
 			// Parent level buttons
 			 > li{
+
 				background-color: $ucd_blue_100 !important;
-				width: 9.6%; // was 18% with .right. width of primary menu items
+				/* width: 9.6%; // was 18% with .right. width of primary menu items */ // TODO: 2014-09-24 RAK: Eval
+
 				height: 80px; // was 100%
 				text-align: center;
 				
@@ -177,7 +179,7 @@
 					@include line_height(28px);
 					
 					letter-spacing: 0.025em;
-					padding:0 !important;
+					/* padding:0 !important; */ // TODO: 2014-09-24 RAK: Eval
 					
 					&:hover {
 						//text-decoration: underline;
@@ -198,7 +200,7 @@
 						background-color:$ucd_blue_100 !important;
 						
 						a {
-							padding: 6px 0 !important;
+							/* padding: 6px 0 !important; */
 							@include line_height(24px);
 							&:after{
 								display:block !important;
@@ -251,7 +253,7 @@
 	.util-bar {
 		max-width: 650px;
 		ul li input {
-			width: 170px;
+			 width: 170px;
 		}
 		#uti-logo{
 			margin-left: 4px; // Note: Use to adjust logo with left border of department name
@@ -295,6 +297,7 @@
 						> a {
 							margin-top: 0 !important;
 							line-height: 40px !important;
+							padding-top: 0; // TODO: 2014-09-24 RAK: Eval
 						}
 					}
 				}

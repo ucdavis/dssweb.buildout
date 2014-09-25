@@ -608,6 +608,8 @@ body.contact-type {
 				}
 				input, select, textarea {
 					width: 100%;
+					text-align: left;
+					padding: 4px;
 				}
 				input, select {
 					height: 35px;
@@ -619,6 +621,7 @@ body.contact-type {
 					height: 40px;
 					width: 120px;
 					background-color: $ucd_bright_gold;
+					text-align: center;
 					&:hover {
 						background-color: $ucd_bright_gold_40;
 						cursor: pointer;
@@ -1022,6 +1025,15 @@ body.contact-type {
 	
 	.portlet {
 		
+		// Single address portlet
+		&.adr-only {
+			.panel-body {
+				padding-top: 10px;
+				.adr {
+					padding-top: 0 !important;
+				}
+			}
+		}
 		// Contacts portlet ...
 		&.contacts {
 			
@@ -1085,7 +1097,7 @@ body.contact-type {
 			padding: 0;
 			.vcard {
 				padding: 0;
-				padding-bottom: 20px;
+				padding-bottom: 25px;
 				div {
 					@include font_size(12px);
 					margin-left: 35px;

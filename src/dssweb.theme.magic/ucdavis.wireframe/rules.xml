@@ -7,8 +7,8 @@
     <!-- Apply the following rules to standard Plone pages -->
     <rules css:if-content="#visual-portal-wrapper">
 
-        <theme href="index.html" />
-
+         <theme href="index.html" if="$home_page" />
+          
         <!-- Replace title with Plone's page title  -->
         <replace css:theme="html head title" css:content="html head title" />
 
@@ -16,7 +16,7 @@
         <before css:theme-children="html head" css:content="html head base" />
 
         <!-- Copy link, style, meta tags from Plone head -->
-        <after css:theme-children="html head"
+        <before css:theme-children="html head"
                content="/html/head/link | /html/head/style | /html/head/meta" />
 
         <!-- merge classes from Plone body with theme body -->
@@ -26,10 +26,65 @@
         <after css:theme-children="html body" css:content="html head script" />
 
         <!-- Insert your own rules here -->
-        <copy css:content="#portal-globalnav" css:theme=".nav nav-justified" />
+        
+	   
+	   <!--swap in portal-globalnav -->
+	   <!--utility menu -->
+	   
+	   
+         <!--replace css:content="#portal-globalnav li" css:theme-children="#top-bar-wrap > nav > section > ul.left" /-->
+	    <!--overkill rule to replace the plain class on the menu li - unnecessary use of force, but fun! -->
+		<!--replace css:theme="#name-icon" css:content="#portal-logo" /-->
+	
+	    <replace content="//li[contains(@class,'plain')]/@class">
+	    <xsl:attribute name="class">
+	    <xsl:if test='contains(current(),"plain")'>has-dropdown not-click</xsl:if>
+	    </xsl:attribute>
+	    </replace>
+	     	
+	    
+	    <replace content="//h1[contains(@class,'documentFirstHeading')]/@class">
+	    <xsl:attribute name="class">
+	    <xsl:if test='contains(current(),"documentFirstHeading")'>homepage-title</xsl:if>
+	    </xsl:attribute>
+	    </replace>
+	    
+
+	    
+	    <replace css:theme="#top-bar-wrap > nav > section > ul" css:content="#portal-globalnav" />
+	    <!--Still doesnt' work, would be handy if it did -->
+		    <xsl:template match="portal-globalnav">
+		            <xsl:copy>
+		                <xsl:attribute name="class">left</xsl:attribute>
+		                <xsl:copy-of select="@*" />
+		                <xsl:apply-templates />
+		    </xsl:copy>
+	    </xsl:template>
+		 
+	    
+		<!-- News Happy Box -->
+		<copy css:content="#portletwrapper-706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f5765625265646f0a6e657773 > dl > dd.portletItem.odd" css:theme="#container-1 > div > div > div.content" />
+		
+		<!--  About Happy Box -->
+		<copy css:content="#parent-fieldname-description" css:theme="#container-2 > div > div > div.content" />
+		<before css:theme="#container-2 > div > div > div.bcontroller" css:content="#portletwrapper-706c6f6e652e6c656674636f6c756d6e0a636f6e746578740a2f5765625265646f2f66726f6e742d706167650a717569636b2d6661637473 > dl" />
+		
+		<!-- Events Happy Box -->
+	    <copy css:content="#portletwrapper-706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f5765625265646f0a6576656e7473 > dl > dd.portletItem.odd" css:theme="#container-3 > div > div > div.content" />
+		<!-- Front Page -->
+		<copy css:content="#parent-fieldname-title" css:theme="#middle-row" />
+		
+       <!--- Footer -->
+	   <copy  css:content="#portletwrapper-706c6f6e652e6c656674636f6c756d6e0a636f6e746578740a2f5765625265646f2f66726f6e742d706167650a636f6e74616374 > div" css:theme="#vcard" />
+	   <copy content='//*[@id="portletwrapper-706c6f6e652e6c656674636f6c756d6e0a636f6e746578740a2f5765625265646f2f66726f6e742d706167650a6e617669676174696f6e"]' theme='//*[@id="footer-nav"]'    />
+	   	
+	   
+        
          <replace css:content="#portal-globalnav li" css:theme-children="#nav ul" />
+	    
         <drop css:content=".searchSection" />
-        <replace css:content="#portal-searchbox" css:theme="#search" />
+        <copy css:content="#portal-searchbox" css:theme="#uti-search" />
+
     </rules>
 
 </rules>

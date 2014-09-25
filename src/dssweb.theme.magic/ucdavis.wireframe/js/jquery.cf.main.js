@@ -88,6 +88,14 @@
 	        e.preventDefault();
 	        $($(this).attr('data-target')).toggleClass('in');
 	    });*/
+				
+				// Input field placeholders; Just add .placeholder to the form class to have .form-row labels placed as placeholders on input items
+				if($('form.placeholders').length !== 0) {
+					$('form.placeholders .form-row').each(function () {
+						var label_txt = $(this).find('label').text();
+						$(this).find('input, textarea').attr('placeholder', label_txt);
+					});
+				}
 			
 		};
 		

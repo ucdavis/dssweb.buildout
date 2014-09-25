@@ -28,7 +28,7 @@
 
 /* *** UNIT - sub-organization or unit styles. Place unit custom styles here **** */
 @import "sub-org";
-
+@import "plone";
 
 /* *** PARTIALS - Modular partial styles **** */
 // Note: Partials not imported here are specific to sections (e.g., index (home), about, and ourpeople)
@@ -40,5 +40,6 @@
 @import "components/facetted-form"; // styles for facetted search form
 @import "components/pager"; // styles for facetted search form
 @import "components/icons"; // icon styles in conjunction with JS processing
+
 
 /* /styles.scss */

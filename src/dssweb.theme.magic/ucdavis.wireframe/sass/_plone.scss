@@ -1,0 +1,213 @@
+/*Plone Styles */
+@charset "utf-8";
+@import "variables";
+
+#portal-logo {
+	    display: inline-block;
+	    margin: 0 0; 
+}
+
+#portal-searchbox {
+	float: none;
+	text-align: left;
+	clear: right;
+	margin: 0 0;
+	font-size: 80%;
+	z-index:20;
+}
+#searchGadget {
+	width:12em;
+}
+
+#LSResult {
+	position: absolute;
+	right: 0;
+	background: rgba(255,0,0,0.1);
+	margin: 84px 0 0 -7em;
+	z-index: 20;
+}
+#livesearchLegend {
+background-color: $ucd_bright_gold_70;
+padding: 0.3em;
+}
+#portal-globalnav {
+list-style-image: none;
+position: relative;
+background-color: none;
+zoom: 1;
+z-index: 2;
+}
+
+#portal-globalnav li a {
+	font-size: 1.0625rem;
+	letter-spacing: 0.025em;
+	line-height: 1.80rem;
+    display: inline-block;
+   /* padding: 1.3em 1em 1.75em 1em; */
+    white-space: normal;
+    /*TODO: Once we have removed the whitespace from the nav template, this can be put back*/
+   border-bottom: None;
+    border-right: None;
+}
+#portal-globalnav li {
+	min-width: 2em;
+}
+
+#portal-globalnav > li > a {
+	
+	
+} 
+#portal-globalnav .selected a,
+#portal-globalnav a:hover {
+    background: $ucd_blue_70;
+    color: White;
+} 
+#portal-globalnav .selected a:hover {
+    background: $ucd_blue_70;
+    color: white;
+}
+nav.top-bar {
+	background-color: $ucd_blue_100;
+}
+/* - dropdown-menu.css - */
+@media screen {
+/* DropDown Menu Styles */
+
+#portal-top {
+  z-index:1;
+  }
+/* override of foundation */  
+.top-bar-section .has-dropdown > a {
+  padding-right: 10px !important;  }
+ 
+  /*----------Dropdown Menu----------------*/
+/*---------- BASIC STYLE one level ----------*/
+#portal-globalnav {
+  list-style-image:none;
+  position:relative; /* fix ie */
+  zoom:1; /* fix ie */
+  }
+#portal-globalnav:after {
+  content:"";
+  clear:both;
+  display:block;
+  visibility:hidden;
+  }
+#portal-globalnav li {
+  float:left;
+  position:relative;
+  }
+#portal-globalnav li a {
+  display:block;
+  background: $ucd_blue_100;
+  border-top: none;
+  }
+
+/*----- DropDown -----*/
+ul.submenu {
+  display:none;
+  left:0;
+  position:absolute;
+  top:100%;
+  }
+#portal-globalnav li:hover > ul.submenu {
+  display:block;
+  }
+ul.submenu li {
+  float:none;
+  margin:0;
+  padding-left:0;
+  padding-right:0;
+  }
+#portal-globalnav ul.submenu li a {
+  padding:0.5em 1.5em 0.5em 1em; 
+  width:13em;
+  }
+ul.submenu ul {
+  top:0;
+  left:100%;
+  }
+ul.submenu a.state-published:hover,
+.selected ul.submenu .state-published {
+    color: #fff !important;
+}
+/*----- About Happy Box ---------*/
+dl.portlet-static-quick-facts dt {
+	padding: 0.42em 1em;
+	background: transparent;
+	line-height: normal;
+    font-size: 120%;
+}
+/*----- homepage title ------*/
+.homepage-title {
+	font-size: 36px !important;
+	font-size: 2.25rem !important;
+	line-height: 1.5625rem;
+	margin-top: 35px;
+	margin-bottom: 25px;
+	text-align: center;
+	font-weight: normal;
+	}
+
+/*-------footer-------*/
+div#footer-nav {
+	margin-left: 30%;
+	width: 45%;
+}
+ /* Footer Navigation portlet */
+
+#footer-nav{
+	-webkit-column-count: 3;
+	-webkit-column-gap: 10px; 
+	column-count: 3;
+	column-gap: 10px;
+	-moz-column-count:3;
+	-moz-column-gap:10px;
+	
+	dl.portlet ul.navTree li a {
+    	border: none;
+    	display: block;
+    	zoom: 1;
+	}
+
+	dl.portlet ul.navTree li a:hover {
+		color:white !important;
+
+	}
+
+	dl.portletNavigationTree dd.portletItem {
+    	padding: 0;
+	}
+
+	dl.portlet ul.navTreeLevel0 > .navTreeItem {
+    	padding: 0.25em 1em;
+    	border-bottom: None;
+    	line-height: 2em;
+		color: white;	
+	}
+	dl.portlet li {
+		border-left: 1px solid white;
+		margin-bottom: 0;
+		
+	}
+
+	dl.portlet ul.navTreeLevel1 .navTreeItem {
+    	padding-left: 0.5em;
+    	line-height: 2em;
+	}
+	.navTreeItem .state-published {
+		color: white !important;
+		
+	}
+
+	dl.portlet ul.navTree .navTreeCurrentItem {
+    	background-color: transparent;
+    	border-left: 1em solid #ddd;
+    	margin-left: -1em;
+    	margin-right: -1em;
+	}
+}
+
+
+/* @end */
+}

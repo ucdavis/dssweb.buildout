@@ -1,7 +1,7 @@
 /* _typography.scss */
 @import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
 
-body, div, p, li {
+body, div, p, li, input, textarea, select {
   color: #000;
 	@include standard_font;
 }
