@@ -63,7 +63,20 @@
 		width:10.96%; //80px
 	}
 	#uti-search{
-		width:28.36%;//207px
+		width: 28.36%;//207px
+		input {
+			width: 75%;
+		}
+		input[type="submit"] {
+			height: 35px;
+			width: 20%;
+			background-color: $ucd_bright_gold;
+			text-align: center;
+			&:hover {
+				background-color: $ucd_bright_gold_40;
+				cursor: pointer;
+			}
+		}
 	}
 	#uti-share{
 		width: 5%; //44px
@@ -76,7 +89,12 @@
 	}
 	#uti-logo{
 		border-right-width: 0;
-		width: 125px;
+		position: relative;
+		overflow: hidden; // keep from flowing off right
+		width: 22%; // was 125px;
+		a {
+			
+		}
 	}
 }
 .caret{
@@ -114,9 +132,9 @@
 		.name {
 			
 			a{
-				border-right: 1px solid white;
+				// border-right: 1px solid white; // set to check right margin of dept name graphic
 				display: inline-block;
-				width: 430px;
+				width: 370px;
 				height: 80px;	
 				padding-left: 0;
 				
@@ -141,7 +159,7 @@
 		/* .right {} if we have markup with left drops */
 		
 		.left { // Note: .left and .right Foundation topbar classes which determine the position of menu items with respect to submenu dropdowns
-			width: 60.9%; // was 65%. Determines width of primary menu to right of name image
+			width: 66.36%; // 60.9% for 430px a tag / 66.36% for 370px a tag. was 65%. Determines width of primary menu to right of name image
 			height: 100% !important;
 			
 			// Parent level buttons
@@ -306,7 +324,7 @@
 }
 
 /*----- Tablet breakpoint -------*/
-@media screen and (min-width: $screen-sm-min) and (max-width: $screen-md-min) { // 768px < width < 992px
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768px < width < 992px
 
 	#util-bar-wrap, #top-bar-wrap, #banner-row {
 		//border: 1px solid red;
@@ -367,6 +385,42 @@
 	}
 
 }
+
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-lg-min) { // 768 < width < 1310px
+	.top-bar {
+		.top-bar-section {
+			ul {
+				// Adjust padding for menu items for desktops
+				> li {
+					a {
+						padding-right: 17px !important;
+						padding-left: 17px !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+/*----- Large Desktop breakpoint -------*/
+@media screen and (min-width: $screen-lg-min) { // width > 1310px
+	.top-bar {
+		.top-bar-section {
+			ul {
+				// Adjust padding for menu items for large desktops
+				> li {
+					a {
+						padding-right: 27px !important;
+						padding-left: 27px !important;
+					}
+				}
+			}
+		}
+	}
+}
+
 
 .sticky {
 	position: fixed;
