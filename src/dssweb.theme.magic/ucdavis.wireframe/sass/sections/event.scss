@@ -191,7 +191,50 @@ margin-top:0;
 		}
 	}
 }
-
+.widget-fieldset{
+	.color-box {
+				width: 10px;
+				height: 10px;
+				display: inline-block;
+				margin-right: 5px;
+				margin-left: 10px;
+		}
+	#subject-econom{
+		.color-box{
+			background-color: $evergreen;
+		}
+	}
+	#subject-econ-hist{
+		.color-box{
+			background-color: $west_redbud;
+		}
+	}
+	#subject-ind-org{
+		.color-box{
+			background-color: $cal_popp;
+		}
+	}
+	#subject-int-econ{
+		.color-box{
+			background-color: $gold_lup;
+		}
+	}
+	#subject-mac-econ{
+		.color-box{
+			background-color: $sun_grass;
+		}
+	}
+	#subject-pub-fin{
+		.color-box{
+			background-color: $sky_blue;
+		}
+	}
+	#subject-theory{
+		.color-box{
+			background-color: $wine_grape;
+		}
+	}
+}
 #accordion-e {
 	> div {
 		padding-left: 0;

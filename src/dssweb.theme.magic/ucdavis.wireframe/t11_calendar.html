@@ -229,19 +229,19 @@
 									<form method="get" action=".">
 										<ul class="checkForm">
 										 
-										 <li><input class="subject" id="subject-econom" type="checkbox" title="Econometrics" value="" ><label for="Econometrics" title="Econometrics">Econometrics<br /></label></li>
+										 <li id="subject-econom"><input class="subject" type="checkbox" title="Econometrics" value="" ><label for="Econometrics" title="Econometrics"><div class="color-box"></div>Econometrics<br /></label></li>
 										 
-										 <li><input class="subject" id="subject-Econ_hist" type="checkbox" title="Economic History" value="" ><label for="Economic History" title="Economic History">Economic History<br /></label></li>
+										 <li id="subject-econ-hist"><input class="subject" type="checkbox" title="Economic History" value="" ><label for="Economic History" title="Economic History"><div class="color-box"></div>Economic History<br /></label></li>
 										 
-										 <li><input class="subject" id="subject-Ind_Org" type="checkbox" title="Industrial Organization" value="" ><label for="Industrial Organization" title="Industrial Organization">Industrial Organization/Energy<br /></label></li>
+										 <li id="subject-ind-org"><input class="subject" type="checkbox" title="Industrial Organization" value="" ><label for="Industrial Organization" title="Industrial Organization"><div class="color-box"></div>Industrial Organization/Energy<br /></label></li>
 										 
-										 <li><input class="subject" id="subject-Int_Econ" type="checkbox" title="International Econonomics" value="" ><label for="International Econonomics" title="International Econonomics">International Econonomics<br /></label></li>
+										 <li id="subject-int-econ"><input class="subject" type="checkbox" title="International Econonomics" value="" ><label for="International Econonomics" title="International Econonomics"><div class="color-box"></div>International Econonomics<br /></label></li>
 										 
-										 <li><input class="subject" id="subject-Mac_econ" type="checkbox" title="Macroeconomics" value="" ><label for="Macroeconomics" title="Macroeconomics">Macroeconomics<br /></label></li>
+										 <li id="subject-mac-econ"><input class="subject" type="checkbox" title="Macroeconomics" value="" ><label for="Macroeconomics" title="Macroeconomics"><div class="color-box"></div>Macroeconomics<br /></label></li>
 										 
-										 <li><input class="subject" id="subject-pub_fin" type="checkbox" title="Public Finance-Labor" value="" ><label for="Public Finance-Labor" title="Public Finance-Labor">Public Finance-Labor<br /></label></li>
+										 <li id="subject-pub-fin"><input class="subject" type="checkbox" title="Public Finance-Labor" value="" ><label for="Public Finance-Labor" title="Public Finance-Labor"><div class="color-box"></div>Public Finance-Labor<br /></label></li>
 										 
-										 <li><input class="subject" id="subject-theory" type="checkbox" title="Theory" value="" ><label for="Theory" title="Theory">Theory<br /></label></li>									
+										 <li id="subject-theory"><input class="subject" type="checkbox" title="Theory" value="" ><label for="Theory" title="Theory"><div class="color-box"></div>Theory<br /></label></li>									
 										</ul>
 									</form>									
 								</fieldset>					
@@ -257,7 +257,7 @@
 	    <!--End .sidebar-left -->
 		
 		
-	    <div id="cal-content" class="Calendar classification col-xs-12 col-sm-8 col-md-9 col-lg-9">
+	    <div id="calendar" class="query-path fc ui-widget query-Subject col-xs-12 col-sm-8 col-md-9 col-lg-9">
 					<div class="breadcrumb"><p><a href="t1_index.html">Home</a> <span class="bread-divider">|</span> <a href="t11_calendar.html">Events</a></p></div>
 		    	<h1 class="content-title">Calendar</h1>
 	       
@@ -265,14 +265,14 @@
 						<span class="pager-prev"><a href="#"><span class="text-hide">Previous</span></a></span> <span class="pager-string">May 2014</span><span class="pager-next"><a href="#"><span class="text-hide">Next</span></a></span>
 					</div>
 					
-					<div id="view-filter">
+					<div id="view-filter" >
 						<span class="vf-selector"><a href="#">Today</a></span>
 						<span class="vf-selector"><a href="#">Month</a></span>
 						<span class="vf-selector"><a href="#">Week</a></span>
 						<span class="vf-selector"><a href="#">Day</a></span>
 					</div>
 					
-					<table id="month">
+					<table id="month" class="fc-header">
 						<thead>
 						<tr>
 						<th class="first">Monday</th>

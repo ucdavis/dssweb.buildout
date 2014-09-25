@@ -7,7 +7,7 @@
 /* UCD Identity - Colors (http://identitystandards.ucdavis.edu/graphic-standards/colors.html) */
 /* Other Custom colors */
 /* _typography.scss */
-body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.3125em; }
+body, div, p, li, input, textarea, select { color: #000; color: #000; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.3125em; }
 
 /*
 @font-face {
@@ -31,12 +31,14 @@ button { font-size: 14px; font-size: 0.875rem; line-height: 24px; line-height: 1
 
 .pager .pager-string { font-size: 13px; font-size: 0.8125rem; line-height: 25px; line-height: 1.5625rem; }
 
-.sidebar h3 a { text-transform: uppercase; font-size: 13px; font-size: 0.8125rem; line-height: 22px; line-height: 1.375rem; letter-spacing: 0.1em; }
-.sidebar .panel-heading h3.panel-title { padding-top: 0 !important; }
+.sidebar h3 a { text-transform: uppercase; font-size: 13px; font-size: 0.8125rem; line-height: 18px !important; line-height: 1.125rem !important; letter-spacing: 0.1em; padding-bottom: 4px; }
 .sidebar .vcard { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
 .sidebar .vcard .adr, .sidebar .vcard #email-phone { line-height: 18px; line-height: 1.125rem; }
 
 figure figcaption { text-align: right; font-size: 10.65px; font-size: 0.66563rem; color: #002855; text-transform: uppercase; }
+
+#content-main form input, #content-main form select, #content-main form textarea { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
+#content-main form .req-txt { font-size: 10px; font-size: 0.625rem; }
 
 .corner-box h2, .corner-box h3, .corner-box p, .corner-box li, .corner-box a { color: #FFF; }
 .corner-box .box-content h2 { padding: 15px 0; font-size: 24px; font-size: 1.5rem; letter-spacing: 0.075em; }
@@ -76,10 +78,14 @@ body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line
   .sidebar h3 { font-size: 13px; font-size: 0.8125rem; line-height: 40px; line-height: 2.5rem; letter-spacing: .1em; }
   #content-main .panel-group .row.panel .panel-title a, #am-content .panel-group .row.panel .panel-title a { font-size: 18px; font-size: 1.125rem; line-height: 40px; line-height: 2.5rem; }
   #top-panel-row { margin-top: 45px; }
-  .panel-group #middle-row h2 { font-size: 18px !important; font-size: 1.125rem !important; line-height: 24px; line-height: 1.5rem; } }
+  .panel-group #middle-row h2 { font-size: 18px !important; font-size: 1.125rem !important; line-height: 24px; line-height: 1.5rem; }
+  #thumb-section .panel-group .panel-heading .panel-title a { font-size: 18px !important; font-size: 1.125rem !important; line-height: 45px !important; line-height: 2.8125rem !important; } }
 body.res-lab #content-row div > h2 { font-size: 24px !important; font-size: 1.5rem !important; line-height: 28px; line-height: 1.75rem; margin-top: 15px; margin-bottom: 15px; }
 
 #thumb-section .panel-group .panel-heading .panel-title a { font-size: 24px; font-size: 1.5rem; line-height: 70px; line-height: 4.375rem; }
+#thumb-section section h4 { font-size: 20px !important; font-size: 1.25rem !important; margin-bottom: 25px; }
+
+#content-main ul li, #am-content ul li, #cm-content ul li { font-size: 15px !important; font-size: 0.9375rem !important; line-height: 24px; line-height: 1.5rem; }
 
 /*----- tablet breakpoint -------*/
 @media screen and (min-width: 768px) { .top-panel { /*
@@ -93,10 +99,11 @@ body.res-lab #content-row div > h2 { font-size: 24px !important; font-size: 1.5r
 	//text-align: left;
 }
 */ }
-  .top-panel #content-main .narrow-col, .top-panel #am-content .narrow-col { color: #FFF; }
-  .top-panel #content-main .narrow-col h2, .top-panel #am-content .narrow-col h2 { text-align: center !important; }
-  .top-panel #content-main .narrow-col h3, .top-panel #content-main .narrow-col p, .top-panel #am-content .narrow-col h3, .top-panel #am-content .narrow-col p { text-align: left !important; }
-  .top-panel.left-panel h2, .top-panel.left-panel h2, .top-panel.left-panel h2 { text-align: center !important; } }
+  .top-panel #content-main .narrow-col, .top-panel #am-content .narrow-col, .top-panel #cm-content .narrow-col { color: #FFF; }
+  .top-panel #content-main .narrow-col h2, .top-panel #am-content .narrow-col h2, .top-panel #cm-content .narrow-col h2 { text-align: center !important; }
+  .top-panel #content-main .narrow-col h3, .top-panel #content-main .narrow-col p, .top-panel #am-content .narrow-col h3, .top-panel #am-content .narrow-col p, .top-panel #cm-content .narrow-col h3, .top-panel #cm-content .narrow-col p { text-align: left !important; }
+  .top-panel.left-panel h2, .top-panel.left-panel h2, .top-panel.left-panel h2 { text-align: center !important; }
+  .container .sidebar .panel-heading .panel-title { padding-top: 8px !important; } }
 /*----- Tablet breakpoint --------*/
 @media screen and (max-width: 992px) { body.home #content-main .narrow-col h2, body.home #am-content .narrow-col h2 { font-size: 17px; font-size: 1.0625rem; }
   body.home #content-main #top-panel-row .narrow-col .bcontroller .btn-primary, body.home #am-content #top-panel-row .narrow-col .bcontroller .btn-primary { font-size: 11px; font-size: 0.6875rem; line-height: 18px !important; line-height: 1.125rem !important; }
@@ -104,7 +111,8 @@ body.res-lab #content-row div > h2 { font-size: 24px !important; font-size: 1.5r
   #content-main .content-title, #am-content .content-title { font-size: 26px; font-size: 1.625rem; line-height: 28px; line-height: 1.75rem; }
   .corner-box .box-content h2 { padding: 10px 0; font-size: 16px; font-size: 1rem; letter-spacing: 0.075em; }
   .corner-box .box-content h3 { padding: 0 0 0 0; font-size: 11px; font-size: 0.6875rem; }
-  .corner-box .box-content p { font-size: 11px; font-size: 0.6875rem; line-height: 15px; line-height: 0.9375rem; } }
+  .corner-box .box-content p { font-size: 11px; font-size: 0.6875rem; line-height: 15px; line-height: 0.9375rem; }
+  #thumb-section .panel-group .panel-heading .panel-title a { font-size: 16px !important; font-size: 1rem !important; line-height: 40px !important; line-height: 2.5rem !important; } }
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: 992px) { body.home #content-main #top-panel-row .narrow-col .bcontroller .btn-primary, body.home #am-content #top-panel-row .narrow-col .bcontroller .btn-primary { font-size: 14px; font-size: 0.875rem; line-height: 30px !important; line-height: 1.875rem !important; } }
 @media screen and (max-width: 1310px) { body.home #content-main .narrow-col a, body.home #content-main .narrow-col p, body.home #content-main .narrow-col li, body.home #am-content .narrow-col a, body.home #am-content .narrow-col p, body.home #am-content .narrow-col li { font-size: 12px; font-size: 0.75rem; line-height: 15px !important; line-height: 0.9375rem !important; } }
@@ -164,6 +172,15 @@ p { margin-top: 0; }
 #event-cta .portlet-items #ical-icon a, #event-cta .portlet-items #vcal-icon a, #event-cta .portlet-items #rss-icon a { font-size: 12px; font-size: 0.75rem; line-height: 25px; line-height: 1.5625rem; display: inline-block; width: 120px; height: 25px; padding-left: 20px; background: url(../../images/icons/m-ical-icon.png) 0 50% no-repeat; text-decoration: none; }
 #event-cta .portlet-items #ical-icon a:hover, #event-cta .portlet-items #vcal-icon a:hover, #event-cta .portlet-items #rss-icon a:hover { text-decoration: underline; }
 #event-cta .portlet-items #rss-icon a { background: url(../../images/icons/m-RSS-icon.png) 0 50% no-repeat; }
+
+.widget-fieldset .color-box { width: 10px; height: 10px; display: inline-block; margin-right: 5px; margin-left: 10px; }
+.widget-fieldset #subject-econom .color-box { background-color: #00573f; }
+.widget-fieldset #subject-econ-hist .color-box { background-color: #c6007e; }
+.widget-fieldset #subject-ind-org .color-box { background-color: #ed8b00; }
+.widget-fieldset #subject-int-econ .color-box { background-color: #ffcd00; }
+.widget-fieldset #subject-mac-econ .color-box { background-color: #78be20; }
+.widget-fieldset #subject-pub-fin .color-box { background-color: #00b5e2; }
+.widget-fieldset #subject-theory .color-box { background-color: #642667; }
 
 #accordion-e > div { padding-left: 0; padding-right: 0; }
 
