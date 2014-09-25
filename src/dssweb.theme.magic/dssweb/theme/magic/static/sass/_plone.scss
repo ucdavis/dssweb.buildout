@@ -1,11 +1,35 @@
 /*Plone Styles */
+@charset "utf-8";
+@import "variables";
+
 #portal-logo {
-	#portal-logo {
 	    display: inline-block;
 	    margin: 0 0; 
-	}
 }
 
+#portal-searchbox {
+	float: none;
+	text-align: left;
+	clear: right;
+	margin: 0 0;
+	font-size: 80%;
+	z-index:20;
+}
+#searchGadget {
+	width:12em;
+}
+
+#LSResult {
+	position: absolute;
+	right: 0;
+	background: rgba(255,0,0,0.1);
+	margin: 84px 0 0 -7em;
+	z-index: 20;
+}
+#livesearchLegend {
+background-color: $ucd_bright_gold_70;
+padding: 0.3em;
+}
 #portal-globalnav {
 list-style-image: none;
 position: relative;
@@ -55,6 +79,7 @@ nav.top-bar {
 /* override of foundation */  
 .top-bar-section .has-dropdown > a {
   padding-right: 10px !important;  }
+ 
   /*----------Dropdown Menu----------------*/
 /*---------- BASIC STYLE one level ----------*/
 #portal-globalnav {
@@ -123,6 +148,7 @@ dl.portlet-static-quick-facts dt {
 	text-align: center;
 	font-weight: normal;
 	}
+
 /*-------footer-------*/
 div#footer-nav {
 	margin-left: 30%;
@@ -182,6 +208,6 @@ div#footer-nav {
 	}
 }
 
+
 /* @end */
-	
 }

@@ -3713,12 +3713,38 @@ input {
   #footer #vcard {
     margin-right: 25px; } }
 /*Plone Styles */
-/* line 3, ../sass/_plone.scss */
-#portal-logo #portal-logo {
+/* line 5, ../sass/_plone.scss */
+#portal-logo {
   display: inline-block;
   margin: 0 0; }
 
-/* line 9, ../sass/_plone.scss */
+/* line 10, ../sass/_plone.scss */
+#portal-searchbox {
+  float: none;
+  text-align: left;
+  clear: right;
+  margin: 0 0;
+  font-size: 80%;
+  z-index: 20; }
+
+/* line 18, ../sass/_plone.scss */
+#searchGadget {
+  width: 12em; }
+
+/* line 22, ../sass/_plone.scss */
+#LSResult {
+  position: absolute;
+  right: 0;
+  background: rgba(255, 0, 0, 0.1);
+  margin: 84px 0 0 -7em;
+  z-index: 20; }
+
+/* line 29, ../sass/_plone.scss */
+#livesearchLegend {
+  background-color: #E5C44D;
+  padding: 0.3em; }
+
+/* line 33, ../sass/_plone.scss */
 #portal-globalnav {
   list-style-image: none;
   position: relative;
@@ -3726,7 +3752,7 @@ input {
   zoom: 1;
   z-index: 2; }
 
-/* line 17, ../sass/_plone.scss */
+/* line 41, ../sass/_plone.scss */
 #portal-globalnav li a {
   font-size: 1.0625rem;
   letter-spacing: 0.025em;
@@ -3738,40 +3764,40 @@ input {
   border-bottom: None;
   border-right: None; }
 
-/* line 28, ../sass/_plone.scss */
+/* line 52, ../sass/_plone.scss */
 #portal-globalnav li {
   min-width: 2em; }
 
-/* line 36, ../sass/_plone.scss */
+/* line 60, ../sass/_plone.scss */
 #portal-globalnav .selected a,
 #portal-globalnav a:hover {
   background: #4d688c;
   color: White; }
 
-/* line 41, ../sass/_plone.scss */
+/* line 65, ../sass/_plone.scss */
 #portal-globalnav .selected a:hover {
   background: #4d688c;
   color: white; }
 
-/* line 45, ../sass/_plone.scss */
+/* line 69, ../sass/_plone.scss */
 nav.top-bar {
   background-color: #002855; }
 
 /* - dropdown-menu.css - */
 @media screen {
   /* DropDown Menu Styles */
-  /* line 52, ../sass/_plone.scss */
+  /* line 76, ../sass/_plone.scss */
   #portal-top {
     z-index: 1; }
 
   /* override of foundation */
-  /* line 56, ../sass/_plone.scss */
+  /* line 80, ../sass/_plone.scss */
   .top-bar-section .has-dropdown > a {
     padding-right: 10px !important; }
 
   /*----------Dropdown Menu----------------*/
   /*---------- BASIC STYLE one level ----------*/
-  /* line 60, ../sass/_plone.scss */
+  /* line 85, ../sass/_plone.scss */
   #portal-globalnav {
     list-style-image: none;
     position: relative;
@@ -3779,60 +3805,60 @@ nav.top-bar {
     zoom: 1;
     /* fix ie */ }
 
-  /* line 65, ../sass/_plone.scss */
+  /* line 90, ../sass/_plone.scss */
   #portal-globalnav:after {
     content: "";
     clear: both;
     display: block;
     visibility: hidden; }
 
-  /* line 71, ../sass/_plone.scss */
+  /* line 96, ../sass/_plone.scss */
   #portal-globalnav li {
     float: left;
     position: relative; }
 
-  /* line 75, ../sass/_plone.scss */
+  /* line 100, ../sass/_plone.scss */
   #portal-globalnav li a {
     display: block;
     background: #002855;
     border-top: none; }
 
   /*----- DropDown -----*/
-  /* line 82, ../sass/_plone.scss */
+  /* line 107, ../sass/_plone.scss */
   ul.submenu {
     display: none;
     left: 0;
     position: absolute;
     top: 100%; }
 
-  /* line 88, ../sass/_plone.scss */
+  /* line 113, ../sass/_plone.scss */
   #portal-globalnav li:hover > ul.submenu {
     display: block; }
 
-  /* line 91, ../sass/_plone.scss */
+  /* line 116, ../sass/_plone.scss */
   ul.submenu li {
     float: none;
     margin: 0;
     padding-left: 0;
     padding-right: 0; }
 
-  /* line 97, ../sass/_plone.scss */
+  /* line 122, ../sass/_plone.scss */
   #portal-globalnav ul.submenu li a {
     padding: 0.5em 1.5em 0.5em 1em;
     width: 13em; }
 
-  /* line 101, ../sass/_plone.scss */
+  /* line 126, ../sass/_plone.scss */
   ul.submenu ul {
     top: 0;
     left: 100%; }
 
-  /* line 105, ../sass/_plone.scss */
+  /* line 130, ../sass/_plone.scss */
   ul.submenu a.state-published:hover,
   .selected ul.submenu .state-published {
     color: #fff !important; }
 
   /*----- About Happy Box ---------*/
-  /* line 110, ../sass/_plone.scss */
+  /* line 135, ../sass/_plone.scss */
   dl.portlet-static-quick-facts dt {
     padding: 0.42em 1em;
     background: transparent;
@@ -3840,7 +3866,7 @@ nav.top-bar {
     font-size: 120%; }
 
   /*----- homepage title ------*/
-  /* line 117, ../sass/_plone.scss */
+  /* line 142, ../sass/_plone.scss */
   .homepage-title {
     font-size: 36px !important;
     font-size: 2.25rem !important;
@@ -3851,13 +3877,13 @@ nav.top-bar {
     font-weight: normal; }
 
   /*-------footer-------*/
-  /* line 127, ../sass/_plone.scss */
+  /* line 153, ../sass/_plone.scss */
   div#footer-nav {
     margin-left: 30%;
     width: 45%; }
 
   /* Footer Navigation portlet */
-  /* line 133, ../sass/_plone.scss */
+  /* line 159, ../sass/_plone.scss */
   #footer-nav {
     -webkit-column-count: 3;
     -webkit-column-gap: 10px;
@@ -3865,35 +3891,35 @@ nav.top-bar {
     column-gap: 10px;
     -moz-column-count: 3;
     -moz-column-gap: 10px; }
-    /* line 141, ../sass/_plone.scss */
+    /* line 167, ../sass/_plone.scss */
     #footer-nav dl.portlet ul.navTree li a {
       border: none;
       display: block;
       zoom: 1; }
-    /* line 147, ../sass/_plone.scss */
+    /* line 173, ../sass/_plone.scss */
     #footer-nav dl.portlet ul.navTree li a:hover {
       color: white !important; }
-    /* line 152, ../sass/_plone.scss */
+    /* line 178, ../sass/_plone.scss */
     #footer-nav dl.portletNavigationTree dd.portletItem {
       padding: 0; }
-    /* line 156, ../sass/_plone.scss */
+    /* line 182, ../sass/_plone.scss */
     #footer-nav dl.portlet ul.navTreeLevel0 > .navTreeItem {
       padding: 0.25em 1em;
       border-bottom: None;
       line-height: 2em;
       color: white; }
-    /* line 162, ../sass/_plone.scss */
+    /* line 188, ../sass/_plone.scss */
     #footer-nav dl.portlet li {
       border-left: 1px solid white;
       margin-bottom: 0; }
-    /* line 168, ../sass/_plone.scss */
+    /* line 194, ../sass/_plone.scss */
     #footer-nav dl.portlet ul.navTreeLevel1 .navTreeItem {
       padding-left: 0.5em;
       line-height: 2em; }
-    /* line 172, ../sass/_plone.scss */
+    /* line 198, ../sass/_plone.scss */
     #footer-nav .navTreeItem .state-published {
       color: white !important; }
-    /* line 177, ../sass/_plone.scss */
+    /* line 203, ../sass/_plone.scss */
     #footer-nav dl.portlet ul.navTree .navTreeCurrentItem {
       background-color: transparent;
       border-left: 1em solid #ddd;
@@ -4069,7 +4095,7 @@ nav.top-bar {
         text-align: center; }
       /* line 44, ../sass/components/_navigation.scss */
       .util-bar ul li input {
-        width: 190px;
+        /*width:190px;*/
         height: 35px;
         text-transform: uppercase;
         font-size: 14px;
@@ -4152,7 +4178,7 @@ nav.top-bar {
       /* line 149, ../sass/components/_navigation.scss */
       .top-bar .top-bar-section .left > li {
         background: #002855 !important;
-        /* width: 9.6%; // was 18% with .right. width of primary menu items */
+        width: 9.6%;
         height: 80px;
         text-align: center;
         /*.dropdown{ // TODO: Don't need this specific selector ...

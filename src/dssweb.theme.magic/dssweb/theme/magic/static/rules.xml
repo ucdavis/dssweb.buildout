@@ -29,30 +29,30 @@
         
 	   
 	   <!--swap in portal-globalnav -->
+	   <!--utility menu -->
+	   
 	   
          <!--replace css:content="#portal-globalnav li" css:theme-children="#top-bar-wrap > nav > section > ul.left" /-->
 	    <!--overkill rule to replace the plain class on the menu li - unnecessary use of force, but fun! -->
 		<!--replace css:theme="#name-icon" css:content="#portal-logo" /-->
+	
 	    <replace content="//li[contains(@class,'plain')]/@class">
 	    <xsl:attribute name="class">
 	    <xsl:if test='contains(current(),"plain")'>has-dropdown not-click</xsl:if>
 	    </xsl:attribute>
 	    </replace>
-		
+	     	
+	    
 	    <replace content="//h1[contains(@class,'documentFirstHeading')]/@class">
 	    <xsl:attribute name="class">
 	    <xsl:if test='contains(current(),"documentFirstHeading")'>homepage-title</xsl:if>
 	    </xsl:attribute>
 	    </replace>
 	    
-	    <!--replace content="//ul[contains(@class,'submenu')]/@class">
-	    <xsl:attribute name="class">
-	    <xsl:if test='contains(current(),"submenu")'>dropdown</xsl:if>
-	    </xsl:attribute>
-	    </replace-->
-	    <!--drop css:theme="li.title.back.js-generated" /-->
+
 	    
 	    <replace css:theme="#top-bar-wrap > nav > section > ul" css:content="#portal-globalnav" />
+	    <!--Still doesnt' work, would be handy if it did -->
 		    <xsl:template match="portal-globalnav">
 		            <xsl:copy>
 		                <xsl:attribute name="class">left</xsl:attribute>
@@ -83,7 +83,7 @@
          <replace css:content="#portal-globalnav li" css:theme-children="#nav ul" />
 	    
         <drop css:content=".searchSection" />
-        <replace css:content="#portal-searchbox" css:theme="#search" />
+        <copy css:content="#portal-searchbox" css:theme="#uti-search" />
 
     </rules>
 

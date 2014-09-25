@@ -42,7 +42,7 @@
 				
 			}
 			input{
-				width:190px;
+				/*width:190px;*/
 				height: 35px;
 				text-transform: uppercase;
 				@include font_size(14px);
@@ -253,7 +253,7 @@
 	.util-bar {
 		max-width: 650px;
 		ul li input {
-			width: 170px;
+			 width: 170px;
 		}
 		#uti-logo{
 			margin-left: 4px; // Note: Use to adjust logo with left border of department name
