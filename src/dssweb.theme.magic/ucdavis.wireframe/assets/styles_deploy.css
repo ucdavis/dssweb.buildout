@@ -1596,9 +1596,12 @@ body.res-lab #content-row div > h2 { font-size: 24px !important; font-size: 1.5r
 .util-bar #uti-events { width: 10.96%; }
 .util-bar #uti-give { width: 10.96%; }
 .util-bar #uti-search { width: 28.36%; }
+.util-bar #uti-search input { width: 75%; }
+.util-bar #uti-search input[type="submit"] { height: 35px; width: 20%; background-color: #DAAA00; text-align: center; }
+.util-bar #uti-search input[type="submit"]:hover { background-color: #f0dd99; cursor: pointer; }
 .util-bar #uti-share { width: 5%; }
 .util-bar #uti-share a { display: inline-block; width: 15px; height: 17px; background: url(../images/icons/share.png) top left no-repeat; }
-.util-bar #uti-logo { border-right-width: 0; width: 125px; }
+.util-bar #uti-logo { border-right-width: 0; position: relative; overflow: hidden; width: 22%; }
 
 .caret { margin-left: 15px; }
 
@@ -1607,17 +1610,16 @@ body.res-lab #content-row div > h2 { font-size: 24px !important; font-size: 1.5r
 
 .top-bar { background-color: #002855; padding-bottom: 80px; }
 .top-bar .title-area { /* top:15px; THIS NEGATIVELY IMPACTS THE FORMAT OF THE TOPBAR MENU */ }
-.top-bar .title-area .name a { border-right: 1px solid white; display: inline-block; width: 430px; height: 80px; padding-left: 0; text-decoration: none; }
+.top-bar .title-area .name a { display: inline-block; width: 370px; height: 80px; padding-left: 0; text-decoration: none; }
 .top-bar .title-area .name a#name-icon img { height: 100%; display: block; }
 .top-bar .top-bar-section { height: 100%; /* .right {} if we have markup with left drops */ }
-.top-bar .top-bar-section .left { width: 65%; height: 100% !important; }
+.top-bar .top-bar-section .left { width: 66.36%; height: 100% !important; }
 .top-bar .top-bar-section .left > li { background-color: #002855 !important; /* width: 9.6%; // was 18% with .right. width of primary menu items */ height: 80px; text-align: center; /*.dropdown{ // TODO: Don't need this specific selector ...
 	top:100%;
 	li{
 		background-color:$ucd_blue_100 !important;
 	}
 }*/ }
-.top-bar .top-bar-section .left > li#fac-serv-btn { width: 17%; }
 .top-bar .top-bar-section .left > li:hover { background-color: #4d688c !important; }
 .top-bar .top-bar-section .left > li > a { height: 80px; line-height: 80px !important; }
 .top-bar .top-bar-section .left > li a { width: 100%; background-color: transparent !important; text-decoration: none; font-size: 17px; font-size: 1.0625rem; line-height: 28px; line-height: 1.75rem; letter-spacing: 0.025em; /* padding:0 !important; */ white-space: normal; }
@@ -1646,13 +1648,17 @@ body.res-lab #content-row div > h2 { font-size: 24px !important; font-size: 1.5r
   .top-bar.expanded .top-bar-section .left > li { width: 100% !important; height: 40px; }
   .top-bar.expanded .top-bar-section .left > li > a { margin-top: 0 !important; line-height: 40px !important; padding-top: 0; } }
 /*----- Tablet breakpoint -------*/
-@media screen and (min-width: 768px) and (max-width: 992px) { #util-bar-wrap, #top-bar-wrap, #banner-row { margin-left: -10px !important; margin-right: -20px !important; }
+@media screen and (min-width: 768px) and (max-width: 991px) { #util-bar-wrap, #top-bar-wrap, #banner-row { margin-left: -10px !important; margin-right: -20px !important; }
   /*#util-bar-wrap { 	border: 1px solid red; 	margin-left: -9px !important; 	margin-right: -21px !important; 	.util-bar { 		margin-left: 0 !important; 	} } #top-bar-wrap { 	margin-left: -15px !important; 	margin-right: -5px !important; // TODO: 5px??? }  .util-bar { 	border: 1px solid red; 	//width: 100%; }*/
   .top-bar .title-area .name a { padding-left: 0; width: 200px !important; height: 40px !important; } }
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: 992px) { .util-bar { max-width: 768px; }
   .top-bar .top-bar-section ul ul.dropdown { width: 200px !important; }
   .top-bar .top-bar-section ul ul.dropdown li a { padding: 4px !important; } }
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: 768px) and (max-width: 1310px) { .top-bar .top-bar-section ul > li a { padding-right: 17px !important; padding-left: 17px !important; } }
+/*----- Large Desktop breakpoint -------*/
+@media screen and (min-width: 1310px) { .top-bar .top-bar-section ul > li a { padding-right: 27px !important; padding-left: 27px !important; } }
 .sticky { position: fixed; bottom: 0px; left: 0px; width: 100%; height: 70px; background-color: #e1e1e1 !important; width: 100%; }
 .sticky .util-nav { height: 100%; }
 .sticky .util-nav ul.util { display: block; margin-left: auto; margin-right: auto; height: 100%; }
