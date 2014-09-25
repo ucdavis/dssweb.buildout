@@ -592,47 +592,65 @@ input{
 	}	
 }
 
+// TODO: Add insert shadow ...
+.form-wrap {
+	padding: 15px;
+	form {
+		.form-row {
+			padding: 4px 0;
+			&.centered {
+				text-align: center;
+			}
+		}
+		input, select, textarea {
+			width: 100%;
+			text-align: left;
+			padding: 4px;
+		}
+		input, select {
+			height: 35px;
+		}
+		#contact-message {
+			height: 160px;
+		}
+		input[type="submit"] {
+			height: 40px;
+			width: 120px;
+			background-color: $ucd_bright_gold;
+			text-align: center;
+			&:hover {
+				background-color: $ucd_bright_gold_40;
+				cursor: pointer;
+			}
+		}
+		
+	}
+}
+
 body.contact-type {
 	#content-main {
-		
 		.form-wrap {
-			padding: 15px;
 			position: relative;
 			background-color: $box_light_gray;
-			form {
-				.form-row {
-					padding: 4px 0;
-					&.centered {
-						text-align: center;
-					}
-				}
-				input, select, textarea {
-					width: 100%;
-					text-align: left;
-					padding: 4px;
-				}
-				input, select {
-					height: 35px;
-				}
-				#contact-message {
-					height: 160px;
-				}
-				input[type="submit"] {
-					height: 40px;
-					width: 120px;
-					background-color: $ucd_bright_gold;
-					text-align: center;
-					&:hover {
-						background-color: $ucd_bright_gold_40;
-						cursor: pointer;
-					}
-				}
-				
-			}
 		}
 	}
 }
 
+.portlet {
+	.form-wrap {
+		padding: 25px 15px;
+		input[type="submit"] {
+			margin-top: 15px;
+		}
+	}
+}
+
+.col-left {
+	border: 1px solid red;
+}
+.col-right {
+	border: 1px solid blue;
+}
 /*------ All Media Queries ----------*/
 
 /*----- Mobile breakpoint --------*/

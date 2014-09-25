@@ -53,6 +53,10 @@
 	color:$rec_blue;
 }
 
+.title-box {
+	padding: 25px;
+	border: 1px solid black;
+}
 @media screen and (max-width: $screen-md-min) {
 	#util-bar-wrap { 
 		.util-bar {
