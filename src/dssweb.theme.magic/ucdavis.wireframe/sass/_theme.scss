@@ -706,7 +706,10 @@ body.contact-type {
 				padding-left: 20px !important;
 				
 				@include font_size(16px);
-				@include line_height(40px);
+				// Emphasis on multiline panel-titles
+				padding-top: 5px !important;
+				@include line_height(22px,!important);
+				// @include line_height(40px); // OK for single line. TODO: Treatment for singles not adequate
 				text-align: left;
 
 				background: url(../images/icons/blue-100-right-arrow-down.png) 98% 50% no-repeat $ucd_bright_gold_40;
@@ -1022,6 +1025,15 @@ body.contact-type {
 	#util-bar-wrap {
 		padding-right: 105px;
 	}
+	
+	.panel-group {
+		.panel-heading {
+			.panel-title {
+				padding-top: 8px;
+				padding-bottom: 10px;
+			}
+		}
+	}	
 	
 	// Panel resets
 	#cm-section { // Important: Specific content selector since we want to keep our sidebar panel styles

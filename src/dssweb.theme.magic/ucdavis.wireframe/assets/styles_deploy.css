@@ -36,7 +36,6 @@ button { font-size: 14px; font-size: 0.875rem; line-height: 24px; line-height: 1
 .pager .pager-string { font-size: 13px; font-size: 0.8125rem; line-height: 25px; line-height: 1.5625rem; }
 
 .sidebar h3 a { text-transform: uppercase; font-size: 13px; font-size: 0.8125rem; line-height: 18px !important; line-height: 1.125rem !important; letter-spacing: 0.1em; padding-bottom: 4px; }
-.sidebar .panel-heading h3.panel-title { padding-top: 0 !important; }
 .sidebar .vcard { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
 .sidebar .vcard .adr, .sidebar .vcard #email-phone { line-height: 18px; line-height: 1.125rem; }
 
@@ -108,7 +107,7 @@ body.res-lab #content-row div > h2 { font-size: 24px !important; font-size: 1.5r
   .top-panel #content-main .narrow-col h2, .top-panel #am-content .narrow-col h2, .top-panel #cm-content .narrow-col h2 { text-align: center !important; }
   .top-panel #content-main .narrow-col h3, .top-panel #content-main .narrow-col p, .top-panel #am-content .narrow-col h3, .top-panel #am-content .narrow-col p, .top-panel #cm-content .narrow-col h3, .top-panel #cm-content .narrow-col p { text-align: left !important; }
   .top-panel.left-panel h2, .top-panel.left-panel h2, .top-panel.left-panel h2 { text-align: center !important; }
-  .container .sidebar .panel-heading .panel-title { font-size: 16px !important; font-size: 1rem !important; line-height: 16px !important; line-height: 1rem !important; } }
+  .container .sidebar .panel-heading .panel-title { padding-top: 8px !important; } }
 /*----- Tablet breakpoint --------*/
 @media screen and (max-width: 992px) { body.home #content-main .narrow-col h2, body.home #am-content .narrow-col h2 { font-size: 17px; font-size: 1.0625rem; }
   body.home #content-main #top-panel-row .narrow-col .bcontroller .btn-primary, body.home #am-content #top-panel-row .narrow-col .bcontroller .btn-primary { font-size: 11px; font-size: 0.6875rem; line-height: 18px !important; line-height: 1.125rem !important; }
@@ -984,7 +983,7 @@ body.contact-type #content-main .form-wrap { position: relative; background-colo
   .panel { border: none; }
   .panel-heading { margin-bottom: 5px; padding: 0; }
   .panel-heading .panel-title { width: auto; padding-top: 0 !important; padding-bottom: 0 !important; }
-  .panel-heading .panel-title a { display: inline-block; width: 100%; min-height: 40px; padding-right: 20px; padding-left: 20px !important; font-size: 16px; font-size: 1rem; line-height: 40px; line-height: 2.5rem; text-align: left; background: url(../images/icons/blue-100-right-arrow-down.png) 98% 50% no-repeat #f0dd99; }
+  .panel-heading .panel-title a { display: inline-block; width: 100%; min-height: 40px; padding-right: 20px; padding-left: 20px !important; font-size: 16px; font-size: 1rem; padding-top: 5px !important; line-height: 22px !important; line-height: 1.375rem !important; text-align: left; background: url(../images/icons/blue-100-right-arrow-down.png) 98% 50% no-repeat #f0dd99; }
   .panel-heading .panel-title a.collapsed { background: url(../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat #DAAA00; }
   .panel-heading .panel-title a:hover { cursor: pointer !important; background-color: #f0dd99; }
   body.bio #content-row { margin-top: 0; }
@@ -1050,6 +1049,7 @@ top:-39px !important;*/ }
   #footer #copyright { margin-top: 0; } }
 @media screen and (min-width: 768px) { #top-bar-wrap, #content-row, #banner-row { padding-left: 105px; padding-right: 105px; }
   #util-bar-wrap { padding-right: 105px; }
+  .panel-group .panel-heading .panel-title { padding-top: 8px; padding-bottom: 10px; }
   #cm-section .panel-group .panel-heading { background-color: transparent !important; padding: 0 !important; border-top-left-radius: 0; border-top-right-radius: 0; }
   #cm-section .panel-group .panel-heading .panel-title { background-color: transparent !important; }
   #cm-section .panel-group .panel-body { border-top-width: 0 !important; }
@@ -1171,7 +1171,6 @@ button { font-size: 14px; font-size: 0.875rem; line-height: 24px; line-height: 1
 .pager .pager-string { font-size: 13px; font-size: 0.8125rem; line-height: 25px; line-height: 1.5625rem; }
 
 .sidebar h3 a { text-transform: uppercase; font-size: 13px; font-size: 0.8125rem; line-height: 18px !important; line-height: 1.125rem !important; letter-spacing: 0.1em; padding-bottom: 4px; }
-.sidebar .panel-heading h3.panel-title { padding-top: 0 !important; }
 .sidebar .vcard { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
 .sidebar .vcard .adr, .sidebar .vcard #email-phone { line-height: 18px; line-height: 1.125rem; }
 
@@ -1243,7 +1242,7 @@ body.res-lab #content-row div > h2 { font-size: 24px !important; font-size: 1.5r
   .top-panel #content-main .narrow-col h2, .top-panel #am-content .narrow-col h2, .top-panel #cm-content .narrow-col h2 { text-align: center !important; }
   .top-panel #content-main .narrow-col h3, .top-panel #content-main .narrow-col p, .top-panel #am-content .narrow-col h3, .top-panel #am-content .narrow-col p, .top-panel #cm-content .narrow-col h3, .top-panel #cm-content .narrow-col p { text-align: left !important; }
   .top-panel.left-panel h2, .top-panel.left-panel h2, .top-panel.left-panel h2 { text-align: center !important; }
-  .container .sidebar .panel-heading .panel-title { font-size: 16px !important; font-size: 1rem !important; line-height: 16px !important; line-height: 1rem !important; } }
+  .container .sidebar .panel-heading .panel-title { padding-top: 8px !important; } }
 /*----- Tablet breakpoint --------*/
 @media screen and (max-width: 992px) { body.home #content-main .narrow-col h2, body.home #am-content .narrow-col h2 { font-size: 17px; font-size: 1.0625rem; }
   body.home #content-main #top-panel-row .narrow-col .bcontroller .btn-primary, body.home #am-content #top-panel-row .narrow-col .bcontroller .btn-primary { font-size: 11px; font-size: 0.6875rem; line-height: 18px !important; line-height: 1.125rem !important; }
@@ -1299,7 +1298,6 @@ button { font-size: 14px; font-size: 0.875rem; line-height: 24px; line-height: 1
 .pager .pager-string { font-size: 13px; font-size: 0.8125rem; line-height: 25px; line-height: 1.5625rem; }
 
 .sidebar h3 a { text-transform: uppercase; font-size: 13px; font-size: 0.8125rem; line-height: 18px !important; line-height: 1.125rem !important; letter-spacing: 0.1em; padding-bottom: 4px; }
-.sidebar .panel-heading h3.panel-title { padding-top: 0 !important; }
 .sidebar .vcard { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
 .sidebar .vcard .adr, .sidebar .vcard #email-phone { line-height: 18px; line-height: 1.125rem; }
 
@@ -1371,7 +1369,7 @@ body.res-lab #content-row div > h2 { font-size: 24px !important; font-size: 1.5r
   .top-panel #content-main .narrow-col h2, .top-panel #am-content .narrow-col h2, .top-panel #cm-content .narrow-col h2 { text-align: center !important; }
   .top-panel #content-main .narrow-col h3, .top-panel #content-main .narrow-col p, .top-panel #am-content .narrow-col h3, .top-panel #am-content .narrow-col p, .top-panel #cm-content .narrow-col h3, .top-panel #cm-content .narrow-col p { text-align: left !important; }
   .top-panel.left-panel h2, .top-panel.left-panel h2, .top-panel.left-panel h2 { text-align: center !important; }
-  .container .sidebar .panel-heading .panel-title { font-size: 16px !important; font-size: 1rem !important; line-height: 16px !important; line-height: 1rem !important; } }
+  .container .sidebar .panel-heading .panel-title { padding-top: 8px !important; } }
 /*----- Tablet breakpoint --------*/
 @media screen and (max-width: 992px) { body.home #content-main .narrow-col h2, body.home #am-content .narrow-col h2 { font-size: 17px; font-size: 1.0625rem; }
   body.home #content-main #top-panel-row .narrow-col .bcontroller .btn-primary, body.home #am-content #top-panel-row .narrow-col .bcontroller .btn-primary { font-size: 11px; font-size: 0.6875rem; line-height: 18px !important; line-height: 1.125rem !important; }
@@ -1469,7 +1467,6 @@ button { font-size: 14px; font-size: 0.875rem; line-height: 24px; line-height: 1
 .pager .pager-string { font-size: 13px; font-size: 0.8125rem; line-height: 25px; line-height: 1.5625rem; }
 
 .sidebar h3 a { text-transform: uppercase; font-size: 13px; font-size: 0.8125rem; line-height: 18px !important; line-height: 1.125rem !important; letter-spacing: 0.1em; padding-bottom: 4px; }
-.sidebar .panel-heading h3.panel-title { padding-top: 0 !important; }
 .sidebar .vcard { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
 .sidebar .vcard .adr, .sidebar .vcard #email-phone { line-height: 18px; line-height: 1.125rem; }
 
@@ -1541,7 +1538,7 @@ body.res-lab #content-row div > h2 { font-size: 24px !important; font-size: 1.5r
   .top-panel #content-main .narrow-col h2, .top-panel #am-content .narrow-col h2, .top-panel #cm-content .narrow-col h2 { text-align: center !important; }
   .top-panel #content-main .narrow-col h3, .top-panel #content-main .narrow-col p, .top-panel #am-content .narrow-col h3, .top-panel #am-content .narrow-col p, .top-panel #cm-content .narrow-col h3, .top-panel #cm-content .narrow-col p { text-align: left !important; }
   .top-panel.left-panel h2, .top-panel.left-panel h2, .top-panel.left-panel h2 { text-align: center !important; }
-  .container .sidebar .panel-heading .panel-title { font-size: 16px !important; font-size: 1rem !important; line-height: 16px !important; line-height: 1rem !important; } }
+  .container .sidebar .panel-heading .panel-title { padding-top: 8px !important; } }
 /*----- Tablet breakpoint --------*/
 @media screen and (max-width: 992px) { body.home #content-main .narrow-col h2, body.home #am-content .narrow-col h2 { font-size: 17px; font-size: 1.0625rem; }
   body.home #content-main #top-panel-row .narrow-col .bcontroller .btn-primary, body.home #am-content #top-panel-row .narrow-col .bcontroller .btn-primary { font-size: 11px; font-size: 0.6875rem; line-height: 18px !important; line-height: 1.125rem !important; }
@@ -1608,8 +1605,8 @@ body.res-lab #content-row div > h2 { font-size: 24px !important; font-size: 1.5r
 .util-bar #uti-give { width: 10.96%; }
 .util-bar #uti-search { width: 28.36%; }
 .util-bar #uti-search input { width: 75%; }
-.util-bar #uti-search input[type="submit"] { height: 35px; width: 20%; background-color: #DAAA00; text-align: center; }
-.util-bar #uti-search input[type="submit"]:hover { background-color: #f0dd99; cursor: pointer; }
+.util-bar #uti-search input[type="submit"] { height: auto; width: 20%; padding: 0; line-height: 26px; line-height: 1.625rem; text-align: center; background-color: #E5C44D; border: 1px solid #f0dd99; }
+.util-bar #uti-search input[type="submit"]:hover { background-color: #DAAA00; cursor: pointer; }
 .util-bar #uti-share { width: 5%; }
 .util-bar #uti-share a { display: inline-block; width: 15px; height: 17px; background: url(../images/icons/share.png) top left no-repeat; }
 .util-bar #uti-logo { border-right-width: 0; position: relative; overflow: hidden; width: 22%; }
@@ -1698,6 +1695,7 @@ body.res-lab #content-row div > h2 { font-size: 24px !important; font-size: 1.5r
 
 /*----- Mobile breakpoint --------*/
 @media screen and (max-width: 768px) { .corner-box { display: none !important; } }
+/*----- Tablet breakpoint -------*/
 /*----- Tablet breakpoint --------*/
 @media screen and (max-width: 992px) { #corner-box-target .corner-box { width: 220px; }
   #corner-box-target .corner-box .box-content { margin: 0 15px 10px 20px; } }

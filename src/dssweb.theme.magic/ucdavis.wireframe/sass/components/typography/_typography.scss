@@ -62,7 +62,7 @@ button {
 	}
 	.panel-heading {
 		h3.panel-title {
-			padding-top: 0 !important; // override #am-content styles
+			//padding-top: 0 !important; // override #am-content styles
 		}
 	}
 	.vcard {
@@ -367,15 +367,17 @@ body.res-lab {
 	}
 	
 	.container {
-		.sidebar{
-			.panel-heading{
+		.sidebar {
+			.panel-heading {
 				.panel-title {
-					@include font_size(16px, !important);
-					@include line_height(16px, !important);
+					padding-top: 8px !important;
+					//@include font_size(16px, !important);
+					//@include line_height(16px, !important);
 				}
 			}
 		}
 	}
+	
 }
 
 /*----- Tablet breakpoint --------*/
