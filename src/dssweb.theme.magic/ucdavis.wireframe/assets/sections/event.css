@@ -174,13 +174,13 @@ p { margin-top: 0; }
 #event-cta .portlet-items #rss-icon a { background: url(../../images/icons/m-RSS-icon.png) 0 50% no-repeat; }
 
 .widget-fieldset .color-box { width: 10px; height: 10px; display: inline-block; margin-right: 5px; margin-left: 10px; }
-.widget-fieldset #subject-econom .color-box { background-color: #00573f; }
-.widget-fieldset #subject-econ-hist .color-box { background-color: #c6007e; }
-.widget-fieldset #subject-ind-org .color-box { background-color: #ed8b00; }
-.widget-fieldset #subject-int-econ .color-box { background-color: #ffcd00; }
-.widget-fieldset #subject-mac-econ .color-box { background-color: #78be20; }
-.widget-fieldset #subject-pub-fin .color-box { background-color: #00b5e2; }
-.widget-fieldset #subject-theory .color-box { background-color: #642667; }
+.widget-fieldset #criterion-subject-econometrics .color-box { background-color: #00573f; }
+.widget-fieldset #criterion-subject-economic-history .color-box { background-color: #c6007e; }
+.widget-fieldset #criterion-subject-energy-environmental-economics .color-box { background-color: #ed8b00; }
+.widget-fieldset #criterion-subject-international-economics .color-box { background-color: #ffcd00; }
+.widget-fieldset #criterion-subject-macroeconomics .color-box { background-color: #78be20; }
+.widget-fieldset #criterion-subject-public-finance-labor .color-box { background-color: #00b5e2; }
+.widget-fieldset #criterion-subject-theory .color-box { background-color: #642667; }
 
 #accordion-e > div { padding-left: 0; padding-right: 0; }
 
