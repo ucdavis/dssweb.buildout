@@ -148,8 +148,8 @@
 			// Parent level buttons
 			 > li{
 
-				background: $ucd_blue_100 !important;
-				width: 9.6%; // was 18% with .right. width of primary menu items */
+				background-color: $ucd_blue_100 !important;
+				/* width: 9.6%; // was 18% with .right. width of primary menu items */ // TODO: 2014-09-24 RAK: Eval
 
 				height: 80px; // was 100%
 				text-align: center;
@@ -179,7 +179,7 @@
 					@include line_height(28px);
 					
 					letter-spacing: 0.025em;
-					/* padding:0 !important; */
+					/* padding:0 !important; */ // TODO: 2014-09-24 RAK: Eval
 					
 					&:hover {
 						//text-decoration: underline;
@@ -297,7 +297,7 @@
 						> a {
 							margin-top: 0 !important;
 							line-height: 40px !important;
-							padding-top: 0;
+							padding-top: 0; // TODO: 2014-09-24 RAK: Eval
 						}
 					}
 				}
@@ -384,6 +384,9 @@
 			margin-left: auto;
 			margin-right: auto;
 			height: 100%;
+			.last{
+				border-right:none;
+			}
 			li {
 				float: left;
 				width: 25%;
