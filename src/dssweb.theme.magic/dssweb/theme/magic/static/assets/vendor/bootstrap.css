@@ -1,13 +1,13 @@
 /*
-Error: Undefined mixin 'border-top-radius'.
-        on line 25 of /Users/carolm/Plone/zinstance/src/dssweb.theme.magic/dssweb/theme/magic/static/sass/vendor/bootstrap/_panels.scss, in `border-top-radius'
-        from line 25 of /Users/carolm/Plone/zinstance/src/dssweb.theme.magic/dssweb/theme/magic/static/sass/vendor/bootstrap/_panels.scss
-        from line 8 of /Users/carolm/Plone/zinstance/src/dssweb.theme.magic/dssweb/theme/magic/static/sass/vendor/bootstrap.scss
+Error: Undefined mixin 'translate3d'.
+        on line 56 of /Users/carolm/Plone/zinstance/src/dssweb.theme.magic/dssweb/theme/magic/static/sass/vendor/bootstrap/_utilities.scss, in `translate3d'
+        from line 56 of /Users/carolm/Plone/zinstance/src/dssweb.theme.magic/dssweb/theme/magic/static/sass/vendor/bootstrap/_utilities.scss
+        from line 15 of /Users/carolm/Plone/zinstance/src/dssweb.theme.magic/dssweb/theme/magic/static/sass/vendor/bootstrap.scss
 
 Backtrace:
-/Users/carolm/Plone/zinstance/src/dssweb.theme.magic/dssweb/theme/magic/static/sass/vendor/bootstrap/_panels.scss:25:in `border-top-radius'
-/Users/carolm/Plone/zinstance/src/dssweb.theme.magic/dssweb/theme/magic/static/sass/vendor/bootstrap/_panels.scss:25
-/Users/carolm/Plone/zinstance/src/dssweb.theme.magic/dssweb/theme/magic/static/sass/vendor/bootstrap.scss:8
+/Users/carolm/Plone/zinstance/src/dssweb.theme.magic/dssweb/theme/magic/static/sass/vendor/bootstrap/_utilities.scss:56:in `translate3d'
+/Users/carolm/Plone/zinstance/src/dssweb.theme.magic/dssweb/theme/magic/static/sass/vendor/bootstrap/_utilities.scss:56
+/Users/carolm/Plone/zinstance/src/dssweb.theme.magic/dssweb/theme/magic/static/sass/vendor/bootstrap.scss:15
 /Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:338:in `block in visit_mixin'
 /Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:98:in `block in with_mixin'
 /Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:115:in `with_frame'
@@ -77,4 +77,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'border-top-radius'.\A         on line 25 of /Users/carolm/Plone/zinstance/src/dssweb.theme.magic/dssweb/theme/magic/static/sass/vendor/bootstrap/_panels.scss, in `border-top-radius'\A         from line 25 of /Users/carolm/Plone/zinstance/src/dssweb.theme.magic/dssweb/theme/magic/static/sass/vendor/bootstrap/_panels.scss\A         from line 8 of /Users/carolm/Plone/zinstance/src/dssweb.theme.magic/dssweb/theme/magic/static/sass/vendor/bootstrap.scss"; }
+  content: "Error: Undefined mixin 'translate3d'.\A         on line 56 of /Users/carolm/Plone/zinstance/src/dssweb.theme.magic/dssweb/theme/magic/static/sass/vendor/bootstrap/_utilities.scss, in `translate3d'\A         from line 56 of /Users/carolm/Plone/zinstance/src/dssweb.theme.magic/dssweb/theme/magic/static/sass/vendor/bootstrap/_utilities.scss\A         from line 15 of /Users/carolm/Plone/zinstance/src/dssweb.theme.magic/dssweb/theme/magic/static/sass/vendor/bootstrap.scss"; }

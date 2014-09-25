@@ -82,8 +82,8 @@
 		<copy css:content="#parent-fieldname-title" css:theme="#middle-row" />
 		
        <!--- Footer -->
-	   <copy  css:content="#portletwrapper-706c6f6e652e6c656674636f6c756d6e0a636f6e746578740a2f5765625265646f2f66726f6e742d706167650a636f6e74616374 > div" css:theme="#vcard" />
-	   <copy content='//*[@id="portletwrapper-706c6f6e652e6c656674636f6c756d6e0a636f6e746578740a2f5765625265646f2f66726f6e742d706167650a6e617669676174696f6e"]' theme='//*[@id="footer-nav"]'    />
+	   <copy  css:content=".portletStaticText.portlet-static-contact" css:theme="#vcard" />
+	   <copy css:content=".portlet.portletNavigationTree" css:theme="#footer-nav" />
 	   	
 	   
  	    
