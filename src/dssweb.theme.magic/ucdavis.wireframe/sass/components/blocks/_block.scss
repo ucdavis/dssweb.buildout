@@ -1,5 +1,5 @@
-/* _block.scss */
-/* Styles for block-level components like portlets */
+/* components/blocks/_block.scss */
+/* Styles for block-level components */
 
 //Styles for the Spotlight Block
 #spotlight-block {
@@ -7,24 +7,63 @@
  border: 1px solid #000;
 }
 
-.portlet {
-	margin-bottom: 20px;
-	p, h4 {
-		margin: 15px 35px 8px 35px;
-	}
-	
-	h4.org {
-		margin: 0;
-	}
-
-	.portlet-items {
-		margin: 15px;
-		margin-bottom: 25px;
-		margin-left: 35px;
-		li {
-			margin-bottom: 20px;
+/* Contact uses hCard microformat / vCard RFC2426 */
+#sidebar-block-contact {
+	margin-top: 20px;
+	padding-left: 35px;
+	padding-right: 15px;
+	li{
+		text-align: left;
+		@include font_size(13px);
+		letter-spacing: 0.01em;
+		a {
+			text-decoration: none;
+			color:$ucd_blue_80;
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 	}
+	.fn { // full name
+		text-transform:uppercase;
+		color:$ucd_blue_80;
+		font-weight: bold;
+		letter-spacing: 0.1em;
+	}
+	.category { // position
+		font-style: italic;
+		@include font_size(12px);
+		margin-bottom: 5px;
+	}
+	.tel { // phone
+		margin-bottom: 5px;
+	}
+}
+
+#sidebar-block-contact, .vcard {
+	.email {
+		text-transform: uppercase;
+		a {
+			display: block;
+			height: 16px;
+			padding-left: 22px;
+			background: url(../images/icons/email.gif) 0 60% no-repeat;
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+.sidebar-block-items {
+	background: $box_light_gray;	
+	padding-bottom: 10px;
+	text-align: left;
+	width: auto;
+	height: 100%;
+	padding-left: 15px;
+	margin-left: 35px;
+	list-style-type: circle;	
 }
 
 #corner-box-target {
@@ -39,7 +78,7 @@
 		.box-content {
 			margin: 15px 35px 30px 40px;
 		}
-		margin-bottom: 21px; // Note: If caption height changes, so should this. TODO: Apply in JS for cases where no figcaption ... but this is not part of the design mockup
+		margin-bottom: 21px; // Note: If caption height changes, so should this. TODO: Apply in JS for cases where no figcaption ... but this is not part of design
 	}
 }
 /*----- Mobile breakpoint --------*/
@@ -69,4 +108,4 @@
 	}
 }
 
-/* /_block.scss */
+/* /components/blocks/_block.scss */
