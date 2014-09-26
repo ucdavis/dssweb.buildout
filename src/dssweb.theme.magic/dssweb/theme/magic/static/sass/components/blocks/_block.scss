@@ -51,6 +51,11 @@
 	}
 }
 
+/*----- Tablet breakpoint -------*/
+@media screen and (min-width: $screen-sm-min) {	// width > 768
+
+}
+
 /*----- Tablet breakpoint --------*/
 // At point that left and right margins are gone
 @media screen and (max-width: $screen-md-min) { // width < 992

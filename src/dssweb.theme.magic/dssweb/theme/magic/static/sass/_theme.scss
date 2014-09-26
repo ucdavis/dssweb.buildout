@@ -592,47 +592,65 @@ input{
 	}	
 }
 
+// TODO: Add insert shadow ...
+.form-wrap {
+	padding: 15px;
+	form {
+		.form-row {
+			padding: 4px 0;
+			&.centered {
+				text-align: center;
+			}
+		}
+		input, select, textarea {
+			width: 100%;
+			text-align: left;
+			padding: 4px;
+		}
+		input, select {
+			height: 35px;
+		}
+		#contact-message {
+			height: 160px;
+		}
+		input[type="submit"] {
+			height: 40px;
+			width: 120px;
+			background-color: $ucd_bright_gold;
+			text-align: center;
+			&:hover {
+				background-color: $ucd_bright_gold_40;
+				cursor: pointer;
+			}
+		}
+		
+	}
+}
+
 body.contact-type {
 	#content-main {
-		
 		.form-wrap {
-			padding: 15px;
 			position: relative;
 			background-color: $box_light_gray;
-			form {
-				.form-row {
-					padding: 4px 0;
-					&.centered {
-						text-align: center;
-					}
-				}
-				input, select, textarea {
-					width: 100%;
-					text-align: left;
-					padding: 4px;
-				}
-				input, select {
-					height: 35px;
-				}
-				#contact-message {
-					height: 160px;
-				}
-				input[type="submit"] {
-					height: 40px;
-					width: 120px;
-					background-color: $ucd_bright_gold;
-					text-align: center;
-					&:hover {
-						background-color: $ucd_bright_gold_40;
-						cursor: pointer;
-					}
-				}
-				
-			}
 		}
 	}
 }
 
+.portlet {
+	.form-wrap {
+		padding: 25px 15px;
+		input[type="submit"] {
+			margin-top: 15px;
+		}
+	}
+}
+
+.col-left {
+	border: 1px solid red;
+}
+.col-right {
+	border: 1px solid blue;
+}
 /*------ All Media Queries ----------*/
 
 /*----- Mobile breakpoint --------*/
@@ -688,7 +706,10 @@ body.contact-type {
 				padding-left: 20px !important;
 				
 				@include font_size(16px);
-				@include line_height(40px);
+				// Emphasis on multiline panel-titles
+				padding-top: 5px !important;
+				@include line_height(22px,!important);
+				// @include line_height(40px); // OK for single line. TODO: Treatment for singles not adequate
 				text-align: left;
 
 				background: url(../images/icons/blue-100-right-arrow-down.png) 98% 50% no-repeat $ucd_bright_gold_40;
@@ -1004,6 +1025,15 @@ body.contact-type {
 	#util-bar-wrap {
 		padding-right: 105px;
 	}
+	
+	.panel-group {
+		.panel-heading {
+			.panel-title {
+				padding-top: 8px;
+				padding-bottom: 10px;
+			}
+		}
+	}	
 	
 	// Panel resets
 	#cm-section { // Important: Specific content selector since we want to keep our sidebar panel styles

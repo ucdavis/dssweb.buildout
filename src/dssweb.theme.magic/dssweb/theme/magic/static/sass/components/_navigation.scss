@@ -68,12 +68,15 @@
 			width: 75%;
 		}
 		input[type="submit"] {
-			height: 35px;
+			height: auto;
 			width: 20%;
-			background-color: $ucd_bright_gold;
+			padding: 0;
+			@include line_height(26px);
 			text-align: center;
+			background-color: $ucd_bright_gold_70;
+			border: 1px solid $ucd_bright_gold_40;
 			&:hover {
-				background-color: $ucd_bright_gold_40;
+				background-color: $ucd_bright_gold;
 				cursor: pointer;
 			}
 		}
