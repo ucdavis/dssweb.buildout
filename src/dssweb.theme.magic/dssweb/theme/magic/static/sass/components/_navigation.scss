@@ -397,7 +397,7 @@
 				// Adjust padding for menu items for desktops
 				> li {
 					a {
-						padding-right: 17px !important;
+						padding-right: 17px !important; 
 						padding-left: 17px !important;
 					}
 				}
@@ -415,7 +415,7 @@
 				// Adjust padding for menu items for large desktops
 				> li {
 					a {
-						padding-right: 27px !important;
+						/* padding-right: 27px !important; */ // TODO: 2014-09-25 RAK: Eval
 						padding-left: 27px !important;
 					}
 				}
