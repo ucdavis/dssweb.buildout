@@ -606,11 +606,8 @@
 				if($('.breadcrumb').length !== 0) {
 					ctb += $('.breadcrumb').height();
 				}
-				// for search result page
-				if($('body.search-result').length !== 0) {
-					ctb += ($('.breadcrumb').height() + 60);
-					
-				}
+				
+				
 				$('.sidebar-right').css('margin-top',ctb);
 			}
 			

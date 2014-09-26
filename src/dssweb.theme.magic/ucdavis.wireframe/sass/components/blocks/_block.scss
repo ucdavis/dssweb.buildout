@@ -12,8 +12,7 @@
 	margin-top: 20px;
 	padding-left: 35px;
 	padding-right: 15px;
-	li{
-		text-align: left;
+	li {
 		@include font_size(13px);
 		letter-spacing: 0.01em;
 		a {
@@ -84,13 +83,13 @@
 /*----- Mobile breakpoint --------*/
 // At point that left and right margins are gone
 @media screen and (max-width: $screen-sm-min) { // width < 768
-	// TODO: Widgetize the corner box. See T5 mobile mockup
+	// todo: widgetize the corner box. see t5 mobile mockup
 	.corner-box {
 		display: none !important;
 	}
 }
 
-/*----- Tablet breakpoint -------*/
+/*----- tablet breakpoint -------*/
 @media screen and (min-width: $screen-sm-min) {	// width > 768
 
 }

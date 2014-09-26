@@ -551,6 +551,9 @@ body.contact-type {
 		margin-bottom: 0px !important;
 	}	
 }
+.search-result .col-right{
+	margin-top: 10px; 
+}
 .results-summary{
 	margin-right: 30px;
 }
@@ -598,8 +601,7 @@ body.contact-type {
 		border: none;
 	}
 	.panel-heading {
-		margin-bottom: 5px;
-		padding:0;
+		padding: 0;
 		.panel-title {
 			//min-height: 40px;
 			width: auto; // undo general 250 width
@@ -1049,8 +1051,7 @@ body.contact-type {
 		.bio-card {
 			.panel-body {
 
-				.vcard {
-					
+				.vcard {				
 					position: relative;
 					img.photo {
 						margin-top: 6px;

@@ -23,7 +23,13 @@ em { font-style: italic; }
 
 button { font-size: 14px; font-size: 0.875rem; line-height: 24px; line-height: 1.5rem; }
 
+.btn-txt { display: none; }
+
 .portlet li, .portlet p, .portlet h4 { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
+.portlet .portlet-items li { font-size: 10px; font-size: 0.625rem; }
+.portlet .portlet-items li a { font-size: 13px; font-size: 0.8125rem; line-height: 17px; line-height: 1.0625rem; text-decoration: none; }
+.portlet .portlet-items li a:hover { text-decoration: underline; }
+.portlet .portlet-items li .event-date { font-size: 13px; font-size: 0.8125rem; }
 
 .col-lg-4 h2 { font-weight: bold !important; font-size: 30px !important; font-size: 1.875rem !important; margin-bottom: 15px; }
 
@@ -32,6 +38,7 @@ button { font-size: 14px; font-size: 0.875rem; line-height: 24px; line-height: 1
 .pager .pager-string { font-size: 13px; font-size: 0.8125rem; line-height: 25px; line-height: 1.5625rem; }
 
 .sidebar h3 a { text-transform: uppercase; font-size: 13px; font-size: 0.8125rem; line-height: 18px !important; line-height: 1.125rem !important; letter-spacing: 0.1em; padding-bottom: 4px; }
+.sidebar li { font-size: 13px !important; font-size: 0.8125rem !important; line-height: 18px; line-height: 1.125rem; }
 .sidebar .vcard { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
 .sidebar .vcard .adr, .sidebar .vcard #email-phone { line-height: 18px; line-height: 1.125rem; }
 
@@ -121,12 +128,15 @@ body.res-lab #content-row div > h2 { font-size: 24px !important; font-size: 1.5r
 /* Other Custom colors */
 /* event.scss */
 #month { border-collapse: collapse; margin-bottom: 70px; }
-#month td { border: 1px solid #b2b2b2; }
+#month td { border: 1px solid #e5e9ef; }
 #month th { font: 1em bold Arial, Helvetica, sans-serif; height: 30px; width: 125px; padding-top: 5px; border-left: 1px solid #fff; }
 #month .first { border-left: none !important; }
 #month thead { background-color: #008eaa; color: #fff; }
-#month td { width: 125px; height: 120px; vertical-align: top; overflow: auto; padding: .2em; }
-#month td .day { width: 7em; height: 6em; overflow: auto; margin-top: 0; }
+#month td { width: 125px; height: auto; vertical-align: top; padding: .2em; }
+#month td .day { width: 7em; min-height: 120px; margin-top: 30px; }
+#month td .day a { text-decoration: none; }
+#month td .day .fc-event .fc-event-inner { margin-bottom: 5px; padding: 10px; background-color: #e5e9ef; font-size: 11px; }
+#month td .day .fc-event .fc-event-inner .subject-box { margin-bottom: 10px; }
 #month td .date { float: right; }
 
 .previous .date, .next .date { color: #b2b2b2; }

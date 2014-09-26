@@ -55,14 +55,7 @@
 		}
 	}
 	
-	.sidebar-block-dl {
-		li {
-			img {
-				margin-right: 5px;
-				margin-left: 37px;
-			}
-		}
-	}
+
 	
 	.panel-body {
 		padding: 0;
@@ -76,9 +69,7 @@
 				div {
 					margin-left: 0;
 				}
-				&.adr {
-					margin-top: 10px;
-				}
+				
 				&.office-hours {
 					// margin-bottom: 15px;
 				}
@@ -143,5 +134,43 @@
 	}
 	
 }
+@media screen and (max-width: $screen-sm-min) { // width < 768
 
+	.panel-body {
+		.portlet-items {
+			li {
+				margin-bottom: 5px;
+			}
+		}
+	}
+	.sidebar .vcard {		
+		text-align: center;
+		div { 			
+			width: 200px;
+			margin-left: auto !important;
+			margin-right: auto !important;
+			.adr {
+				margin-top: 0px;
+			}
+		}
+	}
+	.search-result, .contact-type {
+		.email {		
+			a {
+				padding-top: 5px;
+				padding-left: 20px;
+				width: 100px;
+				height: auto;
+				margin-left: auto;
+				margin-right: auto;
+				background-position: 20px 60%; 
+			}
+		}
+	}
+	.panel {
+		margin-bottom: 5px !important;
+	}
+	
+
+}
 /* /components/blocks/_portlet.scss */
