@@ -55,7 +55,7 @@
 
 .title-box {
 	padding: 25px;
-	border: 1px solid black;
+	background-color: $light_gray;
 }
 @media screen and (max-width: $screen-md-min) {
 	#util-bar-wrap { 

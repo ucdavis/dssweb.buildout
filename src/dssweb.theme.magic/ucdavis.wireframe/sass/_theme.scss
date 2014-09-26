@@ -55,6 +55,7 @@ head{
 .sidebar-right{
 	//width:250px;
 	height:30px;
+	
 }
 
 // apply to elements needing removable float: right. Topbar has a .right class that is too specific to use
@@ -643,14 +644,61 @@ body.contact-type {
 			margin-top: 15px;
 		}
 	}
+	#sidebar-block-dl{
+		#flyer{
+			> img{
+				display: block;
+				margin: 25px auto 10px;
+				:hover{
+					cursor: finger;
+				}
+			}
+		}
+		li{
+			
+			img{
+				margin-right: 5px;
+				margin-left: 37px;
+			}
+		
+		}
+		
+	}
 }
 
 .col-left {
-	border: 1px solid red;
+	margin-top: 45px;
+	text-align: right; 
 }
 .col-right {
-	border: 1px solid blue;
+	margin-top: 40px;
+	
+	strong { 
+		font-weight: bold; 
+	}
+	.search-pdf{
+		text-decoration: none;
+		font-size: 13px;
+		
+		span{
+			margin-left: 10px;
+			font-style: italic;
+			position: relative;
+			top:-3px;
+		}
+	}
+	p{
+		margin-bottom: 0px !important;
+	}	
 }
+.results-summary{
+	margin-right: 30px;
+}
+
+.search-result .content-title{
+	padding-bottom: 10px !important;
+}
+
 /*------ All Media Queries ----------*/
 
 /*----- Mobile breakpoint --------*/
