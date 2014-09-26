@@ -24,10 +24,31 @@ button {
 	@include line_height(24px);
 }
 
+.btn-txt {
+	//left-indent: -10000px;
+	display: none;
+}
+
 .portlet {
 	li, p, h4 {
 		@include font_size(13px);
 		@include line_height(18px);
+	}
+	.portlet-items {
+		li {
+			@include font_size(10px);
+			a {
+				@include font_size(13px);
+				@include line_height(17px);
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+			.event-date {
+				@include font_size(13px);
+			}
+		}
 	}
 }
 
@@ -59,6 +80,10 @@ button {
 			letter-spacing: 0.1em;
 			padding-bottom: 4px;
 		}
+	}
+	li {
+		@include font_size(13px,!important);
+		@include line_height(18px);
 	}
 	.panel-heading {
 		h3.panel-title {

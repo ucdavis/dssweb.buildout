@@ -18,3 +18,20 @@
   @include font_size(16px);
   line-height: em(21px);
 }
+
+@mixin square-bullet-list() {
+	list-style-type: none;
+	li {
+		background-image: url(../images/bullets/black-square.gif);
+		background-repeat: no-repeat;
+		background-position: 0px 5px;
+		padding-left: 14px; 
+		ul {
+			margin-top: 7px;
+			margin-bottom: 0 !important;
+			li {
+				
+			}
+		}
+	}
+}

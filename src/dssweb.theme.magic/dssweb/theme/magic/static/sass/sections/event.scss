@@ -191,7 +191,50 @@ margin-top:0;
 		}
 	}
 }
-
+.widget-fieldset{
+	.color-box {
+				width: 10px;
+				height: 10px;
+				display: inline-block;
+				margin-right: 5px;
+				margin-left: 10px;
+		}
+	#criterion-subject-econometrics{
+		.color-box{
+			background-color: $evergreen;
+		}
+	}
+	#criterion-subject-economic-history{
+		.color-box{
+			background-color: $west_redbud;
+		}
+	}
+	#criterion-subject-energy-environmental-economics{
+		.color-box{
+			background-color: $cal_popp;
+		}
+	}
+	#criterion-subject-international-economics{
+		.color-box{
+			background-color: $gold_lup;
+		}
+	}
+	#criterion-subject-macroeconomics{
+		.color-box{
+			background-color: $sun_grass;
+		}
+	}
+	#criterion-subject-public-finance-labor{
+		.color-box{
+			background-color: $sky_blue;
+		}
+	}
+	#criterion-subject-theory{
+		.color-box{
+			background-color: $wine_grape;
+		}
+	}
+}
 #accordion-e {
 	> div {
 		padding-left: 0;

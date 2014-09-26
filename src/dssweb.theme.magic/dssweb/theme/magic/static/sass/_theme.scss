@@ -7,12 +7,12 @@
 @-o-viewport{width:device-width}
 @viewport{width:device-width}
 
-body:after{ 
-	content:"XS"; 
-	display:none;
+body:after { 
+	content: "XS"; 
+	display: none;
 }
-head{
-	font-family:'XS';
+head {
+	font-family: 'XS';
 }
 
 /* WAI level-1 compliancy - Bypass Blocks 2.4.1 */
@@ -55,6 +55,7 @@ head{
 .sidebar-right{
 	//width:250px;
 	height:30px;
+	
 }
 
 // apply to elements needing removable float: right. Topbar has a .right class that is too specific to use
@@ -80,7 +81,6 @@ head{
 		color: #FFF;
 	}
 }
-/* /formerly reset-all */
 
 .body-img{
 	border:1px solid red;
@@ -89,10 +89,7 @@ head{
 	float:left;
 }
 
-.btn-txt {
-	//left-indent: -10000px;
-	display: none;
-}
+
 .invisible { // TODO: Use bootstrap class .invisible
 	visibility: hidden;
 }
@@ -265,6 +262,7 @@ input{
 			@include font_size(15px);
 		}
 	}
+	
 	.panel-body {
 		h2 {
 			text-transform: uppercase;
@@ -277,25 +275,20 @@ input{
 	}
 
 	ul {
-		list-style-type: none;
-		padding: 0;
-		margin: 0;
-		margin-bottom: 15px;
+		@include square-bullet-list();
+		margin: 15px 0 15px 2px;
 		li {
-			background-image: url(../images/bullets/black-square.gif);
-			background-repeat: no-repeat;
-			background-position: 0px 5px;
-			padding-left: 14px; 
-			ul {
-				margin-top: 7px;
-				margin-bottom: 0 !important;
-				li {
-					
-				}
-			}
+			padding-bottom: 10px;
 		}
 	}
+	.inline-content, form { // remove global left margin on inline bullets
+		ul {
+			margin-left: 0 !important;
+		}
+	}
+	
 }
+
 
 
 .sidebar {
@@ -349,82 +342,24 @@ input{
 .more_text{
 	display:none;	
 }
-.body-list, .sub-list{
-	list-style-type:circle;
-	margin-left:20px;
+
+/*.sub-list{ // TODO: Eval
+	list-style-type: circle;
+	margin-left: 20px;
 	li{
 		padding-bottom:10px;
 	}
-}
+}*/
+
 .download{
 	font-weight:bold;
 }
 #downloads{
 	a{
-		text-decoration:underline;
-		color:$ucd_blue_80;
+		text-decoration: underline;
+		color: $ucd_blue_80;
 	}
 }
-
-/* Contact uses hCard microformat / vCard RFC2426 */
-#sidebar-block-contact {
-	margin-top: 20px;
-	padding-left: 38px;
-	padding-right: 15px;
-	li{
-		text-align: left;
-		@include font_size(13px);
-		letter-spacing: 0.01em;
-		a {
-			text-decoration: none;
-			color:$ucd_blue_80;
-			&:hover {
-				text-decoration: underline;
-			}
-		}
-	}
-	.fn { // full name
-		text-transform:uppercase;
-		color:$ucd_blue_80;
-		font-weight: bold;
-		letter-spacing: 0.1em;
-	}
-	.category { // position
-		font-style: italic;
-		@include font_size(12px);
-		margin-bottom: 5px;
-	}
-	.tel { // phone
-		margin-bottom: 5px;
-	}
-}
-
-#sidebar-block-contact, .vcard {
-	.email {
-		text-transform: uppercase;
-		a {
-			display: block;
-			height: 16px;
-			padding-left: 22px;
-			background: url(../images/icons/email.gif) 0 60% no-repeat;
-			text-decoration: none;
-			&:hover {
-				text-decoration: underline;
-			}
-		}
-	}
-}
-.sidebar-block-items {
-	background: $box_light_gray;	
-	padding-bottom: 10px;
-	text-align: left;
-	width: auto;
-	height: 100%;
-	padding-left: 15px;
-	margin-left: 35px;
-	list-style-type: circle;	
-}
-
 
 .panel-title {
 	a{
@@ -471,6 +406,13 @@ input{
 	width:100px;
 }
 
+#content-main .picture {
+	margin: 25px 0;
+	&.flush-bottom {
+		margin: 0 !important;
+	}
+}
+
 #middle-row {
 	position: relative;
 }
@@ -479,59 +421,7 @@ input{
 		margin-left: 0 !important;
 		margin-right: 0 !important;
 }
-@media screen and (min-width: $screen-sm-min) { // width > 768
-	
-	// pull content left on larger screens so flush left with top-bar
-	#content-row {
-		margin-top: 45px;
-	}
-	body.gen-landing {
-		#content-row {
-			margin-top: 30px; // accomodate for figure caption
-		}
-	}
-	#content-main, #am-content {
-		padding-left: 0 !important;
-		//margin-top: 45px;
-		margin-bottom: 30px;
-		h1, .breadcrumb {
-			//margin-left: 15px;
-		}
-	}
-	body.has-shadow-am {
-		/*#content-row { // Give banner graphic room
-			margin-top: 594px;
-		}*/
-		/*.am-content {
-			margin-top: 60px !important;
-			margin-bottom: 30px;
-		}*/
-	}
-  .masthead,
-  .marketing,
-  #footer {
-    padding-right: 0;
-    padding-left: 0;
-		.foot-wrap {
-			#foot-left {
-				margin-left: 10%;
-			}
-		}
-  }
-	.sidebar{
-		.panel-heading{
-			.panel-title {
-				background-color: $rec_blue;
-				//height: 30px; // need to accommodate multiline headings
-			}
-		}
-	}
-	.sidebar-right{
-		padding-left:0 !important; 
-		padding-right:0 !important;
-		//margin-top: 145px; // ad-hoc ... set position of sidebar in javascript
-	}
-}
+
 
 // Panel resets
 #thumb-section { // Important: Specific content selector since we want to keep our sidebar panel styles
@@ -636,21 +526,39 @@ body.contact-type {
 	}
 }
 
-.portlet {
-	.form-wrap {
-		padding: 25px 15px;
-		input[type="submit"] {
-			margin-top: 15px;
-		}
-	}
-}
-
 .col-left {
-	border: 1px solid red;
+	margin-top: 45px;
+	text-align: right; 
 }
 .col-right {
-	border: 1px solid blue;
+	margin-top: 40px;
+	
+	strong { 
+		font-weight: bold; 
+	}
+	.search-pdf{
+		text-decoration: none;
+		font-size: 13px;
+		
+		span{
+			margin-left: 10px;
+			font-style: italic;
+			position: relative;
+			top:-3px;
+		}
+	}
+	p{
+		margin-bottom: 0px !important;
+	}	
 }
+.results-summary{
+	margin-right: 30px;
+}
+
+.search-result .content-title{
+	padding-bottom: 10px !important;
+}
+
 /*------ All Media Queries ----------*/
 
 /*----- Mobile breakpoint --------*/
@@ -919,6 +827,60 @@ body.contact-type {
 	
 }
 
+@media screen and (min-width: $screen-sm-min) { // width > 768
+	
+	// pull content left on larger screens so flush left with top-bar
+	#content-row {
+		margin-top: 45px;
+	}
+	body.gen-landing {
+		#content-row {
+			margin-top: 30px; // accomodate for figure caption
+		}
+	}
+	#content-main, #am-content {
+		padding-left: 0 !important;
+		//margin-top: 45px;
+		margin-bottom: 30px;
+		h1, .breadcrumb {
+			//margin-left: 15px;
+		}
+	}
+	body.has-shadow-am {
+		/*#content-row { // Give banner graphic room
+			margin-top: 594px;
+		}*/
+		/*.am-content {
+			margin-top: 60px !important;
+			margin-bottom: 30px;
+		}*/
+	}
+  .masthead,
+  .marketing,
+  #footer {
+    padding-right: 0;
+    padding-left: 0;
+		.foot-wrap {
+			#foot-left {
+				margin-left: 10%;
+			}
+		}
+  }
+	.sidebar{
+		.panel-heading{
+			.panel-title {
+				background-color: $rec_blue;
+				//height: 30px; // need to accommodate multiline headings
+			}
+		}
+	}
+	.sidebar-right{
+		padding-left:0 !important; 
+		padding-right:0 !important;
+		//margin-top: 145px; // ad-hoc ... set position of sidebar in javascript
+	}
+}
+
 /*----- Mobile breakpoint -------*/
 @media screen and (max-width: $screen-sm-max) { // width < 991px
 	head { font-family:"S";}
@@ -1053,117 +1015,7 @@ body.contact-type {
 		}	
 	}
 	
-	.portlet {
-		
-		// Single address portlet
-		&.adr-only {
-			.panel-body {
-				padding-top: 10px;
-				.adr {
-					padding-top: 0 !important;
-				}
-			}
-		}
-		// Contacts portlet ...
-		&.contacts {
-			
-			.panel-body {
-				padding-top: 15px;
-				padding-bottom: 20px;
-				.vcard {
-					&.office {
-						padding-bottom: 5px; // relies on h4 margin for spacing
-						h4 {
-							background-color: transparent !important;
-							&.fn { // headings used for individuals
-								text-transform: uppercase;
-								padding-bottom: 0;
-								margin: 0;
-							}
-						}
-						.category {
-							margin-top: 0;
-							margin-bottom: 0;
-							font-style: italic;
-						}
-						.adr {
-							margin-top: 4px;
-						}
-					}
-				}
-			}
-		}
-		
-		.portlet-items {
 
-			li {
-				margin-bottom: 5px;
-				@include font_size(10px);
-				a {
-					@include font_size(13px);
-					@include line_height(17px);
-					
-					text-decoration: none;
-					&:hover {
-						text-decoration: underline;
-					}
-					color: $rec_blue;
-				}
-				.event-date {
-					@include font_size(13px);
-					display: block;
-					padding-top: 4px;
-				}
-			}
-			&.with-bullets {
-				margin-left: 47px;
-				li {
-					list-style: square;
-				}
-			}
-		}
-		
-		.panel-body {
-			padding: 0;
-			.vcard {
-				padding: 0;
-				padding-bottom: 25px;
-				div {
-					@include font_size(12px);
-					margin-left: 35px;
-					margin-right: 15px;
-					padding: 0;
-					div {
-						margin-left: 0;
-					}
-					&.adr {
-						margin-top: 15px;
-					}
-					&.office-hours {
-						// margin-bottom: 15px;
-					}
-				}
-				&.office {
-					h4 {
-						min-height: 28px;
-						background-color: $box_header_blue;
-						padding: 12px 35px;
-						padding-bottom: 10px;
-						letter-spacing: 0.05em;
-						font-weight: bold;
-						
-						a {
-							@include font_size(13px);
-							text-decoration: none;
-							&:hover {
-								text-decoration: underline;
-							}
-						}
-					}
-				}
-			}
-		}	
-	}
 	
 	#content-row {
 		section {
@@ -1196,6 +1048,7 @@ body.contact-type {
 		margin-top: 45px; // for top placement of bio portrait
 		.bio-card {
 			.panel-body {
+
 				.vcard {
 					
 					position: relative;
@@ -1223,7 +1076,7 @@ body.contact-type {
 							@include font_size(12px);
 							@include line_height(14px);
 							font-style: italic;
-							margin-bottom: 5px;
+							margin-bottom: 7px;
 							
 						}
 					}
@@ -1237,6 +1090,7 @@ body.contact-type {
 							border-right: 1px solid #FFF;
 							width: 33.33%;
 							text-align: center;
+							margin-bottom: 0; // override global margins
 							&:last-child {
 								margin-right-weight: 0;
 							}
