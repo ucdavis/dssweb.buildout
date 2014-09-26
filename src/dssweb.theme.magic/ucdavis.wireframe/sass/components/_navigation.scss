@@ -174,6 +174,23 @@
 				height: 80px; // was 100%
 				text-align: center;
 				
+				ul.dropdown > li.has-dropdown {
+					> a {
+						background: url(../images/icons/blue-100-right-arrow.png) 96.5% 50% no-repeat;
+						&.moved {
+							background: url(../images/icons/blue-100-right-arrow-down.png) 96.5% 50% no-repeat;
+						}
+						&:after { // remove CSS drop arrow
+							border-color: none !important;
+							border-style: none !important;
+							border-width: 0 !important;
+						}
+						// remove foundation topbar double-pointer
+						&:after {
+							content: none !important;
+						}
+					}
+				}
 				&#fac-serv-btn {
 					//width: 17%;
 				}
@@ -187,7 +204,7 @@
 					height: 80px;
 					line-height: 80px !important;
 				}
-				a{
+				a {
 					//position:relative;
 					//top:17px;
 					
@@ -217,18 +234,19 @@
 				ul {
 					//top: 100%; // expand height of primary menus: TODO: Do this another way since it kills the menu feature and address next level UL
 					li {
-						background-color:$ucd_blue_100 !important;
+						background-color:$ucd_blue_10 !important;
 						
 						a {
 							/* padding: 6px 0 !important; */
+							color: $ucd_blue_100 !important;
 							@include line_height(24px);
-							&:after{
-								display:block !important;
+							&:after {
+								display: block !important;
 								margin-top: 0;
 								line-height: 0.5 !important;
 							}
 							&:hover {
-								background-color:$ucd_blue_70 !important;
+								background-color: $ucd_blue_20 !important;
 							}
 						}
 						&:last-child {
@@ -314,16 +332,42 @@
 					> li {
 						width: 100% !important;
 						height: 40px;
-						> a {
+						background-color: $ucd_blue_10 !important;
+						> ul.dropdown > li {
+							background-color: $ucd_blue_10 !important;
+						}
+						
+						// Has-dropdown arrow on first menu level on mobile only
+						&.has-dropdown, ul.dropdown > li.has-dropdown {
+							> a {
+								background: url(../images/icons/blue-100-right-arrow.png) 96.5% 25% no-repeat;
+								&.moved {
+									background: url(../images/icons/blue-100-right-arrow-down.png) 96.5% 25% no-repeat;
+								}
+							}
+						}
+						
+						> a, ul.dropdown > li a {
 							margin-top: 0 !important;
 							line-height: 40px !important;
 							padding-top: 0; // TODO: 2014-09-24 RAK: Eval
+							background-color: $ucd_blue_10 !important;
+							color: $ucd_blue_100;
+							&:hover {
+								background-color: $ucd_blue_20 !important; 
+							}
 						}
 					}
+					
 				}
 			}
 		}
 	}
+}
+
+/*----- Tablet breakpoint -------*/
+@media screen and (min-width: $screen-sm-min) { // width > 768px
+
 }
 
 /*----- Tablet breakpoint -------*/
