@@ -3,9 +3,7 @@
 #content-row {
 
 	.portlet {
-	
-		margin-bottom: 20px;
-	
+		margin-bottom: 5px;
 		// Apply this class for standard padding
 		.default-portlet-padding {
 			margin: 25px 35px;
@@ -142,6 +140,16 @@
 }
 @media screen and (max-width: $screen-sm-min) { // width < 768
 
+	#content-row {
+		.portlet {
+			.breadcrumb {
+				p {
+					margin: 0;
+				}
+			}
+		}
+	}
+	
 	.panel-body {
 		.portlet-items {
 			li {
@@ -173,10 +181,19 @@
 			}
 		}
 	}
+
 	.panel {
-		margin-bottom: 5px !important;
+		margin-bottom: 5px;
 	}
-	
 
 }
+
+@media screen and (min-width: $screen-sm-min) { // width > 768
+	#content-row {
+		.portlet {
+			margin-bottom: 20px;
+		}
+	}
+}
+
 /* /components/blocks/_portlet.scss */

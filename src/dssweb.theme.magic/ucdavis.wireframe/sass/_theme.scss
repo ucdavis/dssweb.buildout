@@ -42,17 +42,17 @@ head {
 
 /* formerly reset-all */
 
-.btn-primary{
+.btn-primary {
  margin-top: 15px;   
  color: #fff !important;   
 }
 
-.sidebar-left{
-	.panel{
+.sidebar-left {
+	.panel {
 		//background: $box_light_gray;
 	}
 }
-.sidebar-right{
+.sidebar-right {
 	//width:250px;
 	height:30px;
 	
@@ -62,17 +62,15 @@ head {
 .soft-right {
 	float: right;
 }
-.panel-group{
-	margin-bottom: 0 !important;
+.panel-group {
 	.panel-body {
-		border-top-width: 0 !important;
 		.narrow-col {
 			.content-wrap {
 				padding: 15px;
 			}
 		}
 	}
-	.sidebar{
+	.sidebar {
 		border: none !important;
 	}
 }
@@ -82,7 +80,7 @@ head {
 	}
 }
 
-.body-img{
+.body-img {
 	border:1px solid red;
 	height:120px;
 	width:200px;
@@ -92,12 +90,6 @@ head {
 
 .invisible { // TODO: Use bootstrap class .invisible
 	visibility: hidden;
-}
-.nobr {
-	white-space: nowrap;
-}
-p {
-	margin-bottom: 15px;
 }
 
 button {
@@ -668,6 +660,9 @@ body.contact-type {
 						.vcard {
 							padding: 0;
 							// Note: Change photo dimensions in conjunction with the portlet-item list span padding below
+							div {
+								margin-left: 15px !important;
+							}
 							img.photo {
 								width: 214px; // careful
 								height: 214px; // careful
@@ -677,36 +672,48 @@ body.contact-type {
 								right: -15px;
 								top: 0;
 								padding: 5px;
+								margin: 0;
+								width: 38%;
 								background-color: $rec_blue;
 								li {
+									padding-bottom: 0;
 									background-color: $tab_light_gray;
 									background-image: none ;
-									margin-bottom: 4px;
+									margin-bottom: 4px; // override 10px
 									&:last-child {
 										margin-bottom: 0;
 									}
 									> span {
 										// Note: Change the portlet-item list span padding in conjunction with the bio img.photo above
-										padding: 48px 22px; // careful
+										//padding: 48px 22px; // careful
+										//padding: 0 27px;
+										text-align: left;
+										
 										a {
-											//padding-left: 15px;
-											@include line_height(48px);
+											//height: auto;
+											width: 100% !important;
+											display: inline-block !important;
+											padding: 5px 15px 5px 37px !important;
+											@include line_height(38px,!important);
+											background-position: 20% 50% !important; // override .vcard 'a' bg img position
 											text-decoration: none;
 											&:hover {
 												text-decoration: underline;
 											}
 										}
-										&.email {
-											background: url(../images/icons/email-icon-m.png) 0 50% no-repeat;
+										&.email-bio {
+											@include font_size(13px,!important);
+											letter-spacing: 0.05em;
+											background: url(../images/icons/email-icon-m.png) 20% 50% no-repeat;
 										}
 										&.cv {
-											background: url(../images/icons/pdf-icon-t.png) 0 50% no-repeat;
+											background: url(../images/icons/pdf-icon-t.png) 19% 50% no-repeat; // note: horiz position is different
 										}
 										&.vcard-file {
-											background: url(../images/icons/calendar-icon-t.png) 0 50% no-repeat;
+											background: url(../images/icons/calendar-icon-m.png) 20% 50% no-repeat;
 										}
 										&.office {
-											background: url(../images/icons/office-icon-m.png) 0 50% no-repeat;
+											background: url(../images/icons/office-icon-m.png) 20% 50% no-repeat;
 										}
 									}
 								}
@@ -715,7 +722,7 @@ body.contact-type {
 					}
 				}
 				#summary {
-					margin-bottom: 25px;
+					margin-bottom: 0;
 					#jumplinks {
 						
 					}
@@ -751,6 +758,7 @@ body.contact-type {
 	
 	#content-row {
 		section {
+			margin-bottom: 5px;
 			.course-portlet {
 				padding: 0;
 				.course-info {

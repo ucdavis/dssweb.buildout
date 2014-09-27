@@ -28,6 +28,12 @@ button {
 	//left-indent: -10000px;
 	display: none;
 }
+.nobr {
+	white-space: nowrap;
+}
+p {
+	margin-bottom: 15px;
+}
 
 .portlet {
 	li, p, h4 {
