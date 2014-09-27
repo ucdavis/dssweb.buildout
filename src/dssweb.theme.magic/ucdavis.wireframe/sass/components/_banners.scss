@@ -135,7 +135,7 @@
 				h3 { // Note: These are headlines within the happy boxes
 					
 				}
-				.content {
+				.content-wrap {
 					margin-left: 0;
 					h3:first-child {
 						padding-top: 0 !important;
@@ -200,7 +200,7 @@
 /*----- Tablet breakpoint --------*/
 @media screen and (max-width: $screen-md-min) { // width < 992
 	body.home {
-		#content-main {
+		#content {
 			#top-panel-row {
 				.narrow-col {
 					.bcontroller {

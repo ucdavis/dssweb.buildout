@@ -1,138 +1,144 @@
 /* components/blocks/_portlet.scss */
 
-.portlet {
+#content-row {
+
+	.portlet {
 	
-	margin-bottom: 20px;
+		margin-bottom: 20px;
 	
-	// Apply this class for standard padding
-	.default-portlet-padding {
-		margin: 25px 35px;
-	}
-	
-	p, h4 {
-		margin: 15px 35px 8px 35px;
-	}
-	h4.org, .org p {
-		margin: 0;
-	}
-	
-	.portlet-content {
-		.flyer {
-			width: 178px;
-			height: 230px;
-			display: block;
-			margin: 25px auto;
+		// Apply this class for standard padding
+		.default-portlet-padding {
+			margin: 25px 35px;
 		}
-	}
 	
-	ul.portlet-items {
-		margin: 15px;
-		margin-bottom: 25px;
-		margin-left: 35px;
-		
-		li {
-			a {
-				color: $rec_blue;
-			}
-			margin-bottom: 10px; //20px;
-			.event-date {
+		p, h4 {
+			margin: 15px 35px 8px 35px;
+		}
+		h4.org, .org p {
+			margin: 0;
+		}
+	
+		.portlet-content {
+			.flyer {
+				width: 178px;
+				height: 230px;
 				display: block;
-				padding-top: 4px;
+				margin: 25px auto;
 			}
 		}
-		
-		// portlet-items types & variations
-		&.with-bullets {
-			@include square-bullet-list();
-			margin: 15px 25px 25px 35px;
-		}
-	}
 	
-	.form-wrap {
-		padding: 25px 15px;
-		input[type="submit"] {
-			margin-top: 15px;
+		ul.portlet-items {
+			margin: 15px;
+			margin-bottom: 25px;
+			margin-left: 35px;
+		
+			li {
+				background-image: none;
+				padding-left: 0;
+				a {
+					color: $rec_blue;
+				}
+				margin-bottom: 10px; //20px;
+				.event-date {
+					display: block;
+					padding-top: 4px;
+				}
+			}
+		
+			// portlet-items types & variations
+			&.with-bullets {
+				@include square-bullet-list();
+				margin: 15px 25px 25px 35px;
+			}
 		}
-	}
+	
+		.form-wrap {
+			padding: 25px 15px;
+			input[type="submit"] {
+				margin-top: 15px;
+			}
+		}
 	
 
 	
-	.panel-body {
-		padding: 0;
-		.vcard {
+		.panel-body {
 			padding: 0;
-			div {
-				@include font_size(12px);
-				margin-left: 35px;
-				margin-right: 15px;
+			.vcard {
 				padding: 0;
 				div {
-					margin-left: 0;
-				}
-				
-				&.office-hours {
-					// margin-bottom: 15px;
-				}
-			}
-			
-			// Vcard types 
-			&.office {
-				padding-bottom: 15px; // relies on h4 margin for spacing
-				h4 {
-					min-height: 28px;
-					background-color: $box_header_blue;
-					padding: 12px 35px;
-					padding-bottom: 10px;
-					letter-spacing: 0.05em;
-					font-weight: bold;
-					&.fn { // headings used for individuals
-						text-transform: uppercase;
-						padding-bottom: 0;
-						margin: 0;
+					@include font_size(12px, !important);
+					margin-left: 35px !important;
+					margin-right: 15px !important;
+					padding: 0;
+					div {
+						margin-left: 0;
 					}
-					a {
-						@include font_size(13px);
-						text-decoration: none;
-						&:hover {
-							text-decoration: underline;
+				
+					&.office-hours {
+						// margin-bottom: 15px;
+					}
+				}
+			
+				// Vcard types 
+				&.office {
+					padding-bottom: 15px; // relies on h4 margin for spacing
+					
+					h4 {
+						min-height: 28px;
+						background-color: $box_header_blue;
+						padding: 12px 35px;
+						padding-bottom: 10px;
+						letter-spacing: 0.05em;
+						font-weight: bold;
+						&.fn { // headings used for individuals
+							text-transform: uppercase;
+							padding-bottom: 0;
+							margin: 0;
+						}
+						a {
+							@include font_size(13px);
+							text-decoration: none;
+							&:hover {
+								text-decoration: underline;
+							}
 						}
 					}
-				}
-				.category {
-					margin-top: 0;
-					margin-bottom: 0;
-					font-style: italic;
-				}
-				.adr {
-					//margin-top: 4px;
+					.category {
+						margin-top: 0;
+						margin-bottom: 0;
+						font-style: italic;
+					}
+					.adr {
+						//margin-top: 4px;
+					}
 				}
 			}
 		}
-	}
 	
-	// Portlet types & variations
+		// Portlet types & variations
 	
-	// Using vcard for person, no light blue heading
-	&.contacts {
-		.panel-body {
-			padding-top: 15px;
-			padding-bottom: 20px;
-			h4 {
-				background-color: transparent !important;
-			}
-		}		
-	}
+		// Using vcard for person, no light blue heading
+		&.contacts {
+			.panel-body {
+				padding-top: 15px;
+				padding-bottom: 20px;
+				h4 {
+					background-color: transparent !important;
+				}
+			}		
+		}
 
-	// Single address portlet
-	&.adr-only {
-		.panel-body {
-			padding-top: 10px;
-			.adr {
-				padding-top: 0 !important;
+		// Single address portlet
+		&.adr-only {
+			.panel-body {
+				padding-top: 10px;
+				.adr {
+					padding-top: 0 !important;
+				}
 			}
 		}
-	}
 	
+	}
 }
 @media screen and (max-width: $screen-sm-min) { // width < 768
 

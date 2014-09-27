@@ -324,8 +324,8 @@
     var mqSync = function () {
         // Fix for Opera issue when using font-family to store value
         if (window.opera) {
-					// TODO: Check that content-main is available after changing this from class to id
-           activeMQ = window.getComputedStyle(document.body, ':after').getPropertyValue('content-main');
+					// TODO: Check that content is available after changing this from class to id
+           activeMQ = window.getComputedStyle(document.body, ':after').getPropertyValue('content');
         }
         // For all other modern browsers
         else if (window.getComputedStyle) {
@@ -368,11 +368,11 @@
 		
 		var bendbio = function () {
 			if((activeMQ !== 'L') && (activeMQ !== 'M') && !biocardiced) {
-				$('#content-main').prepend($('.bio-card'));
+				$('#content').prepend($('.bio-card'));
 				//$('.collapsible').addClass('in'); // Expand panel since it's closed in mobile ... no, expands on mobile
 				$('.bio-card .collapsible').addClass('in');
 				// breadcrumb
-				$('.breadcrumb').insertBefore($('#content-main .bio-card h4.fn'));
+				$('.breadcrumb').insertBefore($('#content .bio-card h4.fn'));
 				biocardiced = true;
 			}
 		};
@@ -386,9 +386,9 @@
 
 		var unbendbio = function () {
 			if(biocardiced) {
-				$('.sidebar-right .panel-group').prepend($('#content-main .bio-card'));
+				$('.sidebar-right .panel-group').prepend($('#content .bio-card'));
 				// breadcrumb
-				$('#content-main').prepend($('.breadcrumb'));
+				$('#content').prepend($('.breadcrumb'));
 				
 				biocardiced = false;
 			}
@@ -490,8 +490,8 @@
 				$(".collapsible").css("height", "auto");
 				
 				// TODO: Hmm, is the selector correct? 
-				$("#content-main div").children().removeClass("panel-collapse collapse active");
-				//$("#content-main .panel-heading").hide(); // TODO: remove ...  hidden-lg hidden-md placed directly on panel-heading
+				$("#content div").children().removeClass("panel-collapse collapse active");
+				//$("#content .panel-heading").hide(); // TODO: remove ...  hidden-lg hidden-md placed directly on panel-heading
 				
 				if ($("body.happy-box").length !== 0) {
 					// TODO: Testing ourpeople happybox

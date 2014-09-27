@@ -263,7 +263,7 @@ margin-top:0;
 
 /*----- Tablet breakpoint -------*/
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
-	#content-main {
+	#content {
 		padding-right: 45px;
 	}
 }

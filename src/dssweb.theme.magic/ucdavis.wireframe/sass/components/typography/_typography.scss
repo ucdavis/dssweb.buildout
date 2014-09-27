@@ -106,7 +106,7 @@ figure {
 		text-transform: uppercase;
 	}
 }
-#content-main {
+#content {
 	form {
 		input, select, textarea {
 			@include font_size(13px);
@@ -159,7 +159,7 @@ figure {
 	margin-top: 0 !important;
 }
 
-#content-main, #am-content {
+#content, #am-content {
 	h2{
 		@include font_size(24px, !important);
 		font-weight:normal;
@@ -216,9 +216,9 @@ body.bio {
 		margin-bottom: 45px;
 	}
 }
-#content-main, #am-content {
-	p, li, ol, div, span {
-		@include line_height(24px,!important);
+#content, #am-content {
+	p, li, ol, div/*, span*/ { // TODO: Eval, broke T6 thumb text alignment after adding #content
+		@include line_height(24px,!important); 
 	}
 	p {
 		@include font_size(15px);
@@ -274,7 +274,7 @@ body.bio {
 		}
 	}
 	
-	#content-main, #am-content {
+	#content, #am-content {
 		.panel-group {
 			.row.panel {
 				.panel-title {
@@ -347,7 +347,7 @@ body.res-lab {
 	}
 }
 
-#content-main, #am-content, #cm-content {
+#content, #am-content, #cm-content {
 	ul {
 		li {
 			@include font_size(15px,!important);
@@ -359,7 +359,7 @@ body.res-lab {
 /*----- tablet breakpoint -------*/
 @media screen and (min-width: $screen-sm-min) {	// width > 768
 	.top-panel {
-		#content-main, #am-content, #cm-content {
+		#content, #am-content, #cm-content {
 			.narrow-col {
 				color: #FFF;
 				h2 {
@@ -412,7 +412,7 @@ body.res-lab {
 	body.home {
 		// Text below banner in thumbnail / tab boxes
 		
-		#content-main, #am-content {
+		#content, #am-content {
 			.narrow-col {
 				h2 {
 					@include font_size(17px);
@@ -437,7 +437,7 @@ body.res-lab {
 		}
 	}
 	
-	#content-main, #am-content {
+	#content, #am-content {
 		.content-title {
 			@include font_size(26px);
 			@include line_height(28px);
@@ -483,7 +483,7 @@ body.res-lab {
 @media screen and (min-width: $screen-md-min) { // width > 992
 	body.home {
 		// Button text at bottom of happy boxes
-		#content-main, #am-content {
+		#content, #am-content {
 			#top-panel-row {
 				.narrow-col {
 					.bcontroller {
@@ -502,7 +502,7 @@ body.res-lab {
 	body.home {
 		// Text below banner in thumbnail / tab boxes
 		
-		#content-main, #am-content {
+		#content, #am-content {
 			.narrow-col {
 				a, p, li {
 					@include font_size(12px);

@@ -61,10 +61,11 @@
 	            <a href="give">Give</a>
 	          </li>
 	          <li class="hidden-xs" id="uti-search">
-	            <form action=".">
+	            <form id="livesearch0" action=".">
 								<label for="searchi" class="sr-only">Search</label>
 	              <input type="search" name="searchi" id="searchi" placeholder="Search" />
 								<input type="submit" name="submit" value="GO" />
+								<div class="LSResult" id="LSResult"><div class="LSShadow" id="LSShadow"></div></div>
 	            </form>
 	          </li>
 	          <li class="hidden-xs" id="uti-share">
@@ -208,7 +209,7 @@
 	    <!-- #BeginEditable "content" -->
 
 	    <div class="landscape">
-	      <div id="content-main">
+	      <div id="content">
 				
 				
 	        <div class="panel-group" id="content-accordion">
@@ -228,7 +229,7 @@
 								<div class="panel-body">
 									<div class="narrow-col">
 										<h2>News</h2>
-										<div class="content">
+										<div class="content-wrap">
 		              		<h3><a href="#">Meet the Experts: CMB research leads to new FDA-approved treatment for severe ...</a></h3>
 									 </div>
 	              		<div class="bcontroller">
@@ -254,7 +255,7 @@
 	              <div class="panel-body">
 									<div class="narrow-col">
 											<h2>About</h2>
-											<div class="content">
+											<div class="content-wrap">
 											<p>
 												Psychology &ndash; a multifaceted program that looks at humans, animals and computer models, from neurons to relationships to cultures, and examples the scientific bases of behavior, thought and emotions.
 											</p>
@@ -294,7 +295,7 @@
 	              <div class="panel-body">
 									<div class="narrow-col">
 										<h2>Events</h2>
-										<div class="content">
+										<div class="content-wrap">
 		                	<h3><a href="#">Biological Psychology Brown Bag Series</a></h3>
 		                	<h3><a href="#">Wed 06-11-2014</a></h3>
 										</div>

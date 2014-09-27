@@ -67,7 +67,7 @@ head {
 	.panel-body {
 		border-top-width: 0 !important;
 		.narrow-col {
-			.content {
+			.content-wrap {
 				padding: 15px;
 			}
 		}
@@ -241,7 +241,7 @@ input{
 #content-row {
 	margin-bottom: 45px;
 }
-#content-main, #am-content, #cm-content {
+#content, #am-content, #cm-content {
 
 	.breadcrumb {
 		background: none;
@@ -406,7 +406,7 @@ input{
 	width:100px;
 }
 
-#content-main .picture {
+#content-core .picture {
 	margin: 25px 0;
 	&.flush-bottom {
 		margin: 0 !important;
@@ -518,7 +518,7 @@ input{
 }
 
 body.contact-type {
-	#content-main {
+	#content {
 		.form-wrap {
 			position: relative;
 			background-color: $box_light_gray;
@@ -574,7 +574,7 @@ body.contact-type {
 	.row#content-row {
 		margin-left: 0 !important;
 		margin-right: 0 !important;
-		#content-main, #am-content {
+		#content, #am-content {
 			margin-top: 10px;
 			h1, .breadcrumb {
 				//margin-left: 15px;
@@ -582,7 +582,7 @@ body.contact-type {
 		}
 	}
 
-	#content-main, #am-content, #cm-content {
+	#content, #am-content, #cm-content {
 		margin-bottom: 15px;
 	}
 	
@@ -640,7 +640,7 @@ body.contact-type {
 	body.bio {
 		#content-row {
 			margin-top: 0;
-			#content-main, #am-content {
+			#content, #am-content {
 				margin-top: 0;
 				.bio-card {
 					margin-bottom: 8px;
@@ -840,7 +840,7 @@ body.contact-type {
 			margin-top: 30px; // accomodate for figure caption
 		}
 	}
-	#content-main, #am-content {
+	#content, #am-content {
 		padding-left: 0 !important;
 		//margin-top: 45px;
 		margin-bottom: 30px;
@@ -921,7 +921,7 @@ body.contact-type {
 		}
 	}
 	
-	#content-main, #am-content {
+	#content, #am-content {
 	  min-width:192px;
 		clear:both;
 	}
@@ -1127,7 +1127,7 @@ body.contact-type {
 		}
 	}
 	
-	#content-main, #am-content {
+	#content, #am-content {
 		> div, > h1 {
 	  	//margin-left: 90px; // TODO: remove since now using .row 15+90=105 applied to content-row
 		}
@@ -1179,7 +1179,7 @@ body.contact-type {
 	body.contact-type {
 		#content-row {
 			margin-top: 15px; // needed to adjust for lack of breadcrumb and top js placement of sidebars
-			#content-main {
+			#content {
 				.form-wrap {
 					margin-right: 30px;
 					padding: 30px 60px;
@@ -1202,7 +1202,7 @@ body.contact-type {
 		padding-left: 0; // 90 + 15 px
 		padding-right: 0;
 	}
-	#content-main, #am-content {
+	#content, #am-content {
 		> div, > h1 {
 	  	//margin-left: 0;
 		}
@@ -1272,7 +1272,7 @@ body.contact-type {
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
 	head { font-family:"M";}
 	body:after{content:"M";}
-	#content-main, #am-content {
+	#content, #am-content {
 		//padding-right: 0 !important;
 	}
 	body.bio .sidebar {
@@ -1336,7 +1336,7 @@ body.contact-type {
 		}
 	}
 	
-	#content-main, #am-content {
+	#content, #am-content {
 		h1, .breadcrumb {
 			//margin-left: 15px;
 		}

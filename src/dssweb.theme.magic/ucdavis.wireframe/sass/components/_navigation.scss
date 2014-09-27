@@ -64,20 +64,24 @@
 	}
 	#uti-search{
 		width: 28.36%;//207px
-		input {
-			width: 75%;
-		}
-		input[type="submit"] {
-			height: auto;
-			width: 20%;
-			padding: 0;
-			@include line_height(26px);
-			text-align: center;
-			background-color: $ucd_bright_gold_70;
-			border: 1px solid $ucd_bright_gold_40;
-			&:hover {
-				background-color: $ucd_bright_gold;
-				cursor: pointer;
+		
+		form {
+			position: relative;
+			input {
+				width: 75%;
+			}
+			input[type="submit"] {
+				height: auto;
+				width: 20%;
+				padding: 0;
+				@include line_height(26px);
+				text-align: center;
+				background-color: $ucd_bright_gold_70;
+				border: 1px solid $ucd_bright_gold_40;
+				&:hover {
+					background-color: $ucd_bright_gold;
+					cursor: pointer;
+				}
 			}
 		}
 	}
