@@ -63,11 +63,14 @@
 			padding: 0;
 			.vcard {
 				padding: 0;
-				div {
-					@include font_size(12px, !important);
+				> div {
 					margin-left: 35px !important;
 					margin-right: 15px !important;
 					padding: 0;
+				}
+				div {
+					@include font_size(12px, !important);
+					
 					div {
 						margin-left: 0;
 					}

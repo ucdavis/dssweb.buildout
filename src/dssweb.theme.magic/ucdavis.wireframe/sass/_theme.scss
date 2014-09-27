@@ -627,112 +627,6 @@ body.contact-type {
 		}
 	}
 
-	// Bio card
-	// Note: Apply negative margins to top items in order to retain padding on remaining text in mobile view
-	body.bio {
-		#content-row {
-			margin-top: 0;
-			#content, #am-content {
-				margin-top: 0;
-				.bio-card {
-					margin-bottom: 8px;
-					.panel-heading {
-						padding: 0 !important;
-						display: none; // remove heading
-					}
-
-					margin-left: -15px !important;
-					margin-right: -15px !important;
-					.breadcrumb, h4 {
-						margin-left: 15px; // add back margin removed to make photo/buttons flush left and right
-					}
-					h4 {
-						padding-bottom: 0;
-					}
-					.title.org {
-						p {
-							font-style: italic;
-							margin: 0;
-						}
-					}
-					.portlet-content {
-						padding: 0 !important;
-						.vcard {
-							padding: 0;
-							// Note: Change photo dimensions in conjunction with the portlet-item list span padding below
-							div {
-								margin-left: 15px !important;
-							}
-							img.photo {
-								width: 214px; // careful
-								height: 214px; // careful
-							}
-							.portlet-items {
-								position: absolute;
-								right: -15px;
-								top: 0;
-								padding: 5px;
-								margin: 0;
-								width: 38%;
-								background-color: $rec_blue;
-								li {
-									padding-bottom: 0;
-									background-color: $tab_light_gray;
-									background-image: none ;
-									margin-bottom: 4px; // override 10px
-									&:last-child {
-										margin-bottom: 0;
-									}
-									> span {
-										// Note: Change the portlet-item list span padding in conjunction with the bio img.photo above
-										//padding: 48px 22px; // careful
-										//padding: 0 27px;
-										text-align: left;
-										
-										a {
-											//height: auto;
-											width: 100% !important;
-											display: inline-block !important;
-											padding: 5px 15px 5px 37px !important;
-											@include line_height(38px,!important);
-											background-position: 20% 50% !important; // override .vcard 'a' bg img position
-											text-decoration: none;
-											&:hover {
-												text-decoration: underline;
-											}
-										}
-										&.email-bio {
-											@include font_size(13px,!important);
-											letter-spacing: 0.05em;
-											background: url(../images/icons/email-icon-m.png) 20% 50% no-repeat;
-										}
-										&.cv {
-											background: url(../images/icons/pdf-icon-t.png) 19% 50% no-repeat; // note: horiz position is different
-										}
-										&.vcard-file {
-											background: url(../images/icons/calendar-icon-m.png) 20% 50% no-repeat;
-										}
-										&.office {
-											background: url(../images/icons/office-icon-m.png) 20% 50% no-repeat;
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-				#summary {
-					margin-bottom: 0;
-					#jumplinks {
-						
-					}
-					#education {
-						width: 100% !important;
-					}
-				}
-			}
-		}
-	}
 	.sidebar {
 		.panel-heading {
 			.panel-title {
@@ -891,25 +785,26 @@ body.contact-type {
 	}
 }
 
-/*----- Mobile breakpoint -------*/
+/*----- Mobile breakpoint -------*/ // TODO: Check error on _bootstrap_overrides vis-a-via this breakpoint max
 @media screen and (max-width: $screen-sm-max) { // width < 991px
 	head { font-family:"S";}
 	body:after{content:"S";}
  	
-  #sidebar-bio-right{
+  /*TODO: Eval and EOL
+	#sidebar-bio-right{
 		float:left;	  		
 		margin-left:0;
 		margin-top:10px;
 		clear:both;
-  }
-	.sidebar{	
+  }*/
+	
+	.sidebar {	
 		background:transparent;
 	}
-	.sidebar-right{	
+	.sidebar-right {	
 		margin-top:100px;
 		//clear:both;
 		//float:left !important;
-		
 	}
 	.util-bar{ // at this breakpoint, yellow bar containing only the UC Davis logo
 		margin: 0;
@@ -1049,87 +944,6 @@ body.contact-type {
 					height: 40px;
 					width: 120px;
 					background-color: $ucd_bright_gold;
-				}
-			}
-		}
-	}
-	
-	body.bio .sidebar.sidebar-right {
-		margin-top: 45px; // for top placement of bio portrait
-		.bio-card {
-			.panel-body {
-
-				.vcard {				
-					position: relative;
-					img.photo {
-						margin-top: 6px;
-						margin-bottom: 25px;
-						margin-left: auto;
-						margin-right: auto;
-						display: block;
-					}
-					h4 {
-						@include font_size(13px);
-						text-transform: uppercase;
-						letter-spacing: 0.05em;
-						font-weight: bold;
-						margin-left: 35px;
-					}
-					.title.org {
-						margin-left: 35px;
-						margin-right: 35px;
-						padding-left: 0;
-						margin-top: 15px;
-						margin-bottom: 25px;
-						p {
-							@include font_size(12px);
-							@include line_height(14px);
-							font-style: italic;
-							margin-bottom: 7px;
-							
-						}
-					}
-					ul.portlet-items {
-						margin: 0;
-						border-top: 1px solid #FFF;
-						height: 40px;
-						li {
-							float: left;
-							height: 40px;
-							border-right: 1px solid #FFF;
-							width: 33.33%;
-							text-align: center;
-							margin-bottom: 0; // override global margins
-							&:last-child {
-								margin-right-weight: 0;
-							}
-							a {
-								display: inline-block;
-								margin-left: auto;
-								margin-right: auto;
-								height: 40px;
-								@include font_size(12px);
-								@include line_height(40px);
-								letter-spacing: 0.05em;
-								padding-left: 35px;
-								text-decoration: none;
-								&:hover {
-									text-decoration: underline;
-								}
-								background-position: 20% 50%;
-								background-repeat: no-repeat !important;
-							}
-							.email a {
-								background-image: url(../images/icons/email.gif);
-							}
-							.cv a {
-								background-image: url(../images/icons/filetype/pdf.gif);
-							}
-							.vcard-file a {
-								background-image: url(../images/icons/calendar-icon-t.png);
-							}
-						}
-					}
 				}
 			}
 		}
@@ -1283,11 +1097,6 @@ body.contact-type {
 	#content, #am-content {
 		//padding-right: 0 !important;
 	}
-	body.bio .sidebar {
-		> div {
-			//margin-left: 0 !important; TODO: 
-		}
-	}
 	
 	// Panel resets
 	#thumb-section { // Important: Specific content selector since we want to keep our sidebar panel styles
@@ -1333,15 +1142,6 @@ body.contact-type {
 	.no-gutter-lg {
 		padding-left: 0 !important;
 		padding-right: 0 !important;
-	}
-	
-	body.bio .sidebar.sidebar-right {
-		margin-top: 45px; // for top placement of bio portrait
-		.bio-card {
-			img.photo {
-				margin-top: 15px;
-			}
-		}
 	}
 	
 	#content, #am-content {
