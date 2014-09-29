@@ -11,6 +11,7 @@
 	var vcardiced = false;
 	var biocardiced = false;
 	var processed = false;
+	var hashTagActive = "";
 	
 	function splitPath(path) {
 	  var dirPart, filePart;
@@ -37,6 +38,7 @@
 		
 		// Convenience tab buttons for home
 		// This makes the whole tab clickable and not just the text
+		
 		if($('body.home').length !== 0) {
       $('.tab').each(function () {
 				if($(this).find('a')) {
@@ -46,7 +48,29 @@
 					});
 				}
       });
-		}
+		} 
+		
+		// TODO: Consider doing this with LiveSearch list items; feels much more responsive if entire LI is hot.
+		// Add / remove .LSRow for LiveSearch LI hotlinking. Would need this as a function and without body.home specificity for livesearch updates.
+		
+		$('#searchi').focus(function() {
+			$('#LSResult').show();
+		});
+		$('#searchi').blur(function() {
+			$('#LSResult').hide();
+		});
+		
+		
+		var hotlinkLiveSearch = function () {
+      $('.LSRow').each(function () {
+				if($(this).find('a')) {
+					var url = $(this).find('a').attr('href');
+					$(this).click(function() {
+						window.open(url);
+					});
+				}
+      });
+		};
 		
 		// Misc. Fixes
 		var apply_fixes = function () {
@@ -395,7 +419,8 @@
 		};
 		
 		var expand = function () {
-			
+			var tabletBannerHeight = 160;
+			var happyboxBlockHeight = 45;
       // Conditions for each breakpoint
       if (activeMQ !== currentMQ) {
 
@@ -412,7 +437,18 @@
 					// If the detected screen size is Mobile 450px-599px
           if (activeMQ === 'S') {
               currentMQ = activeMQ;
-							$('body.home #top-panel-row').height("auto");
+							
+							// Note: Rework to accommodate sizing in tablet and mobile
+							//$('body.home #top-panel-row').height("auto");
+							if($("body.home").length === 0) {
+								$('.wallpaper-image').width($(window).width());
+								$('.wallpaper-image').height(tabletBannerHeight);
+								$('.wallpaper-image').css('left',0);
+								$('#content').css('margin-top',(tabletBannerHeight-happyboxBlockHeight)+'px');
+							}
+							
+							
+							
 							utilStack();
 						 
 							collapsedView();					
@@ -551,7 +587,35 @@
 				// Prevent the panel-title headers from redirecting the page and shows .panel-body content
         $(".panel-title a").click(function (e) {
             e.preventDefault();
-            $($(this).data("target")).show();			
+						
+						collapseAllPanels('.panel-group');
+						
+            $($(this).data("target")).show();
+						var sel = '.in'+$(this).attr('data-target');
+						
+						/* Just jump to anchor ...
+						if($(sel).length === 0) {
+							location.href = $(this).attr('data-target');		
+						}*/
+						
+						// Smooth scroll to offset of anchor ...
+						var anchor = $(this).attr('data-target');
+						if(hashTagActive != anchor) { // panel is open and no active hash
+		          //calculate destination place
+		          var dest = 0;
+		          if ($(anchor).offset().top > $(document).height() - $(window).height()) {
+		              dest = $(document).height() - $(window).height();
+		          } else {
+		              dest = $(anchor).offset().top;
+		          }
+							dest -= 35; // offset to scroll to panel-heading
+		          //go to destination
+		          $('html,body').animate({
+		              scrollTop: dest
+		          }, 500, 'swing');
+		          hashTagActive = anchor;
+		        }
+						
 				});	
        
 			 // Work around to allow the menu dropdown links to work
@@ -561,6 +625,12 @@
 				//});
 				
     }
+		
+		function collapseAllPanels(parentTag) {
+			//$(".panel-group .collapsible").removeClass("in"); // close panels
+			$('.in').collapse('hide');
+		}
+		
 		/* footer utility menu stack */
 		function utilStack(){
 			// Stack the menu vertically

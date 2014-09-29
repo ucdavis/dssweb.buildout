@@ -15,7 +15,11 @@
 		h4.org, .org p {
 			margin: 0;
 		}
-	
+		
+		h4.org {
+			margin-bottom: 15px;
+		}
+		
 		.portlet-content {
 			.flyer {
 				width: 178px;
@@ -154,16 +158,21 @@
 	}
 	
 	.panel-body {
+		padding-top: 20px;
 		.portlet-items {
 			li {
 				margin-bottom: 5px;
 			}
 		}
 	}
+	
 	.sidebar .vcard {		
 		text-align: center;
+		&.office {
+			margin-top: -15px;
+		}
 		div { 			
-			width: 200px;
+			//width: 200px;
 			margin-left: auto !important;
 			margin-right: auto !important;
 			.adr {

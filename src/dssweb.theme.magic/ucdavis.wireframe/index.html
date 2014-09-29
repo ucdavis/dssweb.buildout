@@ -65,7 +65,34 @@
 								<label for="searchi" class="sr-only">Search</label>
 	              <input type="search" name="searchi" id="searchi" placeholder="Search" />
 								<input type="submit" name="submit" value="GO" />
-								<div class="LSResult" id="LSResult"><div class="LSShadow" id="LSShadow"></div></div>
+								<div id="LSResult" class="LSResult">
+									<div id="LSShadow" class="LSShadow">
+										<fieldset class="livesearchContainer">
+											<legend id="livesearchLegend">LiveSearch Suggested Pages</legend>
+											<div class="LSIEFix">
+												<ul class="LSTable">
+													<li class="LSRow">
+														<a class="contenttype-news-item" title="CMB research leads to new FDA-approved treatment for severe depression" href="http://mindbrain.ucdavis.edu/people/sjluck/cmb-news-and-information/cmb-research-leads-to-new-fda-approved-treatment-for-severe-depression?searchterm=brain">CMB research leads to new FDA-approved treatment f...</a>
+														<div class="LSDescr"></div>
+													</li>
+													<li class="LSRow">
+														<a class="contenttype-link" title="BrainsRule" href="http://mindbrain.ucdavis.edu/about/neuroscience-for-kids/brainsrule?searchterm=brain">BrainsRule</a>
+														<div class="LSDescr">
+															A site featuring interactive content to teach kids about the brain
+														</div>
+													</li>
+													<li class="LSRow">
+														<img width="16" height="16" alt="File" src="http://mindbrain.ucdavis.edu/pdf.png"> <a class="contenttype-file" title="NPB 165 Course Topics" href="http://mindbrain.ucdavis.edu/people/kcbacker/npb165topics.pdf/view?searchterm=brain">NPB 165 Course Topics</a>
+														<div class="LSDescr"></div>
+													</li>
+													<li class="LSRow">
+														<a class="showalllink" href="@@search?SearchableText=brain%2A&amp;path=/mindbrain">Show all items</a>
+													</li>
+												</ul>
+											</div>
+										</fieldset>
+									</div><!-- /#LSShadow -->
+								</div><!-- /#LSResult -->
 	            </form>
 	          </li>
 	          <li class="hidden-xs" id="uti-share">
@@ -529,7 +556,6 @@
 							<span class="email"><a href="mailto:">Email</a></span> | <span class="tel">(530) 752-1880</span>
 						</p>
 					</div>
-					<div id="footer-nav">
 					<ul class="footer-nav hidden-xs" id="foot-left">
 						<li><a href="t7_contact.html">Contact</a></li>
 						<li><a href="t8_students.html">Students</a></li>
@@ -548,8 +574,7 @@
 						<li><a href="#">Student Clubs</a></li>
 						<li><a href="#">Login</a></li>
 					</ul>
-				   </div>
-	
+		
 					<p id="copyright">
 						Copyright &copy; 2014 &nbsp;All Rights Reserved
 					</p>

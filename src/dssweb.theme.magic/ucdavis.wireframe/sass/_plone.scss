@@ -78,7 +78,8 @@ nav.top-bar {
   }
 /* override of foundation */  
 .top-bar-section .has-dropdown > a {
-  padding-right: 10px !important;  }
+	// 2014-09-27 RAK: Simplified main menu item padding by removing from Foundation topbar.css and using single value in _navigation.scss without !important so may be overwritten if necessary */
+  /*padding-right: 10px !important;*/ }
  
   /*----------Dropdown Menu----------------*/
 /*---------- BASIC STYLE one level ----------*/
