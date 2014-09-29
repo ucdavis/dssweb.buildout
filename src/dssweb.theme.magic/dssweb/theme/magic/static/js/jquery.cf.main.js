@@ -11,6 +11,7 @@
 	var vcardiced = false;
 	var biocardiced = false;
 	var processed = false;
+	var hashTagActive = "";
 	
 	function splitPath(path) {
 	  var dirPart, filePart;
@@ -37,6 +38,7 @@
 		
 		// Convenience tab buttons for home
 		// This makes the whole tab clickable and not just the text
+		
 		if($('body.home').length !== 0) {
       $('.tab').each(function () {
 				if($(this).find('a')) {
@@ -46,7 +48,29 @@
 					});
 				}
       });
-		}
+		} 
+		
+		// TODO: Consider doing this with LiveSearch list items; feels much more responsive if entire LI is hot.
+		// Add / remove .LSRow for LiveSearch LI hotlinking. Would need this as a function and without body.home specificity for livesearch updates.
+		
+		$('#searchi').focus(function() {
+			$('#LSResult').show();
+		});
+		$('#searchi').blur(function() {
+			$('#LSResult').hide();
+		});
+		
+		
+		var hotlinkLiveSearch = function () {
+      $('.LSRow').each(function () {
+				if($(this).find('a')) {
+					var url = $(this).find('a').attr('href');
+					$(this).click(function() {
+						window.open(url);
+					});
+				}
+      });
+		};
 		
 		// Misc. Fixes
 		var apply_fixes = function () {
@@ -324,8 +348,8 @@
     var mqSync = function () {
         // Fix for Opera issue when using font-family to store value
         if (window.opera) {
-					// TODO: Check that content-main is available after changing this from class to id
-           activeMQ = window.getComputedStyle(document.body, ':after').getPropertyValue('content-main');
+					// TODO: Check that content is available after changing this from class to id
+           activeMQ = window.getComputedStyle(document.body, ':after').getPropertyValue('content');
         }
         // For all other modern browsers
         else if (window.getComputedStyle) {
@@ -368,11 +392,11 @@
 		
 		var bendbio = function () {
 			if((activeMQ !== 'L') && (activeMQ !== 'M') && !biocardiced) {
-				$('#content-main').prepend($('.bio-card'));
+				$('#content').prepend($('.bio-card'));
 				//$('.collapsible').addClass('in'); // Expand panel since it's closed in mobile ... no, expands on mobile
 				$('.bio-card .collapsible').addClass('in');
 				// breadcrumb
-				$('.breadcrumb').insertBefore($('#content-main .bio-card h4.fn'));
+				$('.breadcrumb').insertBefore($('#content .bio-card h4.fn'));
 				biocardiced = true;
 			}
 		};
@@ -386,16 +410,17 @@
 
 		var unbendbio = function () {
 			if(biocardiced) {
-				$('.sidebar-right .panel-group').prepend($('#content-main .bio-card'));
+				$('.sidebar-right .panel-group').prepend($('#content .bio-card'));
 				// breadcrumb
-				$('#content-main').prepend($('.breadcrumb'));
+				$('#content').prepend($('.breadcrumb'));
 				
 				biocardiced = false;
 			}
 		};
 		
 		var expand = function () {
-			
+			var tabletBannerHeight = 160;
+			var happyboxBlockHeight = 45;
       // Conditions for each breakpoint
       if (activeMQ !== currentMQ) {
 
@@ -412,7 +437,18 @@
 					// If the detected screen size is Mobile 450px-599px
           if (activeMQ === 'S') {
               currentMQ = activeMQ;
-							$('body.home #top-panel-row').height("auto");
+							
+							// Note: Rework to accommodate sizing in tablet and mobile
+							//$('body.home #top-panel-row').height("auto");
+							if($("body.home").length === 0) {
+								$('.wallpaper-image').width($(window).width());
+								$('.wallpaper-image').height(tabletBannerHeight);
+								$('.wallpaper-image').css('left',0);
+								$('#content').css('margin-top',(tabletBannerHeight-happyboxBlockHeight)+'px');
+							}
+							
+							
+							
 							utilStack();
 						 
 							collapsedView();					
@@ -490,8 +526,8 @@
 				$(".collapsible").css("height", "auto");
 				
 				// TODO: Hmm, is the selector correct? 
-				$("#content-main div").children().removeClass("panel-collapse collapse active");
-				//$("#content-main .panel-heading").hide(); // TODO: remove ...  hidden-lg hidden-md placed directly on panel-heading
+				$("#content div").children().removeClass("panel-collapse collapse active");
+				//$("#content .panel-heading").hide(); // TODO: remove ...  hidden-lg hidden-md placed directly on panel-heading
 				
 				if ($("body.happy-box").length !== 0) {
 					// TODO: Testing ourpeople happybox
@@ -551,7 +587,35 @@
 				// Prevent the panel-title headers from redirecting the page and shows .panel-body content
         $(".panel-title a").click(function (e) {
             e.preventDefault();
-            $($(this).data("target")).show();			
+						
+						collapseAllPanels('.panel-group');
+						
+            $($(this).data("target")).show();
+						var sel = '.in'+$(this).attr('data-target');
+						
+						/* Just jump to anchor ...
+						if($(sel).length === 0) {
+							location.href = $(this).attr('data-target');		
+						}*/
+						
+						// Smooth scroll to offset of anchor ...
+						var anchor = $(this).attr('data-target');
+						if(hashTagActive != anchor) { // panel is open and no active hash
+		          //calculate destination place
+		          var dest = 0;
+		          if ($(anchor).offset().top > $(document).height() - $(window).height()) {
+		              dest = $(document).height() - $(window).height();
+		          } else {
+		              dest = $(anchor).offset().top;
+		          }
+							dest -= 35; // offset to scroll to panel-heading
+		          //go to destination
+		          $('html,body').animate({
+		              scrollTop: dest
+		          }, 500, 'swing');
+		          hashTagActive = anchor;
+		        }
+						
 				});	
        
 			 // Work around to allow the menu dropdown links to work
@@ -561,6 +625,12 @@
 				//});
 				
     }
+		
+		function collapseAllPanels(parentTag) {
+			//$(".panel-group .collapsible").removeClass("in"); // close panels
+			$('.in').collapse('hide');
+		}
+		
 		/* footer utility menu stack */
 		function utilStack(){
 			// Stack the menu vertically
@@ -606,6 +676,8 @@
 				if($('.breadcrumb').length !== 0) {
 					ctb += $('.breadcrumb').height();
 				}
+				
+				
 				$('.sidebar-right').css('margin-top',ctb);
 			}
 			

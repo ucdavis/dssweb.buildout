@@ -1,4 +1,3 @@
-/* jquery.cf.happybox.scss */
 /* Example use case:
  %abstract-class { font-family: Verdana; }  #my-div { @extend %abstract-class; }  #my-other-div { @extend %abstract-class; }
  ... compiles as: #my-div, #my-other-div { font-family: Verdana; }
@@ -129,8 +128,49 @@ body.res-lab #content-row div > h2 { font-size: 24px !important; font-size: 1.5r
 @media screen and (min-width: 992px) { body.home #content #top-panel-row .narrow-col .bcontroller .btn-primary, body.home #am-content #top-panel-row .narrow-col .bcontroller .btn-primary { font-size: 14px; font-size: 0.875rem; line-height: 30px !important; line-height: 1.875rem !important; } }
 @media screen and (max-width: 1310px) { body.home #content .narrow-col a, body.home #content .narrow-col p, body.home #content .narrow-col li, body.home #am-content .narrow-col a, body.home #am-content .narrow-col p, body.home #am-content .narrow-col li { font-size: 12px; font-size: 0.75rem; line-height: 15px !important; line-height: 0.9375rem !important; } }
 /* /_typography.scss */
-/* UCD Identity - Colors (http://identitystandards.ucdavis.edu/graphic-standards/colors.html) */
-/* Other Custom colors */
-@media screen and (min-width: 768px) { .cf-happybox-processed { overflow: hidden; }
-  .top-panel .action-element .narrow-col { background: rgba(0, 40, 85, 0.8); } }
-/* /jquery.cf.happybox.scss */
+/*----- Mobile breakpoint --------*/
+@media screen and (max-width: 768px) { .panel .panel-body { margin-top: 0 !important; }
+  #content-row #content, #content-row #am-content { margin-top: 0 !important; }
+  #content-row #content .bio-card, #content-row #am-content .bio-card { margin-bottom: 8px; margin-left: -15px !important; margin-right: -15px !important; }
+  #content-row #content .bio-card .panel-heading, #content-row #am-content .bio-card .panel-heading { padding: 0 !important; display: none; }
+  #content-row #content .bio-card .breadcrumb, #content-row #content .bio-card h4, #content-row #am-content .bio-card .breadcrumb, #content-row #am-content .bio-card h4 { margin-left: 15px; }
+  #content-row #content .bio-card h4, #content-row #am-content .bio-card h4 { padding-bottom: 0; }
+  #content-row #content .bio-card .title.org p, #content-row #am-content .bio-card .title.org p { font-style: italic; margin: 0; }
+  #content-row #content .bio-card .portlet-content, #content-row #am-content .bio-card .portlet-content { padding: 0 !important; }
+  #content-row #content .bio-card .portlet-content .vcard, #content-row #am-content .bio-card .portlet-content .vcard { padding: 0; }
+  #content-row #content .bio-card .portlet-content .vcard div, #content-row #am-content .bio-card .portlet-content .vcard div { margin-left: 15px !important; }
+  #content-row #content .bio-card .portlet-content .vcard img.photo, #content-row #am-content .bio-card .portlet-content .vcard img.photo { width: 214px; height: 214px; }
+  #content-row #content .bio-card .portlet-content .vcard .portlet-items, #content-row #am-content .bio-card .portlet-content .vcard .portlet-items { position: absolute; left: 212px; top: 0; padding: 5px; margin: 0; width: 38.5%; background-color: #008EAA; }
+  #content-row #content .bio-card .portlet-content .vcard .portlet-items li, #content-row #am-content .bio-card .portlet-content .vcard .portlet-items li { padding-bottom: 0; background-color: #e5e5e5; background-image: none; margin-bottom: 4px; }
+  #content-row #content .bio-card .portlet-content .vcard .portlet-items li:last-child, #content-row #am-content .bio-card .portlet-content .vcard .portlet-items li:last-child { margin-bottom: 0; }
+  #content-row #content .bio-card .portlet-content .vcard .portlet-items li > span, #content-row #am-content .bio-card .portlet-content .vcard .portlet-items li > span { text-align: left; }
+  #content-row #content .bio-card .portlet-content .vcard .portlet-items li > span a, #content-row #am-content .bio-card .portlet-content .vcard .portlet-items li > span a { width: 100% !important; display: inline-block !important; padding: 5px 15px 5px 40% !important; line-height: 38px !important; line-height: 2.375rem !important; background-position: 20% 50% !important; text-decoration: none; }
+  #content-row #content .bio-card .portlet-content .vcard .portlet-items li > span a:hover, #content-row #am-content .bio-card .portlet-content .vcard .portlet-items li > span a:hover { text-decoration: underline; }
+  #content-row #content .bio-card .portlet-content .vcard .portlet-items li > span.email-bio, #content-row #am-content .bio-card .portlet-content .vcard .portlet-items li > span.email-bio { font-size: 13px !important; font-size: 0.8125rem !important; letter-spacing: 0.05em; background: url(../../images/icons/email-icon-m.png) 20% 50% no-repeat; }
+  #content-row #content .bio-card .portlet-content .vcard .portlet-items li > span.cv, #content-row #am-content .bio-card .portlet-content .vcard .portlet-items li > span.cv { background: url(../../images/icons/pdf-icon-t.png) 19% 50% no-repeat; }
+  #content-row #content .bio-card .portlet-content .vcard .portlet-items li > span.vcard-file, #content-row #am-content .bio-card .portlet-content .vcard .portlet-items li > span.vcard-file { background: url(../../images/icons/calendar-icon-m.png) 20% 50% no-repeat; }
+  #content-row #content .bio-card .portlet-content .vcard .portlet-items li > span.office, #content-row #am-content .bio-card .portlet-content .vcard .portlet-items li > span.office { background: url(../../images/icons/office-icon-m.png) 20% 50% no-repeat; }
+  #content-row #content #summary, #content-row #am-content #summary { margin-bottom: 0; }
+  #content-row #content #summary #education, #content-row #am-content #summary #education { width: 100% !important; } }
+@media screen and (min-width: 768px) { #content-row #summary #jumplinks #jumplinks-anchors { margin-top: 0; }
+  #content-row .bio-card.portlet .portlet-items { margin: 0; }
+  #content-row .bio-card.portlet .portlet-items li { margin-bottom: 0; }
+  .sidebar-right { margin-top: 45px; }
+  .sidebar-right .bio-card .panel-body .vcard { position: relative; }
+  .sidebar-right .bio-card .panel-body .vcard img.photo { margin-top: 6px; margin-bottom: 25px; margin-left: auto; margin-right: auto; display: block; }
+  .sidebar-right .bio-card .panel-body .vcard h4 { font-size: 13px; font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: bold; margin-left: 35px; }
+  .sidebar-right .bio-card .panel-body .vcard .title.org { margin-left: 35px; margin-right: 35px; padding-left: 0; margin-top: 15px; margin-bottom: 25px; }
+  .sidebar-right .bio-card .panel-body .vcard .title.org p { font-size: 12px; font-size: 0.75rem; line-height: 14px; line-height: 0.875rem; font-style: italic; margin-bottom: 7px; }
+  .sidebar-right .bio-card .panel-body .vcard ul.portlet-items { margin: 0; border-top: 1px solid #FFF; height: 40px; }
+  .sidebar-right .bio-card .panel-body .vcard ul.portlet-items li { float: left; height: 40px; border-left: 1px solid #FFF; width: 33.33%; text-align: center; margin-bottom: 0; }
+  .sidebar-right .bio-card .panel-body .vcard ul.portlet-items li:first-child { border-left-width: 0 !important; }
+  .sidebar-right .bio-card .panel-body .vcard ul.portlet-items li a { display: inline-block; margin-left: auto; margin-right: auto; height: 40px; font-size: 12px; font-size: 0.75rem; line-height: 40px; line-height: 2.5rem; letter-spacing: 0.05em; padding-left: 25px; text-decoration: none; background-position: 10% 50%; background-repeat: no-repeat !important; }
+  .sidebar-right .bio-card .panel-body .vcard ul.portlet-items li a:hover { text-decoration: underline; }
+  .sidebar-right .bio-card .panel-body .vcard ul.portlet-items li .email-bio a { background-image: url(../../images/icons/email.gif); }
+  .sidebar-right .bio-card .panel-body .vcard ul.portlet-items li .cv a { background-image: url(../../images/icons/filetype/pdf.gif); }
+  .sidebar-right .bio-card .panel-body .vcard ul.portlet-items li .vcard-file a { background-image: url(../../images/icons/calendar-icon-t.png); } }
+/*----- "M" breakpoint -------*/
+@media screen and (min-width: 768px) and (max-width: 991px) { .sidebar-right .bio-card .panel-body .vcard img.photo { margin-top: 2px !important; } }
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: 992px) { .sidebar-right { margin-top: 45px; }
+  .sidebar-right .bio-card img.photo { margin-top: 15px; } }

@@ -81,11 +81,11 @@
 }
 @media screen and (max-width: $screen-sm-min) { // width < 768
 	.tab {
-		padding:0 !important;
+		padding: 0 !important;
 	}
 	.panel-title{
 		a {
-			background-color: rgba(0, 40, 85, 0.8) ;
+			//background-color: rgba(0, 40, 85, 0.8); // TODO: Why is this needed?
 		}
 	}
 
@@ -118,7 +118,7 @@
 				}
 			}
 			.panel-body {
-				background-color: rgba(0, 40, 85, 0.8);
+				//background-color: rgba(0, 40, 85, 0.8);
 				h2 {
 					display: none;
 				}
@@ -133,7 +133,25 @@
 		}
 	}
 	
+	// home page ...
+	.panel-group {
+		> .panel { // #top-panel-row
+			margin-bottom: 0;
+			.panel {
+				margin-bottom: 5px; // TODO: when panel open in mobile remove margin between panel-heading and active-element. Add margin after active-element. Careful about setting margins without thorough testing.
+				.panel-body {
+					//border-bottom: 2px solid white;
+					
+					.narrow-col {
+						padding: 0;
+					}
+				}
+			}
+		}
+	}	
+	
 }
+
 @media screen and (min-width: $screen-sm-min) { // width > 768px
 	
 	/* Style adjustments for the partial-cover home wall component */

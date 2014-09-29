@@ -55,7 +55,7 @@
 
 .title-box {
 	padding: 25px;
-	background-color: $light_gray;
+	background-color: $box_light_gray;
 }
 @media screen and (max-width: $screen-md-min) {
 	#util-bar-wrap { 
@@ -69,21 +69,71 @@
 /*----- Mobile breakpoint --------*/
 @media screen and (max-width: $screen-sm-min) { // width < 768
 	// handle banners on mobile 
-	body.home {
-		.siders {
-			.wall {
-				//display: none;
-			}
-		}
-	}
+
 	.siders {
 		.wall {
+			top: 80px;
+			// Width changed via JS on resize
+			//height: 250px !important;
+			//width: 100% !important;
 			&.shadow-graphic {
 	    	height: 85px !important;
 			}
 		}
 	}
-
+	body.home {
+		.siders {
+			.wall {
+				top: 0;
+				//display: none;
+			}
+		}
+	}
+	
+	// Minified banner box
+	.minify-sm {
+		width: 200px;
+		float: right;
+		.panel-heading {
+			background-color: rgba(0, 40, 85, 0.8);
+			.panel-title a {
+				background-color: transparent;
+				
+				//color: $ucd_blue_100 !important;
+				//top: 0;
+				background: url(../images/icons/white-arrow-right-sm.png) 90% 50% no-repeat transparent;
+				&.collapsed {
+					//color: #FFF !important;
+					background: url(../images/icons/white-arrow-down-sm.png) 90% 50% no-repeat transparent;
+				}
+				&:hover {
+					//color: $ucd_blue_100 !important;
+					background: url(../images/icons/white-arrow-down-sm.png) 90% 50% no-repeat transparent;
+				}
+			
+			}
+		}
+		.action-element {
+			position: absolute;
+			left: 0;
+			
+			h2 {
+				display: none;
+			}
+			h3 {
+				a {
+					padding-top: 0;
+					color: #FFF;
+				}
+			}
+			.panel-body {
+				margin-top: 0;
+				padding-top: 0;
+				background-color: rgba(0, 40, 85, 0.8);
+				color: #FFF;
+			}
+		}
+	}
 }
 
 /*----- Tablet breakpoint -------*/
@@ -112,6 +162,14 @@
 @media screen and (min-width: $screen-sm-min) { // width > 768px
 
 	/* 3-column banner panel set - intended to use happybox behavior / plugin */
+	
+	#content {
+		.narrow-col {
+			li {
+				background-image: url(../images/bullets/white-square.gif)
+			}
+		}
+	}
 	.top-panel {
 		.action-element {
 			.narrow-col {
@@ -124,9 +182,6 @@
 					color: #FFF;
 					text-decoration: none;
 				}
-				li {
-					background-image: url(../images/bullets/white-square.gif);
-				}
 				h2 {
 					margin-top: 0 !important;
 					font-weight: normal !important;
@@ -135,7 +190,7 @@
 				h3 { // Note: These are headlines within the happy boxes
 					
 				}
-				.content {
+				.content-wrap {
 					margin-left: 0;
 					h3:first-child {
 						padding-top: 0 !important;
@@ -200,7 +255,7 @@
 /*----- Tablet breakpoint --------*/
 @media screen and (max-width: $screen-md-min) { // width < 992
 	body.home {
-		#content-main {
+		#content {
 			#top-panel-row {
 				.narrow-col {
 					.bcontroller {
