@@ -89,6 +89,51 @@
 			}
 		}
 	}
+	
+	// Minified banner box
+	.minify-sm {
+		width: 200px;
+		float: right;
+		.panel-heading {
+			background-color: rgba(0, 40, 85, 0.8);
+			.panel-title a {
+				background-color: transparent;
+				
+				//color: $ucd_blue_100 !important;
+				//top: 0;
+				background: url(../images/icons/white-arrow-right-sm.png) 90% 50% no-repeat transparent;
+				&.collapsed {
+					//color: #FFF !important;
+					background: url(../images/icons/white-arrow-down-sm.png) 90% 50% no-repeat transparent;
+				}
+				&:hover {
+					//color: $ucd_blue_100 !important;
+					background: url(../images/icons/white-arrow-down-sm.png) 90% 50% no-repeat transparent;
+				}
+			
+			}
+		}
+		.action-element {
+			position: absolute;
+			left: 0;
+			
+			h2 {
+				display: none;
+			}
+			h3 {
+				a {
+					padding-top: 0;
+					color: #FFF;
+				}
+			}
+			.panel-body {
+				margin-top: 0;
+				padding-top: 0;
+				background-color: rgba(0, 40, 85, 0.8);
+				color: #FFF;
+			}
+		}
+	}
 }
 
 /*----- Tablet breakpoint -------*/
