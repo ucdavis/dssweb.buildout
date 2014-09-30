@@ -42,17 +42,17 @@ head {
 
 /* formerly reset-all */
 
-.btn-primary{
+.btn-primary {
  margin-top: 15px;   
  color: #fff !important;   
 }
 
-.sidebar-left{
-	.panel{
+.sidebar-left {
+	.panel {
 		//background: $box_light_gray;
 	}
 }
-.sidebar-right{
+.sidebar-right {
 	//width:250px;
 	height:30px;
 	
@@ -62,17 +62,15 @@ head {
 .soft-right {
 	float: right;
 }
-.panel-group{
-	margin-bottom: 0 !important;
+.panel-group {
 	.panel-body {
-		border-top-width: 0 !important;
 		.narrow-col {
-			.content {
+			.content-wrap {
 				padding: 15px;
 			}
 		}
 	}
-	.sidebar{
+	.sidebar {
 		border: none !important;
 	}
 }
@@ -82,7 +80,7 @@ head {
 	}
 }
 
-.body-img{
+.body-img {
 	border:1px solid red;
 	height:120px;
 	width:200px;
@@ -92,12 +90,6 @@ head {
 
 .invisible { // TODO: Use bootstrap class .invisible
 	visibility: hidden;
-}
-.nobr {
-	white-space: nowrap;
-}
-p {
-	margin-bottom: 15px;
 }
 
 button {
@@ -241,7 +233,7 @@ input{
 #content-row {
 	margin-bottom: 45px;
 }
-#content-main, #am-content, #cm-content {
+#content, #am-content, #cm-content {
 
 	.breadcrumb {
 		background: none;
@@ -406,7 +398,7 @@ input{
 	width:100px;
 }
 
-#content-main .picture {
+#content-core .picture {
 	margin: 25px 0;
 	&.flush-bottom {
 		margin: 0 !important;
@@ -518,7 +510,7 @@ input{
 }
 
 body.contact-type {
-	#content-main {
+	#content {
 		.form-wrap {
 			position: relative;
 			background-color: $box_light_gray;
@@ -551,6 +543,9 @@ body.contact-type {
 		margin-bottom: 0px !important;
 	}	
 }
+.search-result .col-right{
+	margin-top: 10px; 
+}
 .results-summary{
 	margin-right: 30px;
 }
@@ -571,7 +566,7 @@ body.contact-type {
 	.row#content-row {
 		margin-left: 0 !important;
 		margin-right: 0 !important;
-		#content-main, #am-content {
+		#content, #am-content {
 			margin-top: 10px;
 			h1, .breadcrumb {
 				//margin-left: 15px;
@@ -579,8 +574,21 @@ body.contact-type {
 		}
 	}
 
-	#content-main, #am-content, #cm-content {
+	// remove extra padding to right on mobile
+	.row > div {
+		padding-right: 0 !important;
+	}
+	
+	#content, #am-content, #cm-content {
 		margin-bottom: 15px;
+	}
+	
+	.col-left {
+		margin-top: 15px;
+		text-align: center;
+	}
+	.col-right {
+		padding-left: 0;
 	}
 	
 	// Remove bootstrap animation from collapsing on small devices where it is slow.
@@ -589,17 +597,22 @@ body.contact-type {
 		transition: none;
 	}
 	
-	.collapse, .collapsing {
-		div {
-			padding: 15px;
+	.section {
+		.collapse, .collapsing {
+			div {
+				padding: 15px;
+			}
 		}
 	}
+	
 	.panel {
 		border: none;
+		.panel-body {
+			margin-top: 15px;
+		}
 	}
 	.panel-heading {
-		margin-bottom: 5px;
-		padding:0;
+		padding: 0;
 		.panel-title {
 			//min-height: 40px;
 			width: auto; // undo general 250 width
@@ -633,97 +646,6 @@ body.contact-type {
 		}
 	}
 
-	// Bio card
-	// Note: Apply negative margins to top items in order to retain padding on remaining text in mobile view
-	body.bio {
-		#content-row {
-			margin-top: 0;
-			#content-main, #am-content {
-				margin-top: 0;
-				.bio-card {
-					margin-bottom: 8px;
-					.panel-heading {
-						padding: 0 !important;
-						display: none; // remove heading
-					}
-
-					margin-left: -15px !important;
-					margin-right: -15px !important;
-					.breadcrumb, h4 {
-						margin-left: 15px; // add back margin removed to make photo/buttons flush left and right
-					}
-					h4 {
-						padding-bottom: 0;
-					}
-					.title.org {
-						p {
-							font-style: italic;
-							margin: 0;
-						}
-					}
-					.portlet-content {
-						padding: 0 !important;
-						.vcard {
-							padding: 0;
-							// Note: Change photo dimensions in conjunction with the portlet-item list span padding below
-							img.photo {
-								width: 214px; // careful
-								height: 214px; // careful
-							}
-							.portlet-items {
-								position: absolute;
-								right: -15px;
-								top: 0;
-								padding: 5px;
-								background-color: $rec_blue;
-								li {
-									background-color: $tab_light_gray;
-									background-image: none ;
-									margin-bottom: 4px;
-									&:last-child {
-										margin-bottom: 0;
-									}
-									> span {
-										// Note: Change the portlet-item list span padding in conjunction with the bio img.photo above
-										padding: 48px 22px; // careful
-										a {
-											//padding-left: 15px;
-											@include line_height(48px);
-											text-decoration: none;
-											&:hover {
-												text-decoration: underline;
-											}
-										}
-										&.email {
-											background: url(../images/icons/email-icon-m.png) 0 50% no-repeat;
-										}
-										&.cv {
-											background: url(../images/icons/pdf-icon-t.png) 0 50% no-repeat;
-										}
-										&.vcard-file {
-											background: url(../images/icons/calendar-icon-t.png) 0 50% no-repeat;
-										}
-										&.office {
-											background: url(../images/icons/office-icon-m.png) 0 50% no-repeat;
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-				#summary {
-					margin-bottom: 25px;
-					#jumplinks {
-						
-					}
-					#education {
-						width: 100% !important;
-					}
-				}
-			}
-		}
-	}
 	.sidebar {
 		.panel-heading {
 			.panel-title {
@@ -749,6 +671,7 @@ body.contact-type {
 	
 	#content-row {
 		section {
+			margin-bottom: 5px;
 			.course-portlet {
 				padding: 0;
 				.course-info {
@@ -838,7 +761,7 @@ body.contact-type {
 			margin-top: 30px; // accomodate for figure caption
 		}
 	}
-	#content-main, #am-content {
+	#content, #am-content {
 		padding-left: 0 !important;
 		//margin-top: 45px;
 		margin-bottom: 30px;
@@ -881,25 +804,26 @@ body.contact-type {
 	}
 }
 
-/*----- Mobile breakpoint -------*/
+/*----- Mobile breakpoint -------*/ // TODO: Check error on _bootstrap_overrides vis-a-via this breakpoint max
 @media screen and (max-width: $screen-sm-max) { // width < 991px
 	head { font-family:"S";}
 	body:after{content:"S";}
  	
-  #sidebar-bio-right{
+  /*TODO: Eval and EOL
+	#sidebar-bio-right{
 		float:left;	  		
 		margin-left:0;
 		margin-top:10px;
 		clear:both;
-  }
-	.sidebar{	
+  }*/
+	
+	.sidebar {	
 		background:transparent;
 	}
-	.sidebar-right{	
+	.sidebar-right {	
 		margin-top:100px;
 		//clear:both;
 		//float:left !important;
-		
 	}
 	.util-bar{ // at this breakpoint, yellow bar containing only the UC Davis logo
 		margin: 0;
@@ -919,7 +843,7 @@ body.contact-type {
 		}
 	}
 	
-	#content-main, #am-content {
+	#content, #am-content {
 	  min-width:192px;
 		clear:both;
 	}
@@ -978,8 +902,7 @@ body.contact-type {
 
 
 @media screen and (min-width: $screen-sm-min) { // width > 768px
-
-
+	/*
 	#top-bar-wrap, #content-row, #banner-row {
 		padding-left: 105px; // 90 + 15 px
 		padding-right: 105px;
@@ -987,7 +910,7 @@ body.contact-type {
 	#util-bar-wrap {
 		padding-right: 105px;
 	}
-	
+	*/
 	.panel-group {
 		.panel-heading {
 			.panel-title {
@@ -1044,89 +967,7 @@ body.contact-type {
 		}
 	}
 	
-	body.bio .sidebar.sidebar-right {
-		margin-top: 45px; // for top placement of bio portrait
-		.bio-card {
-			.panel-body {
-
-				.vcard {
-					
-					position: relative;
-					img.photo {
-						margin-top: 6px;
-						margin-bottom: 25px;
-						margin-left: auto;
-						margin-right: auto;
-						display: block;
-					}
-					h4 {
-						@include font_size(13px);
-						text-transform: uppercase;
-						letter-spacing: 0.05em;
-						font-weight: bold;
-						margin-left: 35px;
-					}
-					.title.org {
-						margin-left: 35px;
-						margin-right: 35px;
-						padding-left: 0;
-						margin-top: 15px;
-						margin-bottom: 25px;
-						p {
-							@include font_size(12px);
-							@include line_height(14px);
-							font-style: italic;
-							margin-bottom: 7px;
-							
-						}
-					}
-					ul.portlet-items {
-						margin: 0;
-						border-top: 1px solid #FFF;
-						height: 40px;
-						li {
-							float: left;
-							height: 40px;
-							border-right: 1px solid #FFF;
-							width: 33.33%;
-							text-align: center;
-							margin-bottom: 0; // override global margins
-							&:last-child {
-								margin-right-weight: 0;
-							}
-							a {
-								display: inline-block;
-								margin-left: auto;
-								margin-right: auto;
-								height: 40px;
-								@include font_size(12px);
-								@include line_height(40px);
-								letter-spacing: 0.05em;
-								padding-left: 35px;
-								text-decoration: none;
-								&:hover {
-									text-decoration: underline;
-								}
-								background-position: 20% 50%;
-								background-repeat: no-repeat !important;
-							}
-							.email a {
-								background-image: url(../images/icons/email.gif);
-							}
-							.cv a {
-								background-image: url(../images/icons/filetype/pdf.gif);
-							}
-							.vcard-file a {
-								background-image: url(../images/icons/calendar-icon-t.png);
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-	
-	#content-main, #am-content {
+	#content, #am-content {
 		> div, > h1 {
 	  	//margin-left: 90px; // TODO: remove since now using .row 15+90=105 applied to content-row
 		}
@@ -1178,7 +1019,7 @@ body.contact-type {
 	body.contact-type {
 		#content-row {
 			margin-top: 15px; // needed to adjust for lack of breadcrumb and top js placement of sidebars
-			#content-main {
+			#content {
 				.form-wrap {
 					margin-right: 30px;
 					padding: 30px 60px;
@@ -1201,7 +1042,7 @@ body.contact-type {
 		padding-left: 0; // 90 + 15 px
 		padding-right: 0;
 	}
-	#content-main, #am-content {
+	#content, #am-content {
 		> div, > h1 {
 	  	//margin-left: 0;
 		}
@@ -1271,13 +1112,8 @@ body.contact-type {
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
 	head { font-family:"M";}
 	body:after{content:"M";}
-	#content-main, #am-content {
+	#content, #am-content {
 		//padding-right: 0 !important;
-	}
-	body.bio .sidebar {
-		> div {
-			//margin-left: 0 !important; TODO: 
-		}
 	}
 	
 	// Panel resets
@@ -1326,16 +1162,7 @@ body.contact-type {
 		padding-right: 0 !important;
 	}
 	
-	body.bio .sidebar.sidebar-right {
-		margin-top: 45px; // for top placement of bio portrait
-		.bio-card {
-			img.photo {
-				margin-top: 15px;
-			}
-		}
-	}
-	
-	#content-main, #am-content {
+	#content, #am-content {
 		h1, .breadcrumb {
 			//margin-left: 15px;
 		}
@@ -1345,6 +1172,17 @@ body.contact-type {
 		> div {
 			margin-left: 92px;
 		}
+	}
+}
+
+/*----- Large Desktop breakpoint -------*/
+@media screen and (min-width: $screen-lg-min) { // width > 1310
+	#top-bar-wrap, #content-row, #banner-row {
+		padding-left: 105px; // 90 + 15 px
+		padding-right: 105px;
+	}
+	#util-bar-wrap {
+		padding-right: 105px;
 	}
 }
 

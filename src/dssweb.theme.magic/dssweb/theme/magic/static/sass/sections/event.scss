@@ -9,7 +9,7 @@
 	border-collapse: collapse;
 	margin-bottom: 70px;
   td {
-			border: 1px solid $ucd_black_30;
+			border: 1px solid $ucd_blue_10;
 	}
 	th{
 		font: 1em bold Arial, Helvetica, sans-serif;
@@ -18,7 +18,7 @@
 		padding-top: 5px;
 		border-left: 1px solid #fff;
 	}
-	.first{
+	.first {
 			border-left: none !important;
 		}
  thead {
@@ -28,18 +28,35 @@
 
  td {
 		width: 125px;
-		height: 120px;
+		height: auto;
+		
 		vertical-align: top;
-		overflow: auto;
+		
 		padding: .2em;
 		.day {
 			width: 7em;
-			height: 6em;
-			overflow: auto;
-			margin-top: 0;
+			min-height: 120px;
+			margin-top: 30px;
+			a {
+				text-decoration: none;
+			}
+			.fc-event {		
+			
+				.fc-event-inner {
+					margin-bottom: 5px;
+					padding: 10px;
+					background-color: $ucd_blue_10;
+					font-size: 11px;
+					.subject-box {
+						margin-bottom: 10px;
+					
+					}
+				}
+			}
 		}
 		.date{
 			float: right;
+			
 		}
 	}
 }
@@ -108,11 +125,11 @@ margin-top:0;
 			background-color: $box_light_gray;
 		}
 
-			.row {
-				> div:last-child {
-					padding-top: 16px;
-				}
+		.row {
+			> div:last-child {
+				padding-top: 16px;
 			}
+		}
 
 	}
 }
@@ -191,7 +208,7 @@ margin-top:0;
 		}
 	}
 }
-.widget-fieldset{
+.widget-fieldset {
 	.color-box {
 				width: 10px;
 				height: 10px;
@@ -199,42 +216,44 @@ margin-top:0;
 				margin-right: 5px;
 				margin-left: 10px;
 		}
-	#criterion-subject-econometrics{
-		.color-box{
+	#criterion-subject-econometrics {
+		.color-box {
 			background-color: $evergreen;
 		}
 	}
-	#criterion-subject-economic-history{
-		.color-box{
+	#criterion-subject-economic-history {
+		.color-box {
 			background-color: $west_redbud;
 		}
 	}
-	#criterion-subject-energy-environmental-economics{
-		.color-box{
+	#criterion-subject-energy-environmental-economics {
+		.color-box {
 			background-color: $cal_popp;
 		}
 	}
-	#criterion-subject-international-economics{
-		.color-box{
+	#criterion-subject-international-economics {
+		.color-box {
 			background-color: $gold_lup;
 		}
 	}
-	#criterion-subject-macroeconomics{
-		.color-box{
+	#criterion-subject-macroeconomics {
+		.color-box {
 			background-color: $sun_grass;
 		}
 	}
-	#criterion-subject-public-finance-labor{
-		.color-box{
+	#criterion-subject-public-finance-labor {
+		.color-box {
 			background-color: $sky_blue;
 		}
 	}
-	#criterion-subject-theory{
-		.color-box{
+	#criterion-subject-theory {
+		.color-box {
 			background-color: $wine_grape;
 		}
 	}
 }
+
+
 #accordion-e {
 	> div {
 		padding-left: 0;
@@ -244,7 +263,7 @@ margin-top:0;
 
 /*----- Tablet breakpoint -------*/
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
-	#content-main {
+	#content {
 		padding-right: 45px;
 	}
 }

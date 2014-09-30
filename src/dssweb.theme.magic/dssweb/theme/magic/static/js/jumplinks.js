@@ -1,7 +1,7 @@
 $(function () {
 	
 	var headingTag = "h2";
-	var parentDiv = "#content-main";
+	var parentDiv = "#content";
 	var excludeTitle = "Jumplinks";
 	
     /* CREATES JUMPLINKS MENU   */
