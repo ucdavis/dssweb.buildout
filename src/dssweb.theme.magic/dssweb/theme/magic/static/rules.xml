@@ -6,8 +6,13 @@
 
     <!-- Apply the following rules to standard Plone pages -->
     <rules css:if-content="#visual-portal-wrapper">
-
-         <theme href="index.html" if="$home_page" />
+	    <theme href="index.html" if="$home_page" />
+	    <theme href="t13_event.html" css:if-content="body.section-events" />
+         <theme href="t8_students.html" />
+	    
+         
+	    
+	    
           
         <!-- Replace title with Plone's page title  -->
         <replace css:theme="html head title" css:content="html head title" />
@@ -42,10 +47,17 @@
 	    </xsl:attribute>
 	    </replace>
 	     	
-	    
-	    <replace content="//h1[contains(@class,'documentFirstHeading')]/@class">
+	    <replace css:theme="h2.homepage-title" css:content="h1#parent-fieldname-title" />
+	    <replace content="//h1[contains(@class,'documentFirstHeading')]/@class" if="$home_page">
 	    <xsl:attribute name="class">
 	    <xsl:if test='contains(current(),"documentFirstHeading")'>homepage-title</xsl:if>
+	    </xsl:attribute>
+	    </replace>
+	    
+	    <replace css:theme="h1.content-title" css:content="h1#parent-fieldname-title" />
+	    <replace content="//h1[contains(@class,'documentFirstHeading')]/@class" if-not="$home_page">
+	    <xsl:attribute name="class">
+	    <xsl:if test='contains(current(),"documentFirstHeading")'>content-title</xsl:if>
 	    </xsl:attribute>
 	    </replace>
 	    
@@ -80,12 +92,26 @@
 	    <copy css:content="#portletwrapper-706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f5765625265646f0a6576656e7473 > dl > dd.portletItem.odd" css:theme="#container-3 > div > div > div.content" />
 		<!-- Front Page -->
 		<copy css:content="#parent-fieldname-title" css:theme="#middle-row" />
+		<!-- Breadcrumbs for all but front page -->
+		<replace css:theme-children=".breadcrumb" css:content="#portal-breadcrumbs" />
+		<drop css:content="#breadcrumbs-you-are-here" />
+	<!-- Global Rules -->
+	
 		
-       <!--- Footer -->
+	<!-- Events Page -->
+	<replace css:theme="#sidebar-block-contact > li.fn > a" css:content="a.email" />
+	<drop css:theme="#sidebar-block-contact > li.category" />
+	<replace css:theme="li.tel" css:content="td.tel" />
+	<replace css:theme="li.email a" css:content="a.email" />
+	
+	
+	
+		
+	  <!--- Footer -->
 	   <copy  css:content=".portletStaticText.portlet-static-contact" css:theme="#vcard" />
 	   <copy css:content=".portlet.portletNavigationTree" css:theme="#footer-nav" />
 	   
-	   
+	    
  	    
         
 

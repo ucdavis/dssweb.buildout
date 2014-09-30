@@ -1,0 +1,484 @@
+/* Example use case:
+ %abstract-class { font-family: Verdana; }  #my-div { @extend %abstract-class; }  #my-other-div { @extend %abstract-class; }
+ ... compiles as: #my-div, #my-other-div { font-family: Verdana; }
+
+*/
+/* 2013-05-12 RAK: Bootstrap overrides moved from default gem installation that placed overrides directly in the _variables.scss file */
+/* UCD Identity - Colors (http://identitystandards.ucdavis.edu/graphic-standards/colors.html) */
+/* Other Custom colors */
+/* _typography.scss */
+body, div, p, li, input, textarea, select { color: #000; color: #000; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.3125em; }
+
+/*
+@font-face {
+	font-family: 'lucida sans bold';
+	src: url('fonts/lucida/LucidaSansBold.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+*/
+
+a { color: #4d688c; }
+
+em { font-style: italic; }
+
+button { font-size: 14px; font-size: 0.875rem; line-height: 24px; line-height: 1.5rem; }
+
+.btn-txt { display: none; }
+
+.portlet li, .portlet p, .portlet h4 { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
+.portlet .portlet-items li { font-size: 10px; font-size: 0.625rem; }
+.portlet .portlet-items li a { font-size: 13px; font-size: 0.8125rem; line-height: 17px; line-height: 1.0625rem; text-decoration: none; }
+.portlet .portlet-items li a:hover { text-decoration: underline; }
+.portlet .portlet-items li .event-date { font-size: 13px; font-size: 0.8125rem; }
+
+.col-lg-4 h2 { font-weight: bold !important; font-size: 30px !important; font-size: 1.875rem !important; margin-bottom: 15px; }
+
+.about-bio h3 { font-weight: bold; }
+
+.pager .pager-string { font-size: 13px; font-size: 0.8125rem; line-height: 25px; line-height: 1.5625rem; }
+
+.sidebar h3 a { text-transform: uppercase; font-size: 13px; font-size: 0.8125rem; line-height: 18px !important; line-height: 1.125rem !important; letter-spacing: 0.1em; padding-bottom: 4px; }
+.sidebar li { font-size: 13px !important; font-size: 0.8125rem !important; line-height: 18px; line-height: 1.125rem; }
+.sidebar .vcard { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
+.sidebar .vcard .adr, .sidebar .vcard #email-phone { line-height: 18px; line-height: 1.125rem; }
+
+figure figcaption { text-align: right; font-size: 10.65px; font-size: 0.66563rem; color: #002855; text-transform: uppercase; }
+
+#content-main form input, #content-main form select, #content-main form textarea { font-size: 13px; font-size: 0.8125rem; line-height: 18px; line-height: 1.125rem; }
+#content-main form .req-txt { font-size: 10px; font-size: 0.625rem; }
+
+.corner-box h2, .corner-box h3, .corner-box p, .corner-box li, .corner-box a { color: #FFF; }
+.corner-box .box-content h2 { padding: 15px 0; font-size: 24px; font-size: 1.5rem; letter-spacing: 0.075em; }
+.corner-box .box-content h3 { padding: 0 0 8px 0; font-size: 13px; font-size: 0.8125rem; }
+.corner-box .box-content p { font-size: 13px; font-size: 0.8125rem; line-height: 20px; line-height: 1.25rem; }
+
+.sidebar-info h4 { font-weight: bold; font-size: 16px; font-size: 1rem; }
+
+.uc { text-transform: uppercase; letter-spacing: 0.1em !important; }
+
+.content-title { padding-bottom: 30px; font-size: 36px; font-size: 2.25rem; line-height: 43px; line-height: 2.6875rem; letter-spacing: 0.01em; margin-top: 0 !important; }
+
+#content-main h2, #am-content h2 { font-size: 24px !important; font-size: 1.5rem !important; font-weight: normal; padding-top: 15px; padding-bottom: 15px; }
+#content-main h3, #am-content h3 { font-size: 15px; font-size: 0.9375rem; line-height: 25px; line-height: 1.5625rem; padding-top: 15px; padding-bottom: 15px; }
+#content-main .narrow-col h2, #content-main .narrow-col h3, #am-content .narrow-col h2, #am-content .narrow-col h3 { padding-bottom: 0; }
+
+body.bio #summary #jumplinks { width: 30% !important; }
+body.bio #summary #jumplinks ul { margin-right: 35px; }
+body.bio #summary #jumplinks ul li { font-size: 13px; font-size: 0.8125rem; line-height: 22px; line-height: 1.375rem; padding-left: 0 !important; background-image: none !important; text-align: right; }
+body.bio #summary #education { width: 70% !important; }
+body.bio #summary #education ul { margin-top: 10px; }
+body.bio #summary #education ul li { font-size: 15px; font-size: 0.9375rem; line-height: 18px; line-height: 1.125rem; margin-bottom: 5px; padding-left: 0 !important; background-image: none !important; }
+
+#cm-content p.intro { margin-bottom: 45px; }
+
+#content-main p, #content-main li, #content-main ol, #content-main div, #content-main span, #am-content p, #am-content li, #am-content ol, #am-content div, #am-content span { line-height: 24px !important; line-height: 1.5rem !important; }
+#content-main p, #am-content p { font-size: 15px; font-size: 0.9375rem; line-height: 18px; line-height: 1.125rem; }
+#content-main p.intro, #am-content p.intro { font-size: 18px; font-size: 1.125rem; line-height: 30px !important; line-height: 1.875rem !important; }
+#content-main li, #content-main ol, #am-content li, #am-content ol { font-size: 15px; font-size: 0.9375rem; line-height: 18px; line-height: 1.125rem; }
+#content-main .breadcrumb p, #am-content .breadcrumb p { font-size: 12px; font-size: 0.75rem; line-height: 15px; line-height: 0.9375rem; margin-bottom: 0; }
+#content-main .breadcrumb p a, #am-content .breadcrumb p a { text-decoration: none; }
+#content-main .breadcrumb p a:hover, #am-content .breadcrumb p a:hover { text-decoration: underline; }
+
+/*----- Mobile breakpoint --------*/
+@media screen and (max-width: 768px) { body.bio .content-title { display: none; }
+  body.bio .bio-card h4.fn { padding-bottom: 30px; font-size: 23px; font-size: 1.4375rem; line-height: 25px; line-height: 1.5625rem; letter-spacing: 0.01em; margin-top: 4px !important; }
+  .sidebar h3 { font-size: 13px; font-size: 0.8125rem; line-height: 40px; line-height: 2.5rem; letter-spacing: .1em; }
+  #content-main .panel-group .row.panel .panel-title a, #am-content .panel-group .row.panel .panel-title a { font-size: 18px; font-size: 1.125rem; line-height: 40px; line-height: 2.5rem; }
+  #top-panel-row { margin-top: 45px; }
+  .panel-group #middle-row h2 { font-size: 18px !important; font-size: 1.125rem !important; line-height: 24px; line-height: 1.5rem; }
+  #thumb-section .panel-group .panel-heading .panel-title a { font-size: 18px !important; font-size: 1.125rem !important; line-height: 45px !important; line-height: 2.8125rem !important; } }
+body.res-lab #content-row div > h2 { font-size: 24px !important; font-size: 1.5rem !important; line-height: 28px; line-height: 1.75rem; margin-top: 15px; margin-bottom: 15px; }
+
+#thumb-section .panel-group .panel-heading .panel-title a { font-size: 24px; font-size: 1.5rem; line-height: 70px; line-height: 4.375rem; }
+#thumb-section section h4 { font-size: 20px !important; font-size: 1.25rem !important; margin-bottom: 25px; }
+
+#content-main ul li, #am-content ul li, #cm-content ul li { font-size: 15px !important; font-size: 0.9375rem !important; line-height: 24px; line-height: 1.5rem; }
+
+/*----- tablet breakpoint -------*/
+@media screen and (min-width: 768px) { .top-panel { /*
+&.left-panel {
+	//text-align: right;
+}
+&.middle-panel {
+	//text-align: center;
+}
+&.right-panel {
+	//text-align: left;
+}
+*/ }
+  .top-panel #content-main .narrow-col, .top-panel #am-content .narrow-col, .top-panel #cm-content .narrow-col { color: #FFF; }
+  .top-panel #content-main .narrow-col h2, .top-panel #am-content .narrow-col h2, .top-panel #cm-content .narrow-col h2 { text-align: center !important; }
+  .top-panel #content-main .narrow-col h3, .top-panel #content-main .narrow-col p, .top-panel #am-content .narrow-col h3, .top-panel #am-content .narrow-col p, .top-panel #cm-content .narrow-col h3, .top-panel #cm-content .narrow-col p { text-align: left !important; }
+  .top-panel.left-panel h2, .top-panel.left-panel h2, .top-panel.left-panel h2 { text-align: center !important; }
+  .container .sidebar .panel-heading .panel-title { padding-top: 8px !important; } }
+/*----- Tablet breakpoint --------*/
+@media screen and (max-width: 992px) { body.home #content-main .narrow-col h2, body.home #am-content .narrow-col h2 { font-size: 17px; font-size: 1.0625rem; }
+  body.home #content-main #top-panel-row .narrow-col .bcontroller .btn-primary, body.home #am-content #top-panel-row .narrow-col .bcontroller .btn-primary { font-size: 11px; font-size: 0.6875rem; line-height: 18px !important; line-height: 1.125rem !important; }
+  body.home #content-main #bottom-panel-row h2, body.home #am-content #bottom-panel-row h2 { font-size: 18px; font-size: 1.125rem; }
+  #content-main .content-title, #am-content .content-title { font-size: 26px; font-size: 1.625rem; line-height: 28px; line-height: 1.75rem; }
+  .corner-box .box-content h2 { padding: 10px 0; font-size: 16px; font-size: 1rem; letter-spacing: 0.075em; }
+  .corner-box .box-content h3 { padding: 0 0 0 0; font-size: 11px; font-size: 0.6875rem; }
+  .corner-box .box-content p { font-size: 11px; font-size: 0.6875rem; line-height: 15px; line-height: 0.9375rem; }
+  #thumb-section .panel-group .panel-heading .panel-title a { font-size: 16px !important; font-size: 1rem !important; line-height: 40px !important; line-height: 2.5rem !important; } }
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: 992px) { body.home #content-main #top-panel-row .narrow-col .bcontroller .btn-primary, body.home #am-content #top-panel-row .narrow-col .bcontroller .btn-primary { font-size: 14px; font-size: 0.875rem; line-height: 30px !important; line-height: 1.875rem !important; } }
+@media screen and (max-width: 1310px) { body.home #content-main .narrow-col a, body.home #content-main .narrow-col p, body.home #content-main .narrow-col li, body.home #am-content .narrow-col a, body.home #am-content .narrow-col p, body.home #am-content .narrow-col li { font-size: 12px; font-size: 0.75rem; line-height: 15px !important; line-height: 0.9375rem !important; } }
+>>>>>>> origin/master
+/* /_typography.scss */
+/* UCD Identity - Colors (http://identitystandards.ucdavis.edu/graphic-standards/colors.html) */
+/* Other Custom colors */
+/* event.scss */
+<<<<<<< HEAD
+/* line 8, ../../sass/sections/event.scss */
+#month {
+  border-collapse: collapse;
+  margin-bottom: 70px; }
+  /* line 11, ../../sass/sections/event.scss */
+  #month td {
+    border: 1px solid #B2B2B2; }
+  /* line 14, ../../sass/sections/event.scss */
+  #month th {
+    font: 1em bold Arial, Helvetica, sans-serif;
+    height: 30px;
+    width: 125px;
+    padding-top: 5px;
+    border-left: 1px solid #fff; }
+  /* line 21, ../../sass/sections/event.scss */
+  #month .first {
+    border-left: none !important; }
+  /* line 24, ../../sass/sections/event.scss */
+  #month thead {
+    background-color: #008EAA;
+    color: #fff; }
+  /* line 29, ../../sass/sections/event.scss */
+  #month td {
+    width: 125px;
+    height: 120px;
+    vertical-align: top;
+    overflow: auto;
+    padding: .2em; }
+    /* line 35, ../../sass/sections/event.scss */
+    #month td .day {
+      width: 7em;
+      height: 6em;
+      overflow: auto;
+      margin-top: 0; }
+    /* line 41, ../../sass/sections/event.scss */
+    #month td .date {
+      float: right; }
+
+/* line 48, ../../sass/sections/event.scss */
+.previous .date, .next .date {
+  color: #B2B2B2; }
+
+/* line 57, ../../sass/sections/event.scss */
+.rtop {
+  display: block;
+  background: #060; }
+
+/* line 62, ../../sass/sections/event.scss */
+.rtop * {
+  display: block;
+  height: 1px;
+  overflow: hidden;
+  background: #fff; }
+
+/* line 69, ../../sass/sections/event.scss */
+.r1 {
+  margin: 0 0 0 5px; }
+
+/* line 73, ../../sass/sections/event.scss */
+.r2 {
+  margin: 0 0 0 3px; }
+
+/* line 77, ../../sass/sections/event.scss */
+.r3 {
+  margin: 0 0 0 2px; }
+
+/* line 81, ../../sass/sections/event.scss */
+.r4 {
+  height: 2px;
+  margin: 0 0 0 1px; }
+
+/* line 86, ../../sass/sections/event.scss */
+#container h1 {
+  font: 2em Arial, Helvetica, sans-serif;
+  color: #060;
+  margin: 0 0 .5em .5em; }
+
+/* line 92, ../../sass/sections/event.scss */
+#month th {
+  font: 1em bold Arial, Helvetica, sans-serif; }
+
+/* line 96, ../../sass/sections/event.scss */
+p {
+  margin-top: 0; }
+
+/* line 99, ../../sass/sections/event.scss */
+.rows {
+  border-top: 5px solid #008EAA; }
+  /* line 104, ../../sass/sections/event.scss */
+  .rows.zebra .row:nth-child(even) {
+    background-color: transparent; }
+  /* line 107, ../../sass/sections/event.scss */
+  .rows.zebra .row:nth-child(odd) {
+    background-color: #f2f2f2; }
+  /* line 112, ../../sass/sections/event.scss */
+  .rows.zebra .row > div:last-child {
+    padding-top: 16px; }
+
+/* line 120, ../../sass/sections/event.scss */
+#month-pager {
+  float: left;
+  padding-top: 5px; }
+  /* line 123, ../../sass/sections/event.scss */
+  #month-pager .pager-string {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 24px; }
+
+/* line 129, ../../sass/sections/event.scss */
+#view-filter {
+  text-align: right;
+  padding-top: 6px; }
+  /* line 132, ../../sass/sections/event.scss */
+  #view-filter .vf-selector {
+    background-color: #e5e9ef;
+    width: 80px;
+    height: 25px;
+    padding-right: 2px; }
+    /* line 137, ../../sass/sections/event.scss */
+    #view-filter .vf-selector a {
+      text-decoration: none;
+      padding: 5px 20px 5px 20px; }
+
+/* line 143, ../../sass/sections/event.scss */
+.sidebar-left {
+  top: 135px; }
+  /* line 145, ../../sass/sections/event.scss */
+  .sidebar-left #subject-all {
+    margin-top: 25px;
+    margin-bottom: 20px; }
+    /* line 148, ../../sass/sections/event.scss */
+    .sidebar-left #subject-all a {
+      text-decoration: none; }
+  /* line 153, ../../sass/sections/event.scss */
+  .sidebar-left .checkForm input {
+    height: 20px;
+    width: 20px;
+    margin-bottom: 5px;
+    margin-top: 0px; }
+  /* line 159, ../../sass/sections/event.scss */
+  .sidebar-left .checkForm label {
+    position: absolute;
+    font-size: 13px; }
+
+/* line 165, ../../sass/sections/event.scss */
+#event-cta {
+  background-color: transparent; }
+  /* line 169, ../../sass/sections/event.scss */
+  #event-cta .portlet-items #ical-icon, #event-cta .portlet-items #vcal-icon, #event-cta .portlet-items #rss-icon {
+    background-image: none;
+    height: 25px; }
+    /* line 172, ../../sass/sections/event.scss */
+    #event-cta .portlet-items #ical-icon a, #event-cta .portlet-items #vcal-icon a, #event-cta .portlet-items #rss-icon a {
+      font-size: 12px;
+      font-size: 0.75rem;
+      line-height: 25px;
+      line-height: 1.5625rem;
+      display: inline-block;
+      width: 120px;
+      height: 25px;
+      padding-left: 20px;
+      background: url(../../images/icons/m-ical-icon.png) 0 50% no-repeat;
+      text-decoration: none; }
+      /* line 182, ../../sass/sections/event.scss */
+      #event-cta .portlet-items #ical-icon a:hover, #event-cta .portlet-items #vcal-icon a:hover, #event-cta .portlet-items #rss-icon a:hover {
+        text-decoration: underline; }
+  /* line 188, ../../sass/sections/event.scss */
+  #event-cta .portlet-items #rss-icon a {
+    background: url(../../images/icons/m-RSS-icon.png) 0 50% no-repeat; }
+
+/* line 195, ../../sass/sections/event.scss */
+.widget-fieldset .color-box {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  margin-right: 5px;
+  margin-left: 10px; }
+/* line 203, ../../sass/sections/event.scss */
+.widget-fieldset #criterion-subject-econometrics .color-box {
+  background-color: #00573F; }
+/* line 208, ../../sass/sections/event.scss */
+.widget-fieldset #criterion-subject-economic-history .color-box {
+  background-color: #C6007E; }
+/* line 213, ../../sass/sections/event.scss */
+.widget-fieldset #criterion-subject-energy-environmental-economics .color-box {
+  background-color: #ED8B00; }
+/* line 218, ../../sass/sections/event.scss */
+.widget-fieldset #criterion-subject-international-economics .color-box {
+  background-color: #FFCD00; }
+/* line 223, ../../sass/sections/event.scss */
+.widget-fieldset #criterion-subject-macroeconomics .color-box {
+  background-color: #78BE20; }
+/* line 228, ../../sass/sections/event.scss */
+.widget-fieldset #criterion-subject-public-finance-labor .color-box {
+  background-color: #00B5E2; }
+/* line 233, ../../sass/sections/event.scss */
+.widget-fieldset #criterion-subject-theory .color-box {
+  background-color: #642667; }
+
+/* line 239, ../../sass/sections/event.scss */
+#accordion-e > div {
+  padding-left: 0;
+  padding-right: 0; }
+
+/*----- Tablet breakpoint -------*/
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  /* line 247, ../../sass/sections/event.scss */
+  #content-main {
+    padding-right: 45px; } }
+@media screen and (max-width: 767px) {
+  /* line 256, ../../sass/sections/event.scss */
+  .rows .row > div h3, .rows .row > div p {
+    font-size: 12.5px;
+    font-size: 0.78125rem; }
+
+  /* line 262, ../../sass/sections/event.scss */
+  #event-cta {
+    text-align: center; }
+    /* line 264, ../../sass/sections/event.scss */
+    #event-cta h3 {
+      display: none; }
+    /* line 267, ../../sass/sections/event.scss */
+    #event-cta button {
+      float: none;
+      margin-bottom: 15px; }
+    /* line 271, ../../sass/sections/event.scss */
+    #event-cta .portlet-items {
+      float: none; }
+      /* line 273, ../../sass/sections/event.scss */
+      #event-cta .portlet-items li {
+        display: inline-block; }
+        /* line 275, ../../sass/sections/event.scss */
+        #event-cta .portlet-items li a {
+          width: auto !important; }
+        /* line 278, ../../sass/sections/event.scss */
+        #event-cta .portlet-items li#vcal-icon {
+          display: none; }
+
+  /* line 287, ../../sass/sections/event.scss */
+  #accordion-e .panel-title a {
+    color: #002855 !important;
+    background: url(../../images/icons/blue-100-right-arrow-down.png) 98% 50% no-repeat #99d2dd; }
+    /* line 290, ../../sass/sections/event.scss */
+    #accordion-e .panel-title a.collapsed {
+      color: #FFF !important;
+      background: url(../../images/icons/white-arrow-right-sm.png) 98% 50% no-repeat #008EAA; }
+    /* line 294, ../../sass/sections/event.scss */
+    #accordion-e .panel-title a:hover {
+      color: #002855 !important;
+      background: url(../../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat #99d2dd; } }
+@media screen and (min-width: 768px) {
+  /* line 306, ../../sass/sections/event.scss */
+  .rows .row > div:first-child {
+    text-align: right; }
+
+  /* line 312, ../../sass/sections/event.scss */
+  #event-cta button {
+    float: left; }
+  /* line 315, ../../sass/sections/event.scss */
+  #event-cta .portlet-items {
+    float: right; }
+
+  /* line 319, ../../sass/sections/event.scss */
+  .panel {
+    margin-left: 0 !important; } }
+=======
+#month { border-collapse: collapse; margin-bottom: 70px; }
+#month td { border: 1px solid #e5e9ef; }
+#month th { font: 1em bold Arial, Helvetica, sans-serif; height: 30px; width: 125px; padding-top: 5px; border-left: 1px solid #fff; }
+#month .first { border-left: none !important; }
+#month thead { background-color: #008eaa; color: #fff; }
+#month td { width: 125px; height: auto; vertical-align: top; padding: .2em; }
+#month td .day { width: 7em; min-height: 120px; margin-top: 30px; }
+#month td .day a { text-decoration: none; }
+#month td .day .fc-event .fc-event-inner { margin-bottom: 5px; padding: 10px; background-color: #e5e9ef; font-size: 11px; }
+#month td .day .fc-event .fc-event-inner .subject-box { margin-bottom: 10px; }
+#month td .date { float: right; }
+
+.previous .date, .next .date { color: #b2b2b2; }
+
+.rtop { display: block; background: #060; }
+
+.rtop * { display: block; height: 1px; overflow: hidden; background: #fff; }
+
+.r1 { margin: 0 0 0 5px; }
+
+.r2 { margin: 0 0 0 3px; }
+
+.r3 { margin: 0 0 0 2px; }
+
+.r4 { height: 2px; margin: 0 0 0 1px; }
+
+#container h1 { font: 2em Arial, Helvetica, sans-serif; color: #060; margin: 0 0 .5em .5em; }
+
+#month th { font: 1em bold Arial, Helvetica, sans-serif; }
+
+p { margin-top: 0; }
+
+.rows { border-top: 5px solid #008eaa; }
+.rows.zebra .row:nth-child(even) { background-color: transparent; }
+.rows.zebra .row:nth-child(odd) { background-color: #f2f2f2; }
+.rows.zebra .row > div:last-child { padding-top: 16px; }
+
+#month-pager { float: left; padding-top: 5px; }
+#month-pager .pager-string { margin-left: 10px; margin-right: 10px; font-size: 24px; }
+
+#view-filter { text-align: right; padding-top: 6px; }
+#view-filter .vf-selector { background-color: #e5e9ef; width: 80px; height: 25px; padding-right: 2px; }
+#view-filter .vf-selector a { text-decoration: none; padding: 5px 20px 5px 20px; }
+
+.sidebar-left { top: 135px; }
+.sidebar-left #subject-all { margin-top: 25px; margin-bottom: 20px; }
+.sidebar-left #subject-all a { text-decoration: none; }
+.sidebar-left .checkForm input { height: 20px; width: 20px; margin-bottom: 5px; margin-top: 0px; }
+.sidebar-left .checkForm label { position: absolute; font-size: 13px; }
+
+#event-cta { background-color: transparent; }
+#event-cta .portlet-items #ical-icon, #event-cta .portlet-items #vcal-icon, #event-cta .portlet-items #rss-icon { background-image: none; height: 25px; }
+#event-cta .portlet-items #ical-icon a, #event-cta .portlet-items #vcal-icon a, #event-cta .portlet-items #rss-icon a { font-size: 12px; font-size: 0.75rem; line-height: 25px; line-height: 1.5625rem; display: inline-block; width: 120px; height: 25px; padding-left: 20px; background: url(../../images/icons/m-ical-icon.png) 0 50% no-repeat; text-decoration: none; }
+#event-cta .portlet-items #ical-icon a:hover, #event-cta .portlet-items #vcal-icon a:hover, #event-cta .portlet-items #rss-icon a:hover { text-decoration: underline; }
+#event-cta .portlet-items #rss-icon a { background: url(../../images/icons/m-RSS-icon.png) 0 50% no-repeat; }
+
+.widget-fieldset .color-box { width: 10px; height: 10px; display: inline-block; margin-right: 5px; margin-left: 10px; }
+.widget-fieldset #criterion-subject-econometrics .color-box { background-color: #00573f; }
+.widget-fieldset #criterion-subject-economic-history .color-box { background-color: #c6007e; }
+.widget-fieldset #criterion-subject-energy-environmental-economics .color-box { background-color: #ed8b00; }
+.widget-fieldset #criterion-subject-international-economics .color-box { background-color: #ffcd00; }
+.widget-fieldset #criterion-subject-macroeconomics .color-box { background-color: #78be20; }
+.widget-fieldset #criterion-subject-public-finance-labor .color-box { background-color: #00b5e2; }
+.widget-fieldset #criterion-subject-theory .color-box { background-color: #642667; }
+
+#accordion-e > div { padding-left: 0; padding-right: 0; }
+
+/*----- Tablet breakpoint -------*/
+@media screen and (min-width: 768px) and (max-width: 991px) { #content-main { padding-right: 45px; } }
+@media screen and (max-width: 767px) { .rows .row > div h3, .rows .row > div p { font-size: 12.5px; font-size: 0.78125rem; }
+  #event-cta { text-align: center; }
+  #event-cta h3 { display: none; }
+  #event-cta button { float: none; margin-bottom: 15px; }
+  #event-cta .portlet-items { float: none; }
+  #event-cta .portlet-items li { display: inline-block; }
+  #event-cta .portlet-items li a { width: auto !important; }
+  #event-cta .portlet-items li#vcal-icon { display: none; }
+  #accordion-e .panel-title a { color: #002855 !important; background: url(../../images/icons/blue-100-right-arrow-down.png) 98% 50% no-repeat #99d2dd; }
+  #accordion-e .panel-title a.collapsed { color: #FFF !important; background: url(../../images/icons/white-arrow-right-sm.png) 98% 50% no-repeat #008eaa; }
+  #accordion-e .panel-title a:hover { color: #002855 !important; background: url(../../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat #99d2dd; } }
+@media screen and (min-width: 768px) { .rows .row > div:first-child { text-align: right; }
+  #event-cta button { float: left; }
+  #event-cta .portlet-items { float: right; }
+  .panel { margin-left: 0 !important; } }
+>>>>>>> origin/master
+/* /event.scss */
