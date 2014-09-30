@@ -19,6 +19,11 @@ em {
 	font-style: italic;
 }
 
+blockquote {
+	border: 1px solid ucd_blue_70;
+	background-color: $ucd_blue_20;
+}
+
 button {
 	@include font_size(14px);
 	@include line_height(24px);
