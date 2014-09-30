@@ -286,7 +286,12 @@ input{
 }
 
 
-
+.student-events {
+	h3, h4 {
+		color: $rec_blue;
+	}
+	
+}
 .sidebar {
 	height:auto;
 	//width:250px; // !important; 

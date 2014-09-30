@@ -40,16 +40,19 @@
 			a {
 				text-decoration: none;
 			}
-			.fc-event {		
-			
+			.fc-event {				
 				.fc-event-inner {
-					margin-bottom: 5px;
+					color: $ucd_blue_80;					
+					margin: 3px 3px 5px 3px;
 					padding: 10px;
 					background-color: $ucd_blue_10;
 					font-size: 11px;
-					.subject-box {
-						margin-bottom: 10px;
-					
+					.subjects {						
+						.subject-box {
+							margin-bottom: 5px;
+							margin: 0px;
+						
+						}
 					}
 				}
 			}
@@ -143,39 +146,52 @@ margin-top:0;
 		font-size: 24px;
 	}
 }
-#view-filter{
+#view-filter {
 	text-align: right;
 	padding-top: 6px;
-	.vf-selector{
+	.vf-selector {
 		background-color: $ucd_blue_10;
 		width: 80px;
 		height: 25px;
-		padding-right:2px;
-		a{
+		padding-right: 2px;
+		a {
 			text-decoration: none;
 			padding: 5px 20px 5px 20px;
 		}
 	}
+	.selected {
+			background-color: $ucd_blue_80;
+			a {
+				color: #fff; 
+			}
+	}
 }
-.sidebar-left{
+.sidebar-left {
 	top: 135px;
-	#subject-all{
+	#subject-all {
 		margin-top: 25px;
 		margin-bottom: 20px;
-		a{		
+		a {		
 			text-decoration: none;
 		}
 	}
-	.checkForm{
-		input{
+	.checkForm {
+		input {
 			height: 20px;
 			width: 20px;
-			margin-bottom:5px;
-			margin-top:0px;
+			margin-bottom: 5px;
+			margin-top: 0px;
 		}
-		label{
+		label {
 			position: absolute;
 			font-size:13px;
+		}
+	}
+	.sb-subitems {
+		text-size: 13px;
+		a {
+			text-decoration: none;
+			color: $ucd_blue_80;			
 		}
 	}
 }
@@ -208,14 +224,16 @@ margin-top:0;
 		}
 	}
 }
+.color-box {
+		width: 10px;
+		height: 10px;
+		display: inline-block;
+		margin-right: 5px;
+		margin-left: 10px;
+}
+
 .widget-fieldset {
-	.color-box {
-				width: 10px;
-				height: 10px;
-				display: inline-block;
-				margin-right: 5px;
-				margin-left: 10px;
-		}
+	
 	#criterion-subject-econometrics {
 		.color-box {
 			background-color: $evergreen;
