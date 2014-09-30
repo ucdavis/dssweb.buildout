@@ -116,7 +116,7 @@
 		.action-element {
 			position: absolute;
 			left: 0;
-			
+			z-index: 300;
 			h2 {
 				display: none;
 			}
@@ -129,7 +129,7 @@
 			.panel-body {
 				margin-top: 0;
 				padding-top: 0;
-				background-color: rgba(0, 40, 85, 0.8);
+				background-color: $rec_blue;
 				color: #FFF;
 			}
 		}

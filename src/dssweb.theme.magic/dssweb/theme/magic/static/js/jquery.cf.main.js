@@ -72,6 +72,12 @@
       });
 		};
 		
+		if($('blockquote').length !== 0) {
+			$('blockquote').addClass('open-quote');
+			$('blockquote').wrapInner('<span class="bq-content" />');
+			$('blockquote').wrapInner('<span class="close-quote" />');
+		}
+		
 		// Misc. Fixes
 		var apply_fixes = function () {
 			var msViewportStyle = null;
