@@ -25,7 +25,11 @@ a { color: #4d688c; }
 
 em { font-style: italic; }
 
-blockquote { border: 1px solid ucd_blue_70; background-color: #ccd4e0; }
+blockquote { color: #008EAA; margin-top: 35px; margin-left: 70px; margin-right: 50px; padding: 0 0 0 55px; background-image: url(../images/icons/t-T9-open-quote.png); background-position: top left; background-repeat: no-repeat; }
+blockquote .bq-content { display: block; padding: 20px; background-color: #e5f3f6; }
+blockquote p { color: #008EAA; font-style: italic; }
+blockquote p.byline { margin-bottom: 0; font-style: normal; font-size: 13px !important; font-size: 0.8125rem !important; }
+blockquote .close-quote { display: block; padding: 0 55px 0 0; background-image: url(../images/icons/t-T9-closed-quote.png); background-repeat: no-repeat; background-position: bottom right; }
 
 button { font-size: 14px; font-size: 0.875rem; line-height: 24px; line-height: 1.5rem; }
 
@@ -833,6 +837,8 @@ head { font-family: 'XS'; }
 
 .body-img { border: 1px solid red; height: 120px; width: 200px; float: left; }
 
+img.left-align { float: left; margin-right: 1em; margin-bottom: 1em; }
+
 .invisible { visibility: hidden; }
 
 button { height: 40px; width: 120px; background-color: #DAAA00; }
@@ -1121,7 +1127,11 @@ a { color: #4d688c; }
 
 em { font-style: italic; }
 
-blockquote { border: 1px solid ucd_blue_70; background-color: #ccd4e0; }
+blockquote { color: #008EAA; margin-top: 35px; margin-left: 70px; margin-right: 50px; padding: 0 0 0 55px; background-image: url(../images/icons/t-T9-open-quote.png); background-position: top left; background-repeat: no-repeat; }
+blockquote .bq-content { display: block; padding: 20px; background-color: #e5f3f6; }
+blockquote p { color: #008EAA; font-style: italic; }
+blockquote p.byline { margin-bottom: 0; font-style: normal; font-size: 13px !important; font-size: 0.8125rem !important; }
+blockquote .close-quote { display: block; padding: 0 55px 0 0; background-image: url(../images/icons/t-T9-closed-quote.png); background-repeat: no-repeat; background-position: bottom right; }
 
 button { font-size: 14px; font-size: 0.875rem; line-height: 24px; line-height: 1.5rem; }
 
@@ -1261,7 +1271,11 @@ a { color: #4d688c; }
 
 em { font-style: italic; }
 
-blockquote { border: 1px solid ucd_blue_70; background-color: #ccd4e0; }
+blockquote { color: #008EAA; margin-top: 35px; margin-left: 70px; margin-right: 50px; padding: 0 0 0 55px; background-image: url(../images/icons/t-T9-open-quote.png); background-position: top left; background-repeat: no-repeat; }
+blockquote .bq-content { display: block; padding: 20px; background-color: #e5f3f6; }
+blockquote p { color: #008EAA; font-style: italic; }
+blockquote p.byline { margin-bottom: 0; font-style: normal; font-size: 13px !important; font-size: 0.8125rem !important; }
+blockquote .close-quote { display: block; padding: 0 55px 0 0; background-image: url(../images/icons/t-T9-closed-quote.png); background-repeat: no-repeat; background-position: bottom right; }
 
 button { font-size: 14px; font-size: 0.875rem; line-height: 24px; line-height: 1.5rem; }
 
@@ -1443,7 +1457,11 @@ a { color: #4d688c; }
 
 em { font-style: italic; }
 
-blockquote { border: 1px solid ucd_blue_70; background-color: #ccd4e0; }
+blockquote { color: #008EAA; margin-top: 35px; margin-left: 70px; margin-right: 50px; padding: 0 0 0 55px; background-image: url(../images/icons/t-T9-open-quote.png); background-position: top left; background-repeat: no-repeat; }
+blockquote .bq-content { display: block; padding: 20px; background-color: #e5f3f6; }
+blockquote p { color: #008EAA; font-style: italic; }
+blockquote p.byline { margin-bottom: 0; font-style: normal; font-size: 13px !important; font-size: 0.8125rem !important; }
+blockquote .close-quote { display: block; padding: 0 55px 0 0; background-image: url(../images/icons/t-T9-closed-quote.png); background-repeat: no-repeat; background-position: bottom right; }
 
 button { font-size: 14px; font-size: 0.875rem; line-height: 24px; line-height: 1.5rem; }
 
@@ -1574,10 +1592,10 @@ body.res-lab #content-row div > h2 { font-size: 24px !important; font-size: 1.5r
   .minify-sm .panel-heading .panel-title a { background-color: transparent; background: url(../images/icons/white-arrow-right-sm.png) 90% 50% no-repeat transparent; }
   .minify-sm .panel-heading .panel-title a.collapsed { background: url(../images/icons/white-arrow-down-sm.png) 90% 50% no-repeat transparent; }
   .minify-sm .panel-heading .panel-title a:hover { background: url(../images/icons/white-arrow-down-sm.png) 90% 50% no-repeat transparent; }
-  .minify-sm .action-element { position: absolute; left: 0; }
+  .minify-sm .action-element { position: absolute; left: 0; z-index: 300; }
   .minify-sm .action-element h2 { display: none; }
   .minify-sm .action-element h3 a { padding-top: 0; color: #FFF; }
-  .minify-sm .action-element .panel-body { margin-top: 0; padding-top: 0; background-color: rgba(0, 40, 85, 0.8); color: #FFF; } }
+  .minify-sm .action-element .panel-body { margin-top: 0; padding-top: 0; background-color: #008EAA; color: #FFF; } }
 /*----- Tablet breakpoint -------*/
 @media screen and (min-width: 768px) and (max-width: 992px) { .siders .wall.shadow-graphic { height: 85px !important; }
   body.home .siders { margin-right: -12px !important; }
