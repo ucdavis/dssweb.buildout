@@ -86,7 +86,11 @@ head {
 	width:200px;
 	float:left;
 }
-
+img.left-align {
+	float: left;
+	margin-right: 1em;
+	margin-bottom: 1em;
+}
 
 .invisible { // TODO: Use bootstrap class .invisible
 	visibility: hidden;

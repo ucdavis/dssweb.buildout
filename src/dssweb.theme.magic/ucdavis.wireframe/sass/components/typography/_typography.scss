@@ -20,9 +20,39 @@ em {
 }
 
 blockquote {
-	border: 1px solid ucd_blue_70;
-	background-color: $ucd_blue_20;
+	color: $rec_blue;
+	margin-top: 35px;
+	margin-left: 70px;
+	margin-right: 50px;
+	padding: 0 0 0 55px;
+  background-image: url(../images/icons/t-T9-open-quote.png);
+  background-position: top left;
+  background-repeat: no-repeat;
+	// JS generated inner wrap
+	.bq-content {
+		display: block;
+		padding: 20px;
+		background-color: $rec_blue_light;
+	}
+	p {
+		color: $rec_blue;
+		font-style: italic;
+		&.byline {
+			margin-bottom: 0;
+			font-style: normal;
+			@include font_size(13px,!important);
+		}
+	}
+	// JS generated inner wrap
+	.close-quote {
+		display: block;
+		padding: 0 55px 0 0;
+    background-image: url(../images/icons/t-T9-closed-quote.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+	}
 }
+
 
 button {
 	@include font_size(14px);
