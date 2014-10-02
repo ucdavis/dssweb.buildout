@@ -5,10 +5,16 @@
 div.row {
 	/* placeholder to override columns.css */
 }
+ul#iss-top {
+	margin-top: 56px;
+	margin-bottom: -100px;
+	padding-left: 100px;
+}
 
 #portal-logo {
 	    display: inline-block;
-	    margin: 0 0; 
+	    margin: 0 0;
+	    padding-top: 13px; 
 }
 
 #portal-searchbox {
@@ -172,6 +178,27 @@ dl.portlet-static-quick-facts dt {
 #left-front-column dl.portlet a, a:visited {
 		background:transparent;
 		color:$ucd_blue_100;
+}
+#middle-front-column {
+	> dl > dt {
+		background:transparent;
+		font-size: 24px !important;
+		font-size: 1.5rem !important;
+		font-weight: normal;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		
+	}
+	dl.portlet dt.portletHeader a, a:visited {
+		background:transparent;
+		color:$ucd_black_80;
+		border-bottom: none;
+	}
+	dl.portlet a, a:visited {
+		background:transparent;
+		color:$ucd_blue_100;
+		
+	}
 }
 
 /*------ General Content ----------*/

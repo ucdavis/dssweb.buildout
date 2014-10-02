@@ -35,13 +35,13 @@
 	   
 	   <!--swap in portal-globalnav -->
 	   <!--utility menu -->
-	   <!--ISS Site Specific Logo -->
-	   <replace css:theme="#top-bar-wrap > nav > ul > li" css:content="#portal-logo" css:if-content="body.site-ISS"/>
+	   <!--ISS Site Specific Logo and front page -->
+	   <before css:theme="#util-bar-wrap > nav" css:content="#iss-top" />
+	   <replace css:theme="#top-bar-wrap > nav > ul > li" css:content="#portal-logo" if="$home_page"/>
 	   <replace css:theme-children="#left-front-column" css:content=".portlet.portletEvents" />
-	   
-         <!--replace css:content="#portal-globalnav li" css:theme-children="#top-bar-wrap > nav > section > ul.left" /-->
-	    <!--overkill rule to replace the plain class on the menu li - unnecessary use of force, but fun! -->
-		<!--replace css:theme="#name-icon" css:content="#portal-logo" /-->
+	   <replace css:theme-children="#middle-front-column" css:content=".portlet-collection-iss-journal" />
+	   <replace css:theme-children="#right-front-column" css:content=".portlet-collection-funding-call" />
+		
 	
 	    <replace content="//li[contains(@class,'plain')]/@class">
 	    <xsl:attribute name="class">
