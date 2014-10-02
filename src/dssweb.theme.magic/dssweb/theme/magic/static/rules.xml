@@ -70,17 +70,19 @@
 	    <replace content="//div[@id='portal-searchbox']//input[@class='searchButton']/@value">
 	    <xsl:attribute name="value">GO</xsl:attribute>
 	    </replace>
+	    
+	     <replace css:theme="#top-bar-wrap > nav > section > ul" css:content="#portal-globalnav" />
+		
+		<replace css:content="#portal-globalnav">
+	            <xsl:copy>
+	                <xsl:attribute name="class">left</xsl:attribute>
+	                <xsl:apply-templates />
+	            </xsl:copy>
+	   </replace>
 	   
-	    <replace css:theme-children="#portal-globalnav" css:content-children="#portal-globalnav" />
-	    <!--replace css:theme="#top-bar-wrap > nav > section > ul" css:content="#portal-globalnav" /-->
-	    <!--Still doesnt' work, would be handy if it did -->
-		    <xsl:template match="portal-globalnav">
-		            <xsl:copy>
-		                <xsl:attribute name="class">left</xsl:attribute>
-		                <xsl:copy-of select="@*" />
-		                <xsl:apply-templates />
-		    </xsl:copy>
-	    </xsl:template>
+	    <!--replace css:theme-children="#portal-globalnav" css:content-children="#portal-globalnav" /-->
+	   
+	    
 		 
 	    
 		<!-- News Happy Box -->
