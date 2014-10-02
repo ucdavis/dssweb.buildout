@@ -5,11 +5,11 @@
 div.row {
 	/* placeholder to override columns.css */
 }
-ul#iss-top {
-	margin-top: 56px;
+ ul#iss-top {
+	margin-top: 51px;
 	margin-bottom: -100px;
 	padding-left: 100px;
-}
+} 
 
 #portal-logo {
 	    display: inline-block;
@@ -98,12 +98,13 @@ nav.top-bar {
   position:relative; /* fix ie */
   zoom:1; /* fix ie */
   }
-#portal-globalnav:after {
+  //removed because it breaks firefox */
+/*#portal-globalnav:after {
   content:"";
   clear:both;
   display:block;
   visibility:hidden;
-  }
+  } */
 #portal-globalnav li {
   float:left;
   position:relative;
