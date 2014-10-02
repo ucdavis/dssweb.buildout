@@ -76,6 +76,7 @@
 		<replace css:content="#portal-globalnav">
 	            <xsl:copy>
 	                <xsl:attribute name="class">left</xsl:attribute>
+				 <xsl:copy-of select="@*" />
 	                <xsl:apply-templates />
 	            </xsl:copy>
 	   </replace>
