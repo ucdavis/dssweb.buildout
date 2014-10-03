@@ -17,7 +17,7 @@
 		
 		<!-- #BeginEditable "header" -->
 		<link type="text/css" href="bower_components/Wallpaper/jquery.fs.wallpaper.css" rel="stylesheet">
-		<link href="assets/sections/event.css" rel="stylesheet" />
+		<link href="assets/sections/calendar.css" rel="stylesheet" />
 	  <!-- #EndEditable -->
 	
 	  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -214,7 +214,7 @@
 	          <div class="panel-heading">
 	            <h3 class="panel-title op-sidebar-title menu-icon visible-xs">
 	              <a data-parent="#accordion" data-target="#sbA" data-toggle="collapse">
-	                <p class="visible-xs view-all"><a href="#">Filter By</a></p>
+	                <p class="visible-xs view-all">Filter By</p>
 	                <div class="glyphicon glyphicon-align-justify visible-xs" id="dropdown-icon"></div>
 	              </a>
 	            </h3>
@@ -263,16 +263,17 @@
 						
 	       
 		       
-					
+					<div id="cal-controls">
 						<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="view-filter" >
-							<span class="vf-selector"><a href="#">Today</a></span>
-							<span class="vf-selector selected"><a href="#">Month</a></span>
-							<span class="vf-selector"><a href="#">Week</a></span>
-							<span class="vf-selector"><a href="#">Day</a></span>
+							<div class="vf-selector"><span ><a href="#">Today</a></span></div>
+							<div class="vf-selector selected"><span><a href="#">Month</a></span></div>
+							<div class="vf-selector"><span><a href="#">Week</a></span></div>
+							<div class="vf-selector"><span><a href="#">Day</a></span></div>
 						</div>
 						 <div id="month-pager" class="pager col-xs-12 col-sm-12 col-md-6 col-lg-6">
 							<span class="pager-prev ui-icon ui-icon-circle-triangle-e"><a href="#"><span class="text-hide">Previous</span></a></span> <span class="pager-string fc-header-title">May 2014</span><span class="pager-next fc-button fc-button-next ui-state-default ui-corner-right"><a href="#"><span class="text-hide">Next</span></a></span>
 						</div>	
+					</div>
 						
 						<table id="month" class="fc-header">
 							<thead>
