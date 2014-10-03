@@ -202,8 +202,9 @@
 	    <!-- #BeginEditable "content" -->
 		
 			<div id="content">
-				<!-- Happy box group -->
-	  
+			
+				<div class="breadcrumb"><p><a href="t1_index.html">Home</a> <span class="bread-divider">|</span> <a href="t11_calendar.html">Events</a></p></div>
+				<h1 class="content-title">Calendar</h1>
 			
 			<div id="content-row" class="row">			
 	    <!-- Left Sidebar -->
@@ -213,18 +214,18 @@
 	          <div class="panel-heading">
 	            <h3 class="panel-title op-sidebar-title menu-icon visible-xs">
 	              <a data-parent="#accordion" data-target="#sbA" data-toggle="collapse">
-	                <span>
-	                  <strong>Our People</strong>
-	                </span>
+	                <p class="visible-xs view-all"><a href="#">Filter By</a></p>
 	                <div class="glyphicon glyphicon-align-justify visible-xs" id="dropdown-icon"></div>
 	              </a>
 	            </h3>
 	          </div>
 	          <div class="collapsible sidebar-panel panel-collapse collapse" id="sbA">
 	            <div class="panel-body">
-								<h4 class="uc">View ...</h4>
+								<h4 class="uc hidden-md hidden-xs">View ...</h4>
 								<div class="subject" id="subject-all" title="All">
-									<p><a href="#">All</a></p>
+									<p class="hidden-md hidden-xs"><a href="#">All</a></p>
+									<p class="hidden-lg view-all hidden-xs"><a href="#">View All</a></p>
+									<p class="visible-md" id="filter-by"><a href="#">Filter By:</a></p>
 								</div>
 								<fieldset class="widget-fieldset">
 									<form method="get" action=".">
@@ -259,30 +260,30 @@
 		
 			<div id="content-core">
 		    <div id="calendar" class="query-path fc ui-widget query-Subject col-xs-12 col-sm-12 col-md-12 col-lg-9">
-						<div class="breadcrumb"><p><a href="t1_index.html">Home</a> <span class="bread-divider">|</span> <a href="t11_calendar.html">Events</a></p></div>
-			    	<h1 class="content-title">Calendar</h1>
+						
 	       
-		        <div id="month-pager" class="pager">
-							<span class="pager-prev ui-icon ui-icon-circle-triangle-e"><a href="#"><span class="text-hide">Previous</span></a></span> <span class="pager-string fc-header-title">May 2014</span><span class="pager-next fc-button fc-button-next ui-state-default ui-corner-right"><a href="#"><span class="text-hide">Next</span></a></span>
-						</div>
+		       
 					
-						<div id="view-filter" >
+						<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="view-filter" >
 							<span class="vf-selector"><a href="#">Today</a></span>
 							<span class="vf-selector selected"><a href="#">Month</a></span>
 							<span class="vf-selector"><a href="#">Week</a></span>
 							<span class="vf-selector"><a href="#">Day</a></span>
 						</div>
-					
-						<table id="month" class="fc-header col-lg-12">
+						 <div id="month-pager" class="pager col-xs-12 col-sm-12 col-md-6 col-lg-6">
+							<span class="pager-prev ui-icon ui-icon-circle-triangle-e"><a href="#"><span class="text-hide">Previous</span></a></span> <span class="pager-string fc-header-title">May 2014</span><span class="pager-next fc-button fc-button-next ui-state-default ui-corner-right"><a href="#"><span class="text-hide">Next</span></a></span>
+						</div>	
+						
+						<table id="month" class="fc-header">
 							<thead>
 							<tr>
-							<th class="first"><span title="Monday">Monday</span></th>
-							<th><span title="Tuesday">Tuesday</span></th>
-							<th><span title="Wednesday">Wednesday</span></th>
-							<th><span title="Thursday">Thursday</span></th>
-							<th><span title="Friday">Friday</span></th>
-							<th class="weekend" title="Saturday"><span>Saturday</span></th>
-							<th class="weekend last" title="Sunday"><span>Sunday</span></th>
+							<th class="first"><span class="hidden-xs" title="Monday">Monday</span><span class="visible-xs" title="Monday">M</span></th>
+							<th><span class="hidden-xs" title="Tuesday">Tuesday</span><span class="visible-xs" title="Tuesday">Tu</span></th>
+							<th><span class="hidden-xs" title="Wednesday">Wednesday</span><span class="visible-xs" title="Wednesday">W</span></th>
+							<th><span class="hidden-xs" title="Thursday">Thursday</span><span class="visible-xs" title="Thursday">Th</span></th>
+							<th><span class="hidden-xs" title="Friday">Friday</span><span class="visible-xs" title="Friday">F</span></th>
+							<th class="weekend"><span class="hidden-xs" title="Saturday">Saturday</span><span class="visible-xs" title="Saturday">Sa</span></th>
+							<th class="weekend last"><span class="hidden-xs" title="Sunday">Sunday</span><span class="visible-xs" title="Sunday">Su</span></th>
 							</tr>
 							</thead>
 					
