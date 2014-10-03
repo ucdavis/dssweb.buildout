@@ -41,6 +41,7 @@
 	   <replace css:theme-children="#left-front-column" css:content=".portlet.portletEvents" />
 	   <replace css:theme-children="#middle-front-column" css:content=".portlet-collection-iss-journal" />
 	   <replace css:theme-children="#right-front-column" css:content=".portlet-collection-funding-call" />
+	   
 		
 	
 	    <replace content="//li[contains(@class,'plain')]/@class">
@@ -72,7 +73,7 @@
 	    </replace>
 	    
 	     <replace css:theme="#top-bar-wrap > nav > section > ul" css:content="#portal-globalnav" />
-		
+			
 		<replace css:content="#portal-globalnav">
 	            <xsl:copy>
 	                <xsl:attribute name="class">left</xsl:attribute>

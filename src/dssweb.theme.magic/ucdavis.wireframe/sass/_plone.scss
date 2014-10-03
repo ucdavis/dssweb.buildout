@@ -5,11 +5,11 @@
 div.row {
 	/* placeholder to override columns.css */
 }
-ul#iss-top {
-	margin-top: 56px;
+ ul#iss-top {
+	margin-top: 51px;
 	margin-bottom: -100px;
 	padding-left: 100px;
-}
+} 
 
 #portal-logo {
 	    display: inline-block;
@@ -98,12 +98,13 @@ nav.top-bar {
   position:relative; /* fix ie */
   zoom:1; /* fix ie */
   }
-#portal-globalnav:after {
+  //removed because it breaks firefox */
+/*#portal-globalnav:after {
   content:"";
   clear:both;
   display:block;
   visibility:hidden;
-  }
+  } */
 #portal-globalnav li {
   float:left;
   position:relative;
@@ -161,7 +162,8 @@ dl.portlet-static-quick-facts dt {
 	}
 /*---------Homepage middle ---------*/
 /*-------left column ------------*/
-#left-front-column > dl > dt {
+#left-front-column {
+	 > dl > dt {
 	background:transparent;
 	font-size: 24px !important;
 	font-size: 1.5rem !important;
@@ -169,15 +171,21 @@ dl.portlet-static-quick-facts dt {
 	padding-top: 15px;
 	padding-bottom: 15px;
 }
-#left-front-column dl.portlet dt.portletHeader a, a:visited {
+	dl.portlet dt.portletHeader a, a:visited {
 	background:transparent;
 	color:$ucd_black_80;
 	border-bottom: none;
 }
 	
-#left-front-column dl.portlet a, a:visited {
+	dl.portlet a, a:visited {
 		background:transparent;
 		color:$ucd_blue_100;
+	}
+		a.tile {
+			color:$ucd_blue_100 !important;
+	          border-bottom: none;
+		}
+
 }
 #middle-front-column {
 	> dl > dt {
@@ -197,22 +205,39 @@ dl.portlet-static-quick-facts dt {
 	dl.portlet a, a:visited {
 		background:transparent;
 		color:$ucd_blue_100;
-		
 	}
+	a.tile {
+		color:$ucd_blue_100 !important;
+          border-bottom: none;
+	}
+		
 }
-
-/*------ General Content ----------*/
-#content a:link, dl.portlet a:link {
-  color: $ucd_blue_100;
+dl.portlet a:link {
+  color: $ucd_blue_100 !important;
   border-bottom: none; 
 }
-#content a:hover, dl.portlet a:hover {
+dl.portlet a:hover {
 color: $ucd_blue_100 !important;
 text-decoration:underline;
 border-bottom: none;
 }
 
-#content a:visited, dl.portlet a:visited {
+dl.portlet a:visited {
+border-bottom:transparent;
+}
+
+/*------ General Content ----------*/
+dl.portlet a:link {
+  color: $ucd_blue_100;
+  border-bottom: none; 
+}
+dl.portlet a:hover {
+color: $ucd_blue_100 !important;
+text-decoration:underline;
+border-bottom: none;
+}
+
+dl.portlet a:visited {
 border-bottom:transparent;
 }
 
