@@ -10,6 +10,7 @@
 	#month {
 		border-collapse: collapse;
 		margin-bottom: 70px;
+		width: 100%;
 		
 		td {
 			border: 1px solid $ucd_blue_10;
@@ -112,8 +113,9 @@
 	}
 }
 p {
-margin-top:0;
+	margin-top: 0;
 }
+
 .rows {
 	border-top: 5px solid $rec_blue;
 	&.zebra {
@@ -132,9 +134,13 @@ margin-top:0;
 
 	}
 }
-
+#content-row {
+	margin-top: 35px;
+}
 #month-pager {
 	float: left;
+	text-align: left;
+	padding-left: 0px;
 	padding-top: 5px;
 	.pager-string {
 		margin-left: 10px;
@@ -144,6 +150,8 @@ margin-top:0;
 }
 #view-filter {
 	text-align: right;
+	float: right;	
+	padding-right: 0px;
 	padding-top: 6px;
 	.vf-selector {
 		background-color: $ucd_blue_10;
@@ -162,8 +170,17 @@ margin-top:0;
 		}
 	} 
 }
+.breadcrumb, .content-title {
+	margin-left: 365px;
+}
+.breadcrumb {
+	margin-top: 50px;
+}
+.content-title {
+	padding-bottom: 0;
+}
 .sidebar-left {
-	top: 135px;
+	top: 35px;
 	#subject-all {
 		margin-top: 25px;
 		margin-bottom: 20px;
@@ -173,11 +190,13 @@ margin-top:0;
 	}
 
 	.checkForm {
+		margin-top: 0px !important;
 		input {
 			height: 20px;
 			width: 20px;
 			margin-bottom: 5px;
 			margin-top: 0px;
+			margin-left: 0px;
 		}
 		label {
 			position: absolute;
@@ -315,6 +334,19 @@ margin-top:0;
 			}
 		}
 	}
+	#content {
+		margin-top: 90px !important;
+	}
+	.breadcrumb {
+		margin-top: 10px;
+	}
+	#view-filter, #month-pager {
+		text-align: center;
+	}
+	#view-filter {
+		margin-bottom: 20px;
+	}
+	
 	// Remove following for gold button instead of blue 
 	#accordion-e {
 		.panel-title {
@@ -355,9 +387,87 @@ margin-top:0;
 	}
 }
 
-@media screen and (max-width: $screen-lg-min) { // width > 1310px
+@media screen and (max-width: $screen-lg-min) { // width < 1310px
 	#month{
 		width: 100%;
 	}
+	#content-row {
+		margin-top: 0px;
+	}
+	.content-title {
+		font-size: 26px;
+	}
+	.widget-fieldset {
+		margin-top: 25px;
+		.checkForm {
+			li {
+				float: left;
+				width: 50%;
+				.color-box {
+					margin-right: 10px;
+				}
+			}		
+		}
+	}
+	.sb-subitems {
+		position: absolute;	
+		top: -30px;
+		right: 35px;
+		p {
+			display: inline;
+			a {
+				font-size: 11px;		
+			}
+		}
+	}
+	#left-area {
+		margin-bottom: 30px;	
+	}
+	#filter-by {
+		position: absolute;
+		top: 10px;
+		left: 155px;	
+		a {
+			font-size: 13px;
+		}
+	}
+	.vf-selector {
+		padding-top: 15px;
+		padding-bottom: 15px;
+		margin-bottom: 10px;
+		a {
+			font-size: 13px;
+		}
+	}
+	.pager-string {
+		font-size: 18px !important;
+	}
+	#subject-all {
+		height: 40px;
+		width: 80px;
+		float: left;
+		margin: 15px 30px 0 30px !important;
+		.view-all {
+			background-color: $ucd_blue_10;
+			text-align: center;			
+			padding-top: 8px;
+			padding-bottom: 8px;
+			a {
+				font-size: 13px;
+			}
+		}
+	}
+	#month {
+		position: relative;
+		top: 10px;
+	}
+	.breadcrumb, .content-title {
+		margin-left: 0px;
+		margin-top: 35px;
+	}
+	.sidebar-left {
+		top: 0;
+	}
 }
+
 /* /event.scss */
