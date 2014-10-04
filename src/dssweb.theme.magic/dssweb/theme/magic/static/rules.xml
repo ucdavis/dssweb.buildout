@@ -88,7 +88,7 @@
 		 
 	    
 		<!-- News Happy Box -->
-		<copy css:content="#portletwrapper-706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f5765625265646f0a6e657773 > dl > dd.portletItem.odd" css:theme="#container-1 > div > div > div.content" />
+		<replace css:content="#portletwrapper-706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f4953530a6e6577732d31 > dl > dd.portletItem.odd" css:theme-children="#container-1 > div > div > div.content-wrap"   />
 		
 		<!--  About Happy Box -->
 		<copy css:content="#parent-fieldname-description" css:theme="#container-2 > div > div > div.content" />

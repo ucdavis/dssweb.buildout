@@ -143,6 +143,26 @@ ul.submenu a.state-published:hover,
 .selected ul.submenu .state-published {
     color: #fff !important;
 }
+/*------News Happy Box ---------*/
+#content a:visited, dl.portlet a:visited {
+	border-bottom:none;
+}
+#content a:link, dl.portlet a:link {
+		border-bottom:none;
+	
+}
+.content-wrap dd.portletItem a.tile {
+	color:white !important;
+
+}
+.content-wrap > dd > a > img.portletItemImage {
+	margin-top:-3px;
+}
+.content-wrap dd.portletItem a:hover {
+	text-decoration:underline;
+
+}
+
 /*----- About Happy Box ---------*/
 dl.portlet-static-quick-facts dt {
 	padding: 0.42em 1em;
@@ -278,6 +298,12 @@ border-bottom:transparent;
 
 	
 /*-------footer-------*/
+dl.portlet-static-contact dt{
+	background: transparent;
+	font-size: 0.875rem;
+	
+}
+
 div#footer-nav {
 	margin-left: 30%;
 	width: 45%;
