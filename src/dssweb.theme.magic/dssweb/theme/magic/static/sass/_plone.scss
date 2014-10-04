@@ -162,7 +162,16 @@ dl.portlet-static-quick-facts dt {
 	}
 /*---------Homepage middle ---------*/
 /*-------left column ------------*/
+
 #left-front-column {
+	dl.portlet.portletContentLeadImageCollectionPortlet{
+		margin-left:-12%;
+		width:95%;
+	}
+	img.portletItemImage.image-left {
+	margin-top: -4%;
+	margin-left: -3.5%;
+	}
 	 > dl > dt {
 	background:transparent;
 	font-size: 24px !important;
@@ -170,6 +179,7 @@ dl.portlet-static-quick-facts dt {
 	font-weight: normal;
 	padding-top: 15px;
 	padding-bottom: 15px;
+	text-align:center;
 }
 	dl.portlet dt.portletHeader a, a:visited {
 	background:transparent;
@@ -184,10 +194,27 @@ dl.portlet-static-quick-facts dt {
 		a.tile {
 			color:$ucd_blue_100 !important;
 	          border-bottom: none;
+			position:relative;
+		
 		}
+	dd.portletItem {
+		background-color: #e5e5e5;
+		cursor: pointer;
+		height: 100px;
+		margin-bottom: 10px;
+		width: 100%;
+	 }
 
 }
 #middle-front-column {
+	dl.portlet.portletContentLeadImageCollectionPortlet{
+		margin-left:-9%;
+		width:95%;
+	}
+	img.portletItemImage.image-left {
+	margin-top: -4%;
+	margin-left: -3.5%;
+	}
 	> dl > dt {
 		background:transparent;
 		font-size: 24px !important;
@@ -195,6 +222,7 @@ dl.portlet-static-quick-facts dt {
 		font-weight: normal;
 		padding-top: 15px;
 		padding-bottom: 15px;
+		text-align:center;
 		
 	}
 	dl.portlet dt.portletHeader a, a:visited {
@@ -210,6 +238,13 @@ dl.portlet-static-quick-facts dt {
 		color:$ucd_blue_100 !important;
           border-bottom: none;
 	}
+	dd.portletItem {
+		background-color: #e5e5e5;
+		cursor: pointer;
+		height: 100px;
+		margin-bottom: 10px;
+		width: 100%;
+	 }
 		
 }
 dl.portlet a:link {
