@@ -125,7 +125,10 @@
 	   <copy css:content=".portlet.portletNavigationTree" css:theme="#footer-nav" />
 
 
-
+       <before css:theme="#wallpaper_fix">
+            <!-- we need to know the theme url to localize some javascript -->
+            <div style="display:none" id="theme_url"><xsl:value-of select="$theme_url" /></div>
+       </before>
 
 
     </rules>
