@@ -2,13 +2,7 @@
 @charset "utf-8";
 @import "variables";
 
-div.row {
-	/* placeholder to override columns.css */
-	float: left;
-	width: 100%;
-	display: block;
-	position: static !important;
-}
+
  ul#iss-top {
 	margin-top: 51px;
 	margin-bottom: -100px;
