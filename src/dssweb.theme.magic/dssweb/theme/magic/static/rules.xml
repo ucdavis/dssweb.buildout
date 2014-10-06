@@ -32,25 +32,15 @@
 
         <!-- Insert your own rules here -->
         <!--  columns -->
-		<replace content="//div[contains(@class,'cell')]/@class">
-		<xsl:attribute name="class">
-		<xsl:if test='contains(current(),"width-3:4")'>.col-lg-9</xsl:if>
-		<xsl:if test='contains(current(),"width-2:3")'>col-xs-12 col-sm-12 col-md-8 col-lg-8 no-gutter-lg</xsl:if>
-		<xsl:if test='contains(current(),"width-1:2")'>.col-lg-6</xsl:if>
-		<xsl:if test='contains(current(),"width-1:3")'>.col-lg-4</xsl:if>
-		<xsl:if test='contains(current(),"width-1:4")'>.col-lg-3</xsl:if>
-		<xsl:if test='contains(current(),"width-full")'>.col-lg-12</xsl:if>
-		</xsl:attribute>
-		</replace>
 	   
 	   <!--swap in portal-globalnav -->
 	   <!--utility menu -->
 	   <!--ISS Site Specific Logo and front page -->
 	   <before css:theme="#util-bar-wrap > nav" css:content="#iss-top" />
 	   <replace css:theme="#top-bar-wrap > nav > ul > li" css:content="#portal-logo" if="$home_page"/>
-	   <replace css:theme-children="#left-front-column" css:content=".portletContentLeadImageCollectionPortlet.upcoming-events" />
-	   <replace css:theme-children="#middle-front-column" css:content=".portletContentLeadImageCollectionPortlet.iss-journal" />
-	   <replace css:theme-children="#right-front-column" css:content=".portlet-collection-funding-call" />
+	   <replace css:theme-children="#left-front-column" css:content=".events" />
+	   <replace css:theme-children="#middle-front-column" css:content=".journal" />
+	   <replace css:theme-children="#right-front-column" css:content=".funding" />
 	   
 		
 	
@@ -98,14 +88,14 @@
 		 
 	    
 		<!-- News Happy Box -->
-		<replace css:content=".portlet.portletContentLeadImageCollectionPortlet.news-1 > dd" css:theme-children="#container-1 > div > div > div.content-wrap"   />
+		<replace css:content=".news > dl > dd" css:theme-children="#container-1 > div > div > div.content-wrap"   />
 		
 		<!--  About Happy Box -->
 		<copy css:content="#parent-fieldname-description" css:theme="#container-2 > div > div > div.content" />
 		<before css:theme="#container-2 > div > div > div.bcontroller" css:content="#po > dl" />
 		
 		<!-- Events Happy Box -->
-	    <copy css:content=".portlet.portletContentLeadImageCollectionPortlet.events-1 > dd" css:theme="#container-3 > div > div > div.content-wrap" />
+	    <copy css:content=".events >dl > dd" css:theme="#container-3 > div > div > div.content-wrap" />
 		<!-- Front Page -->
 		<copy css:content="#parent-fieldname-title" css:theme="#middle-row" />
 		<!-- Breadcrumbs for all but front page -->
@@ -122,8 +112,7 @@
 	<!-- Content-core -->
 	<replace css:theme="#content-core" css:content="#content-core" />
 	<!-- Basic Portlet -->
-	<after css:theme=" div.sidebar.sidebar-right.col-xs-12.col-sm-12.col-md-4.col-lg-4" css:content="#portal-column-two"  />
-	
+	 	
 		
 	<!-- Events Page -->
 	<replace css:theme="#sidebar-block-contact > li.fn > a" css:content="a.email" />
