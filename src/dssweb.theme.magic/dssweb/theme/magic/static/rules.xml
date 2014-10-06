@@ -8,7 +8,7 @@
     <rules css:if-content="#visual-portal-wrapper">
 	    <theme href="index.html" if="$home_page" />
 	    <theme href="t13_event.html" css:if-content="body.section-events" />
-         <theme href="t8_students.html" />
+        <theme href="t4_adhoc.html" />
 
         <!-- Replace title with Plone's page title  -->
         <replace css:theme="html head title" css:content="html head title" />
@@ -117,15 +117,19 @@
 	<replace css:theme="li.tel" css:content="td.tel" />
 	<replace css:theme="li.email a" css:content="a.email" />
 
-
-
+    <replace css:content=".breadcrumbSeparator">
+        <span class="bread-divider">|</span>
+    </replace>
 
 	  <!--- Footer -->
 	   <copy  css:content=".portletStaticText.portlet-static-contact" css:theme="#vcard" />
 	   <replace css:content=".portlet-footer-nav" css:theme-children="#foot-left"/>
 
 
-
+       <before css:theme="#wallpaper_fix">
+            <!-- we need to know the theme url to localize some javascript -->
+            <div style="display:none" id="theme_url"><xsl:value-of select="$theme_url" /></div>
+       </before>
 
 
     </rules>
