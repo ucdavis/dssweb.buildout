@@ -92,13 +92,13 @@
 	<replace css:theme="p.intro" css:content="#parent-fieldname-description" />
 
 	<!-- Columns -->
-	<replace theme='//*[@id="content-row"]' content='//*[@id="portal-columns"]' />
+	<!--replace theme='//*[@id="content-row"]' content='//*[@id="portal-columns"]' /-->
 
-	<!-- Content-core -->
-	<replace css:theme="#content-core" css:content="#content-core" if-not="$home_page" />
-	<!-- Basic Portlet -->
-	<after css:theme=" div.sidebar.sidebar-right.col-xs-12.col-sm-12.col-md-4.col-lg-4" css:content="#portal-column-two"  />
-
+	<!-- Content-core-T4 -->
+	<replace css:theme-children=".panel-body" css:content="#content-core" if-not="$home_page" />
+	
+	<!-- Basic Right Portlet -->
+	<replace css:theme=".portlet" css:content=".portlet" />
 
 	<!-- Events Page -->
 	<replace css:theme="#sidebar-block-contact > li.fn > a" css:content="a.email" />
@@ -112,7 +112,8 @@
 
 	  <!--- Footer -->
 	   <copy  css:content=".portletStaticText.portlet-static-contact" css:theme="#vcard" />
-	   <replace css:content=".portlet-footer-nav" css:theme-children="#foot-left"/>
+	   <replace css:content=".portlet-footer-nav" css:theme-children="#foot-left" method="raw"/>
+	   <drop css:content=".portlet-footer-nav" />
 
 
        <before css:theme="#wallpaper_fix">

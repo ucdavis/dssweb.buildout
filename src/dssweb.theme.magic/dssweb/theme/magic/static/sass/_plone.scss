@@ -193,11 +193,11 @@ dl.portlet-static-quick-facts dt {
 
 }
 dl.portlet a:link {
-  color: $ucd_blue_100 !important;
+  color: $ucd_blue_100;
   border-bottom: none;
 }
 dl.portlet a:hover {
-color: $ucd_blue_100 !important;
+color: $ucd_blue_100;
 text-decoration:underline;
 border-bottom: none;
 }
@@ -205,7 +205,27 @@ border-bottom: none;
 dl.portlet a:visited {
 border-bottom:transparent;
 }
-
+/*---right-side-portlets----*/
+dl.portlet dt {
+	display: block;
+	background-color:$rec_blue;
+	padding-top:.75em;
+	padding-bottom:.75em;
+	
+	a, a:link {
+		color:white;
+		width:100%;
+		text-decoration:none;
+		padding-left: 10%;
+	}
+}
+.portletItemDetails {
+	font-size: 85%;
+	padding-top: .5em;
+    line-height: 1.5em;
+    margin-left: 1em;
+    display: block;
+}
 /*------ General Content ----------*/
 #content .documentDescription {
 	color: inherit;
@@ -222,7 +242,13 @@ dl.portlet a:link {
   border-bottom: none;
 }
 /*---Portlets -----*/
-
+.blockedPortlet .portletBlockedMessage {
+    color: white;
+    display: inline;
+}
+dl.portlet {
+	margin-top: 50px;
+}
 dl.portlet a:hover {
 color: $ucd_blue_100 !important;
 text-decoration:underline;
