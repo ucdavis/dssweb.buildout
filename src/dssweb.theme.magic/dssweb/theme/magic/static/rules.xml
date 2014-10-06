@@ -38,7 +38,7 @@
 	   <!--ISS Site Specific Logo and front page -->
 	   <before css:theme="#util-bar-wrap > nav" css:content="#iss-top" />
 	   <replace css:theme="#top-bar-wrap > nav > ul > li" css:content="#portal-logo" if="$home_page"/>
-	   <replace css:theme-children="#left-front-column" css:content=".events" />
+	   <replace css:theme-children="#left-front-column" css:content="#portlet-wrapper > .events" />
 	   <replace css:theme-children="#middle-front-column" css:content=".journal" />
 	   <replace css:theme-children="#right-front-column" css:content=".funding" />
 	   
@@ -95,7 +95,7 @@
 		<before css:theme="#container-2 > div > div > div.bcontroller" css:content="#po > dl" />
 		
 		<!-- Events Happy Box -->
-	    <copy css:content=".events >dl > dd" css:theme="#container-3 > div > div > div.content-wrap" />
+	    <copy css:content=".events > dl > dd" css:theme="#container-3 > div > div > div.content-wrap" />
 		<!-- Front Page -->
 		<copy css:content="#parent-fieldname-title" css:theme="#middle-row" />
 		<!-- Breadcrumbs for all but front page -->
