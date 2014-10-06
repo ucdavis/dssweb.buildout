@@ -12,6 +12,18 @@
     padding: 0;
     width: 1px;
 }
+/*--image tags --*/
+.image-left {
+   float: left;
+   margin: 0.5em 1em 0.5em 0;
+}
+.image-right {
+   float: right;
+   margin: 0.5em;
+}
+.image-inline {
+   float: none;
+}
 
  ul#iss-top {
 	margin-top: 51px;
