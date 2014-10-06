@@ -88,14 +88,14 @@
 		 
 	    
 		<!-- News Happy Box -->
-		<replace css:content="#portletwrapper-706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f4953530a6e6577732d31 > dl > dd.portletItem.odd" css:theme-children="#container-1 > div > div > div.content-wrap"   />
+		<replace css:content=".portlet.portletContentLeadImageCollectionPortlet.news-1 > dd" css:theme-children="#container-1 > div > div > div.content-wrap"   />
 		
 		<!--  About Happy Box -->
 		<copy css:content="#parent-fieldname-description" css:theme="#container-2 > div > div > div.content" />
-		<before css:theme="#container-2 > div > div > div.bcontroller" css:content="#portletwrapper-706c6f6e652e6c656674636f6c756d6e0a636f6e746578740a2f5765625265646f2f66726f6e742d706167650a717569636b2d6661637473 > dl" />
+		<before css:theme="#container-2 > div > div > div.bcontroller" css:content="#po > dl" />
 		
 		<!-- Events Happy Box -->
-	    <copy css:content="#portletwrapper-706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f5765625265646f0a6576656e7473 > dl > dd.portletItem.odd" css:theme="#container-3 > div > div > div.content" />
+	    <copy css:content=".portlet.portletContentLeadImageCollectionPortlet.events-1 > dd" css:theme="#container-3 > div > div > div.content-wrap" />
 		<!-- Front Page -->
 		<copy css:content="#parent-fieldname-title" css:theme="#middle-row" />
 		<!-- Breadcrumbs for all but front page -->
@@ -118,7 +118,7 @@
 	   <copy css:content=".portlet.portletNavigationTree" css:theme="#footer-nav" />
 	   
 	    
- 	    
+ 	  
         
 
     </rules>
