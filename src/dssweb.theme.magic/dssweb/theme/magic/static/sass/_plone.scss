@@ -4,6 +4,10 @@
 
 div.row {
 	/* placeholder to override columns.css */
+	float: left;
+	width: 100%;
+	display: block;
+	position: static !important;
 }
  ul#iss-top {
 	margin-top: 51px;
@@ -282,10 +286,22 @@ border-bottom:transparent;
 }
 
 /*------ General Content ----------*/
+#content .documentDescription {
+	color: inherit;
+	margin-left: 0;
+	font: inherit;
+	font-size: 18px;
+	font-size: 1.125rem;
+	line-height: 30px !important;
+	line-height: 1.875rem !important;
+	margin-bottom: 45px; 
+}
 dl.portlet a:link {
   color: $ucd_blue_100;
   border-bottom: none; 
 }
+/*---Portlets -----*/
+
 dl.portlet a:hover {
 color: $ucd_blue_100 !important;
 text-decoration:underline;
@@ -295,6 +311,9 @@ border-bottom: none;
 dl.portlet a:visited {
 border-bottom:transparent;
 }
+
+/*--Basic rec pool Blue Portlet --*/
+
 
 	
 /*-------footer-------*/
