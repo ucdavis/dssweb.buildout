@@ -2,17 +2,27 @@
 @charset "utf-8";
 @import "variables";
 
+.hiddenStructure {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    display: block;
+    height: 0.1em;
+    margin: -0.1em 0 0 -0.1em;
+    overflow: hidden;
+    padding: 0;
+    width: 1px;
+}
 
  ul#iss-top {
 	margin-top: 51px;
 	margin-bottom: -100px;
 	padding-left: 100px;
-} 
+}
 
 #portal-logo {
 	    display: inline-block;
 	    margin: 0 0;
-	    padding-top: 13px; 
+	    padding-top: 13px;
 }
 
 #portal-searchbox {
@@ -38,116 +48,16 @@
 background-color: $ucd_bright_gold_70;
 padding: 0.3em;
 }
-#portal-globalnav {
-list-style-image: none;
-position: relative;
-background-color: none;
-zoom: 1;
-z-index: 2;
-}
 
-#portal-globalnav li a {
-	font-size: 1.0625rem;
-	letter-spacing: 0.025em;
-	line-height: 1.80rem;
-    display: inline-block;
-    padding: 0 1em 1.75em 1em;
-    white-space: normal;
-    /*TODO: Once we have removed the whitespace from the nav template, this can be put back*/
-   border-bottom: None;
-    border-right: None;
-}
-#portal-globalnav li {
-	min-width: 2em;
-}
 
-#portal-globalnav > li > a {
-	
-	
-} 
-#portal-globalnav .selected a,
-#portal-globalnav a:hover {
-    background: $ucd_blue_70;
-    color: White;
-} 
-#portal-globalnav .selected a:hover {
-    background: $ucd_blue_70;
-    color: white;
-}
-nav.top-bar {
-	background-color: $ucd_blue_100;
-}
-/* - dropdown-menu.css - */
 @media screen {
-/* DropDown Menu Styles */
-
-#portal-top {
-  z-index:1;
-  }
-/* override of foundation */  
-.top-bar-section .has-dropdown > a {
-	// 2014-09-27 RAK: Simplified main menu item padding by removing from Foundation topbar.css and using single value in _navigation.scss without !important so may be overwritten if necessary */
-  /*padding-right: 10px !important;*/ }
- 
-  /*----------Dropdown Menu----------------*/
-/*---------- BASIC STYLE one level ----------*/
-#portal-globalnav {
-  list-style-image:none;
-  position:relative; /* fix ie */
-  zoom:1; /* fix ie */
-  }
-  //removed because it breaks firefox */
-/*#portal-globalnav:after {
-  content:"";
-  clear:both;
-  display:block;
-  visibility:hidden;
-  } */
-#portal-globalnav li {
-  float:left;
-  position:relative;
-  }
-#portal-globalnav li a {
-  display:block;
-  background: $ucd_blue_100;
-  border-top: none;
-  }
-
-/*----- DropDown -----*/
-ul.submenu {
-  display:none;
-  left:0;
-  position:absolute;
-  top:100%;
-  }
-#portal-globalnav li:hover > ul.submenu {
-  display:block;
-  }
-ul.submenu li {
-  float:none;
-  margin:0;
-  padding-left:0;
-  padding-right:0;
-  }
-#portal-globalnav ul.submenu li a {
-  padding:0.5em 1.5em 0.5em 1em; 
-  width:13em;
-  }
-ul.submenu ul {
-  top:0;
-  left:100%;
-  }
-ul.submenu a.state-published:hover,
-.selected ul.submenu .state-published {
-    color: #fff !important;
-}
 /*------News Happy Box ---------*/
 #content a:visited, dl.portlet a:visited {
 	border-bottom:none;
 }
 #content a:link, dl.portlet a:link {
 		border-bottom:none;
-	
+
 }
 .content-wrap dd.portletItem a.tile {
 	color:white !important;
@@ -204,7 +114,7 @@ dl.portlet-static-quick-facts dt {
 	color:$ucd_black_80;
 	border-bottom: none;
 }
-	
+
 	dl.portlet a, a:visited {
 		background:transparent;
 		color:$ucd_blue_100;
@@ -213,7 +123,7 @@ dl.portlet-static-quick-facts dt {
 			color:$ucd_blue_100 !important;
 	          border-bottom: none;
 			position:relative;
-		
+
 		}
 	dd.portletItem {
 		background-color: #e5e5e5;
@@ -241,7 +151,7 @@ dl.portlet-static-quick-facts dt {
 		padding-top: 15px;
 		padding-bottom: 15px;
 		text-align:center;
-		
+
 	}
 	dl.portlet dt.portletHeader a, a:visited {
 		background:transparent;
@@ -263,11 +173,11 @@ dl.portlet-static-quick-facts dt {
 		margin-bottom: 10px;
 		width: 100%;
 	 }
-		
+
 }
 dl.portlet a:link {
   color: $ucd_blue_100 !important;
-  border-bottom: none; 
+  border-bottom: none;
 }
 dl.portlet a:hover {
 color: $ucd_blue_100 !important;
@@ -288,11 +198,11 @@ border-bottom:transparent;
 	font-size: 1.125rem;
 	line-height: 30px !important;
 	line-height: 1.875rem !important;
-	margin-bottom: 45px; 
+	margin-bottom: 45px;
 }
 dl.portlet a:link {
   color: $ucd_blue_100;
-  border-bottom: none; 
+  border-bottom: none;
 }
 /*---Portlets -----*/
 
@@ -309,12 +219,12 @@ border-bottom:transparent;
 /*--Basic rec pool Blue Portlet --*/
 
 
-	
+
 /*-------footer-------*/
 dl.portlet-static-contact dt{
 	background: transparent;
 	font-size: 16px;
-	
+
 }
 #vcard p {
 	font-size: 16px;
@@ -329,12 +239,12 @@ div#footer-nav {
 
 #footer-nav{
 	-webkit-column-count: 3;
-	-webkit-column-gap: 10px; 
+	-webkit-column-gap: 10px;
 	column-count: 3;
 	column-gap: 10px;
 	-moz-column-count:3;
 	-moz-column-gap:10px;
-	
+
 	dl.portlet ul.navTree li a {
     	border: none;
     	display: block;
@@ -354,12 +264,12 @@ div#footer-nav {
     	padding: 0.25em 1em;
     	border-bottom: None;
     	line-height: 2em;
-		color: white;	
+		color: white;
 	}
 	dl.portlet li {
 		border-left: 1px solid white;
 		margin-bottom: 0;
-		
+
 	}
 
 	dl.portlet ul.navTreeLevel1 .navTreeItem {
@@ -368,7 +278,7 @@ div#footer-nav {
 	}
 	.navTreeItem .state-published {
 		color: white !important;
-		
+
 	}
 
 	dl.portlet ul.navTree .navTreeCurrentItem {
