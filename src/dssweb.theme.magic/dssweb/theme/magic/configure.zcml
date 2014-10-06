@@ -10,11 +10,18 @@
   <five:registerPackage package="." initialize=".initialize" />
 
   <genericsetup:registerProfile
-    name="default" title="Magic Theme" directory="profiles/default" 
-    description="Installs the dssweb.theme.magic package" 
+    name="default" title="Magic Theme" directory="profiles/default"
+    description="Installs the dssweb.theme.magic package"
     provides="Products.GenericSetup.interfaces.EXTENSION" />
-  
+
   <plone:static
       type="theme" directory="static" />
-  
+
+  <browser:page
+    for="*"
+    name="banner-image"
+    class=".banners.BannerImage"
+    permission="zope.Public"
+    />
+
 </configure>
