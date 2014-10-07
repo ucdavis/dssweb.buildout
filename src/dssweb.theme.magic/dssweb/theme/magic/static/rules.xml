@@ -115,12 +115,19 @@
 	   <replace css:content=".portlet-footer-nav" css:theme-children="#foot-left" method="raw"/>
 	   <drop css:content=".portlet-footer-nav" />
 
-
+<!--
        <before css:theme="#wallpaper_fix">
-            <!-- we need to know the theme url to localize some javascript -->
             <div style="display:none" id="theme_url"><xsl:value-of select="$theme_url" /></div>
        </before>
+-->
 
+       <replace css:theme="#wallpaper_fix">
+            <script id="wallpaper_fix">
+                $(".wall").wallpaper({
+                    source: "@@banner-image"
+                });
+            </script>
+       </replace>
 
     </rules>
 
