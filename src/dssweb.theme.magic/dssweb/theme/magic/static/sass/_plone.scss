@@ -12,6 +12,11 @@
     padding: 0;
     width: 1px;
 }
+
+.submenu_description {
+    display: none;
+}
+
 /*--image tags --*/
 .image-left {
    float: left;
@@ -109,7 +114,7 @@ dl.portlet-static-quick-facts dt {
 /*-------left column ------------*/
 
 #left-front-column {
-	
+
 	dd.portletItem {
 		background-color: #e5e5e5;
 		cursor: pointer;
@@ -148,11 +153,11 @@ dl.portlet-static-quick-facts dt {
 			position:relative;
 
 		}
-	
+
 
 }
 #middle-front-column {
-	
+
 	dd.portletItem {
 		background-color: #e5e5e5;
 		cursor: pointer;
@@ -161,7 +166,7 @@ dl.portlet-static-quick-facts dt {
 		width: 100%;
 		padding-top: 12px;
 	 }
-	
+
 	img.portletItemDetails.image-left {
 		margin-top: -17px;
 		margin-left: 0px;
@@ -189,7 +194,7 @@ dl.portlet-static-quick-facts dt {
 		color:$ucd_blue_100 !important;
           border-bottom: none;
 	}
-	
+
 
 }
 #right-front-column {
@@ -228,7 +233,7 @@ dl.portlet-static-quick-facts dt {
 		color:$ucd_blue_100 !important;
           border-bottom: none;
 	}
-	
+
 
 }
 
@@ -251,7 +256,7 @@ dl.portlet dt {
 	background-color:$rec_blue;
 	padding-top:.75em;
 	padding-bottom:.75em;
-	
+
 	a, a:link {
 		color:white;
 		width:100%;
@@ -328,10 +333,10 @@ div#footer-nav {
 
 	column-count: 3;
 	column-gap: 10px;
-	
+
 	-moz-column-count:3;
 	-moz-column-gap:10px;
-	
+
 	dl.portlet.portletNavigationTree {
 		margin-top:0 !important;
 	}
