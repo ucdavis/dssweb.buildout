@@ -82,7 +82,7 @@
 
 		<!--  About Happy Box -->
 	
-		<relace css:content="#content-core" css:theme-children="#container-2 > div > div > div.content-wrap"  />
+		<copy css:content="#content-core" css:theme-children="#container-2 > div > div > div.content-wrap" />
 
 		<!-- Events Happy Box -->
 	    <copy css:content=".events > dl > dd" css:theme="#container-3 > div > div > div.content-wrap" />
@@ -104,6 +104,7 @@
 	
 	<!-- Basic Right Portlet -->
 	<replace css:theme=".portlet" css:content=".portlet" />
+	
 
 	<!-- Events Page -->
 	<replace css:theme="#sidebar-block-contact > li.fn > a" css:content="a.email" />

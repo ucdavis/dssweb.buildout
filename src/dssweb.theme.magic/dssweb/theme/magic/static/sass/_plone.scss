@@ -271,6 +271,9 @@ dl.portlet dt {
     margin-left: 1em;
     display: block;
 }
+dd.portletFooter {
+	padding-top:1em;
+}
 /*------ General Content ----------*/
 #content .documentDescription {
 	color: inherit;
@@ -326,7 +329,7 @@ div#footer-nav {
  /* Footer Navigation portlet */
 
 #footer-nav-middle{
-	width:40%;
+	width:50%;
 	padding-left: 5%;
 	-webkit-column-count: 3;
 	-webkit-column-gap: 10px;
@@ -345,12 +348,18 @@ div#footer-nav {
     	border: none;
 		font-size:120%;
     	display: block;
+		color:white;
     	zoom: 1;
 	}
 
-	dl.portlet ul.navTree li a:hover, a:active {
-		color:white !important;
+	dl.portlet ul.navTree li {
+		a:hover {
+			color:white !important;
 
+		}
+		a:active {
+			color:white !important;
+		}
 	}
 
 	dl.portletNavigationTree dd.portletItem {
@@ -363,6 +372,7 @@ div#footer-nav {
     	line-height: 2em;
 		color: white;
 	}
+	
 	dl.portlet li {
 		border-left: 1px solid white;
 		margin-bottom: 0;
@@ -381,9 +391,7 @@ div#footer-nav {
 	dl.portlet ul.navTree .navTreeCurrentItem {
     	background-color: transparent;
 		color:white;
-    	border-left: 1em solid #ddd;
-    	margin-left: -1em;
-    	margin-right: -1em;
+    	
 	}
 }
 
