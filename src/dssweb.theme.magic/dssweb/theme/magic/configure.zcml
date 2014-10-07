@@ -24,4 +24,9 @@
     permission="zope.Public"
     />
 
+  <browser:jbot
+    directory="template_overrides"
+    layer=".interfaces.ICustomTheme"
+  />
+
 </configure>

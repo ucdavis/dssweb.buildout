@@ -30,7 +30,8 @@ setup(name='dssweb.theme.magic',
           'setuptools',
           # -*- Extra requirements: -*-
           'plone.app.theming',
-          'webcouturier.dropdownmenu'
+          'webcouturier.dropdownmenu',
+           'z3c.jbot',
       ],
       entry_points={
           'z3c.autoinclude.plugin': 'target = plone',
