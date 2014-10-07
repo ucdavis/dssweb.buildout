@@ -82,6 +82,7 @@
 
 		<!--  About Happy Box -->
 
+
 		<replace css:content="#content-core" css:theme-children="#container-2 div.content-wrap"  />
 
 		<!-- Events Happy Box -->
