@@ -2,6 +2,7 @@
 <object name="portal_css">
 	
 	<stylesheet id="mobile.css" enabled="False" />
-     <stylesheet id="dropdown-menu.css" enabled="False"/>
-	<stylesheet id="columns.css" enabled="False" />
+	<!-- handled by diazo imports -->
+     <!--stylesheet id="dropdown-menu.css" enabled="False"/>
+	<stylesheet id="columns.css" enabled="False" /-->
 </object>
