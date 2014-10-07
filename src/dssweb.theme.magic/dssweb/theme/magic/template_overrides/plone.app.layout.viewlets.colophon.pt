@@ -1,0 +1,6 @@
+<div id="portal-colophon"
+     i18n:domain="plone">
+<div class="colophonWrapper">
+Custom Colophon
+</div>
+</div>
