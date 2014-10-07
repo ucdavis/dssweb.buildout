@@ -29,17 +29,17 @@
         <!-- after css:theme-children="html body" css:content="html head script" / -->
 
         <!-- Insert your own rules here -->
-        
+
 	   <!--swap in portal-globalnav -->
 	   <!--utility menu -->
 	   <!--ISS Site Specific Logo and front page -->
 	   <before css:theme="#util-bar-wrap > nav" css:content="#iss-top" />
-	   
+
 	   <replace css:theme="#top-bar-wrap > nav > ul > li" css:content="#portal-logo" if="$home_page"/>
 	   <replace css:theme-children="#left-front-column" css:content=".portletContentLeadImageCollectionPortlet.events-1" />
 	   <replace css:theme-children="#middle-front-column" css:content=".portletContentLeadImageCollectionPortlet.iss-journal-1" />
 	   <replace css:theme-children="#right-front-column" css:content=".portlet-collection-open-calls" />
-	   
+
 	   <!--drop all the portal footers on the front page -->
 	   <drop css:content="dd.portlet-footer" if="$home_page" />
 	   <drop css:content="dd.portletFooter" if="$home_page" />
@@ -81,8 +81,8 @@
 		<replace css:content=".news > dl > dd" css:theme-children="#container-1 > div > div > div.content-wrap"   />
 
 		<!--  About Happy Box -->
-	
-		<relace css:content="#content-core" css:theme-children="#container-2 > div > div > div.content-wrap"  />
+
+		<replace css:content="#content-core" css:theme-children="#container-2 div.content-wrap"  />
 
 		<!-- Events Happy Box -->
 	    <copy css:content=".events > dl > dd" css:theme="#container-3 > div > div > div.content-wrap" />
@@ -101,7 +101,7 @@
 
 	<!-- Content-core-T4 -->
 	<replace css:theme-children=".panel-body" css:content="#content-core" if-not="$home_page" />
-	
+
 	<!-- Basic Right Portlet -->
 	<replace css:theme=".portlet" css:content=".portlet" />
 
@@ -118,7 +118,7 @@
 	  <!--- Footer -->
 	   <copy  css:content=".portletStaticText.portlet-static-contact" css:theme="#vcard" />
 	   <replace css:theme-children="#footer-nav-middle"  css:content-children=".portlet-footer-nav" method="raw"/>
-	  
+
 	   <drop css:content=".portlet-footer-nav" />
 
 <!--
