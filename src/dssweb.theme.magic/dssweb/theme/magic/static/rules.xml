@@ -81,13 +81,9 @@
 		<replace css:content=".news > dl > dd" css:theme-children="#container-1 > div > div > div.content-wrap"   />
 
 		<!--  About Happy Box -->
-<<<<<<< HEAD
-	
-		<copy css:content="#content-core" css:theme-children="#container-2 > div > div > div.content-wrap" />
-=======
+
 
 		<replace css:content="#content-core" css:theme-children="#container-2 div.content-wrap"  />
->>>>>>> origin/master
 
 		<!-- Events Happy Box -->
 	    <copy css:content=".events > dl > dd" css:theme="#container-3 > div > div > div.content-wrap" />
