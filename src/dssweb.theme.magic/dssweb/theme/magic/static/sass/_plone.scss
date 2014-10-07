@@ -81,6 +81,9 @@ padding: 0.3em;
 		border-bottom:none;
 
 }
+.content-wrap dd.portletItem {
+	background-color:transparent;
+}
 .content-wrap dd.portletItem a.tile {
 	color:white !important;
 
@@ -272,7 +275,20 @@ dl.portlet dt {
     display: block;
 }
 dd.portletFooter {
-	padding-top:1em;
+	padding-top: 50px;
+	text-align: right;
+	background-color: #f2f2f2;
+	}
+
+
+dd.portletItem {
+	padding-top:10px;
+	background-color:#f2f2f2;
+}
+
+.portletItemDetails.image-left {
+	margin-top:-5px;
+	margin-left:0;
 }
 /*------ General Content ----------*/
 #content .documentDescription {
@@ -343,6 +359,9 @@ div#footer-nav {
 	dl.portlet.portletNavigationTree {
 		margin-top:0 !important;
 	}
+	dd.portletItem.lastItem {
+	background-color: transparent;
+}
 
 	dl.portlet ul.navTree li a {
     	border: none;

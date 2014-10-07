@@ -33,6 +33,7 @@
 	   <!--swap in portal-globalnav -->
 	   <!--utility menu -->
 	   <!--ISS Site Specific Logo and front page -->
+	   
 	   <before css:theme="#util-bar-wrap > nav" css:content="#iss-top" />
 
 	   <replace css:theme="#top-bar-wrap > nav > ul > li" css:content="#portal-logo" if="$home_page"/>
@@ -43,7 +44,7 @@
 	   <!--drop all the portal footers on the front page -->
 	   <drop css:content="dd.portlet-footer" if="$home_page" />
 	   <drop css:content="dd.portletFooter" if="$home_page" />
-
+	   
 
 
         <replace content="//ul[contains(@class,'submenu')]/@class">
@@ -118,9 +119,11 @@
 
 	  <!--- Footer -->
 	   <copy  css:content=".portletStaticText.portlet-static-contact" css:theme="#vcard" />
+	   <drop css:content=".portlet-footer-nav" />
 	   <replace css:theme-children="#footer-nav-middle"  css:content-children=".portlet-footer-nav" method="raw"/>
 
-	   <drop css:content=".portlet-footer-nav" />
+	   	   
+	  
 
 <!--
        <before css:theme="#wallpaper_fix">
