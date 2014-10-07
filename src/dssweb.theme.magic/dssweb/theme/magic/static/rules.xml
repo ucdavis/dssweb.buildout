@@ -7,7 +7,7 @@
     <!-- Apply the following rules to standard Plone pages -->
     <rules css:if-content="#visual-portal-wrapper">
 	    <theme href="index.html" if="$home_page" />
-	    <theme href="t13_event.html" css:if-content="body.section-events" />
+	    <theme href="t13_event.html" css:if-content="body.portaltype-event" />
         <theme href="t4_adhoc.html" />
 
         <!-- Replace title with Plone's page title  -->
@@ -103,7 +103,7 @@
 	<replace css:theme-children=".panel-body" css:content="#content-core" if-not="$home_page" />
 
 	<!-- Basic Right Portlet -->
-	<replace css:theme=".portlet" css:content=".portlet" />
+	<replace css:theme-children=".sidebar-right" css:content=".portlet" />
 
 	<!-- Events Page -->
 	<replace css:theme="#sidebar-block-contact > li.fn > a" css:content="a.email" />
@@ -134,6 +134,23 @@
                 });
             </script>
        </replace>
+
+        <rules css:if-content="body.portaltype-event">
+            <!-- rules for the event portal type -->
+            <replace theme="//div[@id='content-core']/div/img"
+                     content="//*[@id='parent-fieldname-leadImage']" />
+
+            <replace css:theme="#event-speakers p.attendees"
+                     css:content="td.attendees" />
+            <replace css:theme="#event-datetime p.datetime"
+                     content=".//*[@id='content-core']/div[1]/table/tbody/tr[1]/td" />
+            <replace css:theme="#event-location p.location"
+                     content=".//*[@id='content-core']/div[1]/table/tbody/tr[2]/td" />
+            <replace css:theme="#event-description .inline-content"
+                     content=".//*[@id='content-core']/div[2]" />
+            <replace css:theme-children="#event-cta .portlet-items"
+                     content=".//*[@id='content-core']/div[1]/table/tbody/tr[6]/td" />
+        </rules>
 
     </rules>
 
