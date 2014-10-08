@@ -7,7 +7,7 @@
     <!-- Apply the following rules to standard Plone pages -->
     <rules css:if-content="#visual-portal-wrapper">
 	    <theme href="index.html" if="$home_page" />
-	    <theme href="t13_event.html" css:if-content="body.section-events" />
+	    <theme href="t13_event.html" css:if-content="body.portaltype-event" />
         <theme href="t4_adhoc.html" />
 
         <!-- Replace title with Plone's page title  -->
@@ -29,28 +29,27 @@
         <!-- after css:theme-children="html body" css:content="html head script" / -->
 
         <!-- Insert your own rules here -->
-        <!--  columns -->
-		<replace content="//div[contains(@class,'cell')]/@class">
-		<xsl:attribute name="class">
-		<xsl:if test='contains(current(),"width-3:4")'>.col-lg-9</xsl:if>
-		<xsl:if test='contains(current(),"width-2:3")'>col-xs-12 col-sm-12 col-md-8 col-lg-8 no-gutter-lg</xsl:if>
-		<xsl:if test='contains(current(),"width-1:2")'>.col-lg-6</xsl:if>
-		<xsl:if test='contains(current(),"width-1:3")'>.col-lg-4</xsl:if>
-		<xsl:if test='contains(current(),"width-1:4")'>.col-lg-3</xsl:if>
-		<xsl:if test='contains(current(),"width-full")'>.col-lg-12</xsl:if>
-		</xsl:attribute>
-		</replace>
+		<!--Home Page Rules-->
+		<drop css:theme="#content > div.row > div" if="$home_page" />
+ 	   <!--drop all the portal footers on the front page -->
+ 	   <drop css:content="dd.portlet-footer" if="$home_page" />
+ 	   <drop css:content="dd.portletFooter" if="$home_page" />
 
 	   <!--swap in portal-globalnav -->
 	   <!--utility menu -->
 	   <!--ISS Site Specific Logo and front page -->
+
 	   <before css:theme="#util-bar-wrap > nav" css:content="#iss-top" />
-	   <replace css:theme="#top-bar-wrap > nav > ul > li" css:content="#portal-logo" if="$home_page"/>
-	   <replace css:theme-children="#left-front-column" css:content=".portletContentLeadImageCollectionPortlet.upcoming-events" />
-	   <replace css:theme-children="#middle-front-column" css:content=".portletContentLeadImageCollectionPortlet.iss-journal" />
-	   <replace css:theme-children="#right-front-column" css:content=".portlet-collection-funding-call" />
+
+	   <replace css:theme-children="#top-bar-wrap > nav > ul > li.name" css:content="#portal-logo"  />
+	   <replace css:theme-children="#left-front-column" css:content=".portletContentLeadImageCollectionPortlet.front-page-events" />
+	   <replace css:theme-children="#middle-front-column" css:content=".portletContentLeadImageCollectionPortlet.journal" />
+	   <replace css:theme-children="#right-front-column" css:content=".portletContentLeadImageCollectionPortlet.available-grants" />
 
 
+
+	   <!--drop the events tab -->
+	   <drop content='//*[@id="portaltab-events"]' />
 
         <replace content="//ul[contains(@class,'submenu')]/@class">
             <xsl:attribute name="class">dropdown</xsl:attribute>
@@ -84,14 +83,15 @@
 		<replace css:theme-children="ul.left" css:content-children="#portal-globalnav" />
 
 		<!-- News Happy Box -->
-		<replace css:content=".portlet.portletContentLeadImageCollectionPortlet.news-1 > dd" css:theme-children="#container-1 > div > div > div.content-wrap"   />
+		<replace css:content=".news > dl > dd" css:theme-children="#container-1 > div > div > div.content-wrap"   />
 
 		<!--  About Happy Box -->
-		<copy css:content="#parent-fieldname-description" css:theme="#container-2 > div > div > div.content" />
-		<before css:theme="#container-2 > div > div > div.bcontroller" css:content="#po > dl" />
+
+
+		<replace css:content="#content-core" css:theme-children="#container-2 div.content-wrap"  />
 
 		<!-- Events Happy Box -->
-	    <copy css:content=".portlet.portletContentLeadImageCollectionPortlet.events-1 > dd" css:theme="#container-3 > div > div > div.content-wrap" />
+	    <copy css:content=".events > dl > dd" css:theme="#container-3 > div > div > div.content-wrap" />
 		<!-- Front Page -->
 		<copy css:content="#parent-fieldname-title" css:theme="#middle-row" />
 		<!-- Breadcrumbs for all but front page -->
@@ -103,13 +103,13 @@
 	<replace css:theme="p.intro" css:content="#parent-fieldname-description" />
 
 	<!-- Columns -->
-	<replace theme='//*[@id="content-row"]' content='//*[@id="portal-columns"]' />
+	<!--replace theme='//*[@id="content-row"]' content='//*[@id="portal-columns"]' /-->
 
-	<!-- Content-core -->
-	<replace css:theme="#content-core" css:content="#content-core" />
-	<!-- Basic Portlet -->
-	<after css:theme=" div.sidebar.sidebar-right.col-xs-12.col-sm-12.col-md-4.col-lg-4" css:content="#portal-column-two"  />
+	<!-- Content-core-T4 -->
+	<replace css:theme-children=".panel-body" css:content="#content-core" if-not="$home_page" />
 
+	<!-- Basic Right Portlet -->
+	<replace css:theme-children=".sidebar-right" css:content=".portlet" />
 
 	<!-- Events Page -->
 	<replace css:theme="#sidebar-block-contact > li.fn > a" css:content="a.email" />
@@ -123,15 +123,52 @@
 
 	  <!--- Footer -->
 	   <copy  css:content=".portletStaticText.portlet-static-contact" css:theme="#vcard" />
-	   <copy css:content=".portlet.portletNavigationTree" css:theme="#footer-nav" />
+	   <drop css:content=".portlet-footer-nav" />
+	   <replace css:theme-children="#footer-nav-middle"  css:content-children=".portlet-footer-nav" method="raw"/>
 
 
+
+
+<!--
        <before css:theme="#wallpaper_fix">
-            <!-- we need to know the theme url to localize some javascript -->
             <div style="display:none" id="theme_url"><xsl:value-of select="$theme_url" /></div>
        </before>
+-->
 
+       <replace css:theme="#wallpaper_fix">
+            <script id="wallpaper_fix">
+                $(".wall").wallpaper({
+                    source: "@@banner-image"
+                });
+            </script>
+       </replace>
+
+        <rules css:if-content="body.portaltype-event">
+            <!-- rules for the event portal type -->
+            <replace theme="//div[@id='content-core']/div/img"
+                     content="//*[@id='parent-fieldname-leadImage']/img" />
+
+            <replace css:theme="#event-speakers p.attendees"
+                     css:content="td.attendees" />
+            <replace css:theme="#event-datetime p.datetime"
+                     content=".//*[@id='content-core']/div[1]/table/tbody/tr[1]/td" />
+            <replace css:theme="#event-location p.location"
+                     content=".//*[@id='content-core']/div[1]/table/tbody/tr[2]/td" />
+            <replace css:theme="#event-description .inline-content"
+                     content=".//*[@id='content-core']/div[2]" />
+            <replace css:theme-children="#event-cta .portlet-items"
+                     content=".//*[@id='content-core']/div[1]/table/tbody/tr[6]/td" />
+        </rules>
 
     </rules>
+
+    <xsl:template match="img[@class='newsImage']/@src">
+        <xsl:attribute name="src"><xsl:value-of select="concat(substring-before(., '_mini'), '_large')" /></xsl:attribute>
+    </xsl:template>
+    <xsl:template match="img[@class='newsImage']/@height"></xsl:template>
+    <xsl:template match="img[@class='newsImage']/@width"></xsl:template>
+    <xsl:template match="img[@class='newsImage']/@class">
+        <xsl:attribute name="class">img-responsive</xsl:attribute>
+    </xsl:template>
 
 </rules>

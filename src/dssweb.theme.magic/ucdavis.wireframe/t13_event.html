@@ -210,7 +210,7 @@
 					<div id="content-core">
 
 						<div class="picture flush-bottom">
-							<img class="img-responsive" src="images/temp/T13a-event-photo.jpg" alt="Photo Alt Tag" />
+							<img class="img-responsive" id="lead-image" src="images/temp/T13a-event-photo.jpg" alt="Photo Alt Tag" />
 						</div>
 
 						<div class="zebra rows">
@@ -220,7 +220,7 @@
 									<h3 class="uc">Speaker(s)</h3>
 								</div>
 								<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-									<p>Grant Shields</p>
+									<p class="attendees">Grant Shields</p>
 								</div>
 							</div><!-- /.row -->
 
@@ -229,7 +229,7 @@
 									<h3 class="uc">Date &amp; Time</h3>
 								</div>
 								<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-									<p>Monday, June 2, 2014, 12:10-1:00PM</p>
+									<p class="datetime">Monday, June 2, 2014, 12:10-1:00PM</p>
 								</div>
 							</div><!-- /.row -->
 
@@ -238,7 +238,7 @@
 									<h3 class="uc">Location</h3>
 								</div>
 								<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-									<p>Young 166</p>
+									<p class="location">Young 166</p>
 								</div>
 							</div><!-- /.row -->
 
@@ -426,7 +426,7 @@
 
         <script id="wallpaper_fix">
 			$(".wall").wallpaper({
-				source: $('#theme_url').html() + "images/banners/rec_blue_shadow.gif"
+				source: $('#theme_url').html() || '' + "images/banners/rec_blue_shadow.gif"
 			});
 			var active_trail = "#uti-events";
 		</script>

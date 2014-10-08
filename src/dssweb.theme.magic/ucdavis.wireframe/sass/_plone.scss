@@ -2,6 +2,11 @@
 @charset "utf-8";
 @import "variables";
 
+
+a#portal-logo {  //overrides theme wdth setting that was causing menu to break
+	width:100%;
+}
+
 .hiddenStructure {
     background: none repeat scroll 0 0 transparent;
     border: medium none;
@@ -13,14 +18,38 @@
     width: 1px;
 }
 
+.submenu_description {
+    display: none;
+}
+
+/*--image tags --*/
+.image-left {
+   float: left;
+   margin: 0.5em 1em 0.5em 0;
+}
+.image-right {
+   float: right;
+   margin: 0.5em;
+}
+.image-inline {
+   float: none;
+}
+
 // pending activation
 #uti-share {
     display: none;
 }
+	
+/*top bar override */
+.top-bar .top-bar-section .left > li > a {
+  height: 80px;
+  line-height: 80px !important;
+   padding: 0 0; 	
+}
 
  ul#iss-top {
 	margin-top: 51px;
-	margin-bottom: -100px;
+	margin-bottom: -94px;
 	padding-left: 100px;
 }
 
@@ -64,11 +93,14 @@ padding: 0.3em;
 		border-bottom:none;
 
 }
+.content-wrap dd.portletItem {
+	background-color:transparent;
+}
 .content-wrap dd.portletItem a.tile {
 	color:white !important;
 
 }
-.content-wrap > dd > a > img.portletItemImage {
+.content-wrap > dd > a > img.portletItemDetails {
 	margin-top:-3px;
 }
 .content-wrap dd.portletItem a:hover {
@@ -97,13 +129,23 @@ dl.portlet-static-quick-facts dt {
 /*-------left column ------------*/
 
 #left-front-column {
-	dl.portlet.portletContentLeadImageCollectionPortlet{
-		margin-left:-12%;
-		width:95%;
+	 
+	> dl {
+		background-color:transparent;
 	}
-	img.portletItemImage.image-left {
-	margin-top: -4%;
-	margin-left: -3.5%;
+
+	dd.portletItem {
+		background-color: #e5e5e5;
+		cursor: pointer;
+		height: 100px;
+		margin-bottom: 10px;
+		padding-top: 12px;
+		width: 100%;
+	 }
+
+	img.portletItemDetails.image-left {
+		margin-top: -17px;
+		margin-left: 0px;
 	}
 	 > dl > dt {
 	background:transparent;
@@ -130,25 +172,29 @@ dl.portlet-static-quick-facts dt {
 			position:relative;
 
 		}
+
+
+}
+#middle-front-column {
+	
+	> dl {
+		background-color:transparent;
+	}
+
 	dd.portletItem {
 		background-color: #e5e5e5;
 		cursor: pointer;
 		height: 100px;
 		margin-bottom: 10px;
 		width: 100%;
+		padding-top: 12px;
 	 }
 
-}
-#middle-front-column {
-	dl.portlet.portletContentLeadImageCollectionPortlet{
-		margin-left:-9%;
-		width:95%;
+	img.portletItemDetails.image-left {
+		margin-top: -17px;
+		margin-left: 0px;
 	}
-	img.portletItemImage.image-left {
-	margin-top: -4%;
-	margin-left: -3.5%;
-	}
-	> dl > dt {
+	 > dl > dt {
 		background:transparent;
 		font-size: 24px !important;
 		font-size: 1.5rem !important;
@@ -171,21 +217,62 @@ dl.portlet-static-quick-facts dt {
 		color:$ucd_blue_100 !important;
           border-bottom: none;
 	}
+
+
+}
+
+#right-front-column {
+	
+	> dl {
+		background-color:transparent;
+	}
 	dd.portletItem {
 		background-color: #e5e5e5;
 		cursor: pointer;
 		height: 100px;
 		margin-bottom: 10px;
 		width: 100%;
+		padding-top: 12px;
 	 }
+	img.portletItemDetails.image-left {
+		margin-top: -17px;
+		margin-left: 0px;
+		width:100px; //override for index.css
+	}
+	 > dl > dt {
+		background:transparent;
+		font-size: 24px !important;
+		font-size: 1.5rem !important;
+		font-weight: normal;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		text-align:center;
+
+	}
+	dl.portlet dt.portletHeader a, a:visited {
+		background:transparent;
+		color:$ucd_black_80;
+		border-bottom: none;
+	}
+	dl.portlet a, a:visited {
+		background:transparent;
+		color:$ucd_blue_100;
+	}
+	a.tile {
+		color:$ucd_blue_100 !important;
+          border-bottom: none;
+	}
+	
+
 
 }
+
 dl.portlet a:link {
-  color: $ucd_blue_100 !important;
+  color: $ucd_blue_100;
   border-bottom: none;
 }
 dl.portlet a:hover {
-color: $ucd_blue_100 !important;
+color: $ucd_blue_100;
 text-decoration:underline;
 border-bottom: none;
 }
@@ -193,7 +280,43 @@ border-bottom: none;
 dl.portlet a:visited {
 border-bottom:transparent;
 }
+/*---right-side-portlets----*/
+dl.portlet dt {
+	display: block;
+	background-color:$rec_blue;
+	padding-top:.75em;
+	padding-bottom:.75em;
 
+	a, a:link {
+		color:white;
+		width:100%;
+		text-decoration:none;
+		padding-left: 10%;
+	}
+}
+.portletItemDetails {
+	font-size: 85%;
+	padding-top: .5em;
+    line-height: 1.5em;
+    margin-left: 1em;
+    display: block;
+}
+dd.portletFooter {
+	text-align: right;
+	clear:both;
+	}
+
+
+dd.portletItem {
+	padding-top:10px;
+	background-color:#f2f2f2;
+	clear:both;
+}
+
+.portletItemDetails.image-left {
+	margin-top:-5px;
+	margin-left:0;
+}
 /*------ General Content ----------*/
 #content .documentDescription {
 	color: inherit;
@@ -210,7 +333,17 @@ dl.portlet a:link {
   border-bottom: none;
 }
 /*---Portlets -----*/
-
+.blockedPortlet .portletBlockedMessage {
+    color: white;
+    display: inline;
+}
+dl.portlet {
+	/* margin-top: 50px; //I think we don't need this */
+	background-color: $box_light_gray; /* TODO //not sure this is a good idea */
+}
+dl.portlet a {
+	text-decoration:none;
+}
 dl.portlet a:hover {
 color: $ucd_blue_100 !important;
 text-decoration:underline;
@@ -242,27 +375,48 @@ div#footer-nav {
 }
  /* Footer Navigation portlet */
 
-#footer-nav{
+#footer-nav-middle{
+	width:50%;
+	padding-left: 5%;
 	-webkit-column-count: 3;
 	-webkit-column-gap: 10px;
+
 	column-count: 3;
 	column-gap: 10px;
+
 	-moz-column-count:3;
 	-moz-column-gap:10px;
+	
+	dl.portlet {
+		background-color: transparent;
+	}
+
+	dl.portlet.portletNavigationTree {
+		margin-top:0 !important;
+	}
+	
 
 	dl.portlet ul.navTree li a {
     	border: none;
+		font-size:120%;
     	display: block;
+		color:white;
     	zoom: 1;
 	}
 
-	dl.portlet ul.navTree li a:hover {
-		color:white !important;
+	dl.portlet ul.navTree li {
+		a:hover {
+			color:white !important;
 
+		}
+		a:active {
+			color:white !important;
+		}
 	}
 
 	dl.portletNavigationTree dd.portletItem {
     	padding: 0;
+		background-color: transparent;
 	}
 
 	dl.portlet ul.navTreeLevel0 > .navTreeItem {
@@ -271,6 +425,7 @@ div#footer-nav {
     	line-height: 2em;
 		color: white;
 	}
+	
 	dl.portlet li {
 		border-left: 1px solid white;
 		margin-bottom: 0;
@@ -287,10 +442,9 @@ div#footer-nav {
 	}
 
 	dl.portlet ul.navTree .navTreeCurrentItem {
-    	background-color: transparent;
-    	border-left: 1em solid #ddd;
-    	margin-left: -1em;
-    	margin-right: -1em;
+		background-color:transparent;
+		color:white;
+    	
 	}
 }
 

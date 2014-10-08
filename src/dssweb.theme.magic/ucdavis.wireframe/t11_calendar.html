@@ -17,7 +17,7 @@
 
 		<!-- #BeginEditable "header" -->
 		<link type="text/css" href="bower_components/Wallpaper/jquery.fs.wallpaper.css" rel="stylesheet">
-		<link href="assets/sections/event.css" rel="stylesheet" />
+		<link href="assets/sections/calendar.css" rel="stylesheet" />
 	  <!-- #EndEditable -->
 
 	  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -216,6 +216,7 @@
 	                <span>
 	                  <strong>Our People</strong>
 	                </span>
+									<p class="visible-xs view-all">Filter By</p>
 	                <div class="glyphicon glyphicon-align-justify visible-xs" id="dropdown-icon"></div>
 	              </a>
 	            </h3>
@@ -290,7 +291,7 @@
 							<td class="previous"><span class="date">28</span>
 							<div class="day">
 								<div>
-									<a class="fc-event" href="#">
+									<a class="fc-event hidden-xs" href="#">
 										<div class="fc-event-inner">
 											<span class="fc-event-title">Graham Elliot (UC San Diego)</span>
 											<span class="fc-event-time">3:40pm</span>
@@ -565,7 +566,7 @@
 
         <script id="wallpaper_fix">
 				$(".wall").wallpaper({
-				source: $('#theme_url').html() + "images/banners/rec_blue_shadow.gif"
+				source: $('#theme_url').html() || '' + "images/banners/rec_blue_shadow.gif"
 			});
 		</script>
 		<script type="text/javascript" src="js/plugins/jquery.cf.happybox.js"></script>
