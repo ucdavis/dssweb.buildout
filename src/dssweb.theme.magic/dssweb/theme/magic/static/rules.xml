@@ -29,6 +29,11 @@
         <!-- after css:theme-children="html body" css:content="html head script" / -->
 
         <!-- Insert your own rules here -->
+		<!--Home Page Rules-->
+		<drop css:theme="#content > div.row > div" if="$home_page" />
+ 	   <!--drop all the portal footers on the front page -->
+ 	   <drop css:content="dd.portlet-footer" if="$home_page" />
+ 	   <drop css:content="dd.portletFooter" if="$home_page" />
 
 	   <!--swap in portal-globalnav -->
 	   <!--utility menu -->
@@ -36,17 +41,16 @@
 	   
 	   <before css:theme="#util-bar-wrap > nav" css:content="#iss-top" />
 
-	   <replace css:theme="#top-bar-wrap > nav > ul > li" css:content="#portal-logo" if="$home_page"/>
+	   <replace css:theme-children="#top-bar-wrap > nav > ul > li.name" css:content="#portal-logo"  />
 	   <replace css:theme-children="#left-front-column" css:content=".portletContentLeadImageCollectionPortlet.events-1" />
 	   <replace css:theme-children="#middle-front-column" css:content=".portletContentLeadImageCollectionPortlet.iss-journal-1" />
 	   <replace css:theme-children="#right-front-column" css:content=".portlet-collection-open-calls" />
 
-	   <!--drop all the portal footers on the front page -->
-	   <drop css:content="dd.portlet-footer" if="$home_page" />
-	   <drop css:content="dd.portletFooter" if="$home_page" />
 	   
 
-
+	   <!--drop the events tab -->
+	   <drop content='//*[@id="portaltab-events"]' />
+	   
         <replace content="//ul[contains(@class,'submenu')]/@class">
             <xsl:attribute name="class">dropdown</xsl:attribute>
         </replace>

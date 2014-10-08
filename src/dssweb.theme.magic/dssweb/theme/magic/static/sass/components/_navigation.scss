@@ -207,7 +207,7 @@
 					//margin-top: 17px;
 					height: 80px;
 					line-height: 80px !important;
-					padding: 0 27px; // <=============== change left/right padding of main menu items here. Note: Using percentages will be relative to width of button and not to width of the menu bar
+					padding: 0 25px; // <=============== change left/right padding of main menu items here. Note: Using percentages will be relative to width of button and not to width of the menu bar.  Iss menu breaking decreased from 27 to 25 by Carol
 				}
 				a {
 					//position:relative;

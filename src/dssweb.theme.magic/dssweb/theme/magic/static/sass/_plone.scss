@@ -34,10 +34,17 @@
 #uti-share {
     display: none;
 }
+	
+/*top bar override */
+.top-bar .top-bar-section .left > li > a {
+  height: 80px;
+  line-height: 80px !important;
+   padding: 0 0; 	
+}
 
  ul#iss-top {
 	margin-top: 51px;
-	margin-bottom: -100px;
+	margin-bottom: -97px;
 	padding-left: 100px;
 }
 
