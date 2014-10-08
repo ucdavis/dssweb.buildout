@@ -290,12 +290,14 @@ dd.portletFooter {
 	padding-top: 50px;
 	text-align: right;
 	background-color: #f2f2f2;
+	clear:both;
 	}
 
 
 dd.portletItem {
 	padding-top:10px;
 	background-color:#f2f2f2;
+	clear:both;
 }
 
 .portletItemDetails.image-left {
@@ -323,7 +325,7 @@ dl.portlet a:link {
     display: inline;
 }
 dl.portlet {
-	margin-top: 50px;
+	/* margin-top: 50px; //I think we don't need this */
 }
 dl.portlet a:hover {
 color: $ucd_blue_100 !important;
