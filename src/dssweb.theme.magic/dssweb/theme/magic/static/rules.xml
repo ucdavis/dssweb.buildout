@@ -38,7 +38,7 @@
 	   <!--swap in portal-globalnav -->
 	   <!--utility menu -->
 	   <!--ISS Site Specific Logo and front page -->
-	   
+
 	   <before css:theme="#util-bar-wrap > nav" css:content="#iss-top" />
 
 	   <replace css:theme-children="#top-bar-wrap > nav > ul > li.name" css:content="#portal-logo"  />
@@ -46,11 +46,11 @@
 	   <replace css:theme-children="#middle-front-column" css:content=".portletContentLeadImageCollectionPortlet.journal" />
 	   <replace css:theme-children="#right-front-column" css:content=".portletContentLeadImageCollectionPortlet.available-grants" />
 
-	   
+
 
 	   <!--drop the events tab -->
 	   <drop content='//*[@id="portaltab-events"]' />
-	   
+
         <replace content="//ul[contains(@class,'submenu')]/@class">
             <xsl:attribute name="class">dropdown</xsl:attribute>
         </replace>
@@ -126,8 +126,8 @@
 	   <drop css:content=".portlet-footer-nav" />
 	   <replace css:theme-children="#footer-nav-middle"  css:content-children=".portlet-footer-nav" method="raw"/>
 
-	   	   
-	  
+
+
 
 <!--
        <before css:theme="#wallpaper_fix">
@@ -146,7 +146,7 @@
         <rules css:if-content="body.portaltype-event">
             <!-- rules for the event portal type -->
             <replace theme="//div[@id='content-core']/div/img"
-                     content="//*[@id='parent-fieldname-leadImage']" />
+                     content="//*[@id='parent-fieldname-leadImage']/img" />
 
             <replace css:theme="#event-speakers p.attendees"
                      css:content="td.attendees" />
@@ -161,5 +161,14 @@
         </rules>
 
     </rules>
+
+    <xsl:template match="img[@class='newsImage']/@src">
+        <xsl:attribute name="src"><xsl:value-of select="concat(substring-before(., '_mini'), '_large')" /></xsl:attribute>
+    </xsl:template>
+    <xsl:template match="img[@class='newsImage']/@height"></xsl:template>
+    <xsl:template match="img[@class='newsImage']/@width"></xsl:template>
+    <xsl:template match="img[@class='newsImage']/@class">
+        <xsl:attribute name="class">img-responsive</xsl:attribute>
+    </xsl:template>
 
 </rules>

@@ -23,10 +23,8 @@ import random
 
 class BannerImage(BrowserView):
 
-    def __call__(self):
+    def findImageURL(self):
         context = self.context
-        request = self.request
-        portal_state = getMultiAdapter((context, request), name=u'plone_portal_state')
 
         image_folder = getattr(context.aq_explicit, 'top-images', None)
         if image_folder is not None:
@@ -37,13 +35,21 @@ class BannerImage(BrowserView):
                 portal_type='Image',
                 )
             if results:
-                self.request.response.redirect(random.choice(results).getURL())
-                return None
+                return random.choice(results).getURL()
 
         image = getattr(context.aq_explicit, 'top-image', None)
         if image is not None:
-            self.request.response.redirect(image.absolute_url())
-        else:
-            self.request.response.redirect(portal_state.portal_url() + '/++theme++dssweb.theme.magic/images/banners/rec_blue_shadow.gif')
+            return image.absolute_url()
+        return None
 
+    def __call__(self):
+        context = self.context
+        request = self.request
+        portal_state = getMultiAdapter((context, request), name=u'plone_portal_state')
+
+        image_url = self.findImageURL()
+        if image_url is None:
+            self.request.response.redirect(portal_state.portal_url() + '/++theme++dssweb.theme.magic/images/banners/rec_blue_shadow.gif')
+        else:
+            self.request.response.redirect(image_url)
         return None
