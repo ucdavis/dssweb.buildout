@@ -287,9 +287,7 @@ dl.portlet dt {
     display: block;
 }
 dd.portletFooter {
-	padding-top: 50px;
 	text-align: right;
-	background-color: #f2f2f2;
 	clear:both;
 	}
 
@@ -326,6 +324,7 @@ dl.portlet a:link {
 }
 dl.portlet {
 	/* margin-top: 50px; //I think we don't need this */
+	background-color: $box_light_gray; /* TODO //not sure this is a good idea */
 }
 dl.portlet a:hover {
 color: $ucd_blue_100 !important;
@@ -369,13 +368,15 @@ div#footer-nav {
 
 	-moz-column-count:3;
 	-moz-column-gap:10px;
+	
+	dl.portlet {
+		background-color: transparent;
+	}
 
 	dl.portlet.portletNavigationTree {
 		margin-top:0 !important;
 	}
-	dd.portletItem.lastItem {
-	background-color: transparent;
-}
+	
 
 	dl.portlet ul.navTree li a {
     	border: none;
@@ -397,6 +398,7 @@ div#footer-nav {
 
 	dl.portletNavigationTree dd.portletItem {
     	padding: 0;
+		background-color: transparent;
 	}
 
 	dl.portlet ul.navTreeLevel0 > .navTreeItem {
@@ -422,7 +424,7 @@ div#footer-nav {
 	}
 
 	dl.portlet ul.navTree .navTreeCurrentItem {
-    	background-color: transparent;
+		background-color:transparent;
 		color:white;
     	
 	}
