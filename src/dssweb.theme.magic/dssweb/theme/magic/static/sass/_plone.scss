@@ -129,6 +129,10 @@ dl.portlet-static-quick-facts dt {
 /*-------left column ------------*/
 
 #left-front-column {
+	 
+	> dl {
+		background-color:transparent;
+	}
 
 	dd.portletItem {
 		background-color: #e5e5e5;
@@ -172,6 +176,10 @@ dl.portlet-static-quick-facts dt {
 
 }
 #middle-front-column {
+	
+	> dl {
+		background-color:transparent;
+	}
 
 	dd.portletItem {
 		background-color: #e5e5e5;
@@ -212,7 +220,12 @@ dl.portlet-static-quick-facts dt {
 
 
 }
+
 #right-front-column {
+	
+	> dl {
+		background-color:transparent;
+	}
 	dd.portletItem {
 		background-color: #e5e5e5;
 		cursor: pointer;
@@ -224,6 +237,7 @@ dl.portlet-static-quick-facts dt {
 	img.portletItemDetails.image-left {
 		margin-top: -17px;
 		margin-left: 0px;
+		width:100px; //override for index.css
 	}
 	 > dl > dt {
 		background:transparent;
@@ -248,6 +262,7 @@ dl.portlet-static-quick-facts dt {
 		color:$ucd_blue_100 !important;
           border-bottom: none;
 	}
+	
 
 
 }
@@ -325,6 +340,9 @@ dl.portlet a:link {
 dl.portlet {
 	/* margin-top: 50px; //I think we don't need this */
 	background-color: $box_light_gray; /* TODO //not sure this is a good idea */
+}
+dl.portlet a {
+	text-decoration:none;
 }
 dl.portlet a:hover {
 color: $ucd_blue_100 !important;

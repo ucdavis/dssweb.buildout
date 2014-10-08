@@ -42,9 +42,9 @@
 	   <before css:theme="#util-bar-wrap > nav" css:content="#iss-top" />
 
 	   <replace css:theme-children="#top-bar-wrap > nav > ul > li.name" css:content="#portal-logo"  />
-	   <replace css:theme-children="#left-front-column" css:content=".portletContentLeadImageCollectionPortlet.fp-events" />
-	   <replace css:theme-children="#middle-front-column" css:content=".portletContentLeadImageCollectionPortlet.iss-journal-1" />
-	   <replace css:theme-children="#right-front-column" css:content=".portlet-collection-open-calls" />
+	   <replace css:theme-children="#left-front-column" css:content=".portletContentLeadImageCollectionPortlet.front-page-events" />
+	   <replace css:theme-children="#middle-front-column" css:content=".portletContentLeadImageCollectionPortlet.journal" />
+	   <replace css:theme-children="#right-front-column" css:content=".portletContentLeadImageCollectionPortlet.available-grants" />
 
 	   
 
