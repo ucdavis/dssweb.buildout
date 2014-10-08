@@ -1,0 +1,503 @@
+/* Calendar.scss */
+
+@charset "utf-8";
+@import "variables"; // for BASE font size and mixin font_size()
+@import "ucd-variables";
+@import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
+
+#calendar{
+	padding: 0;
+	
+	#month {
+		border-collapse: collapse;
+		margin-bottom: 70px;
+		width: 100%;
+		
+		td {
+			border: 1px solid $ucd_blue_10;
+		}
+		th {
+			font: 1em bold Arial, Helvetica, sans-serif;
+			height: 30px;
+			width: 125px;
+			padding-top: 5px;
+			border-left: 1px solid #fff;
+		}
+		.first {
+			border-left: none !important;
+		}
+	 thead {
+			background-color: $rec_blue;
+			color: #fff;
+		}
+
+	 td {
+			max-width: 125px;
+			height: auto;			
+			padding: .2em;
+			.day {
+				max-width: 7em;
+				min-height: 120px;
+				margin-top: 30px;
+				a {
+					text-decoration: none;
+				}
+				.fc-event {				
+					.fc-event-inner {
+						color: $ucd_blue_80;					
+						margin: 3px 3px 5px 3px;
+						padding: 10px;
+						background-color: $ucd_blue_10;
+						@include font_size(11px);
+						.subjects {						
+							.subject-box {
+								margin-bottom: 5px;
+								margin: 0px;							
+							}
+						}
+					}
+				}
+			}
+			.date {
+				float: right;
+				padding-right: 10px;
+			}
+		}
+	}
+
+	.previous, .next {
+		.date {
+			color: $ucd_black_30;
+		}
+	}
+
+	.rtop {
+		display: block;
+		background: #060;
+	}
+
+	.rtop * {
+		display: block;
+		height: 1px;
+		overflow: hidden;
+		background: #fff;
+	}
+
+	.r1 {
+		margin:0 0 0 5px;
+	}
+
+	.r2 {
+		margin:0 0 0 3px;
+	}
+
+	.r3 {
+		margin: 0 0 0 2px;
+	}
+
+	.r4 {
+		height: 2px;
+		margin: 0 0 0 1px;
+	}
+
+	#container h1 {
+		font: 2em Arial, Helvetica, sans-serif;
+		color: #060;
+		margin: 0 0 .5em .5em;
+	}
+
+	#month th {
+	font: 1em bold Arial, Helvetica, sans-serif;
+	}
+}
+p {
+	margin-top: 0;
+}
+
+.rows {
+	border-top: 5px solid $rec_blue;
+	&.zebra {
+		.row:nth-child(even) {
+			background-color: transparent;
+		}
+		.row:nth-child(odd) {
+			background-color: $box_light_gray;
+		}
+
+		.row {
+			> div:last-child {
+				padding-top: 16px;
+			}
+		}
+
+	}
+}
+#content-row {
+	margin-top: 35px;
+}
+#month-pager {
+	float: left;
+	text-align: left;
+	padding-left: 0px;
+	padding-top: 5px;
+	.pager-string {
+		margin-left: 10px;
+		margin-right: 10px;
+		@include font_size(24px);
+	}
+}
+#view-filter {
+	text-align: right;
+	float: right;	
+	padding-right: 0px;
+	padding-top: 6px;
+	.vf-selector {
+		background-color: $ucd_blue_10;
+		display: inline-block;
+		width: 82px;
+		margin-left: 2px;
+		height: 25px;
+		text-align: center;
+		a {
+			text-decoration: none;
+		}
+	}
+	.selected {
+		background-color: $ucd_blue_80;
+		a {
+			color: #fff; 
+		}
+	} 
+}
+.breadcrumb, .content-title {
+	margin-left: 365px;
+}
+.breadcrumb {
+	margin-top: 50px;
+}
+.content-title {
+	padding-bottom: 0;
+}
+.sidebar-left {
+	top: 35px;
+	.panel{
+		margin-left: 0;	
+	}
+	#subject-all {
+		margin-top: 25px;
+		margin-bottom: 20px;
+		a {		
+			text-decoration: none;
+		}
+	}
+
+	.checkForm {
+		margin-top: 0px !important;
+		input {
+			height: 20px;
+			width: 20px;
+			margin-bottom: 5px;
+			margin-top: 0px;
+			margin-left: 0px;
+		}
+		label {
+			position: absolute;
+			@include font_size(13px);
+		}
+	}
+	.sb-subitems {
+		text-size: 13px;
+		a {
+			text-decoration: none;
+			color: $ucd_blue_80;			
+		}
+	}
+}
+.sidebar-left {
+	top: 35px;
+	#subject-all {
+		margin-top: 25px;
+		margin-bottom: 20px;
+		a {		
+			text-decoration: none;
+		}
+	}
+
+	.checkForm {
+		margin-top: 0px !important;
+		input {
+			height: 20px;
+			width: 20px;
+			margin-bottom: 5px;
+			margin-top: 0px;
+			margin-left: 0px;
+		}
+		label {
+			position: absolute;
+			@include font_size(13px);
+		}
+	}
+	.sb-subitems {
+		text-size: 13px;
+		a {
+			text-decoration: none;
+			color: $ucd_blue_80;			
+		}
+	}
+}
+
+.color-box {
+		width: 10px;
+		height: 10px;
+		display: inline-block;
+		margin-right: 5px;
+		margin-left: 10px;
+}
+.widget-fieldset {
+	
+	#criterion-subject-econometrics {
+		.color-box {
+			background-color: $evergreen;
+		}
+	}
+	#criterion-subject-economic-history {
+		.color-box {
+			background-color: $west_redbud;
+		}
+	}
+	#criterion-subject-energy-environmental-economics {
+		.color-box {
+			background-color: $cal_popp;
+		}
+	}
+	#criterion-subject-international-economics {
+		.color-box {
+			background-color: $gold_lup;
+		}
+	}
+	#criterion-subject-macroeconomics {
+		.color-box {
+			background-color: $sun_grass;
+		}
+	}
+	#criterion-subject-public-finance-labor {
+		.color-box {
+			background-color: $sky_blue;
+		}
+	}
+	#criterion-subject-theory {
+		.color-box {
+			background-color: $wine_grape;
+		}
+	}
+}
+
+@media screen and (max-width: $screen-xs-max) { // width < 767
+
+#content {
+		margin-top: 90px !important;
+	}
+	.breadcrumb {
+		margin-top: 10px;
+	}
+	#view-filter, #month-pager {
+		text-align: center;
+	}
+	#view-filter {
+		margin-bottom: 20px;
+	}
+	#calendar {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.widget-fieldset {
+		margin-top: 25px;
+		position: relative;
+		left: -128px;
+		top: -40px;
+		.checkForm {
+			li {
+				float: initial !important;
+				width: 100%;
+			}		
+		}
+	}
+	
+	
+	#month {
+		td {
+			.date {
+				text-align: center;
+				padding-top:5px;
+			}
+			.day {
+				min-height: 40px !important;
+				margin-top: 0 !important;
+				
+			}
+		}
+		.fc-event {	
+			display: none;
+		}
+	}
+	
+	.panel-title, .panel-title a, .panel-heading {
+			//background: none !important;
+			background-color: #fff !important;
+	}
+	.panel-body {
+		width: 100%;
+		margin-left: 25%;
+		
+	}
+	
+	.view-all {
+		position: absolute;
+		top: -30px;
+		left: 73%;			
+		@include font_size(10px);	
+	}
+	
+	
+	.wall {
+		display: none;
+	}
+	.breadcrumb, .content-title {
+		position: absolute;
+	}
+	.breadcrumb {
+		top: 55px;
+		left: 25px;
+	}
+	.content-title {
+		top: 125px;
+		left: 22px; 
+		@include font_size(22px);
+	}
+	#month-pager {
+		padding: 0px;
+		
+		margin-top: -20px;
+
+		
+		.pager-prev {
+			float: left;
+			text-align: left;
+		}
+		.pager-next {
+			float: right;
+			text-align: right;
+			a {
+				margin-right: 0;
+			}
+		}
+		.pager-string {
+			padding-top: 15px;
+			@include font_size(18px);
+		}
+	}
+	#view-filter {
+		padding: 0;
+		.vf-selector {
+			width: 25% !important;
+			margin-left: 0;
+		}
+	}
+}
+
+@media screen and (max-width: $screen-lg-min) { // width < 1310px
+	#month{
+		width: 100%;
+	}
+	#content-row {
+		margin-top: 0px;
+	}
+	.content-title {
+		@include font_size(26px);
+	}
+	.widget-fieldset {
+		margin-top: 25px;
+		.checkForm {
+			li {
+				float: left;
+				width: 50%;
+				.color-box {
+					margin-right: 10px;
+				}
+			}		
+		}
+	}
+	.sb-subitems {
+		position: absolute;	
+		top: -30px;
+		right: 35px;
+		p {
+			display: inline;
+			a {
+				@include font_size(11px);	
+			}
+		}
+	}
+	#left-area {
+		margin-bottom: 30px;	
+	}
+	#filter-by {
+		position: absolute;
+		top: 10px;
+		left: 248px;	
+		a {
+			@include font_size(13px);
+		}
+	}
+	.vf-selector {
+		padding-top: 8px;
+		padding-bottom: 15px;
+		margin-bottom: 10px;
+		height: 40px !important;
+		a {
+			@include font_size(13px);
+		}
+	}
+	.pager-string {
+		@include font_size(18px);
+		position: relative;
+		top: -5px;
+	}
+	#subject-all {
+		height: 40px;
+		width: 80px;
+		float: left;
+		margin: 15px 30px 0 30px !important;
+		.view-all {
+			background-color: $ucd_blue_10;
+			text-align: center;			
+			padding-top: 8px;
+			padding-bottom: 8px;
+			a {
+				@include font_size(13px);
+			}
+		}
+	}
+	#month {
+		position: relative;
+		top: 10px;
+	}
+	#month-pager {
+		.pager-prev, .pager-next {		
+			a{
+				width: 40px;
+				height: 40px;
+				background-color: $ucd_blue_10;
+				padding-top: 15px;
+				background-position: center;
+			}
+		}
+	}
+	.breadcrumb, .content-title {
+		margin-left: 0px;
+		margin-top: 35px;
+	}
+	.sidebar-left {
+		top: 0;
+	}
+}
