@@ -8,12 +8,8 @@
     <rules css:if-content="#visual-portal-wrapper">
 	    <theme href="index.html" if="$home_page" />
 	    <theme href="t13_event.html" css:if-content="body.section-events" />
-         <theme href="t8_students.html" />
-	    
-         
-	    
-	    
-          
+        <theme href="t4_adhoc.html" />
+
         <!-- Replace title with Plone's page title  -->
         <replace css:theme="html head title" css:content="html head title" />
 
@@ -21,49 +17,62 @@
         <before css:theme-children="html head" css:content="html head base" />
 
         <!-- Copy link, style, meta tags from Plone head -->
+        <!-- before css:theme-children="html head"
+               content="/html/head/link | /html/head/style | /html/head/meta" / -->
         <before css:theme-children="html head"
-               content="/html/head/link | /html/head/style | /html/head/meta" />
+               content="/html/head/meta" />
 
         <!-- merge classes from Plone body with theme body -->
         <merge attributes="class" css:theme="body" css:content="body" />
 
         <!-- Copy script tags from Plone head to end of body -->
-        <after css:theme-children="html body" css:content="html head script" />
+        <!-- after css:theme-children="html body" css:content="html head script" / -->
 
         <!-- Insert your own rules here -->
-        <drop css:content-children="#div.row" if="$home_page"/>
-	   
+        <!--  columns -->
+		<replace content="//div[contains(@class,'cell')]/@class">
+		<xsl:attribute name="class">
+		<xsl:if test='contains(current(),"width-3:4")'>.col-lg-9</xsl:if>
+		<xsl:if test='contains(current(),"width-2:3")'>col-xs-12 col-sm-12 col-md-8 col-lg-8 no-gutter-lg</xsl:if>
+		<xsl:if test='contains(current(),"width-1:2")'>.col-lg-6</xsl:if>
+		<xsl:if test='contains(current(),"width-1:3")'>.col-lg-4</xsl:if>
+		<xsl:if test='contains(current(),"width-1:4")'>.col-lg-3</xsl:if>
+		<xsl:if test='contains(current(),"width-full")'>.col-lg-12</xsl:if>
+		</xsl:attribute>
+		</replace>
+
 	   <!--swap in portal-globalnav -->
 	   <!--utility menu -->
 	   <!--ISS Site Specific Logo and front page -->
 	   <before css:theme="#util-bar-wrap > nav" css:content="#iss-top" />
 	   <replace css:theme="#top-bar-wrap > nav > ul > li" css:content="#portal-logo" if="$home_page"/>
-	   <replace css:theme-children="#left-front-column" css:content=".portlet.portletEvents" />
-	   <replace css:theme-children="#middle-front-column" css:content=".portlet-collection-iss-journal" />
+	   <replace css:theme-children="#left-front-column" css:content=".portletContentLeadImageCollectionPortlet.upcoming-events" />
+	   <replace css:theme-children="#middle-front-column" css:content=".portletContentLeadImageCollectionPortlet.iss-journal" />
 	   <replace css:theme-children="#right-front-column" css:content=".portlet-collection-funding-call" />
-	   
-		
-	
-	    <replace content="//li[contains(@class,'plain')]/@class">
-	    <xsl:attribute name="class">
-	    <xsl:if test='contains(current(),"plain")'>has-dropdown not-click</xsl:if>
-	    </xsl:attribute>
-	    </replace>
-	     	
+
+
+
+        <replace content="//ul[contains(@class,'submenu')]/@class">
+            <xsl:attribute name="class">dropdown</xsl:attribute>
+        </replace>
+        <replace content="//li[contains(@class,'dropdown')]/@class">
+            <xsl:attribute name="class">has-dropdown</xsl:attribute>
+        </replace>
+
 	    <replace css:theme="h2.homepage-title" css:content="h1#parent-fieldname-title" />
 	    <replace content="//h1[contains(@class,'documentFirstHeading')]/@class" if="$home_page">
 	    <xsl:attribute name="class">
 	    <xsl:if test='contains(current(),"documentFirstHeading")'>homepage-title</xsl:if>
 	    </xsl:attribute>
 	    </replace>
-	    
+
 	    <replace css:theme="h1.content-title" css:content="h1#parent-fieldname-title" />
 	    <replace content="//h1[contains(@class,'documentFirstHeading')]/@class" if-not="$home_page">
 	    <xsl:attribute name="class">
 	    <xsl:if test='contains(current(),"documentFirstHeading")'>content-title</xsl:if>
 	    </xsl:attribute>
 	    </replace>
-	    
+
 
          <drop css:content=".searchSection" />
          <copy css:content="#portal-searchbox" css:theme="#uti-search" />
@@ -71,55 +80,57 @@
 	    <replace content="//div[@id='portal-searchbox']//input[@class='searchButton']/@value">
 	    <xsl:attribute name="value">GO</xsl:attribute>
 	    </replace>
-	    
-	     <replace css:theme="#top-bar-wrap > nav > section > ul" css:content="#portal-globalnav" />
-			
-		<replace css:content="#portal-globalnav">
-	            <xsl:copy>
-	                <xsl:attribute name="class">left</xsl:attribute>
-				 <xsl:copy-of select="@*" />
-	                <xsl:apply-templates />
-	            </xsl:copy>
-	   </replace>
-	   
-	    <!--replace css:theme-children="#portal-globalnav" css:content-children="#portal-globalnav" /-->
-	   
-	    
-		 
-	    
+
+		<replace css:theme-children="ul.left" css:content-children="#portal-globalnav" />
+
 		<!-- News Happy Box -->
-		<copy css:content="#portletwrapper-706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f5765625265646f0a6e657773 > dl > dd.portletItem.odd" css:theme="#container-1 > div > div > div.content" />
-		
+		<replace css:content=".portlet.portletContentLeadImageCollectionPortlet.news-1 > dd" css:theme-children="#container-1 > div > div > div.content-wrap"   />
+
 		<!--  About Happy Box -->
 		<copy css:content="#parent-fieldname-description" css:theme="#container-2 > div > div > div.content" />
-		<before css:theme="#container-2 > div > div > div.bcontroller" css:content="#portletwrapper-706c6f6e652e6c656674636f6c756d6e0a636f6e746578740a2f5765625265646f2f66726f6e742d706167650a717569636b2d6661637473 > dl" />
-		
+		<before css:theme="#container-2 > div > div > div.bcontroller" css:content="#po > dl" />
+
 		<!-- Events Happy Box -->
-	    <copy css:content="#portletwrapper-706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f5765625265646f0a6576656e7473 > dl > dd.portletItem.odd" css:theme="#container-3 > div > div > div.content" />
+	    <copy css:content=".portlet.portletContentLeadImageCollectionPortlet.events-1 > dd" css:theme="#container-3 > div > div > div.content-wrap" />
 		<!-- Front Page -->
 		<copy css:content="#parent-fieldname-title" css:theme="#middle-row" />
 		<!-- Breadcrumbs for all but front page -->
 		<replace css:theme-children=".breadcrumb" css:content="#portal-breadcrumbs" />
 		<drop css:content="#breadcrumbs-you-are-here" />
 	<!-- Global Rules -->
-	
-		
+
+	<!-- Description -->
+	<replace css:theme="p.intro" css:content="#parent-fieldname-description" />
+
+	<!-- Columns -->
+	<replace theme='//*[@id="content-row"]' content='//*[@id="portal-columns"]' />
+
+	<!-- Content-core -->
+	<replace css:theme="#content-core" css:content="#content-core" />
+	<!-- Basic Portlet -->
+	<after css:theme=" div.sidebar.sidebar-right.col-xs-12.col-sm-12.col-md-4.col-lg-4" css:content="#portal-column-two"  />
+
+
 	<!-- Events Page -->
 	<replace css:theme="#sidebar-block-contact > li.fn > a" css:content="a.email" />
 	<drop css:theme="#sidebar-block-contact > li.category" />
 	<replace css:theme="li.tel" css:content="td.tel" />
 	<replace css:theme="li.email a" css:content="a.email" />
-	
-	
-	
-		
+
+    <replace css:content=".breadcrumbSeparator">
+        <span class="bread-divider">|</span>
+    </replace>
+
 	  <!--- Footer -->
 	   <copy  css:content=".portletStaticText.portlet-static-contact" css:theme="#vcard" />
 	   <copy css:content=".portlet.portletNavigationTree" css:theme="#footer-nav" />
-	   
-	    
- 	    
-        
+
+
+       <before css:theme="#wallpaper_fix">
+            <!-- we need to know the theme url to localize some javascript -->
+            <div style="display:none" id="theme_url"><xsl:value-of select="$theme_url" /></div>
+       </before>
+
 
     </rules>
 
