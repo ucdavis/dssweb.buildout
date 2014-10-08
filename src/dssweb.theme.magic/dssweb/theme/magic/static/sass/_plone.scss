@@ -2,6 +2,11 @@
 @charset "utf-8";
 @import "variables";
 
+
+a#portal-logo {  //overrides theme wdth setting that was causing menu to break
+	width:100%;
+}
+
 .hiddenStructure {
     background: none repeat scroll 0 0 transparent;
     border: medium none;
