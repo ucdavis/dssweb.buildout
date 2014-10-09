@@ -7,6 +7,7 @@
 @-o-viewport{width:device-width}
 @viewport{width:device-width}
 
+
 body:after { 
 	content: "XS"; 
 	display: none;
@@ -34,9 +35,9 @@ head {
 }
 
 .container {
-	padding:0;
+	padding: 0;
 	&#main {
-		//padding:0 !important; // TODO: Breaks fit alignment on mobile
+		//padding: 0 !important; // TODO: Breaks fit alignment on mobile
 	}
 }
 
@@ -55,7 +56,6 @@ head {
 .sidebar-right {
 	//width:250px;
 	height:30px;
-	
 }
 
 // apply to elements needing removable float: right. Topbar has a .right class that is too specific to use
@@ -107,82 +107,82 @@ button {
 }
 
 #utility {
-	ul li{	
-		text-align:center;
+	ul li {	
+		text-align: center;
 		display: inline;
 		list-style-type: none;
 		padding-right: 50px;	
 		width:100%;
 	}
-	ul{
-		padding-top:100px;
-		text-align:center;	
-		clear:both;
+	ul {
+		padding-top: 100px;
+		text-align: center;	
+		clear: both;
 	}
 }
 
 #footer {	
-	background-color:$ucd_blue_70;
-	min-height:250px;
-	//width:100%;
+	background-color: $ucd_blue_70;
+	min-height: 250px;
+	//width: 100%;
 	padding-bottom: 25px;
 	margin-bottom: 15px;
-	clear:both;
+	clear: both;
 	a {
 		text-decoration: none;
 	}
 	
-	.foot-wrap{
+	.foot-wrap {
 		margin: 35px 90px;
 		margin-bottom: 0 !important;
-		//width:100%; // TODO: Tablet/Mobile right white margin
+		//width: 100%; // TODO: Tablet/Mobile right white margin
 	}
 	
-	.footer-nav, #copyright, #vcard{
-		float:left;		
-		color:#fff;
-		text-decoration:none;
-		//margin-top:36px;
+	.footer-nav, #copyright, #vcard { 
+		float: left;		
+		color: #fff;
+		text-decoration: none;
+		//margin-top: 36px;
 	}
 	#copyright {
-		margin-top:36px;
+		margin-top: 36px;
 	}
 	#email-phone {
 		a {
 			text-decoration: underline;
 		}
 	}
-	#copyright{
-		clear:both;
+	#copyright {
+		clear: both;
 	}
-	.footer-nav{
+	.footer-nav {
 		border-left: 1px solid white;
-		width:140px;		
+		width: 140px;		
 		li{
-			padding-left:10px;
+			padding-left: 10px;
 			@include line_height(35px);
-			a{
-				color:#fff;
+			a {
+				color: #fff;
 			}
 		}
 	}
 	#copyright, #vcard {
-		margin-right:135px;
+		margin-right: 135px;
 		@include font_size(14px);
 		line-height: 1.4em;
-		//font-family:lucida;
-		a, p{
-			color:#fff;
-			letter-spacing:.014em;
+		//font-family: lucida;
+		a, p {
+			color: #fff;
+			letter-spacing: .014em;
 		}
 	}
 
-	#foot-social{
-		//width:217px; // TODO: Tablet/Mobile right white margin
-		float:left;
-		//margin-top:35px;
-		//margin-left:85px;
-		li{
+	#foot-social {
+		//width: 217px; // TODO: Tablet/Mobile right white margin
+		float: left;
+		//margin-top: 35px;
+		//margin-left: 85px;
+		li {
 			display: inline-block;
 			text-align: center;
 			padding-left: 7px;
@@ -192,7 +192,7 @@ button {
 				display: inline-block;
 				height: 24px;
 				width: 24px;
-				color:#fff;
+				color: #fff;
 				&#facebook-icon {
 					background: url(../images/icons/sm-icon-sprites.png) 0 0 no-repeat;
 				}
@@ -209,7 +209,7 @@ button {
 					background: url(../images/icons/sm-icon-sprites.png) -96px 0 no-repeat;
 				}
 			}
-			&.last{ 
+			&.last { 
 				border-right: 1px solid white;
 			}
 		}	
@@ -218,18 +218,18 @@ button {
 }
 
 
-input{
-   text-align:center;
+input {
+   text-align: center;
 }
-.contact{
-	margin-top:15px;	
+.contact {
+	margin-top: 15px;	
 }
 
 /* TODO: Careful with global treatment of .content
-.content{
-	margin-top:47px;
-	margin-bottom:40px;
-	padding:0;
+.content {
+	margin-top :47px;
+	margin-bottom: 40px;
+	padding: 0;
 }
 */
 
@@ -242,7 +242,7 @@ input{
 	.breadcrumb {
 		background: none;
 		padding:0 0 !important;
-		margin-bottom:0;
+		margin-bottom: 0;
 		color: $ucd_blue_80;
 		text-transform: uppercase;
 		a {
@@ -293,16 +293,16 @@ input{
 	
 }
 .sidebar {
-	height:auto;
-	//width:250px; // !important; 
-	margin-top:15px;
-	text-align:left;
+	height: auto;
+	//width: 250px; // !important; 
+	margin-top: 15px;
+	text-align: left;
 	
 	> div {
 		margin-left: 70px;
 	}
-	h3{
-		//height:30px; // Note: where possible, use _typography.scss line_height specs to determine height
+	h3 {
+		//height: 30px; // Note: where possible, use _typography.scss line_height specs to determine height
 		a{
 			color: #fff;
 			padding-left: 35px; // was 38px
@@ -312,16 +312,16 @@ input{
 		}
 	}
 
-	.panel-heading{
-		padding:0;
+	.panel-heading {
+		padding: 0;
 		.panel-title {
 			//background-color: $rec_blue;
 			//height: 30px;
 			a {
 				display: block; // otherwise padding-left doesn't work where multilined title 
 				background-color: $rec_blue;
-				&:hover{
-					//cursor:text;
+				&:hover {
+					//cursor: text;
 				}
 			}
 		}
@@ -333,37 +333,37 @@ input{
 				background: $box_light_gray;
 			}
 		}
-		.collapsible{
+		.collapsible {
 			background: $box_light_gray;
 		}
 	}
 }
 
 
-.more_text{
-	display:none;	
+.more_text {
+	display: none;	
 }
 
-/*.sub-list{ // TODO: Eval
+/*.sub-list { // TODO: Eval
 	list-style-type: circle;
 	margin-left: 20px;
-	li{
-		padding-bottom:10px;
+	li {
+		padding-bottom: 10px;
 	}
 }*/
 
-.download{
-	font-weight:bold;
+.download {
+	font-weight: bold;
 }
-#downloads{
-	a{
+#downloads {
+	a {
 		text-decoration: underline;
 		color: $ucd_blue_80;
 	}
 }
 
 .panel-title {
-	a{
+	a {
 		background-color: $ucd_bright_gold_40; 
 		text-decoration: none;
 		&.collapsed {
@@ -375,36 +375,36 @@ input{
 	}
 }
 
-.panel-body{
+.panel-body {
 	h2 {
 		@include font_size(18px);
 		//@include line_height(24px);
-		letter-spacing:.03em;		
+		letter-spacing: .03em;		
 	}
-	h3{
+	h3 {
 		@include font_size(15px);
 		@include line_height(18px);
-		letter-spacing:.01em;
-		font-weight:bold;
-		margin-top:0;
+		letter-spacing: .01em;
+		font-weight: bold;
+		margin-top: 0;
 	}
 
-	.body-img{
-		margin-right:20px;
+	.body-img {
+		margin-right: 20px;
 	}
 }
 
-.panel-collapse{
-	overflow:hidden;	
+.panel-collapse {
+	overflow: hidden;	
 }
-.nav-tabs{
-	display:none;
+.nav-tabs {
+	display: none;
 	@include font_size(20px);
 }
  
 
-#search{
-	width:100px;
+#search {
+	width: 100px;
 }
 
 #content-core .picture {
@@ -537,29 +537,29 @@ body.contact-type {
 	strong { 
 		font-weight: bold; 
 	}
-	.search-pdf{
+	.search-pdf {
 		text-decoration: none;
 		font-size: 13px;
 		
-		span{
+		span {
 			margin-left: 10px;
 			font-style: italic;
 			position: relative;
 			top:-3px;
 		}
 	}
-	p{
+	p {
 		margin-bottom: 0px !important;
 	}	
 }
-.search-result .col-right{
+.search-result .col-right {
 	margin-top: 10px; 
 }
-.results-summary{
+.results-summary {
 	margin-right: 30px;
 }
 
-.search-result .content-title{
+.search-result .content-title {
 	padding-bottom: 10px !important;
 }
 

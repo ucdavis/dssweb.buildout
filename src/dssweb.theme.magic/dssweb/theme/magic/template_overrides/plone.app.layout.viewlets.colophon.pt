@@ -2,5 +2,6 @@
      i18n:domain="plone">
 <div class="colophonWrapper">
 Custom Colophon
+<!-- div tal:content="python:context.restrictedTraverse('@@banner-image').findImageURL()" / -->
 </div>
 </div>
