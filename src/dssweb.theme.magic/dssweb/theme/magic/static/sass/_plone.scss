@@ -3,10 +3,6 @@
 @import "variables";
 
 
-a#portal-logo {  //overrides theme wdth setting that was causing menu to break
-	width:100%;
-}
-
 .hiddenStructure {
     background: none repeat scroll 0 0 transparent;
     border: medium none;
@@ -52,11 +48,13 @@ a#portal-logo {  //overrides theme wdth setting that was causing menu to break
 	margin-bottom: -94px;
 	padding-left: 100px;
 }
-
+a#portal-logo {  //overrides theme wdth setting that was causing menu to break
+	width:100%;
+}
 #portal-logo {
 	    display: inline-block;
 	    margin: 0 0;
-	    padding-top: 13px;
+	    padding-top: 6px;
 }
 
 #portal-searchbox {
@@ -369,9 +367,15 @@ dl.portlet-static-contact dt{
 	line-height: 1.5em;
 }
 
-div#footer-nav {
+ul#footer-nav {
 	margin-left: 30%;
 	width: 45%;
+}
+#footer-nav a{
+	color:white;
+	white-space:nowrap;
+	border-left:1px solid white;
+	padding-left:5px;
 }
  /* Footer Navigation portlet */
 

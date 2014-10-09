@@ -123,8 +123,8 @@
 
 	  <!--- Footer -->
 	   <copy  css:content=".portletStaticText.portlet-static-contact" css:theme="#vcard" />
-	   <drop css:content=".portlet-footer-nav" />
-	   <replace css:theme-children="#footer-nav-middle"  css:content-children=".portlet-footer-nav" method="raw"/>
+
+	   <replace css:theme-children="#footer-nav-middle"  css:content="ul#footer-nav" method="raw"/>
 
 	   	   
 	  
