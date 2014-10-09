@@ -34,7 +34,8 @@
  	   <!--drop all the portal footers on the front page -->
  	   <drop css:content="dd.portlet-footer" if="$home_page" />
  	   <drop css:content="dd.portletFooter" if="$home_page" />
-
+        
+    
 	   <!--swap in portal-globalnav -->
 	   <!--utility menu -->
 	   <!--ISS Site Specific Logo and front page -->
@@ -95,6 +96,7 @@
 
 
 		<replace css:content="#content-core" css:theme-children="#container-2 div.content-wrap"  />
+		<copy attributes="href" css:content="#portaltab-about-iss > a" css:theme="#container-2 > div > div > div.bcontroller > a" />
 
 		<!-- Events Happy Box -->
 	    <copy css:content=".events > dl > dd" css:theme="#container-3 > div > div > div.content-wrap" />
@@ -130,8 +132,11 @@
 
 	  <!--- Footer -->
 	   <copy  css:content=".portletStaticText.portlet-static-contact" css:theme="#vcard" />
-
-	   <replace css:theme-children="#footer-nav-middle"  css:content="ul#footer-nav" method="raw"/>
+	   
+	   <drop css:content=".portlet.portletNavigationTree" />
+	   <replace css:theme="#foot-left"  css:content="ul.navTree.navTreeLevel0" method="raw"/>
+	   <drop css:theme="#foot-center" />
+	   <drop css:theme="#foot-right" />
 
 
 

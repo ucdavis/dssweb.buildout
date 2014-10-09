@@ -2,6 +2,11 @@
 @charset "utf-8";
 @import "variables";
 
+/* override wallpaper height without breaking cakefarm theme  */
+.wall .wallpaper .notsobig {
+	height:540px !important;
+}
+
 
 .hiddenStructure {
     background: none repeat scroll 0 0 transparent;
@@ -43,18 +48,13 @@
    padding: 0 0; 	
 }
 
- ul#iss-top {
-	margin-top: 51px;
-	margin-bottom: -94px;
-	padding-left: 100px;
-}
 a#portal-logo {  //overrides theme wdth setting that was causing menu to break
 	width:100%;
 }
 #portal-logo {
 	    display: inline-block;
 	    margin: 0 0;
-	    padding-top: 6px;
+	    padding-top: 0px;
 }
 
 #portal-searchbox {
@@ -394,16 +394,21 @@ ul#footer-nav {
 	padding-left: 5%;
 	margin-left:25%;
 	
-	dl.portlet {
-		background-color: transparent;
-	}
+	ul {padding-left: 5%;
+	-webkit-column-count: 3;
+	-webkit-column-gap: 10px;
 
-	dl.portlet.portletNavigationTree {
-		margin-top:0 !important;
-	}
+	column-count: 3;
+	column-gap: 10px;
+
+	-moz-column-count:3;
+	-moz-column-gap:10px;
+	
+     }
+		
 	
 
-	dl.portlet ul.navTree li a {
+	ul.navTree li a {
     	border: none;
 		font-size:120%;
     	display: block;
@@ -411,7 +416,7 @@ ul#footer-nav {
     	zoom: 1;
 	}
 
-	dl.portlet ul.navTree li {
+	ul.navTree li {
 		a:hover {
 			color:white !important;
 
@@ -426,20 +431,20 @@ ul#footer-nav {
 		background-color: transparent;
 	}
 
-	dl.portlet ul.navTreeLevel0 > .navTreeItem {
+	ul.navTreeLevel0 > .navTreeItem {
     	padding: 0.25em 1em;
     	border-bottom: None;
     	line-height: 2em;
 		color: white;
 	}
 	
-	dl.portlet li {
+	ul > li {
 		border-left: 1px solid white;
 		margin-bottom: 0;
 
 	}
 
-	dl.portlet ul.navTreeLevel1 .navTreeItem {
+	ul.navTreeLevel1 .navTreeItem {
     	padding-left: 0.5em;
     	line-height: 2em;
 	}
@@ -448,7 +453,7 @@ ul#footer-nav {
 
 	}
 
-	dl.portlet ul.navTree .navTreeCurrentItem {
+	ul.navTree .navTreeCurrentItem {
 		background-color:transparent;
 		color:white;
     	
