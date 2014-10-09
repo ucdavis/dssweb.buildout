@@ -368,19 +368,7 @@ dl.portlet-static-contact dt{
 }
 
 ul#footer-nav {
-	margin-left: 30%;
-	width: 45%;
-}
-#footer-nav a{
-	color:white;
-	white-space:nowrap;
-	border-left:1px solid white;
-	padding-left:5px;
-}
- /* Footer Navigation portlet */
-
-#footer-nav-middle{
-	width:50%;
+	
 	padding-left: 5%;
 	-webkit-column-count: 3;
 	-webkit-column-gap: 10px;
@@ -390,6 +378,21 @@ ul#footer-nav {
 
 	-moz-column-count:3;
 	-moz-column-gap:10px;
+	
+}
+#footer-nav a{
+	color:white;
+	white-space:nowrap;
+	border-left:1px solid white;
+	padding-left:5px;
+	line-height:1.5em;
+}
+ /* Footer Navigation portlet */
+
+#footer-nav-middle{
+	width:45%;
+	padding-left: 5%;
+	margin-left:25%;
 	
 	dl.portlet {
 		background-color: transparent;
