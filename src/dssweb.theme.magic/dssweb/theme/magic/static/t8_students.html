@@ -64,7 +64,7 @@
 	            <a href="#"></a>
 	          </li>
 	          <li id="uti-logo">
-	            <a href="#">
+	            <a href="http://www.ucdavis.edu">
 	              <img src="images/logos/nav-logo.png" alt="UC Davis" />
 	            </a>
 	          </li>
@@ -542,7 +542,11 @@
 
 	  <script id="wallpaper_fix">
 			$(".wall").wallpaper({
-				source: $('#theme_url').html() || '' + "images/banners/d-T8-banner-1.jpg"
+				//source: $('#theme_url').html() || '' + "images/banners/d-T8-banner-1.jpg"
+				source: {
+					"fallback": $('#theme_url').html() || '' + "images/banners/m-T8-banner-1.jpg",
+					"(min-width: 767px)": $('#theme_url').html() || '' + "images/banners/d-T8-banner-1.jpg"
+				}
 			});
 			var active_trail = "#students-btn";
 		</script>
