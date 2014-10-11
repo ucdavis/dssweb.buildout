@@ -132,17 +132,38 @@
 		}
 	}
 	
-	// home page ...
+	// home page ...	
 	.panel-group {
 		> .panel { // #top-panel-row
 			margin-bottom: 0;
 			.panel {
 				margin-bottom: 5px; // TODO: when panel open in mobile remove margin between panel-heading and active-element. Add margin after active-element. Careful about setting margins without thorough testing.
+				.panel-heading {
+					//height: 28px;
+				}
+				.action-element {
+					//background-color: rgba(0, 40, 85, 0.8);
+					//border: 1px solid #FFF;
+					//margin-bottom: 15px;
+				}
 				.panel-body {
 					//border-bottom: 2px solid white;
-					
+					padding-top: 0;
 					.narrow-col {
 						padding: 0;
+
+						.content-wrap {
+							padding-top: 0;
+							h3 {
+								padding-top: 0;
+								a {
+									color: #FFF;
+								}
+							}
+						}
+						.bcontroller {
+							padding-left: 15px;
+						}
 					}
 				}
 			}

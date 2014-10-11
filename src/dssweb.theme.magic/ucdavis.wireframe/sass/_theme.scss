@@ -1,5 +1,7 @@
 /* _theme.scss */
 
+// TODO: XS mq @ 978px 
+
 // See JS for Windows Phone 8 / IE 10 viewport issues
 @-webkit-viewport{width:device-width}
 @-moz-viewport{width:device-width}
@@ -45,7 +47,10 @@ head {
 
 .btn-primary {
  margin-top: 15px;   
- color: #fff !important;   
+ color: #fff !important;
+ &:hover{
+ 	text-decoration: none;
+ }
 }
 
 .sidebar-left {
@@ -1162,7 +1167,7 @@ body.contact-type {
 }
 
 /*----- Desktop breakpoint -------*/
-@media screen and (min-width: $screen-md-min) { // width > 992
+@media screen and (min-width: $screen-sm-max) { // width > 991 (was $screen-md-min or 992)
 	head { font-family:"L";}
 	body:after{content:"L";}
 	
