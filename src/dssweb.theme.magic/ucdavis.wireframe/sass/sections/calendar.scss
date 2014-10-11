@@ -7,36 +7,32 @@
 
 #calendar{
 	padding: 0;
-	
-	#month {
-		border-collapse: collapse;
+	#month {		
 		margin-bottom: 70px;
 		width: 100%;
+		thead{
+			th { 		
+				height: 30px;
+				width: 124px;
+				padding-top: 5px;
+				border-left: 1px solid #fff;
+				.first {
+					border-left: none !important;
+				}
+			}
+		}
 		
-		td {
-			border: 1px solid $ucd_blue_10;
-		}
-		th { 
-			font: 1em bold Arial, Helvetica, sans-serif;
-			height: 30px;
-			width: 125px;
-			padding-top: 5px;
-			border-left: 1px solid #fff;
-		}
-		.first {
-			border-left: none !important;
-		}
 	 thead {
 			background-color: $rec_blue;
 			color: #fff;
 		}
  
 	 td {
-			max-width: 125px;
-			height: auto;			
-			padding: .2em;
+			border: 1px solid $ucd_blue_10;
+		//	display: inline-block;
+		
+	
 			.day {
-				max-width: 7em;
 				min-height: 120px;
 				margin-top: 30px;
 				a {
@@ -69,46 +65,7 @@
 		.date {
 			color: $ucd_black_30;
 		}
-	}
-
-	.rtop {
-		display: block;
-		background: #060;
-	}
-
-	.rtop * {
-		display: block;
-		height: 1px;
-		overflow: hidden;
-		background: #fff;
-	}
-
-	.r1 {
-		margin:0 0 0 5px;
-	}
-
-	.r2 {
-		margin:0 0 0 3px;
-	}
-
-	.r3 {
-		margin: 0 0 0 2px;
-	}
-
-	.r4 {
-		height: 2px;
-		margin: 0 0 0 1px;
-	}
-
-	#container h1 {
-		font: 2em Arial, Helvetica, sans-serif;
-		color: #060;
-		margin: 0 0 .5em .5em;
-	}
-
-	#month th {
-	font: 1em bold Arial, Helvetica, sans-serif;
-	}
+	}	
 }
 p {
 	margin-top: 0;
@@ -150,7 +107,7 @@ p {
 	text-align: right;
 	float: right;	
 	padding-right: 0px;
-	padding-top: 6px;
+	padding-top: 8px;
 	.vf-selector {
 		background-color: $ucd_blue_10;
 		display: inline-block;
@@ -308,17 +265,25 @@ p {
 	}
 	#calendar {
 		padding-left: 20px;
-		padding-right: 20px;
+		
+	}
+	#subject-all {
+		position: absolute;
+		left: -9999px;
 	}
 	.widget-fieldset {
-		margin-top: 25px;
-		position: relative;
-		left: -128px;
-		top: -40px;
+		margin: 0 auto 33px auto;
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
 		.checkForm {
 			li {
 				float: initial !important;
 				width: 100%;
+				margin-left: auto;
+				margin-right: auto;
+				padding-bottom: 20px;
+			
 			}		
 		}
 	}
@@ -326,10 +291,9 @@ p {
 	
 	#month {
 		td {
-			.date {
-				text-align: center;
-				padding-top:5px;
-			}
+			height: 40px ;
+			width: 39px;
+			
 			.day {
 				min-height: 40px !important;
 				margin-top: 0 !important;
@@ -340,15 +304,38 @@ p {
 			display: none;
 		}
 	}
-	
+	.todays-event {
+		
+		height: 200px;
+		width: 280px;
+		margin: 30px auto 50px auto;	
+		.fc-event-title, .fc-event-time {
+			@include font_size(12.5px);	
+			line-height: 10px;
+		}
+		
+		.fc-event-title {			
+			background-color: $ucd_blue_80;
+			a	{
+				color: #fff;
+				text-decoration: none;
+				
+			}
+		}
+	}
 	.panel-title, .panel-title a, .panel-heading {
 			//background: none !important;
 			background-color: #fff !important;
 	}
-	.panel-body {
+	.panel {
 		width: 100%;
-		margin-left: 25%;
-		
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+	.panel-body {
+		padding-top: 0;
+		border: 2px solid $ucd_blue_10;
+	
 	}
 	
 	.view-all {
@@ -356,6 +343,7 @@ p {
 		top: -30px;
 		left: 73%;			
 		@include font_size(10px);	
+		
 	}
 	
 	
@@ -444,7 +432,7 @@ p {
 	#filter-by {
 		position: absolute;
 		top: 10px;
-		left: 248px;	
+		left: 140px;	
 		a {
 			@include font_size(13px);
 		}
@@ -499,5 +487,7 @@ p {
 	}
 	.sidebar-left {
 		top: 0;
+		margin-top: 25px;
+		padding-left: 0;
 	}
 }
