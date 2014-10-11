@@ -164,6 +164,9 @@ dl.portlet-static-quick-facts dt {
 		background:transparent;
 		color:$ucd_blue_100;
 	}
+	dl.portlet a:hover {
+		text-decoration:underline;
+	}
 		a.tile {
 			color:$ucd_blue_100 !important;
 	          border-bottom: none;
@@ -211,6 +214,9 @@ dl.portlet-static-quick-facts dt {
 		background:transparent;
 		color:$ucd_blue_100;
 	}
+	dl.portlet a:hover {
+		text-decoration:underline;
+	}
 	a.tile {
 		color:$ucd_blue_100 !important;
           border-bottom: none;
@@ -255,6 +261,9 @@ dl.portlet-static-quick-facts dt {
 	dl.portlet a, a:visited {
 		background:transparent;
 		color:$ucd_blue_100;
+	}
+	dl.portlet a:hover {
+		text-decoration:underline;
 	}
 	a.tile {
 		color:$ucd_blue_100 !important;
