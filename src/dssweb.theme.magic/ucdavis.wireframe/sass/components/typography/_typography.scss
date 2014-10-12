@@ -5,20 +5,21 @@ body, div, p, li, input, textarea, select {
   color: #000;
 	@include standard_font;
 }
-/*
-@font-face {
-	font-family: 'lucida sans bold';
-	src: url('fonts/lucida/LucidaSansBold.ttf');
-	font-weight: normal;
-	font-style: normal;
-}
-*/
+
+// Note: Font faces are in _mixins
+
 a { color: $ucd_blue_70;}
 
 em {
 	font-style: italic;
 }
 
+h1 {
+
+	@include standard_font;
+	//@include fontface_regular_font;
+	//@include fontface_bold_font;
+}
 blockquote {
 	color: $rec_blue;
 	margin-top: 35px;
@@ -330,6 +331,12 @@ body.bio {
 	
 	#top-panel-row{
 		margin-top: 45px;
+	}
+	
+	figure {
+		figcaption {
+			padding-right: 15px;
+		}
 	}
 	
 	.panel-group {

@@ -49,7 +49,7 @@ head {
  margin-top: 15px;   
  color: #fff !important;
  &:hover{
- 	text-decoration: none;
+ 	text-decoration: none !important;
  }
 }
 
@@ -86,7 +86,6 @@ head {
 }
 
 .body-img {
-	border:1px solid red;
 	height:120px;
 	width:200px;
 	float:left;
@@ -117,7 +116,7 @@ button {
 		display: inline;
 		list-style-type: none;
 		padding-right: 50px;	
-		width:100%;
+		//width:100%; // Warning: This breaks fitting on mobile/iphone
 	}
 	ul {
 		padding-top: 100px;
@@ -128,8 +127,7 @@ button {
 
 #footer {	
 	background-color: $ucd_blue_70;
-	min-height: 250px;
-	//width: 100%;
+	//min-height: 250px; // keep for reference. having this adds right white margin on iphone!
 	padding-bottom: 25px;
 	margin-bottom: 15px;
 	clear: both;
@@ -165,9 +163,12 @@ button {
 		width: 140px;		
 		li{
 			padding-left: 10px;
-			@include line_height(35px);
+			padding-bottom: 10px; // was @include line_height(35px); which adds top padding
 			a {
 				color: #fff;
+			}
+			&:last-child {
+				padding-bottom: 0;
 			}
 		}
 	}
@@ -248,7 +249,7 @@ input {
 		background: none;
 		padding:0 0 !important;
 		margin-bottom: 0;
-		color: $ucd_blue_80;
+		color: $ucd_blue_70;
 		text-transform: uppercase;
 		a {
 			text-decoration: none;
@@ -289,6 +290,7 @@ input {
 	}
 	
 }
+
 
 
 .student-events {
@@ -363,8 +365,9 @@ input {
 #downloads {
 	a {
 		text-decoration: underline;
-		color: $ucd_blue_80;
+		color: $ucd_blue_70;
 	}
+	margin-top: 0 !important;
 }
 
 .panel-title {
@@ -681,6 +684,13 @@ body.contact-type {
 	}
 	#footer {
 		margin-bottom: 60px;
+		.footer-nav {
+			li {
+				@include line_height(35px);
+				margin-bottom: 0;
+				padding-bottom: 0;
+			}
+		}
 	}
 	
 	#content-row {
@@ -753,6 +763,34 @@ body.contact-type {
 	}
 	
 	#main-container {
+		#banner-row {
+			margin-right: -15px !important; // since nested in padded main-container, remove right margin
+		}
+		
+		#content-row {
+			#content {
+				padding-left: 15px !important;
+			}
+			// TEST SECTION: TODO: REMOVE 
+			// 2014-10-11 RAK: content-row and footer have layout that adds a right white margin on mobile/iphone
+			// On footer, removing min-height from an element fixed it
+			// On content-row hiding h1, h3, h4, and .breadcrumb fixes issue ...
+
+			/*
+			#content div {display: none;}
+			h1 {
+				display: none;
+			}
+			h4, .breadcrumb {display: none;}
+			.sidebar {
+				h3 {
+					display: none;
+				}
+			}
+			*/
+			
+		}
+		
 		#content-row {
 			.double {
 				.panel-group {

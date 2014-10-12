@@ -107,14 +107,14 @@
 	        $($(this).attr('data-target')).toggleClass('in');
 	    });*/
 				
-				// Input field placeholders; Just add .placeholder to the form class to have .form-row labels placed as placeholders on input items
-				if($('form.placeholders').length !== 0) {
-					$('form.placeholders .form-row').each(function () {
-						var label_txt = $(this).find('label').text();
-						$(this).find('input, textarea').attr('placeholder', label_txt);
-					});
-				}
-			
+			// Input field placeholders; Just add .placeholder to the form class to have .form-row labels placed as placeholders on input items
+			if($('form.placeholders').length !== 0) {
+				$('form.placeholders .form-row').each(function () {
+					var label_txt = $(this).find('label').text();
+					$(this).find('input, textarea').attr('placeholder', label_txt);
+				});
+			}
+						
 		};
 		
 		apply_fixes();
@@ -275,6 +275,7 @@
 		// Process .picture into figure/figcaption
 		// TODO: Plugin
 		if($('.picture').length !== 0) {
+			
       $('.picture img').each(function () {
 				var title = $(this).attr('title');
 				$(this).wrap('<figure class="picture-processed" />');
@@ -287,6 +288,17 @@
 				
       });
 		}		
+		
+		// Subtract height of figcaption from breadcrumb visually oriented on bottom of image
+		// Minimize content-row top margin if banner has caption
+		// Call this ONLY after picture processing
+		if(($('#banner-row').length !== 0) && ($('#banner-row figcaption').length !== 0)) {
+			// Note: figcaption doesn't existing until processed so use approx 25px height
+			var fcmt = $('#banner-row figcaption').height();
+			var mt = ( $('#content-row').css('margin-top').replace('px','') - fcmt);
+			$('#content-row').css('margin-top', mt);
+		}
+		
 		
 		// Process download file icons
 		// TODO: Plugin ... with option to add id's which should be checked for file type icon placement
@@ -434,11 +446,13 @@
 							
 							// Note: Rework to accommodate sizing in tablet and mobile
 							//$('body.home #top-panel-row').height("auto");
+							
+							// If NOT on home page ...
 							if($("body.home").length === 0) {
 								$('.wallpaper-image').width($(window).width());
 								$('.wallpaper-image').height(tabletBannerHeight);
 								$('.wallpaper-image').css('left',0);
-								$('#content').css('margin-top',(tabletBannerHeight-happyboxBlockHeight)+'px');
+								//$('#content').css('margin-top',(tabletBannerHeight-happyboxBlockHeight)+'px');
 							}
 							
 							

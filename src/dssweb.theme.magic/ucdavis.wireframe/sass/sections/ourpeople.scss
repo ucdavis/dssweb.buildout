@@ -55,6 +55,9 @@ $ucdtxt_blue: #4D688C; // based on?
 .sidebar{
 	margin-top: 20px;
 	color: $ucdtxt_blue;
+	> div {
+		margin-left: 0;
+	}
 }
 
 .caption{

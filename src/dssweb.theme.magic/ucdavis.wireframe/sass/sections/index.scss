@@ -36,6 +36,14 @@
 	}
 }
 
+#content {
+	ul {
+		li {
+			background-image: url("../../images/bullets/white-square.gif") !important;
+		}
+	}
+}
+
 .tab {
 	background-color: $tab_light_gray;
 	height: 100px;
