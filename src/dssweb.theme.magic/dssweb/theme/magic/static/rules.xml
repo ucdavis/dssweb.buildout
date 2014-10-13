@@ -150,6 +150,23 @@
             </script>
        </replace>
 
+    <after theme-children="html/body">
+      <script type="text/javascript">
+        jQuery(function ($) {
+            var mmenu = $('#portal-globalnav li > ul.dropdown');
+
+            $('#portal-globalnav').hover(
+                function() {
+                    mmenu.slideDown('fast');
+                },
+                function() {
+                    mmenu.hide();
+                }
+            );
+        });
+      </script>
+    </after>
+
         <rules css:if-content="body.portaltype-event">
             <!-- rules for the event portal type -->
             <replace theme="//div[@id='content-core']/div/img"
