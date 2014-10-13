@@ -7,8 +7,8 @@
     <!-- Apply the following rules to standard Plone pages -->
     <rules css:if-content="#visual-portal-wrapper">
 	    <theme href="index2.html" if="$home_page" />
-	    <theme href="t13_event.html" css:if-content="body.portaltype-event" />
-        <theme href="t4_adhoc.html" />
+	    <theme href="t13_event2.html" css:if-content="body.portaltype-event" />
+        <theme href="t4_adhoc2.html" />
 
         <!-- Replace title with Plone's page title  -->
         <replace css:theme="html head title" css:content="html head title" />
@@ -153,7 +153,7 @@
 	   <copy  css:content=".portletStaticText.portlet-static-contact" css:theme="#vcard" />
 	   
 	   <drop css:content=".portlet.portletNavigationTree" />
-	   <replace css:theme="#foot-left"  css:content="ul.navTree.navTreeLevel0" method="raw"/>
+	   <replace css:theme-children="#footer-middle"  css:content="ul.navTree.navTreeLevel0" method="raw"/>
 	   <drop css:theme="#foot-center" />
 	   <drop css:theme="#foot-right" />
 
@@ -204,6 +204,10 @@
 	<!--Mobile -->
 	<!--drop theme='//*[@id="share-util-btn"]' /-->
 	<copy attributes="href" css:content="#portletwrapper-706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f4953530a636f6e74616374 > div > p:nth-child(3) > a" css:theme="#email-util-btn > a" />
+	<!--temp drop extra mobile buttons because they don't yet work -->
+	<drop css:theme="#content-core > div.panel.panel-default.bottom-panel.left-panel > div.panel-heading.hidden-lg.hidden-md > h4"  />
+	<drop css:theme="#content-core > div.panel.panel-default.bottom-panel.middle-panel > div.panel-heading.hidden-lg.hidden-md > h4"  />
+	<drop css:theme="#content-core > div.panel.panel-default.bottom-panel.right-panel > div.panel-heading.hidden-lg.hidden-md > h4"  />
 	
 	
 </rules>
