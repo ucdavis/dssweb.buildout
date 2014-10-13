@@ -36,19 +36,6 @@
 			$(active_trail).addClass("active-trail");
 		}
 		
-		// Convenience tab buttons for home
-		// This makes the whole tab clickable and not just the text
-		
-		if($('body.home').length !== 0) {
-      $('.tab').each(function () {
-				if($(this).find('a')) {
-					var url = $(this).find('a').attr('href');
-					$(this).click(function() {
-						window.open(url);
-					});
-				}
-      });
-		} 
 		
 		// TODO: Consider doing this with LiveSearch list items; feels much more responsive if entire LI is hot.
 		// Add / remove .LSRow for LiveSearch LI hotlinking. Would need this as a function and without body.home specificity for livesearch updates.
@@ -72,6 +59,7 @@
       });
 		};
 		
+		// Bend blockquotes
 		if($('blockquote').length !== 0) {
 			$('blockquote').addClass('open-quote');
 			$('blockquote').wrapInner('<span class="bq-content" />');
@@ -119,14 +107,14 @@
 	        $($(this).attr('data-target')).toggleClass('in');
 	    });*/
 				
-				// Input field placeholders; Just add .placeholder to the form class to have .form-row labels placed as placeholders on input items
-				if($('form.placeholders').length !== 0) {
-					$('form.placeholders .form-row').each(function () {
-						var label_txt = $(this).find('label').text();
-						$(this).find('input, textarea').attr('placeholder', label_txt);
-					});
-				}
-			
+			// Input field placeholders; Just add .placeholder to the form class to have .form-row labels placed as placeholders on input items
+			if($('form.placeholders').length !== 0) {
+				$('form.placeholders .form-row').each(function () {
+					var label_txt = $(this).find('label').text();
+					$(this).find('input, textarea').attr('placeholder', label_txt);
+				});
+			}
+						
 		};
 		
 		apply_fixes();
@@ -190,7 +178,6 @@
 		var bootstrapify_func = function (mobile, collectionSelector, itemSelector, heading, contentClassName, panelGroupID, startIndex) {
 			var hasLink = false;
 			var i = startIndex;
-			
 			if($(collectionSelector).length !== 0) {
 				
 				// Wrap inner as panel-group
@@ -287,6 +274,7 @@
 		// Process .picture into figure/figcaption
 		// TODO: Plugin
 		if($('.picture').length !== 0) {
+			
       $('.picture img').each(function () {
 				var title = $(this).attr('title');
 				$(this).wrap('<figure class="picture-processed" />');
@@ -299,6 +287,17 @@
 				
       });
 		}		
+		
+		// Subtract height of figcaption from breadcrumb visually oriented on bottom of image
+		// Minimize content-row top margin if banner has caption
+		// Call this ONLY after picture processing
+		if(($('#banner-row').length !== 0) && ($('#banner-row figcaption').length !== 0)) {
+			// Note: figcaption doesn't existing until processed so use approx 25px height
+			var fcmt = $('#banner-row figcaption').height();
+			var mt = ( $('#content-row').css('margin-top').replace('px','') - fcmt);
+			$('#content-row').css('margin-top', mt);
+		}
+		
 		
 		// Process download file icons
 		// TODO: Plugin ... with option to add id's which should be checked for file type icon placement
@@ -446,11 +445,13 @@
 							
 							// Note: Rework to accommodate sizing in tablet and mobile
 							//$('body.home #top-panel-row').height("auto");
+							
+							// If NOT on home page ...
 							if($("body.home").length === 0) {
 								$('.wallpaper-image').width($(window).width());
 								$('.wallpaper-image').height(tabletBannerHeight);
 								$('.wallpaper-image').css('left',0);
-								$('#content').css('margin-top',(tabletBannerHeight-happyboxBlockHeight)+'px');
+								//$('#content').css('margin-top',(tabletBannerHeight-happyboxBlockHeight)+'px');
 							}
 							
 							
@@ -501,7 +502,7 @@
 			  //$(".ls-content").removeClass("tab-content");
        // $(".landscape div").removeClass("tab-pane");
         //$(".nav-tabs").hide();
-				
+
         /* If Bio Page */
 				if ($("body.bio").length !== 0) {
             // Remove the panel effects and then show the headers
@@ -549,12 +550,15 @@
 				$(".nav li").removeClass("open");
 	   }
 
+		 /* CollapsedView - On XS and S breakpoints, process for collapsed panel view
+		 	*	
+		 */
     function collapsedView() {
 				// Index page
         //$(".ls-content").addClass("tab-content");
         //$(".landscape div").addClass("tab-pane");
         //$(".landscape").removeClass("tab-content");
-				
+			
         $("#contA", ".panel .panel-collapse").addClass("active"); // TODO: Are we using this? Should apply to all panel IDs
        // $(".nav-tabs").show();
 							  			     
@@ -574,7 +578,6 @@
           //$(".collapse div").addClass("panel-body"); // TODO: Do we need this?
         }
 				
-				
 				// NOTE: Following changes are global
 				
 				// Add the collapse on toggle attribute to the panel headers
@@ -589,12 +592,22 @@
         $(".more_text").hide();			
 				// Add the dropdown on toggle attribute to the panel headers	
 				$(".par > a").attr("data-toggle","dropdown");
-   		
+   			
+				// Blanket assign class="collapsed" to all collapsed panel links for display of correct status
+				$(".panel-title a").addClass('collapsed');
+				
 				// Prevent the panel-title headers from redirecting the page and shows .panel-body content
         $(".panel-title a").click(function (e) {
             e.preventDefault();
 						
 						collapseAllPanels('.panel-group');
+						
+						// Toggle collapsed
+						if($(this).attr('class') === 'collapsed') {
+							$(this).removeClass('collapsed');
+						} else {
+							$(this).addClass('collapsed');
+						}
 						
             $($(this).data("target")).show();
 						var sel = '.in'+$(this).attr('data-target');
@@ -631,6 +644,33 @@
 				//});
 				
     }
+		
+		/* smooth_scroll - to make link scroll smoothly to anchor 
+		 * @param linkId the element AND the a-tag, e.g., '#button a'
+		*/
+		function smooth_scroll(linkId) {
+			
+      $(linkId).click(function (e) {
+        e.preventDefault();
+					
+				var anchor = $(this).attr('href');
+				
+	      //calculate destination place
+	      var dest = 0;
+	      if ($(anchor).offset().top > $(document).height() - $(window).height()) {
+	          dest = $(document).height() - $(window).height();
+	      } else {
+	          dest = $(anchor).offset().top;
+	      }
+				//dest -= 35; // offset (if needed) to scroll to panel-heading
+	      //go to destination
+	      $('html,body').animate({
+	          scrollTop: dest
+	      }, 500, 'swing');
+			});
+			
+		}
+			
 		
 		function collapseAllPanels(parentTag) {
 			//$(".panel-group .collapsible").removeClass("in"); // close panels
@@ -673,6 +713,29 @@
 
 		// Set sidebar position and activate home page happy boxes
 		if ((activeMQ === 'L') || (activeMQ === 'M')) {
+			
+			// Home page target: L / M
+			if($('body.home').length !== 0) {
+				
+				// Activate smooth scroll on the more content button located in the banenr
+				smooth_scroll('#more-content-button a');
+				// Convenience tab buttons for home
+				// This makes the whole tab clickable and not just the text
+	      $('.tab').each(function () {
+					if($(this).find('a')) {
+						var url = $(this).find('a').attr('href');
+						$(this).click(function() {
+							window.open(url);
+						});
+					}
+	      });
+				
+				// Unhide bottom row ...
+				if($('#bottom-panel-row').css('display') === "none") {
+					$('#bottom-panel-row').show();
+				}
+				
+			} 
 			
 			// Set vert position of right sidebar
 			if(($('.content-title').length !== 0) && ($('.sidebar-right').length !== 0)) {
@@ -718,6 +781,30 @@
 			if(($('body.has-shadow-am').length !== 0) && ($('#top-panel-row').length === 0) && ($('#content-row').length !== 0)) {
 				//$('#content-row').css('margin-top', shadow_am_viewport_height + 45);
 			}
+		} else if ((activeMQ === 'S')) {
+
+			// Home page target: S
+			if($('body.home').length !== 0) {
+				
+				// Remove height of the tob-panel-row
+				if($('#top-panel-row').length !== 0) {
+					$('#top-panel-row').height('auto');
+				}
+				
+				// Hide bottom panel (we'll open it with the "Discover" button)
+				$('#bottom-panel-row').hide();
+				
+				// Wire up "Discover" button to reveal bottom content tabs
+				$('.homepage-title').css('cursor','pointer');
+				$('.homepage-title').click(function() {
+					if($('#bottom-panel-row').css('display') === "none") {
+						$('#bottom-panel-row').show();
+					} else {
+						$('#bottom-panel-row').hide();
+					}
+				});
+			}
+			
 		}
 		
     if (debug) {
@@ -728,7 +815,8 @@
 					}
         });
     }
-
+		
+		
 		/******************************************** END MAIN ************************************** */
 		
 	});
