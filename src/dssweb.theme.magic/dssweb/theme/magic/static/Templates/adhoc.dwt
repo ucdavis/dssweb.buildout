@@ -211,7 +211,7 @@
 	        
 							<div id="content-panel-heading" class="panel-heading">
 			          <h4 class="panel-title"><a data-parent="#accordionB" data-target=
-			            "#content-a" data-toggle="collapse">Hide Content which would be way to short a title to test what happens with two liners</a></h4>
+			            "#content-a" data-toggle="collapse"><!--Hide Content which would be way to short a title to test what happens with two liners--></a></h4>
 			        </div>
 					
 			        <div class=" collapsible panel-collapse collapse in" id="content-a">
