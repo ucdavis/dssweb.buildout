@@ -34,8 +34,8 @@
  	   <!--drop all the portal footers on the front page -->
  	   <drop css:content="dd.portlet-footer" if="$home_page" />
  	   <drop css:content="dd.portletFooter" if="$home_page" />
-        
-    
+
+
 	   <!--swap in portal-globalnav -->
 	   <!--utility menu -->
 	   <!--ISS Site Specific Logo and front page -->
@@ -46,7 +46,7 @@
 	   <replace css:theme-children="#left-front-column" css:content=".portletContentLeadImageCollectionPortlet.front-page-events" />
 	   <replace css:theme-children="#middle-front-column" css:content=".portletContentLeadImageCollectionPortlet.journal" />
 	   <replace css:theme-children="#right-front-column" css:content=".portletContentLeadImageCollectionPortlet.available-grants" />
-	   
+
 	   <!-- rule to set up title to replace static logo on ipad/mobile -->
 	   <replace css:theme-children="#logosm h1">
 	           <xsl:for-each css:select="a#portal-logo">
@@ -62,7 +62,7 @@
 	   <replace css:theme="#uti-events > a" css:content="#portaltab-events > a" method="raw" />
 	   <copy attributes="href" css:content=".news > dl > dd.portletFooter > span:nth-child(2) > a" css:theme="#uti-news > a"  />
 	   <copy attributes="href" css:content="#portaltab-support-iss > a" css:theme="#uti-give > a" />
-          <copy attributes="href" css:content=".navTreeItem > .section-uc-davis > a" css:theme="#uti-logo > a" />	
+          <copy attributes="href" css:content=".navTreeItem > .section-uc-davis > a" css:theme="#uti-logo > a" />
 
         <replace content="//ul[contains(@class,'submenu')]/@class">
             <xsl:attribute name="class">dropdown</xsl:attribute>
@@ -136,9 +136,9 @@
        <before css:theme="#content-core" css:content="#parent-fieldname-description" />
      </rules>
    <drop theme='//*[@id="content-core"]/div[1]' css:if-content="body.portaltype-event" />
-   <replace css:theme="div.zebra.rows" css:content="#content-core > div" css:if-content="body.portaltype-event" />  
+   <replace css:theme="div.zebra.rows" css:content="#content-core > div" css:if-content="body.portaltype-event" />
 
-<!--replace css:theme-children="#content" css:content-children="#content" css:if-content="body.portaltype-event"  /-->	
+<!--replace css:theme-children="#content" css:content-children="#content" css:if-content="body.portaltype-event"  /-->
 <!--replace css:theme="#sidebar-block-contact > li.fn > a" css:content="a.email" />
 	<drop css:theme="#sidebar-block-contact > li.category" />
 	<replace css:theme="li.tel" css:content="td.tel" />
@@ -151,7 +151,7 @@
 
 	  <!--- Footer -->
 	   <copy  css:content=".portletStaticText.portlet-static-contact" css:theme="#vcard" />
-	   
+
 	   <drop css:content=".portlet.portletNavigationTree" />
 	   <replace css:theme-children="#footer-middle"  css:content="ul.navTree.navTreeLevel0" method="raw"/>
 	   <drop css:theme="#foot-center" />
@@ -174,22 +174,24 @@
             </script>
        </replace>
 
-        <!--rules css:if-content="body.portaltype-event"-->
-            <!-- rules for the event portal type -->
-            <!--replace theme="//div[@id='content-core']/div/img"
-                     content="//*[@id='parent-fieldname-leadImage']/img" />
+    <after theme-children="html/body">
+      <script type="text/javascript">
+        jQuery(function ($) {
+            var mmenu = $('#portal-globalnav li > ul.dropdown');
 
-            <replace css:theme="#event-speakers p.attendees"
-                     css:content="td.attendees" />
-            <replace css:theme="#event-datetime p.datetime"
-                     content=".//*[@id='content-core']/div[1]/table/tbody/tr[1]/td" />
-            <replace css:theme="#event-location p.location"
-                     content=".//*[@id='content-core']/div[1]/table/tbody/tr[2]/td" />
-            <replace css:theme="#event-description .inline-content"
-                     content=".//*[@id='content-core']/div[2]" />
-            <replace css:theme-children="#event-cta .portlet-items"
-                     content=".//*[@id='content-core']/div[1]/table/tbody/tr[6]/td" />
-        </rules-->
+            $('#portal-globalnav').hover(
+                function() {
+                    mmenu.slideDown('fast');
+                },
+                function() {
+                    mmenu.hide();
+                }
+            );
+        });
+      </script>
+    </after>
+
+        <after css:content="#portal-globalnav" css:theme=".top-bar ul.title-area" />
 
     </rules>
 
@@ -208,6 +210,6 @@
 	<drop css:theme="#content-core > div.panel.panel-default.bottom-panel.left-panel > div.panel-heading.hidden-lg.hidden-md > h4"  />
 	<drop css:theme="#content-core > div.panel.panel-default.bottom-panel.middle-panel > div.panel-heading.hidden-lg.hidden-md > h4"  />
 	<drop css:theme="#content-core > div.panel.panel-default.bottom-panel.right-panel > div.panel-heading.hidden-lg.hidden-md > h4"  />
-	
-	
+
+
 </rules>
