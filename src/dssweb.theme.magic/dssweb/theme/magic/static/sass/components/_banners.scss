@@ -3,21 +3,21 @@
 .jumbotron {
 	padding: 0 !important;
 	margin: 0 !important;
-	text-align: center;
-	margin-top: 20px;
+	text-align: center; 
+	margin-top: 20px; 
 	background-color: transparent;
-
+	
   h1{
 		font-weight: normal;
 		display: none;
   }
-
+	
 	// Make absolute so we don't need negative margin-top on home/index
 	// Comment .wall styles
 	position: absolute;
 	z-index: -100; // arrange wallpaper to back position
 	width: 100%;
-
+	
 }
 // Fix wallpaper placement
 
@@ -38,8 +38,11 @@
 }
 
 #banner-row {
+	figure {
+		
+	}
 	#banner-row-col1 {
-
+		
 	}
 }
 #banner-caption {
@@ -49,18 +52,38 @@
 	@include font_size(12px);
 	text-transform: uppercase;
 	text-align: right;
-	padding-top: 10px;
-	color:$rec_blue;
+	padding-top: 10px; 
+	//color:$rec_blue;
 }
 
 .title-box {
 	padding: 25px;
 	background-color: $box_light_gray;
 }
-@media screen and (max-width: $screen-md-min) {
-	#util-bar-wrap {
+
+.bcontroller {
+	.btn-home.btn-primary {
+		height: 32px;
+		padding-top: 7px;
+		background: url(../images/icons/white-arrow-up.png) 50% 12px no-repeat $rec_blue;
+		@include line_height(30px);
+	}
+}
+
+@media screen and (max-width: $screen-md-min) { // width < 992
+	#util-bar-wrap {  
 		.util-bar {
 			margin-top: 0;
+		}
+	}
+	.siders {
+		.wall {
+			&.shadow-graphic {
+	    	
+			}
+			&.shadow-am-graphic {
+				height: 503px !important;
+			}
 		}
 	}
 }
@@ -68,16 +91,20 @@
 
 /*----- Mobile breakpoint --------*/
 @media screen and (max-width: $screen-sm-min) { // width < 768
-	// handle banners on mobile
+	// handle banners on mobile 
 
 	.siders {
+		margin-right: -15px !important;
 		.wall {
-			top: 80px;
+			//top: 80px;
 			// Width changed via JS on resize
 			//height: 250px !important;
 			//width: 100% !important;
 			&.shadow-graphic {
 	    	height: 85px !important;
+			}
+			&.shadow-am-graphic {
+				top: 80px;
 			}
 		}
 	}
@@ -89,7 +116,7 @@
 			}
 		}
 	}
-
+	
 	// Minified banner box
 	.minify-sm {
 		width: 200px;
@@ -98,7 +125,7 @@
 			background-color: rgba(0, 40, 85, 0.8);
 			.panel-title a {
 				background-color: transparent;
-
+				
 				//color: $ucd_blue_100 !important;
 				//top: 0;
 				background: url(../images/icons/white-arrow-right-sm.png) 90% 50% no-repeat transparent;
@@ -110,7 +137,7 @@
 					//color: $ucd_blue_100 !important;
 					background: url(../images/icons/white-arrow-down-sm.png) 90% 50% no-repeat transparent;
 				}
-
+			
 			}
 		}
 		.action-element {
@@ -147,7 +174,7 @@
 	}
 	body.home {
 		.siders {
-			// Note: This removes the 15px white strip to right of the wallpaper when
+			// Note: This removes the 15px white strip to right of the wallpaper when 
 			// initial-scale=1.0 is removed from the meta
 			// TODO: Determine underlying cause -> test on other tablets
 			margin-right: -12px !important;
@@ -156,24 +183,24 @@
 			}
 		}
 	}
-
+	
 }
 /*----- Desktop or tablet breakpoint -------*/
 @media screen and (min-width: $screen-sm-min) { // width > 768px
 
 	/* 3-column banner panel set - intended to use happybox behavior / plugin */
-
+	
 	#content {
 		.narrow-col {
-			ul li {
-				background-image: url(../images/bullets/white-square.gif);
+			li {
+				background-image: url(../images/bullets/white-square.gif)
 			}
 		}
 	}
 	.top-panel {
 		.action-element {
 			.narrow-col {
-				width: 80%;
+				width: 88%; // Determines width of "happy box" blue elements
 				color: #FFF;
 				background-color: $ucd_blue_100;
 				//border: 1px solid $ucd_blue_100;
@@ -188,7 +215,7 @@
 					margin-bottom: 0;
 				}
 				h3 { // Note: These are headlines within the happy boxes
-
+					
 				}
 				.content-wrap {
 					margin-left: 0;
@@ -200,15 +227,15 @@
 				.bcontroller {
 					.btn-home.btn-primary {
 						width: 100%;
-
 						display: inline-block;
-						background: url(../images/icons/white-arrow-up.png) 50% 100% no-repeat $rec_blue;
+						padding-top: 0;
+						background: url(../images/icons/white-arrow-up.png) 50% 12px no-repeat $rec_blue;
 						text-align: center;
 						//color: #000 !important;
-
+						
 					}
 				}
-
+				
 				&:hover {
 					//background-color: $ucd_blue_80;
 					cursor: pointer;
@@ -249,7 +276,7 @@
 			}
 		}
 	}
-
+	
 }
 
 /*----- Tablet breakpoint --------*/
@@ -276,7 +303,7 @@
 			.narrow-col {
 				.bcontroller {
 					.btn-home.btn-primary {
-
+						
 					}
 				}
 			}
