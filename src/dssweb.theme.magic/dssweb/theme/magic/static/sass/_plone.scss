@@ -360,6 +360,10 @@ border-bottom: none;
 dl.portlet a:visited {
 border-bottom:transparent;
 }
+.newsImageContainer { //fix for ISS Images
+    float:left;
+    padding-right:10px;
+}
 
 /*--Basic rec pool Blue Portlet --*/
 
@@ -398,8 +402,8 @@ ul#footer-nav {
 }
  /* Footer Navigation portlet */
 
-#footer-nav-middle{
-	width:45%;
+#footer-middle {
+	width:55%;
 	padding-left: 5%;
 	margin-left:25%;
 	
@@ -473,6 +477,8 @@ ul#footer-nav {
 {
 	#logosm {display:none;
 	} 
+	h1#parent-fieldname-title {
+	line-height:1.0; }	
 }
 
 @media screen and (max-width: 990px){
@@ -486,7 +492,9 @@ ul#footer-nav {
 	    margin-top:-30px;
 		padding-left:5px;
 }
-	
+    .homepage-title	{
+    	font-size:1.8rem !important;
+    }
 }
 
 /* @end */
