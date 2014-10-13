@@ -36,7 +36,7 @@
   <!-- #BeginEditable "body-tag" -->
   <body class="home has-front-am happy-box">
   <!-- #EndEditable -->
-		<div id="skip-link"><a href="#content-main" class="sr-only sr-only-focusable">Skip to main content</a></div>
+		<div id="skip-link"><a href="#content" class="sr-only sr-only-focusable">Skip to main content</a></div>
 
 	  <div class="row jumbotron">
 			<div class="siders">
@@ -242,15 +242,17 @@
 	        <div class="panel-group" id="content-accordion">
 
 						<div class="row" id="top-panel-row">
+							
+							<div id="more-content-button" class="hidden-xs hidden-sm"><a href="#middle-row">&nbsp;</a></div>
 						<!-- top panels -->
-	          <div class="panel panel-default top-panel left-panel">
+	          	<div class="panel panel-default top-panel left-panel">
 							
 	            <div class="panel-heading hidden-lg hidden-md">
 	              <h4 class="panel-title">
 	                <a data-target="#container-1" data-toggle="collapse" data-parent="#content-accordion">News</a>
 	              </h4>
 	            </div>
-
+							
 							<!-- Left bootstrap column -->
 	            <div class="col-sm-12 col-md-4 col-lg-4 action-element collapsible panel-collapse collapse no-gutter"
 	            id="container-1">
@@ -356,7 +358,7 @@
 		            </div>
 
 								<!-- Left bootstrap column -->
-		            <div class="col-sm-4 col-md-4 col-lg-4 collapsible panel-collapse collapse no-gutter"
+		            <div class="col-sm-12 col-md-4 col-lg-4 collapsible panel-collapse collapse no-gutter"
 		            id="container-A">
 									<div class="panel-body">
 										<div id="left-front-column" class="narrow-col">
@@ -377,7 +379,7 @@
 												<div class="tab-title"><a href="http://www.ucdavis.edu/" target="_blank">Exploring the Mind</a></div>
 											</div>
 
-			              	<p>
+			              	<p class="bcontroller">
 			                	<a class="btn btn-primary btn-home" href="#" role="button">See All</a>
 			              	</p>
 										</div>
@@ -395,7 +397,7 @@
 		            </div>
 
 								<!-- Middle bootstrap column -->
-		            <div class="col-sm-4 col-md-4 col-lg-4 collapsible panel-collapse collapse no-gutter"
+		            <div class="col-sm-12 col-md-4 col-lg-4 collapsible panel-collapse collapse no-gutter"
 		            id="container-B">
 		              <div class="panel-body">
 										<div id="middle-front-column" class="narrow-col">
@@ -426,25 +428,27 @@
 		          <div class="panel panel-default bottom-panel right-panel">
 		            <div class="panel-heading hidden-lg hidden-md">
 		              <h4 class="panel-title">
-		                <a data-target="#container-C" data-toggle="collapse" data-parent="#content-accordion">Latest Research</a>
+		                <a data-target="#container-C" data-toggle="collapse" data-parent="#content-accordion">The Latest</a>
 		              </h4>
 		            </div>
 
 								<!-- Right bootstrap column -->
-		            <div class="col-sm-4 col-md-4 col-lg-4 collapsible panel-collapse collapse no-gutter" id="container-C">
+		            <div class="col-sm-12 col-md-4 col-lg-4 collapsible panel-collapse collapse no-gutter" id="container-C">
 		              <div class="panel-body">
 										<div id="right-front-column" class="narrow-col">
-			                <h2>Latest Research</h2>
-											<img src="images/temp/students.jpg" alt="Danielle Stolzenberg with Student" />
-			                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-											</p>
-											<p>Curabitur laoreet nisl ullamcorper ante posuere malesuada. Etiam vehicula consectetur
-			                ipsum, sit amet rhoncus magna euismod eu. Integer consectetur.
-											</p>
-											<p>
-			                enim, sit amet dapibus sem lectus nec lectus. Quisque in tempor est.
-											</p>
-
+			                <h2>The Latest</h2>
+											<img src="images/temp/t-T1-the-latest.jpg" alt="Danielle Stolzenberg with Student" />
+											
+											<ul class="no-padding">
+			                	<li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
+												</li>
+												<li><a href="#">Curabitur laoreet nisl ullamcorper ante posuere malesuada. Etiam vehicula consectetur ipsum, sit amet rhoncus magna euismod eu. Integer consectetur.</a>
+											</li>
+												<li>
+			                <a href="#">enim, sit amet dapibus sem lectus nec lectus. Quisque in tempor est.</a>
+											</li>
+											</ul>
+											
 										</div>
 		              </div>
 		            </div>
@@ -531,7 +535,7 @@
 						<!--/.panel -->
 					</div>
 					<!-- /bottom bootstrap row -->
-				</div><!-- /content-main -->
+				</div><!-- /#content -->
 	    </div><!-- /landscape -->
 	    <!-- #EndEditable -->
 	    <!-- Site footer -->

@@ -1,7 +1,7 @@
 /* _typography.scss */
 @import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
 
-body, div, p, li, input, textarea, select {
+body, div, p, li, a, input, textarea, select {
   color: #000;
 	@include standard_font;
 }
@@ -15,7 +15,6 @@ em {
 }
 
 h1 {
-
 	@include standard_font;
 	//@include fontface_regular_font;
 	//@include fontface_bold_font;
@@ -91,6 +90,45 @@ p {
 				@include font_size(13px);
 			}
 		}
+	}
+}
+
+.panel-body {
+	h2 {
+		@include font_size(18px);
+		//@include line_height(24px);
+		letter-spacing: .03em;		
+	}
+	h3 {
+		@include font_size(15px);
+		@include line_height(18px);
+		letter-spacing: .01em;
+		font-weight: normal;
+		margin-top: 0;
+	}
+}
+
+
+#content {
+	#top-panel-row {
+		.panel-body {
+			.narrow-col {
+				p, li, a {
+					@include font_size(15px);
+					@include line_height(18px,!important);
+				}
+			}
+		}
+		
+		.middle-panel, .right-panel {
+			h3 {
+				text-transform: uppercase;
+			}
+			ul {
+				margin-bottom: 0;
+			}
+		}
+	
 	}
 }
 
@@ -404,6 +442,14 @@ body.res-lab {
 	}
 }
 
+body.home {
+	#bottom-panel-row {
+		h2 {
+			font-weight: normal !important;
+		}
+	}
+}
+
 /*----- tablet breakpoint -------*/
 @media screen and (min-width: $screen-sm-min) {	// width > 768
 	.top-panel {
@@ -552,9 +598,15 @@ body.res-lab {
 		
 		#content, #am-content {
 			.narrow-col {
-				a, p, li {
-					@include font_size(12px);
+				p, li, a {
+					@include font_size(13px,!important);
 					@include line_height(15px,!important);
+					font-weight: normal !important;
+				}
+				h3 {
+					@include font_size(18px,!important);
+					@include line_height(22px,!important);
+					font-weight: normal !important;
 				}
 			}
 		}

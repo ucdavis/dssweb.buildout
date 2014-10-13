@@ -42,6 +42,17 @@
 			background-image: url("../../images/bullets/white-square.gif") !important;
 		}
 	}
+	#right-front-column {
+		ul li {
+			padding-left: 0 !important;
+			a {
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
 }
 
 .tab {
@@ -87,19 +98,38 @@
 	}
 }
 @media screen and (max-width: $screen-sm-min) { // width < 768
+	
 	.tab {
 		padding: 0 !important;
+		.tab-title {
+			a {
+				// Remove vertical centering of text to accommodate longer titles
+				top: 15%;                         
+				transform: translate(0, -15%);
+			}
+		}
 	}
 	.panel-title{
 		a {
 			//background-color: rgba(0, 40, 85, 0.8); // TODO: Why is this needed?
 		}
 	}
-
-	.row.panel {
+	
+	.row.panel { // top and bottom panels
 		width: 70%;
 		margin-left: auto;
-		margin-right: auto;
+		margin-right: auto;		
+		.panel {
+			.panel-body {
+				//background-color: rgba(0, 40, 85, 0.8);
+				h2 {
+					display: none;
+				}
+			}
+		}
+	}
+	
+	#top-panel-row { // just top, happy box panels
 		.panel {
 			.panel-heading {
 				background-color: rgba(0, 40, 85, 0.8);
@@ -124,12 +154,6 @@
 					}
 				}
 			}
-			.panel-body {
-				//background-color: rgba(0, 40, 85, 0.8);
-				h2 {
-					display: none;
-				}
-			}
 		}
 	}
 	
@@ -137,11 +161,14 @@
 		h2 {
 			background-color: $rec_blue_40;
 			text-align: center;
+			margin-top: 0;
 		}
 	}
 	
 	// home page ...	
-	.panel-group {
+	.panel-group { // #content-accordion
+		
+		margin-right: -15px !important; // compensate 15px parent (indirect ancestor) right margin
 		> .panel { // #top-panel-row
 			margin-bottom: 0;
 			.panel {
@@ -178,6 +205,52 @@
 		}
 	}	
 	
+	#bottom-panel-row { // top and bottom panels
+		width: auto;
+		margin-left: 15px;
+		margin-right: 15px;
+		.bottom-panel {
+		
+			// "See All" link ...
+			.narrow-col p.bcontroller {
+				background-color: $tab_light_gray;
+				.btn-primary {
+					display: block;
+					height: 40px;
+					width: 100%;
+					padding-top: 10px;
+				}
+			}
+
+			// TODO: Almost exact same as for #thumb-section .panel-heading in _theme.scss
+			.panel-heading {
+
+				.panel-title {
+					a {
+						display: block;
+						//height: 40px; // TODO: Bug - a-height appears to keep panels from showing when others open
+						background: url(../../images/icons/blue-100-right-arrow-down.png) 98% 50% no-repeat $ucd_bright_gold_40;
+						&.collapsed {
+							background: url(../../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat $ucd_bright_gold;
+						}
+						&:hover {
+							cursor: pointer !important;
+							background-color: $ucd_bright_gold_40;
+						}
+					}
+				}
+			}
+			.panel-body {
+				//background-color: rgba(0, 40, 85, 0.8);
+				h2 {
+					display: none;
+				}
+			}
+			
+		}
+		
+	}
+	
 }
 
 @media screen and (min-width: $screen-sm-min) { // width > 768px
@@ -205,7 +278,7 @@
 			h2{
 				text-align:center;
 			}
-			p{
+			p {
 				color:$ucd_blue_100;
 			}
 		}

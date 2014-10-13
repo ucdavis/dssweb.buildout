@@ -102,21 +102,134 @@ $ucdtxt_blue: #4D688C; // based on?
 	height:35px;
 }
 
+.bcontroller {
+	.btn-home.btn-primary {
+		padding-top: 7px !important;
+		background-position: 50% 14px !important;
+	}
+}
 
 @media screen and (max-width: $screen-xs-max) { // width < 767
+	
+	#container-3 {
+		
+		h2 {
+			display: none;
+		}
+		h3 {
+			a {
+				color: #FFF;
+			}
+		}
+		p {
+			color: #000;
+		}
+		.panel-body {
+			margin-top: 0;
+			padding-top: 0;
+			padding-left: 15px !important;
+			background-color: $rec_blue;
+			padding-bottom: 15px !important;
+			.content-wrap {
+				padding-top: 0;
+				padding-bottom: 0 !important;
+			}
+		}
+		.bcontroller {
+			margin-left: 15px;
+			.btn-primary {
+				margin-top: 0 !important;
+				background-image: none;
+				background-color: transparent;
+				color: #FFF !important;
+				span {
+					display: none;
+				}
+			}
+		}
+	}
+	#content {
+		a:hover {
+			text-decoration: none;
+		}
+		#top-panel-row {
+			margin-top: 115px;
+			.right-panel {
+				.panel-heading {
+					width: 50%;
+					margin-left: 50%;
+					background-color: rgba(0, 40, 85, 0.8);
+					.panel-title a {
+						background-color: transparent;
+						background: url(../../images/icons/white-arrow-down-sm.png) 90% 50% no-repeat transparent;
+						&.collapsed {
+							background: url(../../images/icons/white-arrow-right-sm.png) 90% 50% no-repeat transparent;
+						}
+						&:hover {
+							background: url(../../images/icons/white-arrow-down-sm.png) 90% 50% no-repeat transparent;
+						}
+					}
+				}
+			}
+		}
+	}
 	.sidebar{
 		//background:  $cardbg_gray;
+		
+		.panel-heading {
+			z-index: 200;
+			position: absolute;
+			top: 25px;
+			right: 0;
+			background-color: transparent !important;
+			
+			.op-sidebar-title {
+				display: inline;
+				
+			}
+			.panel-title a, .panel-title a:hover {
+				position: static !important;
+				background-color: transparent !important;
+				background: none;
+				text-align: right;
+				.menu-icon {
+					position: relative;
+					display: block;
+					width: 60px; 
+					height: 60px;
+					background-color: #FFF;
+					border: 4px solid $cardbg_gray;
+					span:after {
+						display: block;
+						top: 15px;
+						left: 14px;
+					}
+				}
+			}
+		}
 		.collapsible{
 			background: $cardbg_gray;
+		}
+		.panel-body {
+			padding: 0 20px 20px 20px !important;
 		}
 	}
 
 	#am-content {
-		padding: 20px 20px;
-	
+		padding: 0 20px 20px 20px;
 	}
 	.panel-body{
 		padding: 10px 0 !important;
+	}
+	
+	.genericTile {
+		background: url(../../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat $cardbg_gray;
+    .phone, .oemail-label, .officeLocation, .divider, .lab {
+    	display: none;
+    }
+		.personName a, .job, .oemail a {
+			@include font_size(13px, !important);
+		}
 	}
 }
 @media screen and (min-width: $screen-sm-min) { // width > 768
@@ -124,4 +237,12 @@ $ucdtxt_blue: #4D688C; // based on?
 		margin-top: 65px;
 	}
 }
+
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: $screen-sm-max) { // width > 991 (was $screen-md-min or 992)
+	.sidebar {
+		padding-right: 85px;
+	}
+}
+
 /* /ourpeople.scss */

@@ -53,17 +53,37 @@
 	text-transform: uppercase;
 	text-align: right;
 	padding-top: 10px; 
-	color:$rec_blue;
+	//color:$rec_blue;
 }
 
 .title-box {
 	padding: 25px;
 	background-color: $box_light_gray;
 }
-@media screen and (max-width: $screen-md-min) {
-	#util-bar-wrap { 
+
+.bcontroller {
+	.btn-home.btn-primary {
+		height: 32px;
+		padding-top: 7px;
+		background: url(../images/icons/white-arrow-up.png) 50% 12px no-repeat $rec_blue;
+		@include line_height(30px);
+	}
+}
+
+@media screen and (max-width: $screen-md-min) { // width < 992
+	#util-bar-wrap {  
 		.util-bar {
 			margin-top: 0;
+		}
+	}
+	.siders {
+		.wall {
+			&.shadow-graphic {
+	    	
+			}
+			&.shadow-am-graphic {
+				height: 503px !important;
+			}
 		}
 	}
 }
@@ -74,6 +94,7 @@
 	// handle banners on mobile 
 
 	.siders {
+		margin-right: -15px !important;
 		.wall {
 			//top: 80px;
 			// Width changed via JS on resize
@@ -81,6 +102,9 @@
 			//width: 100% !important;
 			&.shadow-graphic {
 	    	height: 85px !important;
+			}
+			&.shadow-am-graphic {
+				top: 80px;
 			}
 		}
 	}
@@ -176,7 +200,7 @@
 	.top-panel {
 		.action-element {
 			.narrow-col {
-				width: 80%;
+				width: 88%; // Determines width of "happy box" blue elements
 				color: #FFF;
 				background-color: $ucd_blue_100;
 				//border: 1px solid $ucd_blue_100;
@@ -203,9 +227,9 @@
 				.bcontroller {
 					.btn-home.btn-primary {
 						width: 100%;
-						
 						display: inline-block;
-						background: url(../images/icons/white-arrow-up.png) 50% 8px no-repeat $rec_blue;
+						padding-top: 0;
+						background: url(../images/icons/white-arrow-up.png) 50% 12px no-repeat $rec_blue;
 						text-align: center;
 						//color: #000 !important;
 						

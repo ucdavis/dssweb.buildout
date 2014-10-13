@@ -35,7 +35,20 @@ head {
 		    text-decoration: none;
 		}
 }
-
+#more-content-button {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 200000;
+	a {
+		@include line_height(40px);
+		display: block;
+		height: 40px;
+		width: 40px;
+		background: url(../images/icons/d-scroll-down-arrow.png) 0 0 no-repeat;
+		text-decoration: none;
+	}
+}
 .container {
 	padding: 0;
 	&#main {
@@ -80,6 +93,7 @@ head {
 	}
 }
 #top-panel-row {
+	position: relative;
 	h2, h3, p, li, div {
 		color: #FFF;
 	}
@@ -384,19 +398,6 @@ input {
 }
 
 .panel-body {
-	h2 {
-		@include font_size(18px);
-		//@include line_height(24px);
-		letter-spacing: .03em;		
-	}
-	h3 {
-		@include font_size(15px);
-		@include line_height(18px);
-		letter-spacing: .01em;
-		font-weight: bold;
-		margin-top: 0;
-	}
-
 	.body-img {
 		margin-right: 20px;
 	}
@@ -424,6 +425,7 @@ input {
 
 #middle-row {
 	position: relative;
+	outline: none;
 }
 
 .row .row {
@@ -763,14 +765,17 @@ body.contact-type {
 	}
 	
 	#main-container {
+		
 		#banner-row {
 			margin-right: -15px !important; // since nested in padded main-container, remove right margin
 		}
 		
 		#content-row {
+			
 			#content {
 				padding-left: 15px !important;
 			}
+			
 			// TEST SECTION: TODO: REMOVE 
 			// 2014-10-11 RAK: content-row and footer have layout that adds a right white margin on mobile/iphone
 			// On footer, removing min-height from an element fixed it
@@ -895,10 +900,15 @@ body.contact-type {
 		}
 	}
 	
-	#content, #am-content {
+	// Note: Use am-content for multi-column layout; the "clear" will break column layout
+	#content {
 	  min-width:192px;
 		clear:both;
 	}
+	#am-content {
+	  min-width:192px;
+	}
+	
 	.submenu{
 		position:absolute;
 		left:-999px !important;
