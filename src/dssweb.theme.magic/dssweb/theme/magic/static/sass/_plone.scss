@@ -35,12 +35,12 @@
 #uti-share {
     display: none;
 }
-	
+
 /*top bar override */
 .top-bar .top-bar-section .left > li > a {
   height: 80px;
   line-height: 80px !important;
-   padding: 0 0; 	
+   padding: 0 0;
 }
 
  ul#iss-top {
@@ -127,7 +127,7 @@ dl.portlet-static-quick-facts dt {
 /*-------left column ------------*/
 
 #left-front-column {
-	 
+
 	> dl {
 		background-color:transparent;
 	}
@@ -174,7 +174,7 @@ dl.portlet-static-quick-facts dt {
 
 }
 #middle-front-column {
-	
+
 	> dl {
 		background-color:transparent;
 	}
@@ -220,7 +220,7 @@ dl.portlet-static-quick-facts dt {
 }
 
 #right-front-column {
-	
+
 	> dl {
 		background-color:transparent;
 	}
@@ -260,7 +260,7 @@ dl.portlet-static-quick-facts dt {
 		color:$ucd_blue_100 !important;
           border-bottom: none;
 	}
-	
+
 
 
 }
@@ -368,7 +368,7 @@ dl.portlet-static-contact dt{
 }
 
 ul#footer-nav {
-	
+
 	padding-left: 5%;
 	-webkit-column-count: 3;
 	-webkit-column-gap: 10px;
@@ -378,7 +378,7 @@ ul#footer-nav {
 
 	-moz-column-count:3;
 	-moz-column-gap:10px;
-	
+
 }
 #footer-nav a{
 	color:white;
@@ -393,7 +393,7 @@ ul#footer-nav {
 	width:45%;
 	padding-left: 5%;
 	margin-left:25%;
-	
+
 	dl.portlet {
 		background-color: transparent;
 	}
@@ -401,7 +401,7 @@ ul#footer-nav {
 	dl.portlet.portletNavigationTree {
 		margin-top:0 !important;
 	}
-	
+
 
 	dl.portlet ul.navTree li a {
     	border: none;
@@ -432,7 +432,7 @@ ul#footer-nav {
     	line-height: 2em;
 		color: white;
 	}
-	
+
 	dl.portlet li {
 		border-left: 1px solid white;
 		margin-bottom: 0;
@@ -451,8 +451,115 @@ ul#footer-nav {
 	dl.portlet ul.navTree .navTreeCurrentItem {
 		background-color:transparent;
 		color:white;
-    	
+
 	}
+}
+
+/* @media screen and (max-width: $screen-md-min) { */
+@media screen and (max-width: 1100px) { // width < 992
+    #portal-globalnav {
+        display: none;
+    }
+}
+
+/* @media screen and (min-width: $screen-md-min) { */
+@media screen and (min-width: 1100px) { // width >= 992
+    .top-bar-section {
+        display: none;
+    }
+
+    /* Plone globalnav */
+    #portal-globalnav {
+        clear: both;
+        font-size: 80%;
+        background: #ddd;
+        /* ensure top navigation dont touches portlets, content etc.. #10491 */
+        margin: 0 0 1em 0;
+    }
+    #portal-globalnav li {
+        display: inline;
+    }
+    #portal-globalnav li a {
+        display: inline-block;
+        padding: 0 0.5em;
+        background: #ddd;
+        width: 9rem;
+        white-space: normal;
+        line-height: 80px;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    #portal-globalnav .selected a,
+    #portal-globalnav a:hover {
+        background: #205c90;
+        color: White;
+    }
+    #portal-globalnav .selected a:hover {
+        background: #ddd;
+        color: #205c90;
+    }
+
+
+    /* drop-down menu; changed to use "dropdown" in place of "submenu" */
+    #portal-globalnav {
+      list-style-image:none;
+      position: absolute;
+      right: 0;
+      zoom:1; /* fix ie */
+      z-index: 1;
+      display: inline;
+      background-color: $ucd_blue_100;
+      clear: none;
+      }
+    #portal-globalnav:after {
+      content:"";
+      clear:both;
+      display:block;
+      visibility:hidden;
+      }
+    #portal-globalnav li {
+      float:left;
+      position:relative;
+      }
+    #portal-globalnav li a {
+      display:block;
+      border: none;
+      background-color: $ucd_blue_100;
+      }
+
+    /*----- DropDown -----*/
+    ul.dropdown {
+      display: none;
+      position :relative;
+      top: -1em;
+      }
+    #portal-globalnav:hover li > ul.dropdown {
+      display: block;
+      width: 9rem;
+      }
+    ul.dropdown li {
+      float:none;
+      margin:0;
+      }
+    #portal-globalnav ul.dropdown li a {
+      padding:0.5em 1.5em 0.5em 1em;
+      line-height: 1.25em;
+      font-size: 80%;
+      }
+    ul.dropdown ul {
+      top:0;
+      left:100%;
+      }
+    ul.dropdown a.state-published:hover,
+    .selected ul.dropdown .state-published {
+        color: #fff !important;
+    }
+    /* not more than one level */
+    ul.dropdown ul.dropdown {
+        display: none !important;
+    }
+
 }
 
 

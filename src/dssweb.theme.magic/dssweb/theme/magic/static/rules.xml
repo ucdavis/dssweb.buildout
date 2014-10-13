@@ -54,7 +54,7 @@
 	   <replace css:theme="#uti-events > a" css:content="#portaltab-events > a" method="raw" />
 	   <copy attributes="href" css:content=".news > dl > dd.portletFooter > span:nth-child(2) > a" css:theme="#uti-news > a"  />
 	   <copy attributes="href" css:content="#portaltab-support-iss > a" css:theme="#uti-give > a" />
-	
+
 
         <replace content="//ul[contains(@class,'submenu')]/@class">
             <xsl:attribute name="class">dropdown</xsl:attribute>
@@ -166,6 +166,8 @@
             <replace css:theme-children="#event-cta .portlet-items"
                      content=".//*[@id='content-core']/div[1]/table/tbody/tr[6]/td" />
         </rules>
+
+        <after css:content="#portal-globalnav" css:theme=".top-bar ul.title-area" />
 
     </rules>
 
