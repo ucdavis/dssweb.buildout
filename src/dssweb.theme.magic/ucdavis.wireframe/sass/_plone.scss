@@ -38,7 +38,7 @@
 
 // pending activation
 #uti-share {
-    //display: none; // 2014-10-11 RAK: Dummy button is required for final template review
+    // display: none; // 2014-10-13 RAK: Need to show share button for review
 }
 	
 /*top bar override */
@@ -468,7 +468,26 @@ ul#footer-nav {
     	
 	}
 }
+/*--- Logo responsive magic ---*/
+@media screen and (min-width:991px)
+{
+	#logosm {display:none;
+	} 
+}
 
+@media screen and (max-width: 990px){
+	li.name > a#portal-logo {
+		display: none;
+	}
+	#logosm h1 {
+		color:white;
+		text-transform: uppercase;
+		font-size:150%;
+	    margin-top:-30px;
+		padding-left:5px;
+}
+	
+}
 
 /* @end */
 }

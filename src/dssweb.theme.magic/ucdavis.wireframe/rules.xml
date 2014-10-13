@@ -6,7 +6,7 @@
 
     <!-- Apply the following rules to standard Plone pages -->
     <rules css:if-content="#visual-portal-wrapper">
-	    <theme href="index.html" if="$home_page" />
+	    <theme href="index2.html" if="$home_page" />
 	    <theme href="t13_event.html" css:if-content="body.portaltype-event" />
         <theme href="t4_adhoc.html" />
 
@@ -46,6 +46,13 @@
 	   <replace css:theme-children="#left-front-column" css:content=".portletContentLeadImageCollectionPortlet.front-page-events" />
 	   <replace css:theme-children="#middle-front-column" css:content=".portletContentLeadImageCollectionPortlet.journal" />
 	   <replace css:theme-children="#right-front-column" css:content=".portletContentLeadImageCollectionPortlet.available-grants" />
+	   
+	   <!-- rule to set up title to replace static logo on ipad/mobile -->
+	   <replace css:theme-children="#logosm h1">
+	           <xsl:for-each css:select="a#portal-logo">
+	             <xsl:value-of select="@title" />
+	           </xsl:for-each>
+	       </replace>
 
 
 
@@ -194,5 +201,9 @@
     <xsl:template match="img[@class='newsImage']/@class">
         <xsl:attribute name="class">img-responsive</xsl:attribute>
     </xsl:template>
-
+	<!--Mobile -->
+	<!--drop theme='//*[@id="share-util-btn"]' /-->
+	<copy attributes="href" css:content="#portletwrapper-706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f4953530a636f6e74616374 > div > p:nth-child(3) > a" css:theme="#email-util-btn > a" />
+	
+	
 </rules>
