@@ -197,10 +197,21 @@
       <drop css:theme="#content-core > div.panel.panel-default.bottom-panel.middle-panel > div.panel-heading.hidden-lg.hidden-md > h4"  />
       <drop css:theme="#content-core > div.panel.panel-default.bottom-panel.right-panel > div.panel-heading.hidden-lg.hidden-md > h4"  />
 
+<!--
+      <merge attributes="class" css:content="#banner_info" theme="/html/body" />
+      <copy attributes="class"
+        css:content="#banner_info span"
+        css:theme="div.jumbotron div div" />
+      <copy attributes="id"
+        css:content="#banner_info span"
+        css:theme="#content-row > div#content" />
+-->
+
     </rules>
 
     <!-- XSL templates here; must be in outermost rules tag -->
 
+<!--
     <xsl:template match="img[@class='newsImage']/@src">
         <xsl:attribute name="src"><xsl:value-of select="concat(substring-before(., '_mini'), '_large')" /></xsl:attribute>
     </xsl:template>
@@ -209,6 +220,6 @@
     <xsl:template match="img[@class='newsImage']/@class">
         <xsl:attribute name="class">img-responsive</xsl:attribute>
     </xsl:template>
-
+-->
 
 </rules>
