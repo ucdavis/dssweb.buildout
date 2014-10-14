@@ -14,7 +14,7 @@
 		}
 	} 
 }
-@media screen and (max-width: $screen-sm-min) { // was 768px
+@media screen and (max-width: $screen-xs-max) { // width < 767 (was $screen-sm-min 768 but triggers on ipad)
 	#footer{
 		#vcard{
 			text-align:center;
@@ -47,3 +47,18 @@
 	} 
 }
 
+// Use this section to quickly test layout issues ...
+/*
+.wall {
+	border: 1px solid yellow;
+}
+.landscape {
+	border: 1px solid green;
+	.panel-group#content-accordion {
+		border: 1px solid red;
+		#top-panel-row {
+			border: 1px solid blue; 
+		}
+	}
+}
+*/

@@ -1,7 +1,4 @@
 /* _navigation.scss */
-//@import "variables"; // for BASE font size and mixin font_size()
-//@import "ucd-variables";
-//@import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
 
 // Secondary (top) gold menu
 .util-bar{
@@ -380,9 +377,8 @@
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768px < width < 991px
 
 	#util-bar-wrap, #top-bar-wrap, #banner-row {
-		//border: 1px solid red;
-		margin-left: -10px !important; // fixes margin issue on ipad landscape
-		margin-right: -20px !important; // needed in iphone landscape orientation to pull in collapsed menu icon
+		//margin-left: -10px !important; // fixes margin issue on ipad landscape
+		//margin-right: -20px !important; // -20px needed in iphone landscape orientation to pull in collapsed menu icon ...
 	}
 	// remove top nav margins on tablet
 	/*#util-bar-wrap {
@@ -434,7 +430,7 @@
 					li {
 						text-align: left;
 						a {
-							padding: 4px;
+							padding: 4px 12px;
 						}
 					}
 				}

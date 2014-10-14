@@ -31,6 +31,9 @@
 .checkForm {
 	text-align: left;
 	list-style-type: none !important;
+	h4 {
+		font-weight: bold;
+	}
 	li {
 		list-style: none !important;
 		padding-left: 0 !important;
@@ -43,6 +46,9 @@
 	p#help {
 		@include font_size(13px, !important);
 		color: #000;
+	}
+	p#help a {
+		@include font_size(13px, !important);
 	}
 }
 

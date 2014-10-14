@@ -6,6 +6,18 @@
 
 ;(function ( $, window, document, undefined ) {
     
+	
+		/*var $window = $(window),
+		$body,
+		$responders = null,
+		nativeSupport = ("backgroundSize" in document.documentElement.style),
+		UA = (window.navigator.userAgent||window.navigator.vendor||window.opera),
+		isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(UA),
+		isSafari = (UA.toLowerCase().indexOf('safari') >= 0) && (UA.toLowerCase().indexOf('chrome') < 0);
+		*/
+		
+		var has_console = (typeof window.console === "object");
+		
     // Create the defaults once
     var pluginName = 'happybox',
         defaults = {
@@ -49,18 +61,26 @@
 				$(this.element).addClass(this.options.pclass);
 				$(this.element).height(this.options.height);
 				
-				if (typeof window.console == "object") 
-					window.console.log("Happybox is happy!");
+				/*if (typeof window.console == "object") 
+					window.console.log("Happybox is happy!");*/
 				
-				var out = "";
 				var item = $(this.element);
 				//window.console.log("Target: " + $(this.element).attr('class'));
 				var happy_parent = this;
-				$(this.element).children().filter(this.options.type).each(function(index) {
+					
+				// Respond to resize events ...
+				$(window).resize(function() {
+		      var h = item.height();
+					if(has_console) {
+						window.console.log("jquery.cf.happybox.js: window.resize(): item.height("+h+")");
+					}
+		    });
+				
+				$(this.element).children().filter(this.options.type).each(function() {
 					//out += "Element: "+$(this).attr('class')+"\n";
 					var action_element = $(this).find(happy_parent.options.action_element_class);
 					var canvas_element = $(this).find(happy_parent.options.canvas_element_class);
-					var action_control = happy_parent.options.button_class;
+					//var action_control = happy_parent.options.button_class;
 					var h = action_element.height();
 					
 					// Activate canvas
@@ -87,8 +107,8 @@
 					
 					// Click event - Close
 					$(canvas_element).click(function() {
-						var animObj = $(this).parent().parent();
-						/*if(typeof window.console == "object") window.console.log("Happybox: class="+$(this).attr('class')+", click event");
+						/*var animObj = $(this).parent().parent();
+						if(typeof window.console == "object") window.console.log("Happybox: class="+$(this).attr('class')+", click event");
 						animObj.stop().animate({
 							'paddingTop': -270
 						}, 900, "easeOutBounce");*/
@@ -105,20 +125,25 @@
 					$(canvas_element).hover(function() {
 						var animObj = $(this).parent().parent();
 						var height = $(this).height();
-						if(typeof window.console == "object") window.console.log("Happybox: class="+$(this).attr('class')+", easeOutBounce1 event");
+						if(has_console) {
+							window.console.log("Happybox: class="+$(this).attr('class')+", easeOutBounce1 event");
+						}
 						animObj.stop().animate({
 							'paddingTop': (happy_parent.options.height - height) // stick boxes to bottom: TODO: Have max-height 
 						}, 900, "easeOutBounce");
 						}, function() {
 						var animObj = $(this).parent().parent();
-						if(typeof window.console == "object") window.console.log("Happybox: class="+$(this).attr('class')+", easeOutBounce2 event");
+						if(has_console) {
+							window.console.log("Happybox: class="+$(this).attr('class')+", easeOutBounce2 event");
+						}
 						animObj.stop().animate({
 							'paddingTop': (happy_parent.options.height - happy_parent.options.button_height)
 						}, 900, "easeOutBounce");
 					});
 							
-					if(typeof window.console == "object") 
+					if(has_console) { 
 						window.console.log("Happybox " + $(this).attr('class') + " height: "+ h);
+					}
 					
 					// Determine behavior
 					
@@ -133,21 +158,32 @@
 			
 				
     };
-
-		Plugin.prototype._happy = function (element) {
-			window.console.log("Happybox: _happy");
-			$
+		
+		Plugin.prototype._resize = function () {
+			if(has_console) {
+				window.console.log("Happybox: _resize");
+			}
+		};
+		
+		Plugin.prototype._happy = function () {
+			if(has_console) {
+				window.console.log("Happybox: _happy");
+			}
 		};
 		
 		Plugin.prototype._handleCanvasIn = function () {
-			window.console.log("Happybox: _handleCanvasIn()");
+			if(has_console) {
+				window.console.log("Happybox: _handleCanvasIn()");
+			}
 			// Move a box up a bit
 			//$(this).css('border','1px solid white');
 			//$(this).animate({ marginTop: 0 }, {duration: 1000, easing: 'easeOutBounce'});
 		};
 		
 		Plugin.prototype._handleCanvasOut = function () {
-			window.console.log("Happybox: _handleCanvasOut()");
+			if(has_console) {
+				window.console.log("Happybox: _handleCanvasOut()");
+			}
 			//$(this).css('border-color','#002855');
 		};
 		
@@ -160,6 +196,6 @@
                 new Plugin( this, options ));
             }
         });
-    }
+    };
 
 })( jQuery, window, document );

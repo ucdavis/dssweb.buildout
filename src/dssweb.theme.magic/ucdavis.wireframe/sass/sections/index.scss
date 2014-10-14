@@ -97,7 +97,18 @@
 		}
 	}
 }
-@media screen and (max-width: $screen-sm-min) { // width < 768
+@media screen and (max-width: $screen-xs-max) { // width < 767 (was $screen-sm-min 768 but triggers on ipad)
+	
+	
+	.wall {
+		margin-top: 85px; // push banner below navigation items
+		height: 432px !important; // was 720px, mockup uses 741
+	}
+	
+	// Top margin above home page buttons
+	#top-panel-row {
+		margin-top: 45px;
+	}
 	
 	.tab {
 		padding: 0 !important;
@@ -256,12 +267,16 @@
 @media screen and (min-width: $screen-sm-min) { // width > 768px
 	
 	/* Style adjustments for the partial-cover home wall component */
-	#main {
-		//Margin-top: -701px; /* wall height 741 - 30 px top margin */
-	}
+
 	.wall {
-		height: 741px !important;
+		height: 650px !important; // e.g., 540px (short), 650px (default, medium), 720px (tall)
 	}
+	
+	// Top margin above home page buttons
+	#top-panel-row {
+		margin-top: 0; // unset mobile top margin applied to top of home page buttons
+	}
+	
 	#middle-row {
 		h2 {
 			@include font_size(36px, !important);
@@ -298,6 +313,9 @@
 
 /*----- Tablet breakpoint -------*/
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
+	.wall {
+		height: 432px !important;
+	}
 	// sync top and bottom row column widths on home
 	#top-panel-row, #bottom-panel-row {
 		.narrow-col {

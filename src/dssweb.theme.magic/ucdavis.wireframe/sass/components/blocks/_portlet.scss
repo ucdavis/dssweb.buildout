@@ -145,7 +145,7 @@
 	
 	}
 }
-@media screen and (max-width: $screen-sm-min) { // width < 768
+@media screen and (max-width: $screen-xs-max) { // width < 767 (was $screen-sm-min 768 but triggers on ipad)
 
 	#content-row {
 		.portlet {
