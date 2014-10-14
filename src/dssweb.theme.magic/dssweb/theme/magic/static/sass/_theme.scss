@@ -49,8 +49,11 @@ head {
 		text-decoration: none;
 	}
 }
+
+// Temporarily keep for reference ... required for desktop and breaks tablet and mobile
 .container {
-	padding: 0;
+//border: 1px solid red;
+	//padding: 0; // TODO: This adds white margin to right of banner with _banners and _navigation emptied
 	&#main {
 		//padding: 0 !important; // TODO: Breaks fit alignment on mobile
 	}
@@ -93,6 +96,7 @@ head {
 	}
 }
 #top-panel-row {
+	//margin-top: 0 !important; // TODO: Where's the top margin coming from?
 	position: relative;
 	h2, h3, p, li, div {
 		color: #FFF;
@@ -237,6 +241,11 @@ button {
 	}
 }
 
+// Disable iOS rounded corners on input fields and buttons
+input {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
 
 input {
    text-align: center;
@@ -244,15 +253,6 @@ input {
 .contact {
 	margin-top: 15px;	
 }
-
-/* TODO: Careful with global treatment of .content
-.content {
-	margin-top :47px;
-	margin-bottom: 40px;
-	padding: 0;
-}
-*/
-
 
 #content-row {
 	margin-bottom: 45px;
@@ -575,9 +575,23 @@ body.contact-type {
 
 /*------ All Media Queries ----------*/
 
+
 /*----- Mobile breakpoint --------*/
+
+@media screen and (max-width: 440px) { // width < 440
+	.container {
+		padding: 0; // Pulls mobile navigation to edges (but adds right white margin on tablet (portrait) if screen-sm-min
+	}
+}
+
 // At point that left and right margins are gone
 @media screen and (max-width: $screen-sm-min) { // width < 768
+	head { font-family:"S";}
+	body:after{content:"S";}
+	.container {
+		//padding: 0; // Pulls mobile navigation to edges but adds right white margin on tablet (portrait)
+	}
+	
 	.row#banner-row {
 		margin-left: 0 !important;
 		margin-right: 0 !important;
@@ -807,64 +821,10 @@ body.contact-type {
 	
 }
 
-@media screen and (min-width: $screen-sm-min) { // width > 768
-	
-	// pull content left on larger screens so flush left with top-bar
-	#content-row {
-		margin-top: 45px;
-	}
-	body.gen-landing {
-		#content-row {
-			margin-top: 30px; // accomodate for figure caption
-		}
-	}
-	#content, #am-content {
-		padding-left: 0 !important;
-		//margin-top: 45px;
-		margin-bottom: 30px;
-		h1, .breadcrumb {
-			//margin-left: 15px;
-		}
-	}
-	body.has-shadow-am {
-		/*#content-row { // Give banner graphic room
-			margin-top: 594px;
-		}*/
-		/*.am-content {
-			margin-top: 60px !important;
-			margin-bottom: 30px;
-		}*/
-	}
-  .masthead,
-  .marketing,
-  #footer {
-    padding-right: 0;
-    padding-left: 0;
-		.foot-wrap {
-			#foot-left {
-				margin-left: 10%;
-			}
-		}
-  }
-	.sidebar{
-		.panel-heading{
-			.panel-title {
-				background-color: $rec_blue;
-				//height: 30px; // need to accommodate multiline headings
-			}
-		}
-	}
-	.sidebar-right{
-		padding-left:0 !important; 
-		padding-right:0 !important;
-		//margin-top: 145px; // ad-hoc ... set position of sidebar in javascript
-	}
-}
-
 /*----- Mobile breakpoint -------*/ // TODO: Check error on _bootstrap_overrides vis-a-via this breakpoint max
 @media screen and (max-width: $screen-sm-max) { // width < 991px
-	head { font-family:"S";}
-	body:after{content:"S";}
+	//head { font-family:"S";}
+	//body:after{content:"S";}
  	
   /*TODO: Eval and EOL
 	#sidebar-bio-right{
@@ -939,7 +899,7 @@ body.contact-type {
 	#footer {	
 		padding-bottom: 5px;
 		.foot-wrap{
-			margin: 25px;
+			margin: 25px 10px 25px 25px; // compensation right margin in footer on mobile. TODO: Why?
 			p, ul, div {
 				margin-left: 0;
 				margin-right: 0;
@@ -964,6 +924,13 @@ body.contact-type {
 
 
 @media screen and (min-width: $screen-sm-min) { // width > 768px
+	// pull content left on larger screens so flush left with top-bar
+	
+	#content, #am-content {
+		padding-left: 0 !important;
+		margin-bottom: 30px;
+	}
+	
 	/*
 	#top-bar-wrap, #content-row, #banner-row {
 		padding-left: 105px; // 90 + 15 px
@@ -1003,6 +970,7 @@ body.contact-type {
 
 	
 	#content-row {
+		margin-top: 45px;
 		section {
 			margin-bottom: 25px;
 			h2 { font-weight: normal;}
@@ -1090,7 +1058,36 @@ body.contact-type {
 		}
 	}
 	
+	body.gen-landing {
+		#content-row {
+			margin-top: 30px; // accomodate for figure caption
+		}
+	}
 	
+  .masthead,
+  .marketing,
+  #footer {
+    padding-right: 0;
+    padding-left: 0;
+		.foot-wrap {
+			#foot-left {
+				margin-left: 10%;
+			}
+		}
+  }
+	.sidebar{
+		.panel-heading{
+			.panel-title {
+				background-color: $rec_blue;
+				//height: 30px; // need to accommodate multiline headings
+			}
+		}
+	}
+	.sidebar-right{
+		padding-left:0 !important; 
+		padding-right:0 !important;
+		//margin-top: 145px; // ad-hoc ... set position of sidebar in javascript
+	}
 }
 
 // Temporary: TODO: Identify and manage breakpoint at 992
@@ -1174,6 +1171,11 @@ body.contact-type {
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
 	head { font-family:"M";}
 	body:after{content:"M";}
+	
+	#top-panel-row {
+		//border: 1px solid red;
+	}
+	
 	#content, #am-content {
 		//padding-right: 0 !important;
 	}
@@ -1214,14 +1216,27 @@ body.contact-type {
 	
 }
 
+
+
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: $screen-sm-max) { // width > 991 (was $screen-md-min or 992)
 	head { font-family:"L";}
 	body:after{content:"L";}
 	
+	.container {
+		padding: 0; // TODO: This adds white margin to right of banner with _banners and _navigation emptied
+		&#main {
+			padding: 0 !important; // Keeps desktop navigation
+		}
+	}
+	
 	.no-gutter-lg {
 		padding-left: 0 !important;
 		padding-right: 0 !important;
+	}
+	
+	#top-panel-row {
+		//border: 1px solid red;
 	}
 	
 	#content, #am-content {

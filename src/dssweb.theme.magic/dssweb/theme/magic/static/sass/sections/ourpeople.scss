@@ -26,20 +26,30 @@ $ucdtxt_blue: #4D688C; // based on?
 		}
 	}
 }
-.genericTile {
-	padding-left:0;
-	border: 3px solid white;
-	background-color:$cardbg_blue;
-	.personEntryWrapper{
-		top:-10px;
-		left:0;
-		background:$empty_blue;
-		width:90px;
-		position:relative;
-		height:90px !important;	
-		float:left;
+#am-content {
+	p {
+		@include line_height(18px,!important);
 	}
 }
+.genericTile {
+	padding-left: 0;
+	padding-right: 20px; // override bootstrap padding for consistency with left margin of lab
+	border: 5px solid white; // for 10px margin between items
+	background-color: $cardbg_blue;
+	.personEntryWrapper{
+		top: -6px; // sync with .caption margin-top
+		left: 0;
+		background: $empty_blue;
+		width: 90px;
+		position: relative;
+		height: 90px !important;	
+		float: left;
+	}
+}
+.genericTile p, .genericTile p a {
+	@include font_size(13px,!important);
+}
+
 #am-content {
 	padding: 0 0 15px 20px;
 }
@@ -60,28 +70,33 @@ $ucdtxt_blue: #4D688C; // based on?
 	}
 }
 
-.caption{
-	position:relative;
-	margin-top:10px;
-	left:10px;
+.caption {
+	position: relative;
+	margin-top: 6px;
+	margin-left: 90px; // keep contact text from wrapping under photo
+	left: 10px;
+
+	p {
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+	
 	.personName {
+		padding-bottom: 10px !important;
 		a {
-			@include font_size(13px);
 			font-weight: bold;
 		}
-		padding-bottom: 5px;
 	}
-	a{
-		color:$ucdtxt_blue;
+	a {
+		color: $ucd_blue_70;
 	}
-	p{
-		@include font_size(13px);
-		margin:0px;
-	}
-	.job{
+	.job {
 		@include font_size(11px, !important);
 		font-style:italic;
 	}
+}
+.caption.no-photo {
+	margin-left: 20px;
 }
 #dropdown-icon{
 	float:right;
@@ -89,17 +104,17 @@ $ucdtxt_blue: #4D688C; // based on?
 .lab{
 	clear:left;
 	padding:5px 0;
-	padding-left:30px;
+	padding-left:20px;
 
 }
 
 .table-header{
-	margin-bottom:10px;
-	background:$rec_blue;
-	color:#fff;
-	padding-top:7px;
-	padding-left:10px;
-	height:35px;
+	margin-bottom: 10px;
+	background: $rec_blue;
+	color: #fff;
+	padding-left: 10px;
+	height: 50px;
+	@include line_height(50px);
 }
 
 .bcontroller {
@@ -148,6 +163,7 @@ $ucdtxt_blue: #4D688C; // based on?
 			}
 		}
 	}
+	
 	#content {
 		a:hover {
 			text-decoration: none;
@@ -173,6 +189,7 @@ $ucdtxt_blue: #4D688C; // based on?
 			}
 		}
 	}
+	
 	.sidebar{
 		//background:  $cardbg_gray;
 		
@@ -223,18 +240,24 @@ $ucdtxt_blue: #4D688C; // based on?
 	}
 	
 	.genericTile {
+		border: 3px solid white; // for 6px margin between items
 		background: url(../../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat $cardbg_gray;
-    .phone, .oemail-label, .officeLocation, .divider, .lab {
+    .oemail-label, .officeLocation, .lab {
     	display: none;
     }
-		.personName a, .job, .oemail a {
-			@include font_size(13px, !important);
-		}
 	}
 }
 @media screen and (min-width: $screen-sm-min) { // width > 768
 	.sidebar {
 		margin-top: 65px;
+	}
+}
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
+	.genericTile {
+		.personEntryWrapper{
+			width: 80px;
+			height: 80px !important;
+		}
 	}
 }
 

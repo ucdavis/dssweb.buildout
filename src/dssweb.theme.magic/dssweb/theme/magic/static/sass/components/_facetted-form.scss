@@ -1,9 +1,16 @@
 /* _facetted-form.scss */
 
-#c5{
+#c5 {
 	text-align: left;
+	span {
+		display: block;
+		float: left;
+		width: 20px;
+		margin-left: 4px;
+		margin-bottom: 10px;
+	}
 }
-#c5-all{
+#c5-all {
 	text-align: left;
 	border: none;
 	color: #000;
@@ -14,27 +21,34 @@
 	margin-bottom: 3px;
 }
 
-.faceted_letter{
+.faceted_letter {
 	border-right: 1px solid #000;
+	line-height: 12px;
 	padding-right: 6px;
 	padding-left: 2px;
 }
 
-.checkForm{
+.checkForm {
 	text-align: left;
 	list-style-type: none !important;
+	h4 {
+		font-weight: bold;
+	}
 	li {
 		list-style: none !important;
 		padding-left: 0 !important;
 		background-image: none !important;
 	}
-	label{
+	label {
 		@include font_size(13px);
 		font-weight: normal;
 	}
-	p#help{
+	p#help {
 		@include font_size(13px, !important);
 		color: #000;
+	}
+	p#help a {
+		@include font_size(13px, !important);
 	}
 }
 
