@@ -18,6 +18,7 @@ $ucdtxt_blue: #4D688C; // based on?
 }*/
 
 
+
 #content {
 	a {
 		text-decoration: none;
@@ -37,7 +38,7 @@ $ucdtxt_blue: #4D688C; // based on?
 	border: 5px solid white; // for 10px margin between items
 	background-color: $cardbg_blue;
 	.personEntryWrapper{
-		top: -6px; // sync with .caption margin-top
+		top: -10px; // sync with .caption margin-top
 		left: 0;
 		background: $empty_blue;
 		width: 90px;
@@ -72,7 +73,7 @@ $ucdtxt_blue: #4D688C; // based on?
 
 .caption {
 	position: relative;
-	margin-top: 6px;
+	margin-top: 10px;
 	margin-left: 90px; // keep contact text from wrapping under photo
 	left: 10px;
 
@@ -109,7 +110,7 @@ $ucdtxt_blue: #4D688C; // based on?
 }
 
 .table-header{
-	margin-bottom: 10px;
+	margin-bottom: 2px;
 	background: $rec_blue;
 	color: #fff;
 	padding-left: 10px;

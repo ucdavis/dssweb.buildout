@@ -212,9 +212,6 @@
 			// initial-scale=1.0 is removed from the meta
 			// TODO: Determine underlying cause -> test on other tablets
 			margin-right: -12px !important;
-			.wall {
-				height: 720px; // was 650px
-			}
 		}
 	}
 	
@@ -324,8 +321,14 @@
 	}
 }
 
-/*----- Desktop breakpoint (L)-------*/
-@media screen and (min-width: $screen-md-min) { // width > 992
+/*----- Desktop breakpoint ("L") -------*/
+@media screen and (min-width: $screen-sm-max) { // width > 991
+	
+	body.home {
+		.wall {
+			height: 720px; // was 650px
+		}
+	}
 	
 	.siders {
 		.wall {
@@ -349,6 +352,7 @@
 			}
 		}
 	}
+	
 }
 
 
