@@ -123,6 +123,8 @@
 
 	<!-- Content-core-T4 -->
 	<replace css:theme-children=".panel-body" css:content="#content-core" if-not="$home_page" />
+    <before css:theme="#content-core" css:content=".newsImageContainer" if-not="$home_page" />
+    <before css:theme="#content-core" css:content="#parent-fieldname-description" if-not="$home_page" />
 
 	<!-- Basic Right Portlet -->
 	<replace css:theme-children=".sidebar-right" css:content=".portlet" />
@@ -193,14 +195,14 @@
 
     </rules>
 
-    <xsl:template match="img[@class='newsImage']/@src">
+    <!--xsl:template match="img[@class='newsImage']/@src">
         <xsl:attribute name="src"><xsl:value-of select="concat(substring-before(., '_mini'), '_large')" /></xsl:attribute>
     </xsl:template>
     <xsl:template match="img[@class='newsImage']/@height"></xsl:template>
     <xsl:template match="img[@class='newsImage']/@width"></xsl:template>
     <xsl:template match="img[@class='newsImage']/@class">
         <xsl:attribute name="class">img-responsive</xsl:attribute>
-    </xsl:template>
+    </xsl:template-->
 	<!--Mobile -->
 	<!--drop theme='//*[@id="share-util-btn"]' /-->
 	<copy attributes="href" css:content="#portletwrapper-706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f4953530a636f6e74616374 > div > p:nth-child(3) > a" css:theme="#email-util-btn > a" />
