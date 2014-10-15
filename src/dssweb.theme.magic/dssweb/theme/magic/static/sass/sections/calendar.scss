@@ -203,6 +203,22 @@ p {
 	}
 }
 
+.sidebar {
+	.panel-heading {
+		.panel-title {
+			a {
+				background: url(../../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat $rec_blue_40;
+				&.collapsed {
+					color: #000 !important;
+					background: url(../../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat $rec_blue;
+				}
+				&:hover {
+					background: url(../../images/icons/blue-100-right-arrow-down.png) 98% 50% no-repeat $rec_blue_40;
+				}
+			}
+		}
+	}
+}
 .color-box {
 		width: 10px;
 		height: 10px;
@@ -251,7 +267,7 @@ p {
 
 @media screen and (max-width: $screen-xs-max) { // width < 767
 
-#content {
+	#content {
 		margin-top: 90px !important;
 	}
 	.breadcrumb {
@@ -283,11 +299,14 @@ p {
 				margin-left: auto;
 				margin-right: auto;
 				padding-bottom: 20px;
+			}
 			
-			}		
 		}
 	}
 	
+	#sbA {
+		background-color: $box_light_gray;
+	}
 	
 	#month {
 		td {

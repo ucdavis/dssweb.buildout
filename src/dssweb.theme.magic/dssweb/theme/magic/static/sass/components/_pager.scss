@@ -2,8 +2,8 @@
 .pager {
 	//width: 100%;
 	text-align: center;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: 45px;
+	padding-bottom: 45px;
 	a {
 		display: block;
 		width: 50px;
@@ -42,4 +42,25 @@
 		}
 	}
 }
+
+/*----- Mobile breakpoint ("S") --------*/
+
+@media screen and (max-width: $screen-xs-max) { // width < 767
+
+	.pager {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	
+}
+
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
+	
+	.pager {
+		padding-top: 25px;
+		padding-bottom: 25px;
+	}
+
+}
+
 /* _pager.scss */

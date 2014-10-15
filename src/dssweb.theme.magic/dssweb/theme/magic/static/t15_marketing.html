@@ -213,7 +213,7 @@
 
 			<div id="content-row" class="row">
 
-			  <div id="content" class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+			  <div id="content" class="col-xs-12 col-sm-12 col-md-8 col-lg-8 no-gutters">
 					<div class="breadcrumb"><p><a href="index.html">Home</a></p></div>
 			    <h1 class="content-title">Connected. Progressive. Engaged. Header line two</h1>
 
@@ -222,7 +222,7 @@
 
 							<div id="content-panel-heading" class="panel-heading">
 			          <h4 class="panel-title"><a data-parent="#accordionB" data-target=
-			            "#content-a" data-toggle="collapse">Hide Content which would be way to short a title to test what happens with two liners</a></h4>
+			            "#content-a" data-toggle="collapse"><!-- Hide Content which would be way to short a title to test what happens with two liners --></a></h4>
 			        </div>
 
 			        <div class=" collapsible panel-collapse collapse in" id="content-a">
@@ -299,24 +299,34 @@
 			    </div>
 			    <!-- /.panel-group -->
 			  </div>
-			  <!-- /.content-main -->
+			  <!-- /#content -->
 
 
 
 			    <!-- #EndEditable -->
 					<div class="sidebar sidebar-right col-xs-12 col-sm-12 col-md-4 col-lg-4">
 
-					  <div class="portlet">
-					  	<h3>Contact</h3>
+				    <div class="portlet">
+				    	<h3>Contact</h3>
 							<div class="portlet-content">
-					      <ul id="sidebar-block-contact" class="vcard">
-					        <li class="fn"><a href="#">Firstname Lastname</a></li>
-					        <li class="category">Position</li>
-					        <li class="tel">(530) 391-9165</li>
-									<li class="email"><a href="mailto:email@ucdavis.edu">Email</a></li>
-					      </ul>
-					    </div>
-					  </div>
+
+				      	<div class="vcard office">
+									<h4 class="org"><a class="url" href="http://psychology.ucdavis.edu/">UC Davis Department of Psychology</a></h4>
+									<div class="adr">
+										<span class="street-address">135 Young Hall <br />
+										One Shields Avenue</span><br />
+										<span class="locality">Davis</span>, <abbr class="region" title="California">CA</abbr> <span class="postal-code">95616</span>
+									</div>
+									<div id="email-phone">
+										<span class="tel">(530) 752-1880</span><br />
+										<span class="email"><a href="mailto:email@ucdavis.edu">Email</a></span>
+									</div>
+								</div><!-- /.vcard -->
+
+				      </div>
+				    </div>
+				    <!-- /.portlet -->
+						
 						<div class="portlet">
 					  	<h3>Downloads</h3>
 							<div class="portlet-content">
@@ -328,7 +338,7 @@
 					    </div>
 					  </div>
 						<div class="portlet">
-					  	<h3>A Sampling of Notable Alumni</h3>
+					  	<h3>Notable Alumni</h3>
 							<div class="portlet-content">
 					      <ul id="sidebar-block-alumni" class="portlet-items with-bullets">
 					        <li>Artists <a href="#">Deborah Butterfield</a>, John Buck, <a href="#">Bruce Nauman</a></li>
@@ -362,15 +372,14 @@
 			</div><!-- /#content-row -->
 
 
-
 			<div id="footer" class="row">
 				<div class="foot-wrap">
 					<ul id="foot-social">
-						<li class="first"><a id="facebook-icon" href="#"><span class="btn-txt">Facebook</span></a></li>
-						<li><a id="twitter-icon" href="#"><span class="btn-txt">Twitter</span></a></li>
-						<li><a id="pinterest-icon" href="#"><span class="btn-txt">Pinterest</span></a></li>
-						<li><a id="youtube-icon" href="#"><span class="btn-txt">YouTube</span></a></li>
-						<li class="last"><a id="linkedin-icon" href="#"><span class="btn-txt">LinkedIn</span></a></li>
+						<li class="first"><a id="facebook-icon" href="#"><span class="text-hide">Facebook</span></a></li>
+						<li><a id="twitter-icon" href="#"><span class="text-hide">Twitter</span></a></li>
+						<li><a id="pinterest-icon" href="#"><span class="text-hide">Pinterest</span></a></li>
+						<li><a id="youtube-icon" href="#"><span class="text-hide">YouTube</span></a></li>
+						<li class="last"><a id="linkedin-icon" href="#"><span class="text-hide">LinkedIn</span></a></li>
 					</ul>
 					<div id="vcard">
 						<p>
@@ -408,7 +417,7 @@
 					</p>
 				</div>
 		  </div><!-- /#footer -->
-
+	
 			<div class="sticky hidden-lg hidden-md hidden-sm">
 	      <nav class="util-nav">
 	        <ul class="util">

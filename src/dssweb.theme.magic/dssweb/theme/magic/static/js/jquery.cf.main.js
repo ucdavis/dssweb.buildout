@@ -6,7 +6,9 @@
 	var currentMQ = "unknown"; // set the default screen size
 	var front = false;
 	// Banner port heights. Note: Sync with values in sass/_variables.scss
-	var front_banner_height = 565;
+	var banner_hb_ratio = 0.7292; // Representing the ratio top-row-height / banner-height (may need adjustment if styles change)
+	var front_banner_height = 474; // was 565 prior to 2014-10-13 RAK
+	var front_tablet_banner_height = 432;
 	var shadow_am_viewport_height = 418;
 	var vcardiced = false;
 	var biocardiced = false;
@@ -426,6 +428,16 @@
 		var expand = function () {
 			var tabletBannerHeight = 160;
 			var happyboxBlockHeight = 45;
+			
+			// Auto-size happy box top-panel-row element based on css height of .wall element minus top menu bars
+			// TODO: Feature - add recalculation of box attributes on resize
+			//alert(calc_hb_viewport());
+			$('body.happy-box #top-panel-row').height(calc_hb_viewport());	
+
+			
+			//var plugin = $('body.home #top-panel-row').happybox();
+			//plugin.rebuild();
+			
       // Conditions for each breakpoint
       if (activeMQ !== currentMQ) {
 
@@ -446,15 +458,19 @@
 							// Note: Rework to accommodate sizing in tablet and mobile
 							//$('body.home #top-panel-row').height("auto");
 							
+							// TODO: 2014-10-14 RAK: Change to rely on calc_hb_viewport() and css
 							// If NOT on home page ...
-							if($("body.home").length === 0) {
+							/*if($("body.home").length === 0) {
 								$('.wallpaper-image').width($(window).width());
 								$('.wallpaper-image').height(tabletBannerHeight);
 								$('.wallpaper-image').css('left',0);
-								//$('#content').css('margin-top',(tabletBannerHeight-happyboxBlockHeight)+'px');
-							}
+								// $('#content').css('margin-top',(tabletBannerHeight-happyboxBlockHeight)+'px');
+							}*/
 							
-							
+							/*// Adjust width of embedded video
+							if($('iframe').length !== 0) {
+								$('iframe').width("100%");
+							}*/
 							
 							utilStack();
 						 
@@ -464,12 +480,11 @@
 							bendbio();
 							
           }
-					// If the detected screen size is Tablet 600px-959px
+					// If the detected screen size is Tablet 600px-959px (768px-992px?)
           if (activeMQ === 'M') {
               currentMQ = activeMQ;
 							if  ( ($("body.ourpeople").length !== 0) || ($("body.home").length !== 0) ) {
-								$('body.home #top-panel-row').height(front_banner_height);
-								 
+								// TODO: Hold $('body.home #top-panel-row').height(front_banner_height);
 							}
 							expandedView(); // was previously in conditional above
 							/*
@@ -482,12 +497,12 @@
 							bend(); // If we can't change position of elements using Bootstrap push / pull, then bend it
 							unbendbio();
           }
-					// If the detected screen size is Desktop 960px and up
+					// If the detected screen size is Desktop 960px (991px?) and up
           if (activeMQ === 'L') {
               currentMQ = activeMQ;
 							rmvStack();
 							// happy box component
-							$('body.home #top-panel-row').height(front_banner_height);
+							// TODO: Hold $('body.home #top-panel-row').height(front_banner_height);
               expandedView();
 							
 							unbend(); // Set positioning back
@@ -609,7 +624,9 @@
 							$(this).addClass('collapsed');
 						}
 						
-            $($(this).data("target")).show();
+						if($('body.event').length === 0) {
+            	$($(this).data("target")).show(); // 2014-10-14 RAK: This trips up "Filter By" on calendar page
+						}
 						var sel = '.in'+$(this).attr('data-target');
 						
 						/* Just jump to anchor ...
@@ -689,7 +706,51 @@
 		
 		/******************************************** MAIN ************************************** */
 		
+		/* 
+		 * calc and return happy box view port based on height of css-determined 
+		 * (wallpaper height - combined height of navigation elements)
+		 * return h the viewport height
+		*/
+		function calc_hb_viewport() {
+			var h = 0;
+			var nav_h = ($('#top-bar-wrap').height() + $('#util-bar-wrap').height());
+			if($('.wall').length !== 0) {
+				if(($('body.has-shadow-am').length !== 0) && (activeMQ === "S")) {
+					h = $('.wall.shadow-am-graphic').height();
+				} else {
+					h = $('.wall').height() - nav_h;
+				}
+			}
+			return h;
+		}
+		
+		/*
+		 * refresh_right_panel to adjust position of collapse right panel on mobile ("S")
+		*/
+		function refresh_right_panel() {
+			// Note: Adjsut the body.<class> filter as needed for other "has-<type>.happy-box" pages
+			if(($('body.has-shadow-am.happy-box #top-panel-row').length !== 0) && (activeMQ === "S")) {
+				var hb_element_height = calc_hb_viewport();
+				if(!hb_element_height) { // 0 height ?
+					hb_element_height = shadow_am_viewport_height;
+				}
+				// Height to subtract from position calculation. Assuming only ONE panel on the right (by design)
+				// TODO: Offset is not from inner- or outer height ... so from whence?
+				var offset = 5;
+				var h = ($('#top-panel-row .right-panel .panel-heading').height() + offset);
+				
+				$('#top-panel-row .right-panel').css('padding-top', (hb_element_height-h));
+			}
+			
+			// Set height of the top-panel-row to fill area
+			$('#top-panel-row').height(hb_element_height);
+		}
+		
+		/* 
+		 * myResize to provide rudimentary support of browser width resizing
+		*/
 		function myResize() {
+			
       mqSync();
 			if(!processed) {
 				// Note: This only support one round of bs processing so resizing does not undo bootstrap / collapse
@@ -702,15 +763,26 @@
 					thumbify(activeMQ,'#thumb-section','section','.panel-heading');
 				}
 			}
+			
+			refresh_right_panel(); // Affects page types with body.has-shadow-am
+			
 			processed = true;
-		}
+		} // /myResize()
+		
+		
 				
     if (toggleActive) {
 				myResize();
         // Run on resize
         event.add(window, "resize", myResize);
     }
-
+		
+		
+		/* ============================  RUN ONCE ON PAGE LOAD ============================ */
+		
+		// Note: The height of the happy box block needs to change with the height of the .wall * banner_hb_ratio
+		var hb_element_height = calc_hb_viewport();
+		
 		// Set sidebar position and activate home page happy boxes
 		if ((activeMQ === 'L') || (activeMQ === 'M')) {
 			
@@ -750,28 +822,36 @@
 				$('.sidebar-right').css('margin-top',ctb);
 			}
 			
+			/* ============================  HAPPY BOX SETTINGS ============================ */
+			
+			// HOME PAGE 
 			if($('body.has-front-am.happy-box #top-panel-row').length !== 0) {
+				if(!hb_element_height) hb_element_height = front_banner_height;
 				$('#top-panel-row').happybox(
 					{
 						'type': '.panel', // element type to make happy
 						'action_element_class': '.action-element',
 						'canvas_element_class': '.narrow-col',
 						'button_class': ".btn-primary",
-						'height': front_banner_height // total height of the happy viewport
+						'height': hb_element_height // was var front_banner_height, total height of the happy viewport
 					}
 				);
 				front = true;
 			}
 			
+			// PAGES WITH HAS-SHADOW-AM ...
 			// Applies to multiple pages using T2 (tile) or T8 (landing) templates
 			if($('body.has-shadow-am.happy-box #top-panel-row').length !== 0) {
+				if(!hb_element_height) {
+					hb_element_height = shadow_am_viewport_height;
+				}
 				$('#top-panel-row').happybox(
 					{
 						'type': '.panel', // element type to make happy
 						'action_element_class': '.action-element',
 						'canvas_element_class': '.narrow-col',
 						'button_class': ".btn-primary",
-						'height': shadow_am_viewport_height, // total height of the happy viewport
+						'height': hb_element_height, // was var shadow_am_viewport_height, total height of the happy viewport
 						'frozen': true
 					}
 				);
@@ -782,10 +862,12 @@
 				//$('#content-row').css('margin-top', shadow_am_viewport_height + 45);
 			}
 		} else if ((activeMQ === 'S')) {
-
+			
+			/* ============================  HAPPY BOX SETTINGS [not interactive on mobile ("S")] ============================ */
+			// Note: Prepare non-interactive elements
+			
 			// Home page target: S
 			if($('body.home').length !== 0) {
-				
 				// Remove height of the tob-panel-row
 				if($('#top-panel-row').length !== 0) {
 					$('#top-panel-row').height('auto');
@@ -803,6 +885,8 @@
 						$('#bottom-panel-row').hide();
 					}
 				});
+			} else {
+				refresh_right_panel();
 			}
 			
 		}

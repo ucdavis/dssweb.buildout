@@ -1,6 +1,8 @@
 /* components/blocks/_portlet.scss */
 
+
 #content-row {
+
 
 	.portlet {
 		margin-bottom: 5px;
@@ -38,7 +40,7 @@
 				background-image: none;
 				padding-left: 0;
 				a {
-					color: $rec_blue;
+					color: $ucd_blue_70;
 				}
 				margin-bottom: 10px; //20px;
 				.event-date {
@@ -145,7 +147,7 @@
 	
 	}
 }
-@media screen and (max-width: $screen-sm-min) { // width < 768
+@media screen and (max-width: $screen-xs-max) { // width < 767 (was $screen-sm-min 768 but triggers on ipad)
 
 	#content-row {
 		.portlet {
