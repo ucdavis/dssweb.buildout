@@ -431,7 +431,8 @@
 			
 			// Auto-size happy box top-panel-row element based on css height of .wall element minus top menu bars
 			// TODO: Feature - add recalculation of box attributes on resize
-			$('body.home #top-panel-row').height(calc_hb_viewport());	
+			//alert(calc_hb_viewport());
+			$('body.happy-box #top-panel-row').height(calc_hb_viewport());	
 
 			
 			//var plugin = $('body.home #top-panel-row').happybox();
@@ -459,12 +460,12 @@
 							
 							// TODO: 2014-10-14 RAK: Change to rely on calc_hb_viewport() and css
 							// If NOT on home page ...
-							if($("body.home").length === 0) {
+							/*if($("body.home").length === 0) {
 								$('.wallpaper-image').width($(window).width());
 								$('.wallpaper-image').height(tabletBannerHeight);
 								$('.wallpaper-image').css('left',0);
 								// $('#content').css('margin-top',(tabletBannerHeight-happyboxBlockHeight)+'px');
-							}
+							}*/
 							
 							/*// Adjust width of embedded video
 							if($('iframe').length !== 0) {
@@ -712,17 +713,44 @@
 		*/
 		function calc_hb_viewport() {
 			var h = 0;
+			var nav_h = ($('#top-bar-wrap').height() + $('#util-bar-wrap').height());
 			if($('.wall').length !== 0) {
-				var hb_viewport = $('.wall').height() - ($('#top-bar-wrap').height() + $('#util-bar-wrap').height()) 
-				h = hb_viewport; // was ($('.wall').height() * banner_hb_ratio)
+				if(($('body.has-shadow-am').length !== 0) && (activeMQ === "S")) {
+					h = $('.wall.shadow-am-graphic').height();
+				} else {
+					h = $('.wall').height() - nav_h;
+				}
 			}
 			return h;
+		}
+		
+		/*
+		 * refresh_right_panel to adjust position of collapse right panel on mobile ("S")
+		*/
+		function refresh_right_panel() {
+			// Note: Adjsut the body.<class> filter as needed for other "has-<type>.happy-box" pages
+			if(($('body.has-shadow-am.happy-box #top-panel-row').length !== 0) && (activeMQ === "S")) {
+				var hb_element_height = calc_hb_viewport();
+				if(!hb_element_height) { // 0 height ?
+					hb_element_height = shadow_am_viewport_height;
+				}
+				// Height to subtract from position calculation. Assuming only ONE panel on the right (by design)
+				// TODO: Offset is not from inner- or outer height ... so from whence?
+				var offset = 5;
+				var h = ($('#top-panel-row .right-panel .panel-heading').height() + offset);
+				
+				$('#top-panel-row .right-panel').css('padding-top', (hb_element_height-h));
+			}
+			
+			// Set height of the top-panel-row to fill area
+			$('#top-panel-row').height(hb_element_height);
 		}
 		
 		/* 
 		 * myResize to provide rudimentary support of browser width resizing
 		*/
 		function myResize() {
+			
       mqSync();
 			if(!processed) {
 				// Note: This only support one round of bs processing so resizing does not undo bootstrap / collapse
@@ -735,15 +763,26 @@
 					thumbify(activeMQ,'#thumb-section','section','.panel-heading');
 				}
 			}
+			
+			refresh_right_panel(); // Affects page types with body.has-shadow-am
+			
 			processed = true;
-		}
+		} // /myResize()
+		
+		
 				
     if (toggleActive) {
 				myResize();
         // Run on resize
         event.add(window, "resize", myResize);
     }
-
+		
+		
+		/* ============================  RUN ONCE ON PAGE LOAD ============================ */
+		
+		// Note: The height of the happy box block needs to change with the height of the .wall * banner_hb_ratio
+		var hb_element_height = calc_hb_viewport();
+		
 		// Set sidebar position and activate home page happy boxes
 		if ((activeMQ === 'L') || (activeMQ === 'M')) {
 			
@@ -785,9 +824,6 @@
 			
 			/* ============================  HAPPY BOX SETTINGS ============================ */
 			
-			// Note: The height of the happy box block needs to change with the height of the .wall * banner_hb_ratio
-			var hb_element_height = calc_hb_viewport();
-			
 			// HOME PAGE 
 			if($('body.has-front-am.happy-box #top-panel-row').length !== 0) {
 				if(!hb_element_height) hb_element_height = front_banner_height;
@@ -806,7 +842,9 @@
 			// PAGES WITH HAS-SHADOW-AM ...
 			// Applies to multiple pages using T2 (tile) or T8 (landing) templates
 			if($('body.has-shadow-am.happy-box #top-panel-row').length !== 0) {
-				if(!hb_element_height) hb_element_height = shadow_am_viewport_height;
+				if(!hb_element_height) {
+					hb_element_height = shadow_am_viewport_height;
+				}
 				$('#top-panel-row').happybox(
 					{
 						'type': '.panel', // element type to make happy
@@ -824,10 +862,12 @@
 				//$('#content-row').css('margin-top', shadow_am_viewport_height + 45);
 			}
 		} else if ((activeMQ === 'S')) {
-
+			
+			/* ============================  HAPPY BOX SETTINGS [not interactive on mobile ("S")] ============================ */
+			// Note: Prepare non-interactive elements
+			
 			// Home page target: S
 			if($('body.home').length !== 0) {
-				
 				// Remove height of the tob-panel-row
 				if($('#top-panel-row').length !== 0) {
 					$('#top-panel-row').height('auto');
@@ -845,6 +885,8 @@
 						$('#bottom-panel-row').hide();
 					}
 				});
+			} else {
+				refresh_right_panel();
 			}
 			
 		}

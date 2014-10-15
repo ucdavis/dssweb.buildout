@@ -195,15 +195,18 @@ $ucdtxt_blue: #4D688C; // based on?
 		//background:  $cardbg_gray;
 		
 		.panel-heading {
-			z-index: 200;
+			z-index: 2;
 			position: absolute;
-			top: 25px;
+			top: 20px; // careful; this must position menu-icon just above text (when not active) and with good margin (when active)
 			right: 0;
 			background-color: transparent !important;
 			
+			// adjust styles for collapse sidebar menu-icon parent
 			.op-sidebar-title {
 				display: inline;
-				
+				a {
+					background-image: none !important;
+				}
 			}
 			.panel-title a, .panel-title a:hover {
 				position: static !important;

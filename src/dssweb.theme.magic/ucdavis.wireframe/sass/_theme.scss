@@ -660,8 +660,8 @@ body.contact-type {
 				padding-left: 20px !important;
 				
 				@include font_size(16px);
-				// Emphasis on multiline panel-titles
-				padding-top: 5px !important;
+				// Use 5px for emphasis on multi line panel-titles, 9px for single line
+				padding-top: 9px !important;
 				@include line_height(22px,!important);
 				// @include line_height(40px); // OK for single line. TODO: Treatment for singles not adequate
 				text-align: left;
