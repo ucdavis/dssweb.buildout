@@ -96,7 +96,7 @@ head {
 	}
 }
 #top-panel-row {
-	//margin-top: 0 !important; // TODO: Where's the top margin coming from?
+	margin-top: 0 !important; // TODO: Where's the top margin coming from (in tablet / iPad only)?
 	position: relative;
 	h2, h3, p, li, div {
 		color: #FFF;
@@ -585,11 +585,11 @@ body.contact-type {
 }
 
 // At point that left and right margins are gone
-@media screen and (max-width: $screen-sm-min) { // width < 768
+@media screen and (max-width: $screen-xs-max) { // width < 767 (was $screen-sm-min 768)
 	head { font-family:"S";}
 	body:after{content:"S";}
 	.container {
-		//padding: 0; // Pulls mobile navigation to edges but adds right white margin on tablet (portrait)
+		padding: 0; // Pulls mobile navigation to edges but adds right white margin on tablet (portrait) {TODO: Check}
 	}
 	
 	.row#banner-row {
@@ -698,6 +698,7 @@ body.contact-type {
 			}
 		}
 	}
+	
 	#footer {
 		margin-bottom: 60px;
 		.footer-nav {
@@ -707,8 +708,11 @@ body.contact-type {
 				padding-bottom: 0;
 			}
 		}
+		#vcard{
+			text-align: center;
+		}
 	}
-	
+
 	#content-row {
 		section {
 			margin-bottom: 5px;
@@ -734,6 +738,10 @@ body.contact-type {
 					}
 				}
 			}
+		}
+		iframe {
+			width: 100%;
+			height: auto !important;
 		}
 	}
 	
@@ -1074,6 +1082,13 @@ body.contact-type {
 				margin-left: 10%;
 			}
 		}
+		#vcard{
+			margin-right:25px;
+		}
+		#foot-social{
+			position:relative;
+			float:right !important;
+		}
   }
 	.sidebar{
 		.panel-heading{
@@ -1122,7 +1137,8 @@ body.contact-type {
 	}
 }
 
-@media screen and (max-width: $screen-lg-min) { // width < 1200
+
+@media screen and (max-width: $screen-lg-min) { // width < 1310
 	#footer {
 		.footer-nav{
 			
@@ -1135,7 +1151,19 @@ body.contact-type {
 		}
 	}
 }
-/*----- Breakpoint, xs-md -------*/
+/*----- Target tablet up to 1310 width on desktop -------*/
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-lg-min) { // 768 < width < 1310
+	#footer{
+		.foot-wrap{
+			margin:40px;
+		}
+		#vcard{
+			margin-right:25px;		
+		}
+	} 
+}
+
+/*----- Target mobile and tablet -------*/
 @media screen and (max-width: $screen-sm-max) { // width < 991
 
 	#footer {
@@ -1154,9 +1182,12 @@ body.contact-type {
 				}
 			}
 		}
+		#foot-social {
+			margin-left: 55px !important;
+		}
 	}
 }
-/*------ Desktop (L) breakpoint --------*/
+/*------ Desktop breakpoint (L) --------*/
 @media screen and (min-width: $screen-md-min) and (max-width: $screen-lg-min) { // 991 < width < 1200
 	.sidebar {
 		&.sidebar-right {
@@ -1167,7 +1198,7 @@ body.contact-type {
 	}
 }
 
-/*----- Tablet breakpoint -------*/
+/*----- Tablet breakpoint ("M") -------*/
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
 	head { font-family:"M";}
 	body:after{content:"M";}

@@ -459,14 +459,17 @@
 							
 							// TODO: 2014-10-14 RAK: Change to rely on calc_hb_viewport() and css
 							// If NOT on home page ...
-							/*if($("body.home").length === 0) {
+							if($("body.home").length === 0) {
 								$('.wallpaper-image').width($(window).width());
 								$('.wallpaper-image').height(tabletBannerHeight);
 								$('.wallpaper-image').css('left',0);
 								// $('#content').css('margin-top',(tabletBannerHeight-happyboxBlockHeight)+'px');
+							}
+							
+							/*// Adjust width of embedded video
+							if($('iframe').length !== 0) {
+								$('iframe').width("100%");
 							}*/
-							
-							
 							
 							utilStack();
 						 
@@ -620,7 +623,9 @@
 							$(this).addClass('collapsed');
 						}
 						
-            $($(this).data("target")).show();
+						if($('body.event').length === 0) {
+            	$($(this).data("target")).show(); // 2014-10-14 RAK: This trips up "Filter By" on calendar page
+						}
 						var sel = '.in'+$(this).attr('data-target');
 						
 						/* Just jump to anchor ...

@@ -8,7 +8,9 @@ body, div, p, li, a, input, textarea, select {
 
 // Note: Font faces are in _mixins
 
-a { color: $ucd_blue_70;}
+a { 
+	color: $ucd_blue_70;
+}
 
 em {
 	font-style: italic;
@@ -152,6 +154,9 @@ p {
 	}
 }
 .sidebar {
+	a { 
+		@include font_size(13px);
+	}
 	h3 {
 		a { // Main selector to change sidebar headings
 			text-transform: uppercase;

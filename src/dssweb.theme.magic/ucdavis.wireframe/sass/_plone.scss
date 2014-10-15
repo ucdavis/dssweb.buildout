@@ -40,12 +40,12 @@
 #uti-share {
     // display: none; // 2014-10-13 RAK: Need to show share button for review
 }
-	
+
 /*top bar override */
 .top-bar .top-bar-section .left > li > a {
   height: 80px;
   line-height: 80px !important;
-   padding: 0 0; 	
+   padding: 0 0;
 }
 
 a#portal-logo {  //overrides theme wdth setting that was causing menu to break
@@ -127,7 +127,7 @@ dl.portlet-static-quick-facts dt {
 /*-------left column ------------*/
 
 #left-front-column {
-	 
+
 	> dl {
 		background-color:transparent;
 	}
@@ -177,7 +177,7 @@ dl.portlet-static-quick-facts dt {
 
 }
 #middle-front-column {
-	
+
 	> dl {
 		background-color:transparent;
 	}
@@ -226,7 +226,7 @@ dl.portlet-static-quick-facts dt {
 }
 
 #right-front-column {
-	
+
 	> dl {
 		background-color:transparent;
 	}
@@ -269,7 +269,7 @@ dl.portlet-static-quick-facts dt {
 		color:$ucd_blue_100 !important;
           border-bottom: none;
 	}
-	
+
 
 
 }
@@ -360,6 +360,10 @@ border-bottom: none;
 dl.portlet a:visited {
 border-bottom:transparent;
 }
+.newsImageContainer { //fix for ISS Images
+    float:left;
+    padding-right:10px;
+}
 
 /*--Basic rec pool Blue Portlet --*/
 
@@ -377,7 +381,7 @@ dl.portlet-static-contact dt{
 }
 
 ul#footer-nav {
-	
+
 	padding-left: 5%;
 	-webkit-column-count: 3;
 	-webkit-column-gap: 10px;
@@ -387,7 +391,7 @@ ul#footer-nav {
 
 	-moz-column-count:3;
 	-moz-column-gap:10px;
-	
+
 }
 #footer-nav a{
 	color:white;
@@ -398,11 +402,11 @@ ul#footer-nav {
 }
  /* Footer Navigation portlet */
 
-#footer-nav-middle{
-	width:45%;
+#footer-middle {
+	width:55%;
 	padding-left: 5%;
 	margin-left:25%;
-	
+
 	ul {padding-left: 5%;
 	-webkit-column-count: 3;
 	-webkit-column-gap: 10px;
@@ -412,10 +416,7 @@ ul#footer-nav {
 
 	-moz-column-count:3;
 	-moz-column-gap:10px;
-	
      }
-		
-	
 
 	ul.navTree li a {
     	border: none;
@@ -446,7 +447,7 @@ ul#footer-nav {
     	line-height: 2em;
 		color: white;
 	}
-	
+
 	ul > li {
 		border-left: 1px solid white;
 		margin-bottom: 0;
@@ -465,17 +466,19 @@ ul#footer-nav {
 	ul.navTree .navTreeCurrentItem {
 		background-color:transparent;
 		color:white;
-    	
+
 	}
 }
 /*--- Logo responsive magic ---*/
 @media screen and (min-width:991px)
 {
 	#logosm {display:none;
-	} 
+	}
+	h1#parent-fieldname-title {
+	line-height:1.0; }
 }
 
-@media screen and (max-width: 990px){
+@media screen and (max-width: $screen-md-min){
 	li.name > a#portal-logo {
 		display: none;
 	}
@@ -486,7 +489,114 @@ ul#footer-nav {
 	    margin-top:-30px;
 		padding-left:5px;
 }
-	
+    .homepage-title	{
+    	font-size:1.8rem !important;
+    }
+}
+
+@media screen and (max-width: $screen-md-min) {
+    #portal-globalnav {
+        display: none;
+    }
+}
+
+@media screen and (min-width: $screen-md-min) {
+    .top-bar-section {
+       // display: none;
+    }
+
+    /* Plone globalnav */
+    #portal-globalnav {
+        clear: both;
+        font-size: 80%;
+        background: #ddd;
+        /* ensure top navigation dont touches portlets, content etc.. #10491 */
+        margin: 0 0 1em 0;
+    }
+    #portal-globalnav li {
+        display: inline;
+    }
+    #portal-globalnav li a {
+        display: inline-block;
+        padding: 0 0.5em;
+        background: #ddd;
+        width: 9rem;
+        white-space: normal;
+        line-height: 80px;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    #portal-globalnav .selected a,
+    #portal-globalnav a:hover {
+        background: #205c90;
+        color: White;
+    }
+    #portal-globalnav .selected a:hover {
+        background: #ddd;
+        color: #205c90;
+    }
+
+
+    /* drop-down menu; changed to use "dropdown" in place of "submenu" */
+    #portal-globalnav {
+      list-style-image:none;
+      position: absolute;
+      right: 0;
+      zoom:1; /* fix ie */
+      z-index: 1;
+      display: inline;
+      background-color: $ucd_blue_100;
+      clear: none;
+      }
+    #portal-globalnav:after {
+      content:"";
+      clear:both;
+      display:block;
+      visibility:hidden;
+      }
+    #portal-globalnav li {
+      float:left;
+      position:relative;
+      }
+    #portal-globalnav li a {
+      display:block;
+      border: none;
+      background-color: $ucd_blue_100;
+      }
+
+    /*----- DropDown -----*/
+    ul.dropdown {
+      display: none;
+      position :relative;
+      top: -1em;
+      }
+    #portal-globalnav:hover li > ul.dropdown {
+      /*display: block;*/
+      width: 9rem;
+      }
+    ul.dropdown li {
+      float:none;
+      margin:0;
+      }
+    #portal-globalnav ul.dropdown li a {
+      padding:0.5em 1.5em 0.5em 1em;
+      line-height: 1.25em;
+      font-size: 80%;
+      }
+    ul.dropdown ul {
+      top:0;
+      left:100%;
+      }
+    ul.dropdown a.state-published:hover,
+    .selected ul.dropdown .state-published {
+        color: #fff !important;
+    }
+    /* not more than one level */
+    ul.dropdown ul.dropdown {
+        display: none !important;
+    }
+
 }
 
 /* @end */
