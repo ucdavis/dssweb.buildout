@@ -295,7 +295,7 @@
 		// Call this ONLY after picture processing
 		if(($('#banner-row').length !== 0) && ($('#banner-row figcaption').length !== 0)) {
 			// Note: figcaption doesn't existing until processed so use approx 25px height
-			var fcmt = $('#banner-row figcaption').height();
+			var fcmt = $('#banner-row figcaption').height() + 6;
 			var mt = ( $('#content-row').css('margin-top').replace('px','') - fcmt);
 			$('#content-row').css('margin-top', mt);
 		}
@@ -842,7 +842,8 @@
 			if(($('.content-title').length !== 0) && ($('.sidebar-right').length !== 0) && ($('body.bio').length === 0)) {
 				var ctpos = $('.content-title').position();
 				var cth = $('.content-title').height();
-				var ctb = ctpos.top + cth + 15; // 15 additional vert offset needed (was 5)
+				var offset = ($('body.search-result').length !== 0) ? 68 : 15;
+				var ctb = ctpos.top + cth + offset; // 15 additional vert offset needed (was 5)
 				if($('.breadcrumb').length !== 0) {
 					ctb += $('.breadcrumb').height();
 				}

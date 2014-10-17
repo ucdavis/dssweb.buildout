@@ -7,6 +7,9 @@
 
 #event-cta {
 	background-color: transparent;
+	.portlet-items {
+		margin-top: 0;
+	}
 }
 
 #accordion-e {
@@ -14,6 +17,35 @@
 		padding-left: 0;
 		padding-right: 0;
 	}
+}
+
+.rows {
+	border-top: 5px solid $rec_blue;
+	&.zebra {
+		.row:nth-child(even) {
+			background-color: transparent;
+		}
+		.row:nth-child(odd) {
+			background-color: $box_light_gray;
+		}
+
+		.row {
+			> div:first-child {
+				padding-top: 9px;
+			}
+			> div:last-child {
+				padding-top: 16px;
+			}
+		}
+		
+		h3 {
+			font-weight: normal !important;
+		}
+	}
+	
+}
+#content-row {
+	margin-top: 35px;
 }
 
 /*----- Tablet breakpoint -------*/

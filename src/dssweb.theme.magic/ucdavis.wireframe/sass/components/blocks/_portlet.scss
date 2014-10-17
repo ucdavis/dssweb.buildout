@@ -58,7 +58,16 @@ body.res-lab {
 				padding-left: 0;
 				a {
 					color: $ucd_blue_70;
+					text-decoration: none;
+					&:hover {
+						text-decoration: underline;
+					}
 				}
+
+				em {
+					@include font_size(11px,!important);
+				}
+
 				margin-bottom: 10px; //20px;
 				.event-date {
 					display: block;
@@ -166,6 +175,8 @@ body.res-lab {
 				}
 			}
 		}
+		
+		// Single contact portlet
 	
 	}
 }

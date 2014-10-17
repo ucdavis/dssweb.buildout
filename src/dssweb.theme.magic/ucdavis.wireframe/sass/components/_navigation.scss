@@ -273,10 +273,20 @@
 }
 
 .util-bar li.active-trail {
-	background-color:$ucd_bright_gold_70;
+	background-color:$ucd_bright_gold_40;
 }
 .top-bar .top-bar-section .left > li.active-trail > a {
 	background-color:$ucd_blue_70 !important;
+}
+
+/*----- Small breakpoint --------*/
+@media screen and (max-width: 440px) { // width < 440
+	// To have util bar slide into place rather than being same width as navigation
+	.util-bar {
+		#uti-logo{
+			margin-left: 10px !important; // Note: Use to adjust logo with left border of department name
+		}
+	}
 }
 
 /*----- Mobile breakpoint -------*/
@@ -297,7 +307,7 @@
 		}
 		#uti-logo{
 			width: auto; // switch from percentage ...
-			margin-left: 10px; // Note: Use to adjust logo with left border of department name
+			margin-left: 5px; // Note: Use to adjust logo with left border of department name
 		}
 	}
 

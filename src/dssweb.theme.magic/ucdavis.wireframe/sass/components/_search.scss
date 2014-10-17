@@ -63,6 +63,17 @@
 	}
 }
 
+body.search-result {
+	#content-row {
+		margin-top: 0 !important; // rely on pager for top margin
+	}
+	#content-core {
+		.row {
+			margin-bottom: 35px;
+		}
+	}
+}
+
 /* Search results page */
 
 #sort-left, #sort-right {

@@ -21,6 +21,10 @@ h1 {
 	//@include fontface_regular_font;
 	//@include fontface_bold_font;
 }
+h4.source {
+	@include font_size(12px,!important);
+	text-transform: uppercase;
+}
 blockquote {
 	color: $rec_blue;
 	margin-top: 35px;
@@ -291,6 +295,10 @@ figure {
 		font-weight: bold;
 		padding-top: 6px;
 		padding-bottom: 6px;
+	}
+	h2 + ul {
+		padding: 0;
+		margin: 0;
 	}
 	h3 + ul {
 		padding: 0;

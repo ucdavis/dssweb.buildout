@@ -105,6 +105,10 @@ head {
 
 #nested-left { // T8 nested column "Important Dates"
 	padding-left: 0;
+	.picture {
+		width: 200px;
+		margin-bottom: 45px !important;
+	}
 }
 #nested-right {
 	&.bent {
@@ -593,9 +597,13 @@ body.contact-type {
 	}
 }
 
+// col-left and col-right used for T14 template (search results) where left image assignment to sections is necessary
 .col-left {
-	margin-top: 45px;
-	text-align: right; 
+	margin-top: 15px;
+	text-align: right;
+	img {
+		width: 100%;
+	}
 }
 .col-right {
 	margin-top: 40px;
@@ -685,6 +693,13 @@ body.contact-type {
 		padding: 0; // Pulls mobile navigation to edges but adds right white margin on tablet (portrait) {TODO: Check}
 	}
 	
+	// Undo stretch on search result col-left images
+	.col-left {
+		padding-left: 0 !important;
+		img {
+			width: auto !important;
+		}
+	}
 	#google-map { // draggable map on mobile doesn't allow scrolling to bottom of page, so minimize it
 		width: 82%;
 	}
