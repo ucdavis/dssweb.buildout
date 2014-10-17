@@ -395,6 +395,16 @@
 				$('#footer #vcard').insertBefore($('#footer #copyright'));
 				vcardiced = true;
 			}
+			
+			// On T8 templates, move the left nested column to the right sidebar
+			if($('#nested-left').length !== 0) {
+				$('#nested-left').removeClass("col-xs-12 col-sm-12 col-md-4 col-lg-4"); // Note: Update if col defs chnage
+				
+				$('#nested-right').removeClass("col-md-8");
+				$('#nested-right').addClass("col-md-12 bent");
+				
+				$('.sidebar-right').append($('#nested-left'));
+			}
 		};
 		
 		var bendbio = function () {
@@ -412,6 +422,14 @@
 			if(vcardiced) {
 				$('#footer #vcard').insertAfter($('#footer #foot-social'));
 				vcardiced = false;
+			}
+			
+			// On T8 templates, move the left nested column to the right sidebar
+			if($('.sidebar-right #nested-left').length !== 0) {
+				$('#nested-left').addClass("col-xs-12 col-sm-12 col-md-4 col-lg-4");
+				$('#nested-right').removeClass("col-md-12 bent");
+				$('#nested-right').addClass("col-md-8");
+				$('#content-core > .row').append($('#nested-left'));
 			}
 		};
 
@@ -716,7 +734,7 @@
 			var nav_h = ($('#top-bar-wrap').height() + $('#util-bar-wrap').height());
 			if($('.wall').length !== 0) {
 				if(($('body.has-shadow-am').length !== 0) && (activeMQ === "S")) {
-					h = $('.wall.shadow-am-graphic').height();
+					h = $('.shadow-am-graphic').height(); // don't use .wallpaper-image height since not always set at this point
 				} else {
 					h = $('.wall').height() - nav_h;
 				}
@@ -736,7 +754,7 @@
 				}
 				// Height to subtract from position calculation. Assuming only ONE panel on the right (by design)
 				// TODO: Offset is not from inner- or outer height ... so from whence?
-				var offset = 5;
+				var offset = 16; // mobile on desktop needs 5 if we're setting top-panel-row and wallpaper-image to same height
 				var h = ($('#top-panel-row .right-panel .panel-heading').height() + offset);
 				
 				$('#top-panel-row .right-panel').css('padding-top', (hb_element_height-h));
@@ -744,6 +762,11 @@
 			
 			// Set height of the top-panel-row to fill area
 			$('#top-panel-row').height(hb_element_height);
+			
+			/* Set height of wallpaper image to same height ... TODO: Investigate why this became an issue (mobile on desktop browser now has 16 offset too much)
+			if($('.wallpaper-image').length !== 0) {
+				$('.wallpaper-image').height(hb_element_height);
+			}*/
 		}
 		
 		/* 
@@ -809,11 +832,11 @@
 				
 			} 
 			
-			// Set vert position of right sidebar
-			if(($('.content-title').length !== 0) && ($('.sidebar-right').length !== 0)) {
+			// Set vert position of right sidebar. Disable on bio pages
+			if(($('.content-title').length !== 0) && ($('.sidebar-right').length !== 0) && ($('body.bio').length === 0)) {
 				var ctpos = $('.content-title').position();
 				var cth = $('.content-title').height();
-				var ctb = ctpos.top + cth + 5; // 5 additional vert offset needed
+				var ctb = ctpos.top + cth + 15; // 15 additional vert offset needed (was 5)
 				if($('.breadcrumb').length !== 0) {
 					ctb += $('.breadcrumb').height();
 				}
@@ -840,21 +863,26 @@
 			}
 			
 			// PAGES WITH HAS-SHADOW-AM ...
-			// Applies to multiple pages using T2 (tile) or T8 (landing) templates
-			if($('body.has-shadow-am.happy-box #top-panel-row').length !== 0) {
-				if(!hb_element_height) {
-					hb_element_height = shadow_am_viewport_height;
-				}
-				$('#top-panel-row').happybox(
-					{
-						'type': '.panel', // element type to make happy
-						'action_element_class': '.action-element',
-						'canvas_element_class': '.narrow-col',
-						'button_class': ".btn-primary",
-						'height': hb_element_height, // was var shadow_am_viewport_height, total height of the happy viewport
-						'frozen': true
+			
+			if($('body.has-shadow-am').length !== 0) {
+				
+				// Applies to multiple pages using T2 (tile) or T8 (landing) templates
+				if($('body.has-shadow-am.happy-box #top-panel-row').length !== 0) {
+					if(!hb_element_height) {
+						hb_element_height = shadow_am_viewport_height;
 					}
-				);
+					$('#top-panel-row').happybox(
+						{
+							'type': '.panel', // element type to make happy
+							'action_element_class': '.action-element',
+							'canvas_element_class': '.narrow-col',
+							'button_class': ".btn-primary",
+							'height': hb_element_height, // was var shadow_am_viewport_height, total height of the happy viewport
+							'frozen': true
+						}
+					);
+				}
+				
 			}
 			
 			// Adjust content for banner viewport height if no happy-box top-panel-row is present
@@ -887,6 +915,24 @@
 				});
 			} else {
 				refresh_right_panel();
+			}
+			
+			// process mobile calendar ... TODO: Replace with plugin eventually
+			if($('body.calendar').length !== 0) {
+				var eventId = ".fc-event";
+				
+	      $(eventId).each(function () {
+					
+					$(this).parent().parent().addClass("eventful");
+					
+					/*if($(this).find('a')) {
+						var url = $(this).find('a').attr('href');
+						$(this).click(function() {
+							window.open(url);
+						});
+					}*/
+					
+	      });
 			}
 			
 		}

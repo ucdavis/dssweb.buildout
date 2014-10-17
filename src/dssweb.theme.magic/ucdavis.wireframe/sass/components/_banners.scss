@@ -58,6 +58,15 @@
 	//color:$rec_blue;
 }
 
+body.has-shadow-am {
+	#banner-caption {
+		position: static;
+		color: #000 !important;
+	}
+	#banner-caption + #content-row {
+		margin-top: 15px;
+	}
+}
 .title-box {
 	padding: 25px;
 	background-color: $box_light_gray;
@@ -131,7 +140,7 @@
 	
 	// Minified banner box
 	.minify-sm {
-		width: 200px;
+		width: 160px;
 		float: right;
 		.panel-heading {
 			background-color: rgba(0, 40, 85, 0.8);
@@ -152,9 +161,11 @@
 			
 			}
 		}
+		// Action element is container that appears below when minified tab is clicked
 		.action-element {
 			position: absolute;
-			left: 0;
+			left: 15px; // was 0
+			width: 95.8%; // TODO: better don't define width if it wasn't breaking right margin
 			z-index: 300;
 			h2 {
 				display: none;
@@ -163,6 +174,10 @@
 				a {
 					padding-top: 0;
 					color: #FFF;
+					text-decoration: none;
+					&:hover {
+						text-decoration: underline;
+					}
 				}
 			}
 			.panel-body {
@@ -170,8 +185,20 @@
 				padding-top: 0;
 				background-color: $rec_blue;
 				color: #FFF;
+				p {
+					color: #000;
+				}
 			}
 		}
+	}
+	#content-row {
+		margin-top: 0 !important;
+		#am-content, #cm-content {
+			margin-top: 0 !important;
+		}
+	}
+	#content > #banner-caption {
+		display: none;
 	}
 }
 
@@ -212,6 +239,12 @@
 			// initial-scale=1.0 is removed from the meta
 			// TODO: Determine underlying cause -> test on other tablets
 			margin-right: -12px !important;
+		}
+		.narrow-col {
+			h2 {
+				margin-left: 0 !important;
+				text-align: center !important;
+			}
 		}
 	}
 	
@@ -296,7 +329,8 @@
 				margin-right: auto;
 				margin-left: 0;
 				h2 {
-					text-align: center !important;
+					margin-left: 15px;
+					//text-align: center !important;
 				}
 			}
 		}
@@ -355,5 +389,17 @@
 	
 }
 
-
+/*----- Large Desktop breakpoint -------*/
+@media screen and (min-width: $screen-lg-min) { // width > 1310
+	
+	// pull in right boxes
+	#top-panel-row {
+		padding-left: 55px;
+		padding-right: 55px;
+		#more-content-button {
+			left: 50px;
+		}
+	}
+	
+}
 /* /components/_banners.scss */

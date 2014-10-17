@@ -5,35 +5,8 @@
 
 /* event.scss */
 
-
 #event-cta {
 	background-color: transparent;
-
-	.portlet-items {
-		#ical-icon, #vcal-icon, #rss-icon {
-			background-image: none;
-			height: 25px;
-			a {
-				@include font_size(12px);
-				@include line_height(25px);
-				display: inline-block;
-				
-				width: 120px;
-				height: 25px;
-				padding-left: 20px;
-				background: url(../../images/icons/m-ical-icon.png) 0 50% no-repeat;
-				text-decoration: none;
-				&:hover {
-					text-decoration: underline;
-				}
-			}
-		}
-		#rss-icon {
-			a {
-				background: url(../../images/icons/m-RSS-icon.png) 0 50% no-repeat;
-			}
-		}
-	}
 }
 
 #accordion-e {

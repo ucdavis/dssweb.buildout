@@ -1,9 +1,22 @@
 /* components/blocks/_portlet.scss */
 
+.uc.read-more, h4.uc { // portlet-content
+	letter-spacing: 0.05em !important;
+}
+
+// TODO: Change if content / am-content styles from _typography.scss become less restrictive
+body.res-lab {
+	#content, #am-content {
+		.portlet {
+			p {
+				@include font_size(13px,!important);
+				@include line_height(18px,!important); 
+			}
+		}
+	}
+}
 
 #content-row {
-
-
 	.portlet {
 		margin-bottom: 5px;
 		// Apply this class for standard padding
@@ -36,6 +49,10 @@
 			margin-bottom: 25px;
 			margin-left: 35px;
 		
+			.read-more {
+				margin-bottom: 0 !important;
+			}
+			
 			li {
 				background-image: none;
 				padding-left: 0;
@@ -82,13 +99,17 @@
 					}
 				
 					&.office-hours {
-						// margin-bottom: 15px;
+						margin-bottom: 2px;
+						div {
+							margin: 0;
+							@include line_height(18px,!important);
+						}
 					}
 				}
 			
 				// Vcard types 
 				&.office {
-					padding-bottom: 15px; // relies on h4 margin for spacing
+					padding-bottom: 20px; // relies on h4 margin for spacing
 					
 					h4 {
 						min-height: 28px;
@@ -114,9 +135,10 @@
 						margin-top: 0;
 						margin-bottom: 0;
 						font-style: italic;
+						@include font_size(12px);
 					}
-					.adr {
-						//margin-top: 4px;
+					.category + .adr {
+						margin-top: 2px;
 					}
 				}
 			}

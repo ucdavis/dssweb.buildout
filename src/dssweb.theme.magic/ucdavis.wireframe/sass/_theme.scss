@@ -103,6 +103,14 @@ head {
 	}
 }
 
+#nested-left { // T8 nested column "Important Dates"
+	padding-left: 0;
+}
+#nested-right {
+	&.bent {
+		padding-left: 0;
+	}
+}
 .body-img {
 	height:120px;
 	width:200px;
@@ -122,8 +130,9 @@ button {
 	height: 40px;
 	width: 120px;
 	background-color: $ucd_bright_gold;
+	border: none;
 	&:hover {
-		background-color: $ucd_bright_gold_40;
+		background-color: $ucd_bright_gold_40 !important;
 		cursor: pointer;
 	}
 }
@@ -196,6 +205,7 @@ button {
 		line-height: 1.4em;
 		//font-family: lucida;
 		a, p {
+			@include font_size(13px);
 			color: #fff;
 			letter-spacing: .014em;
 		}
@@ -256,6 +266,7 @@ input {
 
 #content-row {
 	margin-bottom: 45px;
+	position: relative; // for JS positioning of banner-caption on shadow-am pages
 }
 #content, #am-content, #cm-content {
 
@@ -305,14 +316,48 @@ input {
 	
 }
 
-
-
+/* Global event items */
 .student-events {
 	h3, h4 {
 		color: $rec_blue;
 	}
 	
 }
+.event-item {
+
+}
+
+.sb-subitems {
+	li {
+		list-style-type: none;
+	}
+}
+.portlet-items, .sb-subitems {
+	#ical-icon, #vcal-icon, #rss-icon {
+		background-image: none;
+		height: 25px;
+		a {
+			@include font_size(12px);
+			@include line_height(25px);
+			display: inline-block;
+			
+			width: 120px;
+			height: 25px;
+			padding-left: 20px;
+			background: url(../../images/icons/m-ical-icon.png) 0 50% no-repeat;
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	#rss-icon {
+		a {
+			background: url(../../images/icons/m-RSS-icon.png) 0 50% no-repeat;
+		}
+	}
+}
+
 .sidebar {
 	height: auto;
 	//width: 250px; // !important; 
@@ -324,12 +369,13 @@ input {
 	}
 	h3 {
 		//height: 30px; // Note: where possible, use _typography.scss line_height specs to determine height
+		
 		a{
 			color: #fff;
 			padding-left: 35px; // was 38px
 			padding-right: 30px;
 			position: relative;
-			top: 4px;
+			top: 2px;
 		}
 	}
 
@@ -338,6 +384,7 @@ input {
 		.panel-title {
 			//background-color: $rec_blue;
 			//height: 30px;
+
 			a {
 				display: block; // otherwise padding-left doesn't work where multilined title 
 				background-color: $rec_blue;
@@ -433,13 +480,16 @@ input {
 		margin-right: 0 !important;
 }
 
-
+h2 + #thumb-section {
+	margin: 0;
+	padding: 0;
+}
 // Panel resets
 #thumb-section { // Important: Specific content selector since we want to keep our sidebar panel styles
 	.panel-group {
 		
 		section {
-			margin-bottom: 10px;
+			margin-bottom: 0; // was 10px
 			
 			.collapsible.in { // add bottom margin when sections expanded
 				//margin-bottom: 50px; // this margin creates an unacceptable jump when panel is opened
@@ -448,10 +498,11 @@ input {
 				display: block;
 				margin-top: 25px;
 				margin-bottom: 40px;
+				text-transform: uppercase;
 			}
 			ul {
 				li {
-					margin-bottom: 20px;
+					margin-bottom: 8px;
 				}
 			}
 			.panel-heading {
@@ -472,9 +523,9 @@ input {
 						img {
 							float: left;
 						}
-						background: url(../images/icons/blue-100-right-arrow-down.png) 98% 50% no-repeat $ucd_bright_gold_40;
+						background: url(../images/icons/blue-100-right-arrow-down.png) 96% 50% no-repeat $ucd_bright_gold_40;
 						&.collapsed {
-							background: url(../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat $ucd_bright_gold;
+							background: url(../images/icons/blue-100-right-arrow.png) 96% 50% no-repeat $ucd_bright_gold;
 						}
 				
 						&:hover {
@@ -486,8 +537,12 @@ input {
 			}
 			.panel-body {
 				//border-top-width: 0 !important;
-				margin-top: 25px;
+				margin-top: 20px;
 				margin-left: 150px;
+				margin-right: 25px;
+				.readmore a {
+					text-transform: uppercase;
+				}
 			}
 		}
 	}	
@@ -519,6 +574,7 @@ input {
 			width: 120px;
 			background-color: $ucd_bright_gold;
 			text-align: center;
+			border: none;
 			&:hover {
 				background-color: $ucd_bright_gold_40;
 				cursor: pointer;
@@ -573,6 +629,43 @@ body.contact-type {
 	padding-bottom: 10px !important;
 }
 
+#content-row {
+	margin-top: 45px;
+	section {
+		margin-bottom: 25px;
+		h2 { font-weight: normal;}
+		p { }
+	
+		.course-portlet {
+			//border: 1px solid #CCC;
+			position: relative;
+			margin-bottom: 45px;
+			.course-info {
+				width: 60%;
+
+				h3 {
+					padding-bottom: 0 !important;
+					a {
+						text-decoration: none;
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
+				p {}
+			}
+			button {
+				position: absolute;
+				right: 0;
+				top: 45px;
+				height: 40px;
+				width: 120px;
+				background-color: $ucd_bright_gold;
+			}
+		}
+	}
+}
+
 /*------ All Media Queries ----------*/
 
 
@@ -592,6 +685,9 @@ body.contact-type {
 		padding: 0; // Pulls mobile navigation to edges but adds right white margin on tablet (portrait) {TODO: Check}
 	}
 	
+	#google-map { // draggable map on mobile doesn't allow scrolling to bottom of page, so minimize it
+		width: 82%;
+	}
 	.row#banner-row {
 		margin-left: 0 !important;
 		margin-right: 0 !important;
@@ -647,7 +743,6 @@ body.contact-type {
 	.panel-heading {
 		padding: 0;
 		.panel-title {
-			//min-height: 40px;
 			width: auto; // undo general 250 width
 			padding-top: 0 !important;
 			padding-bottom: 0 !important;
@@ -655,8 +750,8 @@ body.contact-type {
 				display: inline-block;
 				width: 100%; //TODO: margin-top reveals formatting error
 				min-height: 40px;
-				
-				padding-right: 20px;
+				font-weight: normal;
+				padding-right: 0;
 				padding-left: 20px !important;
 				
 				@include font_size(16px);
@@ -723,7 +818,7 @@ body.contact-type {
 					float: left;
 					width: 75%;
 					h3 {
-						padding: 0;
+						padding: 0 !important;
 					}
 				}
 				button {
@@ -745,47 +840,51 @@ body.contact-type {
 		}
 	}
 	
-	// Panel resets
-	#thumb-section { // Important: Specific content selector since we want to keep our sidebar panel styles
-		.panel-group {
-			section {
-				.readmore {
-					display: block;
-					margin-top: 8px;
-					margin-bottom: 15px;
-				}
-				ul {
-					li {
-						margin-bottom: 20px;
+	// TODO: Remove cm-content selector when not needed for overriding ...
+	#cm-content {
+		// Panel resets
+		#thumb-section { // Important: Specific content selector since we want to keep our sidebar panel styles
+			.panel-group {
+				section {
+					.readmore {
+						display: block;
+						margin-top: 8px;
+						margin-bottom: 15px;
 					}
-				}
-				.panel-heading {
-					.panel-title {
-						a {
-							height: 15px;
-							.thumb-txt {
-								margin-left: 0;
+					ul {
+						li {
+							margin-bottom: 20px;
+						}
+					}
+					.panel-heading {
+						.panel-title {
+							a {
+								height: 15px;
+								margin-bottom: 5px;
+								background-position: 98% 50% !important; // move right arrow back to 98%
+								padding-top: 0 !important;
+								.thumb-txt {
+									margin-left: 0;
+								}
+								@include font_size(16px,!important);
+								font-weight: bold;
 							}
 						}
 					}
-				}
-				.panel-body {
-					margin-top: 0;
-					margin-left: 0;
-					padding: 0 !important;
-					img.thumb { // Note: We're replacing the smaller thumb with the larger image in mobile via javascript. We initially load the smaller T6-autism.jpg and then look for m-T6-autism.jpg to load in mobile
-						width: 280px;
-						//height: 160px;
-						display: block;
-						margin-left: auto;
-						margin-right: auto;
-						margin-bottom: 15px;
+					.panel-body {
+						margin-top: 0;
+						margin-left: 0;
+						padding: 0 !important;
+						img.thumb { // Note: We're replacing the smaller thumb with the larger image in mobile via javascript. We initially load the smaller T6-autism.jpg and then look for m-T6-autism.jpg to load in mobile
+							width: 280px;
+							display: block;
+							margin: 15px auto;
+						}
 					}
 				}
-			}
-		}	
+			}	
+		}
 	}
-	
 	#main-container {
 		
 		#banner-row {
@@ -932,6 +1031,13 @@ body.contact-type {
 
 
 @media screen and (min-width: $screen-sm-min) { // width > 768px
+	
+	body.contact-type {
+		h1 {
+			padding-bottom: 5px;
+		}
+	}
+	
 	// pull content left on larger screens so flush left with top-bar
 	
 	#content, #am-content {
@@ -939,6 +1045,14 @@ body.contact-type {
 		margin-bottom: 30px;
 	}
 	
+	#content, #am-content, #cm-content {
+		.panel-body {
+			h2 {
+				text-transform: none;
+			}
+		}
+	}
+		
 	/*
 	#top-bar-wrap, #content-row, #banner-row {
 		padding-left: 105px; // 90 + 15 px
@@ -951,7 +1065,7 @@ body.contact-type {
 	.panel-group {
 		.panel-heading {
 			.panel-title {
-				padding-top: 8px;
+				padding-top: 6px;
 				padding-bottom: 10px;
 			}
 		}
@@ -975,35 +1089,6 @@ body.contact-type {
 		}	
 	}
 	
-
-	
-	#content-row {
-		margin-top: 45px;
-		section {
-			margin-bottom: 25px;
-			h2 { font-weight: normal;}
-			p { }
-		
-			.course-portlet {
-				//border: 1px solid #CCC;
-				position: relative;
-				margin-bottom: 45px;
-				.course-info {
-					width: 60%;
-					h3 {}
-					p {}
-				}
-				button {
-					position: absolute;
-					right: 0;
-					bottom: 0;
-					height: 40px;
-					width: 120px;
-					background-color: $ucd_bright_gold;
-				}
-			}
-		}
-	}
 	
 	#content, #am-content {
 		> div, > h1 {
@@ -1093,6 +1178,7 @@ body.contact-type {
 	.sidebar{
 		.panel-heading{
 			.panel-title {
+				padding-bottom: 6px !important;
 				background-color: $rec_blue;
 				//height: 30px; // need to accommodate multiline headings
 			}
@@ -1102,6 +1188,11 @@ body.contact-type {
 		padding-left:0 !important; 
 		padding-right:0 !important;
 		//margin-top: 145px; // ad-hoc ... set position of sidebar in javascript
+	}
+	
+	.row#footer {
+		margin-right: -15px;
+		margin-left: -15px;
 	}
 }
 
@@ -1207,6 +1298,10 @@ body.contact-type {
 		//border: 1px solid red;
 	}
 	
+	#content-row {
+		margin-left: 0;
+		//margin-right: 0;
+	}
 	#content, #am-content {
 		//padding-right: 0 !important;
 	}
@@ -1245,6 +1340,13 @@ body.contact-type {
 		}	
 	}
 	
+	#footer {
+		.footer-nav {
+			li {
+				padding-top: 10px;
+			}
+		}
+	}
 }
 
 
@@ -1278,14 +1380,14 @@ body.contact-type {
 	
 	.sidebar {
 		> div {
-			margin-left: 92px;
+			margin-left: 92px; // 77px gives tighter gutter between main content and right sidebar but creates larger sidebar width that does not work well with widths on the T6 template pages
 		}
 	}
 }
 
 /*----- Large Desktop breakpoint -------*/
 @media screen and (min-width: $screen-lg-min) { // width > 1310
-	#top-bar-wrap, #content-row, #banner-row {
+	#top-bar-wrap, #content-row, #banner-row, .row#banner-caption {
 		padding-left: 105px; // 90 + 15 px
 		padding-right: 105px;
 	}

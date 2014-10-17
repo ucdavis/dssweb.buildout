@@ -2,7 +2,7 @@
 
 /* TODO: Figure out why mover function is double wrapping elements */
 
-
+/* Pending completion 
 $(document).ready(function() {
 	
 	var activeMQ;
@@ -89,3 +89,4 @@ $(document).ready(function() {
 		mqSync();
 		initialize();
 });
+*/

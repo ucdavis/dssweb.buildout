@@ -28,12 +28,12 @@
 		}
  
 	 td {
-			border: 1px solid $ucd_blue_10;
+			border: 1px solid $ucd_blue_20;
 		//	display: inline-block;
-		
+			height: 120px;
 	
 			.day {
-				min-height: 120px;
+				//
 				margin-top: 30px;
 				a {
 					text-decoration: none;
@@ -412,7 +412,16 @@ p {
 	}
 }
 
-@media screen and (max-width: $screen-lg-min) { // width < 1310px
+@media screen and (max-width: $screen-xs-max) { // width < 767 (was $screen-sm-min 768)
+	.fc-event-inner {
+		
+	}
+	.eventful {
+		background-color: $ucd_blue_10;
+	}
+}
+
+@media screen and (max-width: $screen-lg-min) { // width < 1310px TODO: What's the purpose of this MQ?
 	#month{
 		width: 100%;
 	}
