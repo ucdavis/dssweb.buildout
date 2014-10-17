@@ -642,7 +642,7 @@
 							$(this).addClass('collapsed');
 						}
 						
-						if($('body.event').length === 0) {
+						if($('body.calendar').length === 0) {
             	$($(this).data("target")).show(); // 2014-10-14 RAK: This trips up "Filter By" on calendar page
 						}
 						var sel = '.in'+$(this).attr('data-target');
@@ -742,6 +742,11 @@
 			return h;
 		}
 		
+		function get_menu_icon() {
+			var menu_icon = $('<span class="menu-icon"><span>&nbsp;</span></span><div class="glyphicon glyphicon-align-justify visible-xs" id="dropdown-icon"></div>');
+			return menu_icon;
+		}
+		
 		/*
 		 * refresh_right_panel to adjust position of collapse right panel on mobile ("S")
 		*/
@@ -754,7 +759,8 @@
 				}
 				// Height to subtract from position calculation. Assuming only ONE panel on the right (by design)
 				// TODO: Offset is not from inner- or outer height ... so from whence?
-				var offset = 16; // mobile on desktop needs 5 if we're setting top-panel-row and wallpaper-image to same height
+				// T8 Students (students) = 5, T2 Our people (ourpeople) = 16
+				var offset = ($('body.students').length !== 0) ? 16 : 5; // mobile on desktop needs 5 if we're setting top-panel-row and wallpaper-image to same height
 				var h = ($('#top-panel-row .right-panel .panel-heading').height() + offset);
 				
 				$('#top-panel-row .right-panel').css('padding-top', (hb_element_height-h));
@@ -919,18 +925,16 @@
 			
 			// process mobile calendar ... TODO: Replace with plugin eventually
 			if($('body.calendar').length !== 0) {
-				var eventId = ".fc-event";
 				
+				// Inject menu-icon into "filter by" link
+				$('#left-area h3.menu-icon a').html(get_menu_icon());
+				$('#left-area h3').removeClass('menu-icon');	
+				
+				// Process calendar
+				var eventId = ".fc-event";
 	      $(eventId).each(function () {
 					
 					$(this).parent().parent().addClass("eventful");
-					
-					/*if($(this).find('a')) {
-						var url = $(this).find('a').attr('href');
-						$(this).click(function() {
-							window.open(url);
-						});
-					}*/
 					
 	      });
 			}
