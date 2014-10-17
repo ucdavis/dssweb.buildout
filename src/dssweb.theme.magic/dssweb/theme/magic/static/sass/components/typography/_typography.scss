@@ -8,7 +8,9 @@ body, div, p, li, a, input, textarea, select {
 
 // Note: Font faces are in _mixins
 
-a { color: $ucd_blue_70;}
+a { 
+	color: $ucd_blue_70;
+}
 
 em {
 	font-style: italic;
@@ -19,11 +21,15 @@ h1 {
 	//@include fontface_regular_font;
 	//@include fontface_bold_font;
 }
+h4.source {
+	@include font_size(12px,!important);
+	text-transform: uppercase;
+}
 blockquote {
 	color: $rec_blue;
 	margin-top: 35px;
 	margin-left: 70px;
-	margin-right: 50px;
+	margin-right: 70px;
 	padding: 0 0 0 55px;
   background-image: url(../images/icons/t-T9-open-quote.png);
   background-position: top left;
@@ -132,6 +138,13 @@ p {
 	}
 }
 
+#nested-left { // T8 nested column "Important Dates"
+	padding-left: 0;
+	h3, h4, p {
+		@include font_size(13px,!important);
+		@include line_height(18px,!important);
+	}
+}
 .col-lg-4 {
 	h2 {
     font-weight: bold !important;
@@ -152,6 +165,9 @@ p {
 	}
 }
 .sidebar {
+	a { 
+		@include font_size(13px);
+	}
 	h3 {
 		a { // Main selector to change sidebar headings
 			text-transform: uppercase;
@@ -163,7 +179,7 @@ p {
 	}
 	li {
 		@include font_size(13px,!important);
-		@include line_height(18px);
+		@include line_height(15px,!important);
 	}
 	.panel-heading {
 		h3.panel-title {
@@ -178,12 +194,32 @@ p {
 		}
 	}
 }
+#content, #am-content {
+	.vcard {
+		.adr, #email-phone {
+			@include line_height(18px,!important);
+		}
+	}
+	.sidebar {
+		.panel-body {
+			li {
+				@include font_size(13px,!important);
+				@include line_height(15px,!important);
+			}
+		}
+	}
+}
 figure {
 	figcaption {
 		text-align: right;
-		@include font_size(10.65px);
-		color: $ucd_blue_100;
+		@include font_size(11px);
+		@include line_height(15px);
+		color: #000;
 		text-transform: uppercase;
+		padding-top: 6px;
+		em {
+			text-transform: none !important;
+		}
 	}
 }
 #content {
@@ -204,17 +240,22 @@ figure {
 	}
 	.box-content {
 		h2 {
-			padding: 15px 0;
+			padding: 15px 0 10px 0 !important;
 			@include font_size(24px);
 			letter-spacing: 0.075em;
 		}
 		h3 {
-			padding: 0 0 8px 0;
-			@include font_size(13px);
+			padding: 7px 0 !important;
+			@include font_size(18px);
+			font-weight: normal !important;
 		}
+	}
+}
+#content, #am-content {
+	.box-content {
 		p {
-			@include font_size(13px);
-			@include line_height(20px);
+			@include font_size(13px,!important);
+			@include line_height(20px, !important);
 		}
 	}
 }
@@ -231,6 +272,7 @@ figure {
 	letter-spacing: 0.1em !important;
 }
 
+
 .content-title{
 	padding-bottom:30px;
 	@include font_size(36px);
@@ -239,8 +281,9 @@ figure {
 	margin-top: 0 !important;
 }
 
+// TODO: Revise specificity using content, am-content
 #content, #am-content {
-	h2{
+	h2, h2 a {
 		@include font_size(24px, !important);
 		font-weight:normal;
 		padding-top:15px;
@@ -249,13 +292,40 @@ figure {
 	h3 {
 		@include font_size(15px);
 		@include line_height(25px);
-		padding-top:15px;
-		padding-bottom:15px;
+		font-weight: bold;
+		padding-top: 6px;
+		padding-bottom: 6px;
+	}
+	h2 + ul {
+		padding: 0;
+		margin: 0;
+	}
+	h3 + ul {
+		padding: 0;
+		margin: 0;
+	}
+	#thumb-section {
+		h3 {
+			font-weight: normal !important;
+		}
+		.panel-group {
+			section {
+				.readmore {
+					@include font_size(15px,!important);
+				}
+			}
+		}
 	}
 	.narrow-col {
 		h2, h3 {
 			padding-bottom: 0;
 		}
+	}
+}
+
+#nested-left {
+	.read-more {
+		@include font_size(12px,!important);
 	}
 }
 
@@ -296,8 +366,10 @@ body.bio {
 		margin-bottom: 45px;
 	}
 }
+
+// TODO: Make it easier to override styles from the section below, especially from _portlet.scss
 #content, #am-content {
-	p, li, ol, div/*, span*/ { // TODO: Eval, broke T6 thumb text alignment after adding #content
+	p, li, ol, div {
 		@include line_height(24px,!important); 
 	}
 	p {
@@ -318,6 +390,8 @@ body.bio {
 			@include line_height(15px);
 			margin-bottom: 0;
 			a {
+				@include font_size(12px);
+				@include line_height(15px);
 				text-decoration: none;
 				&:hover {
 					text-decoration: underline;
@@ -354,25 +428,51 @@ body.bio {
 		}
 	}
 	
+	// TODO: specificity
 	#content, #am-content {
-		.panel-group {
-			.row.panel {
-				.panel-title {
-					a {
-						@include font_size(18px);
-						@include line_height(40px);
-					}
+		
+		h1 {
+			padding-bottom: 20px;
+		}
+		
+		.breadcrumb {
+			p {
+				margin-bottom: 15px;
+				a {
+					-webkit-text-size-adjust: none;
+					@include font_size(10px,!important);
+					@include line_height(13px,!important);
 				}
 			}
 		}
+		
+		.panel-group {
+			.row.panel {
+				.panel-title {
+					min-height: 40px;
+					a {
+						@include font_size(12px,!important); // was 18
+						@include line_height(25px,!important); // was 40
+					}
+				}
+			}
+			.right-panel {
+				.panel-title {
+					
+				}
+			}
+		}
+		
 	}
 	
 	figure {
 		figcaption {
 			padding-right: 15px;
+			padding-left: 15px;
+			-webkit-text-size-adjust: none;
 		}
 	}
-	
+
 	.panel-group {
 
 		#middle-row {
@@ -398,7 +498,7 @@ body.bio {
 	}
 	
 }
-
+/*
 body.res-lab {
 	#content-row div {
 		> h2 {
@@ -408,7 +508,7 @@ body.res-lab {
 			margin-bottom: 15px;
 		}
 	}
-}
+}*/
 // T6 Research Lab heading thumb sections
 #thumb-section {
 	.panel-group {
@@ -485,11 +585,30 @@ body.home {
 		.sidebar {
 			.panel-heading {
 				.panel-title {
-					padding-top: 8px !important;
+					padding-top: 6px !important;
 					//@include font_size(16px, !important);
 					//@include line_height(16px, !important);
 				}
 			}
+		}
+	}
+	
+	// Blue box formatting: T8: TODO: Combine with non-specific box-content
+	.narrow-col {
+		h2 {
+			padding: 15px 0 10px 0 !important;
+			@include font_size(24px);
+			letter-spacing: 0.075em;
+			text-transform: uppercase !important;
+		}
+		h3 {
+			padding: 7px 0 !important;
+			@include font_size(18px);
+			font-weight: normal !important;
+		}
+		p {
+			@include font_size(15px, !important);
+			@include line_height(20px, !important);
 		}
 	}
 	
@@ -513,7 +632,7 @@ body.home {
 				.narrow-col {
 					.bcontroller {
 						.btn-primary {
-							@include font_size(11px); // See All link
+							@include font_size(13px); // See All link
 							@include line_height(18px,!important);
 						}
 					}
@@ -534,6 +653,7 @@ body.home {
 		}
 	}
 	
+	// Blue box formatting: T5: TODO: Combine
 	.corner-box {
 		.box-content {
 			h2 {
@@ -542,7 +662,7 @@ body.home {
 				letter-spacing: 0.075em;
 			}
 			h3 {
-				padding: 0 0 0 0;
+				padding: 0;
 				@include font_size(11px);
 			}
 			p {
@@ -551,7 +671,7 @@ body.home {
 			}
 		}
 	}
-	
+
 	// T6 Research Lab heading thumb sections
 	#thumb-section {
 		.panel-group {
@@ -586,6 +706,20 @@ body.home {
 			}
 		}
 	}
+}
+
+/*----- Tablet breakpoint -------*/
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991px
+
+	#content, #am-content {
+		.narrow-col {
+			h2 {
+				@include font_size(17px,!important);
+				@include line_height(24px,!important);
+			}
+		}
+	}
+
 }
 
 @media screen and (max-width: $screen-lg-min) { // width < 1200
