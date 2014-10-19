@@ -77,6 +77,13 @@ head {
 		.narrow-col {
 			.content-wrap {
 				padding: 15px;
+				ul {
+					@include square-bullet-list();
+					margin: 15px 0 15px 2px;
+					li {
+						padding-bottom: 10px;
+					}
+				}
 			}
 		}
 	}
@@ -258,29 +265,32 @@ input {
 	position: relative; // for JS positioning of banner-caption on shadow-am pages
 }
 
-// TODO: Review specificity
-#content, #am-content, #cm-content {
 
-	.breadcrumb {
-		background: none;
-		padding:0 0 !important;
-		margin-bottom: 0;
-		color: $ucd_blue_70;
-		text-transform: uppercase;
-		a {
-			text-decoration: none;
-			&:hover {
-				text-decoration: underline;
-			}
-		}
-		p {
-			margin-bottom: 0;
-		}
-		.bread-divider {
-			@include font_size(15px);
+.breadcrumb {
+	background: none;
+	padding:0 0 !important;
+	margin-bottom: 0;
+	color: $ucd_blue_70;
+	text-transform: uppercase;
+	a {
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
 		}
 	}
-	
+	p {
+		margin-bottom: 0;
+	}
+	.bread-divider {
+		@include font_size(15px);
+	}
+}
+
+// TODO: Review specificity
+// #content #am-content
+//#content, #am-content, #cm-content {
+#content #content-core, #content #am-content, #content #cm-content {
+
 	.panel-body {
 		h2 {
 			text-transform: uppercase;
@@ -1218,7 +1228,9 @@ body.contact-type {
 	/* Required on tablet to keep footer from breaking (being too wide: foot-wrap width: auto; and not having right white margin: footer-processed: width 100% (783px). Warning: using width 783px instead of 100% leaves right white space on footer in desktop view */
 	.footer-processed {
 		width: 100%; // fix on tablet
-		margin-left: 0 !important;
+		margin-left: 0 !important; // TODO: fix; right margin has white
+		margin-right: -15px !important; // TODO: Not working
+		
 		.foot-wrap {
 			width: auto !important;
 		}

@@ -347,6 +347,10 @@
 		@include font_size(12px,!important);
 	}
 	
+	body.home #content #top-panel-row .narrow-col .bcontroller .btn-home.btn-primary {
+		background-position: 50% 12px !important;
+	}
+	
 	// sync top and bottom row column widths on home
 	#top-panel-row, #bottom-panel-row {
 		
@@ -355,7 +359,9 @@
 
 			.bcontroller {
 				.btn-home.btn-primary {
-					height: 20px !important;
+					//height: 32px !important; // was 20px
+					margin-top: 0;
+					padding-top: 6px !important;
 					@include font_size(12px);
 					@include line_height(20px, !important);
 				}
