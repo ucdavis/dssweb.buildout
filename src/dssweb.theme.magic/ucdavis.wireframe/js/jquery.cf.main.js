@@ -864,7 +864,7 @@
 			// HOME PAGE 
 			if($('body.has-front-am.happy-box #top-panel-row').length !== 0) {
 				if(!hb_element_height) hb_element_height = front_banner_height;
-				$('#top-panel-row').happybox(
+				$('#top-panel-rowx').happybox(
 					{
 						'type': '.panel', // element type to make happy
 						'action_element_class': '.action-element',

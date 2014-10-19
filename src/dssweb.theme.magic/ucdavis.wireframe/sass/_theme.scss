@@ -1020,11 +1020,12 @@ body.contact-type {
 	}
 	
 	// Top margin above home page buttons
-	/* TODO: breaks ipad, adding right margin to banner (see also Tablet breakpoint ("M"))*/
+	/* TODO: breaks ipad, adding right margin to banner (see also Tablet breakpoint ("M"))
+	UPDATE: Not having this causes page content to be slightly narrower than the navigation */
 	#top-panel-row, #bottom-panel-row {
 		// with more-content button we need to extend 40 left and right
-		margin-left: -57px;
-		margin-right: -57px;
+		//margin-left: -57px;
+		//margin-right: -57px;
 	}
 	.panel-group {
 		.panel-heading {
@@ -1155,10 +1156,11 @@ body.contact-type {
 	head { font-family:"M";}
 	body:after{content:"M";}
 	
-	/* TODO: breaks ipad, adding right margin (see also > 768 breakpoint)*/
+	/* TODO: breaks ipad, adding right margin (see also > 768 breakpoint)
+	UPDATE: Not having this causes page content to be slightly narrower than the navigation */
 	#top-panel-row, #bottom-panel-row {
-		margin-left: -31px;
-		margin-right: -49px;
+		//margin-left: -31px;
+		//margin-right: -49px;
 	}
 	
 	#more-content-button {
@@ -1213,9 +1215,13 @@ body.contact-type {
 		}
 	}
 	
-	/* Required on tablet to keep footer from breaking (being too wide) */
-	.foot-wrap {
-		width: auto !important;
+	/* Required on tablet to keep footer from breaking (being too wide: foot-wrap width: auto; and not having right white margin: footer-processed: width 100% (783px). Warning: using width 783px instead of 100% leaves right white space on footer in desktop view */
+	.footer-processed {
+		width: 100%; // fix on tablet
+		margin-left: 0 !important;
+		.foot-wrap {
+			width: auto !important;
+		}
 	}
 	
 }
