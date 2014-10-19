@@ -22,21 +22,21 @@
 // Fix wallpaper placement
 
 
-	.wall {
-		//position: absolute; // don't need if jumbotron is absolute
-		//z-index: -100; // arrange wallpaper to back position
-		top: 0;
-		width: 100%;
-		height: 160px;
-		// Example Bio page
-		&.shadow-graphic {
-			height: 176px;
-		}
-		// Example Our People page
-		&.shadow-am-graphic {
-			height: 160px;
-		}
+.wall {
+	//position: absolute; // don't need if jumbotron is absolute
+	//z-index: -100; // arrange wallpaper to back position
+	top: 0;
+	width: 100%;
+	height: 160px;
+	// Example Bio page
+	&.shadow-graphic {
+		height: 176px;
 	}
+	// Example Our People page
+	&.shadow-am-graphic {
+		height: 160px;
+	}
+}
 
 
 #banner-row {
@@ -72,23 +72,14 @@ body.has-shadow-am {
 	background-color: $box_light_gray;
 }
 
-/*.bcontroller {
-	.btn-home.btn-primary {
-		height: 32px;
-		padding-top: 7px;
-		background: url(../images/icons/white-arrow-up.png) 50% 12px no-repeat $rec_blue;
-		@include line_height(30px);
-	}
-}
-*/
-
 #top-panel-row {
 	.bcontroller {
 		.btn-home.btn-primary {
 			height: 32px;
-			padding-top: 7px;
+			padding-top: 3px; // adjust depending on height to push button down
 			background: url(../images/icons/white-arrow-up.png) 50% 12px no-repeat $rec_blue;
 			@include line_height(30px);
+			text-transform: uppercase;
 		}
 	}
 }
@@ -258,7 +249,7 @@ body.has-shadow-am {
 	.top-panel {
 		.action-element {
 			.narrow-col {
-				width: 88%; // Determines width of "happy box" blue elements
+				//width: 88%; // Determines width of "happy box" blue elements
 				color: #FFF;
 				background-color: $ucd_blue_100;
 				//border: 1px solid $ucd_blue_100;
@@ -392,10 +383,10 @@ body.has-shadow-am {
 /*----- Large Desktop breakpoint -------*/
 @media screen and (min-width: $screen-lg-min) { // width > 1310
 	
-	// pull in right boxes
+	// pull in right boxes; sub pages
 	#top-panel-row {
-		padding-left: 55px;
-		padding-right: 55px;
+		padding-left: 57px; // orig. 55px but req special adjustment after placement of bottom arrow icon on home
+		padding-right: 57px; 
 		#more-content-button {
 			left: 50px;
 		}

@@ -809,6 +809,13 @@
 		
 		/* ============================  RUN ONCE ON PAGE LOAD ============================ */
 		
+		// Upholding markup rule to place all page elements within .container but we want to have edge to edge footer so pull it out
+		if($('.container #footer').length !== 0) {
+			$('#footer').insertAfter($('.container'));
+			$('#footer').addClass('footer-processed');
+			$('#footer .foot-wrap').addClass('clearfix');
+		}
+		
 		// Note: The height of the happy box block needs to change with the height of the .wall * banner_hb_ratio
 		var hb_element_height = calc_hb_viewport();
 		

@@ -120,6 +120,7 @@
 	.tab {
 		padding: 0 !important;
 		.tab-title {
+			background-position: 98% 50% !important;
 			a {
 				// Remove vertical centering of text to accommodate longer titles
 				top: 15%;                         
@@ -127,6 +128,11 @@
 			}
 		}
 	}
+	
+	.right-panel .panel-body .narrow-col {
+	    float: none;
+	}
+	
 	.panel-title{
 		a {
 			//background-color: rgba(0, 40, 85, 0.8); // TODO: Why is this needed?
@@ -158,7 +164,8 @@
 						text-transform: uppercase;
 						color: #FFF !important;
 						background-image: none;
-						background-color: transparent; //rgba(0, 40, 85, 0.8);
+						background-color: transparent;
+						padding-left: 0 !important;
 						&.collapsed {
 							color: #FFF !important;
 							background-image: none;
@@ -206,7 +213,7 @@
 						padding: 0;
 
 						.content-wrap {
-							padding-top: 0;
+							padding-top: 15px; // for home page mobile
 							h3 {
 								padding-top: 0;
 								a {
@@ -236,10 +243,14 @@
 					display: block;
 					height: 40px;
 					width: 100%;
-					padding-top: 10px;
+					padding-top: 12px;
 				}
 			}
-
+			
+			.bcontroller {
+				padding-bottom: 0 !important;
+			}
+			
 			// TODO: Almost exact same as for #thumb-section .panel-heading in _theme.scss
 			.panel-heading {
 
@@ -283,7 +294,7 @@
 	#top-panel-row {
 		margin-top: 0; // unset mobile top margin applied to top of home page buttons
 	}
-	
+
 	#middle-row {
 		h2 {
 			@include font_size(36px, !important);
@@ -305,7 +316,6 @@
 	
 	#bottom-panel-row {
 		.narrow-col {
-			width: 80%;
 			h2{
 				text-align:center;
 			}
@@ -341,7 +351,7 @@
 	#top-panel-row, #bottom-panel-row {
 		
 		.narrow-col {
-			width: 90% !important;
+			//width: 90% !important;
 
 			.bcontroller {
 				.btn-home.btn-primary {
@@ -365,7 +375,7 @@
 					margin-left: 0;
 					padding-left: 76px;
 					a {
-						top: 10px;
+						top: 10px; // TODO: breaks desktop resized to tablet width but required for iPad
 						@include font_size(12px,!important);
 					}
 				}
@@ -375,9 +385,22 @@
 	
 }
 
-@media screen and (min-width: $screen-lg-min) {	 // width > 1200px
-	.content-main h2{
+@media screen and (min-width: $screen-lg-min) {	 // width > 1310px
+	
+	.content-main h2 {
 		text-align: center;
+	}
+	
+	// Sync with #top-panel-row _banners.scss dimensions
+	#bottom-panel-row {
+		padding-left: 57px;
+		padding-right: 57px;
+	}
+	
+	#top-panel-row {
+		#more-content-button {
+			left: 50px;
+		}
 	}
 	/* Custom Styles for this breakpoint */
 
