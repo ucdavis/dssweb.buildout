@@ -118,10 +118,12 @@ $ucdtxt_blue: #4D688C; // based on?
 	@include line_height(50px);
 }
 
-.bcontroller {
-	.btn-home.btn-primary {
-		padding-top: 7px !important;
-		background-position: 50% 14px !important;
+#top-panel-row {
+	.bcontroller {
+		.btn-home.btn-primary {
+			padding-top: 7px !important;
+			background-position: 50% 14px !important;
+		}
 	}
 }
 

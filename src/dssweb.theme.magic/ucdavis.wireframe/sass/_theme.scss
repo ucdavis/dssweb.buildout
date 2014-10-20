@@ -11,7 +11,7 @@
 /*----- Smallest breakpoint ("XS") -------*/
 
 body:after { 
-	content: "XS"; 
+	content: "XS";
 	display: none;
 }
 head {
@@ -341,7 +341,8 @@ input {
 }
 .portlet-items, .sb-subitems {
 	#ical-icon, #vcal-icon, #rss-icon {
-		background-image: none;
+		background-image: none !important;
+		padding-left: 0 !important;
 		height: 25px;
 		a {
 			@include font_size(12px);
