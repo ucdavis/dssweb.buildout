@@ -1,0 +1,92 @@
+@charset "utf-8";
+/* Print styles */
+
+a, p, li, span {
+	font-size: 1em !important;
+}
+
+.container, .foot-wrap {
+	margin-left: auto;
+	margin-right: auto;
+	width: 612px !important;
+}
+.container div {
+	margin-left: 0 !important; 
+	margin-right: 0 !important;
+}
+div {
+	float: none !important;
+	position: static;
+	width: 100%;
+}
+
+#util-bar-wrap {
+	padding-right: 0 !important;
+	text-align: center !important;
+}
+.top-bar-section, .jumbotron, .bcontroller, #middle-row #banner-caption, #more-content-button, #footer .foot-social, #uti-news, #uti-events, #uti-give, #uti-share, #uti-search {
+	display: none !important;
+}
+
+#top-bar-wrap {
+	margin-bottom: 25px;
+	border-bottom: 1px solid #CCC;
+}
+#util-bar-wrap .util-bar {
+	margin-top: 25px;
+}
+#util-bar-wrap .util-bar, #uti-logo, #uti-logo ul {
+	background-color: #FFF;
+}
+#util-bar-wrap .util-bar ul {
+	width: auto;
+}
+#util-bar-wrap .util-bar ul li {
+	float: none;
+}
+#uti-logo {
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+#footer div {
+	color: #000;
+}
+#footer .foot-wrap {
+	text-align: center;
+}
+
+#top-panel-row {
+	overflow: visible !important;
+	height: 100% !important;
+}
+#top-panel-row .action-element, #bottom-panel-row .collapsible {
+	width: 100% !important;
+	padding-top: 0 !important;
+}
+#top-panel-row .action-element .panel-body .narrow-col, #bottom-panel-row .action-element .panel-body .narrow-col {
+	width: 100% !important;
+	
+}
+#top-panel-row .action-element .panel-body .narrow-col a, #top-panel-row .action-element .panel-body .narrow-col h2, #top-panel-row .action-element .panel-body .narrow-col h3, #top-panel-row .action-element .panel-body .narrow-col .content-wrap, #top-panel-row .action-element .panel-body .narrow-col .content-wrap p, #top-panel-row .action-element .panel-body .narrow-col .content-wrap li, .tab {
+	background-color: #FFF !important;
+	color: #000 !important;
+}
+
+#footer .foot-wrap #foot-right, #foot-social, #footer .footer-nav {
+	display: none !important;
+}
+#footer, #footer .foot-wrap ul li a, #footer .foot-wrap #vcard p, #footer .foot-wrap #vcard span, #footer .foot-wrap #vcard a {
+	background-color: #FFF !important;
+	color: #000 !important;
+}
+
+.top-panel .action-element .narrow-col, .bottom-panel .narrow-col {
+	width: 100% !important;
+}
+
+.tab-title {
+	background-image: none !important;
+}
+
+
+

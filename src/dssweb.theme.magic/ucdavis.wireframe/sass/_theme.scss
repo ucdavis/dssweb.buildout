@@ -286,16 +286,26 @@ input {
 	}
 }
 
+#top-panel-row {
+	.panel-body {
+		h2 {
+			text-transform: uppercase !important;
+		}
+	}
+}
+
 // TODO: Review specificity
 // #content #am-content
 //#content, #am-content, #cm-content {
 #content #content-core, #content #am-content, #content #cm-content {
 
-	.panel-body {
+	/*.panel-body {
 		h2 {
 			text-transform: uppercase;
 		}
-	}
+	}*/
+
+
 	#bottom-panel-row {
 		h2 {
 			text-transform: none !important;
