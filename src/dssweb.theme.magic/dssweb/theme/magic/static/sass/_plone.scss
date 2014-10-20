@@ -502,7 +502,7 @@ ul#footer-nav {
 
 @media screen and (min-width: $screen-md-min) {
     .top-bar-section {
-        display: none;
+       // display: none;
     }
 
     /* Plone globalnav */
@@ -567,7 +567,7 @@ ul#footer-nav {
 
     /*----- DropDown -----*/
     ul.dropdown {
-      display: none;
+      //display: none;
       position :relative;
       top: -1em;
       }
@@ -594,7 +594,7 @@ ul#footer-nav {
     }
     /* not more than one level */
     ul.dropdown ul.dropdown {
-        display: none !important;
+        //display: none !important;
     }
 
 }

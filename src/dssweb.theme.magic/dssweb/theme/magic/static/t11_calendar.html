@@ -28,7 +28,7 @@
 	</head>
 
   <!-- #BeginEditable "body-tag" -->
-  <body class="event">
+  <body class="calendar">
   <!-- #EndEditable -->
 		<div id="skip-link"><a href="#content" class="sr-only sr-only-focusable">Skip to main content</a></div>
 	  <div class="row jumbotron">
@@ -214,7 +214,6 @@
 	          <div class="panel-heading">
 	            <h3 class="panel-title op-sidebar-title menu-icon visible-xs">
 	              <p class="visible-xs view-all">	<a data-parent="#accordion" data-target="#sbA" data-toggle="collapse">Filter By </a></p>								                
-	                <div class="glyphicon glyphicon-align-justify visible-xs" id="dropdown-icon"></div>
 	             
 	            </h3>
 	          </div>
@@ -247,8 +246,8 @@
 									</form>									
 								</fieldset>					
 	              <div class="sb-subitems">
-	               <p><a href="#">iCal Export</a></p>
-								 <p><a href="#">RSS Feed</a></p>
+									<li id="ical-icon"><a href="#">iCal Export</a></li>
+									<li id="rss-icon"><a href="#">RSS Feed</a></li>
 	              </div>
 	            </div>
 	          </div>
@@ -330,9 +329,9 @@
 								</div>							
 							</div>
 							</div></td>
-							<td><span class="date">2</span><div class="day"></div></td>
-							<td class="weekend"><span class="date">3</span><div class="day"></div></td>
-							<td class="weekend"><span class="date">4</span><div class="day"></div></td>
+							<td><span class="date">2</span><div class="day">&nbsp;</div></td>
+							<td class="weekend"><span class="date">3</span><div class="day">&nbsp;</div></td>
+							<td class="weekend"><span class="date">4</span><div class="day">&nbsp;</div></td>
 							</tr><tr>
 							<td><span class="date">5</span><div class="day">
 							<div class="fc-event">								
@@ -368,7 +367,7 @@
 								</div>							
 							</div>
 							</div></td>
-							<td><span class="date">8</span><div class="day"></div></td>
+							<td><span class="date">8</span><div class="day">&nbsp;</div></td>
 							<td><span class="date">9</span><div class="day">
 							<div class="fc-event">									
 								<div class="fc-event-inner">
@@ -385,32 +384,32 @@
 								</div>								
 							</div>
 							</div></td>
-							<td class="weekend"><span class="date">10</span><div class="day"></div></td>
-							<td class="weekend"><span class="date">11</span><div class="day"></div></td>
+							<td class="weekend"><span class="date">10</span><div class="day">&nbsp;</div></td>
+							<td class="weekend"><span class="date">11</span><div class="day">&nbsp;</div></td>
 							</tr><tr>
-							<td><span class="date">12</span><div class="day"></div></td>
-							<td><span class="date">13</span><div class="day"></div></td>
-							<td><span class="date">14</span><div class="day"></div></td>
-							<td><span class="date">15</span><div class="day"></div></td>
-							<td><span class="date">16</span><div class="day"></div></td>
-							<td class="weekend"><span class="date">17</span><div class="day"></div></td>
-							<td class="weekend"><span class="date">18</span><div class="day"></div></td>
+							<td><span class="date">12</span><div class="day">&nbsp;</div></td>
+							<td><span class="date">13</span><div class="day">&nbsp;</div></td>
+							<td><span class="date">14</span><div class="day">&nbsp;</div></td>
+							<td><span class="date">15</span><div class="day">&nbsp;</div></td>
+							<td><span class="date">16</span><div class="day">&nbsp;</div></td>
+							<td class="weekend"><span class="date">17</span><div class="day">&nbsp;</div></td>
+							<td class="weekend"><span class="date">18</span><div class="day">&nbsp;</div></td>
 							</tr><tr>
-							<td><span class="date">19</span><div class="day"></div></td>
-							<td><span class="date">20</span><div class="day"></div></td>
-							<td><span class="date">21</span><div class="day"></div></td>
-							<td><span class="date">22</span><div class="day"></div></td>
-							<td><span class="date">23</span><div class="day"></div></td>
-							<td class="weekend"><span class="date">24</span><div class="day"></div></td>
-							<td class="weekend"><span class="date">25</span><div class="day"></div></td>
+							<td><span class="date">19</span><div class="day">&nbsp;</div></td>
+							<td><span class="date">20</span><div class="day">&nbsp;</div></td>
+							<td><span class="date">21</span><div class="day">&nbsp;</div></td>
+							<td><span class="date">22</span><div class="day">&nbsp;</div></td>
+							<td><span class="date">23</span><div class="day">&nbsp;</div></td>
+							<td class="weekend"><span class="date">24</span><div class="day">&nbsp;</div></td>
+							<td class="weekend"><span class="date">25</span><div class="day">&nbsp;</div></td>
 							</tr><tr>
-							<td><span class="date">26</span><div class="day"></div></td>
-							<td><span class="date">27</span><div class="day"></div></td>
-							<td><span class="date">28</span><div class="day"></div></td>
-							<td><span class="date">29</span><div class="day"></div></td>
-							<td><span class="date">30</span><div class="day"></div></td>
-							<td class="weekend"><span class="date">31</span><div class="day"></div></td>
-							<td class="weekend next"><span class="date">1</span><div class="day"></div></td>
+							<td><span class="date">26</span><div class="day">&nbsp;</div></td>
+							<td><span class="date">27</span><div class="day">&nbsp;</div></td>
+							<td><span class="date">28</span><div class="day">&nbsp;</div></td>
+							<td><span class="date">29</span><div class="day">&nbsp;</div></td>
+							<td><span class="date">30</span><div class="day">&nbsp;</div></td>
+							<td class="weekend"><span class="date">31</span><div class="day">&nbsp;</div></td>
+							<td class="weekend next"><span class="date">1</span><div class="day">&nbsp;</div></td>
 							</tr>
 							</tbody>
 							</table>			
@@ -420,7 +419,7 @@
 	</div><!-- /#content -->
   <!-- #EndEditable -->
 		
-  <!-- #BeginEditable "custom-footer" -->
+		
 	<div id="footer" class="row">
 		<div class="foot-wrap">
 			<ul id="foot-social">
@@ -466,7 +465,6 @@
 			</p>
 		</div>
   </div><!-- /#footer -->
-    <!-- #EndEditable -->
 		
 			<div class="sticky hidden-lg hidden-md hidden-sm">
 	      <nav class="util-nav">

@@ -1,7 +1,5 @@
 /* _theme.scss */
 
-// TODO: XS mq @ 978px 
-
 // See JS for Windows Phone 8 / IE 10 viewport issues
 @-webkit-viewport{width:device-width}
 @-moz-viewport{width:device-width}
@@ -10,8 +8,10 @@
 @viewport{width:device-width}
 
 
+/*----- Smallest breakpoint ("XS") -------*/
+
 body:after { 
-	content: "XS"; 
+	content: "XS";
 	display: none;
 }
 head {
@@ -39,7 +39,7 @@ head {
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	z-index: 200000;
+	z-index: 20;
 	a {
 		@include line_height(40px);
 		display: block;
@@ -49,17 +49,6 @@ head {
 		text-decoration: none;
 	}
 }
-
-// Temporarily keep for reference ... required for desktop and breaks tablet and mobile
-.container {
-//border: 1px solid red;
-	//padding: 0; // TODO: This adds white margin to right of banner with _banners and _navigation emptied
-	&#main {
-		//padding: 0 !important; // TODO: Breaks fit alignment on mobile
-	}
-}
-
-/* formerly reset-all */
 
 .btn-primary {
  margin-top: 15px;   
@@ -88,6 +77,13 @@ head {
 		.narrow-col {
 			.content-wrap {
 				padding: 15px;
+				ul {
+					@include square-bullet-list();
+					margin: 15px 0 15px 2px;
+					li {
+						padding-bottom: 10px;
+					}
+				}
 			}
 		}
 	}
@@ -96,7 +92,7 @@ head {
 	}
 }
 #top-panel-row {
-	margin-top: 0 !important; // TODO: Where's the top margin coming from (in tablet / iPad only)?
+	margin-top: 0 !important;
 	position: relative;
 	h2, h3, p, li, div {
 		color: #FFF;
@@ -126,7 +122,7 @@ img.left-align {
 	margin-bottom: 1em;
 }
 
-.invisible { // TODO: Use bootstrap class .invisible
+.invisible {
 	visibility: hidden;
 }
 
@@ -146,8 +142,7 @@ button {
 		text-align: center;
 		display: inline;
 		list-style-type: none;
-		padding-right: 50px;	
-		//width:100%; // Warning: This breaks fitting on mobile/iphone
+		padding-right: 50px;
 	}
 	ul {
 		padding-top: 100px;
@@ -169,14 +164,14 @@ button {
 	.foot-wrap {
 		margin: 35px 90px;
 		margin-bottom: 0 !important;
-		//width: 100%; // TODO: Tablet/Mobile right white margin
+		margin-right: auto;
+		margin-left: auto;
 	}
 	
 	.footer-nav, #copyright, #vcard { 
 		float: left;		
 		color: #fff;
 		text-decoration: none;
-		//margin-top: 36px;
 	}
 	#copyright {
 		margin-top: 36px;
@@ -194,7 +189,7 @@ button {
 		width: 140px;		
 		li{
 			padding-left: 10px;
-			padding-bottom: 10px; // was @include line_height(35px); which adds top padding
+			padding-bottom: 10px;
 			a {
 				color: #fff;
 			}
@@ -216,17 +211,14 @@ button {
 	}
 
 	#foot-social {
-		//width: 217px; // TODO: Tablet/Mobile right white margin
 		float: left;
-		//margin-top: 35px;
-		//margin-left: 85px;
 		li {
 			display: inline-block;
 			text-align: center;
 			padding-left: 7px;
 			padding-right: 7px;
 			border-left: 1px solid white;
-			a{
+			a {
 				display: inline-block;
 				height: 24px;
 				width: 24px;
@@ -272,36 +264,51 @@ input {
 	margin-bottom: 45px;
 	position: relative; // for JS positioning of banner-caption on shadow-am pages
 }
-#content, #am-content, #cm-content {
 
-	.breadcrumb {
-		background: none;
-		padding:0 0 !important;
-		margin-bottom: 0;
-		color: $ucd_blue_70;
-		text-transform: uppercase;
-		a {
-			text-decoration: none;
-			&:hover {
-				text-decoration: underline;
-			}
-		}
-		p {
-			margin-bottom: 0;
-		}
-		.bread-divider {
-			@include font_size(15px);
+
+.breadcrumb {
+	background: none;
+	padding:0 0 !important;
+	margin-bottom: 0;
+	color: $ucd_blue_70;
+	text-transform: uppercase;
+	a {
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
 		}
 	}
-	
+	p {
+		margin-bottom: 0;
+	}
+	.bread-divider {
+		@include font_size(15px);
+	}
+}
+
+#top-panel-row {
 	.panel-body {
+		h2 {
+			text-transform: uppercase !important;
+		}
+	}
+}
+
+// TODO: Review specificity
+// #content #am-content
+//#content, #am-content, #cm-content {
+#content #content-core, #content #am-content, #content #cm-content {
+
+	/*.panel-body {
 		h2 {
 			text-transform: uppercase;
 		}
-	}
+	}*/
+
+
 	#bottom-panel-row {
 		h2 {
-			text-transform: none;
+			text-transform: none !important;
 		}
 	}
 
@@ -325,10 +332,6 @@ input {
 	h3, h4 {
 		color: $rec_blue;
 	}
-	
-}
-.event-item {
-
 }
 
 .sb-subitems {
@@ -338,7 +341,8 @@ input {
 }
 .portlet-items, .sb-subitems {
 	#ical-icon, #vcal-icon, #rss-icon {
-		background-image: none;
+		background-image: none !important;
+		padding-left: 0 !important;
 		height: 25px;
 		a {
 			@include font_size(12px);
@@ -364,7 +368,6 @@ input {
 
 .sidebar {
 	height: auto;
-	//width: 250px; // !important; 
 	margin-top: 15px;
 	text-align: left;
 	
@@ -372,7 +375,6 @@ input {
 		margin-left: 70px;
 	}
 	h3 {
-		//height: 30px; // Note: where possible, use _typography.scss line_height specs to determine height
 		
 		a{
 			color: #fff;
@@ -386,15 +388,10 @@ input {
 	.panel-heading {
 		padding: 0;
 		.panel-title {
-			//background-color: $rec_blue;
-			//height: 30px;
 
 			a {
 				display: block; // otherwise padding-left doesn't work where multilined title 
 				background-color: $rec_blue;
-				&:hover {
-					//cursor: text;
-				}
 			}
 		}
 	}
@@ -689,6 +686,7 @@ body.contact-type {
 @media screen and (max-width: $screen-xs-max) { // width < 767 (was $screen-sm-min 768)
 	head { font-family:"S";}
 	body:after{content:"S";}
+	
 	.container {
 		padding: 0; // Pulls mobile navigation to edges but adds right white margin on tablet (portrait) {TODO: Check}
 	}
@@ -907,29 +905,9 @@ body.contact-type {
 		}
 		
 		#content-row {
-			
 			#content {
 				padding-left: 15px !important;
-			}
-			
-			// TEST SECTION: TODO: REMOVE 
-			// 2014-10-11 RAK: content-row and footer have layout that adds a right white margin on mobile/iphone
-			// On footer, removing min-height from an element fixed it
-			// On content-row hiding h1, h3, h4, and .breadcrumb fixes issue ...
-
-			/*
-			#content div {display: none;}
-			h1 {
-				display: none;
-			}
-			h4, .breadcrumb {display: none;}
-			.sidebar {
-				h3 {
-					display: none;
-				}
-			}
-			*/
-			
+			}			
 		}
 		
 		#content-row {
@@ -940,21 +918,10 @@ body.contact-type {
 			}
 		}
 	}
-	
 }
 
 /*----- Mobile breakpoint -------*/ // TODO: Check error on _bootstrap_overrides vis-a-via this breakpoint max
 @media screen and (max-width: $screen-sm-max) { // width < 991px
-	//head { font-family:"S";}
-	//body:after{content:"S";}
- 	
-  /*TODO: Eval and EOL
-	#sidebar-bio-right{
-		float:left;	  		
-		margin-left:0;
-		margin-top:10px;
-		clear:both;
-  }*/
 	
 	.sidebar {	
 		background:transparent;
@@ -1010,8 +977,6 @@ body.contact-type {
 	}
 	.sidebar {
 		&.sidebar-right{	
-			//float:right;
-			//margin-top: 100px;	//TODO: margin-top reveals formatting error
 			margin-top: 0;
 		}
 	}
@@ -1021,7 +986,7 @@ body.contact-type {
 	#footer {	
 		padding-bottom: 5px;
 		.foot-wrap{
-			margin: 25px 10px 25px 25px; // compensation right margin in footer on mobile. TODO: Why?
+			margin: 25px 10px 25px 25px; // compensation right margin on mobile
 			p, ul, div {
 				margin-left: 0;
 				margin-right: 0;
@@ -1068,15 +1033,21 @@ body.contact-type {
 		}
 	}
 		
-	/*
-	#top-bar-wrap, #content-row, #banner-row {
-		padding-left: 105px; // 90 + 15 px
-		padding-right: 105px;
+	// pull in right boxes
+	.top-panel .action-element, .bottom-panel {
+		.narrow-col {
+			width: 88%; // Determines width of "happy box" blue elements
+		}
 	}
-	#util-bar-wrap {
-		padding-right: 105px;
+	
+	// Top margin above home page buttons
+	/* TODO: breaks ipad, adding right margin to banner (see also Tablet breakpoint ("M"))
+	UPDATE: Not having this causes page content to be slightly narrower than the navigation */
+	#top-panel-row, #bottom-panel-row {
+		// with more-content button we need to extend 40 left and right
+		//margin-left: -57px;
+		//margin-right: -57px;
 	}
-	*/
 	.panel-group {
 		.panel-heading {
 			.panel-title {
@@ -1085,7 +1056,7 @@ body.contact-type {
 			}
 		}
 	}	
-	
+		
 	// Panel resets
 	#cm-section { // Important: Specific content selector since we want to keep our sidebar panel styles
 		.panel-group {
@@ -1106,9 +1077,6 @@ body.contact-type {
 	
 	
 	#content, #am-content {
-		> div, > h1 {
-	  	//margin-left: 90px; // TODO: remove since now using .row 15+90=105 applied to content-row
-		}
 		#summary {
 			#jumplinks, #education {
 				width: 50%;
@@ -1117,15 +1085,12 @@ body.contact-type {
 				float: left;
 			}
 		}
-
 	}
 	
 	.top-bar {
 		.top-bar-section {
 			 li {
 				ul { // .dropdown
-					// TODO: Tablet/Mobile right white margin
-					//width: 220px !important;
 					li {
 						a {
 							padding: 25px;
@@ -1139,20 +1104,6 @@ body.contact-type {
 	.panel-heading#content-panel-heading {
 		display:none;
 	}
-	
-	/*
-		.dropdown {
-			 width: 220px !important;
-			 
-			 li {
-				 a {
-					 display: inline-block !important;
-					 border: 1px solid red !important;
-					 padding:25px;
-				 }
-			 }
-		}
-	*/
 	
 	body.contact-type {
 		#content-row {
@@ -1209,116 +1160,37 @@ body.contact-type {
 		margin-right: -15px;
 		margin-left: -15px;
 	}
-}
-
-// Temporary: TODO: Identify and manage breakpoint at 992
-@media screen and (max-width: $screen-md-max) { // < 1999
-	// Remove margins from smaller than 992
-
-	#util-bar-wrap {
-		padding-right: 0;
-	}
-	#top-bar-wrap, #content-row, #banner-row {
-		padding-left: 0; // 90 + 15 px
-		padding-right: 0;
-	}
-	#content, #am-content {
-		> div, > h1 {
-	  	//margin-left: 0;
-		}
-	}
-	.sidebar {
-		&.sidebar-right {
-			> div {
-				margin-left: 0;
-			}
-		}
-	}
-	#footer {
+	
+	.footer-processed#footer {
 		.foot-wrap {
-			#foot-left {
-				margin-left: 0;
-			}
+			width: 1000px;
+			margin-left: auto;
+			margin-right: auto;
 		}
 	}
+	
 }
 
-
-@media screen and (max-width: $screen-lg-min) { // width < 1310
-	#footer {
-		.footer-nav{
-			
-			&#foot-left, &#foot-center {
-				display: none;
-			}
-			&#foot-right {
-				margin-left: 160px !important;
-			}
-		}
-	}
-}
-/*----- Target tablet up to 1310 width on desktop -------*/
-@media screen and (min-width: $screen-sm-min) and (max-width: $screen-lg-min) { // 768 < width < 1310
-	#footer{
-		.foot-wrap{
-			margin:40px;
-		}
-		#vcard{
-			margin-right:25px;		
-		}
-	} 
-}
-
-/*----- Target mobile and tablet -------*/
-@media screen and (max-width: $screen-sm-max) { // width < 991
-
-	#footer {
-		.footer-nav{
-			border-left-width: 0;
-			text-align: center;
-			&#foot-right {
-				margin-left: 0 !important;
-				li {
-					width: 220px;
-					margin: 0 auto !important;
-					border-bottom: 1px solid #FFF;
-				}
-				li:last-child {
-					border-bottom-width: 0;
-				}
-			}
-		}
-		#foot-social {
-			margin-left: 55px !important;
-		}
-	}
-}
-/*------ Desktop breakpoint (L) --------*/
-@media screen and (min-width: $screen-md-min) and (max-width: $screen-lg-min) { // 991 < width < 1200
-	.sidebar {
-		&.sidebar-right {
-			> div {
-				margin-left: 60px;
-			}
-		}
-	}
-}
 
 /*----- Tablet breakpoint ("M") -------*/
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
 	head { font-family:"M";}
 	body:after{content:"M";}
 	
-	#top-panel-row {
-		//border: 1px solid red;
+	/* TODO: breaks ipad, adding right margin (see also > 768 breakpoint)
+	UPDATE: Not having this causes page content to be slightly narrower than the navigation */
+	#top-panel-row, #bottom-panel-row {
+		//margin-left: -31px;
+		//margin-right: -49px;
+	}
+	
+	#more-content-button {
+		left: -12px;
 	}
 	
 	#content-row {
 		margin-left: 0;
 		//margin-right: 0;
-	}
-	#content, #am-content {
-		//padding-right: 0 !important;
 	}
 	
 	// Panel resets
@@ -1359,12 +1231,118 @@ body.contact-type {
 		.footer-nav {
 			li {
 				padding-top: 10px;
+				padding-left: 0;
+			}
+		}
+	}
+	
+	/* Required on tablet to keep footer from breaking (being too wide: foot-wrap width: auto; and not having right white margin: footer-processed: width 100% (783px). Warning: using width 783px instead of 100% leaves right white space on footer in desktop view */
+	.footer-processed {
+		width: 100%; // fix on tablet
+		margin-left: 0 !important; // TODO: fix; right margin has white
+		margin-right: -15px !important; // TODO: Not working
+		
+		.foot-wrap {
+			width: auto !important;
+		}
+	}
+	
+}
+
+
+
+// Temporary: TODO: Identify and manage breakpoint at 1309
+@media screen and (max-width: $screen-md-max) { // < 1309
+	// Remove margins from smaller than 1309
+
+	#util-bar-wrap {
+		padding-right: 0;
+	}
+	#top-bar-wrap, #content-row, #banner-row {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	#content, #am-content {
+		> div, > h1 {
+	  	//margin-left: 0;
+		}
+	}
+	.sidebar {
+		&.sidebar-right {
+			> div {
+				margin-left: 0;
+			}
+		}
+	}
+	#footer {
+		.foot-wrap {
+			#foot-left {
+				margin-left: 0;
 			}
 		}
 	}
 }
 
 
+@media screen and (max-width: $screen-lg-min) { // width < 1310
+	#footer {
+		.footer-nav{
+			
+			&#foot-left, &#foot-center {
+				display: none;
+			}
+			&#foot-right {
+				margin-left: 160px !important;
+			}
+		}
+	}
+}
+/*----- Target tablet up to 1310 width on desktop -------*/
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-lg-min) { // 768 < width < 1310
+	#footer {
+		.foot-wrap {
+			//margin: 40px;
+		}
+		#vcard{
+			margin-right: 25px;		
+		}
+	} 
+}
+
+/*----- Target mobile and tablet -------*/
+@media screen and (max-width: $screen-sm-max) { // width < 991
+
+	#footer {
+		.footer-nav{
+			border-left-width: 0;
+			text-align: center;
+			&#foot-right {
+				margin-left: 0 !important;
+				li {
+					width: 220px;
+					margin: 0 auto !important;
+					border-bottom: 1px solid #FFF;
+				}
+				li:last-child {
+					border-bottom-width: 0;
+				}
+			}
+		}
+		#foot-social {
+			margin-left: 55px !important;
+		}
+	}
+}
+/*------ Desktop breakpoint (L) --------*/
+@media screen and (min-width: $screen-md-min) and (max-width: $screen-lg-min) { // 991 < width < 1200
+	.sidebar {
+		&.sidebar-right {
+			> div {
+				margin-left: 60px;
+			}
+		}
+	}
+}
 
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: $screen-sm-max) { // width > 991 (was $screen-md-min or 992)
@@ -1408,6 +1386,19 @@ body.contact-type {
 	}
 	#util-bar-wrap {
 		padding-right: 105px;
+	}
+	// Top margin above home page buttons
+	#top-panel-row, #bottom-panel-row {
+		// with more-content button we need to extend 40 left and right
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+	.footer-processed#footer { // JS processed element; footer stretching edge to edge
+		.foot-wrap {
+			width: 1104px;
+			margin-left: auto;
+			margin-right: auto;
+		}
 	}
 }
 
