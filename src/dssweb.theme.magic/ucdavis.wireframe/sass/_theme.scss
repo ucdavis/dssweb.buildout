@@ -248,9 +248,15 @@ button {
 }
 
 // Disable iOS rounded corners on input fields and buttons
+// 2014-10-20 RAK: Cannot be applied to checkbox input fields since this
+// then removes the checkbox on Chrome browsers (and android phone)
 input {
-    -webkit-appearance: none;
-    border-radius: 0;
+	
+}
+input[type="search"], input[type="button"] {
+	-moz-appearance: none; // Mozilla / Firefox
+	-webkit-appearance: none; // Chrome / Safari
+	border-radius: 0;
 }
 
 input {
