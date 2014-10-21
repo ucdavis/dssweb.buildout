@@ -253,7 +253,7 @@ button {
 input {
 	
 }
-input[type="search"], input[type="button"] {
+input[type="search"], input[type="submit"], input[type="button"] {
 	-moz-appearance: none; // Mozilla / Firefox
 	-webkit-appearance: none; // Chrome / Safari
 	border-radius: 0;
