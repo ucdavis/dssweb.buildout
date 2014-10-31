@@ -282,9 +282,9 @@
 				$(this).wrap('<figure class="picture-processed" />');
 				if((typeof title !== 'undefined')) {
 					$(this).parent().append("<figcaption>"+title+"</figcaption>");
-				} else if($('.picture .figcaption').length !== 0) {
-					$(this).parent().append("<figcaption>"+$('.picture .figcaption').html()+"</figcaption>");
-					$('.picture .figcaption').remove();
+				} else if($('.picture figcaption').length !== 0) {
+					$(this).parent().append("<figcaption>"+$('.picture figcaption').html()+"</figcaption>");
+					$('.picture figcaption').remove();
 				}
 				
       });
