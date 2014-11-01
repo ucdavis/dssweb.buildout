@@ -4,6 +4,10 @@
 
 /*----- Mobile breakpoint --------*/
 // At point that left and right margins are gone
+i {
+		font-style: italic !important;
+}
+
 @media screen and (max-width: $screen-xs-max) { // width < 767 (was $screen-sm-min 768 but triggers on ipad)
 	// Bio card
 	// Note: Apply negative margins to top items in order to retain padding on remaining text in mobile view

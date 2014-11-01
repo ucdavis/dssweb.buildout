@@ -73,7 +73,7 @@ head {
 	float: right;
 }
 .panel-group {
-	.panel-body {
+	.panel-body { 
 		.narrow-col {
 			.content-wrap {
 				padding: 15px;
@@ -253,7 +253,7 @@ button {
 input {
 	
 }
-input[type="search"], input[type="submit"], input[type="button"] {
+input[type="search"], input[type="button"] {
 	-moz-appearance: none; // Mozilla / Firefox
 	-webkit-appearance: none; // Chrome / Safari
 	border-radius: 0;
@@ -1390,6 +1390,7 @@ body.contact-type {
 		padding-left: 105px; // 90 + 15 px
 		padding-right: 105px;
 	}
+	
 	#util-bar-wrap {
 		padding-right: 105px;
 	}

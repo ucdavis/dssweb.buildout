@@ -138,7 +138,7 @@
 			a{
 				// border-right: 1px solid white; // set to check right margin of dept name graphic
 				display: inline-block;
-				width: 370px;
+				width: 370px; 
 				height: 80px;	
 				padding-left: 0;
 				
@@ -157,9 +157,8 @@
 	// NOTE: To MODIFY POSITION OF PRIMARY MENU ITEMS use the width % below under > li and &#fac-serv-btn
 	// fac-serv-btn is an example for a button title that needs special width.
 	
-	.top-bar-section{
-		height:100%;
-		
+	.top-bar-section {	
+			height: 100%;
 		/* .right {} if we have markup with left drops */
 		
 		.left { // Note: .left and .right Foundation topbar classes which determine the position of menu items with respect to submenu dropdowns
