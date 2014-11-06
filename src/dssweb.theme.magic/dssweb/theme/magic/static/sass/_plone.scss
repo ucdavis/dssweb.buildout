@@ -340,6 +340,9 @@ dl.portlet a:link {
   border-bottom: none;
 }
 /*------Collection Summary View with Images -------*/
+tileItem.visualIEFloatFix {
+padding-top: 3%;
+}
 .tileImage {
 float: left;
 padding-right: 10px;
@@ -348,11 +351,14 @@ padding-top:.6em;
 p.tileBody {
 display: flex;
 }
-p.tileFooter{
-	margin-left:20%;
+p.tileFooter {
+	float:right;
+	padding-right:10%;
 }
 
-
+.visualClear {
+	height:1em;
+}
 /*---Portlets -----*/
 .blockedPortlet .portletBlockedMessage {
     color: white;
