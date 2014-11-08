@@ -130,6 +130,17 @@
 			#jumplinks {
 				#jumplinks-anchors {
 					margin-top: 0;
+					border-right: 1px solid $ucd_blue_70;
+					li {
+						padding-right: 15px !important;
+						padding-bottom: 4px;
+						a {
+							text-decoration: none;
+							&:hover {
+								text-decoration: underline;
+							}
+						}
+					}
 				}
 			}
 		}
@@ -144,14 +155,17 @@
 	}
 	
 	.sidebar-right {
-		margin-top: 45px; // for top placement of bio portrait
+		margin-top: 0 !important; // was 45px for top placement of bio portrait
 		.bio-card {
 			.panel-body {
 
 				.vcard {				
 					position: relative;
+					> div {
+						margin-right: 35px !important;
+					}
 					img.photo {
-						margin-top: 6px;
+						margin-top: 15px;
 						margin-bottom: 25px;
 						margin-left: auto;
 						margin-right: auto;
@@ -163,19 +177,17 @@
 						letter-spacing: 0.05em;
 						font-weight: bold;
 						margin-left: 35px;
+						margin-right: 35px;
 					}
 					.title.org {
-						margin-left: 35px;
-						margin-right: 35px;
 						padding-left: 0;
 						margin-top: 15px;
 						margin-bottom: 25px;
 						p {
 							@include font_size(12px);
-							@include line_height(14px);
+							@include line_height(15px);
 							font-style: italic;
-							margin-bottom: 7px;
-					
+							margin-bottom: 9px !important;
 						}
 					}
 					ul.portlet-items {
@@ -186,6 +198,7 @@
 							float: left;
 							height: 40px;
 							border-left: 1px solid #FFF;
+							background-color: $ucd_blue_10;
 							width: 33.33%;
 							text-align: center;
 							margin-bottom: 0; // override global margins

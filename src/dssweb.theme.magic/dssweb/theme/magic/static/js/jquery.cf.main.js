@@ -295,7 +295,7 @@
 		// Call this ONLY after picture processing
 		if(($('#banner-row').length !== 0) && ($('#banner-row figcaption').length !== 0)) {
 			// Note: figcaption doesn't existing until processed so use approx 25px height
-			var fcmt = $('#banner-row figcaption').height();
+			var fcmt = $('#banner-row figcaption').height() + 6;
 			var mt = ( $('#content-row').css('margin-top').replace('px','') - fcmt);
 			$('#content-row').css('margin-top', mt);
 		}
@@ -395,6 +395,16 @@
 				$('#footer #vcard').insertBefore($('#footer #copyright'));
 				vcardiced = true;
 			}
+			
+			// On T8 templates, move the left nested column to the right sidebar
+			if($('#nested-left').length !== 0) {
+				$('#nested-left').removeClass("col-xs-12 col-sm-12 col-md-4 col-lg-4"); // Note: Update if col defs chnage
+				
+				$('#nested-right').removeClass("col-md-8");
+				$('#nested-right').addClass("col-md-12 bent");
+				
+				$('.sidebar-right').append($('#nested-left'));
+			}
 		};
 		
 		var bendbio = function () {
@@ -412,6 +422,14 @@
 			if(vcardiced) {
 				$('#footer #vcard').insertAfter($('#footer #foot-social'));
 				vcardiced = false;
+			}
+			
+			// On T8 templates, move the left nested column to the right sidebar
+			if($('.sidebar-right #nested-left').length !== 0) {
+				$('#nested-left').addClass("col-xs-12 col-sm-12 col-md-4 col-lg-4");
+				$('#nested-right').removeClass("col-md-12 bent");
+				$('#nested-right').addClass("col-md-8");
+				$('#content-core > .row').append($('#nested-left'));
 			}
 		};
 
@@ -624,7 +642,7 @@
 							$(this).addClass('collapsed');
 						}
 						
-						if($('body.event').length === 0) {
+						if($('body.calendar').length === 0) {
             	$($(this).data("target")).show(); // 2014-10-14 RAK: This trips up "Filter By" on calendar page
 						}
 						var sel = '.in'+$(this).attr('data-target');
@@ -716,12 +734,17 @@
 			var nav_h = ($('#top-bar-wrap').height() + $('#util-bar-wrap').height());
 			if($('.wall').length !== 0) {
 				if(($('body.has-shadow-am').length !== 0) && (activeMQ === "S")) {
-					h = $('.wall.shadow-am-graphic').height();
+					h = $('.shadow-am-graphic').height(); // don't use .wallpaper-image height since not always set at this point
 				} else {
 					h = $('.wall').height() - nav_h;
 				}
 			}
 			return h;
+		}
+		
+		function get_menu_icon() {
+			var menu_icon = $('<span class="menu-icon"><span>&nbsp;</span></span><div class="glyphicon glyphicon-align-justify visible-xs" id="dropdown-icon"></div>');
+			return menu_icon;
 		}
 		
 		/*
@@ -736,7 +759,8 @@
 				}
 				// Height to subtract from position calculation. Assuming only ONE panel on the right (by design)
 				// TODO: Offset is not from inner- or outer height ... so from whence?
-				var offset = 5;
+				// T8 Students (students) = 5, T2 Our people (ourpeople) = 16
+				var offset = ($('body.students').length !== 0) ? 16 : 5; // mobile on desktop needs 5 if we're setting top-panel-row and wallpaper-image to same height
 				var h = ($('#top-panel-row .right-panel .panel-heading').height() + offset);
 				
 				$('#top-panel-row .right-panel').css('padding-top', (hb_element_height-h));
@@ -744,6 +768,11 @@
 			
 			// Set height of the top-panel-row to fill area
 			$('#top-panel-row').height(hb_element_height);
+			
+			/* Set height of wallpaper image to same height ... TODO: Investigate why this became an issue (mobile on desktop browser now has 16 offset too much)
+			if($('.wallpaper-image').length !== 0) {
+				$('.wallpaper-image').height(hb_element_height);
+			}*/
 		}
 		
 		/* 
@@ -780,6 +809,13 @@
 		
 		/* ============================  RUN ONCE ON PAGE LOAD ============================ */
 		
+		// Upholding markup rule to place all page elements within .container but we want to have edge to edge footer so pull it out
+		if($('.container #footer').length !== 0) {
+			$('#footer').insertAfter($('.container'));
+			$('#footer').addClass('footer-processed');
+			$('#footer .foot-wrap').addClass('clearfix');
+		}
+		
 		// Note: The height of the happy box block needs to change with the height of the .wall * banner_hb_ratio
 		var hb_element_height = calc_hb_viewport();
 		
@@ -809,11 +845,12 @@
 				
 			} 
 			
-			// Set vert position of right sidebar
-			if(($('.content-title').length !== 0) && ($('.sidebar-right').length !== 0)) {
+			// Set vert position of right sidebar. Disable on bio pages
+			if(($('.content-title').length !== 0) && ($('.sidebar-right').length !== 0) && ($('body.bio').length === 0)) {
 				var ctpos = $('.content-title').position();
 				var cth = $('.content-title').height();
-				var ctb = ctpos.top + cth + 5; // 5 additional vert offset needed
+				var offset = ($('body.search-result').length !== 0) ? 68 : 15;
+				var ctb = ctpos.top + cth + offset; // 15 additional vert offset needed (was 5)
 				if($('.breadcrumb').length !== 0) {
 					ctb += $('.breadcrumb').height();
 				}
@@ -840,21 +877,26 @@
 			}
 			
 			// PAGES WITH HAS-SHADOW-AM ...
-			// Applies to multiple pages using T2 (tile) or T8 (landing) templates
-			if($('body.has-shadow-am.happy-box #top-panel-row').length !== 0) {
-				if(!hb_element_height) {
-					hb_element_height = shadow_am_viewport_height;
-				}
-				$('#top-panel-row').happybox(
-					{
-						'type': '.panel', // element type to make happy
-						'action_element_class': '.action-element',
-						'canvas_element_class': '.narrow-col',
-						'button_class': ".btn-primary",
-						'height': hb_element_height, // was var shadow_am_viewport_height, total height of the happy viewport
-						'frozen': true
+			
+			if($('body.has-shadow-am').length !== 0) {
+				
+				// Applies to multiple pages using T2 (tile) or T8 (landing) templates
+				if($('body.has-shadow-am.happy-box #top-panel-row').length !== 0) {
+					if(!hb_element_height) {
+						hb_element_height = shadow_am_viewport_height;
 					}
-				);
+					$('#top-panel-row').happybox(
+						{
+							'type': '.panel', // element type to make happy
+							'action_element_class': '.action-element',
+							'canvas_element_class': '.narrow-col',
+							'button_class': ".btn-primary",
+							'height': hb_element_height, // was var shadow_am_viewport_height, total height of the happy viewport
+							'frozen': true
+						}
+					);
+				}
+				
 			}
 			
 			// Adjust content for banner viewport height if no happy-box top-panel-row is present
@@ -887,6 +929,22 @@
 				});
 			} else {
 				refresh_right_panel();
+			}
+			
+			// process mobile calendar ... TODO: Replace with plugin eventually
+			if($('body.calendar').length !== 0) {
+				
+				// Inject menu-icon into "filter by" link
+				$('#left-area h3.menu-icon a').html(get_menu_icon());
+				$('#left-area h3').removeClass('menu-icon');	
+				
+				// Process calendar
+				var eventId = ".fc-event";
+	      $(eventId).each(function () {
+					
+					$(this).parent().parent().addClass("eventful");
+					
+	      });
 			}
 			
 		}

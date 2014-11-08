@@ -26,7 +26,7 @@
       <!-- after css:theme-children="html body" css:content="html head script" / -->
 
 		  <!--Home Page Rules-->
-  		<drop css:theme="#content > div.row > div" if="$home_page" />
+  	<drop css:theme="#content > div.row > div" if="$home_page" />
       <!--drop all the portal footers on the front page -->
       <drop css:content="dd.portlet-footer" if="$home_page" />
       <drop css:content="dd.portletFooter" if="$home_page" />

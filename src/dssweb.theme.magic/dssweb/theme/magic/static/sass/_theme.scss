@@ -1,7 +1,5 @@
 /* _theme.scss */
 
-// TODO: XS mq @ 978px 
-
 // See JS for Windows Phone 8 / IE 10 viewport issues
 @-webkit-viewport{width:device-width}
 @-moz-viewport{width:device-width}
@@ -10,8 +8,10 @@
 @viewport{width:device-width}
 
 
+/*----- Smallest breakpoint ("XS") -------*/
+
 body:after { 
-	content: "XS"; 
+	content: "XS";
 	display: none;
 }
 head {
@@ -39,7 +39,7 @@ head {
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	z-index: 200000;
+	z-index: 20;
 	a {
 		@include line_height(40px);
 		display: block;
@@ -49,17 +49,6 @@ head {
 		text-decoration: none;
 	}
 }
-
-// Temporarily keep for reference ... required for desktop and breaks tablet and mobile
-.container {
-//border: 1px solid red;
-	//padding: 0; // TODO: This adds white margin to right of banner with _banners and _navigation emptied
-	&#main {
-		//padding: 0 !important; // TODO: Breaks fit alignment on mobile
-	}
-}
-
-/* formerly reset-all */
 
 .btn-primary {
  margin-top: 15px;   
@@ -88,6 +77,13 @@ head {
 		.narrow-col {
 			.content-wrap {
 				padding: 15px;
+				ul {
+					@include square-bullet-list();
+					margin: 15px 0 15px 2px;
+					li {
+						padding-bottom: 10px;
+					}
+				}
 			}
 		}
 	}
@@ -96,13 +92,25 @@ head {
 	}
 }
 #top-panel-row {
-	margin-top: 0 !important; // TODO: Where's the top margin coming from (in tablet / iPad only)?
+	margin-top: 0 !important;
 	position: relative;
 	h2, h3, p, li, div {
 		color: #FFF;
 	}
 }
 
+#nested-left { // T8 nested column "Important Dates"
+	padding-left: 0;
+	.picture {
+		width: 200px;
+		margin-bottom: 45px !important;
+	}
+}
+#nested-right {
+	&.bent {
+		padding-left: 0;
+	}
+}
 .body-img {
 	height:120px;
 	width:200px;
@@ -114,7 +122,7 @@ img.left-align {
 	margin-bottom: 1em;
 }
 
-.invisible { // TODO: Use bootstrap class .invisible
+.invisible {
 	visibility: hidden;
 }
 
@@ -122,8 +130,9 @@ button {
 	height: 40px;
 	width: 120px;
 	background-color: $ucd_bright_gold;
+	border: none;
 	&:hover {
-		background-color: $ucd_bright_gold_40;
+		background-color: $ucd_bright_gold_40 !important;
 		cursor: pointer;
 	}
 }
@@ -133,8 +142,7 @@ button {
 		text-align: center;
 		display: inline;
 		list-style-type: none;
-		padding-right: 50px;	
-		//width:100%; // Warning: This breaks fitting on mobile/iphone
+		padding-right: 50px;
 	}
 	ul {
 		padding-top: 100px;
@@ -156,14 +164,14 @@ button {
 	.foot-wrap {
 		margin: 35px 90px;
 		margin-bottom: 0 !important;
-		//width: 100%; // TODO: Tablet/Mobile right white margin
+		margin-right: auto;
+		margin-left: auto;
 	}
 	
 	.footer-nav, #copyright, #vcard { 
 		float: left;		
 		color: #fff;
 		text-decoration: none;
-		//margin-top: 36px;
 	}
 	#copyright {
 		margin-top: 36px;
@@ -181,7 +189,7 @@ button {
 		width: 140px;		
 		li{
 			padding-left: 10px;
-			padding-bottom: 10px; // was @include line_height(35px); which adds top padding
+			padding-bottom: 10px;
 			a {
 				color: #fff;
 			}
@@ -196,23 +204,21 @@ button {
 		line-height: 1.4em;
 		//font-family: lucida;
 		a, p {
+			@include font_size(13px);
 			color: #fff;
 			letter-spacing: .014em;
 		}
 	}
 
 	#foot-social {
-		//width: 217px; // TODO: Tablet/Mobile right white margin
 		float: left;
-		//margin-top: 35px;
-		//margin-left: 85px;
 		li {
 			display: inline-block;
 			text-align: center;
 			padding-left: 7px;
 			padding-right: 7px;
 			border-left: 1px solid white;
-			a{
+			a {
 				display: inline-block;
 				height: 24px;
 				width: 24px;
@@ -242,9 +248,15 @@ button {
 }
 
 // Disable iOS rounded corners on input fields and buttons
+// 2014-10-20 RAK: Cannot be applied to checkbox input fields since this
+// then removes the checkbox on Chrome browsers (and android phone)
 input {
-    -webkit-appearance: none;
-    border-radius: 0;
+	
+}
+input[type="search"], input[type="submit"], input[type="button"] {
+	-moz-appearance: none; // Mozilla / Firefox
+	-webkit-appearance: none; // Chrome / Safari
+	border-radius: 0;
 }
 
 input {
@@ -256,37 +268,53 @@ input {
 
 #content-row {
 	margin-bottom: 45px;
+	position: relative; // for JS positioning of banner-caption on shadow-am pages
 }
-#content, #am-content, #cm-content {
 
-	.breadcrumb {
-		background: none;
-		padding:0 0 !important;
-		margin-bottom: 0;
-		color: $ucd_blue_70;
-		text-transform: uppercase;
-		a {
-			text-decoration: none;
-			&:hover {
-				text-decoration: underline;
-			}
-		}
-		p {
-			margin-bottom: 0;
-		}
-		.bread-divider {
-			@include font_size(15px);
+
+.breadcrumb {
+	background: none;
+	padding:0 0 !important;
+	margin-bottom: 0;
+	color: $ucd_blue_70;
+	text-transform: uppercase;
+	a {
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
 		}
 	}
-	
+	p {
+		margin-bottom: 0;
+	}
+	.bread-divider {
+		@include font_size(15px);
+	}
+}
+
+#top-panel-row {
 	.panel-body {
+		h2 {
+			text-transform: uppercase !important;
+		}
+	}
+}
+
+// TODO: Review specificity
+// #content #am-content
+//#content, #am-content, #cm-content {
+#content #content-core, #content #am-content, #content #cm-content {
+
+	/*.panel-body {
 		h2 {
 			text-transform: uppercase;
 		}
-	}
+	}*/
+
+
 	#bottom-panel-row {
 		h2 {
-			text-transform: none;
+			text-transform: none !important;
 		}
 	}
 
@@ -305,17 +333,47 @@ input {
 	
 }
 
-
-
+/* Global event items */
 .student-events {
 	h3, h4 {
 		color: $rec_blue;
 	}
-	
 }
+
+.sb-subitems {
+	li {
+		list-style-type: none;
+	}
+}
+.portlet-items, .sb-subitems {
+	#ical-icon, #vcal-icon, #rss-icon {
+		background-image: none !important;
+		padding-left: 0 !important;
+		height: 25px;
+		a {
+			@include font_size(12px);
+			@include line_height(25px);
+			display: inline-block;
+			
+			width: 120px;
+			height: 25px;
+			padding-left: 20px;
+			background: url(../images/icons/m-ical-icon.png) 0 50% no-repeat;
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	#rss-icon {
+		a {
+			background: url(../images/icons/m-RSS-icon.png) 0 50% no-repeat;
+		}
+	}
+}
+
 .sidebar {
 	height: auto;
-	//width: 250px; // !important; 
 	margin-top: 15px;
 	text-align: left;
 	
@@ -323,27 +381,23 @@ input {
 		margin-left: 70px;
 	}
 	h3 {
-		//height: 30px; // Note: where possible, use _typography.scss line_height specs to determine height
+		
 		a{
 			color: #fff;
 			padding-left: 35px; // was 38px
 			padding-right: 30px;
 			position: relative;
-			top: 4px;
+			top: 2px;
 		}
 	}
 
 	.panel-heading {
 		padding: 0;
 		.panel-title {
-			//background-color: $rec_blue;
-			//height: 30px;
+
 			a {
 				display: block; // otherwise padding-left doesn't work where multilined title 
 				background-color: $rec_blue;
-				&:hover {
-					//cursor: text;
-				}
 			}
 		}
 	}
@@ -433,13 +487,16 @@ input {
 		margin-right: 0 !important;
 }
 
-
+h2 + #thumb-section {
+	margin: 0;
+	padding: 0;
+}
 // Panel resets
 #thumb-section { // Important: Specific content selector since we want to keep our sidebar panel styles
 	.panel-group {
 		
 		section {
-			margin-bottom: 10px;
+			margin-bottom: 0; // was 10px
 			
 			.collapsible.in { // add bottom margin when sections expanded
 				//margin-bottom: 50px; // this margin creates an unacceptable jump when panel is opened
@@ -448,10 +505,11 @@ input {
 				display: block;
 				margin-top: 25px;
 				margin-bottom: 40px;
+				text-transform: uppercase;
 			}
 			ul {
 				li {
-					margin-bottom: 20px;
+					margin-bottom: 8px;
 				}
 			}
 			.panel-heading {
@@ -472,9 +530,9 @@ input {
 						img {
 							float: left;
 						}
-						background: url(../images/icons/blue-100-right-arrow-down.png) 98% 50% no-repeat $ucd_bright_gold_40;
+						background: url(../images/icons/blue-100-right-arrow-down.png) 96% 50% no-repeat $ucd_bright_gold_40;
 						&.collapsed {
-							background: url(../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat $ucd_bright_gold;
+							background: url(../images/icons/blue-100-right-arrow.png) 96% 50% no-repeat $ucd_bright_gold;
 						}
 				
 						&:hover {
@@ -486,8 +544,12 @@ input {
 			}
 			.panel-body {
 				//border-top-width: 0 !important;
-				margin-top: 25px;
+				margin-top: 20px;
 				margin-left: 150px;
+				margin-right: 25px;
+				.readmore a {
+					text-transform: uppercase;
+				}
 			}
 		}
 	}	
@@ -519,6 +581,7 @@ input {
 			width: 120px;
 			background-color: $ucd_bright_gold;
 			text-align: center;
+			border: none;
 			&:hover {
 				background-color: $ucd_bright_gold_40;
 				cursor: pointer;
@@ -537,9 +600,13 @@ body.contact-type {
 	}
 }
 
+// col-left and col-right used for T14 template (search results) where left image assignment to sections is necessary
 .col-left {
-	margin-top: 45px;
-	text-align: right; 
+	margin-top: 15px;
+	text-align: right;
+	img {
+		width: 100%;
+	}
 }
 .col-right {
 	margin-top: 40px;
@@ -573,6 +640,43 @@ body.contact-type {
 	padding-bottom: 10px !important;
 }
 
+#content-row {
+	margin-top: 45px;
+	section {
+		margin-bottom: 25px;
+		h2 { font-weight: normal;}
+		p { }
+	
+		.course-portlet {
+			//border: 1px solid #CCC;
+			position: relative;
+			margin-bottom: 45px;
+			.course-info {
+				width: 60%;
+
+				h3 {
+					padding-bottom: 0 !important;
+					a {
+						text-decoration: none;
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
+				p {}
+			}
+			button {
+				position: absolute;
+				right: 0;
+				top: 45px;
+				height: 40px;
+				width: 120px;
+				background-color: $ucd_bright_gold;
+			}
+		}
+	}
+}
+
 /*------ All Media Queries ----------*/
 
 
@@ -588,10 +692,21 @@ body.contact-type {
 @media screen and (max-width: $screen-xs-max) { // width < 767 (was $screen-sm-min 768)
 	head { font-family:"S";}
 	body:after{content:"S";}
+	
 	.container {
 		padding: 0; // Pulls mobile navigation to edges but adds right white margin on tablet (portrait) {TODO: Check}
 	}
 	
+	// Undo stretch on search result col-left images
+	.col-left {
+		padding-left: 0 !important;
+		img {
+			width: auto !important;
+		}
+	}
+	#google-map { // draggable map on mobile doesn't allow scrolling to bottom of page, so minimize it
+		width: 82%;
+	}
 	.row#banner-row {
 		margin-left: 0 !important;
 		margin-right: 0 !important;
@@ -647,7 +762,6 @@ body.contact-type {
 	.panel-heading {
 		padding: 0;
 		.panel-title {
-			//min-height: 40px;
 			width: auto; // undo general 250 width
 			padding-top: 0 !important;
 			padding-bottom: 0 !important;
@@ -655,8 +769,8 @@ body.contact-type {
 				display: inline-block;
 				width: 100%; //TODO: margin-top reveals formatting error
 				min-height: 40px;
-				
-				padding-right: 20px;
+				font-weight: normal;
+				padding-right: 0;
 				padding-left: 20px !important;
 				
 				@include font_size(16px);
@@ -723,7 +837,7 @@ body.contact-type {
 					float: left;
 					width: 75%;
 					h3 {
-						padding: 0;
+						padding: 0 !important;
 					}
 				}
 				button {
@@ -745,47 +859,51 @@ body.contact-type {
 		}
 	}
 	
-	// Panel resets
-	#thumb-section { // Important: Specific content selector since we want to keep our sidebar panel styles
-		.panel-group {
-			section {
-				.readmore {
-					display: block;
-					margin-top: 8px;
-					margin-bottom: 15px;
-				}
-				ul {
-					li {
-						margin-bottom: 20px;
+	// TODO: Remove cm-content selector when not needed for overriding ...
+	#cm-content {
+		// Panel resets
+		#thumb-section { // Important: Specific content selector since we want to keep our sidebar panel styles
+			.panel-group {
+				section {
+					.readmore {
+						display: block;
+						margin-top: 8px;
+						margin-bottom: 15px;
 					}
-				}
-				.panel-heading {
-					.panel-title {
-						a {
-							height: 15px;
-							.thumb-txt {
-								margin-left: 0;
+					ul {
+						li {
+							margin-bottom: 20px;
+						}
+					}
+					.panel-heading {
+						.panel-title {
+							a {
+								height: 15px;
+								margin-bottom: 5px;
+								background-position: 98% 50% !important; // move right arrow back to 98%
+								padding-top: 0 !important;
+								.thumb-txt {
+									margin-left: 0;
+								}
+								@include font_size(16px,!important);
+								font-weight: bold;
 							}
 						}
 					}
-				}
-				.panel-body {
-					margin-top: 0;
-					margin-left: 0;
-					padding: 0 !important;
-					img.thumb { // Note: We're replacing the smaller thumb with the larger image in mobile via javascript. We initially load the smaller T6-autism.jpg and then look for m-T6-autism.jpg to load in mobile
-						width: 280px;
-						//height: 160px;
-						display: block;
-						margin-left: auto;
-						margin-right: auto;
-						margin-bottom: 15px;
+					.panel-body {
+						margin-top: 0;
+						margin-left: 0;
+						padding: 0 !important;
+						img.thumb { // Note: We're replacing the smaller thumb with the larger image in mobile via javascript. We initially load the smaller T6-autism.jpg and then look for m-T6-autism.jpg to load in mobile
+							width: 280px;
+							display: block;
+							margin: 15px auto;
+						}
 					}
 				}
-			}
-		}	
+			}	
+		}
 	}
-	
 	#main-container {
 		
 		#banner-row {
@@ -793,29 +911,9 @@ body.contact-type {
 		}
 		
 		#content-row {
-			
 			#content {
 				padding-left: 15px !important;
-			}
-			
-			// TEST SECTION: TODO: REMOVE 
-			// 2014-10-11 RAK: content-row and footer have layout that adds a right white margin on mobile/iphone
-			// On footer, removing min-height from an element fixed it
-			// On content-row hiding h1, h3, h4, and .breadcrumb fixes issue ...
-
-			/*
-			#content div {display: none;}
-			h1 {
-				display: none;
-			}
-			h4, .breadcrumb {display: none;}
-			.sidebar {
-				h3 {
-					display: none;
-				}
-			}
-			*/
-			
+			}			
 		}
 		
 		#content-row {
@@ -826,21 +924,10 @@ body.contact-type {
 			}
 		}
 	}
-	
 }
 
 /*----- Mobile breakpoint -------*/ // TODO: Check error on _bootstrap_overrides vis-a-via this breakpoint max
 @media screen and (max-width: $screen-sm-max) { // width < 991px
-	//head { font-family:"S";}
-	//body:after{content:"S";}
- 	
-  /*TODO: Eval and EOL
-	#sidebar-bio-right{
-		float:left;	  		
-		margin-left:0;
-		margin-top:10px;
-		clear:both;
-  }*/
 	
 	.sidebar {	
 		background:transparent;
@@ -896,8 +983,6 @@ body.contact-type {
 	}
 	.sidebar {
 		&.sidebar-right{	
-			//float:right;
-			//margin-top: 100px;	//TODO: margin-top reveals formatting error
 			margin-top: 0;
 		}
 	}
@@ -907,7 +992,7 @@ body.contact-type {
 	#footer {	
 		padding-bottom: 5px;
 		.foot-wrap{
-			margin: 25px 10px 25px 25px; // compensation right margin in footer on mobile. TODO: Why?
+			margin: 25px 10px 25px 25px; // compensation right margin on mobile
 			p, ul, div {
 				margin-left: 0;
 				margin-right: 0;
@@ -932,6 +1017,13 @@ body.contact-type {
 
 
 @media screen and (min-width: $screen-sm-min) { // width > 768px
+	
+	body.contact-type {
+		h1 {
+			padding-bottom: 5px;
+		}
+	}
+	
 	// pull content left on larger screens so flush left with top-bar
 	
 	#content, #am-content {
@@ -939,24 +1031,38 @@ body.contact-type {
 		margin-bottom: 30px;
 	}
 	
-	/*
-	#top-bar-wrap, #content-row, #banner-row {
-		padding-left: 105px; // 90 + 15 px
-		padding-right: 105px;
+	#content, #am-content, #cm-content {
+		.panel-body {
+			h2 {
+				text-transform: none;
+			}
+		}
 	}
-	#util-bar-wrap {
-		padding-right: 105px;
+		
+	// pull in right boxes
+	.top-panel .action-element, .bottom-panel {
+		.narrow-col {
+			width: 88%; // Determines width of "happy box" blue elements
+		}
 	}
-	*/
+	
+	// Top margin above home page buttons
+	/* TODO: breaks ipad, adding right margin to banner (see also Tablet breakpoint ("M"))
+	UPDATE: Not having this causes page content to be slightly narrower than the navigation */
+	#top-panel-row, #bottom-panel-row {
+		// with more-content button we need to extend 40 left and right
+		//margin-left: -57px;
+		//margin-right: -57px;
+	}
 	.panel-group {
 		.panel-heading {
 			.panel-title {
-				padding-top: 8px;
+				padding-top: 6px;
 				padding-bottom: 10px;
 			}
 		}
 	}	
-	
+		
 	// Panel resets
 	#cm-section { // Important: Specific content selector since we want to keep our sidebar panel styles
 		.panel-group {
@@ -975,40 +1081,8 @@ body.contact-type {
 		}	
 	}
 	
-
-	
-	#content-row {
-		margin-top: 45px;
-		section {
-			margin-bottom: 25px;
-			h2 { font-weight: normal;}
-			p { }
-		
-			.course-portlet {
-				//border: 1px solid #CCC;
-				position: relative;
-				margin-bottom: 45px;
-				.course-info {
-					width: 60%;
-					h3 {}
-					p {}
-				}
-				button {
-					position: absolute;
-					right: 0;
-					bottom: 0;
-					height: 40px;
-					width: 120px;
-					background-color: $ucd_bright_gold;
-				}
-			}
-		}
-	}
 	
 	#content, #am-content {
-		> div, > h1 {
-	  	//margin-left: 90px; // TODO: remove since now using .row 15+90=105 applied to content-row
-		}
 		#summary {
 			#jumplinks, #education {
 				width: 50%;
@@ -1017,15 +1091,12 @@ body.contact-type {
 				float: left;
 			}
 		}
-
 	}
 	
 	.top-bar {
 		.top-bar-section {
 			 li {
 				ul { // .dropdown
-					// TODO: Tablet/Mobile right white margin
-					//width: 220px !important;
 					li {
 						a {
 							padding: 25px;
@@ -1039,20 +1110,6 @@ body.contact-type {
 	.panel-heading#content-panel-heading {
 		display:none;
 	}
-	
-	/*
-		.dropdown {
-			 width: 220px !important;
-			 
-			 li {
-				 a {
-					 display: inline-block !important;
-					 border: 1px solid red !important;
-					 padding:25px;
-				 }
-			 }
-		}
-	*/
 	
 	body.contact-type {
 		#content-row {
@@ -1093,6 +1150,7 @@ body.contact-type {
 	.sidebar{
 		.panel-heading{
 			.panel-title {
+				padding-bottom: 6px !important;
 				background-color: $rec_blue;
 				//height: 30px; // need to accommodate multiline headings
 			}
@@ -1103,17 +1161,111 @@ body.contact-type {
 		padding-right:0 !important;
 		//margin-top: 145px; // ad-hoc ... set position of sidebar in javascript
 	}
+	
+	.row#footer {
+		margin-right: -15px;
+		margin-left: -15px;
+	}
+	
+	.footer-processed#footer {
+		.foot-wrap {
+			width: 1000px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+	
 }
 
-// Temporary: TODO: Identify and manage breakpoint at 992
-@media screen and (max-width: $screen-md-max) { // < 1999
-	// Remove margins from smaller than 992
+
+/*----- Tablet breakpoint ("M") -------*/
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
+	head { font-family:"M";}
+	body:after{content:"M";}
+	
+	/* TODO: breaks ipad, adding right margin (see also > 768 breakpoint)
+	UPDATE: Not having this causes page content to be slightly narrower than the navigation */
+	#top-panel-row, #bottom-panel-row {
+		//margin-left: -31px;
+		//margin-right: -49px;
+	}
+	
+	#more-content-button {
+		left: -12px;
+	}
+	
+	#content-row {
+		margin-left: 0;
+		//margin-right: 0;
+	}
+	
+	// Panel resets
+	#thumb-section { // Important: Specific content selector since we want to keep our sidebar panel styles
+		.panel-group {
+			section {
+				.readmore {
+					display: block;
+					margin-top: 8px;
+					margin-bottom: 15px;
+				}
+				ul {
+					li {
+						margin-bottom: 20px;
+					}
+				}
+				.panel-heading {
+					.panel-title {
+						a {
+							height: 45px;
+							.thumb-txt {
+								margin-left: 90px;
+							}
+							img {
+								height: 45px;
+							}
+						}
+					}
+				}
+				.panel-body {
+					margin-left: 90px;
+				}
+			}
+		}	
+	}
+	
+	#footer {
+		.footer-nav {
+			li {
+				padding-top: 10px;
+				padding-left: 0;
+			}
+		}
+	}
+	
+	/* Required on tablet to keep footer from breaking (being too wide: foot-wrap width: auto; and not having right white margin: footer-processed: width 100% (783px). Warning: using width 783px instead of 100% leaves right white space on footer in desktop view */
+	.footer-processed {
+		width: 100%; // fix on tablet
+		margin-left: 0 !important; // TODO: fix; right margin has white
+		margin-right: -15px !important; // TODO: Not working
+		
+		.foot-wrap {
+			width: auto !important;
+		}
+	}
+	
+}
+
+
+
+// Temporary: TODO: Identify and manage breakpoint at 1309
+@media screen and (max-width: $screen-md-max) { // < 1309
+	// Remove margins from smaller than 1309
 
 	#util-bar-wrap {
 		padding-right: 0;
 	}
 	#top-bar-wrap, #content-row, #banner-row {
-		padding-left: 0; // 90 + 15 px
+		padding-left: 0;
 		padding-right: 0;
 	}
 	#content, #am-content {
@@ -1153,12 +1305,12 @@ body.contact-type {
 }
 /*----- Target tablet up to 1310 width on desktop -------*/
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-lg-min) { // 768 < width < 1310
-	#footer{
-		.foot-wrap{
-			margin:40px;
+	#footer {
+		.foot-wrap {
+			//margin: 40px;
 		}
 		#vcard{
-			margin-right:25px;		
+			margin-right: 25px;		
 		}
 	} 
 }
@@ -1198,57 +1350,6 @@ body.contact-type {
 	}
 }
 
-/*----- Tablet breakpoint ("M") -------*/
-@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
-	head { font-family:"M";}
-	body:after{content:"M";}
-	
-	#top-panel-row {
-		//border: 1px solid red;
-	}
-	
-	#content, #am-content {
-		//padding-right: 0 !important;
-	}
-	
-	// Panel resets
-	#thumb-section { // Important: Specific content selector since we want to keep our sidebar panel styles
-		.panel-group {
-			section {
-				.readmore {
-					display: block;
-					margin-top: 8px;
-					margin-bottom: 15px;
-				}
-				ul {
-					li {
-						margin-bottom: 20px;
-					}
-				}
-				.panel-heading {
-					.panel-title {
-						a {
-							height: 45px;
-							.thumb-txt {
-								margin-left: 90px;
-							}
-							img {
-								height: 45px;
-							}
-						}
-					}
-				}
-				.panel-body {
-					margin-left: 90px;
-				}
-			}
-		}	
-	}
-	
-}
-
-
-
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: $screen-sm-max) { // width > 991 (was $screen-md-min or 992)
 	head { font-family:"L";}
@@ -1278,19 +1379,32 @@ body.contact-type {
 	
 	.sidebar {
 		> div {
-			margin-left: 92px;
+			margin-left: 92px; // 77px gives tighter gutter between main content and right sidebar but creates larger sidebar width that does not work well with widths on the T6 template pages
 		}
 	}
 }
 
 /*----- Large Desktop breakpoint -------*/
 @media screen and (min-width: $screen-lg-min) { // width > 1310
-	#top-bar-wrap, #content-row, #banner-row {
+	#top-bar-wrap, #content-row, #banner-row, .row#banner-caption {
 		padding-left: 105px; // 90 + 15 px
 		padding-right: 105px;
 	}
 	#util-bar-wrap {
 		padding-right: 105px;
+	}
+	// Top margin above home page buttons
+	#top-panel-row, #bottom-panel-row {
+		// with more-content button we need to extend 40 left and right
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+	.footer-processed#footer { // JS processed element; footer stretching edge to edge
+		.foot-wrap {
+			width: 1104px;
+			margin-left: auto;
+			margin-right: auto;
+		}
 	}
 }
 

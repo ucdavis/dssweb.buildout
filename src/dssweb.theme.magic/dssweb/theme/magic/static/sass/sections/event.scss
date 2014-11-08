@@ -4,116 +4,21 @@
 @import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
 
 /* event.scss */
-#calendar{
-	padding: 0;
-	
-	#month {
-		border-collapse: collapse;
-		margin-bottom: 70px;
-		
-		td {
-			border: 1px solid $ucd_blue_10;
-		}
-		th {
-			font: 1em bold Arial, Helvetica, sans-serif;
-			height: 30px;
-			width: 125px;
-			padding-top: 5px;
-			border-left: 1px solid #fff;
-		}
-		.first {
-			border-left: none !important;
-		}
-	 thead {
-			background-color: $rec_blue;
-			color: #fff;
-		}
 
-	 td {
-			max-width: 125px;
-			height: auto;
-			
-			vertical-align: top;
-			
-			padding: .2em;
-			.day {
-				max-width: 7em;
-				min-height: 120px;
-				margin-top: 30px;
-				a {
-					text-decoration: none;
-				}
-				.fc-event {				
-					.fc-event-inner {
-						color: $ucd_blue_80;					
-						margin: 3px 3px 5px 3px;
-						padding: 10px;
-						background-color: $ucd_blue_10;
-						font-size: 11px;
-						.subjects {						
-							.subject-box {
-								margin-bottom: 5px;
-								margin: 0px;							
-							}
-						}
-					}
-				}
-			}
-			.date {
-				float: right;
-				padding-right: 10px;
-			}
-		}
-	}
-
-	.previous, .next {
-		.date {
-			color: $ucd_black_30;
-		}
-	}
-
-	.rtop {
-		display: block;
-		background: #060;
-	}
-
-	.rtop * {
-		display: block;
-		height: 1px;
-		overflow: hidden;
-		background: #fff;
-	}
-
-	.r1 {
-		margin:0 0 0 5px;
-	}
-
-	.r2 {
-		margin:0 0 0 3px;
-	}
-
-	.r3 {
-		margin: 0 0 0 2px;
-	}
-
-	.r4 {
-		height: 2px;
-		margin: 0 0 0 1px;
-	}
-
-	#container h1 {
-		font: 2em Arial, Helvetica, sans-serif;
-		color: #060;
-		margin: 0 0 .5em .5em;
-	}
-
-	#month th {
-	font: 1em bold Arial, Helvetica, sans-serif;
+#event-cta {
+	background-color: transparent;
+	.portlet-items {
+		margin-top: 0;
 	}
 }
-p {
-margin-top:0;
+
+#accordion-e {
+	> div {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
+
 .rows {
 	border-top: 5px solid $rec_blue;
 	&.zebra {
@@ -125,155 +30,22 @@ margin-top:0;
 		}
 
 		.row {
+			> div:first-child {
+				padding-top: 9px;
+			}
 			> div:last-child {
 				padding-top: 16px;
 			}
 		}
-
-	}
-}
-
-#month-pager {
-	float: left;
-	padding-top: 5px;
-	.pager-string {
-		margin-left: 10px;
-		margin-right: 10px;
-		font-size: 24px;
-	}
-}
-#view-filter {
-	text-align: right;
-	padding-top: 6px;
-	.vf-selector {
-		background-color: $ucd_blue_10;
-		width: 80px;
-		height: 25px;
-		padding-right: 2px;
-		a {
-			text-decoration: none;
-			padding: 5px 20px 5px 20px;
+		
+		h3 {
+			font-weight: normal !important;
 		}
 	}
-	.selected {
-		background-color: $ucd_blue_80;
-		a {
-			color: #fff; 
-		}
-	} 
-}
-.sidebar-left {
-	top: 135px;
-	#subject-all {
-		margin-top: 25px;
-		margin-bottom: 20px;
-		a {		
-			text-decoration: none;
-		}
-	}
-
-	.checkForm {
-		input {
-			height: 20px;
-			width: 20px;
-			margin-bottom: 5px;
-			margin-top: 0px;
-		}
-		label {
-			position: absolute;
-			font-size: 13px;
-		}
-	}
-	.sb-subitems {
-		text-size: 13px;
-		a {
-			text-decoration: none;
-			color: $ucd_blue_80;			
-		}
-	}
-}
-#event-cta {
-	background-color: transparent;
-
-	.portlet-items {
-		#ical-icon, #vcal-icon, #rss-icon {
-			background-image: none;
-			height: 25px;
-			a {
-				@include font_size(12px);
-				@include line_height(25px);
-				display: inline-block;
-				
-				width: 120px;
-				height: 25px;
-				padding-left: 20px;
-				background: url(../../images/icons/m-ical-icon.png) 0 50% no-repeat;
-				text-decoration: none;
-				&:hover {
-					text-decoration: underline;
-				}
-			}
-		}
-		#rss-icon {
-			a {
-				background: url(../../images/icons/m-RSS-icon.png) 0 50% no-repeat;
-			}
-		}
-	}
-}
-.color-box {
-		width: 10px;
-		height: 10px;
-		display: inline-block;
-		margin-right: 5px;
-		margin-left: 10px;
-}
-
-.widget-fieldset {
 	
-	#criterion-subject-econometrics {
-		.color-box {
-			background-color: $evergreen;
-		}
-	}
-	#criterion-subject-economic-history {
-		.color-box {
-			background-color: $west_redbud;
-		}
-	}
-	#criterion-subject-energy-environmental-economics {
-		.color-box {
-			background-color: $cal_popp;
-		}
-	}
-	#criterion-subject-international-economics {
-		.color-box {
-			background-color: $gold_lup;
-		}
-	}
-	#criterion-subject-macroeconomics {
-		.color-box {
-			background-color: $sun_grass;
-		}
-	}
-	#criterion-subject-public-finance-labor {
-		.color-box {
-			background-color: $sky_blue;
-		}
-	}
-	#criterion-subject-theory {
-		.color-box {
-			background-color: $wine_grape;
-		}
-	}
 }
-
-
-#accordion-e {
-	> div {
-		padding-left: 0;
-		padding-right: 0;
-	}
+#content-row {
+	margin-top: 35px;
 }
 
 /*----- Tablet breakpoint -------*/
@@ -355,9 +127,5 @@ margin-top:0;
 	}
 }
 
-@media screen and (max-width: $screen-lg-min) { // width > 1310px
-	#month{
-		width: 100%;
-	}
-}
+
 /* /event.scss */

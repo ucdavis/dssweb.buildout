@@ -50,12 +50,12 @@
 	/* Style adjustments for the wall banners */
 	body.home {
 		.wall {
-			height: 540px !important; // override banner height e.g., 540px (short), 650px (default, medium), 720px (tall)
+
+			height: 720px !important; // override banner height e.g., 540px (short), 650px (default, medium), 720px (tall)
+
 		}
 	}
 }
-
-
 
 /*----- IRREGULAR STYLE TARGETS -------*/
 
@@ -75,7 +75,8 @@
 }
 
 
-/*----- Use this section to quickly test layout issues ... -------*/
+/*----- Use this section to quickly test layout elements ... -------*/
+
 
 /*
 .wall {
