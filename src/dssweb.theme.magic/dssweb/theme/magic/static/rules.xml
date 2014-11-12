@@ -66,8 +66,9 @@
             css:theme="#uti-logo > a" />
 
       <!-- desktop menu bar -->
-      <after css:content="#portal-globalnav" css:theme=".top-bar ul.title-area" />
-	  <drop theme='//*[@id="uti-share"]' />
+	  
+      <!-- Disabled Mega <after css:content="#portal-globalnav" css:theme=".top-bar ul.title-area" />
+	  <drop theme='//*[@id="uti-share"]' /> -->
 
       <!-- mobile menu bar -->
       <replace css:theme-children="ul.left" css:content-children="#portal-globalnav" />

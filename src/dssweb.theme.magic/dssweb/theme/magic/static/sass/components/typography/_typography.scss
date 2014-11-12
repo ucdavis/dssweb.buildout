@@ -105,6 +105,9 @@ p {
 		//@include line_height(24px);
 		letter-spacing: .03em;		
 	}
+	.h2 {@include font_size(18px);
+		//@include line_height(24px);
+		letter-spacing: .03em;}
 	h3 {
 		@include font_size(15px);
 		@include line_height(18px);
