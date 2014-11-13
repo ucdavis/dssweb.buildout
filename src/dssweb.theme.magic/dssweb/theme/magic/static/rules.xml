@@ -138,10 +138,12 @@
 
     	<!-- Content-core-T4 -->
     	<replace css:theme-children=".panel-body" css:content="#content-core" if-not="$home_page" />
+        <before css:theme="#content-core"
+                css:content=".newsImageContainer" css:if-content="body.portaltype-document"/>
 
     	<!-- Basic Right Portlet -->
     	<replace css:theme-children=".sidebar-right" css:content=".portlet" />
-
+        
     	<!-- Events Page -->
       <rules css:if-content="body.portaltype-event">
         <replace theme='//*[@id="content"]/h1'
