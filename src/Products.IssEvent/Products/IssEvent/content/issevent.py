@@ -12,23 +12,22 @@ from Products.ATContentTypes.content import event
 
 from Products.IssEvent.interfaces import IIssEvent
 from Products.IssEvent.config import PROJECTNAME
-from Products.ATExtensions import ateapi
-from Products.ATExtensions.widget import *
+from Products.ATExtensions.ateapi import *
+
 
 IssEventSchema = event.ATEventSchema.copy() + atapi.Schema((
 
     atapi.StringField(
             name='eventroom',
-            widget = ateapi.ComboWidget(
-            label=u"Event Room",
+            widget = ComboWidget(
+        
             description=u"Please choose from the list or enter a room number",
         ),
         vocabulary=["220","1400","3711"]
     ),
     atapi.StringField(
         name='building',
-        widget = ateapi.ComboWidget(
-            label=u"Building Name",
+        widget = ComboWidget(
             description=u"Choose the building for the event location",
         ),
         vocabulary=["SSH","Kerr","Mrak"]
