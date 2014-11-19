@@ -36,7 +36,7 @@ tests_require = ['zope.testing']
 
 setup(name='Products.IssEvent',
       version=version,
-      description="Event Type for ISS",
+      description="Event Type for DSS",
       long_description=long_description,
       # Get more strings from
       # http://pypi.python.org/pypi?:action=list_classifiers
@@ -55,7 +55,7 @@ setup(name='Products.IssEvent',
       include_package_data=True,
       zip_safe=False,
       install_requires=['setuptools',
-                        # -*- Extra requirements: -*-
+                        'Products.ATExtensions',
                         ],
       tests_require=tests_require,
       extras_require=dict(tests=tests_require),
