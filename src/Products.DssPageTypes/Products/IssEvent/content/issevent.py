@@ -16,19 +16,37 @@ from Products.ATExtensions.ateapi import *
 
 
 IssEventSchema = event.ATEventSchema.copy() + atapi.Schema((
+  
+    atapi.ImageField(
+            "eventimage",
+                widget = atapi.ImageWidget(
+                label=u"Event Image",
+                description=u"Image to display with the Event",
+            ),
+        ),
+    atapi.StringField(
+            "eventimagetitle",
+            widget = atapi.StringWidget(
+                label=u"Image Title",
+                description=u"Title of image to display with the Event",
+            ),
+         ),
 
     atapi.StringField(
             name='eventroom',
+            vocabulary=["220","1400","3711"],
             widget = ComboWidget(
-        
-            description=u"Please choose from the list or enter a room number",
+              label="Room Number",
+            
         ),
-        vocabulary=["220","1400","3711"]
+        
+        
     ),
     atapi.StringField(
         name='building',
         widget = ComboWidget(
-            description=u"Choose the building for the event location",
+            label=u"Building",
+            description="Choose the building for the event location",
         ),
         vocabulary=["SSH","Kerr","Mrak"]
      ),
@@ -62,8 +80,14 @@ IssEventSchema['description'].storage = atapi.AnnotationStorage()
 
 schemata.finalizeATCTSchema(IssEventSchema, moveDiscussion=False)
 # finalizeATCTSchema moves 'location' into 'categories', we move it back:
-IssEventSchema.changeSchemataForField('location', 'default')
-IssEventSchema.moveField('location', before='startDate')
+# IssEventSchema.changeSchemataForField('location', 'default')
+IssEventSchema.moveField('eventimage',before='startDate')
+IssEventSchema.moveField('eventimagetitle',after='eventimage')
+IssEventSchema.moveField('eventroom', after='text')
+IssEventSchema.moveField('building',after='eventroom')
+#Hide the lodation Field since we're not using it
+locationField = IssEventSchema['location']
+locationField.widget.visible = {'edit': 'hidden', 'view': 'invisible'}
 
 class IssEvent(base.ATCTContent):
     """Event for ISS website"""
