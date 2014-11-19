@@ -3,7 +3,7 @@
 
 from zope.interface import implements
 
-from Products.Archetypes import atapi
+from Products.Archetypes import public as atapi
 from Products.ATContentTypes.content import base
 from Products.ATContentTypes.content import schemata
 from Products.ATContentTypes.content import event
@@ -34,9 +34,9 @@ IssEventSchema = event.ATEventSchema.copy() + atapi.Schema((
 
     atapi.StringField(
             name='eventroom',
-            label="Room Number",
             vocabulary=["220","1400","3711"],
             widget = ComboWidget(
+            label="Room Number",
               
             
         ),
@@ -66,7 +66,7 @@ IssEventSchema = event.ATEventSchema.copy() + atapi.Schema((
             required=True,
             widget=atapi.SelectionWidget(
                 label='Event Type',
-                description='Please Choose The Event Type   ',
+                description='Please Choose The Event Type.  Used by ISS only  ',
                 format="radio",
             ),
             vocabulary=["ISS Event","ISS Co-Sponsored Event","UCD Community Event"]
@@ -91,7 +91,7 @@ locationField = IssEventSchema['location']
 locationField.widget.visible = {'edit': 'hidden', 'view': 'invisible'}
 
 buildingField = IssEventSchema['building']
-buildingField.widget.description=("some description here")
+
 class IssEvent(base.ATCTContent):
     """Event for ISS website"""
     implements(IIssEvent)
@@ -101,6 +101,8 @@ class IssEvent(base.ATCTContent):
 
     title = atapi.ATFieldProperty('title')
     description = atapi.ATFieldProperty('description')
+    
+    
 
     # -*- Your ATSchema to Python Property Bridges Here ... -*-
 
