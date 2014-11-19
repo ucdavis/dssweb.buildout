@@ -34,9 +34,10 @@ IssEventSchema = event.ATEventSchema.copy() + atapi.Schema((
 
     atapi.StringField(
             name='eventroom',
+            label="Room Number",
             vocabulary=["220","1400","3711"],
             widget = ComboWidget(
-              label="Room Number",
+              
             
         ),
         
@@ -45,8 +46,8 @@ IssEventSchema = event.ATEventSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='building',
         widget = ComboWidget(
-            label=u"Building",
-            description="Choose the building for the event location",
+            label=u'Building',
+            description='Choose the building for the event location',
         ),
         vocabulary=["SSH","Kerr","Mrak"]
      ),
@@ -89,6 +90,8 @@ IssEventSchema.moveField('building',after='eventroom')
 locationField = IssEventSchema['location']
 locationField.widget.visible = {'edit': 'hidden', 'view': 'invisible'}
 
+buildingField = IssEventSchema['building']
+buildingField.widget.description=("some description here")
 class IssEvent(base.ATCTContent):
     """Event for ISS website"""
     implements(IIssEvent)

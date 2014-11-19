@@ -1,17 +1,9 @@
-.. contents::
+Based on Plone Event Type (AT)
+Adds the following extra fields to Event Type:
+Room and Building (in support of wayfinding)
+Event Type (public, private)
+Additional Event Types for ISS (ISS, division, community)
 
-.. Note!
-   -----
-   Update the following URLs to point to your:
+Hides Location field (because we need more specific data for wayfinding)
 
-   - code repository
-   - bug tracker
-   - questions/comments feedback mail
-   (do not set a real mail, to avoid spams)
-
-   Or remove it if not used.
-
-- Code repository: http://svn.somewhere.com/...
-- Questions and comments to somemailing_list
-- Report bugs at http://bug.somewhere.com/..
-
+Depends on: ATExtensions for combo widget
