@@ -157,7 +157,13 @@ i {
 			}
 		}
 	}
-	
+	#cm-section {
+			ul.content-items {
+				button {
+					margin-top: 5px; 
+				}
+			}
+		}
 	.sidebar-right {
 		margin-top: 0 !important; // was 45px for top placement of bio portrait
 		.bio-card {
