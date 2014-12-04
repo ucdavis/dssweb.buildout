@@ -2,7 +2,7 @@
 <rolemap>
   <permissions>
     <!-- -*- extra stuff goes here -*- -->
-    <permission name="Products.IssEvent: Add Iss Event" acquire="False">
+    <permission name="Products.DssPageTypes: Add Dss Contact" acquire="False">
       <role name="Manager" />
       <role name="Contributor" />
     </permission>

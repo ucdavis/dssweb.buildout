@@ -3,7 +3,7 @@
     xmlns:five="http://namespaces.zope.org/five"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:i18n="http://namespaces.zope.org/i18n"
-    i18n_domain="Products.IssEvent">
+    i18n_domain="Products.DssPageTypes">
     
   <five:registerPackage package="." initialize=".initialize" />
 
@@ -15,12 +15,13 @@
   <!-- Register the installation GenericSetup extension profile -->
   <genericsetup:registerProfile
       name="default"
-      title="Products.IssEvent"
+      title="Products.DssPageTypes"
       directory="profiles/default"
-      description="Event Type for ISS"
+      description="Custom Pages for DSS WebSites"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   
-  <!-- -*- extra stuff goes here -*- -->
+   
+ 
 
 </configure>

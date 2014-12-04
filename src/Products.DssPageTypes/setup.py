@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-This module contains the tool of Products.IssEvent
+This module contains the tool of Products.DssPageTypes
 """
 import os
 from setuptools import setup, find_packages
@@ -22,7 +22,7 @@ long_description = (
     'Detailed Documentation\n'
     '**********************\n'
     + '\n' +
-    read('Products', 'IssEvent', 'README.txt')
+    read('Products', 'DssPageTypes', 'README.txt')
     + '\n' +
     'Contributors\n'
     '************\n'
@@ -34,9 +34,9 @@ long_description = (
 
 tests_require = ['zope.testing']
 
-setup(name='Products.IssEvent',
+setup(name='Products.DssPageTypes',
       version=version,
-      description="Event Type for DSS",
+      description="Modified Page Types for the DSS Web Project",
       long_description=long_description,
       # Get more strings from
       # http://pypi.python.org/pypi?:action=list_classifiers
@@ -59,7 +59,7 @@ setup(name='Products.IssEvent',
                         ],
       tests_require=tests_require,
       extras_require=dict(tests=tests_require),
-      test_suite='Products.IssEvent.tests.test_docs.test_suite',
+      test_suite='Products.DssPageTypes.tests.test_docs.test_suite',
       entry_points="""
       # -*- entry_points -*-
       [z3c.autoinclude.plugin]

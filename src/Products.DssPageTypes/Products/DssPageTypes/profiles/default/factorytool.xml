@@ -10,6 +10,10 @@
 <object name="portal_factory" meta_type="Plone Factory Tool">
   <factorytypes>
     <!-- -*- extra stuff goes here -*- -->
-    <type portal_type="Iss Event" />
+    <type portal_type="DssContact" />
+  </factorytypes>
+  <factorytypes>
+    <!-- -*- extra stuff goes here -*- -->
+    <type portal_type="DssTwoCollumnPage" />
   </factorytypes>
 </object>

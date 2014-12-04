@@ -1,9 +1,9 @@
 from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
-class IssEventView(BrowserView):
+class DssPageTypesView(BrowserView):
 
-    template = ViewPageTemplateFile('iss_event_view.pt')
+    template = ViewPageTemplateFile('dss_contact_view.pt')
 
     def __call__(self):
         """"""

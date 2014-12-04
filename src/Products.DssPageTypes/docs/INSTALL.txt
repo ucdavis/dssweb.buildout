@@ -1,11 +1,11 @@
-Products.IssEvent Installation
+Products.DssPageTypes Installation
 ------------------------------
 
-To install Products.IssEvent into the global Python environment (or a workingenv),
+To install Products.DssPageTypes into the global Python environment (or a workingenv),
 using a traditional Zope 2 instance, you can do this:
 
 * When you're reading this you have probably already run 
-  ``easy_install Products.IssEvent``. Find out how to install setuptools
+  ``easy_install Products.DssPageTypes``. Find out how to install setuptools
   (and EasyInstall) here:
   http://peak.telecommunity.com/DevCenter/EasyInstall
 
@@ -16,11 +16,11 @@ using a traditional Zope 2 instance, you can do this:
 
 into your Zope instance.
 
-* Create a file called ``Products.IssEvent-configure.zcml`` in the
+* Create a file called ``Products.DssPageTypes-configure.zcml`` in the
   ``/path/to/instance/etc/package-includes`` directory.  The file
   should only contain this::
 
-    <include package="Products.IssEvent" />
+    <include package="Products.DssPageTypes" />
 
 .. _pythonproducts: http://plone.org/products/pythonproducts
 
@@ -28,13 +28,13 @@ into your Zope instance.
 Alternatively, if you are using zc.buildout and the plone.recipe.zope2instance
 recipe to manage your project, you can do this:
 
-* Add ``Products.IssEvent`` to the list of eggs to install, e.g.:
+* Add ``Products.DssPageTypes`` to the list of eggs to install, e.g.:
 
     [buildout]
     ...
     eggs =
         ...
-        Products.IssEvent
+        Products.DssPageTypes
        
 * Tell the plone.recipe.zope2instance recipe to install a ZCML slug:
 
@@ -42,7 +42,7 @@ recipe to manage your project, you can do this:
     recipe = plone.recipe.zope2instance
     ...
     zcml =
-        Products.IssEvent
+        Products.DssPageTypes
       
 * Re-run buildout, e.g. with:
 
@@ -55,8 +55,8 @@ from another package's configure.zcml file.
 Because its top level Python namespace package is called ``Products``, this
 package can also be installed in Zope 2 as an old style **Zope 2 Product**.
 
-For that, move (or symlink) the ``IssEvent`` folder of this project
-(``Products.IssEvent/Products/IssEvent``) into the ``Products`` directory of
+For that, move (or symlink) the ``DssPageTypes`` folder of this project
+(``Products.DssPageTypes/Products/DssPageTypes``) into the ``Products`` directory of
 the Zope instance it has to be installed for, and restart the server.
 
 You can also skip the ZCML slug if you install this package the **Zope 2

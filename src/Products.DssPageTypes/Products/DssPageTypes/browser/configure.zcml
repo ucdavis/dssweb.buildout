@@ -1,0 +1,16 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="Products.DssContact">
+
+  <include package="plone.app.contentmenu" />
+
+ 
+	   <browser:page
+	      for="Products.DssPageTypes.interfaces.IDssContact"
+	      layer="Products.DssPageTypes.interfaces.IDssContactSpecific"
+	      name="contact_page_view"
+	      template="dss_contact_view.pt"
+	      permission="zope2.View"
+	         />
+</configure>
