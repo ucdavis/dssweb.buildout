@@ -1,9 +1,5 @@
-Based on Plone Event Type (AT)
-Adds the following extra fields to Event Type:
-Room and Building (in support of wayfinding)
-Event Type (public, private)
-Additional Event Types for ISS (ISS, division, community)
+Based on Plone document (AT)
 
-Hides Location field (because we need more specific data for wayfinding)
+Adds Contact Page type which features an iframe for google maps.
 
-Depends on: ATExtensions for combo widget
+Adds Two Column Page type which features a left text column in the page body.
