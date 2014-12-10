@@ -10,8 +10,6 @@
   <!-- -*- extra stuff goes here -*- -->
   <object name="DssContact"
     meta_type="Factory-based Type Information with dynamic views" />
-</object>
-  <object name="DssTwoCollumnPage"
+	<object name="DssTwoCollumnPage"
     meta_type="Factory-based Type Information with dynamic views" />
-</object>
 </object>

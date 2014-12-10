@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <object name="DssContact"
    meta_type="Factory-based Type Information with dynamic views"
-   i18n:domain="Products.DssContact" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+   i18n:domain="Products.DssPageTypes" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
   <property name="title" i18n:translate="">Dss Contact Page</property>
   <property name="description"
     i18n:translate="">Contact Page DSS website</property>
   <property name="content_meta_type">DssContact</property>
   <property name="content_icon">document_icon.gif</property>
-  <property name="product">Products.DssContact</property>
+  <property name="product">Products.DssPageTypes</property>
   <property name="factory">addDssContact</property>
   <property name="immediate_view">atct_edit</property>
   <property name="global_allow">True</property>

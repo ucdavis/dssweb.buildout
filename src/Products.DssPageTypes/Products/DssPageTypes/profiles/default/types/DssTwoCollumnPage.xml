@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <object name="DssTwoCollumnPage"
    meta_type="Factory-based Type Information with dynamic views"
-   i18n:domain="Products.DssTwoCollumnPage" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
-  <property name="title" i18n:translate="">Dss Contact Page</property>
+   i18n:domain="Products.DssPageTypes" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+  <property name="title" i18n:translate="">Dss Two Collumn Page</property>
   <property name="description"
     i18n:translate="">Contact Page DSS website</property>
   <property name="content_meta_type">DssTwoCollumnPage</property>
   <property name="content_icon">document_icon.gif</property>
-  <property name="product">Products.DssTwoCollumnPage</property>
+  <property name="product">Products.DssPageTypes</property>
   <property name="factory">addDssTwoCollumnPage</property>
   <property name="immediate_view">atct_edit</property>
   <property name="global_allow">True</property>
   <property name="filter_content_types">False</property>
   <property name="allow_discussion">False</property>
-  <property name="default_view">dss_contact_view</property>
+  <property name="default_view">dss_twocollumn_view</property>
   <property name="view_methods">
     <element value="base_view" />
   </property>

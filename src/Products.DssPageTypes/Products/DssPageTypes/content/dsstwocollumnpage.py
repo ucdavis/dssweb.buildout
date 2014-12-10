@@ -38,10 +38,10 @@ DssTwoCollumnPageSchema['title'].storage = atapi.AnnotationStorage()
 DssTwoCollumnPageSchema['description'].storage = atapi.AnnotationStorage()
 
 schemata.finalizeATCTSchema( DssTwoCollumnPageSchema, moveDiscussion=False)
-   # finalizeATCTSchema moves 'location' into 'categories', we move it back:
-   # IssEventSchema.changeSchemataForField('location', 'default')
+  
+   #Move inset collumn field before bodytext so it's first on the form
    
-   #Hide the lodation Field since we're not using it
+DssTwoCollumnPageSchema.moveField('insetcolumn',after='description')
    
 
 class DssTwoCollumnPage(base.ATCTContent):
