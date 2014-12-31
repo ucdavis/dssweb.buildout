@@ -8,6 +8,7 @@
     <rules css:if-content="#visual-portal-wrapper">
 	    <theme href="index2.html" if="$home_page" />
 	    <theme href="t13_event2.html" css:if-content="body.portaltype-event" />
+		<theme href="t3_bio.html" css:if-content="body.portaltype-fsdperson" />
       <theme href="t4_adhoc2.html" />
 
       <!-- Replace title with Plone's page title  -->
@@ -86,7 +87,7 @@
 	    </xsl:attribute>
 	    </replace>
 
-	    <replace css:theme="h1.content-title" css:content="h1#parent-fieldname-title" />
+	    <!--replace css:theme="h1.content-title" css:content="h1#parent-fieldname-title" / check this-->
 	    <replace content="//h1[contains(@class,'documentFirstHeading')]/@class" if-not="$home_page">
   	    <xsl:attribute name="class">
           <xsl:if test='contains(current(),"documentFirstHeading")'>content-title</xsl:if>
@@ -155,6 +156,12 @@
         <replace css:theme="div.zebra.rows"
                  css:content="#content-core > div" />
       </rules>
+	  <!--Person bio-->
+	   <rules css:if-content="body.portaltype-fsdperson">
+		   <replace css:theme="h1.content-title" css:content="h1.content-title" />
+		   <replace theme='//*[@id="summary"]' content='//*[@id="summary"]' />
+		   <replace theme='//*[@id="content-core"]' content='//*[@id="content-core"]' />
+	   </rules>
 
       <!--- Footer -->
       <copy  css:content=".portletStaticText.portlet-static-contact"
