@@ -2,6 +2,7 @@
 @charset "utf-8";
 @import "variables";
 
+
 /* override wallpaper height without breaking cakefarm theme  */
 .wall .wallpaper .notsobig {
 	height:540px !important;
@@ -540,6 +541,10 @@ ul#footer-nav {
     /* Plone globalnav */
    
 
+}
+/*Faculty Bio Page */
+p.org {
+	padding-bottom: 1.5em;
 }
 
 /* @end */

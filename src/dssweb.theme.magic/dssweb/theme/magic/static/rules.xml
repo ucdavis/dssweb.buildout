@@ -86,8 +86,13 @@
 	    <xsl:if test='contains(current(),"documentFirstHeading")'>homepage-title</xsl:if>
 	    </xsl:attribute>
 	    </replace>
-
-	    <!--replace css:theme="h1.content-title" css:content="h1#parent-fieldname-title" / check this-->
+		<!-- Various rules to handle different template titles plus some magic to add the correct classes -->
+	    <rules css:if-content="h1#parent-fieldname-title">
+		<replace css:theme="h1.content-title"  css:content="h1#parent-fieldname-title" />
+	    </rules>
+		<rules css:if-content="h1.documentFirstHeading">
+			<replace css:theme="h1.content-title" css:content="h1.documentFirstHeading" />
+		</rules>
 	    <replace content="//h1[contains(@class,'documentFirstHeading')]/@class" if-not="$home_page">
   	    <xsl:attribute name="class">
           <xsl:if test='contains(current(),"documentFirstHeading")'>content-title</xsl:if>
