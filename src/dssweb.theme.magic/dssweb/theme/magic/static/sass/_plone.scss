@@ -546,6 +546,10 @@ ul#footer-nav {
 p.org {
 	padding-bottom: 1.5em;
 }
-
+/* Hacky bit of css to get bio page address portlet to line up */
+dt.dept-title {
+margin-left: -32px;
+margin-right: -12px;
+}
 /* @end */
 }
