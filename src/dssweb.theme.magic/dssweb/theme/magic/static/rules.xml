@@ -143,7 +143,7 @@
     	<replace css:theme="p.intro" css:content="#parent-fieldname-description" />
 
     	<!-- Content-core-T4 -->
-    	<replace css:theme-children=".panel-body" css:content="#content-core" if-not="$home_page" />
+    	<replace css:theme-children=".panel-body" css:content="#content-core" css:if-content="body.portaltype-document" />
         <before css:theme="#content-core"
                 css:content=".newsImageContainer" css:if-content="body.portaltype-document"/>
 
@@ -164,8 +164,8 @@
 	  <!--Person bio-->
 	   <rules css:if-content="body.portaltype-fsdperson">
 		   <replace css:theme="h1.content-title" css:content="h1.content-title" />
-		   <replace theme='//*[@id="summary"]' content='//*[@id="summary"]' />
 		   <replace theme='//*[@id="content-core"]' content='//*[@id="content-core"]' />
+		  
 	   </rules>
 
       <!--- Footer -->
