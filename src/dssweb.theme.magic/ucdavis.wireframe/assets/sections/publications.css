@@ -178,7 +178,8 @@ body.home #bottom-panel-row h2 { font-weight: normal !important; }
   body.home #content .narrow-col h3, body.home #am-content .narrow-col h3 { font-size: 18px !important; font-size: 1.125rem !important; line-height: 22px !important; line-height: 1.375rem !important; font-weight: normal !important; } }
 /* /_typography.scss */
 #content-core button { width: auto; }
-#content-core button a { text-decoration: none; color: #000; }
+#content-core button a { padding: 5px; text-decoration: none; color: #000; font-size: 14px; font-size: 0.875rem; }
+#content-core ul#pubs { margin: 5px 0 15px 2px; }
 
 /*----- Mobile breakpoint --------*/
 i { font-style: italic !important; }

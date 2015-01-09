@@ -1,0 +1,94 @@
+ @charset "utf-8";
+@import "variables";
+@import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
+
+
+strong {
+	font-weight: bold;
+}
+i {
+	font-style: italic !important;
+}
+
+
+.caption {
+	@include font_size(12px, !important);
+}
+table {
+	border: 1px solid $box_light_gray;
+}
+/*----- Mobile breakpoint --------*/
+
+/*----- "M" breakpoint -------*/
+@media screen and (max-width: $screen-xs-max) { // width < 767 (was $screen-sm-min 768 but triggers on ipad)
+	tr {
+		background-color: $box_light_gray;
+		&.alt {
+			background-color: #fff;
+		}
+		&.courses, &.core, &.desc {
+			td {
+				h3 {
+					padding-bottom: 0;
+				}
+			}
+		}
+	}	
+	.panel-group {
+		margin-top: 5px;
+	}	
+	#content {
+		margin-bottom: 0;
+	}
+}
+
+@media screen and (min-width: $screen-sm-min) { // width > 768
+	#content {
+		tr {
+			&.header {
+				color: #fff;
+				background-color: $rec_blue;
+				td {
+					@include font_size(15px, !important);
+				}
+			}
+			td {
+				border-right: 1px solid #fff;
+				@include font_size(12px);
+				word-wrap: break-word;
+				.emph {
+						@include font_size(12px);
+						@include line_height(15px, !important);
+				}
+			}
+			td:last-child {
+				border-right: none;
+			}
+			&.alt {
+				background-color: $box_light_gray;
+			}
+			&.courses, &.core, &.desc {
+				td {
+					padding-top: 14px;
+					min-height: 50px;
+				}
+			}
+			&.core {
+				td:first-child {
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+
+
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
+
+}
+
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: $screen-md-min) { // width > 992
+
+}
+
