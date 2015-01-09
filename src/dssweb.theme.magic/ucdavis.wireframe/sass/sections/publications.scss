@@ -1,0 +1,46 @@
+@charset "utf-8";
+@import "variables";
+@import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
+
+
+#content-core {
+	button {
+		width: auto;
+		a {
+			text-decoration: none;
+			color: #000;
+		}
+	}
+}
+/*----- Mobile breakpoint --------*/
+// At point that left and right margins are gone
+i {
+		font-style: italic !important;
+}
+
+@media screen and (max-width: $screen-xs-max) { // width < 767 (was $screen-sm-min 768 but triggers on ipad)
+	// Bio card
+	// Note: Apply negative margins to top items in order to retain padding on remaining text in mobile view
+	.email {
+		a {
+			background-position: 45% 70% !important	;
+		}
+	}
+}
+
+@media screen and (min-width: $screen-sm-min) { // width > 768
+
+}
+
+/*----- "M" breakpoint -------*/
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
+	
+}
+
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: $screen-md-min) { // width > 992
+	.sidebar-right {
+		margin-top: 116px;
+	}
+}
+

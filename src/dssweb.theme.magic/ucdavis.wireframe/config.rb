@@ -7,9 +7,10 @@ javascripts_dir = "js"
 
 # Require any additional compass plugins installed on your system.
 require 'compass'
-#require 'bootstrap-sass'
+require 'bootstrap-sass'
 
-# To enable relative paths to assets via compass helper functions. Uncomment:
+# To enable relative paths to assets via compass helper functions. 
+
 relative_assets = true
 
 # Conditional enable line comments when in development mode.
