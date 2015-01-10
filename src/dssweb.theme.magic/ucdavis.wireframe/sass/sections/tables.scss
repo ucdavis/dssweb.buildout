@@ -17,28 +17,71 @@ i {
 table {
 	border: 1px solid $box_light_gray;
 }
+
 /*----- Mobile breakpoint --------*/
 
 /*----- "M" breakpoint -------*/
 @media screen and (max-width: $screen-xs-max) { // width < 767 (was $screen-sm-min 768 but triggers on ipad)
-	tr {
-		background-color: $box_light_gray;
-		&.alt {
-			background-color: #fff;
-		}
-		&.courses, &.core, &.desc {
-			td {
-				h3 {
-					padding-bottom: 0;
+	#content {
+		margin-bottom: 5px;
+		tr {
+			background-color: $box_light_gray;
+			&.alt {
+				background-color: #fff;
+			}
+			&.item, &.core, &.desc {
+				td {
+					h3 {
+						padding-bottom: 0;
+						@include line_height(16px, !important);
+					}
+					&.first{
+						border-top: 5px solid $rec_blue;
+					}
+					&:last-child {
+						padding-bottom: 15px;
+					}
+					a {
+						@include font_size(12.5px, !important);
+					}
+					p {
+							margin-bottom: 0;
+							//font-weight: bold;
+							@include line_height(16px, !important);
+							&:first-child {
+									font-weight: bold;
+							}
+					}
+					&:first-child {
+							padding-top: 15px;
+					}
 				}
 			}
+
+			.emph {
+					margin-bottom: 0;
+					@include font_size(12.5px, !important);
+			}
+		}	
+		.panel-group {
+			margin-top: 5px;
+		}	
+		.description {
+			@include font_size(12.5px, !important);
 		}
-	}	
-	.panel-group {
-		margin-top: 5px;
-	}	
-	#content {
-		margin-bottom: 0;
+		.content-title {
+			@include font_size(21px, !important);
+		}
+	}
+	.info {
+		text-align: center;
+	}
+	#sidebar-block-contact .email a, .vcard .email a {
+		background: none;
+		padding-left: 0;
+	}
+	ul#sidebar-block-contact {
+		padding-left: 15px !important;
 	}
 }
 
@@ -54,8 +97,11 @@ table {
 			}
 			td {
 				border-right: 1px solid #fff;
-				@include font_size(12px);
+				@include font_size(12px, !important);
 				word-wrap: break-word;
+				a {
+						@include font_size(12px);
+				}
 				.emph {
 						@include font_size(12px);
 						@include line_height(15px, !important);
@@ -67,7 +113,7 @@ table {
 			&.alt {
 				background-color: $box_light_gray;
 			}
-			&.courses, &.core, &.desc {
+			&.item, &.core, &.desc {
 				td {
 					padding-top: 14px;
 					min-height: 50px;
@@ -78,6 +124,40 @@ table {
 					text-align: center;
 				}
 			}
+			p {
+				@include font_size(12px);
+			}
+		}
+	}
+	ul#sidebar-block-contact {
+		margin-top: 14px;
+		.fn {
+			a {
+				color: #000;
+			}
+		}
+		.category {
+			margin-bottom: 20px;
+		}
+		.email {
+			margin-bottom: 20px;
+		}
+		.appt {
+			margin-bottom: 10px;
+		}	
+	}
+	.info {
+		background-color: $ucd_blue_10;
+		display: block;
+		height: 40px;
+		a {
+			display: block;
+			padding-top: 14px;
+			padding-left: 35px;
+			color: $ucd_blue_80;
+			text-decoration: none;
+			@include font_size(12px);
+			font-weight: bold;
 		}
 	}
 }
