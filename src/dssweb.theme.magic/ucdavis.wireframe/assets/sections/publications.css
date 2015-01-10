@@ -1,5 +1,7 @@
 @font-face { font-family: 'lsr'; src: url("fonts/lucida/LucidaSansRegular.ttf"); font-weight: normal; font-style: normal; }
+
 @font-face { font-family: 'lsb'; src: url("fonts/lucida/LucidaSansBold.ttf"); font-weight: normal; font-style: normal; }
+
 /* Example use case:
  %abstract-class { font-family: Verdana; }  #my-div { @extend %abstract-class; }  #my-other-div { @extend %abstract-class; }
  ... compiles as: #my-div, #my-other-div { font-family: Verdana; }
