@@ -18,6 +18,8 @@ table {
 	border: 1px solid $box_light_gray;
 }
 
+
+
 /*----- Mobile breakpoint --------*/
 
 /*----- "M" breakpoint -------*/
@@ -31,6 +33,7 @@ table {
 			}
 			&.item, &.core, &.desc {
 				td {
+					@include font_size(12.5px);
 					h3 {
 						padding-bottom: 0;
 						@include line_height(16px, !important);
@@ -53,14 +56,17 @@ table {
 							}
 					}
 					&:first-child {
-							padding-top: 15px;
+						padding-top: 15px;
+					}
+					.group {
+						margin-bottom: 10px;
 					}
 				}
 			}
 
 			.emph {
-					margin-bottom: 0;
-					@include font_size(12.5px, !important);
+				margin-bottom: 0;
+				@include font_size(12.5px, !important);
 			}
 		}	
 		.panel-group {
@@ -82,50 +88,66 @@ table {
 	}
 	ul#sidebar-block-contact {
 		padding-left: 15px !important;
+		.appt {
+			margin-bottom: 10px;
+		}
 	}
 }
 
 @media screen and (min-width: $screen-sm-min) { // width > 768
 	#content {
-		tr {
-			&.header {
-				color: #fff;
-				background-color: $rec_blue;
+		table {
+			tr {
+				width: 100%;
+				&.header {
+					height: 30px;
+					color: #fff;
+					background-color: $rec_blue;				
+					td {
+						@include font_size(15px, !important);
+						vertical-align: middle;
+					}
+				}
 				td {
-					@include font_size(15px, !important);
+					border-right: 1px solid #fff;
+					@include font_size(12px, !important);
+					@include line_height(15px);
+					word-wrap: break-word;
+					a {
+							@include font_size(12px);
+					}
+					.emph {
+							@include font_size(12px);
+							@include line_height(15px, !important);
+					}
+				}
+				td:last-child {
+					border-right: none;
+				}
+				&.alt {
+					background-color: $box_light_gray;
+				}
+				&.item, &.core, &.desc {
+					td {
+						padding: 14px;
+						min-height: 50px;
+					}
+				}
+				&.core {
+					td:first-child {
+						text-align: center;
+					}
+				}
+				p {
+					@include font_size(12px);
 				}
 			}
-			td {
-				border-right: 1px solid #fff;
-				@include font_size(12px, !important);
-				word-wrap: break-word;
-				a {
-						@include font_size(12px);
-				}
-				.emph {
-						@include font_size(12px);
-						@include line_height(15px, !important);
-				}
+			.row {
+				display: table;
 			}
-			td:last-child {
-				border-right: none;
-			}
-			&.alt {
-				background-color: $box_light_gray;
-			}
-			&.item, &.core, &.desc {
-				td {
-					padding-top: 14px;
-					min-height: 50px;
-				}
-			}
-			&.core {
-				td:first-child {
-					text-align: center;
-				}
-			}
-			p {
-				@include font_size(12px);
+			.row [class*="col-"] {
+					float: none;
+					display: table-cell;	
 			}
 		}
 	}
@@ -143,7 +165,7 @@ table {
 			margin-bottom: 20px;
 		}
 		.appt {
-			margin-bottom: 10px;
+			margin-bottom: 15px;
 		}	
 	}
 	.info {
