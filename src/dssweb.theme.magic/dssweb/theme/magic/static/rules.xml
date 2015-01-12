@@ -9,6 +9,7 @@
 	    <theme href="index2.html" if="$home_page" />
 	    <theme href="t13_event2.html" css:if-content="body.portaltype-event" />
 		<theme href="t3_bio.html" css:if-content="body.portaltype-fsdperson" />
+		<theme href="t2_ourpeople.html" css:if-content="body.section-directory" />
       <theme href="t4_adhoc2.html" />
 
       <!-- Replace title with Plone's page title  -->
@@ -23,8 +24,8 @@
       <!-- merge classes from Plone body with theme body -->
       <merge attributes="class" css:theme="body" css:content="body" />
 
-      <!-- Copy script tags from Plone head to end of body -->
-      <!-- after css:theme-children="html body" css:content="html head script" / -->
+      <!--Copy script tags from Plone head to end of body-->
+      <!--after css:theme-children="html body" css:content="html head script" /-->
 
 		  <!--Home Page Rules-->
   	<drop css:theme="#content > div.row > div" if="$home_page" />
@@ -167,6 +168,16 @@
 		   <replace theme='//*[@id="content-core"]' content='//*[@id="content-core"]' />
 		  
 	   </rules>
+	   <!--Person directory Page Faceted Nav T2 -->
+	   <rules css:if-content="body.section-directory">
+		   
+		    <after css:theme-children="html body" css:content="html head script" />
+			<replace css:theme="#am-content > h4" css:content="#faceted-center-column" />
+			<replace css:theme="#search-results" css:content="#faceted-results" />
+			<replace css:theme-children="#left-area" css:content-children="#left-area" />
+
+	   </rules>
+		   
 
       <!--- Footer -->
       <copy  css:content=".portletStaticText.portlet-static-contact"
