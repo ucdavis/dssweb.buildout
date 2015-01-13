@@ -1,0 +1,58 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="Products.DssPageTypes">
+
+<body>
+
+<metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main">
+
+    <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+                             <metal:title define-slot="content-title">
+                                 <metal:comment tal:content="nothing">
+                                     If you write a custom title always use
+                                     <h1 class="documentFirstHeading"></h1> for it
+                                 </metal:comment>
+                                 <h1 metal:use-macro="context/kss_generic_macros/macros/generic_title_view">
+                                     Generic KSS Title. Is rendered with class="documentFirstHeading".
+                                 </h1>
+                             </metal:title>
+
+    <div tal:replace="structure provider:plone.belowcontenttitle" />
+           <metal:description define-slot="content-description">
+                                 <metal:comment tal:content="nothing">
+                                     If you write a custom description always use
+                                     <div class="documentDescription"></div> for it
+                                 </metal:comment>
+                                 <div metal:use-macro="context/kss_generic_macros/macros/generic_description_view">
+                                     Generic KSS Description. Is rendered with class="documentDescription".
+                                 </div>
+                             </metal:description>
+       
+
+    <div tal:replace="structure provider:plone.abovecontentbody" />
+            <div id="content-core">
+                               <div id="nested-left" class="col-xs-12 col-sm-12 col-md-4 col-lg-4" tal:condition="context/getInsetcolumn">
+                                   <span tal:content="context/getInsetcolumn"></span>
+                                  </div>
+                              <div id="nested-right" class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                                <metal:field use-macro="python:context.widget('text', mode='view')">
+                                   Body text
+                                 </metal:field>
+                             </div>
+                            </div>
+
+         
+        
+    <div tal:replace="structure provider:plone.belowcontentbody" />
+
+    </tal:main-macro>
+</metal:main>
+
+</body>
+</html>
