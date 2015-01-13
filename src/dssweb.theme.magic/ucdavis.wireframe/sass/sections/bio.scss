@@ -7,7 +7,13 @@
 i {
 		font-style: italic !important;
 }
-
+#cm-section {
+		ul.content-items {
+			li {
+				margin-top: 10px;
+			}
+		}
+	}
 @media screen and (max-width: $screen-xs-max) { // width < 767 (was $screen-sm-min 768 but triggers on ipad)
 	// Bio card
 	// Note: Apply negative margins to top items in order to retain padding on remaining text in mobile view
@@ -71,7 +77,7 @@ i {
 							li {
 								padding-bottom: 0;
 								background-color: $tab_light_gray;
-								background-image: none ;
+								background-image: none;
 								margin-bottom: 4px; // override 10px
 								&:last-child {
 									margin-bottom: 0;

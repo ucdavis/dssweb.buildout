@@ -16,6 +16,9 @@ i {
 }
 table {
 	border: 1px solid $box_light_gray;
+	#aster {
+		padding: 14px;
+	}
 }
 
 
@@ -78,6 +81,10 @@ table {
 		.content-title {
 			@include font_size(21px, !important);
 		}
+		#aster {
+			height: 45px;
+			@include font_size(12.5px, !important);
+		}
 	}
 	.info {
 		text-align: center;
@@ -97,6 +104,7 @@ table {
 @media screen and (min-width: $screen-sm-min) { // width > 768
 	#content {
 		table {
+			margin-top: 20px;
 			tr {
 				width: 100%;
 				&.header {
@@ -150,12 +158,21 @@ table {
 					display: table-cell;	
 			}
 		}
+		.description {
+			margin-bottom: 0;
+		}
+		h2 {
+			padding-bottom: 20px;
+		}
 	}
 	ul#sidebar-block-contact {
 		margin-top: 14px;
 		.fn {
 			a {
 				color: #000;
+				&:hover {
+					text-decoration: none;
+				}
 			}
 		}
 		.category {
@@ -186,11 +203,25 @@ table {
 
 
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
-
+	#content {
+		h2 {
+			padding-top: 40px;
+		}
+		#aster {
+			height: 37px;
+		}
+	}
 }
 
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: $screen-md-min) { // width > 992
-
+	#content {
+		h2 {
+			padding-top: 45px;
+		}
+		#aster {
+			height: 49px;
+		}
+	}
 }
 

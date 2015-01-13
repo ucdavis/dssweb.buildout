@@ -180,6 +180,7 @@ body.home #bottom-panel-row h2 { font-weight: normal !important; }
 #content-core button { width: auto; }
 #content-core button a { padding: 5px; text-decoration: none; color: #000; font-size: 14px; font-size: 0.875rem; }
 #content-core ul#pubs { margin: 5px 0 15px 2px; }
+#content-core ul#pubs li { margin-top: 10px; }
 
 /*----- Mobile breakpoint --------*/
 i { font-style: italic !important; }
