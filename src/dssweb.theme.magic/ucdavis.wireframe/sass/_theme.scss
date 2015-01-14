@@ -990,7 +990,7 @@ body.contact-type {
 	.op-sidebar-title {
 		text-align:left !important;
 	}
-	#footer {	
+	/*#footer {	
 		padding-bottom: 5px;
 		.foot-wrap{
 			margin: 25px 10px 25px 25px; // compensation right margin on mobile
@@ -1013,7 +1013,7 @@ body.contact-type {
 		#copyright {
 			margin-top: 0;
 		}
-	}
+	}*/
 }
 
 
@@ -1171,8 +1171,8 @@ body.contact-type {
 	.footer-processed#footer {
 		.foot-wrap {
 			width: 1000px;
-			margin-left: auto;
-			margin-right: auto;
+			//margin-left: auto;
+			//margin-right: auto;
 		}
 	}
 	
@@ -1237,8 +1237,13 @@ body.contact-type {
 	#footer {
 		.footer-nav {
 			li {
-				padding-top: 10px;
-				padding-left: 0;
+				padding-left: 10px;
+			}
+			&#foot-left, &#foot-center {
+				display: none;
+			}
+			&#foot-right {
+				margin-left: 15% !important;
 			}
 		}
 	}
@@ -1292,7 +1297,7 @@ body.contact-type {
 
 
 @media screen and (max-width: $screen-lg-min) { // width < 1310
-	#footer {
+	/*#footer {
 		.footer-nav{
 			
 			&#foot-left, &#foot-center {
@@ -1302,13 +1307,13 @@ body.contact-type {
 				margin-left: 160px !important;
 			}
 		}
-	}
+	}*/
 }
 /*----- Target tablet up to 1310 width on desktop -------*/
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-lg-min) { // 768 < width < 1310
 	#footer {
 		.foot-wrap {
-			//margin: 40px;
+			margin: 40px; /*changed:  uncommented*/
 		}
 		#vcard{
 			margin-right: 25px;		
@@ -1316,10 +1321,11 @@ body.contact-type {
 	} 
 }
 
-/*----- Target mobile and tablet -------*/
-@media screen and (max-width: $screen-sm-max) { // width < 991
+/*----- Target mobile (was mobile and tablet) -------*/
+@media screen and (max-width: $screen-xs-max) { // width < 767px was 991px
 
 	#footer {
+		padding-bottom: 5px;
 		.footer-nav{
 			border-left-width: 0;
 			text-align: center;
@@ -1336,7 +1342,30 @@ body.contact-type {
 			}
 		}
 		#foot-social {
-			margin-left: 55px !important;
+			
+		}
+	
+		.foot-wrap{
+			margin: 25px 10px 25px 25px; // compensation right margin on mobile
+			p, ul, div {
+				margin-left: 0;
+				margin-right: 0;
+				width: 100%;
+				text-align: center;
+			}
+			#foot-social {
+				//margin-left: 55px !important;
+				margin-left: 0 !important;
+				margin-right: 0 !important;
+				float: none;
+			}
+
+		}
+		#vcard p, #copyright {
+			@include font_size(11px);
+		}
+		#copyright {
+			margin-top: 0;
 		}
 	}
 }

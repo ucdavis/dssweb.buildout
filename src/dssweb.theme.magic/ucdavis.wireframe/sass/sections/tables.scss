@@ -11,16 +11,23 @@ i {
 }
 
 
-.caption {
-	@include font_size(12px, !important);
-}
+
 table {
 	border: 1px solid $box_light_gray;
 	#aster {
 		padding: 14px;
 	}
 }
-
+.sidebar-right {
+	.info {
+		letter-spacing: 0.05em;
+	}
+	#sidebar-block-contact {
+		li {
+			@include line_height(18px, !important);
+		}
+	}
+}
 
 
 /*----- Mobile breakpoint --------*/
@@ -74,6 +81,11 @@ table {
 		}	
 		.panel-group {
 			margin-top: 5px;
+			.panel-body {
+				margin-top: 0;
+				padding-left: 20px;
+				padding-right: 20px;
+			}
 		}	
 		.description {
 			@include font_size(12.5px, !important);
@@ -157,6 +169,9 @@ table {
 					float: none;
 					display: table-cell;	
 			}
+			.caption {
+				@include font_size(12px, !important);
+			}
 		}
 		.description {
 			margin-bottom: 0;
@@ -167,23 +182,26 @@ table {
 	}
 	ul#sidebar-block-contact {
 		margin-top: 14px;
-		.fn {
-			a {
-				color: #000;
-				&:hover {
-					text-decoration: none;
+		li {	
+			@include font_size(12px, !important);
+			&.fn {
+				a {
+					color: #000;
+					&:hover {
+						text-decoration: none;
+					}
 				}
 			}
+			&.category {
+				margin-bottom: 20px;
+			}
+			&.email {
+				margin-bottom: 20px;
+			}
+			&.appt {
+				margin-bottom: 15px;
+			}	
 		}
-		.category {
-			margin-bottom: 20px;
-		}
-		.email {
-			margin-bottom: 20px;
-		}
-		.appt {
-			margin-bottom: 15px;
-		}	
 	}
 	.info {
 		background-color: $ucd_blue_10;

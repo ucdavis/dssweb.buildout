@@ -406,6 +406,19 @@
 				$('.sidebar-right').append($('#nested-left'));
 			}
 		};
+		var bendM = function () {
+			
+			
+			// On T8 templates, move the left nested column to the right sidebar
+			if($('#nested-left').length !== 0) {
+				$('#nested-left').removeClass("col-xs-12 col-sm-12 col-md-4 col-lg-4"); // Note: Update if col defs chnage
+				
+				$('#nested-right').removeClass("col-md-8");
+				$('#nested-right').addClass("col-md-12 bent");
+				
+				$('.sidebar-right').append($('#nested-left'));
+			}
+		};
 		
 		var bendbio = function () {
 			if((activeMQ !== 'L') && (activeMQ !== 'M') && !biocardiced) {
@@ -505,6 +518,7 @@
 								// TODO: Hold $('body.home #top-panel-row').height(front_banner_height);
 							}
 							expandedView(); // was previously in conditional above
+							
 							/*
 							else if($("body.ourpeople").length !== 0){
 							collapsedView();	
@@ -512,7 +526,7 @@
 							
 							}
 							*/
-							bend(); // If we can't change position of elements using Bootstrap push / pull, then bend it
+							bendM(); // If we can't change position of elements using Bootstrap push / pull, then bend it
 							unbendbio();
           }
 					// If the detected screen size is Desktop 960px (991px?) and up
