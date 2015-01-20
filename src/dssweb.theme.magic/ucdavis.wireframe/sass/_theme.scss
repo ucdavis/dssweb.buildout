@@ -1332,8 +1332,8 @@ body.contact-type {
 			}
 
 		}
-		#vcard p, #copyright {
-			@include font_size(11px);
+		#vcard p, #vcard a, #copyright {
+			@include font_size(11px,!important);
 		}
 		#copyright {
 			margin-top: 0;

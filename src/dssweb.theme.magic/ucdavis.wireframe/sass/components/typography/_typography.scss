@@ -400,6 +400,11 @@ body.bio {
 		}
 	}
 }
+#footer {
+	#copyright {
+		@include font_size(12px);
+	}
+}
 
 /*----- Mobile breakpoint --------*/
 // At point that left and right margins are gone
