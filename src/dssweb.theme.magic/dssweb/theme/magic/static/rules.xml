@@ -7,6 +7,7 @@
     <!-- Apply the following rules to standard Plone pages -->
     <rules css:if-content="#visual-portal-wrapper">
 	    <theme href="index2.html" if="$home_page" />
+		<theme href="index2.html" if="$portal_url" />
 	    <theme href="t13_event2.html" css:if-content="body.portaltype-event" />
 		<theme href="t3_bio.html" css:if-content="body.portaltype-fsdperson" />
 		<theme href="t2_ourpeople.html" css:if-content="body.section-directory" />
@@ -28,10 +29,18 @@
       <!--after css:theme-children="html body" css:content="html head script" /-->
 
 		  <!--Home Page Rules-->
-  	<drop css:theme="#content > div.row > div" if="$home_page" />
+   <rules if="$home_page">
+  	  <drop css:theme="#content > div.row > div" />
       <!--drop all the portal footers on the front page -->
-      <drop css:content="dd.portlet-footer" if="$home_page" />
-      <drop css:content="dd.portletFooter" if="$home_page" />
+      <drop css:content="dd.portlet-footer" />
+      <drop css:content="dd.portletFooter"/>
+   </rules>
+   <rules if="$portal_url">
+  	  <drop css:theme="#content > div.row > div" />
+      <!--drop all the portal footers on the front page -->
+      <drop css:content="dd.portlet-footer" />
+      <drop css:content="dd.portletFooter"/>
+   </rules>
 
       <before css:theme="#util-bar-wrap > nav" css:content="#iss-top" />
 
