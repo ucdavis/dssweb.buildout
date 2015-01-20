@@ -5,4 +5,5 @@
 	<!-- handled by diazo imports -->
      <!--stylesheet id="dropdown-menu.css" enabled="False"/>
 	<stylesheet id="columns.css" enabled="False" /-->
+	 <stylesheet id="faceted_view.css" enabled="True" />
 </object>

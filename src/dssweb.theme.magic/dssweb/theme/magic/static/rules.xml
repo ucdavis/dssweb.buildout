@@ -172,9 +172,12 @@
 	   <rules css:if-content="body.section-directory">
 		   
 		    <after css:theme-children="html body" css:content="html head script" />
-			<replace css:theme="#am-content > h4" css:content="#faceted-center-column" />
+			
+		    <replace css:theme="h4.table-header" css:content="#faceted-center-column" />
 			<replace css:theme="#search-results" css:content="#faceted-results" />
 			<replace css:theme-children="#left-area" css:content-children="#left-area" />
+			<drop theme='//*[@id="pager-top"]' />
+		    <drop theme='//*[@id="pager-bottom"]' />
 
 	   </rules>
 		   
