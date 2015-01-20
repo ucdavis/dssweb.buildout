@@ -253,8 +253,10 @@ button {
 input {
 	
 }
-input[type="search"], input[type="button"] {
+input[type="search"], input[type="submit"], input[type="button"] {
 	-moz-appearance: none; // Mozilla / Firefox
+	-webkit-appearance: none; // iOS
+	-webkit-border-radius: 0px; // iOS
 	-webkit-appearance: none; // Chrome / Safari
 	border-radius: 0;
 }
@@ -1113,7 +1115,7 @@ body.contact-type {
     padding-left: 0;
 		.foot-wrap {
 			#foot-left {
-				margin-left: 10%;
+				margin-left: 5%;
 			}
 		}
 		#vcard{
@@ -1231,7 +1233,7 @@ body.contact-type {
 		margin-right: -15px !important; // TODO: Not working
 		
 		.foot-wrap {
-			width: 750px !important;
+			width: 698px !important;
 		}
 	}
 	
@@ -1339,7 +1341,7 @@ body.contact-type {
 	}
 }
 /*------ Desktop breakpoint (L) --------*/
-@media screen and (min-width: $screen-md-min) and (max-width: $screen-lg-min) { // 991 < width < 1200
+@media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) { // 991 < width < 1199 (was 1200)
 	.sidebar {
 		&.sidebar-right {
 			> div {
@@ -1347,6 +1349,13 @@ body.contact-type {
 			}
 		}
 	}
+	
+	.footer-processed {
+		.foot-wrap {
+			width: 921px !important;
+		}
+	}
+	
 }
 
 /*----- Desktop breakpoint -------*/
@@ -1404,8 +1413,12 @@ body.contact-type {
 			width: 1104px;
 			//margin-left: auto;
 			//margin-right: auto;
+			#foot-left {
+				margin-left: 10%;
+			}
 		}
 	}
+	
 }
 
 /* Override default grid gutter, which was broke on home/index bottom panel row. */

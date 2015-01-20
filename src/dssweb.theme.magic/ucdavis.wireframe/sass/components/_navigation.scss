@@ -174,20 +174,25 @@
 				height: 80px; // was 100%
 				text-align: center;
 				
-				ul.dropdown > li.has-dropdown {
-					> a {
-						background: url(../images/icons/blue-100-right-arrow.png) 96.5% 50% no-repeat;
-						&.moved { // when menu slides ...
-							background: url(../images/icons/blue-100-right-arrow-down.png) 96.5% 50% no-repeat;
-						}
-						&:after { // remove CSS drop arrow
-							border-color: none !important;
-							border-style: none !important;
-							border-width: 0 !important;
-						}
-						// remove foundation topbar double-pointer
-						&:after {
-							content: none !important;
+				ul.dropdown {
+					li {
+						text-align: left;
+					}
+					> li.has-dropdown {
+						> a {
+							background: url(../images/icons/blue-100-right-arrow.png) 96.5% 50% no-repeat;
+							&.moved { // when menu slides ...
+								background: url(../images/icons/blue-100-right-arrow-down.png) 96.5% 50% no-repeat;
+							}
+							&:after { // remove CSS drop arrow
+								border-color: none !important;
+								border-style: none !important;
+								border-width: 0 !important;
+							}
+							// remove foundation topbar double-pointer
+							&:after {
+								content: none !important;
+							}
 						}
 					}
 				}
@@ -427,12 +432,13 @@
 	}
 }
 
-/*----- Tablet breakpoint -------*/
+/*----- Tablet up breakpoint -------*/
 @media screen and (min-width: $screen-sm-min) { // width > 768px
 
 }
 
 /*----- Tablet breakpoint -------*/
+/* Note: To adjust navigation items for tablet display please make changes in sub-org.scss */
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768px < width < 991px
 
 	#util-bar-wrap, #top-bar-wrap, #banner-row {
@@ -459,6 +465,7 @@
 	}*/
 
 	.top-bar {
+		height: 80px; // Added to force height on entire name-logo navigation bar on tablet
 		.title-area {
 			.name {
 				a {
@@ -470,7 +477,7 @@
 		}
 	}
 	.util-bar {
-		#uti-logo{
+		#uti-logo {
 			width: 22%;
 		}
 	}
@@ -487,7 +494,7 @@
 				ul.dropdown {
 					width: 200px !important;
 					li {
-						text-align: left;
+						//text-align: left;
 						a {
 							padding: 4px 12px;
 						}

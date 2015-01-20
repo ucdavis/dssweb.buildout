@@ -1013,8 +1013,8 @@ ul, ol, dl {
   font-family: inherit; 
 	}
 meta.foundation-mq-topbar {
-  font-family: "/only screen and (min-width:62.000em)/";
-  width: 62.000em; }
+  font-family: "/only screen and (min-width:47.938em)/"; /* was 62.000em */
+  width: 47.938em; } /* was 62.000em */
 	
 .right {
   float: right !important; }
@@ -1284,7 +1284,7 @@ meta.foundation-mq-topbar {
       font-size: 12px; }
 
 
-@media only screen and (min-width:62.000em) {
+@media only screen and (min-width:48.000em) {
   .top-bar {
     background: #333;
     overflow: visible;
