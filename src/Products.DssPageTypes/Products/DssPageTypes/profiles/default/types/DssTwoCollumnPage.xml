@@ -6,7 +6,7 @@
   <property name="description"
     i18n:translate="">Contact Page DSS website</property>
   <property name="content_meta_type">DssTwoCollumnPage</property>
-  <property name="content_icon">document_icon.gif</property>
+  <property name="content_icon">document_icon.png</property>
   <property name="product">Products.DssPageTypes</property>
   <property name="factory">addDssTwoCollumnPage</property>
   <property name="immediate_view">atct_edit</property>

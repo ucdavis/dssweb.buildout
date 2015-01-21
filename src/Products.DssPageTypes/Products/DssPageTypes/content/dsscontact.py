@@ -24,7 +24,7 @@ DssContactSchema = document.ATDocumentSchema.copy() + atapi.Schema((
                max_size="500",
                widget = atapi.TextAreaWidget(
                    label=u"Map URL",
-                   description=u"Paste Google Map URL in here",
+                   description=u"Paste Google Map URL in here, no iframe tag or quotes",
                    rows="5",
                ),
               
