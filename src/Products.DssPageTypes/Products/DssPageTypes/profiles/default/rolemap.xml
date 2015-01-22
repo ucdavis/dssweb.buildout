@@ -6,5 +6,6 @@
       <role name="Manager" />
       <role name="Contributor" />
     </permission>
+    
   </permissions>
 </rolemap>

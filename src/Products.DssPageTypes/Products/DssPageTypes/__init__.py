@@ -6,6 +6,8 @@ from Products.DssPageTypes import config
 
 from Products.Archetypes import atapi
 from Products.CMFCore import utils
+from content import dsscontact
+from content import dsstwocollumnpage
 
 # Define a message factory for when this product is internationalised.
 # This will be imported with the special name "_" in most modules. Strings
@@ -45,6 +47,6 @@ def initialize(context):
     for atype, constructor in zip(content_types, constructors):
         utils.ContentInit('%s: %s' % (config.PROJECTNAME, atype.portal_type),
             content_types=(atype, ),
-            permission=config.ADD_PERMISSIONS[atype.portal_type],
+            permission=config.ADD_CONTENT_PERMISSIONS[atype.portal_type],
             extra_constructors=(constructor,),
             ).initialize(context)
