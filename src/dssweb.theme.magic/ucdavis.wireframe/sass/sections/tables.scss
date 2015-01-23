@@ -102,8 +102,11 @@ table {
 		text-align: center;
 	}
 	#sidebar-block-contact .email a, .vcard .email a {
-		background: none;
-		padding-left: 0;
+		//background: none;
+		//padding-left: 0;
+	}
+	#sidebar-block-contact .email {
+		display: inline-block;
 	}
 	ul#sidebar-block-contact {
 		padding-left: 15px !important;

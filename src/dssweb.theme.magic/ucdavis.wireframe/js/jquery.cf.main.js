@@ -397,7 +397,7 @@
 			}
 			
 			// On T8 templates, move the left nested column to the right sidebar
-			if($('#nested-left').length !== 0) {
+			if($('body.students #nested-left').length !== 0) {
 				$('#nested-left').removeClass("col-xs-12 col-sm-12 col-md-4 col-lg-4"); // Note: Update if col defs chnage
 				
 				$('#nested-right').removeClass("col-md-8");
@@ -410,7 +410,7 @@
 			
 			
 			// On T8 templates, move the left nested column to the right sidebar
-			if($('#nested-left').length !== 0) {
+			if($('body.students #nested-left').length !== 0) {
 				$('#nested-left').removeClass("col-xs-12 col-sm-12 col-md-4 col-lg-4"); // Note: Update if col defs chnage
 				
 				$('#nested-right').removeClass("col-md-8");
@@ -651,7 +651,7 @@
 						
 						// Toggle collapsed
 						if($(this).attr('class') === 'collapsed') {
-							$(this).removeClass('collapsed');
+							//$(this).removeClass('collapsed'); // this is handled in collapseAllPanels
 						} else {
 							$(this).addClass('collapsed');
 						}
@@ -723,6 +723,7 @@
 		
 		function collapseAllPanels(parentTag) {
 			//$(".panel-group .collapsible").removeClass("in"); // close panels
+			$('.in').parent().find('.panel-heading a').addClass('collapsed'); 
 			$('.in').collapse('hide');
 		}
 		

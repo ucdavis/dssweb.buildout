@@ -86,7 +86,7 @@
 			transform: translate(0, -50%);	
 			margin-left: auto;
 			margin-right: 8%;
-			color:$ucd_blue_100;
+			//color:$ucd_blue_100;
 			&:hover {
 				text-decoration: underline;
 			}
@@ -381,7 +381,7 @@
 					margin-left: 0;
 					padding-left: 76px;
 					a {
-						top: 10px; // TODO: breaks desktop resized to tablet width but required for iPad
+						//top: 10px; // TODO: breaks desktop resized to tablet width but required for iPad
 						@include font_size(12px,!important);
 					}
 				}

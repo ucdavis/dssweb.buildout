@@ -43,7 +43,7 @@
 	.email {
 		text-transform: uppercase;
 		a {
-			display: block;
+			display: inline-block;
 			height: 16px;
 			padding-left: 22px;
 			background: url(../images/icons/email.gif) 0 70% no-repeat;
@@ -87,6 +87,16 @@
 	.corner-box {
 		display: none !important;
 	}
+	.vcard {
+		.email {
+			display: block;
+			text-align: center;
+			a {
+				width: 60px;
+			}
+		}
+	}
+	
 }
 
 /*----- tablet breakpoint -------*/

@@ -115,7 +115,7 @@
 			position: absolute;
 			display: block;
 			height: 0;			
-			box-shadow: 0 0px 0 2px #000, 0 7px 0 2px #000, 0 14px 0 2px #000, 0 21px 0 2px #000  !important;
+			box-shadow: 0 0px 0 2px $ucd_blue_100, 0 7px 0 2px $ucd_blue_100, 0 14px 0 2px $ucd_blue_100, 0 21px 0 2px $ucd_blue_100 !important;
 			width: 25px !important; 
 		}
 }
@@ -434,7 +434,21 @@
 
 /*----- Tablet up breakpoint -------*/
 @media screen and (min-width: $screen-sm-min) { // width > 768px
-
+	.top-bar {
+		.top-bar-section {
+			ul {
+				ul.dropdown {
+					width: 200px !important;
+					li {
+						a {
+							@include line_height(16px);
+							padding: 4px 12px;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 /*----- Tablet breakpoint -------*/
@@ -488,22 +502,6 @@
 	.util-bar {
 		max-width: 768px;
 	}
-	.top-bar {
-		.top-bar-section {
-			ul {
-				ul.dropdown {
-					width: 200px !important;
-					li {
-						//text-align: left;
-						a {
-							padding: 4px 12px;
-						}
-					}
-				}
-			}
-		}
-	}
-
 }
 
 /*----- Desktop breakpoint -------*/

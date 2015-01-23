@@ -1170,7 +1170,13 @@ body.contact-type {
 	}
 	
 	#more-content-button {
-		left: -12px;
+		left: -6px;
+		width: 30px !important;
+		height: 30px !important;
+		overflow: hidden;
+		a {
+			background-position: -2px -5px !important;
+		}
 	}
 	
 	#content-row {
@@ -1210,6 +1216,12 @@ body.contact-type {
 				}
 			}
 		}	
+	}
+	
+	#nested-left { // T8 nested column "Important Dates" and t12
+		.picture {
+			width: auto;
+		}
 	}
 	
 	#footer {

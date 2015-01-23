@@ -57,6 +57,28 @@
 	
 }
 
+/*----- Tablet up breakpoint -------*/
+
+@media screen and (min-width: $screen-sm-min) { // width > 768px
+	.top-bar {
+		.top-bar-section {
+			ul {
+				/* Note: Update formatting for navigation submenus here */
+				ul.dropdown {
+					//width: 200px !important;
+					li {
+						a {
+							//@include line_height(16px);
+							//padding: 4px 12px;
+							// if adding font-size here make sure to remove from Tablet breakpoint ("M") range above
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 /*----- Desktop breakpoint ("L") -------*/
 
 @media screen and (min-width: $screen-sm-max) { // width > 991
