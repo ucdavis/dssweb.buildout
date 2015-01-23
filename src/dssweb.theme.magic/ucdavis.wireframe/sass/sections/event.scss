@@ -78,6 +78,7 @@
 			float: none;
 			li {
 				display: inline-block;
+				margin-right: 10px;
 				a {
 					width: auto !important;
 				}
@@ -120,6 +121,7 @@
 		}
 		.portlet-items {
 			float: right;
+			margin-top: 0 !important;
 		}
 	}
 	.panel{

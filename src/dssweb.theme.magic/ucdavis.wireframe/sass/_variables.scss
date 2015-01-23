@@ -13,5 +13,5 @@ $shadow_am_viewport_height: 418px;
 @import "vendor/bootstrap-override-variables"; // Override Bootstrap *variables* here
 @import "ucd-variables";
 
-@import "components/typography/typography";
+//@import "components/typography/typography"; // This already included in styles.scss
 

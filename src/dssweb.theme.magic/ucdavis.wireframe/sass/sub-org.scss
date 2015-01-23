@@ -1,6 +1,6 @@
 @charset "utf-8"; 
 @import "variables"; // Do not remove; includes all framework variables and SASS mixins necessary for @include processing and $ variable assignments.
-
+@import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
 /* 
 		Sub Unit / Organization Style Overrides 
 		

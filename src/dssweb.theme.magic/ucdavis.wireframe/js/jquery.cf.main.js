@@ -864,7 +864,15 @@
 			if(($('.content-title').length !== 0) && ($('.sidebar-right').length !== 0) && ($('body.bio').length === 0)) {
 				var ctpos = $('.content-title').position();
 				var cth = $('.content-title').height();
-				var offset = ($('body.search-result').length !== 0) ? 68 : 15;
+				var offset = 0;
+				// Use offset conditions to position the top of the right sidebar
+				if($('body.search-result').length !== 0) {
+					offset = 68;
+				} else if($('body.contact-type').length !== 0) {
+					offset = -18;
+				} else {
+					offset = 15;
+				}
 				var ctb = ctpos.top + cth + offset; // 15 additional vert offset needed (was 5)
 				if($('.breadcrumb').length !== 0) {
 					ctb += $('.breadcrumb').height();

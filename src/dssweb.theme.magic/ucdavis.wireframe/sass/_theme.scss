@@ -936,7 +936,7 @@ body.contact-type {
 		background:transparent;
 	}
 	.sidebar-right {	
-		margin-top:100px;
+		margin-top: 100px;
 		//clear:both;
 		//float:left !important;
 	}
@@ -1000,6 +1000,9 @@ body.contact-type {
 	body.contact-type {
 		h1 {
 			padding-bottom: 5px;
+		}
+		.sidebar-right {
+			margin-top: 73px; // was 91px applied inline
 		}
 	}
 	

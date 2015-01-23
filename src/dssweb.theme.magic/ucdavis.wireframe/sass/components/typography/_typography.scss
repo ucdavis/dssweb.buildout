@@ -194,7 +194,7 @@ p {
 		}
 	}
 }
-#content, #am-content {
+#content-row { // was #content, #am-content
 	.vcard {
 		.adr, #email-phone {
 			@include line_height(18px,!important);
@@ -251,7 +251,7 @@ figure {
 		}
 	}
 }
-#content, #am-content {
+#content-row { // was #content, #am-content
 	.box-content {
 		p {
 			@include font_size(13px,!important);
@@ -282,7 +282,7 @@ figure {
 }
 
 // TODO: Revise specificity using content, am-content
-#content, #am-content {
+#content-row { // was #content, #am-content
 	h2, h2 a {
 		@include font_size(24px, !important);
 		font-weight:normal;
@@ -368,7 +368,7 @@ body.bio {
 }
 
 // TODO: Make it easier to override styles from the section below, especially from _portlet.scss
-#content, #am-content {
+#content-row { // was #content, #am-content
 	p, li, ol, div {
 		@include line_height(24px,!important); 
 	}
@@ -434,7 +434,7 @@ body.bio {
 	}
 	
 	// TODO: specificity
-	#content, #am-content {
+	#content-row { // was #content, #am-content
 		
 		h1 {
 			padding-bottom: 20px;
@@ -534,7 +534,7 @@ body.res-lab {
 	}
 }
 
-#content, #am-content, #cm-content {
+#content-row { // was #content, #am-content, and #cm-content {
 	ul {
 		li {
 			@include font_size(15px,!important);
@@ -554,7 +554,7 @@ body.home {
 /*----- tablet breakpoint -------*/
 @media screen and (min-width: $screen-sm-min) {	// width > 768
 	.top-panel {
-		#content, #am-content, #cm-content {
+		#content-row { // was #content, #am-content, and #cm-content {
 			.narrow-col {
 				color: #FFF;
 				h2 {
@@ -626,7 +626,7 @@ body.home {
 	body.home {
 		// Text below banner in thumbnail / tab boxes
 		
-		#content, #am-content {
+		#content-row { // was #content, #am-content
 			.narrow-col {
 				h2 {
 					@include font_size(17px);
@@ -651,7 +651,7 @@ body.home {
 		}
 	}
 	
-	#content, #am-content {
+	#content-row { // was #content, #am-content
 		.content-title {
 			@include font_size(26px);
 			@include line_height(28px);
@@ -698,7 +698,7 @@ body.home {
 @media screen and (min-width: $screen-md-min) { // width > 992
 	body.home {
 		// Button text at bottom of happy boxes
-		#content, #am-content {
+		#content-row { // was #content, #am-content
 			#top-panel-row {
 				.narrow-col {
 					.bcontroller {
@@ -716,7 +716,7 @@ body.home {
 /*----- Tablet breakpoint -------*/
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991px
 
-	#content, #am-content {
+	#content-row { // was #content, #am-content
 		.narrow-col {
 			h2 {
 				@include font_size(17px,!important);
@@ -731,7 +731,7 @@ body.home {
 	body.home {
 		// Text below banner in thumbnail / tab boxes
 		
-		#content, #am-content {
+		#content-row { // was #content, #am-content
 			.narrow-col {
 				p, li, a {
 					@include font_size(13px,!important);
