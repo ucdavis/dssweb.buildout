@@ -196,10 +196,13 @@ body.has-shadow-am {
 
 /*----- Tablet breakpoint -------*/
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991px
+	/*body.home #main, */#main-container {
+		padding-top: 25px;
+	}
 	.siders {
 		.wall {
 			&.shadow-graphic {
-	    	height: 85px !important;
+	    	height: 145px !important;
 			}
 			&.shadow-am-graphic {
 				top: 0;

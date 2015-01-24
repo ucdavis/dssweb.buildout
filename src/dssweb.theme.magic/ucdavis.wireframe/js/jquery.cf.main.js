@@ -8,7 +8,7 @@
 	// Banner port heights. Note: Sync with values in sass/_variables.scss
 	var banner_hb_ratio = 0.7292; // Representing the ratio top-row-height / banner-height (may need adjustment if styles change)
 	var front_banner_height = 474; // was 565 prior to 2014-10-13 RAK
-	var front_tablet_banner_height = 432;
+	var front_tablet_banner_height = 407;
 	var shadow_am_viewport_height = 418;
 	var vcardiced = false;
 	var biocardiced = false;
