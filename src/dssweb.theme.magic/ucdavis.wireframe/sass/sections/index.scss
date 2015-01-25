@@ -71,6 +71,7 @@
 		//display: block;
 	}
 	
+ // this version works well except on iPad which pushes text down
 	.tab-title {
 		width: 100%;
 		height: 100%;
@@ -91,8 +92,34 @@
 				text-decoration: underline;
 			}
 		}
-	}
-}
+	} 
+	/*.tab-title {
+		display: table-cell;
+		vertical-align: middle;
+		width: 100%;
+		height: 100%;
+		padding-right: 8%;
+		padding-left: 15px !important;
+		position: relative;
+		background: url(../../images/icons/blue-100-right-arrow.png) 97% 50% no-repeat;
+		a {
+			display: block;
+			width: 100%;
+			height: 100%;
+			margin-right: 8%;
+			text-decoration: none;
+			text-align: left;
+			//position: absolute;              
+			//top: 50%;                         
+			//transform: translate(0, -50%);	
+			//color:$ucd_blue_100;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}*/
+	
+} // /tab
 
 // 2014-09-09 RAK: TODO: Possibly remove ... we want to keep resolution of Bootstrap variables intact
 @media screen and (max-width: 440px) {		
@@ -371,7 +398,7 @@
 				font-weight: normal;
 				@include line_height(15px);
 			}
-			.tab {
+			/*.tab {
 				height: 63px;
 				img {
 					height: 63px;
@@ -382,6 +409,25 @@
 					padding-left: 76px;
 					a {
 						//top: 10px; // TODO: breaks desktop resized to tablet width but required for iPad
+						@include font_size(12px,!important);
+					}
+				}
+			} // /tab*/
+			.tab {
+				//padding: 0 !important;
+				height: 63px;
+				img {
+					height: 63px;
+					width: 63px;
+				}
+				.tab-title {
+					margin-left: 0;
+					padding-left: 76px;
+					background-position: 98% 50% !important;
+					a {
+						// Remove vertical centering of text to accommodate longer titles
+						top: 15%;                         
+						transform: translate(0, -15%);
 						@include font_size(12px,!important);
 					}
 				}

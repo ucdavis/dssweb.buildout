@@ -1144,12 +1144,17 @@ body.contact-type {
 		//margin-top: 145px; // ad-hoc ... set position of sidebar in javascript
 	}
 	
-	.row#footer {
+	/*.row#footer {
 		margin-right: -15px;
 		margin-left: -15px;
-	}
+	}*/
+		
+	//.jumbotron {display:none;}
 	
+	// If foot is released from container to expand to edges, remove margins and confine foot-wrap
 	.footer-processed#footer {
+		margin-left: auto;
+		margin-right: auto;
 		.foot-wrap {
 			width: 1000px;
 			//margin-left: auto;
@@ -1251,10 +1256,9 @@ body.contact-type {
 	
 	/* Required on tablet to keep footer from breaking (being too wide: foot-wrap width: auto; and not having right white margin: footer-processed: width 100% (783px). Warning: using width 783px instead of 100% leaves right white space on footer in desktop view */
 	.footer-processed {
-		width: 100%; // fix on tablet
+		width: auto; // fix on tablet
 		margin-left: 0 !important; // TODO: fix; right margin has white
-		margin-right: -15px !important; // TODO: Not working
-		
+		margin-right: -24px !important; // TODO: Not working
 		.foot-wrap {
 			width: 698px !important;
 		}

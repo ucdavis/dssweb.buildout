@@ -20,8 +20,6 @@
 	
 }
 // Fix wallpaper placement
-
-
 .wall {
 	//position: absolute; // don't need if jumbotron is absolute
 	//z-index: -100; // arrange wallpaper to back position
@@ -188,6 +186,10 @@ body.has-shadow-am {
 /*----- Tablet breakpoint -------*/
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991px
 	.siders {
+		// Note: This removes the 15px white strip to right of the wallpaper when 
+		// initial-scale=1.0 is removed from the meta
+		// TODO: Determine underlying cause -> test on other tablets
+		margin-right: -24px !important; // was -12px
 		.wall {
 			&.shadow-graphic {
 	    	height: 145px !important;
@@ -198,7 +200,6 @@ body.has-shadow-am {
 			}
 		}
 	}
-	
 }
 /*----- Desktop or tablet breakpoint -------*/
 @media screen and (min-width: $screen-sm-min) { // width > 768px
@@ -218,10 +219,7 @@ body.has-shadow-am {
 	
 	body.home {
 		.siders {
-			// Note: This removes the 15px white strip to right of the wallpaper when 
-			// initial-scale=1.0 is removed from the meta
-			// TODO: Determine underlying cause -> test on other tablets
-			margin-right: -12px !important;
+			
 		}
 		.narrow-col {
 			h2 {

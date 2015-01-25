@@ -43,8 +43,8 @@
 			var nc = pb.find('.narrow-col:last-child');
 			var ncw = 0;
 			var ncpl = 0;
-
-			if(nc) {
+			
+			if(nc) { // calculate right margin based on pb - nc, assuming left nc margin is 0
 				ncw = nc.width();
 				ncpl = nc.position().left;
 				rightBoxMargin = pb.width() - ncw;
@@ -698,7 +698,7 @@
 						
 						// Smooth scroll to offset of anchor ...
 						var anchor = $(this).attr('data-target');
-						if(hashTagActive != anchor) { // panel is open and no active hash
+						if(hashTagActive !== anchor) { // panel is open and no active hash
 		          //calculate destination place
 		          var dest = 0;
 		          if ($(anchor).offset().top > $(document).height() - $(window).height()) {
@@ -858,7 +858,7 @@
 		if($('.container #footer').length !== 0) {
 			$('#footer').insertAfter($('.container'));
 			$('#footer').addClass('footer-processed');
-			$('#footer .foot-wrap').addClass('clearfix');
+			$('#footer .foot-wrap').addClass('container clearfix');
 		}
 		
 		// Note: The height of the happy box block needs to change with the height of the .wall * banner_hb_ratio

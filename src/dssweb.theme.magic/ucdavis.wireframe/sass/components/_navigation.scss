@@ -9,10 +9,10 @@
 	margin-top: 56px;
 	margin-left: auto;
 	//margin-right:15px; // changes with addition of row wrap ... 105px was previous disabled value 
-	ul{
+	ul {
 		height:100%;
 		
-		li{
+		li {
 			float:left;
 			padding-left:3px;
 			padding-right:3px;
@@ -23,7 +23,7 @@
 			&:hover {
 				background-color: $ucd_bright_gold_70;
 			}
-			a{
+			a {
 				display:inline-block;
 				margin-top: 12px;
 				
@@ -50,16 +50,16 @@
 			}
 		}
 	}
-	#uti-news{
+	#uti-news {
 		width:21.92%; //160px
 	}
-	#uti-events{
+	#uti-events {
 		width:10.96%; //80px
 	}
-	#uti-give{
+	#uti-give {
 		width:10.96%; //80px
 	}
-	#uti-search{
+	#uti-search {
 		width: 28.36%;//207px
 		
 		form {
@@ -82,7 +82,7 @@
 			}
 		}
 	}
-	#uti-share{
+	#uti-share {
 		width: 5%; //44px
 		a {
 			display: inline-block;
@@ -91,7 +91,7 @@
 			background: url(../images/icons/share.png) top left no-repeat;
 		}
 	}
-	#uti-logo{
+	#uti-logo {
 		border-right-width: 0;
 		position: relative;
 		overflow: hidden; // keep from flowing off right
@@ -101,10 +101,10 @@
 		}
 	}
 }
-.caret{
+.caret {
 	margin-left:15px;
 }
-.menu-icon{
+.menu-icon {
 	//display:none;
 	background-color: $tab_light_gray;
 	position:relative;
@@ -135,7 +135,7 @@
 		/* top:15px; THIS NEGATIVELY IMPACTS THE FORMAT OF THE TOPBAR MENU */
 		.name {
 			
-			a{
+			a {
 				// border-right: 1px solid white; // set to check right margin of dept name graphic
 				display: inline-block;
 				width: 370px; 
@@ -166,7 +166,7 @@
 			height: 100% !important;
 			
 			// Parent level buttons
-			 > li{
+			 > li {
 
 				background-color: $ucd_blue_100 !important;
 				/* width: 9.6%; // was 18% with .right. width of primary menu items */ // TODO: 2014-09-24 RAK: Eval
@@ -337,7 +337,7 @@
 @media screen and (max-width: 440px) { // width < 440
 	// To have util bar slide into place rather than being same width as navigation
 	.util-bar {
-		#uti-logo{
+		#uti-logo {
 			margin-left: 10px !important; // Note: Use to adjust logo with left border of department name
 		}
 	}
@@ -355,6 +355,7 @@
 	
 	// To have util bar slide into place rather than being same width as navigation
 	.util-bar {
+		margin-top: 0 !important;
 		max-width: 650px;
 		ul li input {
 			 width: 170px;
@@ -371,7 +372,7 @@
 		padding-bottom: 0;
 		
 		// Downscale name.gif 
-		.title-area{	
+		.title-area {	
 			.name {
 				a {
 					//padding-left: 15px;
