@@ -337,6 +337,7 @@
 @media screen and (max-width: 440px) { // width < 440
 	// To have util bar slide into place rather than being same width as navigation
 	.util-bar {
+		margin-top: 0 !important;
 		#uti-logo {
 			margin-left: 10px !important; // Note: Use to adjust logo with left border of department name
 		}
@@ -355,7 +356,7 @@
 	
 	// To have util bar slide into place rather than being same width as navigation
 	.util-bar {
-		margin-top: 0 !important;
+		//margin-top: 0 !important;
 		max-width: 650px;
 		ul li input {
 			 width: 170px;
