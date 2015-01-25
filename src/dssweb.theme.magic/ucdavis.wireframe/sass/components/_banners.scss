@@ -50,7 +50,7 @@
 #banner-caption {
 	position: absolute;
 	top: 0;
-	right: 88px;
+	right: 0; //40px; // tablet focus
 	@include font_size(12px);
 	@include line_height(15px);
 	text-transform: uppercase;
@@ -84,15 +84,6 @@ body.has-shadow-am {
 		}
 	}
 }
-
-@media screen and (max-width: $screen-md-min) { // width < 992
-	#util-bar-wrap {  
-		.util-bar {
-			margin-top: 0;
-		}
-	}
-}
-
 
 /*----- Mobile breakpoint --------*/
 @media screen and (max-width: $screen-xs-max) { // width < 767 (was $screen-sm-min 768 but triggers on ipad)
@@ -196,9 +187,6 @@ body.has-shadow-am {
 
 /*----- Tablet breakpoint -------*/
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991px
-	/*body.home #main, */#main-container {
-		padding-top: 25px;
-	}
 	.siders {
 		.wall {
 			&.shadow-graphic {
@@ -361,6 +349,10 @@ body.has-shadow-am {
 		}
 	}
 	
+	#banner-caption {
+		//right: 80px; // tablet focus
+	}
+	
 	.siders {
 		.wall {
 			&.shadow-graphic {
@@ -390,13 +382,16 @@ body.has-shadow-am {
 @media screen and (min-width: $screen-lg-min) { // width > 1310
 	
 	// pull in right boxes; sub pages
-	#top-panel-row {
+	#top-panel-row { 
 		padding-left: 57px; // orig. 55px but req special adjustment after placement of bottom arrow icon on home
 		padding-right: 57px; 
 		#more-content-button {
 			left: 50px;
 		}
 	}
-	
+	#middle-row { // add padding to middle-row to ensure banner caption positioning
+		margin-left: 42px;
+		margin-right: 42px;
+	}
 }
 /* /components/_banners.scss */

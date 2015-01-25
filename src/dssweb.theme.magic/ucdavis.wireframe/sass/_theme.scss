@@ -155,7 +155,7 @@ button {
 	background-color: $ucd_blue_70;
 	//min-height: 250px; // keep for reference. having this adds right white margin on iphone!
 	padding-bottom: 25px;
-	margin-bottom: 15px;
+	//margin-bottom: 15px; // don't need white at bottom
 	clear: both;
 	a {
 		text-decoration: none;

@@ -8,19 +8,51 @@
 	// Banner port heights. Note: Sync with values in sass/_variables.scss
 	var banner_hb_ratio = 0.7292; // Representing the ratio top-row-height / banner-height (may need adjustment if styles change)
 	var front_banner_height = 474; // was 565 prior to 2014-10-13 RAK
-	var front_tablet_banner_height = 407;
+	var front_tablet_banner_height = 432;
 	var shadow_am_viewport_height = 418;
 	var vcardiced = false;
 	var biocardiced = false;
 	var processed = false;
 	var hashTagActive = "";
-	
+
+	/*
+	 * splitPath utility function
+	 * @param path the path to process
+	 * @return the object with directory/part and file name/part
+	 */	
 	function splitPath(path) {
 	  var dirPart, filePart;
 	  path.replace(/^(.*\/)?([^/]*)$/, function(_, dir, file) {
 	    dirPart = dir; filePart = file;
 	  });
 	  return { dirPart: dirPart, filePart: filePart };
+	}
+	
+	/*
+	 * HappyDone callback function to position banner-caption element
+	 * Calculate right-most border of last happy box for alignment of content beneath the happybox container
+	 * Requires element #banner-caption and happy box container with multiple .panel-body elements
+	 * Right position is .panel-body - .narrow-col as long as top-panel-row and middle-row (caption parent) have same content width
+	 */
+	function happyDone() {
+		if(($('#banner-caption').length !== 0) && ($('.panel-body').length !== 0)) {
+			var context = $('#top-panel-row');
+			var cw = context.width();
+			var cwl = context.position().left;
+			var pb = context.find('.panel-body:last-child');
+			var nc = pb.find('.narrow-col:last-child');
+			var ncw = 0;
+			var ncpl = 0;
+
+			if(nc) {
+				ncw = nc.width();
+				ncpl = nc.position().left;
+				rightBoxMargin = pb.width() - ncw;
+			}
+			
+			$('#banner-caption').css('right', rightBoxMargin);
+
+		}
 	}
 	
 	$(document).ready(function() {
@@ -269,8 +301,6 @@
 			}
 			
 		};
-		
-
 		
 		// PLUGIN CANDIDATES /////////////////////////////////////////////
 		// Process .picture into figure/figcaption
@@ -813,7 +843,7 @@
 			processed = true;
 		} // /myResize()
 		
-		
+
 				
     if (toggleActive) {
 				myResize();
@@ -833,6 +863,7 @@
 		
 		// Note: The height of the happy box block needs to change with the height of the .wall * banner_hb_ratio
 		var hb_element_height = calc_hb_viewport();
+		
 		
 		// Set sidebar position and activate home page happy boxes
 		if ((activeMQ === 'L') || (activeMQ === 'M')) {
@@ -893,11 +924,17 @@
 						'action_element_class': '.action-element',
 						'canvas_element_class': '.narrow-col',
 						'button_class': ".btn-primary",
-						'height': hb_element_height // was var front_banner_height, total height of the happy viewport
+						'height': hb_element_height, // was var front_banner_height, total height of the happy viewport
+						'callback':happyDone
 					}
 				);
 				front = true;
+				
+				// Capture callback in happyDone(), the default callback that also exposes the plugin scope
+				
 			}
+			
+			
 			
 			// PAGES WITH HAS-SHADOW-AM ...
 			
@@ -915,7 +952,8 @@
 							'canvas_element_class': '.narrow-col',
 							'button_class': ".btn-primary",
 							'height': hb_element_height, // was var shadow_am_viewport_height, total height of the happy viewport
-							'frozen': true
+							'frozen': true,
+							'callback':happyDone
 						}
 					);
 				}

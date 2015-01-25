@@ -4,10 +4,10 @@
 .util-bar{
 	
 	background-color: $ucd_bright_gold;	
-	height:40px;
+	height: 40px;
 
-	margin-top:56px;
-	margin-left:auto;
+	margin-top: 56px;
+	margin-left: auto;
 	//margin-right:15px; // changes with addition of row wrap ... 105px was previous disabled value 
 	ul{
 		height:100%;
@@ -493,6 +493,14 @@
 	.util-bar {
 		#uti-logo {
 			width: 22%;
+		}
+	}
+}
+
+@media screen and (max-width: $screen-md-min) { // width < 992
+	#util-bar-wrap {  
+		.util-bar {
+			margin-top: 25px;
 		}
 	}
 }
