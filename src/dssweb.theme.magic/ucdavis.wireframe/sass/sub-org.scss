@@ -103,6 +103,10 @@
 		padding-right: 16px !important;
 		padding-left: 16px !important;
 	}
+	.genericTile {
+		min-height: 192px; // based on a max total of 6 lines within tiles. Customize or use JS to apply equal heights
+	}
+	
 }
 
 
