@@ -542,6 +542,35 @@ ul#footer-nav {
    
 
 }
+/*Forms */
+input.button {
+height: 40px;
+width: 120px;
+background-color: #Daaa00;
+text-align: center;
+border: 0;
+}
+.formControls.form {
+padding-top: 1em;
+text-align: center;
+}
+.field {
+	padding-top:4px;
+}
+
+/*#content form input {
+font-size: 13px;
+font-size: 0.8125rem;
+line-height: 18px;
+line-height: 1.125rem;
+height: 35px;
+text-align: left;
+width:100%;
+padding:4px 4px 4px 4px;
+}
+textarea#message{
+	width:100%;
+} */
 /*Faculty Bio Page */
 p.org {
 	padding-bottom: 1.5em;
@@ -557,5 +586,6 @@ margin-right: -12px;
 .org.follow {
 line-height: 2em;
 }
+
 /* @end */
 }

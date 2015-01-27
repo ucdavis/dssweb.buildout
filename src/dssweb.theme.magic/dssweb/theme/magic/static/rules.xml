@@ -7,10 +7,11 @@
     <!-- Apply the following rules to standard Plone pages -->
     <rules css:if-content="#visual-portal-wrapper">
 	    <theme href="index2.html" if="$home_page" />
-		<theme href="index2.html" if="$portal_url" />
 	    <theme href="t13_event2.html" css:if-content="body.portaltype-event" />
 		<theme href="t3_bio.html" css:if-content="body.portaltype-fsdperson" />
-		<theme href="t2_ourpeople.html" css:if-content="body.section-directory" />
+		<theme href="t2_ourpeople.html" css:if-content="body.template-facetednavigation_view" />
+		<theme href="t7_contact.html" css:if-content="body.portaltype-dsscontact" />
+
       <theme href="t4_adhoc2.html" />
 
       <!-- Replace title with Plone's page title  -->
@@ -35,12 +36,7 @@
       <drop css:content="dd.portlet-footer" />
       <drop css:content="dd.portletFooter"/>
    </rules>
-   <rules if="$portal_url">
-  	  <drop css:theme="#content > div.row > div" />
-      <!--drop all the portal footers on the front page -->
-      <drop css:content="dd.portlet-footer" />
-      <drop css:content="dd.portletFooter"/>
-   </rules>
+   
 
       <before css:theme="#util-bar-wrap > nav" css:content="#iss-top" />
 
@@ -85,6 +81,7 @@
       <replace css:theme-children="ul.left" css:content-children="#portal-globalnav" />
       <replace content="//ul[contains(@class,'submenu')]/@class">
           <xsl:attribute name="class">dropdown</xsl:attribute>
+		  <xsl:attribute name="style">margin-top: 0px;</xsl:attribute>
       </replace>
       <replace content="//li[contains(@class,'dropdown')]/@class">
           <xsl:attribute name="class">has-dropdown</xsl:attribute>
@@ -178,10 +175,10 @@
 		  
 	   </rules>
 	   <!--Person directory Page Faceted Nav T2 -->
-	   <rules css:if-content="body.section-directory">
+	   <rules css:if-content="body.template-facetednavigation_view">
 		   
 		    <after css:theme-children="html body" css:content="html head script" />
-			
+			<replace css:theme="#am-content > p" css:content=".documentDescription" />
 		    <replace css:theme="h4.table-header" css:content="#faceted-center-column" />
 			<replace css:theme="#search-results" css:content="#faceted-results" />
 			<replace css:theme-children="#left-area" css:content-children="#left-area" />
@@ -189,6 +186,12 @@
 		    <drop theme='//*[@id="pager-bottom"]' />
 
 	   </rules>
+	   <!--Contact Page rules -->
+	   <rules css:if-content="body.portaltype-dsscontact" >
+		   <replace theme='//*[@id="google-map"]' content='//*[@id="viewlet-above-content-title"]' />
+		   <replace theme='//*[@id="content-core"]' content='//*[@id="content-core"]' />
+	   </rules>
+	   
 		   
 
       <!--- Footer -->
