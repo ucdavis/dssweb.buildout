@@ -97,10 +97,10 @@
 
 /*----- IRREGULAR STYLE TARGETS -------*/
 @media screen and (min-width: $screen-sm-max) and (max-width: $screen-lg-min) { // 991 < width < 1310
-	// Use to correct menu item widths. For Psychology menu 16px pulls the menu up on Mac/Chrome
+	// Use to correct menu item widths. For Psychology menu 15px pulls the menu up on Mac/Chrome
 	.top-bar .top-bar-section ul > li a {
-		padding-right: 16px !important;
-		padding-left: 16px !important;
+		padding-right: 15px !important;
+		padding-left: 15px !important;
 	}
 }
 
