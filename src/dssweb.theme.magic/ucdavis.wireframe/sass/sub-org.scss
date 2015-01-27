@@ -56,7 +56,7 @@
 		}
 	}
 	.genericTile {
-		min-height: 192px; // based on a max total of 6 lines within tiles. Customize or use JS to apply equal heights
+		min-height: 192px !important; // based on a max total of 6 lines within tiles. Customize or use JS to apply equal heights
 	}
 }
 
