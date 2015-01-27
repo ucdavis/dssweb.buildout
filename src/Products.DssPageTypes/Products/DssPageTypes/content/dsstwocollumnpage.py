@@ -45,7 +45,7 @@ DssTwoCollumnPageSchema.moveField('insetcolumn',after='description')
    
 
 class DssTwoCollumnPage(base.ATCTContent):
-       """Event for ISS website"""
+       """Two Collumn Page"""
        implements(IDssTwoCollumnPage)
 
        meta_type = "DssTwoCollumnPage"

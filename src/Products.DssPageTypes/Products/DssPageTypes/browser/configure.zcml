@@ -4,18 +4,19 @@
     i18n_domain="Products.DssContact">
 
   <include package="plone.app.contentmenu" />
-
  
 	   <browser:page
 	      for="Products.DssPageTypes.interfaces.IDssContact"
-	      layer="Products.DssPageTypes.interfaces.IDssContactSpecific"
+	      layer="..interfaces.IDssPageTypesSpecific"
+		 class=".DssPageViews.DssContactView"
 	      name="contact_page_view"
 	      template="dss_contact_view.pt"
 	      permission="zope2.View"
 	          />
 	   <browser:page
 	      for="Products.DssPageTypes.interfaces.IDssTwoCollumnPage"
-	      layer="Products.DssPageTypes.interfaces.IDssTwoCollumnPageSpecific"
+		 class=".DssPageViews.DssTwoCollumnView"
+	      layer="..interfaces.IDssPageTypesSpecific"
 	      name="two_collumn_view"
 	      template="dss_twocollumn_view.pt"
 	      permission="zope2.View"
