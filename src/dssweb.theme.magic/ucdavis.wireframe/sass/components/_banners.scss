@@ -75,7 +75,7 @@ body.has-shadow-am {
 	.bcontroller {
 		.btn-home.btn-primary {
 			height: 32px;
-			padding-top: 3px; // adjust depending on height to push button down
+			padding-top: 6px !important; // adjust depending on height to push button down
 			background: url(../images/icons/white-arrow-up.png) 50% 12px no-repeat $rec_blue;
 			@include line_height(30px);
 			text-transform: uppercase;
