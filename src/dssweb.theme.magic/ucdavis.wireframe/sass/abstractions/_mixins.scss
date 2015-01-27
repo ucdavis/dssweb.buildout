@@ -28,7 +28,8 @@
 
 @mixin standard_font() {
   color: #000;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-family: "Lucida Grande", "Lucida Sans", "Verdana", sans-serif;
+  //font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   @include font_size(16px);
   line-height: em(21px);
 }
