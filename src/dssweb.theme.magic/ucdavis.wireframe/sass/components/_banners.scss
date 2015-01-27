@@ -200,6 +200,12 @@ body.has-shadow-am {
 			}
 		}
 	}
+	.narrow-col {
+		h2 {
+			@include font_size(18px);
+			letter-spacing: 0;
+		}
+	}
 }
 /*----- Desktop or tablet breakpoint -------*/
 @media screen and (min-width: $screen-sm-min) { // width > 768px
