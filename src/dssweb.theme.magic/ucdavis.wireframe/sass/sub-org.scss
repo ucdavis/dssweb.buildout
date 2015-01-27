@@ -50,8 +50,8 @@
 		}
 		.top-bar-section {
 			ul li a {
-				@include font_size(13px, !important);
-				letter-spacing: 0 !important;
+				@include font_size(12.5px, !important);
+				//letter-spacing: 0 !important;
 			}
 		}
 	}
