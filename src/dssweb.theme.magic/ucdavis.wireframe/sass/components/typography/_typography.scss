@@ -76,6 +76,11 @@ p {
 	margin-bottom: 15px;
 }
 
+#top-bar-wrap {
+	.top-bar-section ul li > a {
+  	//@include standard_font;
+	}
+}
 .portlet {
 	li, p, h4 {
 		@include font_size(13px);
@@ -138,21 +143,25 @@ p {
 	}
 }
 
-#nested-left { // T8 nested column "Important Dates"
-	padding-left: 0;
-	h3, h4, p {
-		@include font_size(13px,!important);
-		@include line_height(18px,!important);
+#content-row { 
+	#nested-left { // T8 nested column "Important Dates"
+		padding-left: 0;
+		h3, h4, p {
+			@include font_size(13px,!important);
+			@include line_height(18px,!important);
+		}
 	}
 }
-.col-lg-4 {
+
+/*.col-lg-4 {
 	h2 {
     font-weight: bold !important;
     @include font_size(30px, !important);
     margin-bottom: 15px;
 	}
     
-}
+}*/
+
 .about-bio {
 	h3{
 	font-weight: bold;
@@ -209,8 +218,9 @@ p {
 		}
 	}
 }
-figure {
-	figcaption {
+
+
+	figcaption, .figcaption {
 		text-align: right;
 		@include font_size(11px);
 		@include line_height(15px);
@@ -221,7 +231,7 @@ figure {
 			text-transform: none !important;
 		}
 	}
-}
+
 #content {
 	form {
 		input, select, textarea {
@@ -260,8 +270,8 @@ figure {
 	}
 }
 
-.sidebar-info{
-	h4{
+.sidebar-info {
+	h4 {
 		font-weight: bold;
 		@include font_size(16px);
 	}
@@ -273,8 +283,8 @@ figure {
 }
 
 
-.content-title{
-	padding-bottom:30px;
+.content-title {
+	padding-bottom: 30px;
 	@include font_size(36px);
 	@include line_height(43px);
 	letter-spacing: 0.01em;
@@ -285,9 +295,9 @@ figure {
 #content-row { // was #content, #am-content
 	h2, h2 a {
 		@include font_size(24px, !important);
-		font-weight:normal;
-		padding-top:15px;
-		padding-bottom:15px;
+		font-weight: normal;
+		padding-top: 15px;
+		padding-bottom: 15px;
 	}
 	h3 {
 		@include font_size(15px);
@@ -296,13 +306,15 @@ figure {
 		padding-top: 6px;
 		padding-bottom: 6px;
 	}
-	h2 + ul {
+	.intro + h2 {
+		padding-top: 0;
+	}
+	h2 + ul, h3 + ul {
 		padding: 0;
 		margin: 0;
 	}
-	h3 + ul {
-		padding: 0;
-		margin: 0;
+	.inline-content ul {
+		margin-top: 0 !important;
 	}
 	#thumb-section {
 		h3 {
@@ -424,7 +436,10 @@ body.bio {
 			}
 		}
 	}
-	
+	blockquote {
+		margin-left: 0;
+		margin-right: 0;
+	}
 	.sidebar {
 		h3 {
 			@include font_size(13px);
@@ -432,14 +447,19 @@ body.bio {
 			letter-spacing:.1em;
 		}
 	}
-	
+
 	// TODO: specificity
 	#content-row { // was #content, #am-content
 		
 		h1 {
 			padding-bottom: 20px;
 		}
-		
+		h2, h2 a {
+			@include font_size(16px, !important); // yellow bars
+			font-weight: normal;
+			//padding-top: 15px;
+			//padding-bottom: 15px;
+		}
 		.breadcrumb {
 			p {
 				margin-bottom: 15px;
@@ -717,11 +737,17 @@ body.home {
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991px
 
 	#content-row { // was #content, #am-content
+		h2 {
+			@include font_size(18px,!important);
+		}
 		.narrow-col {
 			h2 {
 				@include font_size(17px,!important);
 				@include line_height(24px,!important);
 			}
+		}
+		p.intro {
+			@include font_size(16px,!important);
 		}
 	}
 

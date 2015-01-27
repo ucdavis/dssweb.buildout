@@ -123,6 +123,7 @@ p {
 		margin-left: 10px;
 		margin-right: 10px;
 		@include font_size(24px);
+		vertical-align: bottom;
 	}
 }
 #view-filter {

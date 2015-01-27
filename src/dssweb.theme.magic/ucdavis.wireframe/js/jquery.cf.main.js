@@ -452,9 +452,10 @@
 		
 		var bendbio = function () {
 			if((activeMQ !== 'L') && (activeMQ !== 'M') && !biocardiced) {
+				// 2015-01-26 RAK: moving bio-card element into content will cause it to collapse when an accordiion heading is clicked on mobile. Add class .dont-close and catch in collapseAll function
 				$('#content').prepend($('.bio-card'));
 				//$('.collapsible').addClass('in'); // Expand panel since it's closed in mobile ... no, expands on mobile
-				$('.bio-card .collapsible').addClass('in');
+				$('.bio-card .collapsible').addClass('in dont-close');
 				// breadcrumb
 				$('.breadcrumb').insertBefore($('#content .bio-card h4.fn'));
 				biocardiced = true;
@@ -533,6 +534,8 @@
 								$('iframe').width("100%");
 							}*/
 							
+							popupSM(); // make T5 Did you know popup
+								
 							utilStack();
 						 
 							collapsedView();					
@@ -574,6 +577,22 @@
 			
 		};
 
+		/*
+		 * Create popup on mobile devices. Requires class .popup-sm and structure:
+		 * <div class="corner-box popup-sm">
+		 *	<div class="box-content">
+		 *		<h2 class="uc">Title</h2>
+		 *		<h3 class="uc">Subtitle</h3>
+		 *		<p>Text</p>
+		 *	</div>
+		 * </div><!-- /.corner-box -->
+		 */
+		function popupSM() {
+			if($('.popup-sm').length !== 0) {
+				
+			}
+		}
+		
     function expandedView() {
        	// Index page
 			  //$(".ls-content").removeClass("tab-content");
@@ -753,8 +772,8 @@
 		
 		function collapseAllPanels(parentTag) {
 			//$(".panel-group .collapsible").removeClass("in"); // close panels
-			$('.in').parent().find('.panel-heading a').addClass('collapsed'); 
-			$('.in').collapse('hide');
+			$('.in').not(".dont-close").parent().find('.panel-heading a').addClass('collapsed'); 
+			$('.in').not(".dont-close").collapse('hide');
 		}
 		
 		/* footer utility menu stack */

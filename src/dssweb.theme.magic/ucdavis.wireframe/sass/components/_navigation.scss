@@ -131,7 +131,7 @@
 	padding-bottom: 80px; // with box-sizing
 	
 	.title-area {	
-		
+		//z-index: 5;
 		/* top:15px; THIS NEGATIVELY IMPACTS THE FORMAT OF THE TOPBAR MENU */
 		.name {
 			
@@ -221,7 +221,7 @@
 					@include font_size(17px);
 					@include line_height(28px);
 					
-					letter-spacing: 0.025em;
+					letter-spacing: 0.01em; // was 0.025em which breaks menu with Lucida Sans font
 					/* padding:0 !important; */ // TODO: 2014-09-24 RAK: Eval
 					
 					&:hover {
@@ -335,6 +335,11 @@
 
 /*----- Small breakpoint --------*/
 @media screen and (max-width: 440px) { // width < 440
+	// TODO: If possible, remove this breakpoint
+}
+
+/*----- Mobile breakpoint (navigation.scss) -------*/
+@media screen and (max-width: $screen-xs-max) { // width =< 767px
 	// To have util bar slide into place rather than being same width as navigation
 	.util-bar {
 		margin-top: 0 !important;
@@ -344,8 +349,8 @@
 	}
 }
 
-/*----- Mobile breakpoint -------*/
-@media screen and (max-width: $screen-sm-max) { // width < 768px
+/*----- Tablet breakpoint -------*/
+@media screen and (max-width: $screen-sm-max) { // width =< 991px
 
 	// reset row negative margins
 	#util-bar-wrap, #top-bar-wrap, #banner-row {
@@ -438,6 +443,8 @@
 @media screen and (min-width: $screen-sm-min) { // width > 768px
 	.top-bar {
 		.top-bar-section {
+			// DO NOT set to static on mobile! This will disable sub menu functions!
+			position: static; // reset from relative since this then overlaps the title link on the left
 			ul {
 				ul.dropdown {
 					width: 200px !important;

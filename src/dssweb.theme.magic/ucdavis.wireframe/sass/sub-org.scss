@@ -77,6 +77,11 @@
 			}
 		}
 	}
+	// Tiles / Our people styles
+	.genericTile {
+		min-height: 172px; // based on a max total of 6 lines within tiles. Customize or use JS to apply equal heights
+	}
+
 }
 
 /*----- Desktop breakpoint ("L") -------*/

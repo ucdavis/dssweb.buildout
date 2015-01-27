@@ -10,6 +10,7 @@
 /* Contact uses hCard microformat / vCard RFC2426 */
 #sidebar-block-contact {
 	margin-top: 20px;
+	margin-bottom: 0; // reset
 	padding-left: 35px !important; // TODO: After #content change need !important, why?
 	padding-right: 15px !important;
 	li {
@@ -96,7 +97,11 @@
 			}
 		}
 	}
-	
+	ul#sidebar-block-contact { // assuming text-align center
+		margin-left: 0 !important;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
 }
 
 /*----- tablet breakpoint -------*/
