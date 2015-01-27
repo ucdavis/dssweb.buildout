@@ -175,10 +175,14 @@ body.res-lab {
 		&.contacts.pcch {
 			.office {
 				// Repeat treatement; TODO: create mixin
+				h4 {
+					background-color: transparent !important;
+					padding-top: 0 !important;
+				}
 				h4.lh {
 					min-height: 28px;
-					background-color: $box_header_blue;
-					padding: 12px 35px;
+					background-color: $box_header_blue !important;
+					padding: 12px 35px !important;
 					padding-bottom: 10px;
 					letter-spacing: 0.05em;
 					font-weight: bold;
