@@ -26,19 +26,24 @@
                   title obj/pretty_title_or_id|string:;
                   desc_or_title python:description or title;
                   lastname obj/getLastName;
-                  url obj/absolute_url|string:#;
+                  url python:support_view.navRootRelativeUrl(obj);
                   image_thumb exists:obj/image_thumb;
                   image_tag python:getattr(obj, 'tag', None)"
                  tal:attributes="href url;
                                  title desc_or_title">
-              <span class="personEntryWrapper" tal:condition="image_thumb">
-                <img style="border: none" tal:attributes="
-                  title desc_or_title;
-                  alt title;
-                  src string:$url/image_thumb"/>
-              </span>
+                <span class="personEntryWrapper" tal:condition="image_thumb">
+                  <img style="border: none" tal:attributes="
+                    title desc_or_title;
+                    alt title;
+                    src string:$url/image_thumb"/>
+                </span>
 
-<div tal:content="python:support_view.navRootRelativeUrl(obj)" />
+                <!-- span class="personEntryWrapper" tal:condition="python:not image_thumb and image_tag">
+                  <img tal:replace="structure python:image_tag(scale='thumb', title=description)" />
+                </span -->
+
+                <p class="personName" tal:content="title">Title</p>
+
               </a>
             </tal:block>
           </tal:entries>
