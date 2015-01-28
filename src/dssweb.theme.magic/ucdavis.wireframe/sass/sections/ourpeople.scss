@@ -147,17 +147,17 @@ $ucdtxt_blue: #4D688C; // based on?
 		}
 		.panel-body {
 			margin-top: 0;
-			padding-top: 0;
+			padding-top: 0 !important; // was 15px
+			padding-bottom: 0 !important; // was 15px
 			padding-left: 15px !important;
 			background-color: $rec_blue;
-			padding-bottom: 15px !important;
 			.content-wrap {
-				padding-top: 0;
+				padding-top: 15px;
 				padding-bottom: 0 !important;
 			}
 		}
 		.bcontroller {
-			margin-left: 15px;
+			//margin-left: 15px;
 			.btn-primary {
 				margin-top: 0 !important;
 				background-image: none;
@@ -172,7 +172,7 @@ $ucdtxt_blue: #4D688C; // based on?
 	
 	#content {
 		.menu-icon-right {
-			margin-right: 70px;
+			margin-right: 75px; // clear before running into sub-menu-icon
 		}
 		a:hover {
 			text-decoration: none;
@@ -184,14 +184,18 @@ $ucdtxt_blue: #4D688C; // based on?
 					width: 50%;
 					margin-left: 50%;
 					background-color: rgba(0, 40, 85, 0.8);
-					.panel-title a {
-						background-color: transparent;
-						background: url(../../images/icons/white-arrow-down-sm.png) 90% 50% no-repeat transparent;
-						&.collapsed {
-							background: url(../../images/icons/white-arrow-right-sm.png) 90% 50% no-repeat transparent;
-						}
-						&:hover {
+					.panel-title {
+						text-transform: uppercase;
+						a {
+							background-color: transparent;
+							@include font_size(16px,!important); // happy box is 17px
 							background: url(../../images/icons/white-arrow-down-sm.png) 90% 50% no-repeat transparent;
+							&.collapsed {
+								background: url(../../images/icons/white-arrow-right-sm.png) 90% 50% no-repeat transparent;
+							}
+							&:hover {
+								background: url(../../images/icons/white-arrow-down-sm.png) 90% 50% no-repeat transparent;
+							}
 						}
 					}
 				}
@@ -278,6 +282,11 @@ $ucdtxt_blue: #4D688C; // based on?
 	.sidebar {
 		padding-right: 85px;
 	}
+}
+
+@media screen and (min-width: $screen-lg-min) {	 // width > 1310px
+
+
 }
 
 /* /ourpeople.scss */

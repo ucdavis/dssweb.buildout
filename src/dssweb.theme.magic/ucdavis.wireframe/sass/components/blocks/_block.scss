@@ -84,10 +84,7 @@
 /*----- Mobile breakpoint --------*/
 // At point that left and right margins are gone
 @media screen and (max-width: $screen-xs-max) { // width < 767 (was $screen-sm-min 768 but triggers on ipad)
-	// todo: widgetize the corner box. see t5 mobile mockup
-	.corner-box {
-		display: none !important;
-	}
+
 	.vcard {
 		.email {
 			display: block;
@@ -102,6 +99,70 @@
 		padding-left: 0 !important;
 		padding-right: 0 !important;
 	}
+	
+	/* This is moved via JS outside of the target on mobile */
+	.popup-sm {
+		position: absolute;
+		width: 100% !important;
+		z-index: 2;
+		background-color: $rec_blue;
+		padding: 15px;
+		.panel-body {
+			padding-top: 0;
+			
+		}
+		&.collapse, h2 {
+			display: none !important;
+		}
+		p, h3 {
+			@include font_size(15px,!important);
+		}
+	}
+	
+	#corner-box-target {
+		p, li {
+			@include font_size(15px);
+			@include line_height(18px,!important);
+		}
+		figure {
+			position: relative;
+			figcaption {
+				height: 20px;
+			}
+			
+			.popup-sm-title {
+				position: absolute;
+				//bottom: 20px; // was 20px. set in JS
+		    background-color: rgba(0, 40, 85, 0.8);
+				color: #FFF;
+		    margin-left: 50%;
+		    width: 50%;
+				height: 40px;
+				
+				.sm-title {
+					a {
+						color: #FFF;
+						text-decoration: none;
+						@include font_size(16px);
+						@include line_height(20px);
+						display: inline-block;
+						width: 100%;
+				    padding-right: 15px;
+						padding-top: 9px !important;
+						padding-left: 20px !important;
+						background: url("../images/icons/white-arrow-down-sm.png") no-repeat scroll 90% 65% transparent;
+						&.collapsed {
+			    		background: url("../images/icons/white-arrow-right-sm.png") no-repeat scroll 90% 65% transparent;
+						}
+						&:hover {
+							background: url("../images/icons/white-arrow-down-sm.png") no-repeat scroll 90% 65% transparent;
+						}
+					}
+				}
+			}
+		}
+	}
+	
 }
 
 /*----- tablet breakpoint -------*/

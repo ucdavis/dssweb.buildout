@@ -76,7 +76,7 @@ body.has-shadow-am {
 		.btn-home.btn-primary {
 			height: 32px;
 			padding-top: 6px !important; // adjust depending on height to push button down
-			background: url(../images/icons/white-arrow-up.png) 50% 12px no-repeat $rec_blue;
+			background: url(../images/icons/white-arrow-up.png) 50% 17px no-repeat $rec_blue;
 			@include line_height(30px);
 			text-transform: uppercase;
 		}
@@ -86,7 +86,14 @@ body.has-shadow-am {
 /*----- Mobile breakpoint --------*/
 @media screen and (max-width: $screen-xs-max) { // width < 767 (was $screen-sm-min 768 but triggers on ipad)
 	// handle banners on mobile 
-
+	
+	// Remove any caption on mobile where figure was created
+	#banner-row {
+		figcaption {
+			display: none;
+		}
+	}
+	
 	.siders {
 		margin-right: -15px !important;
 		.wall {
@@ -113,6 +120,12 @@ body.has-shadow-am {
 		}
 	}
 	
+	body.contact-type {
+		#banner-row {
+			display: none;
+		}
+	}
+	
 	.bcontroller {
 		.btn-home.btn-primary {
 			background: none 0 0 no-repeat transparent !important;
@@ -130,10 +143,10 @@ body.has-shadow-am {
 				
 				//color: $ucd_blue_100 !important;
 				//top: 0;
-				background: url(../images/icons/white-arrow-right-sm.png) 90% 50% no-repeat transparent;
+				background: url(../images/icons/white-arrow-down-sm.png) 90% 50% no-repeat transparent;
 				&.collapsed {
 					//color: #FFF !important;
-					background: url(../images/icons/white-arrow-down-sm.png) 90% 50% no-repeat transparent;
+					background: url(../images/icons/white-arrow-right-sm.png) 90% 50% no-repeat transparent;
 				}
 				&:hover {
 					//color: $ucd_blue_100 !important;
@@ -180,6 +193,33 @@ body.has-shadow-am {
 	}
 	#content > #banner-caption {
 		display: none;
+	}
+	
+	// Students banner button (see also t8 and t5 that have different treatments)
+	body.students {
+		#content {
+			#top-panel-row {
+				.right-panel { 
+					width: 100%;
+					.panel-heading {
+			    	margin-left: 50% !important;
+			    	width: 50% !important;
+						h4.panel-title {
+							a {
+								@include font_size(16px,!important);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	body.students, body.ourpeople {
+		#container-3 {
+			.narrow-col {
+				background-color: $rec_blue !important;
+			}
+		}
 	}
 }
 

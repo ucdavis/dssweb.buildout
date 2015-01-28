@@ -211,9 +211,18 @@
 	
 	#middle-row {
 		h2 {
-			background-color: $rec_blue_40;
+			background-color: $rec_blue;
+			color: #FFF;
 			text-align: center;
 			margin-top: 0;
+			@include font_size(18px);
+			@include line_height(21px,!important);
+			text-transform: uppercase;
+			padding: 8px 0;
+			&:hover {
+				color: $ucd_blue_100;
+				background-color: $rec_blue_40;
+			}
 		}
 	}
 	
@@ -276,6 +285,12 @@
 			
 			.bcontroller {
 				padding-bottom: 0 !important;
+			}
+			
+			&.right-panel {
+				img {
+					margin-bottom: 15px;
+				}
 			}
 			
 			// TODO: Almost exact same as for #thumb-section .panel-heading in _theme.scss
@@ -375,7 +390,7 @@
 	}
 	
 	body.home #content #top-panel-row .narrow-col .bcontroller .btn-home.btn-primary {
-		background-position: 50% 12px !important;
+		background-position: 50% 17px !important;
 	}
 	
 	// sync top and bottom row column widths on home

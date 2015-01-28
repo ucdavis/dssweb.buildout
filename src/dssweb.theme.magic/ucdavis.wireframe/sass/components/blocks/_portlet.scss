@@ -128,7 +128,7 @@ body.res-lab {
 					h4 {
 						min-height: 28px;
 						background-color: $box_header_blue !important;
-						padding: 12px 35px;
+						padding: 12px 35px !important;
 						padding-bottom: 10px;
 						letter-spacing: 0.05em;
 						font-weight: bold;
@@ -163,7 +163,7 @@ body.res-lab {
 		// Using vcard for person, no light blue heading
 		&.contacts {
 			.panel-body {
-				padding-top: 15px;
+				//padding-top: 15px;
 				padding-bottom: 20px;
 				h4 {
 					background-color: transparent !important;
@@ -264,6 +264,12 @@ body.res-lab {
 			.adr {
 				margin-top: 0px;
 			}
+		}
+	}
+	.sidebar {
+		img.img-responsive {
+			display: inline-block;
+			width: 100%;
 		}
 	}
 	.search-result, .contact-type {

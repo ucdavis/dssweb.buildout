@@ -666,7 +666,7 @@ body.contact-type {
 				h3 {
 					padding-bottom: 0 !important;
 					a {
-						text-decoration: none;
+						//text-decoration: none;
 						&:hover {
 							text-decoration: underline;
 						}
@@ -728,8 +728,12 @@ body.contact-type {
 		}
 		.panel {
 			.panel-body.inline-content {
+				padding-bottom: 25px;
 				> ul {
 					// TODO: ...
+				}
+				.readmore {
+					text-transform: uppercase;
 				}
 			}
 		}
@@ -765,12 +769,25 @@ body.contact-type {
 			}
 		}
 	}
-	
+	#content-row {
+		section {
+			.course-portlet {
+				.course-info {
+					width: 100%;
+					float: none !important;
+				}
+				button {
+					position: static !important;
+					float: none !important;
+				}
+			}
+		}
+	}
 	.panel {
 		border: none;
 		.panel-body {
 			margin-top: 15px;
-			margin-left: 17px;
+			//margin-left: 17px; // note: breaks on home ... apply to #content-row context only
 		}
 		.panel-body.inline-content {
 			margin-top: 0;
@@ -844,6 +861,10 @@ body.contact-type {
 		}
 	}
 	
+	#nested-right {
+		padding-left: 0;
+	}
+	
 	#footer {
 		margin-bottom: 60px;
 		.footer-nav {
@@ -859,6 +880,11 @@ body.contact-type {
 	}
 
 	#content-row {
+		.panel {
+			.panel-body {
+				//.popup-sm-titlemargin-left: 17px;
+			}
+		}
 		section {
 			margin-bottom: 5px;
 			.course-portlet {
@@ -925,13 +951,18 @@ body.contact-type {
 						}
 					}
 					.panel-body {
-						margin-top: 0;
+						padding-top: 2px !important;
 						margin-left: 0;
 						padding: 0 !important;
 						img.thumb { // Note: We're replacing the smaller thumb with the larger image in mobile via javascript. We initially load the smaller T6-autism.jpg and then look for m-T6-autism.jpg to load in mobile
 							width: 280px;
 							display: block;
 							margin: 15px auto;
+						}
+					}
+					.collapse.in {
+						.panel-body {
+							padding-top: 0 !important;
 						}
 					}
 				}
@@ -1059,6 +1090,16 @@ body.contact-type {
 		}
 	}
 	
+	body.has-shadow-am {
+		#container-3 { 
+			.panel-body {
+				.narrow-col {
+					width: 100%;
+				}
+			}
+		}
+	}
+	
 	// Top margin above home page buttons
 	/* TODO: breaks ipad, adding right margin to banner (see also Tablet breakpoint ("M"))
 	UPDATE: Not having this causes page content to be slightly narrower than the navigation */
@@ -1074,8 +1115,35 @@ body.contact-type {
 				padding-bottom: 10px;
 			}
 		}
+		// Formatting for happy boxes tablet -> desktop
+		.panel-body { 
+			.narrow-col {
+				h2 {
+					@include font_size(24px);
+					letter-spacing: 0.05em;
+				}
+				.content-wrap {
+					padding-top: 0;
+					p:last-child, ul:last-child { // happy boxes with content other than headings
+						margin-bottom: 0; // should have margin bottom on content-wrap so remove
+					}
+				}
+				/*.content-wrap + .bcontroller {
+					margin-top: -15px !important;
+				}*/
+			}
+		}
 	}	
 		
+	// Adjust formatting of bottom Featured Courses, etc. titles
+	#bottom-panel-row {
+		.narrow-col {
+			h2 {
+				letter-spacing: 0 !important;
+			}
+		}
+	}
+	
 	// Panel resets
 	#cm-section { // Important: Specific content selector since we want to keep our sidebar panel styles
 		.panel-group {
@@ -1218,8 +1286,15 @@ body.contact-type {
 		}
 	}
 	
+	
 	#content-row {
 		margin-left: 0;
+		
+		// tablet left column right gutter
+		#content, #cm-content, #am-content {
+			padding-right: 45px;
+		}
+		
 		#summary {
 			#jumplinks {
 				width: 50% !important;
@@ -1230,6 +1305,21 @@ body.contact-type {
 		}
 	}
 	
+	// Remove margin-top from sidebars positioned side-by-side in desktop
+	body.contact-type {
+		.sidebar-right.second {
+			margin-top: 0 !important;
+		}
+	}
+	
+	// Remove the right gutter on pages without right sidebars
+	body.ourpeople, body.contact-type {
+		#content-row {
+			#content, #cm-content, #am-content {
+				padding-right: 0 !important;
+			}
+		}
+	}
 	
 	// Panel resets
 	#thumb-section { // Important: Specific content selector since we want to keep our sidebar panel styles
@@ -1268,6 +1358,9 @@ body.contact-type {
 	#nested-left { // T8 nested column "Important Dates" and t12
 		.picture {
 			width: auto;
+		}
+		figcaption {
+			display: none; // for t12 tablet
 		}
 	}
 	
@@ -1466,6 +1559,17 @@ body.contact-type {
 		margin-left: -15px;
 		margin-right: -15px;
 	}
+	
+	body.has-shadow-am {
+		#container-3 { 
+			.panel-body {
+				.narrow-col {
+					width: 88%;
+				}
+			}
+		}
+	}
+	
 	.footer-processed#footer { // JS processed element; footer stretching edge to edge
 		.foot-wrap {
 			width: 1104px;

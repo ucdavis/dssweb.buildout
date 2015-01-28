@@ -157,7 +157,7 @@
 		// Note: Add after any JavaScript constructed markup that relies on foundation
 		$(document).foundation(); 
 		
-		
+		/* thumbify t6 template showing collapsible / accordion in tablet and desktop */
 		var thumbify = function (activeMQ, startTag, containerTag, targetTag) {
 			var comboSelector = startTag + ' ' + containerTag;
 			var MLTarget = null;
@@ -428,12 +428,16 @@
 			
 			// On T8 templates, move the left nested column to the right sidebar
 			if($('body.students #nested-left').length !== 0) {
-				$('#nested-left').removeClass("col-xs-12 col-sm-12 col-md-4 col-lg-4"); // Note: Update if col defs chnage
+				if(activeMQ !== 'S') {
+					$('#nested-left').removeClass("col-xs-12 col-sm-12 col-md-4 col-lg-4"); // Note: Update if col defs change
 				
-				$('#nested-right').removeClass("col-md-8");
-				$('#nested-right').addClass("col-md-12 bent");
+					$('#nested-right').removeClass("col-md-8");
+					$('#nested-right').addClass("col-md-12 bent");
 				
-				$('.sidebar-right').append($('#nested-left'));
+					$('.sidebar-right').append($('#nested-left'));
+				} else {
+					$('#nested-left').insertAfter($('#nested-right'));
+				}
 			}
 		};
 		var bendM = function () {
@@ -561,6 +565,11 @@
 							*/
 							bendM(); // If we can't change position of elements using Bootstrap push / pull, then bend it
 							unbendbio();
+							
+							// Make research tabs collapse on tablet / desktop
+							if($('#thumb-section').length !== 0) {
+								collapseThumbView();
+							}
           }
 					// If the detected screen size is Desktop 960px (991px?) and up
           if (activeMQ === 'L') {
@@ -572,23 +581,48 @@
 							
 							unbend(); // Set positioning back
 							unbendbio();
+							
+							// Make research tabs collapse on tablet / desktop
+							if($('#thumb-section').length !== 0) {
+								collapseThumbView();
+							}
           }
       }
 			
 		};
 
 		/*
-		 * Create popup on mobile devices. Requires class .popup-sm and structure:
-		 * <div class="corner-box popup-sm">
-		 *	<div class="box-content">
-		 *		<h2 class="uc">Title</h2>
-		 *		<h3 class="uc">Subtitle</h3>
-		 *		<p>Text</p>
-		 *	</div>
-		 * </div><!-- /.corner-box -->
+		 * Create popup on mobile devices. See t5 for required HMTL markup
 		 */
 		function popupSM() {
 			if($('.popup-sm').length !== 0) {
+				$('.popup-sm-title').insertBefore($('#corner-box-target figure figcaption'));
+				$('.popup-sm').insertAfter($('#corner-box-target'));
+				
+				var minusfc = ($('#corner-box-target figcaption').css('display') !== 'none') ? $('#corner-box-target figcaption').outerHeight() : 0;
+				var cbth = $('#corner-box-target').height() - minusfc;
+				
+				
+				$('.popup-sm').css('top',cbth);
+				$('.popup-sm-title').css('top',(cbth - $('.popup-sm-title').outerHeight()));
+				
+        $(".popup-sm-title a").click(function (e) {
+            e.preventDefault();
+
+						// Toggle collapsed
+						if($(this).attr('class') === 'collapsed') {
+							$(this).removeClass('collapsed');
+							if($('.popup-sm').length !== 0) {
+	            	$('.popup-sm').removeClass('collapse');
+							}
+						} else {
+							$(this).addClass('collapsed');
+							if($('.popup-sm').length !== 0) {
+	            	$('.popup-sm').addClass('collapse');
+							}
+						}
+						return false;
+				});	
 				
 			}
 		}
@@ -743,6 +777,34 @@
 				
     }
 		
+		function collapseThumbView() {
+			// NOTE: Following changes are global
+			
+			// Add the collapse on toggle attribute to the panel headers
+			$("#thumb-section .panel-group .collapsible").addClass("panel-collapse collapse"); // Note: global
+			$("#thumb-section .panel-group .collapsible").removeClass('in'); // New: Close panels
+      $("#thumb-section .collapse > div").addClass("panel-body");
+ 			
+			// Blanket assign class="collapsed" to all collapsed panel links for display of correct status
+			$("#thumb-section .panel-title a").addClass('collapsed');
+			
+			// Prevent the panel-title headers from redirecting the page and shows .panel-body content
+      $("#thumb-section .panel-title a").click(function (e) {
+          e.preventDefault();
+					
+					collapseAllPanels('#thumb-section .panel-group');
+					
+					// Toggle collapsed
+					if($(this).attr('class') === 'collapsed') {
+						//$(this).removeClass('collapsed'); // this is handled in collapseAllPanels
+					} else {
+						$(this).addClass('collapsed');
+					}
+					
+			});	
+     
+		}
+		
 		/* smooth_scroll - to make link scroll smoothly to anchor 
 		 * @param linkId the element AND the a-tag, e.g., '#button a'
 		*/
@@ -772,8 +834,8 @@
 		
 		function collapseAllPanels(parentTag) {
 			//$(".panel-group .collapsible").removeClass("in"); // close panels
-			$('.in').not(".dont-close").parent().find('.panel-heading a').addClass('collapsed'); 
-			$('.in').not(".dont-close").collapse('hide');
+			$(parentTag+' .in').not(".dont-close").parent().find('.panel-heading a').addClass('collapsed'); 
+			$(parentTag+' .in').not(".dont-close").collapse('hide');
 		}
 		
 		/* footer utility menu stack */
@@ -824,7 +886,7 @@
 				// Height to subtract from position calculation. Assuming only ONE panel on the right (by design)
 				// TODO: Offset is not from inner- or outer height ... so from whence?
 				// T8 Students (students) = 5, T2 Our people (ourpeople) = 16
-				var offset = ($('body.students').length !== 0) ? 16 : 5; // mobile on desktop needs 5 if we're setting top-panel-row and wallpaper-image to same height
+				var offset = ($('body.students').length !== 0) ? 16 : 5; // mobile on desktop needs 5 if we're setting top-panel-row and wallpaper-image to same height. Note: top-bar height also impacts this
 				var h = ($('#top-panel-row .right-panel .panel-heading').height() + offset);
 				
 				$('#top-panel-row .right-panel').css('padding-top', (hb_element_height-h));
@@ -928,8 +990,11 @@
 					ctb += $('.breadcrumb').height();
 				}
 				
-				
-				$('.sidebar-right').css('margin-top',ctb);
+				// need to apply margin on contact page manually since the second sidebar should 
+				// not get top margin on tablet
+				if($('body.contact-type').length === 0) {
+					$('.sidebar-right').css('margin-top',ctb);
+				}
 			}
 			
 			/* ============================  HAPPY BOX SETTINGS ============================ */

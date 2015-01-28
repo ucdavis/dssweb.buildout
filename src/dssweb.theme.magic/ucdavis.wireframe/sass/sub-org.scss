@@ -49,12 +49,25 @@
 			padding-right: 0;	
 		}
 		.top-bar-section {
-			ul li a {
-				@include font_size(12px, !important);
-				//letter-spacing: 0 !important;
+			ul li {
+				a {
+					@include font_size(12px, !important);
+					//letter-spacing: 0 !important;
+				}
+				ul.dropdown { // layout for 2nd tier dropdown
+					width: 200px !important;
+					li {
+						a {
+							// @include font_size(16px,!important); // inherit main menu type size
+							@include line_height(15px, !important); 
+							padding: 8px 12px;
+						}
+					}
+				}
 			}
 		}
 	}
+	
 	.genericTile {
 		min-height: 195px !important; // based on a max total of 6 lines within tiles. Customize or use JS to apply equal heights
 	}

@@ -1020,9 +1020,9 @@ meta.foundation-mq-topbar {
   float: right !important; }
 .top-bar {
   overflow: hidden;
-  height: 45px;
+  height: 55px;
 	font-size:100%;
-  line-height: 45px;
+  line-height: 55px;
   position: relative;
   background: #333;
   margin-bottom: 0; }
@@ -1047,11 +1047,11 @@ meta.foundation-mq-topbar {
     position: relative;
     margin: 0; }
   .top-bar .name {
-    height: 45px;
+    height: 55px;
     margin: 0;
     font-size: 18px; }
     .top-bar .name h1 {
-      line-height: 45px;
+      line-height: 55px;
       font-size: 12px;
       margin: 0; }
       .top-bar .name h1 a {
@@ -1072,8 +1072,8 @@ meta.foundation-mq-topbar {
       position: relative;
       display: block;
       padding: 0 15px;
-      height: 45px;
-      line-height: 45px; }
+      height: 55px;
+      line-height: 55px; }
     .top-bar .toggle-topbar.menu-icon {
       top: 50%;
       margin-top: -16px; }
@@ -1327,14 +1327,14 @@ meta.foundation-mq-topbar {
       color: #fff; }
     .top-bar-section li:not(.has-form) a:not(.button) {
       padding: 0 15px;
-      line-height: 45px;
+      line-height: 55px;
       background: #333; }
       .top-bar-section li:not(.has-form) a:not(.button):hover {
         background-color: #555555;
         background: #272727; }
     .top-bar-section li.active:not(.has-form) a:not(.button) {
       padding: 0 15px;
-      line-height: 45px;
+      line-height: 55px;
       color: #fff;
       background: #008CBA; }
       .top-bar-section li.active:not(.has-form) a:not(.button):hover {
@@ -1382,7 +1382,7 @@ meta.foundation-mq-topbar {
       min-width: 100%; }
       .top-bar-section .dropdown li a {
         color: #fff;
-        line-height: 45px;
+        line-height: 55px;
         white-space: nowrap;
         padding: 12px 15px;
         background: #333; }
@@ -1404,12 +1404,12 @@ meta.foundation-mq-topbar {
       border-top: none;
       border-right: solid 1px #4e4e4e;
       clear: none;
-      height: 45px;
+      height: 55px;
       width: 0; }
     .top-bar-section .has-form {
       background: #333;
       padding: 0 15px;
-      height: 45px; }
+      height: 55px; }
     .top-bar-section .right li .dropdown {
       left: auto;
       right: 0; }

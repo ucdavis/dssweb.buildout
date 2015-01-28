@@ -216,7 +216,7 @@
 					
 					width:100%;
 					background-color:transparent !important;
-					
+					text-align: left;
 					text-decoration: none;
 					@include font_size(17px);
 					@include line_height(28px);
@@ -228,9 +228,9 @@
 						//text-decoration: underline;
 					}
 					
-					// gets rid of carets in nav
+					// gets rid of carets in nave
 					&:after{
-						display:none !important;
+						display: none !important;
 					}
 					
 					white-space: normal; // to let sub menu text wrap
@@ -343,13 +343,107 @@
 	// To have util bar slide into place rather than being same width as navigation
 	.util-bar {
 		margin-top: 0 !important;
+		height: 30px;
+		ul {
+			li {
+				a {
+					margin-top: 6px;
+				}
+			}
+		}
 		#uti-logo {
-			margin-left: 10px !important; // Note: Use to adjust logo with left border of department name
+			margin-left: 16px !important; // Note: Use to adjust logo with left border of department name
 		}
 	}
+					
+	.top-bar {
+		// Do not set height of top-bar in mobile!
+
+		padding-bottom: 0;
+		
+		// Downscale name.gif 
+		.title-area {	
+			.name {
+				a {
+					//padding-left: 15px;
+					width: 215px !important;
+					height: 55px !important;
+				}
+			}
+		}
+		.toggle-topbar {
+			&.menu-icon {
+		    margin-top: 0;
+		    top: 0;
+				height: 55px;
+				margin-right: 25px;
+				padding-top: 9px;
+			}
+		}
+		.top-bar-section {
+			.left {
+				> li {
+					> a {
+						padding: 0 15px 0 20px !important;
+						@include font_size(16px,!important);
+						@include line_height(45px,!important);
+						
+					}
+					li {
+						a {
+							@include line_height(20px,!important);
+						}
+					}
+					> ul.dropdown {
+						// layout for 2nd tier menu on mobile
+						> li {
+							//min-height: 45px;
+							a {
+								@include line_height(20px,!important);
+								padding-top: 8px !important;
+								padding-bottom: 8px!important;
+							}
+						}
+					}
+				}
+			}
+		}
+		&.expanded {
+			.title-area {
+				background-color: $ucd_blue_100;
+			}
+			.top-bar-section {
+				.left {
+					width: 100%;
+					> li {
+						width: 100% !important;
+						height: 55px;
+						background-color: $ucd_blue_10 !important;
+						> ul.dropdown > li {
+							background-color: $ucd_blue_10 !important;
+						}
+						&.has-dropdown, ul.dropdown > li.has-dropdown {
+							> a {
+								color: $ucd_blue_100;
+								background: url(../images/icons/blue-100-right-arrow.png) 94% 25% no-repeat !important;
+								&.moved {
+									background: url(../images/icons/blue-100-right-arrow-down.png) 94% 25% no-repeat !important;
+								}
+								&:hover {
+									background-color: $ucd_blue_20 !important;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+						
 }
 
 /*----- Tablet breakpoint -------*/
+/* Note: use of !important will override previous breakpoint */
 @media screen and (max-width: $screen-sm-max) { // width =< 991px
 
 	// reset row negative margins
@@ -366,77 +460,13 @@
 		ul li input {
 			 width: 170px;
 		}
-		#uti-logo{
+		#uti-logo {
 			width: auto; // switch from percentage ...
 			margin-left: 5px; // Note: Use to adjust logo with left border of department name
 		}
 	}
 
-	.top-bar {
-		// Do not set height of top-bar in mobile!
 
-		padding-bottom: 0;
-		
-		// Downscale name.gif 
-		.title-area {	
-			.name {
-				a {
-					//padding-left: 15px;
-					width: 215px !important;
-					height: 40px !important;
-				}
-			}
-		}
-		.toggle-topbar {
-			&.menu-icon {
-		    margin-top: 0;
-		    top: 0;
-				height: 45px; // was 42px without box sizing
-				margin-right: 5px;
-				padding-top: 3px;
-			}
-		}
-		&.expanded {
-			.title-area {
-				background-color: $ucd_blue_100;
-			}
-			.top-bar-section {
-				.left {
-					width: 100%;
-					> li {
-						width: 100% !important;
-						height: 40px;
-						background-color: $ucd_blue_10 !important;
-						> ul.dropdown > li {
-							background-color: $ucd_blue_10 !important;
-						}
-						
-						// Has-dropdown arrow on first menu level on mobile only
-						&.has-dropdown, ul.dropdown > li.has-dropdown {
-							> a {
-								background: url(../images/icons/blue-100-right-arrow.png) 96.5% 25% no-repeat;
-								&.moved {
-									background: url(../images/icons/blue-100-right-arrow-down.png) 96.5% 25% no-repeat;
-								}
-							}
-						}
-						
-						> a, ul.dropdown > li a {
-							margin-top: 0 !important;
-							line-height: 40px !important;
-							padding-top: 0; // TODO: 2014-09-24 RAK: Eval
-							background-color: $ucd_blue_10 !important;
-							color: $ucd_blue_100;
-							&:hover {
-								background-color: $ucd_blue_20 !important; 
-							}
-						}
-					}
-					
-				}
-			}
-		}
-	}
 }
 
 /*----- Tablet up breakpoint -------*/
@@ -446,12 +476,11 @@
 			// DO NOT set to static on mobile! This will disable sub menu functions!
 			position: static; // reset from relative since this then overlaps the title link on the left
 			ul {
-				ul.dropdown {
+				ul.dropdown { // layout for 2nd tier dropdown
 					width: 200px !important;
 					li {
 						a {
-							@include line_height(16px);
-							padding: 4px 12px;
+							padding: 8px 12px; // was 4px 12px
 						}
 					}
 				}

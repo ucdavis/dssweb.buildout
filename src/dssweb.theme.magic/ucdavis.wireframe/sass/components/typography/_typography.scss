@@ -25,6 +25,12 @@ h4.source {
 	@include font_size(12px,!important);
 	text-transform: uppercase;
 }
+// on students t8 page
+.event-item {
+	h4 {
+		font-weight: bold;
+	}
+}
 blockquote {
 	color: $rec_blue;
 	margin-top: 35px;
@@ -344,27 +350,31 @@ p {
 // Bio
 body.bio {
 	#summary {
+		width: 100%;
 		#jumplinks {
-			width: 30% !important;
+			width: 32.5% !important;
 			ul {
 				margin-right: 35px;
 				li {
-					@include font_size(13px);
-					@include line_height(22px);
 					padding-left: 0 !important;
 					background-image: none !important;
 					text-align: right;
+					a {
+						@include font_size(15px);
+						@include line_height(22px);
+					}
 				}
 			}
 		}
 		#education {
-			width: 70% !important;
+			width: 67.5% !important;
 			ul {
 				margin-top: 10px;
 				li {
 					@include font_size(15px);
-					@include line_height(18px);
-					margin-bottom: 5px;
+					@include line_height(18px,!important);
+					margin-bottom: 0;
+					padding-bottom: 7px;
 					padding-left: 0 !important;
 					background-image: none !important;
 				}
@@ -392,7 +402,7 @@ body.bio {
 			@include line_height(30px,!important);
 		}
 	}
-	li, ol {
+	li, ol, li a {
 		@include font_size(15px);
 		@include line_height(18px);
 	}
@@ -520,6 +530,16 @@ body.bio {
 				}
 			}
 		}	
+	}
+	
+	// Blue box formatting: T5: TODO: Combine
+	.corner-box {
+		.box-content {
+			p, li, a {
+				@include font_size(15px);
+				@include line_height(18px);
+			}
+		}
 	}
 	
 }
@@ -677,25 +697,6 @@ body.home {
 			@include line_height(28px);
 		}
 	}
-	
-	// Blue box formatting: T5: TODO: Combine
-	.corner-box {
-		.box-content {
-			h2 {
-				padding: 10px 0;
-				@include font_size(16px);
-				letter-spacing: 0.075em;
-			}
-			h3 {
-				padding: 0;
-				@include font_size(11px);
-			}
-			p {
-				@include font_size(11px);
-				@include line_height(15px);
-			}
-		}
-	}
 
 	// T6 Research Lab heading thumb sections
 	#thumb-section {
@@ -754,6 +755,25 @@ body.home {
 	blockquote {
 		margin-left: 0;
 		margin-right: 0;
+	}
+	
+	// Blue box formatting: T5: TODO: Combine
+	.corner-box {
+		.box-content {
+			h2 {
+				padding: 10px 0;
+				@include font_size(16px);
+				letter-spacing: 0.075em;
+			}
+			h3 {
+				padding: 0;
+				@include font_size(11px);
+			}
+			p {
+				@include font_size(11px);
+				@include line_height(15px);
+			}
+		}
 	}
 	
 }
