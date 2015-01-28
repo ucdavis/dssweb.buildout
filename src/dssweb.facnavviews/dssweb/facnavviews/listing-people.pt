@@ -20,7 +20,7 @@
 
         <div class="eea-preview-items">
           <tal:entries repeat="brain batch">
-            <tal:block define="obj brain/getObject">
+            <tal:block define="obj brain/getObject; support_view context/@@facnav_support">
               <a tal:define="
                   description obj/Description|string:;
                   title obj/pretty_title_or_id|string:;
@@ -38,7 +38,7 @@
                   src string:$url/image_thumb"/>
               </span>
 
-
+<div tal:content="python:support_view.navRootRelativeUrl(obj)" />
               </a>
             </tal:block>
           </tal:entries>

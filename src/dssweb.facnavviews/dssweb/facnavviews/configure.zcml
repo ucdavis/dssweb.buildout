@@ -1,5 +1,6 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:faceted="http://namespaces.zope.org/faceted"
     i18n_domain="dssweb.facnavviews">
 
@@ -13,12 +14,19 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       / -->
 
-  <include package="eea.facetednavigation" />
+  <include package="eea.facetednavigation" file="meta.zcml" />
 
   <faceted:view
     name="faceted-listing-people"
     template="listing-people.pt"
     title="Faceted person listing"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    name="facnav_support"
+    for="zope.interface.Interface"
+    class=".facnav_support.FacNavView"
     permission="zope2.View"
     />
 
