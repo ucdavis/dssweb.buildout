@@ -64,10 +64,22 @@
 						}
 					}
 				}
+				&#fac-serv-btn { // change width of last main menu drop down that has this id
+					ul.dropdown { // layout for 2nd tier dropdown
+						width: 174px !important;
+					}
+				}
+				&#people-btn { // second level people dropdown pushes layout on tablet so restrict width
+					ul.dropdown {
+						ul.dropdown {
+							width: 50px !important; // TODO: Not affecting the menu
+						}
+					}
+				}
 			}
 		}
 	}
-	
+
 	.genericTile {
 		min-height: 195px !important; // based on a max total of 6 lines within tiles. Customize or use JS to apply equal heights
 	}

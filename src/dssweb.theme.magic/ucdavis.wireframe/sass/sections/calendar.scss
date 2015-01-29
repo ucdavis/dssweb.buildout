@@ -153,7 +153,11 @@ p {
 	margin-left: 365px;
 }
 .breadcrumb {
-	margin-top: 50px;
+	margin-top: 55px;
+	p a {
+		@include font_size(10px);
+		@include line_height(13px);
+	}	
 }
 .content-title {
 	padding-bottom: 0;
@@ -273,7 +277,7 @@ p {
 		margin-top: 90px !important;
 	}
 	.breadcrumb {
-		margin-top: 10px;
+  	//margin-top: 10px;
 	}
 	#view-filter, #month-pager {
 		text-align: center;
@@ -375,12 +379,12 @@ p {
 		position: absolute;
 	}
 	.breadcrumb {
-		top: 55px;
-		left: 25px;
+		top: 60px;
+		left: 20px;
 	}
 	.content-title {
 		top: 125px;
-		left: 22px; 
+		left: 17px; 
 		@include font_size(22px);
 	}
 	#month-pager {

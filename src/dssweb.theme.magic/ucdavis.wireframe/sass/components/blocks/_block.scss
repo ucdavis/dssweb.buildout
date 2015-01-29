@@ -24,11 +24,10 @@
 			}
 		}
 	}
-	.fn { // full name
-		text-transform:uppercase;
-		color:$ucd_blue_80;
+	.fn { // full name ... keep generic as we apply on both h4, li, and div elements
+		text-transform: uppercase;
 		font-weight: bold;
-		letter-spacing: 0.1em;
+		//letter-spacing: 0.1em;
 	}
 	.category { // position
 		font-style: italic;
@@ -120,10 +119,7 @@
 	}
 	
 	#corner-box-target {
-		p, li {
-			@include font_size(15px);
-			@include line_height(18px,!important);
-		}
+		
 		figure {
 			position: relative;
 			figcaption {
@@ -135,8 +131,8 @@
 				//bottom: 20px; // was 20px. set in JS
 		    background-color: rgba(0, 40, 85, 0.8);
 				color: #FFF;
-		    margin-left: 50%;
-		    width: 50%;
+		    margin-left: 40%;
+		    width: 60%;
 				height: 40px;
 				
 				.sm-title {

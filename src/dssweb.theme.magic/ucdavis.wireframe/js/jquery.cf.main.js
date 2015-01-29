@@ -1,4 +1,4 @@
-(function($){
+;(function($){
   /* code here runs instantly as opposed to $(function(){ ... }); which waits for DOM making ready function unness */	
   var debug = true;
   var toggleActive = true;
@@ -157,8 +157,15 @@
 		// Note: Add after any JavaScript constructed markup that relies on foundation
 		$(document).foundation(); 
 		
-		/* thumbify t6 template showing collapsible / accordion in tablet and desktop */
-		var thumbify = function (activeMQ, startTag, containerTag, targetTag) {
+		/* thumbify t6 template showing collapsible / accordion in tablet and desktop 
+		 * @param activeMQ the breakpoint
+		 * @param startTag the selector from which to finish processing 
+		 * @param containerTag the innermost content selector
+		 * @param targetTag the selector to receive image placement
+		 * @param invert the boolean whether to move the image into the collapsible panel or to move above
+		 * 
+		 */
+		var thumbify = function (activeMQ, startTag, containerTag, targetTag, invert) {
 			var comboSelector = startTag + ' ' + containerTag;
 			var MLTarget = null;
 			
@@ -166,7 +173,11 @@
 				 if((activeMQ === "M") || (activeMQ === "L")) {
 					MLTarget = targetTag + " a"; // desktop/tablet: put thumb into the gold bar left of title
 				} else {
-					MLTarget = ".panel-body"; // mobile: put thumb before text within the collapsed panel
+					if(invert) {
+						MLTarget = ".panel-body"; // mobile: put thumb before text within the collapsed panel
+					} else {
+						// Move the image to top of current selector
+					}
 					// prep to retrieve "m-" version of image ...
 					var img = $(this).find('.thumb');
 					var img_src = img.attr('src');
@@ -183,10 +194,15 @@
 					
 				}
 				
-				var rt = $(this).find(MLTarget);
-			 	rt.wrapInner('<span class="thumb-txt" />');
-			 	rt.prepend($(this).find('.thumb'));
-				$(this).addClass("thumbify-processed");
+				if(MLTarget) {
+					var rt = $(this).find(MLTarget);
+			 		rt.wrapInner('<span class="thumb-txt" />');
+			 		rt.prepend($(this).find('.thumb'));
+					$(this).addClass("thumbify-processed");
+				} else {
+					$(this).prepend($(this).find('.thumb').addClass('thumbify-prepended'));
+				}
+				
 			 });
 			 collapsedSection(startTag);
 		};
@@ -439,6 +455,14 @@
 					$('#nested-left').insertAfter($('#nested-right'));
 				}
 			}
+			
+			// On T10 move #nested-left after #cm-section
+			if(activeMQ === 'S') {
+				if(($('#cm-section #nested-right').length !== 0) && ($('#nested-left').length !== 0)) {
+					$('#nested-left').insertAfter($('#cm-section'));
+				}
+			}
+			
 		};
 		var bendM = function () {
 			
@@ -479,6 +503,12 @@
 				$('#nested-right').addClass("col-md-8");
 				$('#content-core > .row').append($('#nested-left'));
 			}
+			
+			// On T10 move #nested-left after #cm-section
+			if(($('#cm-section #nested-right').length !== 0) && ($('#nested-left').length !== 0)) {
+				$('#content-core > .row').prepend($('#nested-left'));
+			}
+			
 		};
 
 		var unbendbio = function () {
@@ -915,7 +945,7 @@
 			expand(); // process collapse
 			if(!processed) {
 				if($('#thumb-section').length !== 0) {
-					thumbify(activeMQ,'#thumb-section','section','.panel-heading');
+					thumbify(activeMQ,'#thumb-section','section','.panel-heading',false);
 				}
 			}
 			

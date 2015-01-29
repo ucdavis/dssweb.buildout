@@ -805,12 +805,15 @@ body.contact-type {
 				width: 100%; //TODO: margin-top reveals formatting error
 				min-height: 40px;
 				font-weight: normal;
+				
+				padding-top: 8px !important;
+				padding-bottom: 8px !important; // this makes blue bars unequal heights
 				padding-right: 15px; // was 0
 				padding-left: 20px !important;
 				
 				@include font_size(16px);
 				// Use 5px for emphasis on multi line panel-titles, 9px for single line
-				padding-top: 9px !important;
+				
 				@include line_height(22px,!important);
 				// @include line_height(40px); // OK for single line. TODO: Treatment for singles not adequate
 				text-align: left;
@@ -861,12 +864,17 @@ body.contact-type {
 		}
 	}
 	
+	// t10
 	#nested-right {
+		padding-right: 0;
 		padding-left: 0;
 	}
 	
 	#footer {
 		margin-bottom: 60px;
+		.foot-wrap {
+			margin-right: 0 !important;
+		}
 		.footer-nav {
 			li {
 				@include line_height(35px);
@@ -874,17 +882,30 @@ body.contact-type {
 				padding-bottom: 0;
 			}
 		}
-		#vcard{
+		#vcard {
 			text-align: center;
 		}
 	}
 
 	#content-row {
-		.panel {
-			.panel-body {
-				//.popup-sm-titlemargin-left: 17px;
+		
+		// apply layout to only main content column items on mobile
+		#content-core {
+			.panel {
+				.panel-body {
+					margin-left: 17px;
+				}
+			}
+			#nested-left { // T8 nested column "Important Dates" and t12
+				.picture {
+					margin: 25px auto;
+					figcaption {
+						text-align: center;
+					}
+				}
 			}
 		}
+		
 		section {
 			margin-bottom: 5px;
 			.course-portlet {
@@ -925,6 +946,12 @@ body.contact-type {
 		#thumb-section { // Important: Specific content selector since we want to keep our sidebar panel styles
 			.panel-group {
 				section {
+					.thumbify-prepended {
+						display: block;
+						margin: 0 auto;
+						width: 100%;
+						margin-top: 15px;
+					}
 					.readmore {
 						display: block;
 						margin-top: 8px;
@@ -946,15 +973,15 @@ body.contact-type {
 									margin-left: 0;
 								}
 								@include font_size(16px,!important);
-								font-weight: bold;
+								//font-weight: bold; 
 							}
 						}
 					}
 					.panel-body {
 						padding-top: 2px !important;
-						margin-left: 0;
+						margin-left: 17px;
 						padding: 0 !important;
-						img.thumb { // Note: We're replacing the smaller thumb with the larger image in mobile via javascript. We initially load the smaller T6-autism.jpg and then look for m-T6-autism.jpg to load in mobile
+						img.thumb { // Note: We're replacing the smaller thumb with the larger image in mobile via javascript. We initially load the smaller T6-autism.jpg and then look for m-T6-autism.jpg to load in mobile. Processed image has class thumbify-prepended if thumbify 'invert' = false
 							width: 280px;
 							display: block;
 							margin: 15px auto;
@@ -1123,7 +1150,7 @@ body.contact-type {
 					letter-spacing: 0.05em;
 				}
 				.content-wrap {
-					padding-top: 0;
+					padding-top: 5px; // fix peeking text on home page
 					p:last-child, ul:last-child { // happy boxes with content other than headings
 						margin-bottom: 0; // should have margin bottom on content-wrap so remove
 					}

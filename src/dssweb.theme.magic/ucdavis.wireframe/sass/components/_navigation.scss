@@ -493,28 +493,11 @@
 /* Note: To adjust navigation items for tablet display please make changes in sub-org.scss */
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768px < width < 991px
 
-	#util-bar-wrap, #top-bar-wrap, #banner-row {
-		//margin-left: -10px !important; // fixes margin issue on ipad landscape
-		//margin-right: -20px !important; // -20px needed in iphone landscape orientation to pull in collapsed menu icon ...
-	}
-	// remove top nav margins on tablet
-	/*#util-bar-wrap {
-		border: 1px solid red;
-		margin-left: -9px !important;
-		margin-right: -21px !important;
-		.util-bar {
-			margin-left: 0 !important;
+	.util-bar {
+		#uti-logo {
+			width: 22%;
 		}
 	}
-	#top-bar-wrap {
-		margin-left: -15px !important;
-		margin-right: -5px !important; // TODO: 5px???
-	}
-	
-	.util-bar {
-		border: 1px solid red;
-		//width: 100%;
-	}*/
 
 	.top-bar {
 		height: 80px; // Added to force height on entire name-logo navigation bar on tablet
@@ -528,11 +511,7 @@
 			}
 		}
 	}
-	.util-bar {
-		#uti-logo {
-			width: 22%;
-		}
-	}
+		
 }
 
 @media screen and (max-width: $screen-md-min) { // width < 992
@@ -547,6 +526,19 @@
 @media screen and (min-width: $screen-md-min) { // width > 992px
 	.util-bar {
 		max-width: 768px;
+	}
+	.top-bar {
+		.top-bar-section {
+			ul {
+				ul.dropdown { // layout for 2nd tier dropdown
+					li {
+						a {
+							padding: 8px 24px;
+						}
+					}
+				}
+			}
+		}
 	}
 }
 

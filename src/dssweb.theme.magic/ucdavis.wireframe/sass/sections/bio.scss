@@ -91,6 +91,7 @@ i {
 								background-color: $tab_light_gray;
 								background-image: none;
 								margin-bottom: 4px; // override 10px
+								
 								&:last-child {
 									margin-bottom: 0;
 								}
@@ -171,6 +172,12 @@ i {
 				margin: 0;
 				li {
 					margin-bottom: 0;
+					> span {
+						a {
+							@include font_size(10px,!important);
+							@include line_height(42px,!important);
+						}
+					}
 				}
 			}
 		}
@@ -193,7 +200,7 @@ i {
 						margin-right: 35px !important;
 					}
 					img.photo {
-						margin-top: 10px;
+						margin-top: 10px; // Note: Check portlet panel-body padding-top
 						margin-bottom: 25px;
 						margin-left: auto;
 						margin-right: auto;

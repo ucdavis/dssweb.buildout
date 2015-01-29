@@ -74,7 +74,7 @@ body.res-lab {
 				}
 				.event-date {
 					display: block;
-					padding-top: 4px;
+					padding-top: 5px;
 				}
 			}
 		
@@ -94,6 +94,7 @@ body.res-lab {
 	
 		.panel-body {
 			padding: 0;
+			//padding-top: 5px; // Note: Will break t3 office/labs portlet top padding
 			padding-bottom: 20px;
 			.vcard {
 				padding: 0;
@@ -120,10 +121,22 @@ body.res-lab {
 			
 				// Vcard types 
 				&.office {
-					padding-bottom: 15px; // relies on h4 margin for spacing
+					padding-bottom: 15px; // was 15px, if relying on h4 margin use 15px-amount for spacing
+					&:first-child {
+						// don't space directly on first child since t6 will break
+						h4.fn {
+							padding-top: 20px; // override 12px on first occurance
+						}
+					}
 					&:last-child {
 						padding-bottom: 0;
 					}
+					
+					// Undo margin on adjecent elements
+					h4 + h4.fn {
+						padding-top: 0 !important;
+					}
+					
 					// Repeat treatement; TODO: create mixin
 					h4 {
 						min-height: 28px;
@@ -133,9 +146,11 @@ body.res-lab {
 						letter-spacing: 0.05em;
 						font-weight: bold;
 						&.fn { // headings used for individuals
+							min-height: auto !important;
+							background-color: transparent !important;
 							text-transform: uppercase;
-							padding-bottom: 0;
-							margin: 0;
+							padding-bottom: 0 !important;
+							margin: 0 !important;
 						}
 						a {
 							@include font_size(13px);
@@ -156,6 +171,7 @@ body.res-lab {
 					}
 				}
 			}
+			
 		}
 	
 		// Portlet types & variations
@@ -239,6 +255,11 @@ body.res-lab {
 					margin: 0;
 				}
 			}
+			&.adr-only {
+				&:last-child {
+					padding-bottom: 0 !important;
+				}
+			}
 		}
 	}
 	
@@ -256,6 +277,9 @@ body.res-lab {
 		text-align: center;
 		&.office {
 			//margin-top: -15px; // breaks on t3 mobile
+			h4.fn {
+				min-height: auto !important;
+			}
 		}
 		div { 			
 			//width: 200px;

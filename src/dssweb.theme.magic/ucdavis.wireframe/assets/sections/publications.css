@@ -16,7 +16,6 @@
 /*----- Mobile breakpoint --------*/
 i { font-style: italic !important; }
 
-@media screen and (max-width: 767px) { .email a { background-position: 45% 70% !important; } }
 /*----- "M" breakpoint -------*/
 /*----- Desktop breakpoint -------*/
 @media screen and (min-width: 992px) { .sidebar-right { margin-top: 116px; } }
