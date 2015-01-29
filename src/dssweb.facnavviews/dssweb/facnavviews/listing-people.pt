@@ -38,12 +38,31 @@
                     src string:$url/image_thumb"/>
                 </span>
 
-                <!-- span class="personEntryWrapper" tal:condition="python:not image_thumb and image_tag">
-                  <img tal:replace="structure python:image_tag(scale='thumb', title=description)" />
-                </span -->
-
                 <p class="personName" tal:content="title">Title</p>
 
+                <div class="caption"
+                    tal:define="department obj/getPrimaryDepartment"
+                    tal:condition="department">
+
+                  <!-- setting to primary department for demo purposes -->
+                  <tal:block tal:define="
+                    personMembershipInformation python:department.getMembershipInformation(obj);">
+                    <p class="job"
+                      tal:condition="personMembershipInformation/getPosition | nothing"
+                      tal:content="personMembershipInformation/getPosition"
+                    />
+                    <p class="phone"
+                      tal:condition="personMembershipInformation/getDept_officePhone | nothing"
+                      tal:content="personMembershipInformation/getDept_officePhone">
+                      | Email
+                    </p>
+                    <p class="oemail"
+                      tal:condition="personMembershipInformation/getDept_officeAddress | nothing"
+                      tal:content="personMembershipInformation/getDept_officeAddress" />
+                  </tal:block>
+                </div> <!--department -->
+
+                <div class="lab">Lab/PI Goes here</div>
               </a>
             </tal:block>
           </tal:entries>
