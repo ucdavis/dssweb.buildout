@@ -2,17 +2,18 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:faceted="http://namespaces.zope.org/faceted"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="dssweb.facnavviews">
 
   <!-- five:registerPackage package="." initialize=".initialize" / -->
 
-  <!-- genericsetup:registerProfile
+  <genericsetup:registerProfile
       name="default"
       title="dssweb.facnavviews"
       directory="profiles/default"
       description="Installs the dssweb.facnavviews package"
       provides="Products.GenericSetup.interfaces.EXTENSION"
-      / -->
+      />
 
   <include package="eea.facetednavigation" file="meta.zcml" />
 
