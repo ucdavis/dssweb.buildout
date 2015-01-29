@@ -25,6 +25,7 @@
 
       <!-- merge classes from Plone body with theme body -->
       <merge attributes="class" css:theme="body" css:content="body" />
+	  
 
       <!--Copy script tags from Plone head to end of body-->
       <!--after css:theme-children="html body" css:content="html head script" /-->
@@ -149,11 +150,19 @@
     	<!-- Description -->
     	<replace css:theme="p.intro" css:content="#parent-fieldname-description" />
 
-    	<!-- Content-core-T4 -->
-    	<replace css:theme-children=".panel-body" css:content="#content-core" css:if-content="body.portaltype-document" />
+    	<!-- Content-core-T4 --> 
+    	<replace css:theme-children=".panel-body" css:content="#content-core" css:if-content=".portaltype-document" />
+		<!--this rule breaks the faceted nav-->
+    	<!--replace css:theme-children=".panel-body" css:content="#content-core" css:if-theme=".adhoc" /-->
+    	
         <before css:theme="#content-core"
-                css:content=".newsImageContainer" css:if-content="body.portaltype-document"/>
-
+                css:content=".newsImageContainer" css:if-content=".portaltype-document"/>
+		
+    	
+        <!--before css:theme="#content-core"
+                css:content=".newsImageContainer" css:if-theme=".adhoc"/-->
+		    	
+		
     	<!-- Basic Right Portlet -->
     	<replace css:theme-children=".sidebar-right" css:content=".portlet" />
         
@@ -175,9 +184,10 @@
 		  
 	   </rules>
 	   <!--Person directory Page Faceted Nav T2 -->
-	   <rules css:if-content="body.template-facetednavigation_view">
-		   
-		    <after css:theme-children="html body" css:content="html head script" />
+	   <rules css:if-theme="body.ourpeople">
+		   <after css:theme="html body" css:content="html head script"/>
+		    
+		    <!--after css:theme-children="html body" css:content="html head script" /-->
 			<replace css:theme="#am-content > p" css:content=".documentDescription" />
 		    <replace css:theme="h4.table-header" css:content="#faceted-center-column" />
 			<replace css:theme="#search-results" css:content="#faceted-results" />
@@ -186,12 +196,18 @@
 		    <drop theme='//*[@id="pager-bottom"]' />
 
 	   </rules>
+	   
 	   <!--Contact Page rules -->
 	   <rules css:if-content="body.portaltype-dsscontact" >
 		   <replace theme='//*[@id="google-map"]' content='//*[@id="viewlet-above-content-title"]' />
 		   <replace theme='//*[@id="content-core"]' content='//*[@id="content-core"]' />
 	   </rules>
 	   
+	   <!-- Generic Views -->
+	   <rules css:if-theme="body.adhoc" >
+		   <replace css:theme=".panel-body" css:content=".tileItem"  css:if-content=".tileItem" />
+		   <replace css:theme="#content-core" css:content="#content-core" css:if-content="#content-core"/>
+	   </rules>
 		   
 
       <!--- Footer -->
