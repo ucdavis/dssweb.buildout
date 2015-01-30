@@ -40,11 +40,12 @@
 		
 		h3 {
 			font-weight: normal !important;
-			letter-spacing: none !important;
-			padding-right: 5px;
 		}
 	}
 	
+}
+#content-core h3.uc {
+	letter-spacing: 0 !important;
 }
 #content-row {
 	margin-top: 35px;

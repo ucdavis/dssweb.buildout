@@ -437,13 +437,14 @@
 				}
 				.tab-title {
 					margin-left: 0;
-					padding-left: 76px;
+					padding-left: 72px; // was 76px
 					background-position: 98% 50% !important;
 					a {
 						// Remove vertical centering of text to accommodate longer titles
-						top: 15%;                         
+						top: 15%;        
+						margin-right: 6% !important;                 
 						transform: translate(0, -15%);
-						@include font_size(12px,!important);
+						@include font_size(11px,!important);
 					}
 				}
 			}

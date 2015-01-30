@@ -680,7 +680,7 @@ body.home {
 	body.home {
 		// Text below banner in thumbnail / tab boxes
 		
-		#content-row { // was #content, #am-content
+		#content, #am-content { // home desn't have #content-row
 			.narrow-col {
 				h2 {
 					@include font_size(17px);
@@ -733,7 +733,7 @@ body.home {
 @media screen and (min-width: $screen-md-min) { // width > 992
 	body.home {
 		// Button text at bottom of happy boxes
-		#content-row { // was #content, #am-content
+		#content, #am-content { // on home there is no #content-row
 			#top-panel-row {
 				.narrow-col {
 					.bcontroller {
@@ -741,6 +741,14 @@ body.home {
 							@include font_size(14px);
 							@include line_height(30px,!important);
 						}
+					}
+				}
+			}
+			#bottom-panel-row {
+				.panel-body {
+					li, a, p {
+						@include font_size(15px,!important);
+						@include line_height(22px,!important);
 					}
 				}
 			}
@@ -810,7 +818,7 @@ body.home {
 	body.home {
 		// Text below banner in thumbnail / tab boxes
 		
-		#content-row { // was #content, #am-content
+		#content, #am-content { // home does not have #content-row
 			.narrow-col {
 				p, li, a {
 					@include font_size(13px,!important);
