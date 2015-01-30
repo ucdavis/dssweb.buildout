@@ -242,8 +242,15 @@ body.has-shadow-am {
 	}
 	.narrow-col {
 		h2 {
-			@include font_size(18px);
+			@include font_size(18px,!important); // force here ... check
 			letter-spacing: 0;
+		}
+	}
+	body.students {
+		.narrow-col {
+			h2 {
+				//@include font_size(17px,!important);
+			}
 		}
 	}
 }
