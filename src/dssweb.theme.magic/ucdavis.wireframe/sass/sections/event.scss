@@ -40,6 +40,8 @@
 		
 		h3 {
 			font-weight: normal !important;
+			letter-spacing: none !important;
+			padding-right: 5px;
 		}
 	}
 	
@@ -94,7 +96,9 @@
 			}
 		}
 	}
-	// Remove following for gold button instead of blue 
+
+	// Treatment to replace gold with blue accordion buttons
+	/*
 	#accordion-e {
 		.panel-title {
 			a {
@@ -110,7 +114,8 @@
 				}
 			}
 		}
-	}
+	}*/
+	
 }
 
 @media screen and (min-width: $screen-sm-min) { // width > 768
@@ -130,9 +135,7 @@
 			margin-top: 0 !important;
 		}
 	}
-	.panel{
-		margin-left:0 !important;
-	}
+
 }
 
 
