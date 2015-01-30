@@ -149,9 +149,11 @@
 
     	<!-- Description -->
     	<replace css:theme="p.intro" css:content="#parent-fieldname-description" />
+	<before css:theme="h1.content-title" css:content="#kssPortalMessage" />
 
     	<!-- Content-core-T4 --> 
     	<replace css:theme-children=".panel-body" css:content="#content-core" css:if-content=".portaltype-document" />
+	<replace css:theme-children=".panel-body" css:content=".pfg-form" css:if-content=".portaltype-formfolder" />
 		<!--this rule breaks the faceted nav-->
     	<!--replace css:theme-children=".panel-body" css:content="#content-core" css:if-theme=".adhoc" /-->
     	

@@ -351,6 +351,57 @@ dl.portlet a:link {
   color: $ucd_blue_100;
   border-bottom: none;
 }
+/*------------PFG Forms and Errors -----------*/
+div.field.error {
+background-color: $ucd_error;
+border: 1px solid $wine_grape;
+padding: 0.5em;
+margin: 1em 0;
+}
+.field.error input[type="text"][name$=".title"],
+.error input#title {
+    width: 99%;
+}
+
+.fieldRequired {
+    background: url(required.png) center left no-repeat;
+    padding: 0 0 0 1em;
+    color: White;
+}
+.fieldUploadFile {
+    text-align: right;
+    margin-right: 0.75em;
+    display: none;
+}
+.fieldTextFormat {
+    text-align: right;
+    margin-right: 0.75em
+}
+.formHelp {
+    color: #555;
+    margin: 0 0 0.2em 0;
+    display: block;
+    font-weight: normal;
+}
+div.field.error {
+    background-color: $ucd_error;
+    border:  1px solid $wine_grape;
+    padding: 0.5em;
+    margin:  1em 0;
+}
+.error .fieldRequired {
+    color: #d00;
+}
+div.error.warning {
+    background-color: transparent;
+    border: none;
+    margin-top: 0;
+    padding: 0;
+}
+
+div.error.warning input {
+    border: 2px solid $wine_grape;
+}
 /*------Collection Summary View with Images -------*/
 tileItem.visualIEFloatFix {
 padding-top: 3%;
