@@ -702,6 +702,14 @@ body.contact-type {
 	head { font-family:"S";}
 	body:after{content:"S";}
 	
+	// video
+	p {
+		iframe {
+			width: 97% !important;
+			height: auto !important;
+		}
+	}
+	
 	.container {
 		padding: 0; // Pulls mobile navigation to edges but adds right white margin on tablet (portrait) {TODO: Check}
 	}
@@ -1021,6 +1029,7 @@ body.contact-type {
 /*----- Mobile breakpoint -------*/ // TODO: Check error on _bootstrap_overrides vis-a-via this breakpoint max
 @media screen and (max-width: $screen-sm-max) { // width < 991px
 	
+
 	.sidebar {	
 		background:transparent;
 	}
@@ -1295,6 +1304,13 @@ body.contact-type {
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
 	head { font-family:"M";}
 	body:after{content:"M";}
+	
+	p {
+		iframe {
+			width: 100% !important;
+			height: 100% !important;
+		}
+	}
 	
 	/* TODO: breaks ipad, adding right margin (see also > 768 breakpoint)
 	UPDATE: Not having this causes page content to be slightly narrower than the navigation */

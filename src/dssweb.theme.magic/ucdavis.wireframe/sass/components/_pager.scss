@@ -45,7 +45,7 @@
 
 body.search-result {
 	#pager-top {
-		padding-top: 45px;
+		padding-top: 25px;
 		padding-bottom: 5px;
 	}
 	#pager-bottom {
@@ -55,12 +55,14 @@ body.search-result {
 }
 
 /*----- Mobile breakpoint ("S") --------*/
-
 @media screen and (max-width: $screen-xs-max) { // width < 767
 
 	.pager {
 		padding-top: 10px;
 		padding-bottom: 10px;
+		.pager-string {
+			@include font_size(11px,!important);
+		}
 	}
 	
 	body.search-result {
@@ -79,8 +81,14 @@ body.search-result {
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
 	
 	.pager {
-		padding-top: 25px;
+		padding-top: 25px !important;
 		padding-bottom: 25px;
+		padding-left: 0;
+		padding-right: 0;
+		span, div {
+			margin: 0 !important;
+			padding: 0 !important;
+		}
 	}
 
 }
