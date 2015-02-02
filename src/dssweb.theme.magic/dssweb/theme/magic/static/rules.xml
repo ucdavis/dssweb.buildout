@@ -158,7 +158,10 @@
     	<!--replace css:theme-children=".panel-body" css:content="#content-core" css:if-theme=".adhoc" /-->
     	
         <before css:theme="#content-core"
-                css:content=".newsImageContainer" css:if-content=".portaltype-document"/>
+                css:content=".newsImageContainer" css:if-content=".portaltype-document" />
+		<before css:theme="#content-row"
+		         css:content=".newsImageContainer" css:if-content=".portaltype-dsstwocollumnpage" />
+		
 		
     	
         <!--before css:theme="#content-core"
