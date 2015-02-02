@@ -9,7 +9,7 @@ body, div, p, li, a, input, textarea, select, button {
 // Note: Font faces are in _mixins
 
 a { 
-	color: $ucd_blue_70;
+	color: $link_color;
 }
 
 em {
@@ -705,7 +705,7 @@ body.home {
 		}
 	}
 	
-	#content-row { // was #content, #am-content
+	#content-row, #banner-row { // was #content, #am-content
 		.content-title {
 			@include font_size(26px);
 			@include line_height(28px);

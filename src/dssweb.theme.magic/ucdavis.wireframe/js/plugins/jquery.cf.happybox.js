@@ -95,41 +95,47 @@
 			    }
 				});*/
 				
-				// Click event - Close
-				$(canvas_element).click(function() {
-					$(this).animate({
-					'paddingTop': (happy_parent.options.button_height - happy_parent.options.height) // (how much of the box should peek out)
-					}, 900, "easeOutBounce", function() {
-					});
+				if(!happy_parent.options.frozen) {
+					// Click event - Close
+					$(canvas_element).click(function() {
+						$(this).animate({
+						'paddingTop': (happy_parent.options.button_height - happy_parent.options.height) // (how much of the box should peek out)
+						}, 900, "easeOutBounce", function() {
+						});
 					
-				});
+					});
 				
-				// Hover event - Get happy feet
-				$(canvas_element).hover(function() {
-					var animObj = $(this).parent().parent();
-					var height = $(this).height();
-					if(debug && has_console) {
-						window.console.log("Happybox: class="+$(this).attr('class')+", easeOutBounce1 event");
-					}
-					animObj.stop().animate({
-						'paddingTop': (happy_parent.options.height - height) // stick boxes to bottom: TODO: Have max-height 
-					}, 900, "easeOutBounce");
-					}, function() {
-					var animObj = $(this).parent().parent();
-					if(debug && has_console) {
-						window.console.log("Happybox: class="+$(this).attr('class')+", easeOutBounce2 event");
-					}
-					animObj.stop().animate({
-						'paddingTop': (happy_parent.options.height - happy_parent.options.button_height)
-					}, 900, "easeOutBounce");
-				});
+					// Hover event - Get happy feet
+					$(canvas_element).hover(function() {
+						var animObj = $(this).parent().parent();
+						var height = $(this).height();
+						if(debug && has_console) {
+							window.console.log("Happybox: class="+$(this).attr('class')+", easeOutBounce1 event");
+						}
+						animObj.stop().animate({
+							'paddingTop': (happy_parent.options.height - height) // stick boxes to bottom: TODO: Have max-height 
+						}, 900, "easeOutBounce");
+						}, function() {
+						var animObj = $(this).parent().parent();
+						if(debug && has_console) {
+							window.console.log("Happybox: class="+$(this).attr('class')+", easeOutBounce2 event");
+						}
+						animObj.stop().animate({
+							'paddingTop': (happy_parent.options.height - happy_parent.options.button_height)
+						}, 900, "easeOutBounce");
+					});
+				}
 						
 				if(debug && has_console) { 
 					window.console.log("Happybox " + $(this).attr('class') + " height: "+ h);
 				}
 				
 				// Temporary: TODO: Remove ...
-				action_element.css('padding-top', (happy_parent.options.height-happy_parent.options.button_height));
+				if(!happy_parent.options.frozen) {
+					action_element.css('padding-top', (happy_parent.options.height-happy_parent.options.button_height));
+				} else {
+					action_element.css('padding-top', (happy_parent.options.height-h));
+				}
 				//action_element.css('border','1px solid blue');
 				
 			});

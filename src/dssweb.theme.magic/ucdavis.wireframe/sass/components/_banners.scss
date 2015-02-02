@@ -94,6 +94,14 @@ body.has-shadow-am {
 		}
 	}
 	
+	body.res-lab {
+		#banner-row {
+			.figcaption {
+				display: none;
+			}
+		}
+	}
+	
 	.siders {
 		margin-right: -15px !important;
 		.wall {
@@ -279,6 +287,12 @@ body.has-shadow-am {
 				margin-left: 0 !important;
 				text-align: center !important;
 			}
+		}
+	}
+	
+	body.res-lab {
+		#content-row {
+			//margin-top: 0 !important; // let js handle this
 		}
 	}
 	

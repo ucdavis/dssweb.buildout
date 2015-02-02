@@ -177,6 +177,13 @@
 			}
 		}
 	}
+	.vcard {
+		#email-phone {
+			span {
+				padding-top: 8px !important; // make easier to touch / separate from phone number
+			}
+		}
+	}
 }
 
 /* /components/blocks/_block.scss */

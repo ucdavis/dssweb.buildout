@@ -339,13 +339,20 @@
 		// Subtract height of figcaption from breadcrumb visually oriented on bottom of image
 		// Minimize content-row top margin if banner has caption
 		// Call this ONLY after picture processing
+		// figcaption
 		if(($('#banner-row').length !== 0) && ($('#banner-row figcaption').length !== 0)) {
 			// Note: figcaption doesn't existing until processed so use approx 25px height
 			var fcmt = $('#banner-row figcaption').height() + 6;
 			var mt = ( $('#content-row').css('margin-top').replace('px','') - fcmt);
 			$('#content-row').css('margin-top', mt);
 		}
-		
+		// .figcaption
+		if(($('#banner-row').length !== 0) && ($('#banner-row .figcaption').length !== 0)) {
+			// Note: figcaption doesn't existing until processed so use approx 25px height
+			var fcmt = $('#banner-row .figcaption').outerHeight();
+			var mt = ( $('#content-row').css('margin-top').replace('px','') - fcmt);
+			$('#content-row').css('margin-top', mt);
+		}		
 		
 		// Process download file icons
 		// TODO: Plugin ... with option to add id's which should be checked for file type icon placement

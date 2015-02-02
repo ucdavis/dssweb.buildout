@@ -278,9 +278,10 @@ input {
 	background: none;
 	padding:0 0 !important;
 	margin-bottom: 0;
-	color: $ucd_blue_70;
+	color: $link_color;
 	text-transform: uppercase;
 	a {
+		color: $link_color;
 		text-decoration: none;
 		&:hover {
 			text-decoration: underline;
@@ -441,7 +442,7 @@ input {
 #downloads {
 	a {
 		text-decoration: underline;
-		color: $ucd_blue_70;
+		color: $link_color;
 	}
 	margin-top: 0 !important;
 }
@@ -1586,6 +1587,12 @@ body.contact-type {
 	}
 }
 
+/*----- Less than Large Desktop breakpoint -------*/
+@media screen and (max-width: $screen-lg-min) { // width < 1310
+	.sidebar.second {
+		margin-top: 0 !important;
+	}
+}
 /*----- Large Desktop breakpoint -------*/
 @media screen and (min-width: $screen-lg-min) { // width > 1310
 	#top-bar-wrap, #content-row, #banner-row, .row#banner-caption {
