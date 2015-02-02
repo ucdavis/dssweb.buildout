@@ -19,6 +19,22 @@ from Products.ATExtensions.ateapi import *
 DssTwoCollumnPageSchema = document.ATDocumentSchema.copy() + atapi.Schema((
   
     
+       atapi.ImageField(
+           name="medTopImage",
+           widget=atapi.ImageWidget(
+               label=u"Top Image",
+               description=u"this is a large top image",
+               
+           ),
+       ),
+      atapi.StringField(
+          name="imageCaption",
+          widget=atapi.StringWidget(
+              label=u"Image Caption",
+              description=u"Image Caption Here",
+          ),
+      ),     
+       
        atapi.TextField(
                name="insetcolumn",
                widget = atapi.RichWidget(

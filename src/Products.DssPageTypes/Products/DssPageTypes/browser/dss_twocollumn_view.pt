@@ -10,7 +10,23 @@
 
 <metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main">
-
+     <metal:title define-slot="top-image">
+	 <div class="newsImageContainer"
+	              tal:condition="context/getTopMedImage|nothing">
+	             <a href="#"
+	                tal:define="here_url context/@@plone_context_state/object_url;"
+	                tal:attributes="href string:$here_url/TopMedImage/image_view_fullscreen"
+	                id="parent-fieldname-image">
+	                <img tal:replace="structure python: context.tag(scale='mini', css_class='newsImage')" src="" alt="" />
+	             </a>
+	             <p class="discreet" tal:condition="context/imageCaption|nothing">
+	               <metal:field use-macro="python:context.widget('imageCaption', mode='view')">
+	               Image Caption
+	               </metal:field>
+	             </p>
+	         </div>
+	 </metal:title>
+	    
     <div tal:replace="structure provider:plone.abovecontenttitle" />
 
                              <metal:title define-slot="content-title">
