@@ -162,7 +162,7 @@
 	    <before css:theme="#content-row"
 		         css:content=".topImageContainer" css:if-content="body.portaltype-dsstwocollumnpage" />
            
-		<replace css:theme="#content-core" css:content="#content-core" css:if-content="body.portaltype-dsstwocollumnpage" />
+	
           
 		
 		
