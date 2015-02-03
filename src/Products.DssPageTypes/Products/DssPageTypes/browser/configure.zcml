@@ -11,6 +11,7 @@
 		 class=".DssPageViews.DssContactView"
 	      name="contact_page_view"
 	      template="dss_contact_view.pt"
+		 allowed_attributes = "portal_state"
 	      permission="zope2.View"
 	          />
 	   <browser:page

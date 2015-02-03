@@ -82,8 +82,8 @@
 		   	                   class="enableAutoFocus"
 		   	                   action=""
 		   	                   method="post"
-		   	                   <!--tal:define="errors options/@@plone_portal_state/getErrors"
-		   	                   tal:attributes="action string:$portal_url/${template/getId}"-->
+		   	                   tal:define="errors options/state/getErrors"
+		   	                   tal:attributes="action string:$portal_url/${template/getId}">
                         
 		   	               <tal:defs define="member context/@@plone_portal_state/member;
 		   	                                     fullname python:request.get('fullname', not isAnon and member.getProperty('fullname', '') or None);

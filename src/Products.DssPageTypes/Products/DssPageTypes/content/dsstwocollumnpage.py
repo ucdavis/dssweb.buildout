@@ -41,7 +41,11 @@ DssTwoCollumnPageSchema = document.ATDocumentSchema.copy() + atapi.Schema((
                    label=u"Small Column Text",
                    description=u"This text will be Blue",
                    width="40",
-               ),
+                   ),
+                   searchable=True,
+                   validators=('isTidyHtmlWithCleanup',),
+                   default_output_type='text/x-html-safe',
+               
               
             ),
         
