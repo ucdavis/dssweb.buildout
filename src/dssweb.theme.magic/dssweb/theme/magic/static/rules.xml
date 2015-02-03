@@ -159,8 +159,11 @@
     	
         <before css:theme="#content-core"
                 css:content=".newsImageContainer" css:if-content=".portaltype-document" />
-		<before css:theme="#content-row"
-		         css:content=".newsImageContainer" css:if-content=".portaltype-dsstwocollumnpage" />
+	    <before css:theme="#content-row"
+		         css:content=".topImageContainer" css:if-content="body.portaltype-dsstwocollumnpage" />
+           
+		<replace css:theme="#content-core" css:content="#content-core" css:if-content="body.portaltype-dsstwocollumnpage" />
+          
 		
 		
     	
