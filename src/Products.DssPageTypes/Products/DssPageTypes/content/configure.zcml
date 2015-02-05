@@ -18,5 +18,11 @@
         interface="Products.DssPageTypes.interfaces.IDssTwoCollumnPage"
         />
   </class>
+  <class class=".dsscourse.DssCourse">
+    <require
+        permission="zope2.View"
+        interface="Products.DssPageTypes.interfaces.IDssCourse"
+        />
+  </class>
 
 </configure>

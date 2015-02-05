@@ -12,3 +12,6 @@ class IDssPageTypesSpecific(IDefaultPloneLayer):
 class IDssTwoCollumnPage(Interface):
     """Marker interface that defines a Zope 3 skin layer for this product.
     """
+class IDssCourse(Interface):
+    """Marker interface that defines a Zope 3 skin layer for this product.
+    """
