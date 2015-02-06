@@ -81,7 +81,12 @@ a#portal-logo {  //overrides theme wdth setting that was causing menu to break
 background-color: $ucd_bright_gold_70;
 padding: 0.3em;
 }
-
+/*----- Breadcrumbs ----- */
+#portal-breadcrumbs > span > a, span#breadcrumbs-current {
+    font-size: 0.75rem;
+    line-height: 0.9375rem;
+    margin-bottom: 0px;
+}
 
 @media screen {
 /*------News Happy Box ---------*/

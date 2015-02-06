@@ -7,7 +7,10 @@
     <!-- Apply the following rules to standard Plone pages -->
     <rules css:if-content="#visual-portal-wrapper">
 	    <theme href="index2.html" if="$home_page" />
-	    <theme href="t13_event2.html" css:if-content="body.portaltype-event" />
+	    <theme href="index2.html" css:if-content="body.portaltype-front-page" />
+
+            <theme href="t13_event2.html" css:if-content="body.portaltype-event" />
+			<theme href="t13_event2.html" css:if-content="body.portaltype-dsscourse" />
 		<theme href="t3_bio.html" css:if-content="body.portaltype-fsdperson" />
 		<theme href="t2_ourpeople.html" css:if-content="body.template-facetednavigation_view" />
 		<theme href="t7_contact.html" css:if-content="body.portaltype-dsscontact" />
@@ -37,19 +40,40 @@
       <drop css:content="dd.portlet-footer" />
       <drop css:content="dd.portletFooter"/>
    </rules>
+   <rules css:if-content="body.portaltype-front-page">
+  	  <drop css:theme="#content > div.row > div" />
+      <!--drop all the portal footers on the front page -->
+      <drop css:content="dd.portlet-footer" />
+      <drop css:content="dd.portletFooter"/>
+   </rules>
    
 
       <before css:theme="#util-bar-wrap > nav" css:content="#iss-top" />
-
+	  <!--front-page -->
+	  
+	  
       <replace css:theme-children="#top-bar-wrap > nav > ul > li.name"
                css:content="#portal-logo"  />
+	 
+	  <!--ISS Specific Rules -->
+	  <rules css:if-content="body.site-ISS">
       <replace css:theme-children="#left-front-column"
                css:content=".portletContentLeadImageCollectionPortlet.front-page-events" />
       <replace css:theme-children="#middle-front-column"
                css:content=".portletContentLeadImageCollectionPortlet.journal" />
       <replace css:theme-children="#right-front-column"
                css:content=".portletContentLeadImageCollectionPortlet.available-grants" />
-
+		   </rules>
+		   
+	  <!--Other sites-->	   
+         <rules css:if-content="body.portaltype-front-page" >	  
+		         <replace css:theme-children="#left-front-column"
+		                  css:content=".portletContentLeadImageCollectionPortlet.featured-courses" />
+		         <replace css:theme-children="#middle-front-column"
+		                  css:content=".portletContentLeadImageCollectionPortlet.quick-facts" />
+		         <replace css:theme-children="#right-front-column"
+		                  css:content=".portlet-static-latest-news" />
+		   		   </rules>
       <!-- rule to set up title to replace static logo on ipad/mobile -->
       <replace css:theme-children="#logosm h1">
          <xsl:for-each css:select="a#portal-logo">
@@ -57,17 +81,19 @@
          </xsl:for-each>
       </replace>
 
-      <!--drop the events tab -->
+ <!--drop the events and giving tabs so they can be moved to the utility menu -->
       <drop content='//*[@id="portaltab-events"]' />
-
+	 <drop content='//*[@id="portaltab-give"]' />
+         <drop content='//*[@id="portaltab-news"]' />
+         <drop content='//*[@id="portaltab-quick-facts"]' />
       <!--utility menu links -->
       <replace css:theme="#uti-events > a"
                css:content="#portaltab-events > a" method="raw" />
       <copy attributes="href"
-            css:content=".news > dl > dd.portletFooter > span:nth-child(2) > a"
+            css:content="#portaltab-news > a"
             css:theme="#uti-news > a"  />
 	    <copy attributes="href"
-            css:content="#portaltab-support-iss > a"
+            css:content="#portaltab-give > a"
             css:theme="#uti-give > a" />
       <copy attributes="href"
             css:content=".navTreeItem > .section-uc-davis > a"
@@ -94,6 +120,11 @@
 	    <xsl:if test='contains(current(),"documentFirstHeading")'>homepage-title</xsl:if>
 	    </xsl:attribute>
 	    </replace>
+            <replace content="//h1[contains(@class,'documentFirstHeading')]/@class" if-content="/html/body[contains(@class,'portaltype-front-page')]">
+	    <xsl:attribute name="class">
+	    <xsl:if test='contains(current(),"documentFirstHeading")'>homepage-title</xsl:if>
+	    </xsl:attribute>
+	    </replace>
 		<!-- Various rules to handle different template titles plus some magic to add the correct classes -->
 	    <rules css:if-content="h1#parent-fieldname-title">
 		<replace css:theme="h1.content-title"  css:content="h1#parent-fieldname-title" />
@@ -101,7 +132,7 @@
 		<rules css:if-content="h1.documentFirstHeading">
 			<replace css:theme="h1.content-title" css:content="h1.documentFirstHeading" />
 		</rules>
-	    <replace content="//h1[contains(@class,'documentFirstHeading')]/@class" if-not="$home_page">
+	    <replace content="//h1[contains(@class,'documentFirstHeading')]/@class" if-not-content="/html/body[contains(@class,'portaltype-front-page')]">
   	    <xsl:attribute name="class">
           <xsl:if test='contains(current(),"documentFirstHeading")'>content-title</xsl:if>
   	    </xsl:attribute>
@@ -115,24 +146,24 @@
 	    </replace>
 
       <!-- News Happy Box -->
-      <replace css:content=".news > dl > dd"
+      <replace css:content=".front-page-news > dl > dd"
                css:theme-children="#container-1 > div > div > div.content-wrap"  />
       <copy attributes="href"
-            css:content=".news > dl > dd.portletFooter > span:nth-child(2) > a"
+            css:content=".front-page-news > dl > dd.portletFooter > span:nth-child(2) > a"
             css:theme="#container-1 > div > div > div.bcontroller > a"  />
 
       <!--  About Happy Box -->
       <replace css:content="#content-core"
                css:theme-children="#container-2 div.content-wrap"  />
       <copy attributes="href"
-            css:content="#portaltab-about-iss > a"
+            css:content="#portaltab-quick-facts > a"
             css:theme="#container-2 > div > div > div.bcontroller > a" />
 
 		  <!-- Events Happy Box -->
-	    <copy css:content=".events > dl > dd"
+	    <copy css:content=".front-page-events > dl > dd"
             css:theme="#container-3 > div > div > div.content-wrap" />
   		<copy attributes="href"
-            css:content=".events > dl > dd.portletFooter > span:nth-child(2) > a"
+            css:content=".front-page-events > dl > dd.portletFooter > span:nth-child(2) > a"
             css:theme="#container-3 > div > div > div.bcontroller > a"  />
 
   		<!-- Front Page -->
@@ -185,6 +216,10 @@
         <replace css:theme="div.zebra.rows"
                  css:content="#content-core > div" />
       </rules>
+	  
+	  <!---Courses Page-->
+      <!--before css:theme="#content-core"
+              css:content=".newsImageContainer" css:if-content=".portaltype-dsscourse"/-->
 	  <!--Person bio-->
 	   <rules css:if-content="body.portaltype-fsdperson">
 		   <replace css:theme="h1.content-title" css:content="h1.content-title" />
@@ -212,14 +247,14 @@
 	   </rules>
 	   
 	   <!-- Generic Views -->
-	   <rules css:if-theme="body.adhoc" >
-		   <replace css:theme=".panel-body" css:content=".tileItem"  css:if-content=".tileItem" />
-		   <replace css:theme="#content-core" css:content="#content-core" css:if-content="#content-core"/>
+	   <rules css:if-not-content="body.portaltype-front-page" >
+		   <replace css:theme=".panel-body" css:content=".tileItem" />
+		   <replace css:theme="#content-core" css:content="#content-core"/>
 	   </rules>
 		   
 
       <!--- Footer -->
-      <copy  css:content=".portletStaticText.portlet-static-contact"
+      <copy  css:content=".department-contact"
              css:theme="#vcard" />
       <drop css:content=".portlet.portletNavigationTree" />
       <replace css:theme-children="#footer-middle"
@@ -273,7 +308,7 @@
         css:theme="#content-row > div#content" />
 -->
 
-    </rules>
+ </rules>
 
     <!-- XSL templates here; must be in outermost rules tag -->
 
