@@ -19,7 +19,14 @@ from Products.ATExtensions.ateapi import *
 DssCourseSchema = document.ATDocumentSchema.copy() + atapi.Schema((
   
     
-       
+       atapi.StringField(
+           name="imageHelp",
+           widget=atapi.LabelWidget(
+               label=u"Lead Image Help",
+               description=u"This is a small image that will only show on course listings.  It doesn't show on the actual course page",
+              
+           ),
+       ),
         atapi.ImageField(
             name="inlineTopImage",
             widget=atapi.ImageWidget(
