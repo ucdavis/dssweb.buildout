@@ -49,8 +49,11 @@
 
     
     <div tal:replace="structure provider:plone.abovecontentbody" />
-    
-	    <tal:block tal:replace="view/render_form"/>
+		
+       <div id="content-core">
+	    <tal:block tal:replace="structure view/render_form"> Form here </tal:block>
+	    
+	  </div>  
 	   
     <div tal:replace="structure provider:plone.belowcontentbody" />
 
