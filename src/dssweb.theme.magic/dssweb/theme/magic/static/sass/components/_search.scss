@@ -41,7 +41,7 @@
 				&:hover {
 					background-color: $ucd_blue_20;
 					cursor: pointer;
-				};
+				}
 				a {
 					text-transform: none !important;
 					padding: 0.7em;
@@ -69,7 +69,7 @@ body.search-result {
 	}
 	#content-core {
 		.row {
-			margin-bottom: 35px;
+			margin-bottom: 15px;
 		}
 	}
 }
@@ -79,9 +79,12 @@ body.search-result {
 #sort-left, #sort-right {
 	height: 35px;
 	@include line_height(35px);
+	select {
+		//@include font_size(16px);
+	}
 }
 
-/*----- Mobile breakpoint -------*/
+/*----- Tablet breakpoint -------*/
 @media screen and (min-width: $screen-sm-min) { // width > 768px
 	#sort-left, #sort-right {
 		display: inline-block;

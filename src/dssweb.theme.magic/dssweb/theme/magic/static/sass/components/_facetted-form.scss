@@ -45,6 +45,7 @@
 	}
 	p#help {
 		@include font_size(13px, !important);
+		@include line-height(18px, !important);
 		color: #000;
 	}
 	p#help a {
@@ -58,6 +59,12 @@ fieldset {
 		text-align: left;
 		color: #000;
 		text-transform: uppercase;
+	}
+}
+
+.sidebar-panel#sbA {
+	span, label, a {
+		//color: $ucd_blue_100;
 	}
 }
 /* /_facetted-form.scss */

@@ -16,11 +16,11 @@ $(function () {
 		      var anchorTxt = 'jumplinks-anchor-' + idx;
 		      if ((idx > 1) && (idx < cnt)) {
 						  // hidden-xs bootstrap attribute added to hide on mobile
-		          anchorsTxt += '<li class="leaf first hidden-sm hidden-xs">';
+		          anchorsTxt += '<li class="leaf first hidden-xs">';
 		      } else if (idx == cnt) {
-		          anchorsTxt += '<li class="leaf last hidden-sm hidden-xs">';
+		          anchorsTxt += '<li class="leaf last hidden-xs">';
 		      } else {
-		          anchorsTxt += '<li class="leaf hidden-sm hidden-xs">';
+		          anchorsTxt += '<li class="leaf hidden-xs">';
 		      }
 		      anchorsTxt += '<a href="#' + anchorTxt + '">' + $(this).html() + '</a>';
 		      anchorsTxt += '</li>' + "\n";

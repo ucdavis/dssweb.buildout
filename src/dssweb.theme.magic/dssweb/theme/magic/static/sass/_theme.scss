@@ -73,7 +73,7 @@ head {
 	float: right;
 }
 .panel-group {
-	.panel-body {
+	.panel-body { 
 		.narrow-col {
 			.content-wrap {
 				padding: 15px;
@@ -155,7 +155,7 @@ button {
 	background-color: $ucd_blue_70;
 	//min-height: 250px; // keep for reference. having this adds right white margin on iphone!
 	padding-bottom: 25px;
-	margin-bottom: 15px;
+	//margin-bottom: 15px; // don't need white at bottom
 	clear: both;
 	a {
 		text-decoration: none;
@@ -219,7 +219,7 @@ button {
 			padding-right: 7px;
 			border-left: 1px solid white;
 			a {
-				display: inline-block;
+				display: block;
 				height: 24px;
 				width: 24px;
 				color: #fff;
@@ -255,6 +255,8 @@ input {
 }
 input[type="search"], input[type="submit"], input[type="button"] {
 	-moz-appearance: none; // Mozilla / Firefox
+	-webkit-appearance: none; // iOS
+	-webkit-border-radius: 0px; // iOS
 	-webkit-appearance: none; // Chrome / Safari
 	border-radius: 0;
 }
@@ -276,9 +278,10 @@ input {
 	background: none;
 	padding:0 0 !important;
 	margin-bottom: 0;
-	color: $ucd_blue_70;
+	color: $link_color;
 	text-transform: uppercase;
 	a {
+		color: $link_color;
 		text-decoration: none;
 		&:hover {
 			text-decoration: underline;
@@ -325,9 +328,14 @@ input {
 			padding-bottom: 10px;
 		}
 	}
-	.inline-content, form { // remove global left margin on inline bullets
+	form { // remove global left margin on form bullets
 		ul {
-			margin-left: 0 !important;
+			margin-left: 0;
+		}
+	}
+	.inline-content { // remove global left margin on inline bullets
+		> ul {
+			margin-left: 5px;
 		}
 	}
 	
@@ -335,6 +343,7 @@ input {
 
 /* Global event items */
 .student-events {
+	margin-top: 12px;
 	h3, h4 {
 		color: $rec_blue;
 	}
@@ -433,7 +442,7 @@ input {
 #downloads {
 	a {
 		text-decoration: underline;
-		color: $ucd_blue_70;
+		color: $link_color;
 	}
 	margin-top: 0 !important;
 }
@@ -643,8 +652,9 @@ body.contact-type {
 #content-row {
 	margin-top: 45px;
 	section {
-		margin-bottom: 25px;
-		h2 { font-weight: normal;}
+		margin-bottom: 15px; // was 25px
+		h2 { font-weight: normal;
+		}
 		p { }
 	
 		.course-portlet {
@@ -657,7 +667,7 @@ body.contact-type {
 				h3 {
 					padding-bottom: 0 !important;
 					a {
-						text-decoration: none;
+						//text-decoration: none;
 						&:hover {
 							text-decoration: underline;
 						}
@@ -693,6 +703,14 @@ body.contact-type {
 	head { font-family:"S";}
 	body:after{content:"S";}
 	
+	// video
+	p {
+		iframe {
+			width: 97% !important;
+			height: auto !important;
+		}
+	}
+	
 	.container {
 		padding: 0; // Pulls mobile navigation to edges but adds right white margin on tablet (portrait) {TODO: Check}
 	}
@@ -707,10 +725,7 @@ body.contact-type {
 	#google-map { // draggable map on mobile doesn't allow scrolling to bottom of page, so minimize it
 		width: 82%;
 	}
-	.row#banner-row {
-		margin-left: 0 !important;
-		margin-right: 0 !important;
-	}
+
 	.row#content-row {
 		margin-left: 0 !important;
 		margin-right: 0 !important;
@@ -718,6 +733,17 @@ body.contact-type {
 			margin-top: 10px;
 			h1, .breadcrumb {
 				//margin-left: 15px;
+			}
+		}
+		.panel {
+			.panel-body.inline-content {
+				padding-bottom: 25px;
+				> ul {
+					// TODO: ...
+				}
+				.readmore {
+					text-transform: uppercase;
+				}
 			}
 		}
 	}
@@ -752,13 +778,31 @@ body.contact-type {
 			}
 		}
 	}
-	
+	#content-row {
+		section {
+			.course-portlet {
+				.course-info {
+					width: 100%;
+					float: none !important;
+				}
+				button {
+					position: static !important;
+					float: none !important;
+				}
+			}
+		}
+	}
 	.panel {
 		border: none;
 		.panel-body {
 			margin-top: 15px;
+			//margin-left: 17px; // note: breaks on home ... apply to #content-row context only
+		}
+		.panel-body.inline-content {
+			margin-top: 0;
 		}
 	}
+	
 	.panel-heading {
 		padding: 0;
 		.panel-title {
@@ -770,12 +814,15 @@ body.contact-type {
 				width: 100%; //TODO: margin-top reveals formatting error
 				min-height: 40px;
 				font-weight: normal;
-				padding-right: 0;
+				
+				padding-top: 8px !important;
+				padding-bottom: 8px !important; // this makes blue bars unequal heights
+				padding-right: 15px; // was 0
 				padding-left: 20px !important;
 				
 				@include font_size(16px);
 				// Use 5px for emphasis on multi line panel-titles, 9px for single line
-				padding-top: 9px !important;
+				
 				@include line_height(22px,!important);
 				// @include line_height(40px); // OK for single line. TODO: Treatment for singles not adequate
 				text-align: left;
@@ -794,27 +841,49 @@ body.contact-type {
 	}
 
 	.sidebar {
-		.panel-heading {
-			.panel-title {
-				a {
-					color: $ucd_blue_100 !important;
-					top: 0;
-					background: url(../images/icons/blue-100-right-arrow-down.png) 98% 50% no-repeat $rec_blue_40;
-					&.collapsed {
-						color: #FFF !important;
-						background: url(../images/icons/white-arrow-right-sm.png) 98% 50% no-repeat $rec_blue;
-					}
-					&:hover {
+		.panel {
+			.panel-heading {
+				.panel-title {
+					a {
+						@include font_size(13px);
+						@include line_height(16px,!important);
+					
+						padding-top: 13px !important;
 						color: $ucd_blue_100 !important;
-						background: url(../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat $rec_blue_40;
+						top: 0;
+						background: url(../images/icons/blue-100-right-arrow-down.png) 98% 50% no-repeat $rec_blue_40;
+						&.collapsed {
+							color: #FFF !important;
+							background: url(../images/icons/white-arrow-right-sm.png) 98% 50% no-repeat $rec_blue;
+						}
+						&:hover {
+							color: $ucd_blue_100 !important;
+							background: url(../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat $rec_blue_40;
+						}
 					}
+				}
+			}
+			.panel-body {
+				margin-top: 0;
+				margin-left: 0;
+				> ul {
+					margin-left: 20px !important;
 				}
 			}
 		}
 	}
 	
+	// t10
+	#nested-right {
+		padding-right: 0;
+		padding-left: 0;
+	}
+	
 	#footer {
 		margin-bottom: 60px;
+		.foot-wrap {
+			margin-right: 0 !important;
+		}
 		.footer-nav {
 			li {
 				@include line_height(35px);
@@ -822,12 +891,30 @@ body.contact-type {
 				padding-bottom: 0;
 			}
 		}
-		#vcard{
+		#vcard {
 			text-align: center;
 		}
 	}
 
 	#content-row {
+		
+		// apply layout to only main content column items on mobile
+		#content-core {
+			.panel {
+				.panel-body {
+					margin-left: 17px;
+				}
+			}
+			#nested-left { // T8 nested column "Important Dates" and t12
+				.picture {
+					margin: 25px auto;
+					figcaption {
+						text-align: center;
+					}
+				}
+			}
+		}
+		
 		section {
 			margin-bottom: 5px;
 			.course-portlet {
@@ -852,6 +939,9 @@ body.contact-type {
 					}
 				}
 			}
+			> button {
+				margin-top: 25px; // style button, e.g., apply, outside accordion
+			}
 		}
 		iframe {
 			width: 100%;
@@ -865,6 +955,12 @@ body.contact-type {
 		#thumb-section { // Important: Specific content selector since we want to keep our sidebar panel styles
 			.panel-group {
 				section {
+					.thumbify-prepended {
+						display: block;
+						margin: 0 auto;
+						width: 100%;
+						margin-top: 15px;
+					}
 					.readmore {
 						display: block;
 						margin-top: 8px;
@@ -886,18 +982,23 @@ body.contact-type {
 									margin-left: 0;
 								}
 								@include font_size(16px,!important);
-								font-weight: bold;
+								//font-weight: bold; 
 							}
 						}
 					}
 					.panel-body {
-						margin-top: 0;
-						margin-left: 0;
+						padding-top: 2px !important;
+						margin-left: 17px;
 						padding: 0 !important;
-						img.thumb { // Note: We're replacing the smaller thumb with the larger image in mobile via javascript. We initially load the smaller T6-autism.jpg and then look for m-T6-autism.jpg to load in mobile
+						img.thumb { // Note: We're replacing the smaller thumb with the larger image in mobile via javascript. We initially load the smaller T6-autism.jpg and then look for m-T6-autism.jpg to load in mobile. Processed image has class thumbify-prepended if thumbify 'invert' = false
 							width: 280px;
 							display: block;
 							margin: 15px auto;
+						}
+					}
+					.collapse.in {
+						.panel-body {
+							padding-top: 0 !important;
 						}
 					}
 				}
@@ -929,11 +1030,12 @@ body.contact-type {
 /*----- Mobile breakpoint -------*/ // TODO: Check error on _bootstrap_overrides vis-a-via this breakpoint max
 @media screen and (max-width: $screen-sm-max) { // width < 991px
 	
+
 	.sidebar {	
 		background:transparent;
 	}
 	.sidebar-right {	
-		margin-top:100px;
+		margin-top: 100px;
 		//clear:both;
 		//float:left !important;
 	}
@@ -989,30 +1091,6 @@ body.contact-type {
 	.op-sidebar-title {
 		text-align:left !important;
 	}
-	#footer {	
-		padding-bottom: 5px;
-		.foot-wrap{
-			margin: 25px 10px 25px 25px; // compensation right margin on mobile
-			p, ul, div {
-				margin-left: 0;
-				margin-right: 0;
-				width: 100%;
-				text-align: center;
-			}
-			#foot-social {
-				margin-left: 0 !important;
-				margin-right: 0 !important;
-				float: none;
-			}
-
-		}
-		#vcard p, #copyright {
-			@include font_size(11px);
-		}
-		#copyright {
-			margin-top: 0;
-		}
-	}
 }
 
 
@@ -1021,6 +1099,9 @@ body.contact-type {
 	body.contact-type {
 		h1 {
 			padding-bottom: 5px;
+		}
+		.sidebar-right {
+			margin-top: 73px; // was 91px applied inline
 		}
 	}
 	
@@ -1046,6 +1127,16 @@ body.contact-type {
 		}
 	}
 	
+	body.has-shadow-am {
+		#container-3 { 
+			.panel-body {
+				.narrow-col {
+					width: 100%;
+				}
+			}
+		}
+	}
+	
 	// Top margin above home page buttons
 	/* TODO: breaks ipad, adding right margin to banner (see also Tablet breakpoint ("M"))
 	UPDATE: Not having this causes page content to be slightly narrower than the navigation */
@@ -1061,8 +1152,35 @@ body.contact-type {
 				padding-bottom: 10px;
 			}
 		}
+		// Formatting for happy boxes tablet -> desktop
+		.panel-body { 
+			.narrow-col {
+				h2 {
+					@include font_size(24px);
+					letter-spacing: 0.05em;
+				}
+				.content-wrap {
+					padding-top: 5px; // fix peeking text on home page
+					p:last-child, ul:last-child { // happy boxes with content other than headings
+						margin-bottom: 0; // should have margin bottom on content-wrap so remove
+					}
+				}
+				/*.content-wrap + .bcontroller {
+					margin-top: -15px !important;
+				}*/
+			}
+		}
 	}	
 		
+	// Adjust formatting of bottom Featured Courses, etc. titles
+	#bottom-panel-row {
+		.narrow-col {
+			h2 {
+				letter-spacing: 0 !important;
+			}
+		}
+	}
+	
 	// Panel resets
 	#cm-section { // Important: Specific content selector since we want to keep our sidebar panel styles
 		.panel-group {
@@ -1082,7 +1200,7 @@ body.contact-type {
 	}
 	
 	
-	#content, #am-content {
+	#content-row { // was #content, #am-content
 		#summary {
 			#jumplinks, #education {
 				width: 50%;
@@ -1136,7 +1254,7 @@ body.contact-type {
     padding-left: 0;
 		.foot-wrap {
 			#foot-left {
-				margin-left: 10%;
+				margin-left: 5%;
 			}
 		}
 		#vcard{
@@ -1162,16 +1280,21 @@ body.contact-type {
 		//margin-top: 145px; // ad-hoc ... set position of sidebar in javascript
 	}
 	
-	.row#footer {
+	/*.row#footer {
 		margin-right: -15px;
 		margin-left: -15px;
-	}
+	}*/
+		
+	//.jumbotron {display:none;}
 	
+	// If foot is released from container to expand to edges, remove margins and confine foot-wrap
 	.footer-processed#footer {
+		margin-left: auto;
+		margin-right: auto;
 		.foot-wrap {
 			width: 1000px;
-			margin-left: auto;
-			margin-right: auto;
+			//margin-left: auto;
+			//margin-right: auto;
 		}
 	}
 	
@@ -1183,6 +1306,13 @@ body.contact-type {
 	head { font-family:"M";}
 	body:after{content:"M";}
 	
+	p {
+		iframe {
+			width: 100% !important;
+			height: 100% !important;
+		}
+	}
+	
 	/* TODO: breaks ipad, adding right margin (see also > 768 breakpoint)
 	UPDATE: Not having this causes page content to be slightly narrower than the navigation */
 	#top-panel-row, #bottom-panel-row {
@@ -1191,12 +1321,48 @@ body.contact-type {
 	}
 	
 	#more-content-button {
-		left: -12px;
+		left: -6px;
+		width: 30px !important;
+		height: 30px !important;
+		overflow: hidden;
+		a {
+			background-position: -2px -5px !important;
+		}
 	}
+	
 	
 	#content-row {
 		margin-left: 0;
-		//margin-right: 0;
+		
+		// tablet left column right gutter
+		#content, #cm-content, #am-content {
+			padding-right: 45px;
+		}
+		
+		#summary {
+			#jumplinks {
+				width: 50% !important;
+			}
+			#education {
+				width: auto !important;
+			}
+		}
+	}
+	
+	// Remove margin-top from sidebars positioned side-by-side in desktop
+	body.contact-type {
+		.sidebar-right.second {
+			margin-top: 0 !important;
+		}
+	}
+	
+	// Remove the right gutter on pages without right sidebars
+	body.ourpeople, body.contact-type {
+		#content-row {
+			#content, #cm-content, #am-content {
+				padding-right: 0 !important;
+			}
+		}
 	}
 	
 	// Panel resets
@@ -1233,23 +1399,36 @@ body.contact-type {
 		}	
 	}
 	
+	#nested-left { // T8 nested column "Important Dates" and t12
+		.picture {
+			width: auto;
+		}
+		figcaption {
+			display: none; // for t12 tablet
+		}
+	}
+	
 	#footer {
 		.footer-nav {
 			li {
-				padding-top: 10px;
-				padding-left: 0;
+				padding-left: 10px;
+			}
+			&#foot-left, &#foot-center {
+				display: none;
+			}
+			&#foot-right {
+				margin-left: 12% !important;
 			}
 		}
 	}
 	
 	/* Required on tablet to keep footer from breaking (being too wide: foot-wrap width: auto; and not having right white margin: footer-processed: width 100% (783px). Warning: using width 783px instead of 100% leaves right white space on footer in desktop view */
 	.footer-processed {
-		width: 100%; // fix on tablet
+		width: auto; // fix on tablet
 		margin-left: 0 !important; // TODO: fix; right margin has white
-		margin-right: -15px !important; // TODO: Not working
-		
+		margin-right: -24px !important; // TODO: Not working
 		.foot-wrap {
-			width: auto !important;
+			width: 698px !important;
 		}
 	}
 	
@@ -1280,18 +1459,11 @@ body.contact-type {
 			}
 		}
 	}
-	#footer {
-		.foot-wrap {
-			#foot-left {
-				margin-left: 0;
-			}
-		}
-	}
 }
 
 
 @media screen and (max-width: $screen-lg-min) { // width < 1310
-	#footer {
+	/*#footer {
 		.footer-nav{
 			
 			&#foot-left, &#foot-center {
@@ -1301,13 +1473,13 @@ body.contact-type {
 				margin-left: 160px !important;
 			}
 		}
-	}
+	}*/
 }
 /*----- Target tablet up to 1310 width on desktop -------*/
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-lg-min) { // 768 < width < 1310
 	#footer {
 		.foot-wrap {
-			//margin: 40px;
+			//margin: 40px; /*changed:  uncommented*/
 		}
 		#vcard{
 			margin-right: 25px;		
@@ -1315,10 +1487,11 @@ body.contact-type {
 	} 
 }
 
-/*----- Target mobile and tablet -------*/
-@media screen and (max-width: $screen-sm-max) { // width < 991
+/*----- Target mobile (was mobile and tablet) -------*/
+@media screen and (max-width: $screen-xs-max) { // width < 767px was 991px
 
 	#footer {
+		padding-bottom: 5px;
 		.footer-nav{
 			border-left-width: 0;
 			text-align: center;
@@ -1335,12 +1508,35 @@ body.contact-type {
 			}
 		}
 		#foot-social {
-			margin-left: 55px !important;
+			
+		}
+	
+		.foot-wrap{
+			margin: 25px 10px 25px 0; // compensation right margin on mobile. left was 25px
+			p, ul, div {
+				margin-left: 0;
+				margin-right: 0;
+				width: 100%;
+				text-align: center;
+			}
+			#foot-social {
+				//margin-left: 55px !important;
+				margin-left: 0 !important;
+				margin-right: 0 !important;
+				float: none;
+			}
+
+		}
+		#vcard p, #vcard a, #copyright {
+			@include font_size(11px,!important);
+		}
+		#copyright {
+			margin-top: 0;
 		}
 	}
 }
 /*------ Desktop breakpoint (L) --------*/
-@media screen and (min-width: $screen-md-min) and (max-width: $screen-lg-min) { // 991 < width < 1200
+@media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) { // 991 < width < 1199 (was 1200)
 	.sidebar {
 		&.sidebar-right {
 			> div {
@@ -1348,6 +1544,13 @@ body.contact-type {
 			}
 		}
 	}
+	
+	.footer-processed {
+		.foot-wrap {
+			width: 921px !important;
+		}
+	}
+	
 }
 
 /*----- Desktop breakpoint -------*/
@@ -1384,12 +1587,19 @@ body.contact-type {
 	}
 }
 
+/*----- Less than Large Desktop breakpoint -------*/
+@media screen and (max-width: $screen-lg-min) { // width < 1310
+	.sidebar.second {
+		margin-top: 0 !important;
+	}
+}
 /*----- Large Desktop breakpoint -------*/
 @media screen and (min-width: $screen-lg-min) { // width > 1310
 	#top-bar-wrap, #content-row, #banner-row, .row#banner-caption {
 		padding-left: 105px; // 90 + 15 px
 		padding-right: 105px;
 	}
+	
 	#util-bar-wrap {
 		padding-right: 105px;
 	}
@@ -1399,13 +1609,28 @@ body.contact-type {
 		margin-left: -15px;
 		margin-right: -15px;
 	}
+	
+	body.has-shadow-am {
+		#container-3 { 
+			.panel-body {
+				.narrow-col {
+					width: 88%;
+				}
+			}
+		}
+	}
+	
 	.footer-processed#footer { // JS processed element; footer stretching edge to edge
 		.foot-wrap {
 			width: 1104px;
-			margin-left: auto;
-			margin-right: auto;
+			//margin-left: auto;
+			//margin-right: auto;
+			#foot-left {
+				margin-left: 10%;
+			}
 		}
 	}
+	
 }
 
 /* Override default grid gutter, which was broke on home/index bottom panel row. */

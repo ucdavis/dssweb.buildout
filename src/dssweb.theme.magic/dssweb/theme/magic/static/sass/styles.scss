@@ -2,7 +2,6 @@
 /* styles.scss */
 /* This is the main website stylesheet. The imported code below expands into the assets/styles.css file. */
 
-
 /* *** COMPASS - custom imports **** */
 // Note: If using compass commandline compiler, make sure the config.rb has bootstrap-sass line commented out
 @import "compass/css3/opacity";
@@ -20,7 +19,6 @@
 // Note: we override variables and styles imported from variables above
 @import "vendor/bootstrap"; // custom import of only bootstrap components organized in the vendor/bootstrap folder
 @import "vendor/bootstrap_overrides"; // override or add missing bootstrap styles here
-
 
 /* *** THEME - place main styles for the DSS pilot site here. **** */
 // IMPORTANT: If you are creating someting that is self-contained, like a calendar application, add a component and include it below under the partials
@@ -42,6 +40,5 @@
 @import "components/search"; // styles for LiveSearch and search results
 @import "components/pager"; // styles for facetted search form
 @import "components/icons"; // icon styles in conjunction with JS processing
-@import "print"; // print stylesheet
-
+@import "_print"; // print stylesheet	
 /* /styles.scss */

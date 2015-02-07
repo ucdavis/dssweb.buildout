@@ -1,4 +1,4 @@
-(function($){
+;(function($){
   /* code here runs instantly as opposed to $(function(){ ... }); which waits for DOM making ready function unness */	
   var debug = true;
   var toggleActive = true;
@@ -14,13 +14,45 @@
 	var biocardiced = false;
 	var processed = false;
 	var hashTagActive = "";
-	
+
+	/*
+	 * splitPath utility function
+	 * @param path the path to process
+	 * @return the object with directory/part and file name/part
+	 */	
 	function splitPath(path) {
 	  var dirPart, filePart;
 	  path.replace(/^(.*\/)?([^/]*)$/, function(_, dir, file) {
 	    dirPart = dir; filePart = file;
 	  });
 	  return { dirPart: dirPart, filePart: filePart };
+	}
+	
+	/*
+	 * HappyDone callback function to position banner-caption element
+	 * Calculate right-most border of last happy box for alignment of content beneath the happybox container
+	 * Requires element #banner-caption and happy box container with multiple .panel-body elements
+	 * Right position is .panel-body - .narrow-col as long as top-panel-row and middle-row (caption parent) have same content width
+	 */
+	function happyDone() {
+		if(($('#banner-caption').length !== 0) && ($('.panel-body').length !== 0)) {
+			var context = $('#top-panel-row');
+			var cw = context.width();
+			var cwl = context.position().left;
+			var pb = context.find('.panel-body:last-child');
+			var nc = pb.find('.narrow-col:last-child');
+			var ncw = 0;
+			var ncpl = 0;
+			
+			if(nc) { // calculate right margin based on pb - nc, assuming left nc margin is 0
+				ncw = nc.width();
+				ncpl = nc.position().left;
+				rightBoxMargin = pb.width() - ncw;
+			}
+			
+			$('#banner-caption').css('right', rightBoxMargin);
+
+		}
 	}
 	
 	$(document).ready(function() {
@@ -125,8 +157,15 @@
 		// Note: Add after any JavaScript constructed markup that relies on foundation
 		$(document).foundation(); 
 		
-		
-		var thumbify = function (activeMQ, startTag, containerTag, targetTag) {
+		/* thumbify t6 template showing collapsible / accordion in tablet and desktop 
+		 * @param activeMQ the breakpoint
+		 * @param startTag the selector from which to finish processing 
+		 * @param containerTag the innermost content selector
+		 * @param targetTag the selector to receive image placement
+		 * @param invert the boolean whether to move the image into the collapsible panel or to move above
+		 * 
+		 */
+		var thumbify = function (activeMQ, startTag, containerTag, targetTag, invert) {
 			var comboSelector = startTag + ' ' + containerTag;
 			var MLTarget = null;
 			
@@ -134,7 +173,11 @@
 				 if((activeMQ === "M") || (activeMQ === "L")) {
 					MLTarget = targetTag + " a"; // desktop/tablet: put thumb into the gold bar left of title
 				} else {
-					MLTarget = ".panel-body"; // mobile: put thumb before text within the collapsed panel
+					if(invert) {
+						MLTarget = ".panel-body"; // mobile: put thumb before text within the collapsed panel
+					} else {
+						// Move the image to top of current selector
+					}
 					// prep to retrieve "m-" version of image ...
 					var img = $(this).find('.thumb');
 					var img_src = img.attr('src');
@@ -151,10 +194,15 @@
 					
 				}
 				
-				var rt = $(this).find(MLTarget);
-			 	rt.wrapInner('<span class="thumb-txt" />');
-			 	rt.prepend($(this).find('.thumb'));
-				$(this).addClass("thumbify-processed");
+				if(MLTarget) {
+					var rt = $(this).find(MLTarget);
+			 		rt.wrapInner('<span class="thumb-txt" />');
+			 		rt.prepend($(this).find('.thumb'));
+					$(this).addClass("thumbify-processed");
+				} else {
+					$(this).prepend($(this).find('.thumb').addClass('thumbify-prepended'));
+				}
+				
 			 });
 			 collapsedSection(startTag);
 		};
@@ -270,8 +318,6 @@
 			
 		};
 		
-
-		
 		// PLUGIN CANDIDATES /////////////////////////////////////////////
 		// Process .picture into figure/figcaption
 		// TODO: Plugin
@@ -282,9 +328,9 @@
 				$(this).wrap('<figure class="picture-processed" />');
 				if((typeof title !== 'undefined')) {
 					$(this).parent().append("<figcaption>"+title+"</figcaption>");
-				} else if($('.picture .figcaption').length !== 0) {
-					$(this).parent().append("<figcaption>"+$('.picture .figcaption').html()+"</figcaption>");
-					$('.picture .figcaption').remove();
+				} else if($('.picture figcaption').length !== 0) {
+					$(this).parent().append("<figcaption>"+$('.picture figcaption').html()+"</figcaption>");
+					$('.picture figcaption').remove();
 				}
 				
       });
@@ -293,13 +339,20 @@
 		// Subtract height of figcaption from breadcrumb visually oriented on bottom of image
 		// Minimize content-row top margin if banner has caption
 		// Call this ONLY after picture processing
+		// figcaption
 		if(($('#banner-row').length !== 0) && ($('#banner-row figcaption').length !== 0)) {
 			// Note: figcaption doesn't existing until processed so use approx 25px height
 			var fcmt = $('#banner-row figcaption').height() + 6;
 			var mt = ( $('#content-row').css('margin-top').replace('px','') - fcmt);
 			$('#content-row').css('margin-top', mt);
 		}
-		
+		// .figcaption
+		if(($('#banner-row').length !== 0) && ($('#banner-row .figcaption').length !== 0)) {
+			// Note: figcaption doesn't existing until processed so use approx 25px height
+			var fcmt = $('#banner-row .figcaption').outerHeight();
+			var mt = ( $('#content-row').css('margin-top').replace('px','') - fcmt);
+			$('#content-row').css('margin-top', mt);
+		}		
 		
 		// Process download file icons
 		// TODO: Plugin ... with option to add id's which should be checked for file type icon placement
@@ -397,7 +450,32 @@
 			}
 			
 			// On T8 templates, move the left nested column to the right sidebar
-			if($('#nested-left').length !== 0) {
+			if($('body.students #nested-left').length !== 0) {
+				if(activeMQ !== 'S') {
+					$('#nested-left').removeClass("col-xs-12 col-sm-12 col-md-4 col-lg-4"); // Note: Update if col defs change
+				
+					$('#nested-right').removeClass("col-md-8");
+					$('#nested-right').addClass("col-md-12 bent");
+				
+					$('.sidebar-right').append($('#nested-left'));
+				} else {
+					$('#nested-left').insertAfter($('#nested-right'));
+				}
+			}
+			
+			// On T10 move #nested-left after #cm-section
+			if(activeMQ === 'S') {
+				if(($('#cm-section #nested-right').length !== 0) && ($('#nested-left').length !== 0)) {
+					$('#nested-left').insertAfter($('#cm-section'));
+				}
+			}
+			
+		};
+		var bendM = function () {
+			
+			
+			// On T8 templates, move the left nested column to the right sidebar
+			if($('body.students #nested-left').length !== 0) {
 				$('#nested-left').removeClass("col-xs-12 col-sm-12 col-md-4 col-lg-4"); // Note: Update if col defs chnage
 				
 				$('#nested-right').removeClass("col-md-8");
@@ -409,9 +487,10 @@
 		
 		var bendbio = function () {
 			if((activeMQ !== 'L') && (activeMQ !== 'M') && !biocardiced) {
+				// 2015-01-26 RAK: moving bio-card element into content will cause it to collapse when an accordiion heading is clicked on mobile. Add class .dont-close and catch in collapseAll function
 				$('#content').prepend($('.bio-card'));
 				//$('.collapsible').addClass('in'); // Expand panel since it's closed in mobile ... no, expands on mobile
-				$('.bio-card .collapsible').addClass('in');
+				$('.bio-card .collapsible').addClass('in dont-close');
 				// breadcrumb
 				$('.breadcrumb').insertBefore($('#content .bio-card h4.fn'));
 				biocardiced = true;
@@ -431,6 +510,12 @@
 				$('#nested-right').addClass("col-md-8");
 				$('#content-core > .row').append($('#nested-left'));
 			}
+			
+			// On T10 move #nested-left after #cm-section
+			if(($('#cm-section #nested-right').length !== 0) && ($('#nested-left').length !== 0)) {
+				$('#content-core > .row').prepend($('#nested-left'));
+			}
+			
 		};
 
 		var unbendbio = function () {
@@ -490,6 +575,8 @@
 								$('iframe').width("100%");
 							}*/
 							
+							popupSM(); // make T5 Did you know popup
+								
 							utilStack();
 						 
 							collapsedView();					
@@ -505,6 +592,7 @@
 								// TODO: Hold $('body.home #top-panel-row').height(front_banner_height);
 							}
 							expandedView(); // was previously in conditional above
+							
 							/*
 							else if($("body.ourpeople").length !== 0){
 							collapsedView();	
@@ -512,8 +600,13 @@
 							
 							}
 							*/
-							bend(); // If we can't change position of elements using Bootstrap push / pull, then bend it
+							bendM(); // If we can't change position of elements using Bootstrap push / pull, then bend it
 							unbendbio();
+							
+							// Make research tabs collapse on tablet / desktop
+							if($('#thumb-section').length !== 0) {
+								collapseThumbView();
+							}
           }
 					// If the detected screen size is Desktop 960px (991px?) and up
           if (activeMQ === 'L') {
@@ -525,11 +618,52 @@
 							
 							unbend(); // Set positioning back
 							unbendbio();
+							
+							// Make research tabs collapse on tablet / desktop
+							if($('#thumb-section').length !== 0) {
+								collapseThumbView();
+							}
           }
       }
 			
 		};
 
+		/*
+		 * Create popup on mobile devices. See t5 for required HMTL markup
+		 */
+		function popupSM() {
+			if($('.popup-sm').length !== 0) {
+				$('.popup-sm-title').insertBefore($('#corner-box-target figure figcaption'));
+				$('.popup-sm').insertAfter($('#corner-box-target'));
+				
+				var minusfc = ($('#corner-box-target figcaption').css('display') !== 'none') ? $('#corner-box-target figcaption').outerHeight() : 0;
+				var cbth = $('#corner-box-target').height() - minusfc;
+				
+				
+				$('.popup-sm').css('top',cbth);
+				$('.popup-sm-title').css('top',(cbth - $('.popup-sm-title').outerHeight()));
+				
+        $(".popup-sm-title a").click(function (e) {
+            e.preventDefault();
+
+						// Toggle collapsed
+						if($(this).attr('class') === 'collapsed') {
+							$(this).removeClass('collapsed');
+							if($('.popup-sm').length !== 0) {
+	            	$('.popup-sm').removeClass('collapse');
+							}
+						} else {
+							$(this).addClass('collapsed');
+							if($('.popup-sm').length !== 0) {
+	            	$('.popup-sm').addClass('collapse');
+							}
+						}
+						return false;
+				});	
+				
+			}
+		}
+		
     function expandedView() {
        	// Index page
 			  //$(".ls-content").removeClass("tab-content");
@@ -637,7 +771,7 @@
 						
 						// Toggle collapsed
 						if($(this).attr('class') === 'collapsed') {
-							$(this).removeClass('collapsed');
+							//$(this).removeClass('collapsed'); // this is handled in collapseAllPanels
 						} else {
 							$(this).addClass('collapsed');
 						}
@@ -654,7 +788,7 @@
 						
 						// Smooth scroll to offset of anchor ...
 						var anchor = $(this).attr('data-target');
-						if(hashTagActive != anchor) { // panel is open and no active hash
+						if(hashTagActive !== anchor) { // panel is open and no active hash
 		          //calculate destination place
 		          var dest = 0;
 		          if ($(anchor).offset().top > $(document).height() - $(window).height()) {
@@ -679,6 +813,34 @@
 				//});
 				
     }
+		
+		function collapseThumbView() {
+			// NOTE: Following changes are global
+			
+			// Add the collapse on toggle attribute to the panel headers
+			$("#thumb-section .panel-group .collapsible").addClass("panel-collapse collapse"); // Note: global
+			$("#thumb-section .panel-group .collapsible").removeClass('in'); // New: Close panels
+      $("#thumb-section .collapse > div").addClass("panel-body");
+ 			
+			// Blanket assign class="collapsed" to all collapsed panel links for display of correct status
+			$("#thumb-section .panel-title a").addClass('collapsed');
+			
+			// Prevent the panel-title headers from redirecting the page and shows .panel-body content
+      $("#thumb-section .panel-title a").click(function (e) {
+          e.preventDefault();
+					
+					collapseAllPanels('#thumb-section .panel-group');
+					
+					// Toggle collapsed
+					if($(this).attr('class') === 'collapsed') {
+						//$(this).removeClass('collapsed'); // this is handled in collapseAllPanels
+					} else {
+						$(this).addClass('collapsed');
+					}
+					
+			});	
+     
+		}
 		
 		/* smooth_scroll - to make link scroll smoothly to anchor 
 		 * @param linkId the element AND the a-tag, e.g., '#button a'
@@ -709,7 +871,8 @@
 		
 		function collapseAllPanels(parentTag) {
 			//$(".panel-group .collapsible").removeClass("in"); // close panels
-			$('.in').collapse('hide');
+			$(parentTag+' .in').not(".dont-close").parent().find('.panel-heading a').addClass('collapsed'); 
+			$(parentTag+' .in').not(".dont-close").collapse('hide');
 		}
 		
 		/* footer utility menu stack */
@@ -760,7 +923,7 @@
 				// Height to subtract from position calculation. Assuming only ONE panel on the right (by design)
 				// TODO: Offset is not from inner- or outer height ... so from whence?
 				// T8 Students (students) = 5, T2 Our people (ourpeople) = 16
-				var offset = ($('body.students').length !== 0) ? 16 : 5; // mobile on desktop needs 5 if we're setting top-panel-row and wallpaper-image to same height
+				var offset = ($('body.students').length !== 0) ? 16 : 5; // mobile on desktop needs 5 if we're setting top-panel-row and wallpaper-image to same height. Note: top-bar height also impacts this
 				var h = ($('#top-panel-row .right-panel .panel-heading').height() + offset);
 				
 				$('#top-panel-row .right-panel').css('padding-top', (hb_element_height-h));
@@ -789,7 +952,7 @@
 			expand(); // process collapse
 			if(!processed) {
 				if($('#thumb-section').length !== 0) {
-					thumbify(activeMQ,'#thumb-section','section','.panel-heading');
+					thumbify(activeMQ,'#thumb-section','section','.panel-heading',false);
 				}
 			}
 			
@@ -798,7 +961,7 @@
 			processed = true;
 		} // /myResize()
 		
-		
+
 				
     if (toggleActive) {
 				myResize();
@@ -813,11 +976,12 @@
 		if($('.container #footer').length !== 0) {
 			$('#footer').insertAfter($('.container'));
 			$('#footer').addClass('footer-processed');
-			$('#footer .foot-wrap').addClass('clearfix');
+			$('#footer .foot-wrap').addClass('container clearfix');
 		}
 		
 		// Note: The height of the happy box block needs to change with the height of the .wall * banner_hb_ratio
 		var hb_element_height = calc_hb_viewport();
+		
 		
 		// Set sidebar position and activate home page happy boxes
 		if ((activeMQ === 'L') || (activeMQ === 'M')) {
@@ -849,14 +1013,25 @@
 			if(($('.content-title').length !== 0) && ($('.sidebar-right').length !== 0) && ($('body.bio').length === 0)) {
 				var ctpos = $('.content-title').position();
 				var cth = $('.content-title').height();
-				var offset = ($('body.search-result').length !== 0) ? 68 : 15;
+				var offset = 0;
+				// Use offset conditions to position the top of the right sidebar
+				if($('body.search-result').length !== 0) {
+					offset = 68;
+				} else if($('body.contact-type').length !== 0) {
+					offset = -18;
+				} else {
+					offset = 15;
+				}
 				var ctb = ctpos.top + cth + offset; // 15 additional vert offset needed (was 5)
 				if($('.breadcrumb').length !== 0) {
 					ctb += $('.breadcrumb').height();
 				}
 				
-				
-				$('.sidebar-right').css('margin-top',ctb);
+				// need to apply margin on contact page manually since the second sidebar should 
+				// not get top margin on tablet
+				if($('body.contact-type').length === 0) {
+					$('.sidebar-right').css('margin-top',ctb);
+				}
 			}
 			
 			/* ============================  HAPPY BOX SETTINGS ============================ */
@@ -870,11 +1045,17 @@
 						'action_element_class': '.action-element',
 						'canvas_element_class': '.narrow-col',
 						'button_class': ".btn-primary",
-						'height': hb_element_height // was var front_banner_height, total height of the happy viewport
+						'height': hb_element_height, // was var front_banner_height, total height of the happy viewport
+						'callback':happyDone
 					}
 				);
 				front = true;
+				
+				// Capture callback in happyDone(), the default callback that also exposes the plugin scope
+				
 			}
+			
+			
 			
 			// PAGES WITH HAS-SHADOW-AM ...
 			
@@ -892,7 +1073,8 @@
 							'canvas_element_class': '.narrow-col',
 							'button_class': ".btn-primary",
 							'height': hb_element_height, // was var shadow_am_viewport_height, total height of the happy viewport
-							'frozen': true
+							'frozen': true,
+							'callback':happyDone
 						}
 					);
 				}

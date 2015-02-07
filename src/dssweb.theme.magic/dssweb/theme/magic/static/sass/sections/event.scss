@@ -44,8 +44,17 @@
 	}
 	
 }
+#content-core h3.uc {
+	letter-spacing: 0 !important;
+}
 #content-row {
 	margin-top: 35px;
+}
+
+#content-core {
+	.uc {
+		letter-spacing: 0.05em !important;
+	}
 }
 
 /*----- Tablet breakpoint -------*/
@@ -78,6 +87,7 @@
 			float: none;
 			li {
 				display: inline-block;
+				margin-right: 10px;
 				a {
 					width: auto !important;
 				}
@@ -87,7 +97,9 @@
 			}
 		}
 	}
-	// Remove following for gold button instead of blue 
+
+	// Treatment to replace gold with blue accordion buttons
+	/*
 	#accordion-e {
 		.panel-title {
 			a {
@@ -103,7 +115,8 @@
 				}
 			}
 		}
-	}
+	}*/
+	
 }
 
 @media screen and (min-width: $screen-sm-min) { // width > 768
@@ -120,11 +133,10 @@
 		}
 		.portlet-items {
 			float: right;
+			margin-top: 0 !important;
 		}
 	}
-	.panel{
-		margin-left:0 !important;
-	}
+
 }
 
 
