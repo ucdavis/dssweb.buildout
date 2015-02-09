@@ -7,14 +7,6 @@
 
   <!-- five:registerPackage package="." initialize=".initialize" / -->
 
-  <genericsetup:registerProfile
-      name="default"
-      title="dssweb.facnavviews"
-      directory="profiles/default"
-      description="Installs the dssweb.facnavviews package"
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      />
-
   <include package="eea.facetednavigation" file="meta.zcml" />
 
   <faceted:view

@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<!-- Register the package-specific browser layer,
-     so that it will be activated
-     when this product is installed. -->
-<layers>
-    <layer name="dssweb.facnavviews.customization.layer"
-      interface="dssweb.facnavviews.interfaces.ICustomTheme" />
-</layers>
