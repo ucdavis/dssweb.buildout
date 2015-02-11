@@ -7,7 +7,9 @@
     <!-- Apply the following rules to standard Plone pages -->
     <rules css:if-content="#visual-portal-wrapper">
 	    <theme href="index2.html" if="$home_page" />
-	    <theme href="index2.html" css:if-content="body.section-discover-psychology" />
+
+	    <theme href="index2.html" css:if-content="body.portaltype-front-page" />
+
 
             <theme href="t13_event2.html" css:if-content="body.portaltype-event" />
 			<theme href="t13_event2.html" css:if-content="body.portaltype-dsscourse" />
@@ -15,6 +17,7 @@
 		<theme href="t2_ourpeople.html" css:if-content="body.template-facetednavigation_view" />
 		<theme href="t7_contact.html" css:if-content="body.portaltype-dsscontact" />
 
+       <theme href="t5_generic_landing.html" css:if-content=".subsection-prospective-students"/>
       <theme href="t4_adhoc2.html" />
 
       <!-- Replace title with Plone's page title  -->
@@ -29,7 +32,16 @@
       <!-- merge classes from Plone body with theme body -->
       <merge attributes="class" css:theme="body" css:content="body" />
 	  
-
+      <before css:theme-children="html head" css:if-content=".site-psychology">
+		 <script type='text/javascript'>
+		 (function (d, t) {
+		   var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+		   bh.type = 'text/javascript';
+		   bh.src = '//www.bugherd.com/sidebarv2.js?apikey=gcpxr8nleubizlym3u8aag';
+		   s.parentNode.insertBefore(bh, s);
+		   })(document, 'script');
+		 </script>
+	 </before>
       <!--Copy script tags from Plone head to end of body-->
       <!--after css:theme-children="html body" css:content="html head script" /-->
 
@@ -40,7 +52,9 @@
       <drop css:content="dd.portlet-footer" />
       <drop css:content="dd.portletFooter"/>
    </rules>
-   <rules css:if-content="body.section-discover-psychology">
+
+   <rules css:if-content="body.portaltype-front-page">
+
   	  <drop css:theme="#content > div.row > div" />
       <!--drop all the portal footers on the front page -->
       <drop css:content="dd.portlet-footer" />
@@ -66,6 +80,7 @@
 		   </rules>
 		   
 	  <!--Other sites-->	   
+
 	  
 		         <replace css:theme-children="#left-front-column"
 		                  css:content=".portletContentLeadImageCollectionPortlet.front-page-events-more" />
@@ -73,6 +88,14 @@
 		                  css:content=".portletContentLeadImageCollectionPortlet.front-page-courses" />
 		         <replace css:theme-children="#right-front-column"
 		                  css:content=".portletContentLeadImageCollectionPortlet.front-page-latest" />
+
+         <rules css:if-content="body.portaltype-front-page" >	  
+		         <replace css:theme-children="#left-front-column"
+		                  css:content=".portletContentLeadImageCollectionPortlet.featured-courses" />
+		         <replace css:theme-children="#middle-front-column"
+		                  css:content=".portletContentLeadImageCollectionPortlet.quick-facts" />
+		         <replace css:theme-children="#right-front-column"
+		                  css:content=".portlet-static-latest-news" />
 		   		   </rules>
       <!-- rule to set up title to replace static logo on ipad/mobile -->
       <replace css:theme-children="#logosm h1">
@@ -81,17 +104,19 @@
          </xsl:for-each>
       </replace>
 
-      <!--drop the events tab -->
+ <!--drop the events and giving tabs so they can be moved to the utility menu -->
       <drop content='//*[@id="portaltab-events"]' />
-
+	 <drop content='//*[@id="portaltab-give"]' />
+         <drop content='//*[@id="portaltab-news"]' />
+         <drop content='//*[@id="portaltab-quick-facts"]' />
       <!--utility menu links -->
       <replace css:theme="#uti-events > a"
                css:content="#portaltab-events > a" method="raw" />
       <copy attributes="href"
-            css:content=".news > dl > dd.portletFooter > span:nth-child(2) > a"
+            css:content="#portaltab-news > a"
             css:theme="#uti-news > a"  />
 	    <copy attributes="href"
-            css:content="#portaltab-support-iss > a"
+            css:content="#portaltab-give > a"
             css:theme="#uti-give > a" />
       <copy attributes="href"
             css:content=".navTreeItem > .section-uc-davis > a"
@@ -154,7 +179,7 @@
       <replace css:content="#content-core"
                css:theme-children="#container-2 div.content-wrap"  />
       <copy attributes="href"
-            css:content="#portaltab-about-iss > a"
+            css:content="#portaltab-quick-facts > a"
             css:theme="#container-2 > div > div > div.bcontroller > a" />
 
 		  <!-- Events Happy Box -->
@@ -173,6 +198,7 @@
       <replace css:content=".breadcrumbSeparator">
         <span class="bread-divider">|</span>
       </replace>
+       
 
     	<!-- Global Rules -->
 
@@ -216,8 +242,10 @@
       </rules>
 	  
 	  <!---Courses Page-->
-      <before css:theme="#content-core"
-              css:content=".newsImageContainer" css:if-content=".portaltype-dsscourse"/>
+
+      <!--before css:theme="#content-core"
+              css:content=".newsImageContainer" css:if-content=".portaltype-dsscourse"/-->
+
 	  <!--Person bio-->
 	   <rules css:if-content="body.portaltype-fsdperson">
 		   <replace css:theme="h1.content-title" css:content="h1.content-title" />
@@ -237,7 +265,12 @@
 		    <drop theme='//*[@id="pager-bottom"]' />
 
 	   </rules>
-	   
+	  <!--Prospective Students T5-->
+	   <rules css:if-content=".subsection-prospective-students" >
+             <drop css:content=".image-under-banner" />
+              <replace css:theme="#corner-box-target" css:content=".image-under-banner" method="raw" />
+		    	<replace css:theme-children=".panel-body" css:content="#content-core" />
+		</rules> 
 	   <!--Contact Page rules -->
 	   <rules css:if-content="body.portaltype-dsscontact" >
 		   <replace theme='//*[@id="google-map"]' content='//*[@id="viewlet-above-content-title"]' />
@@ -245,18 +278,18 @@
 	   </rules>
 	   
 	   <!-- Generic Views -->
-	   <rules css:if-theme="body.adhoc" >
-		   <replace css:theme=".panel-body" css:content=".tileItem"  css:if-content=".tileItem" />
-		   <replace css:theme="#content-core" css:content="#content-core" css:if-content="#content-core"/>
+	   <rules css:if-not-content="body.portaltype-front-page" >
+		   <replace css:theme=".panel-body" css:content=".tileItem" />
+		   <replace css:theme="#content-core" css:content="#content-core"/>
 	   </rules>
 		   
 
       <!--- Footer -->
-      <copy  css:content=".portletStaticText.portlet-static-contact"
+      <copy  css:content=".department-contact"
              css:theme="#vcard" />
-      <drop css:content=".portlet.portletNavigationTree" />
+      <drop css:content=".footer-nav > .portlet.portletNavigationTree" /> />
       <replace css:theme-children="#footer-middle"
-               css:content="ul.navTree.navTreeLevel0"
+               css:content=".footer-nav > dl > dd > ul.navTree.navTreeLevel0"
                method="raw"/>
       <drop css:theme="#foot-center" />
       <drop css:theme="#foot-right" />
@@ -271,7 +304,7 @@
       </replace>
 
       <!-- desktop megamenu animation -->
-      <after theme-children="html/body">
+      <after theme-children="html/body" css:if-content=".site-psychology">
         <script type="text/javascript">
           jQuery(function ($) {
               var mmenu = $('#portal-globalnav li > ul.dropdown');
@@ -306,7 +339,9 @@
         css:theme="#content-row > div#content" />
 -->
 
-    
+
+</rules>    
+
 
     <!-- XSL templates here; must be in outermost rules tag -->
 
