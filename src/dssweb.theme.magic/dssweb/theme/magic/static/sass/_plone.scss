@@ -315,9 +315,22 @@ dl.portlet dt {
 		color:white;
 		width:100%;
 		text-decoration:none;
-		padding-left: 10%;
 	}
 }
+dt.portletHeader span {
+    color: white;
+    font-weight: bold;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    text-transform: uppercase;
+    font-size: 0.8125rem;
+    line-height: 1.125rem !important;
+    letter-spacing: 0.1em;
+    padding-bottom: 4px;
+    padding-right: 30px;
+    position: relative;
+    top: 2px; 
+} 
 .portletItemDetails {
 	font-size: 85%;
 	padding-top: .5em;
@@ -464,11 +477,7 @@ border-bottom:transparent;
 
 
 /*-------footer-------*/
-dl.portlet-static-contact dt{
-	background: transparent;
-	font-size: 16px;
 
-}
 #vcard p {
 	font-size: 16px;
 	line-height: 1.5em;

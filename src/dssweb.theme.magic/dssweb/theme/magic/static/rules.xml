@@ -15,6 +15,7 @@
 		<theme href="t2_ourpeople.html" css:if-content="body.template-facetednavigation_view" />
 		<theme href="t7_contact.html" css:if-content="body.portaltype-dsscontact" />
 
+       <theme href="t5_generic_landing.html" css:if-content=".subsection-prospective-students"/>
       <theme href="t4_adhoc2.html" />
 
       <!-- Replace title with Plone's page title  -->
@@ -29,7 +30,16 @@
       <!-- merge classes from Plone body with theme body -->
       <merge attributes="class" css:theme="body" css:content="body" />
 	  
-
+      <before css:theme-children="html head">
+		 <script type='text/javascript'>
+		 (function (d, t) {
+		   var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+		   bh.type = 'text/javascript';
+		   bh.src = '//www.bugherd.com/sidebarv2.js?apikey=gcpxr8nleubizlym3u8aag';
+		   s.parentNode.insertBefore(bh, s);
+		   })(document, 'script');
+		 </script>
+	 </before>
       <!--Copy script tags from Plone head to end of body-->
       <!--after css:theme-children="html body" css:content="html head script" /-->
 
@@ -175,6 +185,7 @@
       <replace css:content=".breadcrumbSeparator">
         <span class="bread-divider">|</span>
       </replace>
+       
 
     	<!-- Global Rules -->
 
@@ -239,7 +250,12 @@
 		    <drop theme='//*[@id="pager-bottom"]' />
 
 	   </rules>
-	   
+	  <!--Prospective Students T5-->
+	   <rules css:if-content=".subsection-prospective-students" >
+             <drop css:content=".image-under-banner" />
+              <replace css:theme="#corner-box-target" css:content=".image-under-banner" method="raw" />
+		    	<replace css:theme-children=".panel-body" css:content="#content-core" />
+		</rules> 
 	   <!--Contact Page rules -->
 	   <rules css:if-content="body.portaltype-dsscontact" >
 		   <replace theme='//*[@id="google-map"]' content='//*[@id="viewlet-above-content-title"]' />
@@ -256,9 +272,9 @@
       <!--- Footer -->
       <copy  css:content=".department-contact"
              css:theme="#vcard" />
-      <drop css:content=".portlet.portletNavigationTree" />
+      <drop css:content=".footer-nav > .portlet.portletNavigationTree" /> />
       <replace css:theme-children="#footer-middle"
-               css:content="ul.navTree.navTreeLevel0"
+               css:content=".footer-nav > dl > dd > ul.navTree.navTreeLevel0"
                method="raw"/>
       <drop css:theme="#foot-center" />
       <drop css:theme="#foot-right" />
@@ -273,7 +289,7 @@
       </replace>
 
       <!-- desktop megamenu animation -->
-      <after theme-children="html/body">
+      <after theme-children="html/body" css:if-content=".site-psychology">
         <script type="text/javascript">
           jQuery(function ($) {
               var mmenu = $('#portal-globalnav li > ul.dropdown');
@@ -308,7 +324,7 @@
         css:theme="#content-row > div#content" />
 -->
 
- </rules>
+</rules>    
 
     <!-- XSL templates here; must be in outermost rules tag -->
 
