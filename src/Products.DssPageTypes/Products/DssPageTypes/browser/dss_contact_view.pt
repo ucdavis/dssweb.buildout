@@ -51,6 +51,14 @@
     <div tal:replace="structure provider:plone.abovecontentbody" />
 		
        <div id="content-core">
+       
+        <div id="main-content">
+                            <metal:field use-macro="python:context.widget('text', mode='view')">
+                               Body text
+                             </metal:field>
+                         
+                        </div>
+		
 	    <tal:block tal:replace="structure view/render_form"> Form here </tal:block>
 	    
 	  </div>  
