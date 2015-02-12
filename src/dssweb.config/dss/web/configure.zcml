@@ -8,22 +8,22 @@
 
     <include package="plone.resource" file="meta.zcml"/>
 
-    <plone:static 
-            name="dss.web-psych"
-            directory="theme/dss.web-psych" 
-            type="theme" />
-		  
     <plone:static
-    		  name="dss.web-econ"
+            name="dss.web-psych"
+            directory="theme/dss.web-psych"
+            type="theme" />
+
+    <plone:static
+    	  name="dss.web-econ"
 		  directory="theme/dss.web-econ"
 		  type="theme" />
-		  
-    <genericsetup:registerProfile
+
+    <!-- genericsetup:registerProfile
           name="default"
           title="dss.web"
           directory="profiles/default"
           description="Installs the dss.web package"
           provides="Products.GenericSetup.interfaces.EXTENSION"
-          />
+          / -->
 
 </configure>
