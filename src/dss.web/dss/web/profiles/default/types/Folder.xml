@@ -2,5 +2,6 @@
 <object name="Folder">
  <property name="view_methods" purge="False">
   <element value="collapsible_summary_view"/>
+  <element value="collapsible_full_view"/>
  </property>
 </object>
