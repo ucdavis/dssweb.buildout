@@ -7,7 +7,9 @@
     <!-- Apply the following rules to standard Plone pages -->
     <rules css:if-content="#visual-portal-wrapper">
 	    <theme href="index2.html" if="$home_page" />
+
 	    <theme href="index2.html" css:if-content="body.portaltype-front-page" />
+
 
             <theme href="t13_event2.html" css:if-content="body.portaltype-event" />
 			<theme href="t13_event2.html" css:if-content="body.portaltype-dsscourse" />
@@ -30,7 +32,7 @@
       <!-- merge classes from Plone body with theme body -->
       <merge attributes="class" css:theme="body" css:content="body" />
 	  
-      <before css:theme-children="html head">
+      <before css:theme-children="html head" css:if-content=".site-psychology">
 		 <script type='text/javascript'>
 		 (function (d, t) {
 		   var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
@@ -50,7 +52,9 @@
       <drop css:content="dd.portlet-footer" />
       <drop css:content="dd.portletFooter"/>
    </rules>
+
    <rules css:if-content="body.portaltype-front-page">
+
   	  <drop css:theme="#content > div.row > div" />
       <!--drop all the portal footers on the front page -->
       <drop css:content="dd.portlet-footer" />
@@ -76,6 +80,15 @@
 		   </rules>
 		   
 	  <!--Other sites-->	   
+
+	  
+		         <replace css:theme-children="#left-front-column"
+		                  css:content=".portletContentLeadImageCollectionPortlet.front-page-events-more" />
+		         <replace css:theme-children="#middle-front-column"
+		                  css:content=".portletContentLeadImageCollectionPortlet.front-page-courses" />
+		         <replace css:theme-children="#right-front-column"
+		                  css:content=".portletContentLeadImageCollectionPortlet.front-page-latest" />
+
          <rules css:if-content="body.portaltype-front-page" >	  
 		         <replace css:theme-children="#left-front-column"
 		                  css:content=".portletContentLeadImageCollectionPortlet.featured-courses" />
@@ -229,8 +242,10 @@
       </rules>
 	  
 	  <!---Courses Page-->
+
       <!--before css:theme="#content-core"
               css:content=".newsImageContainer" css:if-content=".portaltype-dsscourse"/-->
+
 	  <!--Person bio-->
 	   <rules css:if-content="body.portaltype-fsdperson">
 		   <replace css:theme="h1.content-title" css:content="h1.content-title" />
@@ -324,7 +339,9 @@
         css:theme="#content-row > div#content" />
 -->
 
+
 </rules>    
+
 
     <!-- XSL templates here; must be in outermost rules tag -->
 
