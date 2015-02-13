@@ -1,7 +1,7 @@
 /* _typography.scss */
 @import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
 
-body, div, p, li, a, input, textarea, select {
+body, div, p, li, a, input, textarea, select, button {
   color: #000;
 	@include standard_font;
 }
@@ -9,7 +9,7 @@ body, div, p, li, a, input, textarea, select {
 // Note: Font faces are in _mixins
 
 a { 
-	color: $ucd_blue_70;
+	color: $link_color;
 }
 
 em {
@@ -24,6 +24,12 @@ h1 {
 h4.source {
 	@include font_size(12px,!important);
 	text-transform: uppercase;
+}
+// on students t8 page
+.event-item {
+	h4 {
+		font-weight: bold;
+	}
 }
 blockquote {
 	color: $rec_blue;
@@ -76,6 +82,11 @@ p {
 	margin-bottom: 15px;
 }
 
+#top-bar-wrap {
+	.top-bar-section ul li > a {
+  	//@include standard_font;
+	}
+}
 .portlet {
 	li, p, h4 {
 		@include font_size(13px);
@@ -141,21 +152,25 @@ p {
 	}
 }
 
-#nested-left { // T8 nested column "Important Dates"
-	padding-left: 0;
-	h3, h4, p {
-		@include font_size(13px,!important);
-		@include line_height(18px,!important);
+#content-row { 
+	#nested-left { // T8 nested column "Important Dates"
+		padding-left: 0;
+		h3, h4, p {
+			@include font_size(13px,!important);
+			@include line_height(18px,!important);
+		}
 	}
 }
-.col-lg-4 {
+
+/*.col-lg-4 {
 	h2 {
     font-weight: bold !important;
     @include font_size(30px, !important);
     margin-bottom: 15px;
 	}
     
-}
+}*/
+
 .about-bio {
 	h3{
 	font-weight: bold;
@@ -197,7 +212,7 @@ p {
 		}
 	}
 }
-#content, #am-content {
+#content-row { // was #content, #am-content
 	.vcard {
 		.adr, #email-phone {
 			@include line_height(18px,!important);
@@ -205,15 +220,16 @@ p {
 	}
 	.sidebar {
 		.panel-body {
-			li {
+			li, a, p {
 				@include font_size(13px,!important);
-				@include line_height(15px,!important);
+				@include line_height(18px,!important);
 			}
 		}
 	}
 }
-figure {
-	figcaption {
+
+
+	figcaption, .figcaption {
 		text-align: right;
 		@include font_size(11px);
 		@include line_height(15px);
@@ -224,7 +240,7 @@ figure {
 			text-transform: none !important;
 		}
 	}
-}
+
 #content {
 	form {
 		input, select, textarea {
@@ -254,7 +270,7 @@ figure {
 		}
 	}
 }
-#content, #am-content {
+#content-row { // was #content, #am-content
 	.box-content {
 		p {
 			@include font_size(13px,!important);
@@ -263,8 +279,8 @@ figure {
 	}
 }
 
-.sidebar-info{
-	h4{
+.sidebar-info {
+	h4 {
 		font-weight: bold;
 		@include font_size(16px);
 	}
@@ -276,8 +292,8 @@ figure {
 }
 
 
-.content-title{
-	padding-bottom:30px;
+.content-title {
+	padding-bottom: 30px;
 	@include font_size(36px);
 	@include line_height(43px);
 	letter-spacing: 0.01em;
@@ -285,12 +301,12 @@ figure {
 }
 
 // TODO: Revise specificity using content, am-content
-#content, #am-content {
+#content-row { // was #content, #am-content
 	h2, h2 a {
 		@include font_size(24px, !important);
-		font-weight:normal;
-		padding-top:15px;
-		padding-bottom:15px;
+		font-weight: normal;
+		padding-top: 15px;
+		padding-bottom: 15px;
 	}
 	h3 {
 		@include font_size(15px);
@@ -299,13 +315,15 @@ figure {
 		padding-top: 6px;
 		padding-bottom: 6px;
 	}
-	h2 + ul {
+	.intro + h2 {
+		padding-top: 0;
+	}
+	h2 + ul, h3 + ul {
 		padding: 0;
 		margin: 0;
 	}
-	h3 + ul {
-		padding: 0;
-		margin: 0;
+	.inline-content ul {
+		margin-top: 0 !important;
 	}
 	#thumb-section {
 		h3 {
@@ -335,27 +353,31 @@ figure {
 // Bio
 body.bio {
 	#summary {
+		width: 100%;
 		#jumplinks {
-			width: 30% !important;
+			width: 32.5% !important;
 			ul {
 				margin-right: 35px;
 				li {
-					@include font_size(13px);
-					@include line_height(22px);
 					padding-left: 0 !important;
 					background-image: none !important;
 					text-align: right;
+					a {
+						@include font_size(15px);
+						@include line_height(22px);
+					}
 				}
 			}
 		}
 		#education {
-			width: 70% !important;
+			width: 67.5% !important;
 			ul {
 				margin-top: 10px;
 				li {
 					@include font_size(15px);
-					@include line_height(18px);
-					margin-bottom: 5px;
+					@include line_height(18px,!important);
+					margin-bottom: 0;
+					padding-bottom: 7px;
 					padding-left: 0 !important;
 					background-image: none !important;
 				}
@@ -371,21 +393,21 @@ body.bio {
 }
 
 // TODO: Make it easier to override styles from the section below, especially from _portlet.scss
-#content, #am-content {
+#content-row { // was #content, #am-content
 	p, li, ol, div {
 		@include line_height(24px,!important); 
 	}
 	p {
 		@include font_size(15px);
-		@include line_height(18px);
+		@include line_height(24px);
 		&.intro {
 			@include font_size(18px);
 			@include line_height(30px,!important);
 		}
 	}
-	li, ol {
+	li, ol, li a {
 		@include font_size(15px);
-		@include line_height(18px);
+		@include line_height(24px);
 	}
 	.breadcrumb {
 		p {
@@ -401,6 +423,11 @@ body.bio {
 				}
 			}
 		}
+	}
+}
+#footer {
+	#copyright {
+		@include font_size(12px);
 	}
 }
 
@@ -422,7 +449,22 @@ body.bio {
 			}
 		}
 	}
-	
+	blockquote {
+		margin-left: -17px !important;
+		margin-right: 0;
+		padding-left: 30px;
+		background-color: $rec_blue_light;
+		.bq-content {
+			background-position: 5px 5px;
+			padding-right: 2px !important;
+			padding-left: 5px !important;
+		}
+		// JS generated inner wrap
+		.close-quote {
+			padding: 0 30px 0 0;
+	    background-position: right bottom;
+		}
+	}
 	.sidebar {
 		h3 {
 			@include font_size(13px);
@@ -430,14 +472,19 @@ body.bio {
 			letter-spacing:.1em;
 		}
 	}
-	
+
 	// TODO: specificity
-	#content, #am-content {
+	#content-row { // was #content, #am-content
 		
 		h1 {
 			padding-bottom: 20px;
 		}
-		
+		h2, h2 a {
+			@include font_size(16px, !important); // yellow bars
+			font-weight: normal;
+			//padding-top: 15px;
+			//padding-bottom: 15px;
+		}
 		.breadcrumb {
 			p {
 				margin-bottom: 15px;
@@ -500,6 +547,16 @@ body.bio {
 		}	
 	}
 	
+	// Blue box formatting: T5: TODO: Combine
+	.corner-box {
+		.box-content {
+			p, li, a {
+				@include font_size(15px);
+				@include line_height(18px);
+			}
+		}
+	}
+	
 }
 /*
 body.res-lab {
@@ -532,7 +589,8 @@ body.res-lab {
 	}
 }
 
-#content, #am-content, #cm-content {
+/* // Don't need this global ...
+#content-row { // was #content, #am-content, and #cm-content {
 	ul {
 		li {
 			@include font_size(15px,!important);
@@ -540,6 +598,7 @@ body.res-lab {
 		}
 	}
 }
+*/
 
 body.home {
 	#bottom-panel-row {
@@ -552,7 +611,7 @@ body.home {
 /*----- tablet breakpoint -------*/
 @media screen and (min-width: $screen-sm-min) {	// width > 768
 	.top-panel {
-		#content, #am-content, #cm-content {
+		#content-row { // was #content, #am-content, and #cm-content {
 			.narrow-col {
 				color: #FFF;
 				h2 {
@@ -624,7 +683,7 @@ body.home {
 	body.home {
 		// Text below banner in thumbnail / tab boxes
 		
-		#content, #am-content {
+		#content, #am-content { // home desn't have #content-row
 			.narrow-col {
 				h2 {
 					@include font_size(17px);
@@ -649,29 +708,10 @@ body.home {
 		}
 	}
 	
-	#content, #am-content {
+	#content-row, #banner-row { // was #content, #am-content
 		.content-title {
 			@include font_size(26px);
 			@include line_height(28px);
-		}
-	}
-	
-	// Blue box formatting: T5: TODO: Combine
-	.corner-box {
-		.box-content {
-			h2 {
-				padding: 10px 0;
-				@include font_size(16px);
-				letter-spacing: 0.075em;
-			}
-			h3 {
-				padding: 0;
-				@include font_size(11px);
-			}
-			p {
-				@include font_size(11px);
-				@include line_height(15px);
-			}
 		}
 	}
 
@@ -696,7 +736,7 @@ body.home {
 @media screen and (min-width: $screen-md-min) { // width > 992
 	body.home {
 		// Button text at bottom of happy boxes
-		#content, #am-content {
+		#content, #am-content { // on home there is no #content-row
 			#top-panel-row {
 				.narrow-col {
 					.bcontroller {
@@ -707,6 +747,14 @@ body.home {
 					}
 				}
 			}
+			#bottom-panel-row {
+				.panel-body {
+					li, a, p {
+						@include font_size(15px,!important);
+						@include line_height(22px,!important);
+					}
+				}
+			}
 		}
 	}
 }
@@ -714,7 +762,27 @@ body.home {
 /*----- Tablet breakpoint -------*/
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991px
 
-	#content, #am-content {
+	#content-row { // was #content, #am-content
+		
+		p, li, ol, div {
+			@include line_height(22px,!important); 
+		}
+		p {
+			@include font_size(13px);
+			@include line_height(22px);
+			&.intro {
+				@include font_size(16px,!important);
+				@include line_height(22px,!important);
+			}
+		}
+		li, ol, li a {
+			@include font_size(13px);
+			@include line_height(22px);
+		}
+		
+		h2 {
+			@include font_size(18px,!important);
+		}
 		.narrow-col {
 			h2 {
 				@include font_size(17px,!important);
@@ -723,13 +791,37 @@ body.home {
 		}
 	}
 
+	blockquote {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	
+	// Blue box formatting: T5: TODO: Combine
+	.corner-box {
+		.box-content {
+			h2 {
+				padding: 10px 0;
+				@include font_size(16px);
+				letter-spacing: 0.075em;
+			}
+			h3 {
+				padding: 0;
+				@include font_size(11px);
+			}
+			p {
+				@include font_size(11px);
+				@include line_height(15px);
+			}
+		}
+	}
+	
 }
 
 @media screen and (max-width: $screen-lg-min) { // width < 1200
 	body.home {
 		// Text below banner in thumbnail / tab boxes
 		
-		#content, #am-content {
+		#content, #am-content { // home does not have #content-row
 			.narrow-col {
 				p, li, a {
 					@include font_size(13px,!important);
