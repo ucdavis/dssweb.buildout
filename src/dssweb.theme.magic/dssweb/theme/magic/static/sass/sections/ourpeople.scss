@@ -38,7 +38,7 @@ $ucdtxt_blue: #4D688C; // based on?
 	border: 5px solid white; // for 10px margin between items
 	background-color: $cardbg_blue;
 	.personEntryWrapper{
-		top: -10px; // sync with .caption margin-top
+		/* top: -10px; // sync with .caption margin-top  removed by carol */
 		left: 0;
 		background: $empty_blue;
 		width: 90px;
@@ -73,8 +73,9 @@ $ucdtxt_blue: #4D688C; // based on?
 
 .caption {
 	position: relative;
-	margin-top: 10px;
-	margin-left: 90px; // keep contact text from wrapping under photo
+	/* margin-top: 10px; dp */
+	margin-top: -10px;
+	margin-left: 100px; // keep contact text from wrapping under photo
 	left: 10px;
 
 	p {

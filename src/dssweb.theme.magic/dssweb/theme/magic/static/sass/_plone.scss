@@ -2,6 +2,7 @@
 @charset "utf-8";
 @import "variables";
 
+
 /* override wallpaper height without breaking cakefarm theme  */
 .wall .wallpaper .notsobig {
 	height:540px !important;
@@ -80,7 +81,12 @@ a#portal-logo {  //overrides theme wdth setting that was causing menu to break
 background-color: $ucd_bright_gold_70;
 padding: 0.3em;
 }
-
+/*----- Breadcrumbs ----- */
+#portal-breadcrumbs > span > a, span#breadcrumbs-current {
+    font-size: 0.75rem;
+    line-height: 0.9375rem;
+    margin-bottom: 0px;
+}
 
 @media screen {
 /*------News Happy Box ---------*/
@@ -147,17 +153,18 @@ dl.portlet-static-quick-facts dt {
 	}
 	 > dl > dt {
 	background:transparent;
-	font-size: 24px !important;
-	font-size: 1.5rem !important;
-	font-weight: normal;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	text-align:center;
+	
 }
 	dl.portlet dt.portletHeader a, a:visited {
 	background:transparent;
 	color:$ucd_black_80;
+	@include font_size(24px, !important);
+	font-weight:normal;
+	padding-top:15px;
+	padding-bottom:15px;
+	text-align:center;
 	border-bottom: none;
+	
 }
 
 	dl.portlet a, a:visited {
@@ -208,6 +215,11 @@ dl.portlet-static-quick-facts dt {
 	dl.portlet dt.portletHeader a, a:visited {
 		background:transparent;
 		color:$ucd_black_80;
+		@include font_size(24px, !important);
+		font-weight:normal;
+		padding-top:15px;
+		padding-bottom:15px;
+		text-align:center;
 		border-bottom: none;
 	}
 	dl.portlet a, a:visited {
@@ -256,6 +268,11 @@ dl.portlet-static-quick-facts dt {
 	dl.portlet dt.portletHeader a, a:visited {
 		background:transparent;
 		color:$ucd_black_80;
+		@include font_size(24px, !important);
+		font-weight:normal;
+		padding-top:15px;
+		padding-bottom:15px;
+		text-align:center;
 		border-bottom: none;
 	}
 	dl.portlet a, a:visited {
@@ -298,9 +315,22 @@ dl.portlet dt {
 		color:white;
 		width:100%;
 		text-decoration:none;
-		padding-left: 10%;
 	}
 }
+dt.portletHeader span {
+    color: white;
+    font-weight: bold;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    text-transform: uppercase;
+    font-size: 0.8125rem;
+    line-height: 1.125rem !important;
+    letter-spacing: 0.1em;
+    padding-bottom: 4px;
+    padding-right: 30px;
+    position: relative;
+    top: 2px; 
+} 
 .portletItemDetails {
 	font-size: 85%;
 	padding-top: .5em;
@@ -339,6 +369,83 @@ dl.portlet a:link {
   color: $ucd_blue_100;
   border-bottom: none;
 }
+/*------------PFG Forms and Errors -----------*/
+div.field.error {
+background-color: $ucd_error;
+border: 1px solid $wine_grape;
+padding: 0.5em;
+margin: 1em 0;
+}
+.field.error input[type="text"][name$=".title"],
+.error input#title {
+    width: 99%;
+}
+
+.fieldRequired {
+    background: url(required.png) center left no-repeat;
+    padding: 0 0 0 1em;
+    color: White;
+}
+.fieldUploadFile {
+    text-align: right;
+    margin-right: 0.75em;
+    display: none;
+}
+.fieldTextFormat {
+    text-align: right;
+    margin-right: 0.75em
+}
+.formHelp {
+    color: #555;
+    margin: 0 0 0.2em 0;
+    display: block;
+    font-weight: normal;
+}
+div.field.error {
+    background-color: $ucd_error;
+    border:  1px solid $wine_grape;
+    padding: 0.5em;
+    margin:  1em 0;
+}
+.error .fieldRequired {
+    color: #d00;
+}
+div.error.warning {
+    background-color: transparent;
+    border: none;
+    margin-top: 0;
+    padding: 0;
+}
+
+div.error.warning input {
+    border: 2px solid $wine_grape;
+}
+/*--Two Collumn Page View ----*/
+p.figcaption {
+float: right;
+padding-right: 5px;
+}
+/*------Collection Summary View with Images -------*/
+tileItem.visualIEFloatFix {
+padding-top: 3%;
+}
+.tileImage {
+float: left;
+padding-right: 10px;
+padding-top:.6em;
+}
+p.tileBody {
+display: flex;
+}
+p.tileFooter {
+	float:right;
+	padding-right:10%;
+}
+
+.visualClear {
+	height:1em;
+	clear:both;
+}
 /*---Portlets -----*/
 .blockedPortlet .portletBlockedMessage {
     color: white;
@@ -370,11 +477,7 @@ border-bottom:transparent;
 
 
 /*-------footer-------*/
-dl.portlet-static-contact dt{
-	background: transparent;
-	font-size: 16px;
 
-}
 #vcard p {
 	font-size: 16px;
 	line-height: 1.5em;
@@ -405,7 +508,7 @@ ul#footer-nav {
 #footer-middle {
 	width:55%;
 	padding-left: 5%;
-	margin-left:25%;
+	margin-left:20%;
 
 	ul {padding-left: 5%;
 	-webkit-column-count: 3;
@@ -420,7 +523,7 @@ ul#footer-nav {
 
 	ul.navTree li a {
     	border: none;
-		font-size:120%;
+		font-size:95%;
     	display: block;
 		color:white;
     	zoom: 1;
@@ -506,97 +609,52 @@ ul#footer-nav {
     }
 
     /* Plone globalnav */
-    #portal-globalnav {
-        clear: both;
-        font-size: 80%;
-        background: #ddd;
-        /* ensure top navigation dont touches portlets, content etc.. #10491 */
-        margin: 0 0 1em 0;
-    }
-    #portal-globalnav li {
-        display: inline;
-    }
-    #portal-globalnav li a {
-        display: inline-block;
-        padding: 0 0.5em;
-        background: #ddd;
-        width: 9rem;
-        white-space: normal;
-        line-height: 80px;
-        color: #fff;
-        text-decoration: none;
-    }
+   
 
-    #portal-globalnav .selected a,
-    #portal-globalnav a:hover {
-        background: #205c90;
-        color: White;
-    }
-    #portal-globalnav .selected a:hover {
-        background: #ddd;
-        color: #205c90;
-    }
+}
+/*Forms */
+input.button {
+height: 40px;
+width: 120px;
+background-color: #Daaa00;
+text-align: center;
+border: 0;
+}
+.formControls.form {
+padding-top: 1em;
+text-align: center;
+}
+.field {
+	padding-top:4px;
+}
 
-
-    /* drop-down menu; changed to use "dropdown" in place of "submenu" */
-    #portal-globalnav {
-      list-style-image:none;
-      position: absolute;
-      right: 0;
-      zoom:1; /* fix ie */
-      z-index: 1;
-      display: inline;
-      background-color: $ucd_blue_100;
-      clear: none;
-      }
-    #portal-globalnav:after {
-      content:"";
-      clear:both;
-      display:block;
-      visibility:hidden;
-      }
-    #portal-globalnav li {
-      float:left;
-      position:relative;
-      }
-    #portal-globalnav li a {
-      display:block;
-      border: none;
-      background-color: $ucd_blue_100;
-      }
-
-    /*----- DropDown -----*/
-    ul.dropdown {
-      //display: none;
-      position :relative;
-      top: -1em;
-      }
-    #portal-globalnav:hover li > ul.dropdown {
-      /*display: block;*/
-      width: 9rem;
-      }
-    ul.dropdown li {
-      float:none;
-      margin:0;
-      }
-    #portal-globalnav ul.dropdown li a {
-      padding:0.5em 1.5em 0.5em 1em;
-      line-height: 1.25em;
-      font-size: 80%;
-      }
-    ul.dropdown ul {
-      top:0;
-      left:100%;
-      }
-    ul.dropdown a.state-published:hover,
-    .selected ul.dropdown .state-published {
-        color: #fff !important;
-    }
-    /* not more than one level */
-    ul.dropdown ul.dropdown {
-        //display: none !important;
-    }
-
+/*#content form input {
+font-size: 13px;
+font-size: 0.8125rem;
+line-height: 18px;
+line-height: 1.125rem;
+height: 35px;
+text-align: left;
+width:100%;
+padding:4px 4px 4px 4px;
+}
+textarea#message{
+	width:100%;
+} */
+/*Faculty Bio Page */
+p.org {
+	padding-bottom: 1.5em;
+}
+/* Hacky bit of css to get bio page address portlet to line up */
+dt.dept-title {
+margin-left: -32px;
+margin-right: -12px;
+}
+.street-address {
+	line-height:1.8em;
+}
+.org.follow {
+line-height: 2em;
 }
 
 /* @end */

@@ -118,7 +118,9 @@
 	/* Style adjustments for the wall banners */
 	body.home {
 		.wall {
+
 			height: 720px !important; // override banner height e.g., 540px (short), 650px (default, medium), 720px (tall)
+
 		}
 	}
 }
