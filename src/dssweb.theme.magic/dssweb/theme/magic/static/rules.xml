@@ -6,19 +6,19 @@
 
     <!-- Apply the following rules to standard Plone pages -->
     <rules css:if-content="#visual-portal-wrapper">
-	    <theme href="index2.html" if="$home_page" />
+	    <theme href="index.html" if="$home_page" />
 
-	    <theme href="index2.html" css:if-content="body.portaltype-front-page" />
+	    <theme href="index.html" css:if-content="body.portaltype-front-page" />
 
 
-            <theme href="t13_event2.html" css:if-content="body.portaltype-event" />
-			<theme href="t13_event2.html" css:if-content="body.portaltype-dsscourse" />
+            <theme href="t13_event_b.html" css:if-content="body.portaltype-event" />
+			<theme href="t13_event_b.html" css:if-content="body.portaltype-dsscourse" />
 		<theme href="t3_bio.html" css:if-content="body.portaltype-fsdperson" />
 		<theme href="t2_ourpeople.html" css:if-content="body.template-facetednavigation_view" />
 		<theme href="t7_contact.html" css:if-content="body.portaltype-dsscontact" />
 
        <theme href="t5_generic_landing.html" css:if-content=".subsection-prospective-students"/>
-      <theme href="t4_adhoc2.html" />
+      <theme href="t4_adhoc.html" />
 
       <!-- Replace title with Plone's page title  -->
       <replace css:theme="html head title" css:content="html head title" />
