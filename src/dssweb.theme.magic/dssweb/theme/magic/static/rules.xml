@@ -81,14 +81,6 @@
 		   
 	  <!--Other sites-->	   
 
-	  
-		         <replace css:theme-children="#left-front-column"
-		                  css:content=".portletContentLeadImageCollectionPortlet.front-page-events-more" />
-		         <replace css:theme-children="#middle-front-column"
-		                  css:content=".portletContentLeadImageCollectionPortlet.front-page-courses" />
-		         <replace css:theme-children="#right-front-column"
-		                  css:content=".portletContentLeadImageCollectionPortlet.front-page-latest" />
-
          <rules css:if-content="body.portaltype-front-page" >	  
 		         <replace css:theme-children="#left-front-column"
 		                  css:content=".portletContentLeadImageCollectionPortlet.featured-courses" />
@@ -225,7 +217,7 @@
         <!--before css:theme="#content-core"
                 css:content=".newsImageContainer" css:if-theme=".adhoc"/-->
 		    	
-		
+   <before css:theme="#content-core" css:content="#parent-fieldname-description" />
     	<!-- Basic Right Portlet -->
     	<replace css:theme-children=".sidebar-right" css:content=".portlet" />
         
@@ -235,7 +227,7 @@
                  content='//*[@id="parent-fieldname-title"]' />
         <before css:theme="#content-core"
                 css:content=".newsImageContainer" />
-        <before css:theme="#content-core" css:content="#parent-fieldname-description" />
+        
         <drop theme='//*[@id="content-core"]/div[1]' />
         <replace css:theme="div.zebra.rows"
                  css:content="#content-core > div" />
