@@ -1,6 +1,6 @@
 @charset "utf-8"; 
 @import "variables"; // Do not remove; includes all framework variables and SASS mixins necessary for @include processing and $ variable assignments.
-
+@import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
 /* 
 		Sub Unit / Organization Style Overrides 
 		
@@ -42,6 +42,74 @@
 		}
 	}
 	
+	/* Name-logo and navigation adjustments for psychology navigation on tablet */
+	.top-bar {
+		.title-area .name a {
+			margin-top: 20px;
+			padding-right: 0;	
+		}
+		.top-bar-section {
+			ul li {
+				a {
+					@include font_size(12px, !important);
+					//letter-spacing: 0 !important;
+				}
+				ul.dropdown { // layout for 2nd tier dropdown
+					width: 200px !important;
+					li {
+						a {
+							// @include font_size(16px,!important); // inherit main menu type size
+							@include line_height(15px, !important); 
+							padding: 8px 12px;
+						}
+					}
+				}
+				&#fac-serv-btn { // change width of last main menu drop down that has this id
+					ul.dropdown { // layout for 2nd tier dropdown
+						width: 174px !important;
+					}
+				}
+				&#people-btn { // second level people dropdown pushes layout on tablet so restrict width
+					ul.dropdown {
+						ul.dropdown {
+							width: 50px !important; // TODO: Not affecting the menu
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.genericTile {
+		min-height: 195px !important; // based on a max total of 6 lines within tiles. Customize or use JS to apply equal heights
+	}
+}
+
+/*----- Tablet up breakpoint -------*/
+
+@media screen and (min-width: $screen-sm-min) { // width > 768px
+	.top-bar {
+		.top-bar-section {
+			ul {
+				/* Note: Update formatting for navigation submenus here */
+				ul.dropdown {
+					//width: 200px !important;
+					li {
+						a {
+							//@include line_height(16px);
+							//padding: 4px 12px;
+							// if adding font-size here make sure to remove from Tablet breakpoint ("M") range above
+						}
+					}
+				}
+			}
+		}
+	}
+	// Tiles / Our people styles
+	.genericTile {
+		min-height: 172px; // based on a max total of 6 lines within tiles. Customize or use JS to apply equal heights
+	}
+
 }
 
 /*----- Desktop breakpoint ("L") -------*/
@@ -58,6 +126,14 @@
 }
 
 /*----- IRREGULAR STYLE TARGETS -------*/
+@media screen and (min-width: $screen-sm-max) and (max-width: $screen-lg-min) { // 991 < width < 1310
+	// Use to correct menu item widths. For Psychology menu 16px pulls the menu up on Mac/Chrome
+	.top-bar .top-bar-section ul > li a {
+		padding-right: 16px !important;
+		padding-left: 16px !important;
+	}	
+}
+
 
 /*----- Target tablet, desktop, and higher -------*/
 @media screen and (min-width: $screen-sm-min) { // width > 768

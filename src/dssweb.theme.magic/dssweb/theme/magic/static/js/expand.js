@@ -105,11 +105,8 @@ $(function () {
 						// If the detected screen size is Mobile 450px-599px
             if (activeMQ == 'S') {
                 currentMQ = activeMQ;
-								utilStack();
-							 
-								collapsedView();					
-								
-								
+								utilStack();							 
+								collapsedView();							
             }
 						// If the detected screen size is Tablet 600px-959px
             if (activeMQ == 'M') {

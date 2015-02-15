@@ -42,7 +42,8 @@
 		mute: true,
 		onLoad: $.noop,
 		onReady: $.noop,
-		source: null
+		source: null,
+		disableResizeWidth: 0 /* 2014-10-09 RAK: Option to disable resize below this width */
 	};
 
 	/**
@@ -303,7 +304,6 @@
 					for (var j in source) {
 						if (source.hasOwnProperty(j)) {
 							var media = (j === "fallback") ? "(min-width: 0px)" : j;
-
 							if (media) {
 								var _mq = window.matchMedia(media.replace(Infinity, "100000px"));
 								_mq.addListener(_onRespond);
@@ -658,6 +658,12 @@
 		_killEvent(e);
 
 		var data = e.data;
+		var disableResize = true;
+		
+		/* 2014-10-09 RAK: disable resizing if below mq min-width */
+		if((typeof data.responsiveSource !== "undefined") && (data.responsiveSource !== null)) { // not available in case only one image provided
+			disableResize = (data.responsiveSource.length) ? data.responsiveSource[1].mq.matches : data.responsiveSource[0].mq.matches;
+		}
 
 		// Target all media
 		var $mediaContainers = data.$container.find(".wallpaper-media");
@@ -669,6 +675,10 @@
 
 			// If media found and scaling is not natively support
 			if ($media.length && !(type === "img" && data.nativeSupport)) {
+				
+				if(typeof window.console !== "undefined") {
+					window.console.log("query.fs.wallpaper_onResize():  " + disableResize);
+				}
 				var frameWidth = data.$target.outerWidth(),
 					frameHeight = data.$target.outerHeight(),
 					frameRatio = frameWidth / frameHeight,
@@ -681,26 +691,32 @@
 
 				var mediaRatio = (data.isYouTube) ? data.embedRatio : (data.width / data.height);
 
-				// First check the height
-				data.height = frameHeight;
-				data.width = data.height * mediaRatio;
+				if(disableResize) { /* 2014-10-09 RAK: disable resizing if below mq min-width */
+					// First check the height
+					data.height = frameHeight;
+					data.width = data.height * mediaRatio;
 
-				// Next check the width
-				if (data.width < frameWidth) {
+					// Next check the width
+					if (data.width < frameWidth) {
+						data.width = frameWidth;
+						data.height = data.width / mediaRatio;
+					}
+
+					// Position the media
+					data.left = -(data.width - frameWidth) / 2;
+					data.top = -(data.height - frameHeight) / 2;
+
+				} else { /* 2014-10-09 RAK: need to set width ... we're defining height 160px */
 					data.width = frameWidth;
-					data.height = data.width / mediaRatio;
 				}
-
-				// Position the media
-				data.left = -(data.width - frameWidth) / 2;
-				data.top = -(data.height - frameHeight) / 2;
-
+				
 				$mediaContainer.css({
 					height: data.height,
 					width: data.width,
 					left: data.left,
 					top: data.top
 				});
+
 			}
 		}
 	}

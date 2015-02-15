@@ -4,6 +4,16 @@
 
 /*----- Mobile breakpoint --------*/
 // At point that left and right margins are gone
+i {
+		font-style: italic !important;
+}
+#cm-section {
+		ul.content-items {
+			li {
+				margin-top: 10px;
+			}
+		}
+	}
 @media screen and (max-width: $screen-xs-max) { // width < 767 (was $screen-sm-min 768 but triggers on ipad)
 	// Bio card
 	// Note: Apply negative margins to top items in order to retain padding on remaining text in mobile view
@@ -18,8 +28,20 @@
 		
 		#content, #am-content {
 			margin-top: 0 !important;
+			
+			.panel {
+				.panel-collapse.dont-close {
+					.panel-body {
+				    margin-left: 0 !important;
+						ul.portlet-items {
+							margin-left: 0 !important;
+						}
+					}
+				}
+			}
+			
 			.bio-card {
-				margin-bottom: 8px;
+				margin-bottom: 15px;
 				margin-left: -15px !important;
 				margin-right: -15px !important;
 				
@@ -67,8 +89,9 @@
 							li {
 								padding-bottom: 0;
 								background-color: $tab_light_gray;
-								background-image: none ;
+								background-image: none;
 								margin-bottom: 4px; // override 10px
+								
 								&:last-child {
 									margin-bottom: 0;
 								}
@@ -149,23 +172,35 @@
 				margin: 0;
 				li {
 					margin-bottom: 0;
+					> span {
+						a {
+							@include font_size(10px,!important);
+							@include line_height(42px,!important);
+						}
+					}
 				}
 			}
 		}
 	}
-	
+	#cm-section {
+		ul.content-items {
+			button {
+				margin-top: 10px; 
+			}
+		}
+	}
 	.sidebar-right {
 		margin-top: 0 !important; // was 45px for top placement of bio portrait
 		.bio-card {
 			.panel-body {
-
+				padding-bottom: 0 !important;
 				.vcard {				
 					position: relative;
 					> div {
 						margin-right: 35px !important;
 					}
 					img.photo {
-						margin-top: 15px;
+						margin-top: 10px; // Note: Check portlet panel-body padding-top
 						margin-bottom: 25px;
 						margin-left: auto;
 						margin-right: auto;
@@ -238,18 +273,30 @@
 			}
 		}
 	}
-
-	
 }
 
 /*----- "M" breakpoint -------*/
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
-	.sidebar-right {
-		.bio-card {
-			.panel-body {
-				.vcard {				
-					img.photo {
-						margin-top: 2px !important;
+	
+	#content-row { // #content-row p overrides our values so pull it into scope
+		.sidebar-right {
+			.bio-card {
+				.panel-body {
+					.vcard {				
+						img.photo {
+							width: 95.5% !important;
+							margin-top: 5px !important;
+						}
+						.title.org {
+							padding-left: 0;
+							margin-top: 15px;
+							margin-bottom: 25px;
+							p {
+								@include font_size(13px,!important);
+								@include line_height(16px,!important);
+								margin-bottom: 9px !important;
+							}
+						}
 					}
 				}
 			}
