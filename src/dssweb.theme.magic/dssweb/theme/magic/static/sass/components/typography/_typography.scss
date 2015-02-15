@@ -358,7 +358,12 @@ body.bio {
 					margin-bottom: 5px;
 					padding-left: 0 !important;
 					background-image: none !important;
-				}
+					
+					span {
+						display:flex;
+					}
+				} 
+			
 			}
 		}
 	}

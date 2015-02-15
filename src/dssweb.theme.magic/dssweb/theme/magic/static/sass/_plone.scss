@@ -87,6 +87,12 @@ padding: 0.3em;
     line-height: 0.9375rem;
     margin-bottom: 0px;
 }
+/*-----anything to get the dropdown menu working correctly ----*/
+a.hasDropDown {
+    background-image:url('&dtml-portal_url;/arrowRight.gif');
+    background-position:14em 50%;
+    background-repeat:no-repeat;
+}
 
 @media screen {
 /*------News Happy Box ---------*/
