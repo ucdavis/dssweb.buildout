@@ -70,13 +70,15 @@
 	  		             <div class="labs"
 	  		                  tal:define="labsList obj/getLabs"
 	  		                  tal:condition="labsList">
-	  		               <h3 i18n:translate="FacultyStaffDirectory_label_labs_heading">Labs:</h3>
+	  		               <p i18n:translate="FacultyStaffDirectory_label_labs_heading">LAB/PI:
 	  		                 <tal:block tal:repeat="eachLab labsList">
+							   
 	  		                     <a tal:attributes="href python:eachLab.absolute_url()">
-	  		                       <span tal:content="eachLab/Title" />:
+	  		                       <span tal:content="eachLab/Title" />
 
-	                               </a>		                    
-	  							</tal:block>
+	                               </a>	
+							   	                    
+	  							</tal:block></p>
 				 
 	                   </div>
 	  				</div>
