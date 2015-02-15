@@ -1,5 +1,6 @@
 from Products.Five.browser import BrowserView
 from zope.component import getMultiAdapter
+from Products.FacultyStaffDirectory import Person
 
 
 class FacNavView(BrowserView):

@@ -22,6 +22,9 @@
           <tal:entries repeat="brain batch">
             <tal:block define="obj brain/getObject;
                                support_view context/@@facnav_support">
+	   
+			<div class="genericTile col-lg-4 col-md-6 col-sm-12 col-xs-12">
+			<div class="personEntry">
               <a tal:define="
                   description obj/Description|string:;
                   title obj/pretty_title_or_id|string:;
@@ -42,7 +45,8 @@
                 <p class="personName" tal:content="title">Title</p>
 
                 <div class="caption"
-                    tal:define="department obj/getPrimaryDepartment"
+                    tal:define="department obj/getPrimaryDepartment;
+					            departments obj/getDepartments;"
                     tal:condition="department">
 
                   <!-- setting to primary department for demo purposes -->
@@ -62,11 +66,30 @@
                       tal:content="personMembershipInformation/getDept_officeAddress" />
                   </tal:block>
                 </div> <!--department -->
+	                  <div class="lab">
+	  		             <div class="labs"
+	  		                  tal:define="labsList obj/getLabs"
+	  		                  tal:condition="labsList">
+	  		               <h3 i18n:translate="FacultyStaffDirectory_label_labs_heading">Labs:</h3>
+	  		                 <tal:block tal:repeat="eachLab labsList">
+	  		                     <a tal:attributes="href python:eachLab.absolute_url()">
+	  		                       <span tal:content="eachLab/Title" />:
 
-                <div class="lab">Lab/PI Goes here</div>
+	                               </a>		                    
+	  							</tal:block>
+				 
+	                   </div>
+	  				</div>
+               
+
               </a>
+		  </div>
+	  </div>
+		  
             </tal:block>
+		
           </tal:entries>
+	  
         </div>
 
         <div metal:use-macro="context/batch_macros/macros/navigation" />
