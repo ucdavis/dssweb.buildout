@@ -103,6 +103,9 @@ margin-right: 0;
 padding-top: 5px;
 padding-bottom: 10px;
 }
+.labs {
+padding-top: 5px;
+}
 /*---- Person portlet ---*/
 .adr {
 	padding-left:35px;
@@ -419,6 +422,25 @@ dl.portlet a:link {
   color: $ucd_blue_100;
   border-bottom: none;
 }
+#content-core dd {
+margin: 0 0 1em 2em;
+margin-top: 0px;
+margin-right: 0px;
+margin-bottom: 1em;
+margin-left: 2em;
+}
+#content-core dt {
+font-weight: bold;
+margin-bottom: 0;
+margin-right: 0;
+}
+dd.portletItem > h4.org{
+min-height: 28px;
+background-color: #E5E9EF !important;
+padding: 12px 35px !important;
+letter-spacing: 0.05em;
+font-weight: bold;
+}
 /*------------PFG Forms and Errors -----------*/
 div.field.error {
 background-color: $ucd_error;
@@ -631,7 +653,7 @@ ul#footer-nav {
 	#logosm {display:none;
 	}
 	h1#parent-fieldname-title {
-	line-height:1.0; }
+	line-height:1.25; }
 }
 
 @media screen and (max-width: $screen-md-min){
