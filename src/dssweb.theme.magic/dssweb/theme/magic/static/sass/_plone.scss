@@ -94,6 +94,16 @@ a.hasDropDown {
     background-repeat:no-repeat;
 }
 
+/*---- Person tile -----*/
+span.personName {
+position: relative;
+padding-left: 20px;
+display: flex;
+margin-right: 0;
+padding-top: 5px;
+padding-bottom: 10px;
+}
+
 @media screen {
 /*------News Happy Box ---------*/
 #content a:visited, dl.portlet a:visited {
