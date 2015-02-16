@@ -280,6 +280,9 @@
 	   <rules css:if-content="body.portaltype-dsscontact" >
 		   <replace theme='//*[@id="google-map"]' content='//*[@id="viewlet-above-content-title"]' />
 		   <replace theme='//*[@id="content-core"]' content='//*[@id="content-core"]' />
+		   <!--replace css:theme-children=".sidebar-1" css:content=".side-contact" /-->
+		   <replace css:theme-children=".adr-only" css:content=".side-contact" />
+		   <replace css:theme-children=".sm-contacts" css:content=".key-contacts" />
 	   </rules>
 	   
 	   <!-- Generic Views -->

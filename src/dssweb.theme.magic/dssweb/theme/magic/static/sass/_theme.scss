@@ -63,7 +63,7 @@ head {
 		//background: $box_light_gray;
 	}
 }
-.sidebar-right {
+.sidebar-right, .sidebar-1 {
 	//width:250px;
 	height:30px;
 }
@@ -1034,7 +1034,7 @@ body.contact-type {
 	.sidebar {	
 		background:transparent;
 	}
-	.sidebar-right {	
+	.sidebar-right, sidebar-1{	
 		margin-top: 100px;
 		//clear:both;
 		//float:left !important;

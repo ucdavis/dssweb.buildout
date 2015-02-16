@@ -161,6 +161,7 @@ dl.portlet-static-quick-facts dt {
 	dd.portletItem {
 		background-color: #e5e5e5;
 		cursor: pointer;
+		padding-left: 10px;
 		height: 100px;
 		margin-bottom: 10px;
 		padding-top: 12px;
@@ -335,6 +336,7 @@ dl.portlet dt {
 	line-height: 1.125rem !important;
 	letter-spacing: 0.1em;
 	padding-bottom: 7px;
+	padding-left:35px;
 
 	a, a:link {
 		color:white;
@@ -355,6 +357,8 @@ dt.portletHeader span {
     padding-right: 30px;
     position: relative;
     top: 2px; 
+	display:block;
+	padding-left:10px;
 } 
 .portletItemDetails {
 	font-size: 85%;
@@ -374,7 +378,6 @@ dd.portletFooter {
 dd.portletItem {
 	padding-top:10px;
 	background-color:#f2f2f2;
-	padding-left: 35px;
 	padding-right: 20px;
 	clear:both;
 }
@@ -383,6 +386,24 @@ dd.portletItem {
 	margin-top:-5px;
 	margin-left:0;
 }
+.sidebar-1, .sidebar-2 {
+	margin-top: 73px;
+}
+.sidebar-1 {
+	padding-left:0 !important; 
+	padding-right:0 !important;
+	//margin-top: 145px; // ad-hoc ... set position of sidebar in javascript
+}
+.portlet.adr-only {
+margin-left: 0px;
+}
+.portlet.sm-contacts {
+margin-left: 0;
+margin-right: -15px;
+}
+/*------Contact Page Portlet ------*/
+
+
 /*------ General Content ----------*/
 #content .documentDescription {
 	color: inherit;
