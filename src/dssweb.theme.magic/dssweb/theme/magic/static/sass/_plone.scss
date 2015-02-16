@@ -330,6 +330,11 @@ dl.portlet dt {
 	background-color:$rec_blue;
 	padding-top:.75em;
 	padding-bottom:.75em;
+	text-transform: uppercase;
+	font-size: 0.8125rem;
+	line-height: 1.125rem !important;
+	letter-spacing: 0.1em;
+	padding-bottom: 7px;
 
 	a, a:link {
 		color:white;
@@ -361,12 +366,16 @@ dt.portletHeader span {
 dd.portletFooter {
 	text-align: right;
 	clear:both;
+	padding-top:10px;
+	padding-bottom:10px;
 	}
 
 
 dd.portletItem {
 	padding-top:10px;
 	background-color:#f2f2f2;
+	padding-left: 35px;
+	padding-right: 20px;
 	clear:both;
 }
 
