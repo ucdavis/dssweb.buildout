@@ -64,6 +64,9 @@ class BannerImage(BrowserView):
         if self.findImageURL() is not None:
             return 'has-shadow-am'
         return ''
+        
+    def caption(self):
+        return self.summary
 
     def divStyle(self):
         if self.findImageURL() is not None:

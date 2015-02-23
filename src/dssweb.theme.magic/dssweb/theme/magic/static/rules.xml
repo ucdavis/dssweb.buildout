@@ -70,6 +70,7 @@
       <!--drop all the portal footers on the front page -->
       <drop css:content="dd.portlet-footer" />
       <drop css:content="dd.portletFooter"/>
+	  
    </rules>
    
 
@@ -310,6 +311,7 @@
           });
         </script>
       </replace>
+	 
 
       <!-- desktop megamenu animation -->
       <after theme-children="html/body" css:if-content=".site-psychology">
