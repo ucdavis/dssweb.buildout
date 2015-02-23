@@ -258,7 +258,7 @@
 		  
 	   </rules>
 	   <!--Person directory Page Faceted Nav T2 -->
-	   <rules css:if-theme="body.ourpeople">
+	   <rules css:if-content=".template-facetednavigation_view">
 		   <after css:theme="html body" css:content="html head script"/>
 		    
 		    <!--after css:theme-children="html body" css:content="html head script" /-->

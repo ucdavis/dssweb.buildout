@@ -755,8 +755,8 @@ body.home {
 			#bottom-panel-row {
 				.panel-body {
 					li, a, p {
-						@include font_size(15px,!important);
-						@include line_height(22px,!important);
+						@include font_size(15px);
+						@include line_height(22px);
 					}
 				}
 			}

@@ -160,6 +160,7 @@ dl.portlet-static-quick-facts dt {
 	> dl {
 		background-color:transparent;
 	}
+	
 
 	dd.portletItem {
 		background-color: #e5e5e5;
@@ -177,8 +178,21 @@ dl.portlet-static-quick-facts dt {
 	}
 	 > dl > dt {
 	background:transparent;
-	
+    }
+	> dl > dt > a > span {
+		background:transparent;
+		color:$ucd_black_80;
+		@include font_size(24px, !important);
+		font-weight:normal;
+		padding-top:15px;
+		padding-bottom:15px;
+		text-align:center;
+		border-bottom: none;
+		text-transform:none;
 }
+	
+	
+
 	dl.portlet dt.portletHeader a, a:visited {
 	background:transparent;
 	color:$ucd_black_80;
@@ -232,7 +246,6 @@ dl.portlet-static-quick-facts dt {
 		font-size: 1.5rem !important;
 		font-weight: normal;
 		padding-top: 15px;
-		padding-bottom: 15px;
 		text-align:center;
 
 	}
@@ -257,64 +270,91 @@ dl.portlet-static-quick-facts dt {
 		color:$ucd_blue_100 !important;
           border-bottom: none;
 	}
-
+	> dl > dt > a > span {
+		background:transparent;
+		color:$ucd_black_80;
+		@include font_size(24px, !important);
+		font-weight:normal;
+		padding-top:15px;
+		padding-bottom:15px;
+		text-align:center;
+		border-bottom: none;
+		text-transform:none;
+	}
+ 
 
 }
 
 #right-front-column {
 
-	> dl {
-		background-color:transparent;
-	}
-	dd.portletItem {
-		background-color: #e5e5e5;
-		cursor: pointer;
-		height: 100px;
-		margin-bottom: 10px;
-		width: 100%;
-		padding-top: 12px;
-	 }
-	img.portletItemDetails.image-left {
-		margin-top: -17px;
-		margin-left: 0px;
-		width:100px; //override for index.css
-	}
-	 > dl > dt {
-		background:transparent;
-		font-size: 24px !important;
-		font-size: 1.5rem !important;
-		font-weight: normal;
-		padding-top: 15px;
-		padding-bottom: 15px;
-		text-align:center;
+		> dl {
+			background-color:transparent;
+		}
+		dd.portletItem {
+			background-color: transparent;
+			cursor: pointer;
+			height: 100px;
+			margin-bottom: 10px;
+			width: 100%;
+			padding-top: 12px;
+		 }
+		img.portletItemDetails.image-left {
+			margin-top: -17px;
+			margin-left: 0px;
+			width:100px; //override for index.css
+		}
+		 > dl > dt {
+			background:transparent;
+			font-size: 24px !important;
+			font-size: 1.5rem !important;
+			font-weight: normal;
+			/* padding-top: 0; */
+			padding-bottom: 0; 
+			text-align:center;
+
+		}
+		dt.portletHeader span {
+			text-transform:none;
+			font-size:15px;
+			color:$ucd_black_80;
+		}
+		dl.portlet dt.portletHeader a, a:visited {
+			background:transparent;
+			color:$ucd_black_80;
+			@include font_size(24px, !important);
+			font-weight:normal;
+			padding-top:15px;
+			padding-bottom:15px;
+			text-align:center;
+			border-bottom: none;
+		}
+		dl.portlet a, a:visited {
+			background:transparent;
+			color:$ucd_blue_100;
+		}
+		dl.portlet a:hover {
+			text-decoration:underline;
+		}
+		a.tile {
+			color:$ucd_blue_100 !important;
+	          border-bottom: none;
+		}
+		> dl > dt > a > span {
+			background:transparent;
+			color:$ucd_black_80;
+			@include font_size(24px, !important);
+			font-weight:normal;
+			padding-top:15px;
+			padding-bottom:15px;
+			text-align:center;
+			border-bottom: none;
+			text-transform:none;
+		}
+
+
 
 	}
-	dl.portlet dt.portletHeader a, a:visited {
-		background:transparent;
-		color:$ucd_black_80;
-		@include font_size(24px, !important);
-		font-weight:normal;
-		padding-top:15px;
-		padding-bottom:15px;
-		text-align:center;
-		border-bottom: none;
-	}
-	dl.portlet a, a:visited {
-		background:transparent;
-		color:$ucd_blue_100;
-	}
-	dl.portlet a:hover {
-		text-decoration:underline;
-	}
-	a.tile {
-		color:$ucd_blue_100 !important;
-          border-bottom: none;
-	}
-
-
-
-}
-
+	
 dl.portlet a:link {
   color: $ucd_blue_100;
   border-bottom: none;
