@@ -687,6 +687,15 @@ ul#footer-nav {
 
 	}
 }
+#portal-footer {
+	clear:both;
+}
+#portal-footer > p {
+color: white;
+margin-right: 135px;
+font-size: 0.75rem;
+line-height: 1.4em;
+}
 /*--- Logo responsive magic ---*/
 @media screen and (min-width:991px)
 {

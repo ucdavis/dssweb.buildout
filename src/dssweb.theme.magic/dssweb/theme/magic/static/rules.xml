@@ -302,6 +302,7 @@
                method="raw"/>
       <drop css:theme="#foot-center" />
       <drop css:theme="#foot-right" />
+	  <replace css:theme="#copyright" css:content="#portal-footer" />
 
 
       <replace css:theme="#wallpaper_fix">
