@@ -99,7 +99,7 @@
 		         <replace css:theme-children="#middle-front-column"
 		                  css:content=".portletContentLeadImageCollectionPortlet.quick-facts" />
 		         <replace css:theme-children="#right-front-column"
-		                  css:content=".portlet-static-latest-news" />
+		                  css:content=".portletContentLeadImageCollectionPortlet.spotlight-news" />
 		   		   </rules>
       <!-- rule to set up title to replace static logo on ipad/mobile -->
       <replace css:theme-children="#logosm h1">

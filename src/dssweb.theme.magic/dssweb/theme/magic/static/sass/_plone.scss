@@ -372,13 +372,13 @@ border-bottom:transparent;
 dl.portlet dt {
 	display: block;
 	background-color:$rec_blue;
-	padding-top:.75em;
-	padding-bottom:.75em;
+	/*padding-top:.75em;
+	padding-bottom:.75em; */
 	text-transform: uppercase;
 	font-size: 0.8125rem;
 	line-height: 1.125rem !important;
 	letter-spacing: 0.1em;
-	padding-bottom: 7px;
+	/* padding-bottom: 7px;*/
 	padding-left:35px;
 
 	a, a:link {
@@ -395,10 +395,9 @@ dt.portletHeader span {
     text-transform: uppercase;
     font-size: 0.8125rem;
     line-height: 1.125rem !important;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.2em;
     padding-bottom: 4px;
     padding-right: 30px;
-    position: relative;
     top: 2px; 
 	display:block;
 	padding-left:10px;
@@ -420,6 +419,7 @@ dd.portletFooter {
 
 dd.portletItem {
 	padding-top:10px;
+	padding-bottom:20px;
 	background-color:#f2f2f2;
 	padding-right: 20px;
 	clear:both;
