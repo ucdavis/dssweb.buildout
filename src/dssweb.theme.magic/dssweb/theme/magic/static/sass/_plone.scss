@@ -93,6 +93,21 @@ a.hasDropDown {
     background-position:14em 50%;
     background-repeat:no-repeat;
 }
+/*----------Email Links---------*/
+.email-link {
+     display: inline-block;
+	text-transform:uppercase;
+     height: 16px;
+     padding-left: 22px;
+     background: url(../images/icons/email.gif) 0 70% no-repeat;
+     text-decoration: none; }
+	
+.email-link a:hover{
+		text-decoration: underline;
+	}
+	
+	
+
 
 /*---- Person tile -----*/
 span.personName {
@@ -184,11 +199,12 @@ dl.portlet-static-quick-facts dt {
 		color:$ucd_black_80;
 		@include font_size(24px, !important);
 		font-weight:normal;
-		padding-top:15px;
+		/*padding-top:15px; */
 		padding-bottom:15px;
 		text-align:center;
 		border-bottom: none;
 		text-transform:none;
+		letter-spacing: 0.1em;
 }
 	
 	
@@ -198,7 +214,7 @@ dl.portlet-static-quick-facts dt {
 	color:$ucd_black_80;
 	@include font_size(24px, !important);
 	font-weight:normal;
-	padding-top:15px;
+	/*padding-top:15px; */
 	padding-bottom:15px;
 	text-align:center;
 	border-bottom: none;
@@ -216,6 +232,7 @@ dl.portlet-static-quick-facts dt {
 			color:$ucd_blue_100 !important;
 	          border-bottom: none;
 			position:relative;
+			
 
 		}
 
@@ -245,7 +262,7 @@ dl.portlet-static-quick-facts dt {
 		font-size: 24px !important;
 		font-size: 1.5rem !important;
 		font-weight: normal;
-		padding-top: 15px;
+		/*padding-top: 15px; */
 		text-align:center;
 
 	}
@@ -255,7 +272,7 @@ dl.portlet-static-quick-facts dt {
 		@include font_size(24px, !important);
 		font-weight:normal;
 		padding-top:15px;
-		padding-bottom:15px;
+		/* padding-bottom:15px; */
 		text-align:center;
 		border-bottom: none;
 	}
@@ -275,11 +292,12 @@ dl.portlet-static-quick-facts dt {
 		color:$ucd_black_80;
 		@include font_size(24px, !important);
 		font-weight:normal;
-		padding-top:15px;
+		/* padding-top:15px; */
 		padding-bottom:15px;
 		text-align:center;
 		border-bottom: none;
 		text-transform:none;
+		letter-spacing: 0.1em;
 	}
  
 
@@ -308,7 +326,6 @@ dl.portlet-static-quick-facts dt {
 			font-size: 24px !important;
 			font-size: 1.5rem !important;
 			font-weight: normal;
-			/* padding-top: 0; */
 			padding-bottom: 0; 
 			text-align:center;
 
@@ -316,15 +333,17 @@ dl.portlet-static-quick-facts dt {
 		dt.portletHeader span {
 			text-transform:none;
 			font-size:15px;
+			letter-spacing:0.1em;
 			color:$ucd_black_80;
+			padding-top:0;
 		}
 		dl.portlet dt.portletHeader a, a:visited {
 			background:transparent;
 			color:$ucd_black_80;
 			@include font_size(24px, !important);
 			font-weight:normal;
-			padding-top:15px;
-			padding-bottom:15px;
+	      /*		padding-top:15px; */
+ 			padding-bottom:15px;
 			text-align:center;
 			border-bottom: none;
 		}
@@ -344,11 +363,12 @@ dl.portlet-static-quick-facts dt {
 			color:$ucd_black_80;
 			@include font_size(24px, !important);
 			font-weight:normal;
-			padding-top:15px;
-			padding-bottom:15px;
+			/* padding-top:0px; */
+			padding-bottom:0px;
 			text-align:center;
 			border-bottom: none;
 			text-transform:none;
+			letter-spacing: 0.1em;
 		}
 
 
@@ -491,6 +511,11 @@ margin: 1em 0;
 .field.error input[type="text"][name$=".title"],
 .error input#title {
     width: 99%;
+}
+div.field > img {
+padding-top: 5px;
+padding-bottom: 5px;
+float: right;
 }
 
 .fieldRequired {
@@ -737,6 +762,9 @@ line-height: 1.4em;
 
 }
 /*Forms */
+.formControls {
+	padding-top:10px;
+}
 input.button {
 height: 40px;
 width: 120px;

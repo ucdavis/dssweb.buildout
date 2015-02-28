@@ -18,6 +18,7 @@
 		<theme href="t7_contact.html" css:if-content="body.portaltype-dsscontact" />
 
        <theme href="t5_generic_landing.html" css:if-content=".subsection-prospective-students"/>
+	  <theme href="t11_calendar.html" css:if-content=".template-solgemafullcalendar_view" />
       <theme href="t4_adhoc.html" />
 
       <!-- Replace title with Plone's page title  -->
@@ -92,15 +93,39 @@
 		   </rules>
 		   
 	  <!--Other sites-->	   
-
+	  <!--front page -->
          <rules css:if-content="body.portaltype-front-page" >	  
 		         <replace css:theme-children="#left-front-column"
 		                  css:content=".portletContentLeadImageCollectionPortlet.featured-courses" />
 		         <replace css:theme-children="#middle-front-column"
 		                  css:content=".portletContentLeadImageCollectionPortlet.quick-facts" />
 		         <replace css:theme-children="#right-front-column"
-		                  css:content=".portletContentLeadImageCollectionPortlet.spotlight-news" />
-		   		   </rules>
+		                  css:content=".portlet-static-spotlight-news" />
+
+				        <!-- News Happy Box -->
+				        <replace css:content=".front-page-news > dl > dd"
+				                 css:theme-children="#container-1 > div > div > div.content-wrap"  />
+				        <copy attributes="href"
+				              css:content=".front-page-news > dl > dd.portletFooter > span:nth-child(2) > a"
+				              css:theme="#container-1 > div > div > div.bcontroller > a"  />
+
+				        <!--  About Happy Box -->
+				        <replace css:content="#content-core"
+				                 css:theme-children="#container-2 div.content-wrap"  />
+				        <copy attributes="href"
+				              css:content="#portaltab-quick-facts > a"
+				              css:theme="#container-2 > div > div > div.bcontroller > a" />
+
+				  		  <!-- Events Happy Box -->
+				  	    <copy css:content=".front-page-events > dl > dd"
+				              css:theme="#container-3 > div > div > div.content-wrap" />
+				    		<copy attributes="href"
+				              css:content=".front-page-events > dl > dd.portletFooter > span:nth-child(2) > a"
+				              css:theme="#container-3 > div > div > div.bcontroller > a"  />
+
+				    		<!-- Front Page -->
+				    		<copy css:content="#parent-fieldname-title" css:theme="#middle-row" />
+		   		   </rules> <!--end front page rules-->
       <!-- rule to set up title to replace static logo on ipad/mobile -->
       <replace css:theme-children="#logosm h1">
          <xsl:for-each css:select="a#portal-logo">
@@ -285,6 +310,12 @@
 		   <replace css:theme-children=".adr-only" css:content=".side-contact" />
 		   <replace css:theme-children=".sm-contacts" css:content=".key-contacts" />
 	   </rules>
+	   <!--T11 Calendar -->
+	   <rules css:if-content="body.template-solgemafullcalendar_view">
+		   <after css:theme="html body" css:content="html head script"/>
+		   <replace theme='//*[@id="content-core"]' content='//*[@id="content-core"]' />
+	   </rules>
+		   
 	   
 	   <!-- Generic Views -->
 	   <rules css:if-not-content="body.portaltype-front-page" >
