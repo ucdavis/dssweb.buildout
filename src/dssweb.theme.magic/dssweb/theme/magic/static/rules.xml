@@ -199,30 +199,9 @@
 	    <xsl:attribute name="value">GO</xsl:attribute>
 	    </replace>
 
-      <!-- News Happy Box -->
-      <replace css:content=".front-page-news > dl > dd"
-               css:theme-children="#container-1 > div > div > div.content-wrap"  />
-      <copy attributes="href"
-            css:content=".front-page-news > dl > dd.portletFooter > span:nth-child(2) > a"
-            css:theme="#container-1 > div > div > div.bcontroller > a"  />
-
-      <!--  About Happy Box -->
-      <replace css:content="#content-core"
-               css:theme-children="#container-2 div.content-wrap"  />
-      <copy attributes="href"
-            css:content="#portaltab-quick-facts > a"
-            css:theme="#container-2 > div > div > div.bcontroller > a" />
-
-		  <!-- Events Happy Box -->
-	    <copy css:content=".front-page-events > dl > dd"
-            css:theme="#container-3 > div > div > div.content-wrap" />
-  		<copy attributes="href"
-            css:content=".front-page-events > dl > dd.portletFooter > span:nth-child(2) > a"
-            css:theme="#container-3 > div > div > div.bcontroller > a"  />
-
-  		<!-- Front Page -->
-  		<copy css:content="#parent-fieldname-title" css:theme="#middle-row" />
-
+    
+  		
+  		
   		<!-- Breadcrumbs for all but front page -->
   		<replace css:theme-children=".breadcrumb" css:content="#portal-breadcrumbs" />
   		<drop css:content="#breadcrumbs-you-are-here" />
@@ -236,6 +215,13 @@
     	<!-- Description -->
     	<replace css:theme="p.intro" css:content="#parent-fieldname-description" />
 	<before css:theme="h1.content-title" css:content="#kssPortalMessage" />
+   <!--T11 Calendar -->
+   <rules css:if-content="body.template-solgemafullcalendar_view">
+	   <after css:theme="html body" css:content="html head script"/>
+	   <replace css:theme-children="#calendar" css:content="#calendar" />
+	  
+   </rules>
+	   
 
     	<!-- Content-core-T4 --> 
     	<replace css:theme-children=".panel-body" css:content="#content-core" css:if-content=".portaltype-document" />
@@ -310,18 +296,13 @@
 		   <replace css:theme-children=".adr-only" css:content=".side-contact" />
 		   <replace css:theme-children=".sm-contacts" css:content=".key-contacts" />
 	   </rules>
-	   <!--T11 Calendar -->
-	   <rules css:if-content="body.template-solgemafullcalendar_view">
-		   <after css:theme="html body" css:content="html head script"/>
-		   <replace theme='//*[@id="content-core"]' content='//*[@id="content-core"]' />
-	   </rules>
-		   
+	  
 	   
 	   <!-- Generic Views -->
-	   <rules css:if-not-content="body.portaltype-front-page" >
+	   <!--rules css:if-not-content="body.portaltype-front-page" >
 		   <replace css:theme=".panel-body" css:content=".tileItem" />
 		   <replace css:theme="#content-core" css:content="#content-core"/>
-	   </rules>
+	   </rules-->
 		   
 
       <!--- Footer -->
