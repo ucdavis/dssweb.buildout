@@ -298,11 +298,14 @@
 	   </rules>
 	  
 	   
-	   <!-- Generic Views -->
-	   <!--rules css:if-not-content="body.portaltype-front-page" >
-		   <replace css:theme=".panel-body" css:content=".tileItem" />
-		   <replace css:theme="#content-core" css:content="#content-core"/>
-	   </rules-->
+	   <!-- Folder listing views -->
+	   
+	   <rules css:if-content=".portaltype-folder">
+		   <rules css:if-not-content=".template-facetednavigation_view">
+			   <replace css:theme=".panel-body" css:content=".tileItem" />
+			   <replace css:theme="#content-core" css:content="#content-core"/>
+		   </rules>
+	  </rules> 
 		   
 
       <!--- Footer -->
