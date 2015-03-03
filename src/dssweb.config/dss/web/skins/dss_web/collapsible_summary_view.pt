@@ -18,7 +18,9 @@
                 item_object item/getObject;
                 item_has_leadimage item/hasContentLeadImage;
                 item_has_thumb exists:item_object/image_thumb;
-                ">
+                item_has_contents python: (item_type == 'Folder') and len(item_object.getFolderContents()) > 0;
+                "
+                tal:attributes="class python:(item_type == 'Folder') and (not item_has_contents) and 'nofollow'">
 
               <h3 metal:define-macro="listitem">
                 <a href="#"
