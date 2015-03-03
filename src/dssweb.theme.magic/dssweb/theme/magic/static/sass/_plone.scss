@@ -815,7 +815,7 @@ margin-right: -12px;
 line-height: 2em;
 }
 /*---------solgema full calendar -------------*/
-table.fc-header td {
+/*table.fc-header td {
     position:relative;
 }
 
@@ -872,17 +872,16 @@ table.fc-header td {
 
 #calendar .fc-header-center table {
     margin:auto;
-}
+}*/
 
-.fc-button {
+/*.fc-button {
     position: relative;
     background-color: $ucd_blue_10 !important;
     display: inline-block;
-    padding: 0px 0.6em;
     white-space: nowrap;
-    cursor: pointer; }
+    cursor: pointer; }*/
 
-.fc-button-today, .fc-button-month, .fc-button-agendaWeek, .fc-button-agendaDay {
+/*.fc-button-today, .fc-button-month, .fc-button-agendaWeek, .fc-button-agendaDay {
 	background-color: $ucd_blue_10;
 	display: inline-block;
 	width: 82px;
@@ -890,8 +889,8 @@ table.fc-header td {
 	padding-top: 8px;
 	padding-bottom: 15px;
 	height: 40px !important;
-	text-align: center;
-}
+	text-align: center; 
+} */
 /*.fc-button .ui-icon {
     position: relative;
     float: left;
@@ -906,7 +905,7 @@ padding-top: 8px;
 
 margin-bottom: -14px;
 height: 40px;
-background: url("../images/icons/d-pager-prev.gif") no-repeat scroll 0px transparent; 
+background: url("../images/icons/d-pager-prev.gif") no-repeat scroll 0px $ucd_blue_10; 
 }
 .fc-button.fc-button-next.ui-state-default.ui-corner-right{
 background-position: center center;
@@ -914,7 +913,7 @@ height: 40px;
 width: 40px;
 margin-left:2px;
 margin-bottom:-14px;
-background: url("../images/icons/d-pager-next.gif") no-repeat scroll 0px transparent; 
+background: url("../images/icons/d-pager-next.gif") no-repeat scroll 0px $ucd_blue_10; 
 }
 tr.fc-first.fc-last {
 background-color: $rec_blue;
@@ -925,7 +924,6 @@ table.fc-header {
 margin-bottom: 20px;
 }
 td.fc-header-right {
-float: right;
 margin-bottom: -14px;
 }
 th.fc-day-header.fc-mon.ui-widget-header.fc-first {
