@@ -565,6 +565,9 @@ padding-right: 5px;
 .uc.blue-head {
 	color:#008EAA;
 }
+div#nested-left > div > p > a {
+font-size: small;
+}
 /*------Collection Summary View with Images -------*/
 tileItem.visualIEFloatFix {
 padding-top: 3%;
@@ -612,6 +615,9 @@ border-bottom:transparent;
     padding-right:10px;
 }
 
+.portletNavigationTree > dd {
+padding-left: 35px;
+}
 /*--Basic rec pool Blue Portlet --*/
 
 
