@@ -101,12 +101,12 @@ a.hasDropDown {
      padding-left: 22px;
      background: url(../images/icons/email.gif) 0 70% no-repeat;
      text-decoration: none; }
-	
+
 .email-link a:hover{
 		text-decoration: underline;
 	}
-	
-	
+
+
 
 
 /*---- Person tile -----*/
@@ -175,7 +175,7 @@ dl.portlet-static-quick-facts dt {
 	> dl {
 		background-color:transparent;
 	}
-	
+
 
 	dd.portletItem {
 		background-color: #e5e5e5;
@@ -206,8 +206,8 @@ dl.portlet-static-quick-facts dt {
 		text-transform:none;
 		letter-spacing: 0.1em;
 }
-	
-	
+
+
 
 	dl.portlet dt.portletHeader a, a:visited {
 	background:transparent;
@@ -218,7 +218,7 @@ dl.portlet-static-quick-facts dt {
 	padding-bottom:15px;
 	text-align:center;
 	border-bottom: none;
-	
+
 }
 
 	dl.portlet a, a:visited {
@@ -232,7 +232,7 @@ dl.portlet-static-quick-facts dt {
 			color:$ucd_blue_100 !important;
 	          border-bottom: none;
 			position:relative;
-			
+
 
 		}
 
@@ -299,7 +299,7 @@ dl.portlet-static-quick-facts dt {
 		text-transform:none;
 		letter-spacing: 0.1em;
 	}
- 
+
 
 }
 
@@ -326,7 +326,7 @@ dl.portlet-static-quick-facts dt {
 			font-size: 24px !important;
 			font-size: 1.5rem !important;
 			font-weight: normal;
-			padding-bottom: 0; 
+			padding-bottom: 0;
 			text-align:center;
 
 		}
@@ -374,7 +374,7 @@ dl.portlet-static-quick-facts dt {
 
 
 	}
-	
+
 dl.portlet a:link {
   color: $ucd_blue_100;
   border-bottom: none;
@@ -418,10 +418,10 @@ dt.portletHeader span {
     letter-spacing: 0.2em;
     padding-bottom: 4px;
     padding-right: 30px;
-    top: 2px; 
+    top: 2px;
 	display:block;
 	padding-left:10px;
-} 
+}
 .portletItemDetails {
 	font-size: 85%;
 	padding-top: .5em;
@@ -453,7 +453,7 @@ dd.portletItem {
 	margin-top: 73px;
 }
 .sidebar-1 {
-	padding-left:0 !important; 
+	padding-left:0 !important;
 	padding-right:0 !important;
 	//margin-top: 145px; // ad-hoc ... set position of sidebar in javascript
 }
@@ -767,7 +767,7 @@ line-height: 1.4em;
     }
 
     /* Plone globalnav */
-   
+
 
 }
 /*Forms */
@@ -892,12 +892,12 @@ line-height: 2em;
 	padding-top: 8px;
 	padding-bottom: 15px;
 	height: 40px !important;
-	text-align: center; 
+	text-align: center;
 } */
 /*.fc-button .ui-icon {
     position: relative;
     float: left;
-   margin-top: -50%; 
+   margin-top: -50%;
 } */
 
 .fc-button.fc-button-prev.ui-state-default.ui-corner-left{
@@ -908,7 +908,7 @@ padding-top: 8px;
 
 margin-bottom: -14px;
 height: 40px;
-background: url("../images/icons/d-pager-prev.gif") no-repeat scroll 0px $ucd_blue_10; 
+background: url("../images/icons/d-pager-prev.gif") no-repeat scroll 0px $ucd_blue_10;
 }
 .fc-button.fc-button-next.ui-state-default.ui-corner-right{
 background-position: center center;
@@ -916,7 +916,7 @@ height: 40px;
 width: 40px;
 margin-left:2px;
 margin-bottom:-14px;
-background: url("../images/icons/d-pager-next.gif") no-repeat scroll 0px $ucd_blue_10; 
+background: url("../images/icons/d-pager-next.gif") no-repeat scroll 0px $ucd_blue_10;
 }
 tr.fc-first.fc-last {
 background-color: $rec_blue;
@@ -1296,6 +1296,11 @@ label.state-expired {
 label.syndicated {
     color: #008000;
 }
+
+section.thumbify-processed.nofollow a.readmore {
+    display: none !important;
+}
+
 
 /* @end */
 
