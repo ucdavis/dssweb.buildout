@@ -314,10 +314,12 @@
 	   
 	   <rules css:if-content=".portaltype-folder">
 	   	   <rules css:if-not-content=".template-facetednavigation_view">
+			   <rules css:if-not-content=".template-solgemafullcalendar_view">
 	   		   <replace css:theme=".panel-body" css:content=".tileItem" />
 	   		   <replace css:theme="#content-core" css:content="#content-core"/>
 	   	   </rules>
 	   </rules> 
+   </rules>
 		   
 	  
 		   
