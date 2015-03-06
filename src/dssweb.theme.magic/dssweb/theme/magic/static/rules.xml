@@ -19,7 +19,7 @@
 
        <theme href="t5_generic_landing.html" css:if-content=".subsection-prospective-students"/>
 	  <theme href="t11_calendar.html" css:if-content=".template-solgemafullcalendar_view" />
-      <theme href="t4_adhoc.html" />
+      <theme href="t4_adhoc2.html" />
 
       <!-- Replace title with Plone's page title  -->
       <replace css:theme="html head title" css:content="html head title" />
