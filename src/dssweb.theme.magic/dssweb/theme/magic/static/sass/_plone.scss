@@ -261,7 +261,7 @@ dl.portlet-static-quick-facts dt {
 	 > dl > dt {
 		background:transparent;
 		font-size: 24px !important;
-		font-size: 1.5rem !important;
+		font-size: 1.3rem !important;
 		font-weight: normal;
 		/*padding-top: 15px; */
 		text-align:center;
@@ -325,7 +325,7 @@ dl.portlet-static-quick-facts dt {
 		 > dl > dt {
 			background:transparent;
 			font-size: 24px !important;
-			font-size: 1.5rem !important;
+			font-size: 1.3rem !important;
 			font-weight: normal;
 			padding-bottom: 0;
 			text-align:center;
@@ -817,6 +817,12 @@ margin-right: -12px;
 }
 .org.follow {
 line-height: 2em;
+}
+/*---overrides ---*/
+#thumb-section .panel-group section .panel-heading .panel-title a .thumb-txt {
+  display: block;
+  margin-left: 130px;
+  letter-spacing: -0.01em;
 }
 /*---------solgema full calendar -------------*/
 /*table.fc-header td {

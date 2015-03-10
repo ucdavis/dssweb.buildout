@@ -943,7 +943,7 @@ input { text-align: center; }
 #thumb-section .panel-group section .panel-heading { background-color: transparent !important; padding: 0 !important; border-top-left-radius: 0; border-top-right-radius: 0; }
 #thumb-section .panel-group section .panel-heading .panel-title { background-color: transparent !important; }
 #thumb-section .panel-group section .panel-heading .panel-title a { display: block; height: 70px; width: 100%; background: url(../images/icons/blue-100-right-arrow-down.png) 98% 50% no-repeat #f0dd99; }
-#thumb-section .panel-group section .panel-heading .panel-title a .thumb-txt { display: block; margin-left: 150px; }
+#thumb-section .panel-group section .panel-heading .panel-title a .thumb-txt { display: block; margin-left: 130px; letter-spacing:-0.01em; }
 #thumb-section .panel-group section .panel-heading .panel-title a img { float: left; }
 #thumb-section .panel-group section .panel-heading .panel-title a.collapsed { background: url(../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat #DAAA00; }
 #thumb-section .panel-group section .panel-heading .panel-title a:hover { cursor: pointer !important; background-color: #f0dd99; }
