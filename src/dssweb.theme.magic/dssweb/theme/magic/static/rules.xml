@@ -298,7 +298,7 @@
 	   <rules css:if-content=".subsection-prospective-students" >
              <drop css:content=".image-under-banner" />
               <replace css:theme="#corner-box-target" css:content=".image-under-banner" method="raw" />
-		    	<replace css:theme-children=".panel-body" css:content="#content-core" />
+		    	<replace css:theme-children="#nested-right" css:content="#content-core" />
 		</rules> 
 	   <!--Contact Page rules -->
 	   <rules css:if-content="body.portaltype-dsscontact" >
