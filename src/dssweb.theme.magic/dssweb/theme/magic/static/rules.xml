@@ -138,12 +138,11 @@
 	 <drop content='//*[@id="portaltab-give"]' />
          <drop content='//*[@id="portaltab-news"]' />
          <drop content='//*[@id="portaltab-quick-facts"]' />
+		 <drop content='//*[@id="portaltab-contact"]' />
       <!--utility menu links -->
       <replace css:theme="#uti-events > a"
                css:content="#portaltab-events > a" method="raw" />
-      <copy attributes="href"
-            css:content="#portaltab-news > a"
-            css:theme="#uti-news > a"  />
+      <replace css:theme="li#uti-news > a" css:content="#portaltab-contact > a" />
 	    <copy attributes="href"
             css:content="#portaltab-give > a"
             css:theme="#uti-give > a" />
@@ -153,8 +152,8 @@
 
       <!-- desktop menu bar -->
 	  
-      <!-- Disabled Mega <after css:content="#portal-globalnav" css:theme=".top-bar ul.title-area" />
-	  <drop theme='//*[@id="uti-share"]' /> -->
+      <!-- Disabled Mega <after css:content="#portal-globalnav" css:theme=".top-bar ul.title-area" / -->
+	  <drop theme='//*[@id="uti-share"]' />
 
       <!-- mobile menu bar -->
       <replace css:theme-children="ul.left" css:content-children="#portal-globalnav" />
@@ -206,6 +205,8 @@
          <replace css:theme-children="#footer-middle"
                   css:content=".footer-nav > dl > dd > ul.navTree.navTreeLevel0"
                   method="raw"/>
+	    <replace css:theme-children="#foot-social"
+					  css:content-children=".portlet-static-social-media > ul" />
          <drop css:theme="#foot-center" />
          <drop css:theme="#foot-right" />
    	  <replace css:theme="#copyright" css:content="#portal-footer" />
@@ -351,7 +352,8 @@
           });
         </script>
       </after>
-
+	  <!--Individual Site rules -->
+	 
       <!--Mobile -->
       <!--drop theme='//*[@id="share-util-btn"]' /-->
       <copy attributes="href" css:content="#portletwrapper-706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f4953530a636f6e74616374 > div > p:nth-child(3) > a" css:theme="#email-util-btn > a" />
