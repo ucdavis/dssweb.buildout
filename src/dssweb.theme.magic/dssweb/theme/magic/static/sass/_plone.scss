@@ -175,6 +175,7 @@ dl.portlet-static-quick-facts dt {
 
 	> dl {
 		background-color:transparent;
+		font-size:1.5rem;
 	}
 
 
@@ -185,7 +186,7 @@ dl.portlet-static-quick-facts dt {
 		height: 100px;
 		margin-bottom: 10px;
 		padding-top: 12px;
-		width: 100%;
+		margin-left: 0px;
 	 }
 
 	img.portletItemDetails.image-left {
@@ -194,19 +195,42 @@ dl.portlet-static-quick-facts dt {
 	}
 	 > dl > dt {
 	background:transparent;
+	padding-left:0px;
+	
     }
+	@media screen and (min-width: 768px){
 	> dl > dt > a > span {
-		background:transparent;
+      color:$ucd_black_80;
+	  font-weight: normal !important;
+	  letter-spacing: 0 !important;
+	  text-transform: none;
+	  font-size: 1.5rem;
+	  padding: 15px 0 10px 0 !important;
+	  letter-spacing: 0.075em;
+	  text-align:center;
+	}
+	
+   }
+     @media screen and (max-width: 991px) and (min-width: 768px){
+     > dl > dt > a > span { 
+     
+     font-size: 1.125rem !important;	
+	}
+  }
+		
+	
+		/*background:transparent;
 		color:$ucd_black_80;
 		@include font_size(24px, !important);
 		font-weight:normal;
 		/*padding-top:15px; */
-		padding-bottom:15px;
+		/*padding-bottom:15px;
 		text-align:center;
 		border-bottom: none;
 		text-transform:none;
-		letter-spacing: 0.1em;
-}
+		letter-spacing: 0.1em;*/
+		
+
 
 
 
@@ -244,27 +268,42 @@ dl.portlet-static-quick-facts dt {
 	> dl {
 		background-color:transparent;
 	}
-
+	@media screen and (min-width: 768px){
+	> dl > dt > a > span {
+      color:$ucd_black_80;
+	  font-weight: normal !important;
+	  letter-spacing: 0 !important;
+	  text-transform: none;
+	  font-size: 1.5rem;
+	  padding: 15px 0 10px 0 !important;
+	  letter-spacing: 0.075em;
+	}
+	
+   }
+     @media screen and (max-width: 991px) and (min-width: 768px){
+     > dl > dt > a > span { 
+     
+     font-size: 1.125rem !important;	
+	}
+  }
 	dd.portletItem {
 		background-color: #e5e5e5;
 		cursor: pointer;
 		height: 100px;
 		margin-bottom: 10px;
-		width: 100%;
 		padding-top: 12px;
+		margin-left: 0px;
 	 }
 
 	img.portletItemDetails.image-left {
 		margin-top: -17px;
 		margin-left: 0px;
 	}
-	 > dl > dt {
+	> dl > dt {
 		background:transparent;
-		font-size: 24px !important;
-		font-size: 1.3rem !important;
-		font-weight: normal;
+		padding-left:0px;
 		/*padding-top: 15px; */
-		text-align:center;
+		text-align:center; 
 
 	}
 	dl.portlet dt.portletHeader a, a:visited {
@@ -288,18 +327,18 @@ dl.portlet-static-quick-facts dt {
 		color:$ucd_blue_100 !important;
           border-bottom: none;
 	}
-	> dl > dt > a > span {
+	/*> dl > dt > a > span {
 		background:transparent;
 		color:$ucd_black_80;
 		@include font_size(24px, !important);
 		font-weight:normal;
 		/* padding-top:15px; */
-		padding-bottom:15px;
+		/*padding-bottom:15px;
 		text-align:center;
 		border-bottom: none;
 		text-transform:none;
 		letter-spacing: 0.1em;
-	}
+	}*/
 
 
 }
@@ -314,40 +353,42 @@ dl.portlet-static-quick-facts dt {
 			cursor: pointer;
 			height: 100px;
 			margin-bottom: 10px;
-			width: 100%;
-			padding-top: 12px;
+			margin-left: 0px;
+			padding-top:15px;
 		 }
 		img.portletItemDetails.image-left {
-			margin-top: -17px;
+			/*margin-top: -17px;*/
 			margin-left: 0px;
 			width:100px; //override for index.css
 		}
 		 > dl > dt {
 			background:transparent;
-			font-size: 24px !important;
-			font-size: 1.3rem !important;
+			/*font-size: 24px !important;
+			font-size: 1.3rem !important;*/
+			padding-top:10px;
 			font-weight: normal;
 			padding-bottom: 0;
+			padding-left:0px;
 			text-align:center;
 
 		}
-		dt.portletHeader span {
+		/*dt.portletHeader span {
 			text-transform:none;
 			font-size:15px;
 			letter-spacing:0.1em;
 			color:$ucd_black_80;
 			padding-top:0;
-		}
-		dl.portlet dt.portletHeader a, a:visited {
+		} */
+		/*dl.portlet dt.portletHeader a, a:visited {
 			background:transparent;
-			color:$ucd_black_80;
-			@include font_size(24px, !important);
+			color:$ucd_black_80;*/
+			/*@include font_size(24px, !important);
 			font-weight:normal;
 	      /*		padding-top:15px; */
- 			padding-bottom:15px;
+ 			/*padding-bottom:15px;
 			text-align:center;
-			border-bottom: none;
-		}
+			border-bottom: none; 
+		}*/
 		dl.portlet a, a:visited {
 			background:transparent;
 			color:$ucd_blue_100;
@@ -355,22 +396,40 @@ dl.portlet-static-quick-facts dt {
 		dl.portlet a:hover {
 			text-decoration:underline;
 		}
-		a.tile {
+		/*a.tile {
 			color:$ucd_blue_100 !important;
 	          border-bottom: none;
+		} */
+		@media screen and (min-width: 768px){
+		> dl > dt > span > a.tile{
+	      color:$ucd_black_80;
+		  font-weight: normal !important;
+		  letter-spacing: 0 !important;
+		  text-transform: none;
+		  font-size: 1.5rem !important;
+		  padding: 15px 0 10px 0 !important;
+		  letter-spacing: 0.075em;
 		}
-		> dl > dt > a > span {
+	
+	   }
+	     @media screen and (max-width: 991px) and (min-width: 768px){
+	     > dl > dt > span > a.tile { 
+     
+	     font-size: 1.125rem !important;	
+		}
+	  }
+		/*> dl > dt > a > span {
 			background:transparent;
 			color:$ucd_black_80;
 			@include font_size(24px, !important);
 			font-weight:normal;
 			/* padding-top:0px; */
-			padding-bottom:0px;
+			/*padding-bottom:0px;
 			text-align:center;
 			border-bottom: none;
 			text-transform:none;
 			letter-spacing: 0.1em;
-		}
+		}*/
 
 
 

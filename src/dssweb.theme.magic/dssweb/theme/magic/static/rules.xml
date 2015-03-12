@@ -28,8 +28,8 @@
       <before css:theme-children="html head" css:content="html head base" />
 
       <!-- Copy meta tags from Plone head -->
-      <before css:theme-children="html head" content="/html/head/meta" />
-
+      <before css:theme-children="html head" css:content="html head meta" />
+	  
       <!-- merge classes from Plone body with theme body -->
       <merge attributes="class" css:theme="body" css:content="body" />
 	  <!--BugHerd. Two rules to accomodate pages from dssmaster -->

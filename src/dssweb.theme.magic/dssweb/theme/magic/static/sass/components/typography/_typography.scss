@@ -828,11 +828,13 @@ body.home {
 		
 		#content, #am-content { // home does not have #content-row
 			.narrow-col {
-				p, li, a {
+				p, li {
 					@include font_size(13px,!important);
 					@include line_height(15px,!important);
 					font-weight: normal !important;
 				}
+				a {
+					font-weight: normal ;}
 				h3 {
 					@include font_size(18px,!important);
 					@include line_height(22px,!important);
