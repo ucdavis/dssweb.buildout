@@ -139,10 +139,16 @@
          <drop content='//*[@id="portaltab-news"]' />
          <drop content='//*[@id="portaltab-quick-facts"]' />
 		 <drop content='//*[@id="portaltab-contact"]' />
+		 <drop content='//*[@id="portaltab-index_html"]' />
       <!--utility menu links -->
+	 <copy attributes="href"
+		 css:content="portaltab-index_html > a"
+		 css:theme="#uti-home > a" />
+	   <replace css:theme="#uti-contact > a"
+	                   css:content="#portaltab-contact > a" method="raw" />
       <replace css:theme="#uti-events > a"
                css:content="#portaltab-events > a" method="raw" />
-      <replace css:theme="li#uti-news > a" css:content="#portaltab-contact > a" />
+      <replace css:theme="li#uti-news > a" css:content="#portaltab-news > a" />
 	    <copy attributes="href"
             css:content="#portaltab-give > a"
             css:theme="#uti-give > a" />

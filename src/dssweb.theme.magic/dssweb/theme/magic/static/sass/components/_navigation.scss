@@ -50,8 +50,17 @@
 			}
 		}
 	}
+	#uti-home{
+		width:6.00%;
+		a {
+			margin-top:3px;
+		}
+	}
+	#uti-contact {
+		width:14.00%;
+	}
 	#uti-news {
-		width:21.92%; //160px
+		width:10.96%; //160px
 	}
 	#uti-events {
 		width:10.96%; //80px
@@ -95,7 +104,7 @@
 		border-right-width: 0;
 		position: relative;
 		overflow: hidden; // keep from flowing off right
-		width: 22.5%; // was 125px;
+		width: 18%; // was 125px;
 		a {
 			
 		}
