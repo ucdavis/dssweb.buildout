@@ -389,7 +389,7 @@ $topbar-arrows: true !default; //Set false to remove the triangle icon from the 
         position: absolute;
         #{$default-float}: 100%;
         top: 0;
-        z-index: 99;
+        z-index: 800;
         @include topbar-hide-dropdown();
 
         li {

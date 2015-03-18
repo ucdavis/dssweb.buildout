@@ -20,6 +20,7 @@
        <theme href="t5_generic_landing.html" css:if-content=".subsection-prospective-students"/>
 	  <theme href="t11_calendar.html" css:if-content=".template-solgemafullcalendar_view" />
 	  <theme href="t14_search.html" css:if-content=".template-search" />
+	  <theme href="t17_fullwidth.html" css:if-content=".portaltype-jqxgrid_page" /> 
       <theme href="t4_adhoc2.html" />
 
       <!-- Replace title with Plone's page title  -->
@@ -144,8 +145,10 @@
 		 <drop content='//*[@id="portaltab-intranet"]' />
       <!--utility menu links -->
 	 <copy attributes="href"
-		 css:content="portaltab-index_html > a"
+		 css:content="#portaltab-index_html > a"
 		 css:theme="#uti-home > a" />
+   <!--replace css:theme="#uti-home > a"
+                   css:content="#portaltab-index_html > a" method="raw" /-->
 	   <replace css:theme="#uti-contact > a"
 	                   css:content="#portaltab-contact > a" method="raw" />
       <replace css:theme="#uti-events > a"
@@ -243,9 +246,14 @@
     	<replace css:theme="p.intro" css:content="#parent-fieldname-description" />
 	<before css:theme="h1.content-title" css:content="#kssPortalMessage" />
    <!--T11 Calendar -->
-   <rules css:if-content="body.template-solgemafullcalendar_view">
+   <rules css:if-content=".template-solgemafullcalendar_view">
 	   <after css:theme="html body" css:content="html head script"/>
 	   <replace css:theme-children="#calendar" css:content="#calendar" />
+	   <replace css:theme-children=".widget-fieldset" css:content="#fieldset-Subject" />
+	   <copy attributes="href"
+		 css:content="a#sfc-ical-export"
+		 css:theme="#ical-icon > a" />
+   <drop css:theme="#rss-icon" />		 
 	  
    </rules>
 	   
@@ -289,6 +297,10 @@
       </rules>
 	  
 	  <!---Courses Page-->
+       <rules css:if-content=".portaltype-jqxgrid_page" >
+    	   <replace css:theme="#content-core" css:content="#content-core" />
+	   <after css:theme="html body" css:content="html head script"/>
+       </rules>
 
       <!--before css:theme="#content-core"
               css:content=".newsImageContainer" css:if-content=".portaltype-dsscourse"/-->
