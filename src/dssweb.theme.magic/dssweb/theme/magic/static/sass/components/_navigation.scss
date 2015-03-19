@@ -183,7 +183,7 @@
 				height: 80px; // was 100%
 				text-align: center;
 				
-				ul.dropdown {
+				ul.dropdown { z-index:800;
 					li {
 						text-align: left;
 					}

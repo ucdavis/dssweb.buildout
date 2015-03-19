@@ -269,9 +269,14 @@
     	
         <before css:theme="#content-core"
                 css:content=".newsImageContainer" css:if-content=".portaltype-document" />
+	
+	
+	<rules css:if-content=".portaltype-dsstwocollumnpage">
+				 
 	    <before css:theme="#content-row"
-		         css:content=".topImageContainer" css:if-content="body.portaltype-dsstwocollumnpage" />
-           
+		         css:content=".topImageContainer" />
+        <replace css:theme-children="#content" css:content=".belowImageContent"/>
+   </rules>
 	
           
 		
