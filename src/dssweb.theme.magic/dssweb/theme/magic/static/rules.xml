@@ -129,11 +129,11 @@
 				    		<copy css:content="#parent-fieldname-title" css:theme="#middle-row" />
 		   		   </rules> <!--end front page rules-->
       <!-- rule to set up title to replace static logo on ipad/mobile -->
-      <replace css:theme-children="#logosm h1">
+      <!--replace css:theme-children=".justname h1">
          <xsl:for-each css:select="a#portal-logo">
            <xsl:value-of select="@title" />
          </xsl:for-each>
-      </replace>
+      </replace-->
 
  <!--drop the events and giving tabs so they can be moved to the utility menu -->
       <drop content='//*[@id="portaltab-events"]' />

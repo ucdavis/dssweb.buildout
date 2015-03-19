@@ -804,26 +804,30 @@ line-height: 1.4em;
 /*--- Logo responsive magic ---*/
 @media screen and (min-width:991px)
 {
-	#logosm {display:none;
-	}
+	.justname {display:none;
+}	
 	h1#parent-fieldname-title {
 	line-height:1.25; }
+
 }
 
 @media screen and (max-width: $screen-md-min){
 	li.name > a#portal-logo {
 		display: none;
 	}
-	#logosm h1 {
-		color:white;
-		text-transform: uppercase;
-		font-size:150%;
-	    margin-top:-30px;
-		padding-left:5px;
-}
+	.justname h1 {
+	     color: white;
+	     text-transform: uppercase;
+	     font-size: 150%;
+	     margin-top: -38px;
+	     padding-left: 10px;
+	     letter-spacing: 0.15em;
+	     font-weight: bold;
+}		
     .homepage-title	{
     	font-size:1.8rem !important;
     }
+
 }
 
 @media screen and (max-width: $screen-md-min) {
