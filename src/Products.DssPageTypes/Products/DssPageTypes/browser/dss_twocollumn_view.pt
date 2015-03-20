@@ -16,13 +16,13 @@
 			        <metal:title define-slot="top-image">
 			   	 <div class="topImageContainer row"
 			   	              tal:condition="context/getMedTopImage">
-			   	             <a href="#"
+			   	             <div
 			   	                tal:define="here_url context/@@plone_context_state/object_url;
 							             MedTopImage context/getMedTopImage;"
 			   	                tal:attributes="href string:$here_url/image/image_view_fullscreen"
 							 id="parent-fieldname-image">
 							   <img class="responsiveimage" tal:attributes="src string:${context/absolute_url}/medTopImage" alt="Graduate Students" />
-							               </a>
+							               </div>
 							 
 							 
 					
