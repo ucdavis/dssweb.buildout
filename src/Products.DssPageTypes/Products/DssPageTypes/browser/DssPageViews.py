@@ -14,7 +14,7 @@ class DssContactView(BrowserView):
     def render_form(self):
          portal = getToolByName(self.context, 'portal_url').getPortalObject()
          form_view = portal.restrictedTraverse('psychology/contact/contact-form/@@embedded')
-         form_view.prefix = 'mypfg'
+         form_view.prefix = 'contact'
          return form_view()
             
     def portal_state(self):

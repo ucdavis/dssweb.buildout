@@ -33,7 +33,7 @@
 			   	             </p>
 			   	         </div>
 			   	 </metal:title>
-
+                <div class="belowImageContent">
                              <metal:title define-slot="content-title">
                                  <metal:comment tal:content="nothing">
                                      If you write a custom title always use
@@ -70,9 +70,10 @@
                              </div>
                             </div>
 
-         
+         </div>
         
     <div tal:replace="structure provider:plone.belowcontentbody" />
+
 
     </tal:main-macro>
 </metal:main>
