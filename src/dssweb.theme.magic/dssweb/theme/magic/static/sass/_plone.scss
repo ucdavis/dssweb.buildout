@@ -365,7 +365,8 @@ dl.portlet-static-quick-facts dt {
 			height: 100px;
 			margin-bottom: 10px;
 			margin-left: 0px;
-			padding-top:15px;
+			padding-top:0;
+			margin-top:-15px;
 		 }
 		img.portletItemDetails.image-left {
 			/*margin-top: -17px;*/
@@ -820,7 +821,7 @@ line-height: 1.4em;
 	     color: white;
 	     text-transform: uppercase;
 	     font-size: 150%;
-	     margin-top: -30px;
+	     margin-top: -40px;
 	     padding-left: 10px;
 	     letter-spacing: 0.1em;
 	     font-weight: bold;
@@ -830,6 +831,26 @@ line-height: 1.4em;
     }
 
 }
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768px < width < 991px
+	li.name > a#portal-logo {
+		display: none;
+	}
+	.justname h1 {
+		font-family:Verdana;
+	     color: white;
+	     text-transform: uppercase;
+	     font-size: 125%;
+	     margin-top: -30px;
+	     padding-left: 15px;
+		padding-right: 10px;
+	     letter-spacing: 0.1em;
+	     font-weight: bold;
+}		
+    .homepage-title	{
+    	font-size:1.8rem !important;
+    }
+}
+	
 
 @media screen and (max-width: $screen-md-min) {
     #portal-globalnav {

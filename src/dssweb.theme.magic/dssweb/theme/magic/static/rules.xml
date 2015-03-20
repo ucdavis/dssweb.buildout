@@ -102,7 +102,7 @@
 		         <replace css:theme-children="#middle-front-column"
 		                  css:content=".portletContentLeadImageCollectionPortlet.quick-facts" />
 		         <replace css:theme-children="#right-front-column"
-		                  css:content=".portlet-static-spotlight-news" />
+		                  css:content-children=".static-right" />
 
 				        <!-- News Happy Box -->
 				        <replace css:content=".front-page-news > dl > dd"
