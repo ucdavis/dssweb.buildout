@@ -243,7 +243,7 @@
     	<!-- Global Rules -->
 
     	<!-- Description -->
-    	<replace css:theme="p.intro" css:content="#parent-fieldname-description" />
+	<replace css:theme="p.intro" css:content="#parent-fieldname-description" />
 	<before css:theme="h1.content-title" css:content="#kssPortalMessage" />
    <!--T11 Calendar -->
    <rules css:if-content=".template-solgemafullcalendar_view">
@@ -277,15 +277,21 @@
 		         css:content=".topImageContainer" />
         <replace css:theme-children="#content" css:content=".belowImageContent"/>
    </rules>
+   <!-- content posts -->
+      <rules css:if-content=".portaltype-content-posts">
+	   
+	   <replace theme='//*[@id="content-core"]' content='//*[@id="content-core"]' />     
+	</rules>
 	
-          
-		
 		
     	
         <!--before css:theme="#content-core"
                 css:content=".newsImageContainer" css:if-theme=".adhoc"/-->
-		    	
-   <before css:theme="#content-core" css:content="#parent-fieldname-description" />
+    <rules css:if-not-content=".subsection-prospective-students" >
+	 
+             <before css:theme="#content-core" css:content="#parent-fieldname-description" />
+         
+     </rules>
     	<!-- Basic Right Portlet -->
     	<replace css:theme-children=".sidebar-right" css:content=".portlet" />
         
@@ -306,7 +312,10 @@
     	   <replace css:theme="#content-core" css:content="#content-core" />
 	   <after css:theme="html body" css:content="html head script"/>
        </rules>
-
+       <!-- File View -->
+	  <rules css:if-content=".portaltype-file">
+	  <replace css:theme="#content-core" css:content="#content-core" />
+  </rules>
       <!--before css:theme="#content-core"
               css:content=".newsImageContainer" css:if-content=".portaltype-dsscourse"/-->
 
@@ -321,7 +330,7 @@
 		   <after css:theme="html body" css:content="html head script"/>
 		    
 		    <!--after css:theme-children="html body" css:content="html head script" /-->
-			<replace css:theme="#am-content > p" css:content=".documentDescription" />sudo
+			<replace css:theme="#am-content > p" css:content=".documentDescription" />
 		    <replace css:theme="h4.table-header" css:content="#faceted-center-column" />
 			<replace css:theme="#search-results" css:content="#faceted-results" />
 			<replace css:theme-children="#left-area" css:content-children="#left-area" />
