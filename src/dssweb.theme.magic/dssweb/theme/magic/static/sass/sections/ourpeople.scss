@@ -49,6 +49,7 @@ $ucdtxt_blue: #4D688C; // based on?
 }
 .genericTile p, .genericTile p a {
 	@include font_size(13px,!important);
+	font-size:0.77rem !important;
 }
 
 #am-content {
