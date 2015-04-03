@@ -217,9 +217,10 @@
 		    
 
          <!--- Footer -->
-         <copy  css:content=".department-contact"
+	 
+         <copy css:content=".department-contact"
                 css:theme="#vcard" />
-         <drop css:content=".footer-nav > .portlet.portletNavigationTree" /> />
+         <drop css:content=".footer-nav > .portlet.portletNavigationTree" />
          <replace css:theme-children="#footer-middle"
                   css:content=".footer-nav > dl > dd > ul.navTree.navTreeLevel0"
                   method="raw"/>
@@ -228,7 +229,6 @@
          <drop css:theme="#foot-center" />
          <drop css:theme="#foot-right" />
    	  <replace css:theme="#copyright" css:content="#portal-footer" />
-
     
   		
   		
@@ -316,8 +316,10 @@
 	  <rules css:if-content=".portaltype-file">
 	  <replace css:theme="#content-core" css:content="#content-core" />
   </rules>
-      <!--before css:theme="#content-core"
-              css:content=".newsImageContainer" css:if-content=".portaltype-dsscourse"/-->
+  <!--expanded course descriptions -->
+     <rules css:if-content=".portaltype-dsscourse">
+      <replace css:theme="#content-core" css:content="#content-core"/>
+	    </rules>
 
 	  <!--Person bio-->
 	   <rules css:if-content="body.portaltype-fsdperson">
