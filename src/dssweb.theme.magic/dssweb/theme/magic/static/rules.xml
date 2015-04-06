@@ -258,9 +258,15 @@
    </rules>
 	   
    <!--Portaltype Collection -->
-   <rules css:if-content=".portaltype-collection">
-	   <replace css:theme="#content-core" css:content="#content-core" />
+  
+	   <rules css:if-content=".portaltype-topic">
+		<before css:theme="#content-core" css:content="#parent-fieldname-description" />
+	   <replace css:theme-children="#content-core" css:content-children="#content" />
+   
    </rules>
+   <rules css:if-content=".template-criteria_form">
+   <replace css:theme="#content-core" css:content="#content-core" />
+</rules>
     	<!-- Content-core-T4 --> 
     	<replace css:theme-children=".panel-body" css:content="#content-core" css:if-content=".portaltype-document" />
 	<replace css:theme-children=".panel-body" css:content=".pfg-form" css:if-content=".portaltype-formfolder" />
