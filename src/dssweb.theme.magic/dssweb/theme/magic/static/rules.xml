@@ -215,7 +215,11 @@
 		    <drop css:theme=".title-box" />
 	    </rules>
 		    
-
+	    <!--related items-->
+	    <rules css:if-content="#viewlet-below-content-body">
+		    <after css:theme="#content-core" css:content="#viewlet-below-content-body" />
+	    </rules>
+	    
          <!--- Footer -->
 	 
          <copy css:content=".department-contact"
@@ -260,13 +264,26 @@
    <!--Portaltype Collection -->
   
 	   <rules css:if-content=".portaltype-topic">
+		   <rules css:if-not-content=".template-solgemafullcalendar_view">
 		<before css:theme="#content-core" css:content="#parent-fieldname-description" />
 	   <replace css:theme-children="#content-core" css:content-children="#content" />
-   
    </rules>
+   </rules>
+   <rules css:if-content=".template_login-form">
+	<before css:theme="#content-core" css:content="#parent-fieldname-description" />
+   <replace css:theme-children="#content-core" css:content-children="#content" />
+ </rules>
+	   
    <rules css:if-content=".template-criteria_form">
-   <replace css:theme="#content-core" css:content="#content-core" />
+   <replace css:theme-children="#content-core" css:content="#content-core" />
 </rules>
+   <rules css:if-content=".template-summary_view">
+	 <replace css:theme-children=".panel-body" css:content-children="#content-core" />
+     </rules>
+     <rules css:if-content=".template-all_content">
+    	 <replace css:theme-children=".panel-body" css:content-children="#content-core" />
+         </rules>
+ 
     	<!-- Content-core-T4 --> 
     	<replace css:theme-children=".panel-body" css:content="#content-core" css:if-content=".portaltype-document" />
 	<replace css:theme-children=".panel-body" css:content=".pfg-form" css:if-content=".portaltype-formfolder" />
@@ -289,7 +306,10 @@
 	   <replace theme='//*[@id="content-core"]' content='//*[@id="content-core"]' />     
 	</rules>
 	
-		
+	<!--ploneformgen-->
+	<rules css:if-content=".template-fg_thankspage_view_p3">
+		<replace css:theme-children="#content" css:content="#content" />
+	</rules>
     	
         <!--before css:theme="#content-core"
                 css:content=".newsImageContainer" css:if-theme=".adhoc"/-->
