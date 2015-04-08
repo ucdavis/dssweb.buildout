@@ -1,5 +1,4 @@
 from eea.facetednavigation.interfaces import ICriteria
-from plone.memoize import instance
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
 from zope.component import getMultiAdapter
@@ -45,7 +44,6 @@ class FacNavView(BrowserView):
 
         return None
 
-    @instance.memoize
     def getObjectByUID(self, UID):
         """
             find the object with this UID
