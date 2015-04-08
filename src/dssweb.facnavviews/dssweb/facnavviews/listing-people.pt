@@ -14,15 +14,17 @@
         folderContents folderContents | python:context.getFolderContents();
         Batch python:modules['Products.CMFPlone'].Batch;
         b_start python:request.get('b_start', 0);
-        batch python:isinstance(folderContents, Batch) and folderContents or Batch(folderContents, 100, int(b_start), orphan=2);">
+        batch python:isinstance(folderContents, Batch) and folderContents or Batch(folderContents, 100, int(b_start), orphan=2);
+        support_view context/@@facnav_support;
+        department support_view/getFacNavDepartment">
 
         <div metal:use-macro="context/batch_macros/macros/navigation" />
 
         <div class="eea-preview-items">
           <tal:entries repeat="brain batch">
             <tal:block define="obj brain/getObject;
-                               support_view context/@@facnav_support">
-	   
+                               ">
+
 			<div class="genericTile col-lg-4 col-md-6 col-sm-12 col-xs-12">
 			<div class="personEntry">
               <div tal:define="
@@ -46,11 +48,7 @@
                 <span class="personName" tal:content="title">Title</span>
 			    </a>
 
-                <div class="caption"
-                    tal:define="department obj/getPrimaryDepartment;
-					            departments obj/getDepartments;"
-                    tal:condition="department">
-
+                <div class="caption" tal:condition="python:department is not None">
                   <!-- setting to primary department for demo purposes -->
                   <tal:block tal:define="
                     personMembershipInformation python:department.getMembershipInformation(obj);">
@@ -59,48 +57,49 @@
                       tal:content="personMembershipInformation/getPosition"
                     />
                     <p class="phone-wrapper">
-                      <span tal:condition="personMembershipInformation/getDept_officePhone | nothing" tal:content="personMembershipInformation/getDept_officePhone"> 
-						  
-					  </span> 
+                      <span tal:condition="personMembershipInformation/getDept_officePhone | nothing" tal:content="personMembershipInformation/getDept_officePhone">
+
+					  </span>
 					  <span tal:condition="personMembershipInformation/getDept_officePhone">|</span>
-					   
+
 					   <a tal:attributes="href string:mailto:${person_email}">
 						  <span class="email" i18n:translate="FacultyStaffDirectory_label_email">Email</span></a>
-					  
-					            
+
+
                     </p>
-			
+
                     <p class="oemail"
                       tal:condition="personMembershipInformation/getDept_officeAddress | nothing"
                       tal:content="personMembershipInformation/getDept_officeAddress" />
                   </tal:block>
                 </div> <!--department -->
-	                  <div class="lab">
-	  		             <div class="labs"
-	  		                  tal:define="labsList obj/getLabs"
-	  		                  tal:condition="labsList">
-	  		               <p i18n:translate="FacultyStaffDirectory_label_labs_heading">LAB:
-	  		                 <tal:block tal:repeat="eachLab labsList">
-							   
-	  		                     <a tal:attributes="href python:eachLab.absolute_url()">
-	  		                       <span tal:content="eachLab/Title" />
 
-	                               </a>	
-							   	                    
-	  							</tal:block></p>
-				 
-	                   </div>
-	  				</div>
-               
+                <div class="lab">
+		          <div class="labs"
+	                  tal:define="labsList obj/getLabs"
+	                  tal:condition="labsList">
+	               <p i18n:translate="FacultyStaffDirectory_label_labs_heading">LAB:
+	                 <tal:block tal:repeat="eachLab labsList">
+
+	                     <a tal:attributes="href python:eachLab.absolute_url()">
+	                       <span tal:content="eachLab/Title" />
+
+                       </a>
+
+						</tal:block></p>
+
+                   </div>
+  				</div>
+
 
               </div> <!--was an a-->
 		  </div>
 	  </div>
-		  
+
             </tal:block>
-		
+
           </tal:entries>
-	  
+
         </div>
 
         <div metal:use-macro="context/batch_macros/macros/navigation" />
