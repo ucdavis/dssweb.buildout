@@ -59,8 +59,8 @@
                     <p class="phone-wrapper">
                       <span tal:condition="personMembershipInformation/getDept_officePhone | nothing" tal:content="personMembershipInformation/getDept_officePhone">
 
-					  </span>
-					  <span tal:condition="personMembershipInformation/getDept_officePhone">|</span>
+					  
+					  <span tal:condition="personMembershipInformation/getDept_officePhone">|</span></span>
 
 					   <a tal:attributes="href string:mailto:${person_email}">
 						  <span class="email" i18n:translate="FacultyStaffDirectory_label_email">Email</span></a>
