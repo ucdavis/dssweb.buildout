@@ -308,9 +308,10 @@
         <before css:theme="#content-core"
                 css:content=".newsImageContainer" />
         
-        <drop theme='//*[@id="content-core"]/div[1]' />
+        <!--drop theme='//*[@id="content-core"]/div[1]' />
         <replace css:theme="div.zebra.rows"
-                 css:content="#content-core > div" />
+                 css:content="#content-core > div" /-->
+		<replace css:theme="#content-core" css:content="#content-core" />   
       </rules>
 	  
 	  <!---Courses Page-->
