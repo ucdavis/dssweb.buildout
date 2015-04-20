@@ -79,6 +79,7 @@ class Search(PloneSearch):
                                 query['getRawDepartments'] = duid
                                 results = results + catalog(**query)
 
+                                # set sorting method.
                                 sort_on = query.get('sort_on')
                                 if sort_on == 'sortable_title':
                                     sort_cmp = titleCmp
@@ -86,6 +87,7 @@ class Search(PloneSearch):
                                     sort_cmp = dateCmp
                                 else:
                                     sort_cmp = scoreCmp
+
                                 # note that our results will no longer
                                 # be lazy after the next step. there
                                 # may be efficiency implications
