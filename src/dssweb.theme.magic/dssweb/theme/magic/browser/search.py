@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 
-from plone.app.search.browser import Search as PloneSearch
 from plone.app.contentlisting.interfaces import IContentListing
+from plone.app.search.browser import Search as PloneSearch
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.PloneBatch import Batch
 from Products.ZCTextIndex.ParseTree import ParseError
 from zope.component import getMultiAdapter
+
+import re
 
 
 def scoreCmp(a, b):
@@ -22,12 +24,16 @@ class Search(PloneSearch):
             name=u"plone_portal_state")
         self.portal_url = portal_state.portal_url()
         self.nav_url = portal_state.navigation_root_url()
+        self.in_sub_site = self.portal_url != self.nav_url
 
     def results(self, query=None, batch=True, b_size=10, b_start=0):
-        """ Get properly wrapped search results from the catalog.
-        Everything in Plone that performs searches should go through this view.
-        'query' should be a dictionary of catalog parameters.
         """
+            Customize Plone's search to include people from the root FSD
+            when searching in a departmental subsite.
+        """
+
+        if not self.in_sub_site:
+            return super(Search, self).results(query, batch, b_size, b_start)
 
         context = self.context
 
@@ -59,13 +65,15 @@ class Search(PloneSearch):
                         department_name = self.nav_url.split('/')[-1]
                         department = getattr(context, department_name, None)
                         if department is not None:
-                            duid = context.people[department_name].UID()
-                            query['getRawDepartments'] = duid
-                            results = results + catalog(**query)
-                            # note that our results will no longer
-                            # be lazy after the next step. there
-                            # may be efficiency implications
-                            results = sorted(results, scoreCmp)
+                            dobj = getattr(context.people, department_name, None)
+                            if dobj is not None:
+                                duid = dobj.UID()
+                                query['getRawDepartments'] = duid
+                                results = results + catalog(**query)
+                                # note that our results will no longer
+                                # be lazy after the next step. there
+                                # may be efficiency implications
+                                results = sorted(results, scoreCmp)
             except ParseError:
                 return []
 
@@ -74,10 +82,27 @@ class Search(PloneSearch):
             results = Batch(results, b_size, b_start)
         return results
 
-    # def navRootRelativeUrl(self, url):
-    #     """
-    #         Return a URL that has been adjusted to traverse
-    #         to the object by acquisition via the nav root.
-    #     """
+    def navRootRelativeUrl(self, url):
+        """
+            Return a URL that has been adjusted to traverse
+            to the object by acquisition via the nav root.
+        """
 
-    #     return url.replace(self.portal_url, self.nav_url)
+        if self.in_sub_site:
+            url = url.replace(self.portal_url, self.nav_url)
+        return url
+
+    def breadcrumbs(self, item):
+        """
+            Custom breadcrumbs to localize people
+        """
+
+        crumbs = super(Search, self).breadcrumbs(item)
+        if self.in_sub_site and crumbs:
+            last_crumb = crumbs[-1]
+            last_crumb['absolute_url'] = self.navRootRelativeUrl(re.sub(
+                r"/people$",
+                '/directory-of-people',
+                last_crumb['absolute_url']
+                ))
+        return crumbs

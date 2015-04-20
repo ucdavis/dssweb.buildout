@@ -14,4 +14,13 @@
         layer="dssweb.theme.magic.interfaces.IThemeSpecific"
         />
 
+    <browser:page
+        name="updated_search"
+        class=".search.Search"
+        permission="zope2.View"
+        for="Products.CMFCore.interfaces.IFolderish"
+        template="updated_search.pt"
+        layer="dssweb.theme.magic.interfaces.IThemeSpecific"
+        />
+
 </configure>
