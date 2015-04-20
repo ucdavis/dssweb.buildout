@@ -14,6 +14,14 @@ def scoreCmp(a, b):
     return cmp(b.data_record_normalized_score_, a.data_record_normalized_score_)
 
 
+def dateCmp(a, b):
+    return cmp(b.Date, a.Date)
+
+
+def titleCmp(a, b):
+    return cmp(a.Title.lower(), b.Title.lower())
+
+
 class Search(PloneSearch):
     """ Override plone.app.search Search
     """
@@ -70,10 +78,18 @@ class Search(PloneSearch):
                                 duid = dobj.UID()
                                 query['getRawDepartments'] = duid
                                 results = results + catalog(**query)
+
+                                sort_on = query.get('sort_on')
+                                if sort_on == 'sortable_title':
+                                    sort_cmp = titleCmp
+                                elif sort_on == 'Date':
+                                    sort_cmp = dateCmp
+                                else:
+                                    sort_cmp = scoreCmp
                                 # note that our results will no longer
                                 # be lazy after the next step. there
                                 # may be efficiency implications
-                                results = sorted(results, scoreCmp)
+                                results = sorted(results, sort_cmp)
             except ParseError:
                 return []
 
