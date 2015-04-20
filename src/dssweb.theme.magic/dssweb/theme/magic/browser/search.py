@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from Acquisition import aq_inner
 from plone.app.contentlisting.interfaces import IContentListing
 from plone.app.search.browser import Search as PloneSearch
 from Products.CMFCore.utils import getToolByName
@@ -28,11 +29,53 @@ class Search(PloneSearch):
 
     def __init__(self, context, request):
         super(Search, self).__init__(context, request)
-        portal_state = getMultiAdapter((self.context, self.request),
+        self.portal_state = getMultiAdapter((self.context, self.request),
             name=u"plone_portal_state")
-        self.portal_url = portal_state.portal_url()
-        self.nav_url = portal_state.navigation_root_url()
+        self.portal_url = self.portal_state.portal_url()
+        self.nav_url = self.portal_state.navigation_root_url()
         self.in_sub_site = self.portal_url != self.nav_url
+
+    def departmentsQuery(self):
+        """
+            return a getRawDepartments query term for the current
+            subsite.
+            If this turns out to be too expensive, we can use a
+            volatile ram cache for this.
+        """
+
+        context = self.context
+
+        # get our FSD, which must be 'people' in the portal root
+        fsd = getattr(self.portal_state.portal(), 'people', None)
+        if fsd is None:
+            return None
+
+        # get our list of search departments;
+        # either from an explicit search_departments property on the
+        # subsite object, or from the subsite id.
+        subsite = self.portal_state.navigation_root()
+        search_departments = getattr(aq_inner(subsite), 'search_departments', None)
+        if search_departments is None:
+            search_departments = [subsite.getPhysicalPath()[-1]]
+
+        # get the UIDs for our departments
+        duids = []
+        for d_id in search_departments:
+            fsd_department = getattr(context.people, d_id, None)
+            if fsd_department is not None:
+                duids.append(fsd_department.UID())
+        if not duids:
+            return None
+
+        # contruct our subquery
+        query = {}
+        query['path'] = '/'.join(fsd.getPhysicalPath())
+        query['portal_type'] = ['FSDPerson']
+        query['getRawDepartments'] = {
+            'query': duids,
+            'operator': 'or',
+            }
+        return query
 
     def results(self, query=None, batch=True, b_size=10, b_start=0):
         """
@@ -42,8 +85,6 @@ class Search(PloneSearch):
 
         if not self.in_sub_site:
             return super(Search, self).results(query, batch, b_size, b_start)
-
-        context = self.context
 
         if query is None:
             query = {}
@@ -61,37 +102,24 @@ class Search(PloneSearch):
                 if query['path'] and 'FSDPerson' in query['portal_type']:
                     # we're in a subsite/section and people are allowed
                     # in the results.
-                    people = getattr(self.context, 'people', None)
-                    if people is not None:
-                        query['path'] = '/'.join(people.getPhysicalPath())
-                        query['portal_type'] = ['FSDPerson']
-                        # limit to the department.
-                        # strategy: get department name as last id in
-                        # navigation root path.
-                        # Find matching FSD department, get its UID;
-                        # use that to match getRawDepartments.
-                        department_name = self.nav_url.split('/')[-1]
-                        department = getattr(context, department_name, None)
-                        if department is not None:
-                            dobj = getattr(context.people, department_name, None)
-                            if dobj is not None:
-                                duid = dobj.UID()
-                                query['getRawDepartments'] = duid
-                                results = results + catalog(**query)
+                    people_query = self.departmentsQuery()
+                    if people_query:
+                        query.update(people_query)
+                        results = results + catalog(**query)
 
-                                # set sorting method.
-                                sort_on = query.get('sort_on')
-                                if sort_on == 'sortable_title':
-                                    sort_cmp = titleCmp
-                                elif sort_on == 'Date':
-                                    sort_cmp = dateCmp
-                                else:
-                                    sort_cmp = scoreCmp
+                        # set sorting method.
+                        sort_on = query.get('sort_on')
+                        if sort_on == 'sortable_title':
+                            sort_cmp = titleCmp
+                        elif sort_on == 'Date':
+                            sort_cmp = dateCmp
+                        else:
+                            sort_cmp = scoreCmp
 
-                                # note that our results will no longer
-                                # be lazy after the next step. there
-                                # may be efficiency implications
-                                results = sorted(results, sort_cmp)
+                        # note that our results will no longer
+                        # be lazy after the next step. there
+                        # may be efficiency implications
+                        results = sorted(results, sort_cmp)
             except ParseError:
                 return []
 
