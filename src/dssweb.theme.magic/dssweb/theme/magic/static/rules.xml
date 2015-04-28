@@ -252,6 +252,10 @@
 	    <drop css:theme="#rss-icon" />		 
 	  
 	    </rules>
+		<!--  display views -->
+		<rules css:if-content=".tileItem">
+		<replace css:theme=".panel-body" css:content=".tileItem" />
+	</rules>
     <!--related items-->
     <rules css:if-content="#viewlet-below-content-body">
 	    <after css:theme="#content-core" css:content="#viewlet-below-content-body" />
