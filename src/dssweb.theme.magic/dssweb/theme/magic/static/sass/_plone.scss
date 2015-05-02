@@ -1362,13 +1362,13 @@ label.state-visible {
 }
 
 #calendar.query-review_state div.fc-event.state-published {
-    border:1px solid &dtml-linkColor;;
+    border:1px solid $ucd_blue_30;
 }
 #calendar.query-review_state div.fc-event.state-published a {
-    background-color: &dtml-linkColor;;
+    background-color:$ucd_blue_30;
 }
 label.state-published {
-    color: &dtml-linkColor;;
+    color:$ucd_blue_30;
 }
 
 #calendar.query-review_state div.fc-event.state-pending {
