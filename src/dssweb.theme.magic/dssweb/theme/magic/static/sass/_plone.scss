@@ -1157,9 +1157,12 @@ padding: 0 2px;}
 }
 
 #SFQuery .SFQuery_input {
-    float:left;
     margin:0 1% 10px 0;
     width:32%;
+	display:flex;
+}
+#fieldset-Subject > div > label {
+  padding-left: 10px;
 }
 
 #event_edit_container #content {
