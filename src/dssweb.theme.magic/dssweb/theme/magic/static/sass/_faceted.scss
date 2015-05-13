@@ -86,6 +86,9 @@ padding-bottom: 3em;
 #c3_widget > fieldset > legend {
 	color:white;
 }
+dl#c3 {
+  display: flex;
+}
 .faceted-results {
 	padding-top:.5em;
 }
