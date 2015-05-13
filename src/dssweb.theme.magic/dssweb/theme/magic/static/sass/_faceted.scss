@@ -311,8 +311,9 @@ padding-bottom: 3em;
 } */
 
 .faceted_letter:hover{
-  color: orange;
-  background-color: #ccc;
+  color: $rec_blue;
+  font-size:1.2em;
+  background-color: transparent;
 }
 
 /*.faceted_letter_selected {
