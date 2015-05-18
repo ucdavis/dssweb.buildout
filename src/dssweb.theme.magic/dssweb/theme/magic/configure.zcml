@@ -28,4 +28,6 @@
     directory="template_overrides"
   />
 
+  <include package=".browser" />
+
 </configure>
