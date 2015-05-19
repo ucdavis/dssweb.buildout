@@ -213,7 +213,7 @@
 		  
 		  <!--portlets -->
 
-		  <replace css:theme=".portlet" css:content="#portal-column-two" />
+		  <replace css:theme=".portlet" css:content-children="#portal-column-two" />
 		  <!-- People Page Faceted Nav -->
    	   <!--Person directory Page Faceted Nav T2 -->
    	   <rules css:if-content=".template-facetednavigation_view">
@@ -232,6 +232,14 @@
 	   <rules css:if-content="body.portaltype-dsscourse">
 		   <replace css:theme="#content-core" css:content="#content-core" />
 		   </rules>
+		   
+	 	  <!--Person bio-->
+	 	   <rules css:if-content="body.portaltype-fsdperson">
+	 		   <replace css:theme="h1.content-title" css:content="h1.content-title" />
+	 		   <replace theme='//*[@id="content-core"]' content='//*[@id="content-core"]' />
+		  
+	 	   </rules>
+		   
    	   <!--Contact Page rules -->
 	  
    	   <rules css:if-content="body.portaltype-dsscontact" >
