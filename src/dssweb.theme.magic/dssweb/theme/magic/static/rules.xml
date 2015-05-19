@@ -228,6 +228,10 @@
    		    <drop theme='//*[@id="pager-bottom"]' />
 
    	   </rules>
+	   <!-- Featured Courses -->
+	   <rules css:if-content="body.portaltype-dsscourse">
+		   <replace css:theme="#content-core" css:content="#content-core" />
+		   </rules>
    	   <!--Contact Page rules -->
 	  
    	   <rules css:if-content="body.portaltype-dsscontact" >
