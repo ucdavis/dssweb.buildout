@@ -3,7 +3,7 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       tal:omit-tag="">
 	  
- <div class="sidebar sidebar-right">
+ <div class="nothing">
 
 <div class="portlet portletPerson bio-card"
     i18n:domain="plone">
