@@ -1,0 +1,49 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="dss">
+
+    <five:registerPackage package="." />
+
+    <genericsetup:registerProfile
+        name="default"
+        title="person text portlets"
+        directory="profiles/default"
+        description="A simple portlet that displays person information"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
+    <permission
+        id="dss.portlet.person.AddPersonPortlet"
+        title="dss.portlet.person: Add person portlet"
+        />
+    <permission
+        id="dss.portlet.person.AddPersonAddressPortlet"
+        title="dss.portlet.person_address: Add person address portlet"
+        />
+
+     <!-- Register the portlet -->
+    <plone:portlet
+        name="dss.portlet.person.Person"
+        interface=".person.IPersonPortlet"
+        assignment=".person.Assignment"
+        view_permission="zope2.View"
+        edit_permission="dss.portlet.person.AddPersonPortlet"
+        renderer=".person.Renderer"
+        addview=".person.AddForm"
+        editview=".person.EditForm"
+        />
+    <plone:portlet
+        name="dss.portlet.person.Person_Address"
+        interface=".person_address.IPersonAddressPortlet"
+        assignment=".person_address.Assignment"
+        view_permission="zope2.View"
+        edit_permission="dss.portlet.person.AddPersonAddressPortlet"
+        renderer=".person_address.Renderer"
+        addview=".person_address.AddForm"
+        editview=".person_address.EditForm"
+        />
+
+</configure>
