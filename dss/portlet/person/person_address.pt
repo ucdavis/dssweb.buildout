@@ -1,0 +1,105 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      tal:omit-tag="">
+	  
+ <div class="sidebar sidebar-right">
+
+<div class="portlet portletPersonAddress"
+    i18n:domain="plone">
+	<h3>Offices &amp; Labs</h3>
+	
+
+<div class="collapsible panel-collapse collapse in">
+	<div class="portlet-content panel-body">
+		<div class="vcard office">
+		
+		<tal:block>
+			<!--dd to avoid previous css rules -->
+            <dd class="departments"
+                 tal:define="departmentsList context/getDepartments",
+                 tal:condition="python: departmentsList">
+        
+                <tal:block tal:repeat="eachDepartment departmentsList" >
+					<div tal:define="personMembershipInformation python:eachDepartment.getMembershipInformation(context);"
+						tal:condition="personMembershipInformation/getDept_officeAddress">
+						
+                    <h4 class="org"><a class="url" tal:attributes="href python:eachDepartment.getDept_url()">
+                      <span  tal:content="eachDepartment/Title" />
+                    </a></h4>
+                  
+                
+                  
+				<div class="adr">
+					<div class="street-address" tal:condition="personMembershipInformation/getDept_officeAddress"
+                               tal:replace="structure personMembershipInformation/getDept_officeAddress">
+                    </div>
+					<div class="street-address">
+						<span tal:condition="personMembershipInformation/getDept_streetAddress"
+                               tal:replace="structure personMembershipInformation/getDept_streetAddress">
+                    </span></div>
+					<div class="street-address">Davis, CA 95616 </div>
+				
+					
+				
+				<div class="tel" tal:condition="personMembershipInformation/getDept_officePhone"
+                               tal:replace="structure personMembershipInformation/getDept_officePhone">
+                    </div>
+				
+				</div>
+			</div>
+			</tal:block>
+				
+			</dd>
+		
+		</tal:block>
+	</div>
+		<div class="vcard office">
+		
+		<tal:block>
+			
+            <dd class="labs"
+                 tal:define="labsList context/getLabs",
+                 tal:condition="python: labsList">
+              
+                <tal:block tal:repeat="eachLab labsList" >
+					<div tal:define="personMembershipInformation python:eachLab.getMembershipInformation(context);"
+						tal:condition="personMembershipInformation/getLab_officeAddress">
+					
+                    <h4 class="org"><a class="url" tal:attributes="href python:eachLab.getDept_url()">
+                      <span  tal:content="eachLab/Title" />
+                    </a></h4>
+                  
+                 <div class="adr">
+				<div class="street-address">
+					<span tal:condition="personMembershipInformation/getLab_officeAddress"
+                               tal:replace="structure personMembershipInformation/getLab_officeAddress">
+                    </span></div>
+					<div class="street-address">
+						<span tal:condition="personMembershipInformation/getLab_streetAddress"
+                               tal:replace="structure personMembershipInformation/getLab_streetAddress">
+                    </span></div>
+					<div class="street-address">Davis, CA 95616 </div>
+				
+					
+				
+				<div class="tel" tal:condition="personMembershipInformation/getLab_officePhone"
+                               tal:replace="structure personMembershipInformation/getLab_officePhone">
+                    </div>
+					
+			</div>
+		</div>
+			</tal:block>
+				
+			</dd>
+		
+		</tal:block>	
+	</div>	
+			
+
+	
+</div>
+</div>
+</div>
+</html>
+
