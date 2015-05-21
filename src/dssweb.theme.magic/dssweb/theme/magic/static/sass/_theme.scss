@@ -1444,7 +1444,7 @@ body.contact-type {
 	#util-bar-wrap {
 		padding-right: 0;
 	}
-	#top-bar-wrap, #content-row, #banner-row, .topImageContainer {
+	#top-bar-wrap, #content-row, #banner-row {
 		padding-left: 0;
 		padding-right: 0;
 	}
@@ -1596,7 +1596,7 @@ body.contact-type {
 }
 /*----- Large Desktop breakpoint -------*/
 @media screen and (min-width: $screen-lg-min) { // width > 1310
-	#top-bar-wrap, #content-row, #banner-row, .row#banner-caption, .topImageContainer{
+	#top-bar-wrap, #content-row, #banner-row, .row#banner-caption {
 		padding-left: 105px; // 90 + 15 px
 		padding-right: 105px;
 	}

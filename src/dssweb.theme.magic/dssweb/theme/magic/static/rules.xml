@@ -211,6 +211,8 @@
   		    <drop css:theme=".title-box" />
   	    </rules>
 		  
+		<!--views -->
+		
 		  <!--portlets -->
 
 		  <replace css:theme=".portlet" css:content-children="#portal-column-two" />
@@ -239,6 +241,12 @@
 	 		   <replace theme='//*[@id="content-core"]' content='//*[@id="content-core"]' />
 		  
 	 	   </rules>
+		   <!-- two collumn page -->
+	   	<rules css:if-content=".portaltype-dsstwocollumnpage">
+				 
+	   	    <before css:theme="#content-row"
+	   		         css:content=".photo-row" />
+				 </rules>
 		   
    	   <!--Contact Page rules -->
 	  
