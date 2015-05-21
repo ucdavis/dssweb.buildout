@@ -80,11 +80,11 @@
   <!--front page -->
         <rules css:if-content="body.portaltype-front-page" >	  
 	         <replace css:theme-children="#left-front-column"
-	                  css:content=".portletContentLeadImageCollectionPortlet.featured-courses" />
+	                  css:content-children=".left-front-column" />
 	         <replace css:theme-children="#middle-front-column"
-	                  css:content=".portletContentLeadImageCollectionPortlet.quick-facts" />
+	                  css:content-children=".middle-front-column" />
 	         <replace css:theme-children="#right-front-column"
-	                  css:content-children=".static-right" />
+	                  css:content-children=".right-front-column" />
 
 			        <!-- News Happy Box -->
 			        <replace css:content=".front-page-news > dl > dd"
@@ -186,9 +186,11 @@
       <replace css:content=".breadcrumbSeparator">
         <span class="bread-divider">|</span>
       </replace>
-		  <!-- Generic rules -->
+<!-- Generic rules, apply to all by front page -->
+		  <rules css:if-not-content=".portaltype-front-page">
 		  <before css:theme="#content-core" css:content="#parent-fieldname-description" />
 		  <replace css:theme-children=".panel-body" css:content-children="#content-core" />
+	       </rules>
 		 
 	      <!-- Search Fixups -->
 	      <drop css:content=".searchSection" />
@@ -303,6 +305,14 @@
 
 		  </script>
 	  </append>
-		  
+	  
+       <replace css:theme="#wallpaper_fix">
+         <script id="wallpaper_fix">
+           $(".wall").wallpaper({
+               source: "@@banner-image"
+           });
+         </script>
+       </replace> 
+	   
 	  </rules>
   </rules>
