@@ -67,12 +67,6 @@
  
   <!--ISS Specific Rules -->
   <rules css:if-content="body.site-ISS">
-     <replace css:theme-children="#left-front-column"
-              css:content=".portletContentLeadImageCollectionPortlet.front-page-events" />
-     <replace css:theme-children="#middle-front-column"
-              css:content=".portletContentLeadImageCollectionPortlet.journal" />
-     <replace css:theme-children="#right-front-column"
-              css:content=".portletContentLeadImageCollectionPortlet.available-grants" />
 	<drop content='//*[@id="portaltab-support-iss"]' />   
   </rules>
 	   
