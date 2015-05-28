@@ -278,7 +278,7 @@ html .fc,
 
 /*  UI Button */
 	.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-    background: url("/DSS-Master/++resource++jquery-ui-themes/sunburst/images/ui-bg_flat_45_205c90_40x100.png") repeat-x scroll 50% 50% #gray;
+    background: url("/DSS-Master/++resource++jquery-ui-themes/sunburst/images/ui-bg_flat_45_205c90_40x100.png") repeat-x scroll 50% 50% $gray;
     border: 1px solid #ccc;
     color: #fff;
     font-weight: normal;
