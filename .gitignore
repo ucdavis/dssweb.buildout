@@ -1,0 +1,13 @@
+*.pyc
+*.swp
+.mr.developer.cfg
+parts/
+src/
+eggs/
+fake-eggs/
+var/
+develop-eggs/
+bin/
+downloads/*
+extends/*
+.sass-cache

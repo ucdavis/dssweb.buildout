@@ -1,0 +1,7 @@
+<relstorage>
+  pack-gc ${options['enable-gc']}
+  <${parts.relstorage['db-type']}>
+  {% for line in parts.client1['rel-storage'].split('\n') %}{% with key=line.split(' ')[0] %}{% if '-' not in key and key != 'type' %}${line}
+  {% end %}{% end %}{% end %}
+  </${parts.relstorage['db-type']}>
+</relstorage>
