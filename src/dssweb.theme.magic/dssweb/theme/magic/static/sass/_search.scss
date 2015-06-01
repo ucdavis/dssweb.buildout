@@ -149,8 +149,8 @@ form.searchPage h1.documentFirstHeading .highlightedSearchTerm {
 #search-results-bar dt.actionMenuHeader a {
     border-bottom: none;
 }
-#search-results-bar dt.actionMenuHeader a::after {
-	content: " ▼";
+#search-results-bar dt.actionMenuHeader a:after {
+	content: " \25BC";
 }
 #search-results {
     padding: 1em;
