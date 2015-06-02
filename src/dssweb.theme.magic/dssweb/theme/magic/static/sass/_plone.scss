@@ -538,6 +538,11 @@ dd.portletItem {
 	margin-top:-5px;
 	margin-left:0;
 }
+img.portletItemDetails.image-left {
+  width: 100%;
+  height: 100%;
+  margin-left: -.5em;
+}
 .sidebar-1, .sidebar-2 {
 	margin-top: 73px;
 }
