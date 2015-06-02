@@ -2,6 +2,7 @@
 
 from Acquisition import aq_inner
 from plone.app.contentlisting.interfaces import IContentListing
+from plone.app.layout.navigation.interfaces import INavigationRoot
 from plone.app.search.browser import Search as PloneSearch
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.PloneBatch import Batch
@@ -82,9 +83,6 @@ class Search(PloneSearch):
             Customize Plone's search to include people from the root FSD
             when searching in a departmental subsite.
         """
-
-        if not self.in_sub_site:
-            return super(Search, self).results(query, batch, b_size, b_start)
 
         if query is None:
             query = {}
