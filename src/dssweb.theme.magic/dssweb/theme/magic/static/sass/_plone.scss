@@ -533,15 +533,12 @@ dd.portletItem {
 	padding-right: 20px;
 	clear:both;
 }
-
-.portletItemDetails.image-left {
-	margin-top:-5px;
-	margin-left:0;
-}
+ 
 img.portletItemDetails.image-left {
   width: 100%;
   height: 100%;
-  margin-left: -.5em;
+  margin-top: -5px;
+  margin-left: -5px;
 }
 .sidebar-1, .sidebar-2 {
 	margin-top: 73px;
