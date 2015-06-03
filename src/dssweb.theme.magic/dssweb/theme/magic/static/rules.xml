@@ -67,7 +67,7 @@
  
   <!--ISS Specific Rules -->
   <rules css:if-content="body.site-ISS">
-	<drop content='//*[@id="portaltab-support-iss"]' />   
+	<drop content='//*[@id="portaltab-support-iss"]' /> 
   </rules>
 	   
   <!--Other sites-->	   
@@ -185,6 +185,9 @@
 		  <before css:theme="#content-core" css:content="#parent-fieldname-description" />
 		  <replace css:theme-children=".panel-body" css:content-children="#content-core" />
 	       </rules>
+		   <rules css:if-content=".portaltype-event">
+			   <before css:theme="#content-core" css:content=".newsImageContainer" />
+			   <rules>
 		 
 	      <!-- Search Fixups -->
 	      <drop css:content=".searchSection" />
