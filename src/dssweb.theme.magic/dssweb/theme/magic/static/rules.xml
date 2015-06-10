@@ -246,7 +246,7 @@
 	   		         css:content=".photo-row" />
 		  		   <!--mobile collapse bar -->
 		  		   <replace css:theme-children="#content-panel-heading > h4 > a" css:content="h3#nested-left-title.uc.blue-head > span" />
-				   <
+				  
 		 
 				 </rules>
 		   
