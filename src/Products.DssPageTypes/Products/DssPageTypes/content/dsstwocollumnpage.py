@@ -33,13 +33,20 @@ DssTwoCollumnPageSchema = document.ATDocumentSchema.copy() + atapi.Schema((
               label=u"Image Caption",
               description=u"Image Caption Here",
           ),
+      ),
+      atapi.StringField(
+          name="insettitle",
+          widget=atapi.StringWidget(
+              label=u"Small Collumn Title",
+              description=u"This text will be blue"
+          ),
       ),     
        
        atapi.TextField(
                name="insetcolumn",
                widget = atapi.RichWidget(
                    label=u"Small Column Text",
-                   description=u"This text will be Blue",
+                   description=u"for blue headings pick the blueheading style",
                    width="40",
                    ),
                    searchable=True,
@@ -60,9 +67,9 @@ DssTwoCollumnPageSchema['description'].storage = atapi.AnnotationStorage()
 schemata.finalizeATCTSchema( DssTwoCollumnPageSchema, moveDiscussion=False)
   
    #Move inset collumn field before bodytext so it's first on the form
-   
+
 DssTwoCollumnPageSchema.moveField('insetcolumn',after='description')
-   
+DssTwoCollumnPageSchema.moveField('insettitle',after='description')   
 
 class DssTwoCollumnPage(base.ATCTContent):
        """Two Collumn Page"""
