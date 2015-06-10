@@ -67,7 +67,7 @@
  
   <!--ISS Specific Rules -->
   <rules css:if-content="body.site-ISS">
-	<drop content='//*[@id="portaltab-support-iss"]' /> 
+	<drop content='//*[@id="portaltab-support-iss"]' />   
   </rules>
 	   
   <!--Other sites-->	   
@@ -102,7 +102,7 @@
 			              css:theme="#container-3 > div > div > div.bcontroller > a"  />
 
 			    		<!-- Front Page -->
-			    		<copy css:content="#parent-fieldname-title" css:theme="#middle-row" />
+			    		<!--copy css:content="#parent-fieldname-title" css:theme="#middle-row" /-->
 	   		   </rules> <!--end front page rules-->
      <!-- rule to set up title to replace static logo on ipad/mobile -->
      <replace css:theme-children=".justname h1">
@@ -151,29 +151,30 @@
 	          <xsl:attribute name="class">has-dropdown</xsl:attribute>
 	      </replace>
 		  <!--Handle Titles -->
-  	    <replace css:theme="h2.homepage-title" css:content="h1#parent-fieldname-title" />
+  	    <!--replace css:theme="h2.homepage-title" css:content="h1#parent-fieldname-title" />
   	    <replace content="//h1[contains(@class,'documentFirstHeading')]/@class" if="$home_page">
   	    <xsl:attribute name="class">
   	    <xsl:if test='contains(current(),"documentFirstHeading")'>homepage-title</xsl:if>
   	    </xsl:attribute>
-  	    </replace>
-              <replace content="//h1[contains(@class,'documentFirstHeading')]/@class" if-content="/html/body[contains(@class,'portaltype-front-page')]">
+  	    </replace-->
+		
+              <!--replace content="//h1[contains(@class,'documentFirstHeading')]/@class" if-content="/html/body[contains(@class,'portaltype-front-page')]">
   	    <xsl:attribute name="class">
   	    <xsl:if test='contains(current(),"documentFirstHeading")'>homepage-title</xsl:if>
   	    </xsl:attribute>
-  	    </replace>
+  	    </replace-->
   		<!-- Various rules to handle different template titles plus some magic to add the correct classes -->
-  	    <rules css:if-content="h1#parent-fieldname-title">
+  	    <!--rules css:if-content="h1#parent-fieldname-title">
   		<replace css:theme="h1.content-title"  css:content="h1#parent-fieldname-title" />
-  	    </rules>
-  		<rules css:if-content="h1.documentFirstHeading">
+  	    </rules-->
+  		<!--rules css:if-content="h1.documentFirstHeading">
   			<replace css:theme="h1.content-title" css:content="h1.documentFirstHeading" />
-  		</rules>
-  	    <replace content="//h1[contains(@class,'documentFirstHeading')]/@class" if-not-content="/html/body[contains(@class,'portaltype-front-page')]">
+  		</rules-->
+  	    <!--replace content="//h1[contains(@class,'documentFirstHeading')]/@class" if-not-content="/html/body[contains(@class,'portaltype-front-page')]">
     	    <xsl:attribute name="class">
             <xsl:if test='contains(current(),"documentFirstHeading")'>content-title</xsl:if>
     	    </xsl:attribute>
-  	    </replace>
+  	    </replace-->
   		<!-- Breadcrumbs for all but front page -->
   		<replace css:theme-children=".breadcrumb" css:content="#portal-breadcrumbs" />
   		<drop css:content="#breadcrumbs-you-are-here" />
@@ -185,9 +186,8 @@
 		  <before css:theme="#content-core" css:content="#parent-fieldname-description" />
 		  <replace css:theme-children=".panel-body" css:content-children="#content-core" />
 	       </rules>
-		   <rules css:if-content=".portaltype-event">
-			   <before css:theme="#content-core" css:content=".newsImageContainer" />
-			   <rules>
+		   <!-- swap out in the title text on the homepage -->
+		   <replace theme-children="//*[@id='middle-row']/h2" content="//h1[@id='parent-fieldname-title']/text()" if-content="//h1[@id='parent-fieldname-title']" />
 		 
 	      <!-- Search Fixups -->
 	      <drop css:content=".searchSection" />
