@@ -163,18 +163,19 @@
   	    <xsl:if test='contains(current(),"documentFirstHeading")'>homepage-title</xsl:if>
   	    </xsl:attribute>
   	    </replace-->
-  		<!-- Various rules to handle different template titles plus some magic to add the correct classes -->
-  	    <!--rules css:if-content="h1#parent-fieldname-title">
+			  
+  		<!--various rules to handle different template titles plus some magic to add the correct classes -->
+  	    <rules css:if-content="h1#parent-fieldname-title">
   		<replace css:theme="h1.content-title"  css:content="h1#parent-fieldname-title" />
-  	    </rules-->
-  		<!--rules css:if-content="h1.documentFirstHeading">
+  	    </rules>
+  		<rules css:if-content="h1.documentFirstHeading">
   			<replace css:theme="h1.content-title" css:content="h1.documentFirstHeading" />
-  		</rules-->
-  	    <!--replace content="//h1[contains(@class,'documentFirstHeading')]/@class" if-not-content="/html/body[contains(@class,'portaltype-front-page')]">
+  		</rules>
+  	    <replace content="//h1[contains(@class,'documentFirstHeading')]/@class" if-not-content="/html/body[contains(@class,'portaltype-front-page')]">
     	    <xsl:attribute name="class">
             <xsl:if test='contains(current(),"documentFirstHeading")'>content-title</xsl:if>
     	    </xsl:attribute>
-  	    </replace-->
+  	    </replace>
   		<!-- Breadcrumbs for all but front page -->
   		<replace css:theme-children=".breadcrumb" css:content="#portal-breadcrumbs" />
   		<drop css:content="#breadcrumbs-you-are-here" />
@@ -188,6 +189,11 @@
 	       </rules>
 		   <!-- swap out in the title text on the homepage -->
 		   <replace theme-children="//*[@id='middle-row']/h2" content="//h1[@id='parent-fieldname-title']/text()" if-content="//h1[@id='parent-fieldname-title']" />
+		   <!-- mobile front bar titles, aka quickfacts -->
+		   <replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.left-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content=".left-front-column > dl > dt > a > span" css:if-content=".left-front-column" />
+		   <replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.middle-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content=".middle-front-column > dl > dt > a > span" css:if-content=".middle-front-column" />
+		   <replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.right-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content-children=".right-front-column > dl > dt > span > a" css:if-content=".right-front-column" />
+		   
 		 
 	      <!-- Search Fixups -->
 	      <drop css:content=".searchSection" />
@@ -238,6 +244,10 @@
 				 
 	   	    <before css:theme="#content-row"
 	   		         css:content=".photo-row" />
+		  		   <!--mobile collapse bar -->
+		  		   <replace css:theme-children="#content-panel-heading > h4 > a" css:content="h3#nested-left-title.uc.blue-head > span" />
+				   <
+		 
 				 </rules>
 		   
    	   <!--Contact Page rules -->
