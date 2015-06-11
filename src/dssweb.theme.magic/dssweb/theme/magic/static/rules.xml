@@ -88,7 +88,7 @@
 			              css:theme="#container-1 > div > div > div.bcontroller > a"  />
 
 			        <!--  About Happy Box -->
-			        <replace css:content="#content-core"
+			        <replace css:content-children="#content-core"
 			                 css:theme-children="#container-2 div.content-wrap"  />
 			        <copy attributes="href"
 			              css:content="#portaltab-quick-facts > a"
@@ -201,6 +201,7 @@
 		    <replace content="//div[@id='portal-searchbox']//input[@class='searchButton']/@value">
 		    <xsl:attribute name="value">GO</xsl:attribute>
 		    </replace>
+			
 		  
   	    <!-- search results page -->
   	    <rules css:if-content=".template-search">
