@@ -258,6 +258,7 @@
    		   <!--replace css:theme-children=".sidebar-1" css:content=".side-contact" /-->
    		   <replace css:theme-children=".adr-only" css:content=".side-contact" />
    		   <replace css:theme-children=".sm-contacts" css:content=".key-contacts" />
+		   <replace css:theme="#content-core" css:content="content-core" />
    	   </rules>
  	  <!--Prospective Students T5-->
  	   <rules css:if-content=".subsection-prospective-students" >
