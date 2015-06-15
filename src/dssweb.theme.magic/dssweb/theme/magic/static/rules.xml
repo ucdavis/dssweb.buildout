@@ -265,6 +265,7 @@
               <drop css:content=".image-under-banner" />
                <replace css:theme="#corner-box-target" css:content=".image-under-banner" method="raw" />
  		    	<replace css:theme-children="#nested-right" css:content="#content-core" />
+ 		    	<drop css:theme=".into" />
  		</rules> 
 	    <!--T11 Calendar -->
 	    <rules css:if-content=".template-solgemafullcalendar_view">
