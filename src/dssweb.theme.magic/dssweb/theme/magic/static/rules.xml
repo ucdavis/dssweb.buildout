@@ -250,6 +250,11 @@
 				  
 		 
 				 </rules>
+				 <!--jqxgrid pages course listings courses -->
+				 <rules css:if-content=".portaltype-jqxgrid_page" >
+					 <after css:theme="html body" css:content="html head script"/>
+				 </rules>
+				 
 		   
    	   <!--Contact Page rules -->
 	  
@@ -265,7 +270,7 @@
               <drop css:content=".image-under-banner" />
                <replace css:theme="#corner-box-target" css:content=".image-under-banner" method="raw" />
  		    	<replace css:theme-children="#nested-right" css:content="#content-core" />
- 		    	<drop css:theme=".into" />
+ 		    	<drop css:theme=".intro" />
  		</rules> 
 	    <!--T11 Calendar -->
 	    <rules css:if-content=".template-solgemafullcalendar_view">
