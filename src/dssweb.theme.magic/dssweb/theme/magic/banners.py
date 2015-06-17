@@ -11,7 +11,7 @@
         If not top-image, looks for "top-image" (singular) object.
         If found, redirects to it.
 
-        If neither for those works, redirects to ++theme++dssweb.theme.magic/images/banners/rec_blue_shadow.gif
+        If neither for those works, we look for a 'default_wall' property on the subsite.  If that is blank the theme defaults to ++theme++dssweb.theme.magic/images/banners/rec_blue_shadow.gif
 """
 from Acquisition import aq_inner
 from plone.memoize.view import memoize
