@@ -284,6 +284,19 @@
 	    <drop css:theme="#rss-icon" />		 
 	  
 	    </rules>
+		<!-- Events t13 -->
+       <rules css:if-content="body.portaltype-event">
+         <replace theme='//*[@id="content"]/h1'
+                  content='//*[@id="parent-fieldname-title"]' />
+         <before css:theme="#content-core"
+                 css:content=".newsImageContainer" />
+     
+         <!--drop theme='//*[@id="content-core"]/div[1]' />
+         <replace css:theme="div.zebra.rows"
+                  css:content="#content-core > div" /-->
+ 		<replace css:theme="#content-core" css:content="#content-core" />   
+       </rules>
+	   
 		<!--  display views -->
 		<rules css:if-content=".tileItem">
 		<replace css:theme=".panel-body" css:content=".tileItem" />
