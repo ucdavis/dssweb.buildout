@@ -60,6 +60,7 @@ class BannerImage(BrowserView):
         if image is not None:
             return image.absolute_url()
         return None
+        
 
     def wallpaperURL(self):
         portal_state = getMultiAdapter((self.context, self.request), name=u'plone_portal_state')
@@ -68,13 +69,13 @@ class BannerImage(BrowserView):
             return portal_state.portal_url() + self.defaultWall()
         else:
             return image_url
-
+    
+    
     def bodyStyle(self):
         if self.findImageURL() is not None:
             return 'has-shadow-am'
         return ''
         
-
     def divStyle(self):
         if self.findImageURL() is not None:
             return 'wall shadow-am-graphic'
