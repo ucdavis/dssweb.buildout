@@ -30,6 +30,11 @@
 
       <!-- Copy meta tags from Plone head -->
       <before css:theme-children="html head" css:content="html head meta" />
+	  <!-- drop theme js -->
+	  <drop css:theme="html head script" />
+	  <!--copy javascript in from registry -->
+      <after css:theme="html body" css:content="html head script" />
+	  
 	  
       <!-- merge classes from Plone body with theme body -->
       <merge attributes="class" css:theme="body" css:content="body" />
@@ -205,7 +210,7 @@
 		  
   	    <!-- search results page -->
   	    <rules css:if-content=".template-search">
-  		    <after css:theme="html body" css:content="html head script"/>
+  		    <!--after css:theme="html body" css:content="html head script"/-->
   		    <replace css:theme-children="#content-row" css:content="#content" />
   		    <drop css:theme=".title-box" />
   	    </rules>
@@ -218,7 +223,7 @@
 		  <!-- People Page Faceted Nav -->
    	   <!--Person directory Page Faceted Nav T2 -->
    	   <rules css:if-content=".template-facetednavigation_view">
-   		   <after css:theme="html body" css:content="html head script"/>
+   		   <!--after css:theme="html body" css:content="html head script"/-->
 		    
    		    <!--after css:theme-children="html body" css:content="html head script" /-->
    			<replace css:theme="#am-content > p" css:content=".documentDescription" />
@@ -252,7 +257,7 @@
 				 </rules>
 				 <!--jqxgrid pages course listings courses -->
 				 <rules css:if-content=".portaltype-jqxgrid_page" >
-					 <after css:theme="html body" css:content="html head script"/>
+					 <!--after css:theme="html body" css:content="html head script"/-->
 				 </rules>
 				 
 		   
@@ -263,7 +268,7 @@
    		   <!--replace css:theme-children=".sidebar-1" css:content=".side-contact" /-->
    		   <replace css:theme-children=".adr-only" css:content=".side-contact" />
    		   <replace css:theme-children=".sm-contacts" css:content=".key-contacts" />
-		   <replace css:theme="#content-core" css:content="content-core" />
+		   <replace css:theme="#content-core" css:content="#content-core" />
    	   </rules>
  	  <!--Prospective Students T5-->
  	   <rules css:if-content=".subsection-prospective-students" >
@@ -274,7 +279,7 @@
  		</rules> 
 	    <!--T11 Calendar -->
 	    <rules css:if-content=".template-solgemafullcalendar_view">
-	 	   <after css:theme="html body" css:content="html head script"/>
+	 	   <!--after css:theme="html body" css:content="html head script"/-->
 	 	   <replace css:theme-children="#calendar" css:content="#calendar" />
 	 	   <!--replace css:theme-children=".widget-fieldset" css:content="#fieldset-Subject" /-->
 		   <replace css:theme-children=".panel" css:content="#SFQuery" />

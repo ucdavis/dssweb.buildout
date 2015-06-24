@@ -1427,6 +1427,48 @@ label.syndicated {
 section.thumbify-processed.nofollow a.readmore {
     display: none !important;
 }
+/* tinyaccordions aka gold bars */
+/* styles to mark accordion inside editor */
+
+body.mceContentBody h3.plomino-accordion-header,
+body.mceContentBody div.plomino-accordion-content {
+    background-color: rgba(256, 0, 0, 0.2);
+    border: 2px dotted red;
+}
+body.mceContentBody h3.plomino-accordion-header {
+    border-bottom: none;
+}
+body.mceContentBody div.plomino-accordion-content {
+    border-top: none;
+}
+
+#content-core h3.plomino-accordion-header {
+    background: $ucd_bright_gold;
+    cursor: pointer;
+    margin: 0.25em 0;
+	font-size:1.5rem;
+	
+}
+#content-core h3.plomino-accordion-header:hover {
+    background: $ucd_bright_gold_40;
+}
+#content-core h3.plomino-accordion-header.expanded > a {
+	background: $ucd_bright_gold_40 url("../images/icons/blue-100-right-arrow-down.png") no-repeat scroll 96% 50%;
+    padding: 0 0.5em;
+	display: block;
+	height: 70px;
+	width: 100%;
+	
+}
+#content-core h3.plomino-accordion-header.collapsed > a{
+    padding: 0 0.5em;
+	display: block;
+	height: 70px;
+	width: 100%;
+	
+	background: $ucd_bright_gold url("../images/icons/blue-100-right-arrow.png") no-repeat scroll 96% 50%;
+}
+
 
 /* @end */
 
