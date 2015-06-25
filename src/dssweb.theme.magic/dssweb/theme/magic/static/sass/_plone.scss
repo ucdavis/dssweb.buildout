@@ -1443,17 +1443,24 @@ body.mceContentBody div.plomino-accordion-content {
 }
 
 #content-core h3.plomino-accordion-header {
-    background: $ucd_bright_gold;
+    background-color: $ucd_bright_gold;
     cursor: pointer;
+	height: 70px;
     margin: 0.25em 0;
-	font-size:1.5rem;
 	
+	
+}
+#content-core h3.plomino-accordion-header > a {
+	font-size: 1.5rem;
+	font-weight: normal;
+	color: $ucd_black_80;
+	text-decoration: none;
 }
 #content-core h3.plomino-accordion-header:hover {
     background: $ucd_bright_gold_40;
 }
 #content-core h3.plomino-accordion-header.expanded > a {
-	background: $ucd_bright_gold_40 url("../images/icons/blue-100-right-arrow-down.png") no-repeat scroll 96% 50%;
+	background: url("../images/icons/blue-100-right-arrow-down.png") no-repeat scroll 96% 50%;
     padding: 0 0.5em;
 	display: block;
 	height: 70px;
@@ -1466,7 +1473,7 @@ body.mceContentBody div.plomino-accordion-content {
 	height: 70px;
 	width: 100%;
 	
-	background: $ucd_bright_gold url("../images/icons/blue-100-right-arrow.png") no-repeat scroll 96% 50%;
+	background: url("../images/icons/blue-100-right-arrow.png") no-repeat scroll 96% 50%;
 }
 
 
