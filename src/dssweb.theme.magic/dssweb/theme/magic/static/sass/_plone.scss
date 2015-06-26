@@ -1455,20 +1455,20 @@ body.mceContentBody div.plomino-accordion-content {
 	font-weight: normal;
 	color: $ucd_black_80;
 	text-decoration: none;
+	padding-top: .5em;
+	padding-left:1em;
 }
 #content-core h3.plomino-accordion-header:hover {
     background: $ucd_bright_gold_40;
 }
 #content-core h3.plomino-accordion-header.expanded > a {
 	background: url("../images/icons/blue-100-right-arrow-down.png") no-repeat scroll 96% 50%;
-    padding: 0 0.5em;
 	display: block;
 	height: 70px;
 	width: 100%;
 	
 }
 #content-core h3.plomino-accordion-header.collapsed > a{
-    padding: 0 0.5em;
 	display: block;
 	height: 70px;
 	width: 100%;

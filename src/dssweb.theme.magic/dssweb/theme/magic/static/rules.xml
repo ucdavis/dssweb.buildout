@@ -95,9 +95,16 @@
 			        <!--  About Happy Box -->
 			        <replace css:content-children="#content-core"
 			                 css:theme-children="#container-2 div.content-wrap"  />
+							 <rules css:if-content=".site-psychology">
 			        <copy attributes="href"
 			              css:content="#portaltab-quick-facts > a"
 			              css:theme="#container-2 > div > div > div.bcontroller > a" />
+					  </rules>
+					  <rules css:if-content=".site-economics">
+	  			        <copy attributes="href"
+	  			              css:content="#portaltab-about > a"
+	  			              css:theme="#container-2 > div > div > div.bcontroller > a" />	  
+						  </rules>
 
 			  		  <!-- Events Happy Box -->
 			  	    <copy css:content=".front-page-events > dl > dd"
@@ -123,12 +130,13 @@
 			 <drop content='//*[@id="portaltab-contact"]' />
 			 <drop content='//*[@id="portaltab-index_html"]' />
 			 <drop content='//*[@id="portaltab-intranet"]' />
+			 <drop content='//*[@id="portaltab-about"]'
 	      <!--utility menu links -->
 		 <copy attributes="href"
 			 css:content="#portaltab-index_html > a"
 			 css:theme="#uti-home > a" />
 	   <!--replace css:theme="#uti-home > a"
-	                   css:content="#portaltab-index_html > a" method="raw" /-->
+	                   css:content="#portaltab-index_html > a" method="raw" /-->       
 		   <replace css:theme="#uti-contact > a"
 		                   css:content="#portaltab-contact > a" method="raw" />
 	      <replace css:theme="#uti-events > a"
