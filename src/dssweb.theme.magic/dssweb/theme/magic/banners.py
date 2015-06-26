@@ -11,9 +11,9 @@
         If not top-image, looks for "top-image" (singular) object.
         If found, redirects to it.
 
-        If neither for those works, redirects to ++theme++dssweb.theme.magic/images/banners/rec_blue_shadow.gif
+        If neither for those works, we look for a 'default_wall' property on the subsite.  If that is blank the theme defaults to ++theme++dssweb.theme.magic/images/banners/rec_blue_shadow.gif
 """
-
+from Acquisition import aq_inner
 from plone.memoize.view import memoize
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
@@ -28,6 +28,15 @@ DEFAULT_WALL = '/++theme++dssweb.theme.magic/images/banners/rec_blue_shadow.gif'
 class BannerImage(BrowserView):
 
     @memoize
+    def defaultWall(self):
+        self.portal_state = getMultiAdapter((self.context, self.request),
+            name=u"plone_portal_state")
+        subsite = self.portal_state.navigation_root()
+        defaultWall = getattr(aq_inner(subsite), 'default_wall', None)
+        if defaultWall is None:
+            defaultWall = DEFAULT_WALL
+        return defaultWall
+    
     def findImageURL(self):
         context = self.context
         request = self.request
@@ -51,21 +60,22 @@ class BannerImage(BrowserView):
         if image is not None:
             return image.absolute_url()
         return None
+        
 
     def wallpaperURL(self):
         portal_state = getMultiAdapter((self.context, self.request), name=u'plone_portal_state')
         image_url = self.findImageURL()
         if image_url is None:
-            return portal_state.portal_url() + DEFAULT_WALL
+            return portal_state.portal_url() + self.defaultWall()
         else:
             return image_url
-
+    
+    
     def bodyStyle(self):
         if self.findImageURL() is not None:
             return 'has-shadow-am'
         return ''
         
-
     def divStyle(self):
         if self.findImageURL() is not None:
             return 'wall shadow-am-graphic'
@@ -83,7 +93,7 @@ class BannerImage(BrowserView):
 
         image_url = self.findImageURL()
         if image_url is None:
-            self.request.response.redirect(portal_state.portal_url() + DEFAULT_WALL)
+            self.request.response.redirect(portal_state.portal_url() + self.defaultWall())
         else:
             self.request.response.redirect(image_url)
         return None

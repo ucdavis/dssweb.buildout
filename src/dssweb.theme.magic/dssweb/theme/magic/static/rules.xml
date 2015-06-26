@@ -50,7 +50,7 @@
 		 </script>
 	 </before>
      <!--Copy script tags from Plone head to end of body-->
-     <!--after css:theme-children="html body" css:content="html head script" /-->
+    <!--after css:theme-children="html body" css:content="html head script" /-->
 
 
   <rules css:if-content="body.portaltype-front-page">
@@ -243,6 +243,7 @@
 
    	   </rules>
 	   <!-- Featured Courses -->
+	   <rules
 	   <rules css:if-content="body.portaltype-dsscourse">
 		   <replace css:theme="#content-core" css:content="#content-core" />
 		   </rules>
@@ -253,6 +254,17 @@
 	 		   <replace theme='//*[@id="content-core"]' content='//*[@id="content-core"]' />
 		  
 	 	   </rules>
+	       <rules css:if-content="body.portaltype-event">
+	         <replace theme='//*[@id="content"]/h1'
+	                  content='//*[@id="parent-fieldname-title"]' />
+	         <before css:theme="#content-core"
+	                 css:content=".newsImageContainer" />
+        
+	         <!--drop theme='//*[@id="content-core"]/div[1]' />
+	         <replace css:theme="div.zebra.rows"
+	                  css:content="#content-core > div" /-->
+	 		<replace css:theme="#content-core" css:content="#content-core" />   
+	       </rules>
 		   <!-- two collumn page -->
 	   	<rules css:if-content=".portaltype-dsstwocollumnpage">
 				 
