@@ -130,7 +130,7 @@
 			 <drop content='//*[@id="portaltab-contact"]' />
 			 <drop content='//*[@id="portaltab-index_html"]' />
 			 <drop content='//*[@id="portaltab-intranet"]' />
-			 <drop content='//*[@id="portaltab-about"]'
+			 <drop content='//*[@id="portaltab-about"]' />
 	      <!--utility menu links -->
 		 <copy attributes="href"
 			 css:content="#portaltab-index_html > a"
@@ -243,7 +243,7 @@
 
    	   </rules>
 	   <!-- Featured Courses -->
-	   <rules
+	   
 	   <rules css:if-content="body.portaltype-dsscourse">
 		   <replace css:theme="#content-core" css:content="#content-core" />
 		   </rules>
