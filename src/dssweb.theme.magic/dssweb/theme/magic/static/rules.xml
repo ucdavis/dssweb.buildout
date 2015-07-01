@@ -254,6 +254,8 @@
 	 		   <replace theme='//*[@id="content-core"]' content='//*[@id="content-core"]' />
 		  
 	 	   </rules>
+		   <!--Events-->
+		     
 	       <rules css:if-content="body.portaltype-event">
 	         <replace theme='//*[@id="content"]/h1'
 	                  content='//*[@id="parent-fieldname-title"]' />
@@ -263,7 +265,7 @@
 	         <!--drop theme='//*[@id="content-core"]/div[1]' />
 	         <replace css:theme="div.zebra.rows"
 	                  css:content="#content-core > div" /-->
-	 		<replace css:theme="#content-core" css:content="#content-core" />   
+           <replace css:theme-children=".zebra-rows" css:content-children="#content-core" />  
 	       </rules>
 		   <!-- two collumn page -->
 	   	<rules css:if-content=".portaltype-dsstwocollumnpage">
@@ -309,18 +311,10 @@
 	    <drop css:theme="#rss-icon" />		 
 	  
 	    </rules>
-		<!-- Events t13 -->
-       <rules css:if-content="body.portaltype-event">
-         <replace theme='//*[@id="content"]/h1'
-                  content='//*[@id="parent-fieldname-title"]' />
-         <before css:theme="#content-core"
-                 css:content=".newsImageContainer" />
-     
-         <!--drop theme='//*[@id="content-core"]/div[1]' />
-         <replace css:theme="div.zebra.rows"
-                  css:content="#content-core > div" /-->
- 		<replace css:theme="#content-core" css:content="#content-core" />   
-       </rules>
+		<!--windowz-->
+		<rules css:if-content=".portaltype-window">
+		  <replace css:theme="#content-core" css:content="iframe#windowZ" />
+		</rules>
 	   
 		<!--  display views -->
 		<rules css:if-content=".tileItem">
