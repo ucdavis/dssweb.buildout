@@ -256,7 +256,7 @@
 		  
 	 	   </rules>
 		   <!--Events-->
-		     
+		   <!-- these rules apply to the modified event type-->
 	       <rules css:if-content="body.portaltype-event">
 	         <replace theme='//*[@id="content"]/h1'
 	                  content='//*[@id="parent-fieldname-title"]' />
@@ -266,7 +266,7 @@
 	         <!--drop theme='//*[@id="content-core"]/div[1]' />
 	         <replace css:theme="div.zebra.rows"
 	                  css:content="#content-core > div" /-->
-           <replace css:theme-children=".zebra-rows" css:content-children="#content-core" />  
+           <replace css:theme="#content-core" css:content-children="#content-core" />  
 	       </rules>
 		   <!-- two collumn page -->
 	   	<rules css:if-content=".portaltype-dsstwocollumnpage">
