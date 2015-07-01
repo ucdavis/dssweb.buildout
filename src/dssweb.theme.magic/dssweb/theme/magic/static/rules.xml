@@ -30,14 +30,17 @@
 
       <!-- Copy meta tags from Plone head -->
       <before css:theme-children="html head" css:content="html head meta" />
-	  <!-- drop theme js -->
-	  <drop css:theme="html head script" />
-	  <!--copy javascript in from registry -->
-      <after css:theme="html body" css:content="html head script" />
+	 
 	  
 	  
       <!-- merge classes from Plone body with theme body -->
       <merge attributes="class" css:theme="body" css:content="body" />
+	  
+	  <!-- drop theme js -->
+	  
+	  <!--copy javascript in from registry -->
+	  <!--Copy script tags from Plone head to end of body-->
+      <after css:theme="html body" css:content="html head script" />
 	  <!--BugHerd. Two rules to accomodate pages from dssmaster -->
      <before css:theme-children="html head" css:if-content=".site-psychology">
 		 <script type='text/javascript'>
@@ -49,16 +52,17 @@
 		   })(document, 'script');
 		 </script>
 	 </before>
-     <!--Copy script tags from Plone head to end of body-->
-    <!--after css:theme-children="html body" css:content="html head script" /-->
-
+    
 
   <rules css:if-content="body.portaltype-front-page">
+      <drop css:content="html head script" />
+	  
 
  	  <drop css:theme="#content > div.row > div" />
      <!--drop all the portal footers on the front page -->
      <drop css:content="dd.portlet-footer" />
      <drop css:content="dd.portletFooter"/>
+	 
   
   </rules>
   
@@ -218,7 +222,6 @@
 		  
   	    <!-- search results page -->
   	    <rules css:if-content=".template-search">
-  		    <!--after css:theme="html body" css:content="html head script"/-->
   		    <replace css:theme-children="#content-row" css:content="#content" />
   		    <drop css:theme=".title-box" />
   	    </rules>
@@ -231,9 +234,7 @@
 		  <!-- People Page Faceted Nav -->
    	   <!--Person directory Page Faceted Nav T2 -->
    	   <rules css:if-content=".template-facetednavigation_view">
-   		   <!--after css:theme="html body" css:content="html head script"/-->
-		    
-   		    <!--after css:theme-children="html body" css:content="html head script" /-->
+   		  
    			<replace css:theme="#am-content > p" css:content=".documentDescription" />
    		    <replace css:theme="h4.table-header" css:content="#faceted-center-column" />
    			<replace css:theme="#search-results" css:content="#faceted-results" />
@@ -279,7 +280,6 @@
 				 </rules>
 				 <!--jqxgrid pages course listings courses -->
 				 <rules css:if-content=".portaltype-jqxgrid_page" >
-					 <!--after css:theme="html body" css:content="html head script"/-->
 				 </rules>
 				 
 		   
@@ -301,7 +301,6 @@
  		</rules> 
 	    <!--T11 Calendar -->
 	    <rules css:if-content=".template-solgemafullcalendar_view">
-	 	   <!--after css:theme="html body" css:content="html head script"/-->
 	 	   <replace css:theme-children="#calendar" css:content="#calendar" />
 	 	   <!--replace css:theme-children=".widget-fieldset" css:content="#fieldset-Subject" /-->
 		   <replace css:theme-children=".panel" css:content="#SFQuery" />
