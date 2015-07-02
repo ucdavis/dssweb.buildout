@@ -15,7 +15,8 @@
             tal:define="mapurl context/mapurl";
                               "width context/mapwidth";
                               "height context/mapheight";
-                               "style context/mapstyle;">
+                               "style context/mapstyle;";
+						>
             
            <iframe src="mapurl"
                 name="googlemap"
@@ -61,7 +62,8 @@
                          
                         </div>
 
-	    <tal:block tal:replace="structure view/render_form"> Form here </tal:block>
+	    <!--tal:block tal:define="contact_form context/contactform" tal:replace="structure contact_form"-->
+	     <tal:block tal:replace="structure view/render_form"> Form here </tal:block>
     </div>
 	    
 	  </div>  

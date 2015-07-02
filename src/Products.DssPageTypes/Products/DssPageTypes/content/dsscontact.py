@@ -7,6 +7,8 @@ from Products.Archetypes import atapi
 from Products.ATContentTypes.content import base
 from Products.ATContentTypes.content import schemata
 from Products.ATContentTypes.content import document
+from plone.app.form.widgets.uberselectionwidget import UberSelectionWidget
+
 
 # -*- Message Factory Imported Here -*-
 
@@ -54,7 +56,7 @@ DssContactSchema = document.ATDocumentSchema.copy() + atapi.Schema((
                
            ),
        ),
-      
+       
    ))
 
    # Set storage on fields copied from ATContentTypeSchema, making sure
