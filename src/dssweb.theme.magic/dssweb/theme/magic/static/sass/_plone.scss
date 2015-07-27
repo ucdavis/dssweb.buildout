@@ -48,10 +48,13 @@
   line-height: 80px !important;
    padding: 0 0;
 }
-
-a#portal-logo {  //overrides theme wdth setting that was causing menu to break
+a#portal-logo img {
 	width:100%;
 }
+
+/* a#portal-logo {  //overrides theme wdth setting that was causing menu to break
+	width:100%;
+} */
 #portal-logo {
 	    display: inline-block;
 	    margin: 0 0;
