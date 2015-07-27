@@ -22,5 +22,8 @@
         template="updated_search.pt"
         layer="dssweb.theme.magic.interfaces.IThemeSpecific"
         />
+		
+
+	
 
 </configure>

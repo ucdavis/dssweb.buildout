@@ -173,7 +173,7 @@
 		.panel {
 			.panel-body {
 				//background-color: rgba(0, 40, 85, 0.8);
-				h2 {
+				h2{
 					display: none;
 				}
 			}
@@ -250,7 +250,7 @@
 
 						.content-wrap {
 							padding-top: 15px; // for home page mobile
-							h3 {
+							h3, dd {
 								padding-top: 0;
 								a {
 									color: #FFF;
@@ -338,7 +338,7 @@
 	}
 
 	#middle-row {
-		h2 {
+		h2{
 			@include font_size(36px, !important);
 			@include line_height(25px);
 			margin-top: 45px;
@@ -350,7 +350,7 @@
 	// Force on iPad
 	#content {
 		#middle-row {
-			h2 {
+			h2{
 				@include font_size(36px, !important);
 			}
 		}

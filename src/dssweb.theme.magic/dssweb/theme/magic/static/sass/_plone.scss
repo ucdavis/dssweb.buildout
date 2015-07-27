@@ -139,7 +139,7 @@ padding-top: 5px;
 .content-wrap dd.portletItem {
 	background-color:transparent;
 }
-.content-wrap dd.portletItem a.tile {
+.content-wrap dd.portletItem {
 	color:white !important;
 
 }
@@ -189,6 +189,7 @@ dl.portlet-static-quick-facts dt {
 		margin-left: 0px;
 		
 		a.tile {
+			display:block;
 			
 		 		img.portletItemImage.image-left {
 					 margin-top:0;
@@ -301,6 +302,7 @@ dl.portlet-static-quick-facts dt {
 	margin-left: 0px;
 	
 	a.tile {
+		display:block;
 		
 	 		img.portletItemImage.image-left {
 				 margin-top:0;
@@ -358,7 +360,10 @@ dl.portlet-static-quick-facts dt {
 
 		> dl {
 			background-color:transparent;
+		
+	
 		}
+		
 		dd.portletItem {
 			background-color: transparent;
 			cursor: pointer;
@@ -377,13 +382,24 @@ dl.portlet-static-quick-facts dt {
 			background:transparent;
 			/*font-size: 24px !important;
 			font-size: 1.3rem !important;*/
-			padding-top:10px;
+			padding-top: 0px;
 			font-weight: normal;
 			padding-bottom: 0;
 			padding-left:0px;
 			text-align:center;
+			
+			> span {
+			    color: #333;
+			    font-weight: normal !important;
+			    letter-spacing: 0px !important;
+			    text-transform: none;
+			    font-size: 1.5rem;
+			    padding: 10px 0px 10px !important;
+			    text-align: center;
+			}
 
 		}
+	
 		/*dt.portletHeader span {
 			text-transform:none;
 			font-size:15px;
@@ -517,10 +533,10 @@ dd.portletItem {
 	padding-right: 20px;
 	clear:both;
 }
-
-.portletItemDetails.image-left {
-	margin-top:-5px;
-	margin-left:0;
+ 
+img.portletItemDetails.image-left {
+  margin-top: -5px;
+  margin-left: -5px;
 }
 .sidebar-1, .sidebar-2 {
 	margin-top: 73px;
@@ -537,10 +553,10 @@ margin-left: 0px;
 margin-left: 0;
 margin-right: -15px;
 }
-dd > a.tile {
+/*dd > a.tile {
 	display:flex;
 	align-items:center;
-}
+} */
 /*------Contact Page Portlet ------*/
 
 
@@ -1411,6 +1427,55 @@ label.syndicated {
 section.thumbify-processed.nofollow a.readmore {
     display: none !important;
 }
+/* tinyaccordions aka gold bars */
+/* styles to mark accordion inside editor */
+
+body.mceContentBody h3.plomino-accordion-header,
+body.mceContentBody div.plomino-accordion-content {
+    background-color: rgba(256, 0, 0, 0.2);
+    border: 2px dotted red;
+}
+body.mceContentBody h3.plomino-accordion-header {
+    border-bottom: none;
+}
+body.mceContentBody div.plomino-accordion-content {
+    border-top: none;
+}
+
+#content-core h3.plomino-accordion-header {
+    background-color: $ucd_bright_gold;
+    cursor: pointer;
+	height: 70px;
+    margin: 0.25em 0;
+	
+	
+}
+#content-core h3.plomino-accordion-header > a {
+	font-size: 1.5rem;
+	font-weight: normal;
+	color: $ucd_black_80;
+	text-decoration: none;
+	padding-top: .5em;
+	padding-left:1em;
+}
+#content-core h3.plomino-accordion-header:hover {
+    background: $ucd_bright_gold_40;
+}
+#content-core h3.plomino-accordion-header.expanded > a {
+	background: url("../images/icons/blue-100-right-arrow-down.png") no-repeat scroll 96% 50%;
+	display: block;
+	height: 70px;
+	width: 100%;
+	
+}
+#content-core h3.plomino-accordion-header.collapsed > a{
+	display: block;
+	height: 70px;
+	width: 100%;
+	
+	background: url("../images/icons/blue-100-right-arrow.png") no-repeat scroll 96% 50%;
+}
+
 
 /* @end */
 

@@ -15,7 +15,6 @@
 		<theme href="t3_bio.html" css:if-content="body.portaltype-fsdperson" />
 		<theme href="t2_ourpeople.html" css:if-content="body.template-facetednavigation_view" />
 		<theme href="t7_contact.html" css:if-content="body.portaltype-dsscontact" />
-		<theme href="t8_students.html" css:if-content=".subsection-psychology-major-something-for-iss" />
 
        <theme href="t5_generic_landing.html" css:if-content=".subsection-prospective-students"/>
 	  <theme href="t11_calendar.html" css:if-content=".template-solgemafullcalendar_view" />
@@ -31,19 +30,11 @@
 
       <!-- Copy meta tags from Plone head -->
       <before css:theme-children="html head" css:content="html head meta" />
-	 
-	  
 	  
       <!-- merge classes from Plone body with theme body -->
       <merge attributes="class" css:theme="body" css:content="body" />
-	  
-	  <!-- drop theme js -->
-	  
-	  <!--copy javascript in from registry -->
-	  <!--Copy script tags from Plone head to end of body-->
-      <after css:theme="html body" css:content="html head script" />
 	  <!--BugHerd. Two rules to accomodate pages from dssmaster -->
-     <before css:theme-children="html head" css:if-content=".site-psychology">
+     <!--before css:theme-children="html head" css:if-content=".site-psychology">
 		 <script type='text/javascript'>
 		 (function (d, t) {
 		   var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
@@ -52,18 +43,17 @@
 		   s.parentNode.insertBefore(bh, s);
 		   })(document, 'script');
 		 </script>
-	 </before>
-    
+	 </before-->
+     <!--Copy script tags from Plone head to end of body-->
+     <!--after css:theme-children="html body" css:content="html head script" /-->
+
 
   <rules css:if-content="body.portaltype-front-page">
-      <drop css:content="html head script" />
-	  
 
  	  <drop css:theme="#content > div.row > div" />
      <!--drop all the portal footers on the front page -->
      <drop css:content="dd.portlet-footer" />
      <drop css:content="dd.portletFooter"/>
-	 
   
   </rules>
   
@@ -77,16 +67,7 @@
  
   <!--ISS Specific Rules -->
   <rules css:if-content="body.site-ISS">
-    <copy attributes="href"
-          css:content="#portaltab-support-iss > a"
-          css:theme="#uti-give > a" />
-	<drop content='//*[@id="portaltab-support-iss"]' />   
-  </rules>
-  <!--testing a theory -->
-  <rules css:if-content="subsection-psychology-major-something-for-iss">
-	  <replace css:theme="#nested-left" css:content=".nested-left" /> 
-	  <replace css:theme-children="#nested-right" css:content="#nested-right" />
-	  
+	<drop content='//*[@id="portaltab-support-iss"]' /> 
   </rules>
 	   
   <!--Other sites-->	   
@@ -107,18 +88,11 @@
 			              css:theme="#container-1 > div > div > div.bcontroller > a"  />
 
 			        <!--  About Happy Box -->
-			        <replace css:content-children="#content-core"
+			        <replace css:content="#content-core"
 			                 css:theme-children="#container-2 div.content-wrap"  />
-							 <rules css:if-content=".site-psychology">
 			        <copy attributes="href"
 			              css:content="#portaltab-quick-facts > a"
 			              css:theme="#container-2 > div > div > div.bcontroller > a" />
-					  </rules>
-					  <rules css:if-content=".site-economics">
-	  			        <copy attributes="href"
-	  			              css:content="#portaltab-about > a"
-	  			              css:theme="#container-2 > div > div > div.bcontroller > a" />	  
-						  </rules>
 
 			  		  <!-- Events Happy Box -->
 			  	    <copy css:content=".front-page-events > dl > dd"
@@ -128,7 +102,7 @@
 			              css:theme="#container-3 > div > div > div.bcontroller > a"  />
 
 			    		<!-- Front Page -->
-			    		<!--copy css:content="#parent-fieldname-title" css:theme="#middle-row" /-->
+			    		<copy css:content="#parent-fieldname-title" css:theme="#middle-row" />
 	   		   </rules> <!--end front page rules-->
      <!-- rule to set up title to replace static logo on ipad/mobile -->
      <replace css:theme-children=".justname h1">
@@ -144,13 +118,12 @@
 			 <drop content='//*[@id="portaltab-contact"]' />
 			 <drop content='//*[@id="portaltab-index_html"]' />
 			 <drop content='//*[@id="portaltab-intranet"]' />
-			 <drop content='//*[@id="portaltab-about"]' />
 	      <!--utility menu links -->
 		 <copy attributes="href"
 			 css:content="#portaltab-index_html > a"
 			 css:theme="#uti-home > a" />
 	   <!--replace css:theme="#uti-home > a"
-	                   css:content="#portaltab-index_html > a" method="raw" /-->       
+	                   css:content="#portaltab-index_html > a" method="raw" /-->
 		   <replace css:theme="#uti-contact > a"
 		                   css:content="#portaltab-contact > a" method="raw" />
 	      <replace css:theme="#uti-events > a"
@@ -178,20 +151,18 @@
 	          <xsl:attribute name="class">has-dropdown</xsl:attribute>
 	      </replace>
 		  <!--Handle Titles -->
-  	    <!--replace css:theme="h2.homepage-title" css:content="h1#parent-fieldname-title" />
+  	    <replace css:theme="h2.homepage-title" css:content="h1#parent-fieldname-title" />
   	    <replace content="//h1[contains(@class,'documentFirstHeading')]/@class" if="$home_page">
   	    <xsl:attribute name="class">
   	    <xsl:if test='contains(current(),"documentFirstHeading")'>homepage-title</xsl:if>
   	    </xsl:attribute>
-  	    </replace-->
-		
-              <!--replace content="//h1[contains(@class,'documentFirstHeading')]/@class" if-content="/html/body[contains(@class,'portaltype-front-page')]">
+  	    </replace>
+              <replace content="//h1[contains(@class,'documentFirstHeading')]/@class" if-content="/html/body[contains(@class,'portaltype-front-page')]">
   	    <xsl:attribute name="class">
   	    <xsl:if test='contains(current(),"documentFirstHeading")'>homepage-title</xsl:if>
   	    </xsl:attribute>
-  	    </replace-->
-			  
-  		<!--various rules to handle different template titles plus some magic to add the correct classes -->
+  	    </replace>
+  		<!-- Various rules to handle different template titles plus some magic to add the correct classes -->
   	    <rules css:if-content="h1#parent-fieldname-title">
   		<replace css:theme="h1.content-title"  css:content="h1#parent-fieldname-title" />
   	    </rules>
@@ -214,13 +185,9 @@
 		  <before css:theme="#content-core" css:content="#parent-fieldname-description" />
 		  <replace css:theme-children=".panel-body" css:content-children="#content-core" />
 	       </rules>
-		   <!-- swap out in the title text on the homepage -->
-		   <replace theme-children="//*[@id='middle-row']/h2" content="//h1[@id='parent-fieldname-title']/text()" if-content="//h1[@id='parent-fieldname-title']" />
-		   <!-- mobile front bar titles, aka quickfacts -->
-		   <replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.left-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content=".left-front-column > dl > dt > a > span" css:if-content=".left-front-column" />
-		   <replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.middle-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content=".middle-front-column > dl > dt > a > span" css:if-content=".middle-front-column" />
-		   <replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.right-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content-children=".right-front-column > dl > dt > span > a" css:if-content=".right-front-column" />
-		   
+		   <rules css:if-content=".portaltype-event">
+			   <before css:theme="#content-core" css:content=".newsImageContainer" />
+			   <rules>
 		 
 	      <!-- Search Fixups -->
 	      <drop css:content=".searchSection" />
@@ -228,10 +195,10 @@
 		    <replace content="//div[@id='portal-searchbox']//input[@class='searchButton']/@value">
 		    <xsl:attribute name="value">GO</xsl:attribute>
 		    </replace>
-			
 		  
   	    <!-- search results page -->
   	    <rules css:if-content=".template-search">
+  		    <after css:theme="html body" css:content="html head script"/>
   		    <replace css:theme-children="#content-row" css:content="#content" />
   		    <drop css:theme=".title-box" />
   	    </rules>
@@ -244,7 +211,9 @@
 		  <!-- People Page Faceted Nav -->
    	   <!--Person directory Page Faceted Nav T2 -->
    	   <rules css:if-content=".template-facetednavigation_view">
-   		  
+   		   <after css:theme="html body" css:content="html head script"/>
+		    
+   		    <!--after css:theme-children="html body" css:content="html head script" /-->
    			<replace css:theme="#am-content > p" css:content=".documentDescription" />
    		    <replace css:theme="h4.table-header" css:content="#faceted-center-column" />
    			<replace css:theme="#search-results" css:content="#faceted-results" />
@@ -254,7 +223,6 @@
 
    	   </rules>
 	   <!-- Featured Courses -->
-	   
 	   <rules css:if-content="body.portaltype-dsscourse">
 		   <replace css:theme="#content-core" css:content="#content-core" />
 		   </rules>
@@ -265,33 +233,12 @@
 	 		   <replace theme='//*[@id="content-core"]' content='//*[@id="content-core"]' />
 		  
 	 	   </rules>
-		   <!--Events-->
-		   <!-- these rules apply to the modified event type-->
-	       <rules css:if-content="body.portaltype-event">
-	         <replace theme='//*[@id="content"]/h1'
-	                  content='//*[@id="parent-fieldname-title"]' />
-	         <before css:theme="#content-core"
-	                 css:content=".newsImageContainer" />
-        
-	         <!--drop theme='//*[@id="content-core"]/div[1]' />
-	         <replace css:theme="div.zebra.rows"
-	                  css:content="#content-core > div" /-->
-           <replace css:theme="#content-core" css:content-children="#content-core" />  
-	       </rules>
 		   <!-- two collumn page -->
 	   	<rules css:if-content=".portaltype-dsstwocollumnpage">
 				 
 	   	    <before css:theme="#content-row"
 	   		         css:content=".photo-row" />
-		  		   <!--mobile collapse bar -->
-		  		   <replace css:theme-children="#content-panel-heading > h4 > a" css:content="h3#nested-left-title.uc.blue-head > span" />
-				  
-		 
 				 </rules>
-				 <!--jqxgrid pages course listings courses -->
-				 <rules css:if-content=".portaltype-jqxgrid_page" >
-				 </rules>
-				 
 		   
    	   <!--Contact Page rules -->
 	  
@@ -300,18 +247,16 @@
    		   <!--replace css:theme-children=".sidebar-1" css:content=".side-contact" /-->
    		   <replace css:theme-children=".adr-only" css:content=".side-contact" />
    		   <replace css:theme-children=".sm-contacts" css:content=".key-contacts" />
-		   <replace css:theme="#content-core" css:content="#content-core" />
-		   <replace css:theme="#google-map" css:content="#viewlet-above-content-title" />
    	   </rules>
  	  <!--Prospective Students T5-->
  	   <rules css:if-content=".subsection-prospective-students" >
               <drop css:content=".image-under-banner" />
                <replace css:theme="#corner-box-target" css:content=".image-under-banner" method="raw" />
  		    	<replace css:theme-children="#nested-right" css:content="#content-core" />
- 		    	<drop css:theme=".intro" />
  		</rules> 
 	    <!--T11 Calendar -->
 	    <rules css:if-content=".template-solgemafullcalendar_view">
+	 	   <after css:theme="html body" css:content="html head script"/>
 	 	   <replace css:theme-children="#calendar" css:content="#calendar" />
 	 	   <!--replace css:theme-children=".widget-fieldset" css:content="#fieldset-Subject" /-->
 		   <replace css:theme-children=".panel" css:content="#SFQuery" />
@@ -321,11 +266,6 @@
 	    <drop css:theme="#rss-icon" />		 
 	  
 	    </rules>
-		<!--windowz-->
-		<rules css:if-content=".portaltype-window">
-		  <replace css:theme="#content-core" css:content="iframe#windowZ" />
-		</rules>
-	   
 		<!--  display views -->
 		<rules css:if-content=".tileItem">
 		<replace css:theme=".panel-body" css:content=".tileItem" />
@@ -334,7 +274,10 @@
     <rules css:if-content="#viewlet-below-content-body">
 	    <after css:theme="#content-core" css:content="#viewlet-below-content-body" />
     </rules>
-    
+    <!--PloneformGen -->
+	<rules css:if-content=".template-fg_thankspage_view_p3">
+		<replace css:theme-children=".panel-body" css:content="#content" />
+	</rules>
         <!--- Footer -->
  
         <copy css:content=".department-contact"
@@ -386,4 +329,5 @@
        </replace> 
 	   
 	  </rules>
-  </rules>
+  </rules
+ 
