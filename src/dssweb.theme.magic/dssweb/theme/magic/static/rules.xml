@@ -336,8 +336,8 @@
     </rules>
     
         <!--- Footer -->
- 
-        <copy css:content=".department-contact"
+		<replace css:theme-children="div.foot-wrap" css:content="#doormat-container" />
+        <!--copy css:content=".department-contact"
                css:theme="#vcard" />
         <drop css:content=".footer-nav > .portlet.portletNavigationTree" />
         <replace css:theme-children="#footer-middle"
@@ -346,7 +346,8 @@
     <replace css:theme-children="#foot-social"
 				  css:content-children=".portlet-static-social-media > ul" />
         <drop css:theme="#foot-center" />
-        <drop css:theme="#foot-right" />
+        <drop css:theme="#foot-right" /-->
+		
   	  <!--replace css:theme="#copyright" css:if-content=".site-ISS"-->
 	  <!--Analytics-->
 	  <append css:theme="#footer" css:if-content=".site-psychology">
