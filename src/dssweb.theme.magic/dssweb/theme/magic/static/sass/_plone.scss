@@ -723,21 +723,21 @@ padding-left: 35px;
 
 /*-------footer-------*/
 #doormat-container {
-	color:#fff;
+	
 }
-#doormat-container.columns-3 .doormatColumn {
-    width: 31%;
-}
+
 #doormat-container .doormatColumn {
-    float: left;
+	float:left;
     margin: 0px 1em;
 }
-	
-dl.doormatSection > dd{
-	font-size: 0.875rem;
-	line-height: 1.4em;
-	float: left;
-	color: #fff;
+
+.column-0 {
+	color:#fff;
+}	
+dd.doormatSectionBody p{
+	font-size: 0.8125rem;
+	color: #FFF;
+	letter-spacing: 0.014em;
 	text-decoration: none;
 	
 	> a {font-size: 0.875rem;
@@ -748,23 +748,24 @@ dl.doormatSection > dd{
 	
 
 } 
-/*div.doormatColumn.column-1 {
-	margin-top: -27px;
+div.doormatColumn.column-1 {
 	margin-left:30%;
-	border-left: 1px solid white;
+    border-left: 1px solid white;
 	width: 140px;
+	height:100%;
 	
 	dl.doormatSection {
     margin-top:0;
 	font-size:15px;
 	padding-left:5px;
 	
+	
 	dd.doormatSectionBody {
       margin-bottom: .5rem;
 	}
 }
 }
-div.doormatColumn.column-2 {
+/*div.doormatColumn.column-2 {
 	margin-top: -27px;
 	margin-left: 50%;
 	border-left: 1px solid white;
