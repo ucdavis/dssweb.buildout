@@ -348,7 +348,7 @@
         <drop css:theme="#foot-center" />
         <drop css:theme="#foot-right" /-->
 		
-  	  <!--replace css:theme="#copyright" css:if-content=".site-ISS"-->
+  	  <after css:theme=".foot-wrap" css:content="#portal-footer" />
 	  <!--Analytics-->
 	  <append css:theme="#footer" css:if-content=".site-psychology">
 		 
