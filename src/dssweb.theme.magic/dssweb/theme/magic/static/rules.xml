@@ -117,7 +117,8 @@
 					  <rules css:if-content=".site-economics">
 	  			        <copy attributes="href"
 	  			              css:content="#portaltab-about > a"
-	  			              css:theme="#container-2 > div > div > div.bcontroller > a" />	  
+	  			              css:theme="#container-2 > div > div > div.bcontroller > a" />	
+						<drop content='//*[@id="portaltab-about"]' /> 
 						  </rules>
 
 			  		  <!-- Events Happy Box -->
@@ -276,7 +277,7 @@
 	         <!--drop theme='//*[@id="content-core"]/div[1]' />
 	         <replace css:theme="div.zebra.rows"
 	                  css:content="#content-core > div" /-->
-           <replace css:theme="#content-core" css:content-children="#content-core" />  
+           <replace css:theme="#content-core" css:content="#content-core" />  
 	       </rules>
 		   <!-- two collumn page -->
 	   	<rules css:if-content=".portaltype-dsstwocollumnpage">
