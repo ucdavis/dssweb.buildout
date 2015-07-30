@@ -336,8 +336,11 @@
     </rules>
     
         <!--- Footer -->
+		<rules css:if-content=".site-economics">
 		<replace css:theme-children="div.foot-wrap" css:content="#doormat-container" />
-        <!--copy css:content=".department-contact"
+	</rules>
+	<rules css:if-content=".site-psychology">
+        <copy css:content=".department-contact"
                css:theme="#vcard" />
         <drop css:content=".footer-nav > .portlet.portletNavigationTree" />
         <replace css:theme-children="#footer-middle"
@@ -346,7 +349,8 @@
     <replace css:theme-children="#foot-social"
 				  css:content-children=".portlet-static-social-media > ul" />
         <drop css:theme="#foot-center" />
-        <drop css:theme="#foot-right" /-->
+        <drop css:theme="#foot-right" />
+	</rules>
 		
   	  <after css:theme=".foot-wrap" css:content="#portal-footer" />
 	  <!--Analytics-->

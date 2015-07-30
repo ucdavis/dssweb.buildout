@@ -728,7 +728,7 @@ padding-left: 35px;
 
 #doormat-container .doormatColumn {
 	float:left;
-    margin: 0px 1em;
+    margin: 0px 0px;
 }
 
 .column-0 {
@@ -781,7 +781,8 @@ div.doormatColumn.column-2 {
 	}
 }
 } 
-.foot-wrap-0 {
+#portal-footer.foot-wrap-0 {
+	margin-top:15px;
 }
 
 #footer a {
