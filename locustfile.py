@@ -7,7 +7,7 @@ from locust import HttpLocust, TaskSet, task
 IMG_DIR = os.path.join(os.path.dirname(__file__), 'locust_images')
 SITE_ID = 'test-site'
 USER = 'admin'
-PASS = 'admin'
+PASS = 'aLv7Eb6ju9aV7O'
 
 ALL_IMAGES = []
 VIEW_URLS = ('', '/view', '/@@images/image/thumb', '/@@images/image/mini',
@@ -91,37 +91,89 @@ class SiteBrowser(TaskSet):
     login = ImageCreator.login.im_func
     logout = ImageCreator.logout.im_func
 
-    @task(10)
+    @task(15)
     def view_image(self):
         if ALL_IMAGES:
             img_id = random.choice(ALL_IMAGES)
             more = random.choice(VIEW_URLS)
-            self.client.get('/' + SITE_ID + '/' + img_id + more)
+            self.client.get('/' + SITE_ID + '/images/' + img_id + more)
         else:
             self.client.get("/" + SITE_ID + '/')
 
-    @task(1)
+    @task(2)
     def index(self):
+        self.client.get("/" + SITE_ID + '/images')
+
+    @task(1)
+    def site_root(self):
         self.client.get("/" + SITE_ID + '/')
 
     def create_site(self):
+        has_site = False
         with self.client.get('/' + SITE_ID + '/', catch_response=True) as resp:
             if resp.status_code == 200:
+                has_site = True
+        if not has_site:
+            self.client.auth = (USER, PASS)
+            with self.client.post('/@@plone-addsite', data={
+                    'site_id': SITE_ID,
+                    'title': 'Test Site',
+                    'default_language': 'en',
+                    'setup_content:boolean': 'true',
+                    'form.submitted:boolean': 'True',
+                    'extension_ids:list': 'plonetheme.classic:default',
+                    'extension_ids:list': 'plonetheme.sunburst:default',
+                    'submit': 'Create Plone Site'}, catch_response=True) as resp:
+                if resp.status_code != 200:
+                    resp.raise_for_status()
+                if 'Welcome to Plone' not in resp.content:
+                    resp.failure('Site not created')
+                    self.client.auth = False
+                    return
+        with self.client.get('/' + SITE_ID + '/images',
+                             catch_response=True) as resp:
+            if resp.status_code == 200:
                 return
-        self.client.auth = (USER, PASS)
-        with self.client.post('/@@plone-addsite', data={
-                'site_id': SITE_ID,
-                'title': 'Test Site',
-                'default_language': 'en',
-                'setup_content:boolean': 'true',
-                'form.submitted:boolean': 'True',
-                'extension_ids:list': 'plonetheme.classic:default',
-                'extension_ids:list': 'plonetheme.sunburst:default',
-                'submit': 'Create Plone Site'}, catch_response=True) as resp:
-            if resp.status_code != 200:
+        # Create an image folder
+        with self.client.post(
+                "/" + SITE_ID +
+                "/portal_factory/Folder/folder.{}/atct_edit".format(
+                    'images'
+                ), data={
+                    'id': 'images',
+                    'title': 'Images',
+                    'description': 'Image Folder',
+                    'description_text_format': 'text/plain',
+                    'form.button.save': 'Save',
+                    'form.submitted': '1',
+                    'last_referer': '/' + SITE_ID + '/'
+                }, catch_response=True) as resp:
+            if resp.status_code >= 400:
+                self.client.auth = False
                 resp.raise_for_status()
-            if 'Welcome to Plone' not in resp.content:
-                resp.failure('Site not created')
+            if 'Changes saved.' not in resp.content:
+                html = etree.HTML(resp.content)
+                errors = html.xpath('//div[@class="fieldErrorBox"]/text()')
+                errors = '; '.join(e for e in errors if e)
+                self.client.auth = False
+                resp.failure(errors)
+                return
+        # Publish the Folder
+        with self.client.get(
+                "/" + SITE_ID +
+                "/images/content_status_modify?workflow_action=publish",
+                catch_response=True) as resp:
+            if resp.status_code >= 400:
+                self.client.auth = False
+                resp.raise_for_status()
+        # Set the thumbnail view
+        with self.client.get(
+                "/" + SITE_ID +
+                "/images/selectViewTemplate?templateId=atct_album_view",
+                catch_response=True) as resp:
+            if resp.status_code >= 400:
+                self.client.auth = False
+                resp.raise_for_status()
         self.client.auth = False
 
     def on_start(self):
