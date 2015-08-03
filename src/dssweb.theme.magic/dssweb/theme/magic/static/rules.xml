@@ -17,7 +17,7 @@
 		<theme href="t7_contact.html" css:if-content="body.portaltype-dsscontact" />
 		<theme href="t8_students.html" css:if-content=".subsection-psychology-major-something-for-iss" />
 
-       <theme href="t5_generic_landing.html" css:if-content=".subsection-prospective-students"/>
+       <theme href="t6_research_lab.html" css:if-content=".subsection-prospective-students"/>
 	  <theme href="t11_calendar.html" css:if-content=".template-solgemafullcalendar_view" />
 	  <theme href="t14_search.html" css:if-content=".template-search" />
 	  <theme href="t17_fullwidth.html" css:if-content=".portaltype-jqxgrid_page" /> 
@@ -304,11 +304,11 @@
 		   <replace css:theme="#content-core" css:content="#content-core" />
 		   <replace css:theme="#google-map" css:content="#viewlet-above-content-title" />
    	   </rules>
- 	  <!--Prospective Students T5-->
+ 	  <!--Prospective Students T6-->
  	   <rules css:if-content=".subsection-prospective-students" >
-              <drop css:content=".image-under-banner" />
-               <replace css:theme="#corner-box-target" css:content=".image-under-banner" method="raw" />
- 		    	<replace css:theme-children="#nested-right" css:content="#content-core" />
+		   <drop css:content=".image-under-banner" />
+               <replace css:theme=".picture" css:content=".image-under-banner" method="raw" />
+ 		    	<replace css:theme="#content-core" css:content="#content-core" />
  		    	<drop css:theme=".intro" />
  		</rules> 
 	    <!--T11 Calendar -->
