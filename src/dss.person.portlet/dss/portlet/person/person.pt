@@ -50,10 +50,11 @@
 					  				  <span class="org"><span tal:content="eachDepartment/Title" /></p>
 							     </tal:block>
 						   </div>
+					   </div>
 					 
-				
+				         <div class="web-addres">    
 						          <tal:block>	
-					  				  <div class="web" tal:condition="python: context.getWebsites()"
+					  				  <div tal:condition="python: context.getWebsites()"
 						                      >
 						                   <h4 class="fn" i18n:translate="FacultyStaffDirectory_label_websites_heading">Websites</h4>
 						                   <ul>
@@ -65,6 +66,7 @@
 						                   </ul>
 						                 </div>
 									  </tal:block>
+								  </div>
 
 					  				   
 					  				 
