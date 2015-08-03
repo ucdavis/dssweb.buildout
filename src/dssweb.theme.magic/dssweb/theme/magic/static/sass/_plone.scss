@@ -811,14 +811,17 @@ dd.doormatSectionBody p{
 } 
 div.doormatColumn.column-1 {
 	margin-left:30%;
-    border-left: 1px solid white;
 	width: 45%;
 	height:100%;
+	-webkit-column-count: 3; /* Chrome, Safari, Opera */
+	    -moz-column-count: 3; /* Firefox */
+	    column-count: 3;
 	
 	dl.doormatSection {
-    margin-top:0;
+     margin-top:0;
 	font-size:15px;
 	padding-left:5px;
+	border-left:1px solid #fff;
 	
 	
 	dd.doormatSectionBody {
@@ -827,8 +830,6 @@ div.doormatColumn.column-1 {
 }
 }
 div.doormatColumn.column-2 {
-	border-left: 1px solid white;
-	
 	
 	dl.doormatSection {
     margin-top:0;
