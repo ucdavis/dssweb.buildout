@@ -129,6 +129,11 @@ padding-top: 5px;
 .adr {
 	padding-left:35px;
 }
+a.org.follow {
+	font-size: 10px !important;
+	margin-left:35px;
+
+}
 
 @media screen {
 /*------News Happy Box ---------*/
@@ -556,6 +561,28 @@ margin-left: 0px;
 margin-left: 0;
 margin-right: -15px;
 }
+/*-- nav portlets ---*/
+
+dl.portlet ul.navTreeLevel0 > .navTreeItem {
+    padding: 0.25em 1em;
+    border-bottom: 0.1em dotted $ucd_blue_30;
+    line-height: 2em;
+    
+    a {
+	    color:#335379;
+    }
+}
+dl.portlet ul.navTreeLevel1 > .navTreeItem {
+    padding: 0.25em 1em;
+    border-bottom: 0.1em dotted $ucd_blue_30;
+    line-height: 2em;
+    
+    a {
+	    color:#335379;
+    }
+}
+
+
 /*dd > a.tile {
 	display:flex;
 	align-items:center;
@@ -719,8 +746,41 @@ padding-left: 35px;
 }
 /*--Basic rec pool Blue Portlet --*/
 
+/*--tables --*/
+table.listing tbody th {
+    
+}
 
+table.listing th {
+    text-align: left;
+    color: #fff;
+    border: 0.1em solid #fff;
+    border-style: solid solid none;
+    background: $rec_blue;
 
+}
+    
+@media screen {table.invisible td, table.invisible th, table.plain td, table.plain th, table.listing td, table.listing th {
+   padding: 0.5em 1em;
+   vertical-align: top;
+}}
+
+table.listing tbody tr.odd td {
+    background: $box_light_gray;
+    border-right:#fff;
+}
+
+table.listing tbody tr:nth-child(odd) td {
+    background: $box_light_gray;
+    border-right: 1px solid #fff;
+}
+table.listing {
+    border-left: 1px solid $box_light_gray;
+    border-bottom: 1px solid $box_light_gray;
+}
+table.listing tbody tr:nth-child(even) td {
+    border-right: 1px solid $box_light_gray;
+}
 /*-------footer-------*/
 #doormat-container {
 	
