@@ -1,9 +1,12 @@
 import os
 import sys
 import random
+import csv
+import logging
 from lxml import etree
 from locust import HttpLocust, TaskSet, task
 
+logger = logging.getLogger(__name__)
 IMG_DIR = os.path.join(os.path.dirname(__file__), 'locust_images')
 SITE_ID = 'test-site'
 USER = 'admin'
@@ -184,3 +187,70 @@ class CMSUser(HttpLocust):
     task_set = SiteBrowser
     min_wait = 10000
     max_wait = 30000
+
+
+class LocustRequestAnalysis(object):
+
+    def __init__(self, filename):
+        self.rows = []
+        self.filesizes = {}
+        with open(filename) as requests_file:
+            for row in csv.DictReader(requests_file):
+                self.rows.append(row)
+        for fname in os.listdir(IMG_DIR):
+            fstat = os.stat(os.path.join(IMG_DIR, fname))
+            self.filesizes[fname] = fstat.st_size
+
+    def report_data(self):
+        upload_data = {'count': 0, 'total_mb': 0,
+                       'total_time': 0, 'average_per_mb': 0,
+                       'min_per_mb': sys.maxint, 'max_per_mb': 0}
+        download_data = {'count': 0, 'total_mb': 0,
+                         'total_time': 0, 'average_per_mb': 0,
+                         'min_per_mb': sys.maxint, 'max_per_mb': 0}
+        listing_data = {}
+        for row in self.rows:
+            name = row['Name']
+            count = int(row['# requests'])
+            if count == 0:
+                continue
+            # An Upload
+            if name.endswith('/atct_edit') and '/Image/' in name:
+                fname = name.split('/')[4][6:]
+                size = self.filesizes.get(fname)
+                if not size:
+                    logger.warn('Unknown filename {}: {}'.format(name, fname))
+                    continue
+                else:
+                    size = size / (1024.0 * 1024)
+                data = upload_data
+            # A Download
+            elif len(name.split('/')) >= 4 and '/images/' in name and '?' not in name:
+                size = int(row['Average Content Size']) / (1024 * 1024.0)
+                data = download_data
+            else:
+                if name.endswith('/images'):
+                    listing_data['count'] = count
+                    listing_data['average'] = int(row['Average response time'])
+                    listing_data['median'] = int(row['Median response time'])
+                    listing_data['min'] = int(row['Min response time'])
+                    listing_data['max'] = int(row['Max response time'])
+                continue
+            # (Old Total Time + New Total Time) / (Total MB)
+            data['average_per_mb'] = ((
+                (data['total_mb'] * data['average_per_mb']) +
+                (int(row['Average response time']) * count)) /
+                (data['total_mb'] + size))
+            data['count'] += count
+            data['total_mb'] += size
+            data['total_time'] += count * int(row['Average response time'])
+            data['min_per_mb'] = min(data['min_per_mb'],
+                                     int(row["Min response time"]) / size)
+            data['max_per_mb'] = max(data['max_per_mb'],
+                                     int(row["Max response time"]) / size)
+        # report integer values (ms, MB)
+        for data in (download_data, upload_data):
+            for k, v in data.items():
+                data[k] = int(round(v))
+        return {'uploads': upload_data, 'downloads': download_data,
+                'listing': listing_data}
