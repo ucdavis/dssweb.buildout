@@ -7,7 +7,10 @@
 .wall .wallpaper .notsobig {
 	height:540px !important;
 }
-
+/* Color classes for portlets */
+[class$="cork-oak"] dt.portletHeader {
+	background-color: $cork_oak !important;
+}
 
 .hiddenStructure {
     background: none repeat scroll 0 0 transparent;
