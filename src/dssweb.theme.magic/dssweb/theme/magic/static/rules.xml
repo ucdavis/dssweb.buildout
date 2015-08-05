@@ -340,7 +340,7 @@
     </rules>
     
         <!--- Footer -->
-		<rules css:if-content=".site-economics">
+       <rules css:if-content=".site-economics">
 		<replace css:theme-children="div.foot-wrap" css:content="#doormat-container" />
 	</rules>
 	<rules css:if-content=".site-psychology">
