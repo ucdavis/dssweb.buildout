@@ -229,8 +229,11 @@ dl#c3 {
   font-weight: normal;
   padding-left: 0.5em;
   display: flex;
+  span {
+	  position:absolute;
+	  right:15%;
+  }
 }
-
 .faceted-checkbox-more {
   text-align: right;
 }

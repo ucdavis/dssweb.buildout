@@ -293,7 +293,10 @@
 				 <rules css:if-content=".portaltype-jqxgrid_page" >
 				 </rules>
 				 
-		   
+	   <!--Plone Form Gen -->
+   	     <replace css:theme-children=".panel-body" css:content=".pfg-form" css:if-content=".portaltype-formfolder" />
+				 
+				 
    	   <!--Contact Page rules -->
 	  
    	   <rules css:if-content="body.portaltype-dsscontact" >
@@ -337,7 +340,7 @@
     </rules>
     
         <!--- Footer -->
-		<rules css:if-content=".site-economics">
+       <rules css:if-content=".site-economics">
 		<replace css:theme-children="div.foot-wrap" css:content="#doormat-container" />
 	</rules>
 	<rules css:if-content=".site-psychology">
