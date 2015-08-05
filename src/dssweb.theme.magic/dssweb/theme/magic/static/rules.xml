@@ -293,7 +293,10 @@
 				 <rules css:if-content=".portaltype-jqxgrid_page" >
 				 </rules>
 				 
-		   
+	   <!--Plone Form Gen -->
+   	     <replace css:theme-children=".panel-body" css:content=".pfg-form" css:if-content=".portaltype-formfolder" />
+				 
+				 
    	   <!--Contact Page rules -->
 	  
    	   <rules css:if-content="body.portaltype-dsscontact" >
