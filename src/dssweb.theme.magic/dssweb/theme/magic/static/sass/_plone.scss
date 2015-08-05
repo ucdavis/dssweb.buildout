@@ -825,8 +825,8 @@ div.doormatColumn.column-1 {
 	width: 45%;
 	height:100%;
 	-webkit-column-count: 3; /* Chrome, Safari, Opera */
-	    -moz-column-count: 3; /* Firefox */
-	    column-count: 3;
+	-moz-column-count: 3; /* Firefox */
+	column-count: 3; 
 	
 	dl.doormatSection {
      margin-top:0;
@@ -837,7 +837,7 @@ div.doormatColumn.column-1 {
 	
 	dd.doormatSectionBody {
       margin-bottom: .5rem;
-	}
+  }
 }
 }
 div.doormatColumn.column-2 {
