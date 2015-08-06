@@ -137,8 +137,11 @@ padding-top: 5px;
 }
 
 a.org.follow {
-	font-size: 10px !important;
+	display:block;
+	font-size: 13px !important;
 	margin-left:35px;
+	margin-right:35px;
+	word-wrap: break-word;
 
 }
 
