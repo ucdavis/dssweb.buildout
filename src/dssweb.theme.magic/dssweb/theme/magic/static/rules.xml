@@ -178,6 +178,16 @@
 	      <replace content="//li[contains(@class,'dropdown')]/@class">
 	          <xsl:attribute name="class">has-dropdown</xsl:attribute>
 	      </replace>
+		  
+  		<rules css:if-content=".site-economics">
+  		<xsl:template match="a.btn.btn-primary.btn-home">
+  		        <xsl:copy>
+  		            <xsl:attribute name="class">cork-oak</xsl:attribute>
+  		            <xsl:copy-of select="@*" />
+  		            <xsl:apply-templates />
+  		        </xsl:copy>
+  		    </xsl:template>
+		</rules>
 		  <!--Handle Titles -->
   	    <!--replace css:theme="h2.homepage-title" css:content="h1#parent-fieldname-title" />
   	    <replace content="//h1[contains(@class,'documentFirstHeading')]/@class" if="$home_page">
@@ -271,14 +281,17 @@
 	       <rules css:if-content="body.portaltype-event">
 	         <replace theme='//*[@id="content"]/h1'
 	                  content='//*[@id="parent-fieldname-title"]' />
-	         <before css:theme="#content-core"
-	                 css:content=".newsImageContainer" />
         
 	         <!--drop theme='//*[@id="content-core"]/div[1]' />
 	         <replace css:theme="div.zebra.rows"
 	                  css:content="#content-core > div" /-->
            <replace css:theme="#content-core" css:content="#content-core" />  
 	       </rules>
+		   <rules css:if-content="#newsImageContainer">
+  	         <before css:theme="#content-core"
+  	                 css:content=".newsImageContainer" />
+				 </rules>
+			   
 		   <!-- two collumn page -->
 	   	<rules css:if-content=".portaltype-dsstwocollumnpage">
 				 

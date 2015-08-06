@@ -23,7 +23,7 @@ import random
 
 #  This will have the portal url added on front
 DEFAULT_WALL = '/++theme++dssweb.theme.magic/images/banners/rec_blue_shadow.gif'
-ß
+
 class BannerImage(BrowserView):
 
     @memoize
