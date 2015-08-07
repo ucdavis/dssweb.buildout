@@ -3,13 +3,14 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       tal:omit-tag="">
 	  
- <div class="nothing">
+ <dl class="portlet portletPersonAddress default-color">
 
-<div class="portlet portletPersonAddress"
-    i18n:domain="plone">
-	<h3>Offices &amp; Labs</h3>
+<dt class="portletHeader">
+	<span class="portletTopLeft"></span>
+	<span>Offices &amp; Labs</span>
+	<span class="portletTopRight"></span>
 	
-
+</dt>
 <div class="collapsible panel-collapse collapse in">
 	<div class="portlet-content panel-body">
 		<div class="vcard office">
@@ -96,10 +97,9 @@
 		</tal:block>	
 	</div>	
 			
+</div>
+</div>
 
-	
-</div>
-</div>
-</div>
+</dl>
 </html>
 
