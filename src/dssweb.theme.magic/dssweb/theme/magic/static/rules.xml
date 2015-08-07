@@ -119,7 +119,7 @@
 			        <!--  About Happy Box -->
 			        <replace css:content-children="#content-core"
 			                 css:theme-children="#container-2 div.content-wrap"  />
-							 <rules css:if-content=".site-psychology">
+				<rules css:if-content=".site-psychology">
 			        <copy attributes="href"
 			              css:content="#portaltab-quick-facts > a"
 			              css:theme="#container-2 > div > div > div.bcontroller > a" />
@@ -128,6 +128,11 @@
 	  			        <copy attributes="href"
 	  			              css:content="#portaltab-about > a"
 	  			              css:theme="#container-2 > div > div > div.bcontroller > a" />	
+							  <!--color hack -->
+					    <merge attributes="class"
+					              css:content=".front-page-news"
+					              css:theme="#container-2 > div > div > div.bcontroller > a"  />
+					    
 						<drop content='//*[@id="portaltab-about"]' /> 
 						  </rules>
 
@@ -137,6 +142,10 @@
 			    		<copy attributes="href"
 			              css:content=".front-page-events > dl > dd.portletFooter > span:nth-child(2) > a"
 			              css:theme="#container-3 > div > div > div.bcontroller > a"  />
+						  <merge attributes="class"
+				              css:content=".front-page-events"
+				              css:theme="#container-3 > div > div > div.bcontroller > a"  />
+						  
 
 			    		<!-- Front Page -->
 			    		<!--copy css:content="#parent-fieldname-title" css:theme="#middle-row" /-->
