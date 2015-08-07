@@ -70,10 +70,14 @@
   
   </rules>
   
-  <replace content="//div[contains(@class,'portlet')]/@class" menthod="raw" if-path="economics/people">
-     <!--replace content="//dt[contains(@class,'portletHeader')]" method="raw"-->
-    <xsl:attribute name="class"><xsl:value-of select="."/> cork-oak</xsl:attribute>
-  </replace>
+  <rules css:if-content=".economics">
+    <!--rules if-path="/people"-->
+    <replace content="//dl[contains(@class,'portlet')]/@class" menthod="raw">
+       <!--replace content="//dt[contains(@class,'portletHeader')]" method="raw"-->
+      <xsl:attribute name="class"><xsl:value-of select="."/> cork-oak</xsl:attribute>
+    </replace>
+    <!--/rules-->
+  </rules> 
 
      <before css:theme="#util-bar-wrap > nav" css:content="#iss-top" />
   <!--front-page -->
