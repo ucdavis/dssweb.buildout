@@ -5,7 +5,7 @@
 	  
  <div class="nothing">
 
-<div class="portlet portletPerson bio-card"
+<div class="portlet portletPerson bio-card default-color"
     i18n:domain="plone">
 
     <h3 class="hidden-md hidden-lg">Contact</h3>
