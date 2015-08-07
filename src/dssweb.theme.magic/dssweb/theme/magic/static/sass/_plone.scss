@@ -521,12 +521,12 @@ dt.portletHeader span {
     text-transform: uppercase;
     font-size: 0.8125rem;
     line-height: 1.125rem !important;
-    letter-spacing: 0.2em;
+   /* letter-spacing: 0.2em; */
     padding-bottom: 4px;
     padding-right: 30px;
     top: 2px;
 	display:block;
-	padding-left:10px;
+	/*padding-left:10px; */
 }
 .portletItemDetails {
 	font-size: 85%;
@@ -544,8 +544,10 @@ dd.portletFooter {
 
 
 dd.portletItem {
-	padding-top:10px;
+	padding-top:15px;
 	padding-bottom:20px;
+	padding-left:35px;
+	padding-right:35px;
 	background-color:#f2f2f2;
 	/*padding-left:20px;
 	padding-right: 20px*/
@@ -577,7 +579,8 @@ margin-right: -15px;
 /*-- nav portlets ---*/
 
 dl.portlet ul.navTreeLevel0 > .navTreeItem {
-    padding: 0.25em 1em;
+   /* padding: 0.25em 1em; */
+	padding-top:.8em;
     border-bottom: 0.1em dotted $ucd_blue_30;
     line-height: 2em;
     
@@ -586,7 +589,8 @@ dl.portlet ul.navTreeLevel0 > .navTreeItem {
     }
 }
 dl.portlet ul.navTreeLevel1 > .navTreeItem {
-    padding: 0.25em 1em;
+   /* padding: 0.25em 1em; */
+	padding-top:.8em;
     border-bottom: 0.1em dotted $ucd_blue_30;
     line-height: 2em;
     
@@ -595,10 +599,7 @@ dl.portlet ul.navTreeLevel1 > .navTreeItem {
     }
 }
 /*---News Portlet---*/
-.portletNews dd.portletItem {
-	padding-left:35px;
-	padding-right:35px;
-}
+
 
 /*dd > a.tile {
 	display:flex;

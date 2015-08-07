@@ -5,6 +5,8 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
     <!-- Apply the following rules to standard Plone pages -->
+  
+  
   	
     <rules css:if-content="#visual-portal-wrapper">
 	    
@@ -68,6 +70,10 @@
   
   </rules>
   
+  <replace content="//div[contains(@class,'portlet')]/@class" menthod="raw" if-path="economics/people">
+     <!--replace content="//dt[contains(@class,'portletHeader')]" method="raw"-->
+    <xsl:attribute name="class"><xsl:value-of select="."/> cork-oak</xsl:attribute>
+  </replace>
 
      <before css:theme="#util-bar-wrap > nav" css:content="#iss-top" />
   <!--front-page -->
@@ -184,9 +190,10 @@
 	      </replace>
 		  
 		  <!-- color hack -->
-		  <replace content="//a[contains(@class,'btn')]/@class">
-			  <xsl:attribute name="class">cork-oak</xsl:attribute>
-		  </replace>
+		      
+		  
+			  
+		  	  
 		  
 	  	
 		  
