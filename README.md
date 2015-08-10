@@ -109,7 +109,10 @@ to set further custom nginx configuration declarations for a given subsite.
 You can set things like the following:
 
     ...
-    "subsite_config": {".mycustomdomain.ucdavis.edu": "\nif ($host ~ '^mycustomdomain.ucdavis.edu$') {\n  rewrite ^(.*)$ http://www.mycustomdomain.ucdavis.edu$1 permanent;\n  break;\n}\n"}
+    "subsite_config": {
+        ".mycustomdomain.ucdavis.edu":
+         "\nif ($host ~ '^mycustomdomain.ucdavis.edu$') {\n  rewrite ^(.*)$ http://www.mycustomdomain.ucdavis.edu$1 permanent;\n  break;\n}\n"
+    }
     ...
 
 Which will redirect all requests to `mycustomdomain.ucdavis.edu` to
@@ -121,7 +124,10 @@ If including configuration directly in the Custom JSON is not desirable, you
 can include more complex nginx configuration files which live in the buildout:
 
    ...
-    "subsite_config": {".mycustomdomain.ucdavis.edu": "\ninclude /srv/www/plone_instances/current/src/mycustomdomain_config/config\n"}
+    "subsite_config": {
+        ".mycustomdomain.ucdavis.edu":
+         "\ninclude /srv/www/plone_instances/current/src/mycustomdomain_config/config\n"
+    }
     ...
 
 Here we reference a file included in the `src/` directory by mr.developer,
