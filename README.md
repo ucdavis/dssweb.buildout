@@ -25,36 +25,38 @@ changes made via SSH or the EC2 console are likely to be overwritten or lost.
 
 A few important concepts from OpsWorks:
 
-    * Stack: a container for application and server configuration
+* Stack: a container for application and server configuration
 
-    * Layer: a set of recipes and dependencies to be run on a server
-    throughout its lifecycle
+* Layer: a set of recipes and dependencies to be run on a server throughout
+its lifecycle
 
-    * Instance: a description of a server (not the same as an EC2 instance),
-    can be assigned multiple Layers of functionality, and started and stopped.
-    Instance store instances are destroyed when stopped and created when
-    started, EBS instances have persistent storage which is retained across
-    stops and starts.
+* Instance: a description of a server (not the same as an EC2 instance), can
+be assigned multiple Layers of functionality, and started and stopped.
+Instance store instances are destroyed when stopped and created when started,
+EBS instances have persistent storage which is retained across stops and
+starts.
 
-    * Application: a description of an application, including its code
-    repositories, credentials, and database connections.
+* Application: a description of an application, including its code
+repositories, credentials, and database connections.
 
-    * Recipe: a set of resources to be created/managed and commands to
-    run, defined using the Chef configuration management system.
+* Recipe: a set of resources to be created/managed and commands to run,
+defined using the Chef configuration management system.
+
 
 There are some specific stages of the instance lifecycle which trigger recipes
 to be run:
 
-    * Setup: The first set of recipes run after an instance boots.  These
-    install dependencies and setup services.
+* Setup: The first set of recipes run after an instance boots.  These install
+dependencies and setup services.
 
-    * Configure: Recipes run automatically on all instances whenever an new
-    instance is added or removed from the stack.
+* Configure: Recipes run automatically on all instances whenever a new
+instance is added or removed from the stack.
 
-    * Deploy: Recipes run when an application is deployed (code is checked out
-    and installed)
+* Deploy: Recipes run when an application is deployed (code is checked out
+and installed)
 
-    * Shutdown: Recipes run when in an instance is stopped.
+* Shutdown: Recipes run when in an instance is stopped.
+
 
 The setup and configure stages can be triggered manually at any time using the
 `Run Command` button from the `Stack` or `Deployments` panels.  Applications
