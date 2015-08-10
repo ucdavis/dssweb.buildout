@@ -319,9 +319,13 @@
            <replace css:theme="#content-core" css:content="#content-core" />  
 	       </rules>
 		   <rules css:if-content=".newsImageContainer">
+			   <rules css:if-not-content=".portaltype-news-item">
+				   <rules css:if-not-content=".template-collapsible_full_view">
   	         <before css:theme="#content-core"
   	                 css:content=".newsImageContainer" />
 				 </rules>
+			 </rules>
+			 </rules>
 			   
 		   <!-- two collumn page -->
 	   	<rules css:if-content=".portaltype-dsstwocollumnpage">
