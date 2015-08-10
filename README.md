@@ -123,7 +123,7 @@ server.
 If including configuration directly in the Custom JSON is not desirable, you
 can include more complex nginx configuration files which live in the buildout:
 
-   ...
+    ...
     "subsite_config": {
         ".mycustomdomain.ucdavis.edu":
          "\ninclude /srv/www/plone_instances/current/src/mycustomdomain_config/config\n"
