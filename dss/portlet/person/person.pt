@@ -73,8 +73,11 @@
 							  <span class="item-label" i18n:translate="FacultyStaffDirectory_label_email">EMAIL</span></a>
 						  </span>
 		                </li>
-				  									<li><span class="cv file" tal:define="cv context/getCv"
-													     tal:condition="python: cv.get_size() > 0"><a class="item-label" tal:attributes="href string:${context/absolute_url}/cv">CV</a></span></li>
+				  	<li>
+				    <span class="cv file" tal:define="cv context/getCv"
+													     tal:condition="python: cv.get_size() > 0"><a class="item-label" tal:attributes="href string:${context/absolute_url}/cv">CV</a></span>
+					<span class="cv link" tal:define="cvlink context/getCvlink" tal:condition="cvlink"><a class="item-label" tal:attributes="href string:${context/cvlink}">CV</a></span>
+				</li>
 													
 													
 													
