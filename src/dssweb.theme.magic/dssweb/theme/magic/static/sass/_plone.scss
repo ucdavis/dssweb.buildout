@@ -11,6 +11,10 @@
 dl.cork-oak dt.portletHeader {
 	background-color: $cork_oak !important;
 }
+div.cork-oak > dl > dt {
+	background-color: $cork_oak !important;
+	
+}
 #top-panel-row .bcontroller .btn-home.btn-primary.cork-oak{
 	background-color: $cork_oak;
 }
