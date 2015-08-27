@@ -320,16 +320,21 @@
 	                  css:content="#content-core > div" /-->
            <replace css:theme="#content-core" css:content="#content-core" />  
 	       </rules>
+		   <!-- NewsImageContainer aka content Lead Image -->
 		   <rules css:if-content=".newsImageContainer">
 			   <rules css:if-not-content=".portaltype-news-item">
 				   <rules css:if-not-content=".template-collapsible_full_view">
 					   <rules css:if-not-content=".template-course_view">
+						   <rules css:if-not-content=".portaltype-content-posts">
+							<rules css:if-not-content=".template-all_content">
   	         <before css:theme="#content-core"
   	                 css:content=".newsImageContainer" />
 				 </rules>
 			 </rules>
 			 </rules>
 		 </rules>
+		 </rules>
+	 </rules>
 			   
 		   <!-- two collumn page -->
 	   	<rules css:if-content=".portaltype-dsstwocollumnpage">
