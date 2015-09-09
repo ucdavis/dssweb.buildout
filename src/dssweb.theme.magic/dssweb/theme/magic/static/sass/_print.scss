@@ -1,7 +1,5 @@
-/* _print.scss */
-
-/* This basic print stylesheet formats the home page for printing. Add additional styles as necessary to refine */
-
+/* Removes certain elements when printing, and apply basic font styles
+   for the remaining content. */
 @media print {
 	
 	@page { margin: 0.25in; }
@@ -11,179 +9,203 @@
 	print-color-adjust: exact;
 	*/
 	
-	* {
-		text-shadow: none !important;
-		color: #000 !important;
-		background: transparent !important;
-		box-shadow: none !important;
-	}
-		
-	// Reference text for links 
-	a, a:visited { 
-		text-decoration: underline; 
-	}
-	a[href]:after { 
-		content: " (" attr(href) ")"; 
-	}
-  abbr[title]:after { 
-		content: " (" attr(title) ")"; 
-	}
-  a[href^="javascript:"]:after, a[href^="#"]:after { 
-		content: ""; 
-	}
 	
-	.tab {
-		page-break-inside: avoid;
-		clear: both;
-	}
-	img {
-	  page-break-inside: avoid;
-	  max-width: 100% !important;
-	}
-	
-	h2, h3 { 
-		page-break-after: avoid; 
-	}
-	p, h2, h3 {
-	  orphans: 3;
-	  widows: 3;
-	}
-	table {
-	  border-collapse: collapse !important;
-	  thead { display: table-header-group; }
-	  tr { page-break-inside: avoid; }
-	  td, th { background: #fff !important; }
-	}
-	
-	div {
-		float: none !important;
-		position: static;
-		width: 100%;
-	}
-	
-	#top-panel-row .action-element .panel-body .narrow-col a, #top-panel-row .action-element .panel-body .narrow-col h2, #top-panel-row .action-element .panel-body .narrow-col h3, #top-panel-row .action-element .panel-body .narrow-col .content-wrap, #top-panel-row .action-element .panel-body .narrow-col .content-wrap p, #top-panel-row .action-element .panel-body .narrow-col .content-wrap li, .tab, #footer, #footer .foot-wrap ul li a, #footer .foot-wrap #vcard p, #footer .foot-wrap #vcard span, #footer .foot-wrap #vcard a {
-		background-color: #FFF !important;
-		color: #000 !important;
-	}
 
-	.top-bar-section, .jumbotron, .bcontroller, #middle-row #banner-caption, #more-content-button, #footer .foot-social, #uti-news, #uti-events, #uti-give, #uti-share, #uti-search, #footer .foot-wrap #foot-right, #foot-social, #footer .footer-nav, .pager, #left-area {
-		display: none !important;
-	}
-	
-	#top-panel-row, #bottom-panel-row {
-		 .panel-heading {
-		 	display: none !important;
-		 }
-		.action-element {
-			width: 100% !important;
-			padding-top: 0 !important;
-			.panel-body {
-				width: 100% !important;
-				.narrow-col {
-					width: 100% !important;
-				}
-			}
-		}
-	}
-	#top-panel-row {
-		overflow: visible !important;
-		height: 100% !important;
-	}
-	
-	a, p, li, span {
-		font-size: 1em !important;
-	}
-
-	.container, .foot-wrap {
-		margin-left: auto;
-		margin-right: auto;
-		width: 612px !important;
-	}
-	.container div {
-		margin-left: 0 !important; 
-		margin-right: 0 !important;
-	}
-
-	#util-bar-wrap {
-		padding-right: 0 !important;
-		text-align: center !important;
-	}
-
-	#util-bar-wrap {
-		.util-bar {
-			margin-top: 25px;
-			background-color: #FFF;
-			ul {
-				background-color: #FFF;
-				width: auto;
-				li {
-					float: none;
-				}
-			}
-			#uti-logo {
-				background-color: #FFF;
-				margin-left: auto !important;
-				margin-right: auto !important;
-				margin-bottom: 15px;
-				padding-left: 0 !important;
-				a {
-					display: inline !important;
-				}
-				// Clear link from logo
-				a[href]:after { 
-					content: ""; 
-				}
-			  abbr[title]:after { 
-					content: ""; 
-				}
-			}
-		}
-	}
-	
-	#top-bar-wrap {
-		margin-bottom: 25px;
-		border-bottom: 1px solid #CCC;
-		padding-bottom: 15px;
-		text-align: center !important;
-		.menu-icon {
-			display: none !important;
-		}
-		text-align: center !important;
-		ul {
-			background-color: #FFF;
-			width: 100%;
-			text-align: center !important;
-			li {
-				float: none;
-				a {
-					margin-left: auto !important;
-					margin-right: auto !important;
-					display: block !important;
-					// Note: Optionally print title attribute of logo instead of logo image
-				}
-			}
-		}
-	}
-	
-	#footer {
-		border-top: 1px solid #CCC;
-		div {
-			color: #000;
-		}
-		.foot-wrap {
-			text-align: center;
-		}
-		#copyright {
-			width: 100%;
-			text-align: center;
-		}
-	}
-	
-	.tab-title {
-		background-image: none !important;
-	}
-	
+body {
+	font-family: "Helvetica Neue", Arial, FreeSans, sans-serif;
+}
+.col-lg-8 {
+    width: 66.6667%;
 }
 
-/* /_print.scss */
+div#util-bar-wrap {
+    margin-top: -35px;
+}
+.util-bar{
+   background-color: #DAAA00;
+    height: 40px;
+    margin-top: 56px;
+    margin-left: auto
+}
 
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Helvetica Neue", Arial, FreeSans, sans-serif;
+	font-weight: bold;
+	line-height: 125%;
+	page-break-inside: avoid;
+	page-break-after: avoid;
+}
+h1, h2 {
+	letter-spacing: -0.05em;
+}
+li#uti-logo {
+    float: right;
+}
+
+.top-bar-section ul {
+	display:none;
+}
+li#logosm.justname > h1 {
+	display:none;
+}
+#toggle-topbar-item > div {
+	display:none;
+}
+.sidebar-right {
+	display:none;
+}
+.portlet-thingies {
+	display:none;
+}
+div.doormatColumn.column-1, div.doormatColumn.column-2 {
+	display:none;
+}
+#doormat-container .doormatColumn {
+    /* float: left; */
+    margin: 0px 0px;
+}
+.column-0 {
+    color: #000;
+	text-align:center;
+	width:100%;
+    /* width: 26%; */
+}
+#content {
+	width:100%;
+}
+a {
+	text-decoration: none;
+	border-bottom: 0.1em solid gray;
+	color: black;
+}
+#portal-column-content {
+	width: 95%;
+}
+
+.documentDescription {
+	font-weight: bold;
+}
+pre {
+	border: 1pt dotted black;
+	white-space: pre;
+	font-size: 8pt;
+	overflow: auto;
+	padding: 1em;
+}
+table.listing,
+table.listing td {
+	border: 1pt solid black;
+	border-collapse: collapse;
+}
+table.listing td,
+table.listing th {
+    padding: 6px;
+}
+
+/* Page break class for use when printing */
+div.pageBreak {
+	page-break-before: always;
+}
+
+/* Basic styles for listing and document views */
+#content dt {
+	margin:1em 0 0.625em;
+}
+#content p, #content table {
+	margin-bottom:0.625em;
+	margin-top:0;
+}
+/*#content .documentDescription, #content #description {
+    margin:0.5em 0 1.31em; 
+} */
+#footer .foot-wrap {
+    margin-top: 0px;
+}
+
+
+/* Uncomment these if you want link addresses inserted along with the link text
+   when you print.
+#content a:link:after,
+#content a:visited:after {
+   content: " [" attr(href) "] ";
+}
+*/
+
+/* Hide all the elements that are irrelevant for printing */
+div.top,
+.jumbotron,
+li.hidden-xs,
+#portal-siteactions,
+.hiddenStructure,
+#portal-searchbox,
+#portal-globalnav,
+#portal-personaltools,
+#portal-breadcrumbs,
+#edit-bar,
+#portal-column-one,
+#portal-column-two,
+#portal-languageselector,
+.contentViews,
+.contentActions,
+.help,
+.sticky,
+.legend,
+.portalMessage,
+.documentActions,
+.netscape4,
+#viewlet-below-content .reply,
+#viewlet-below-content .discussion,
+#kss-spinner,
+#review-history,
+#content-history,
+.listingBar,
+#portal-footer,
+#portal-colophon,
+.skipnav,
+#kss-spinner,
+#review-history,
+#content-history,
+.listingBar,
+.link-presentation,
+input.standalone,
+.overlay,
+.managePortletsFallback,
+.close,
+.link-parent,
+#event-url,
+.draggingHook,
+#foldercontents-order-column,
+input.context,
+.visualNoPrint {
+	display: none;
+}
+
+/* Image alignment classes */
+.image-left {
+	float: left;
+	clear: both;
+	margin: 0.5em 1em 0.5em 0;
+	border: 0.4pt solid Black;
+}
+.image-inline {
+	float: none;
+}
+.image-right {
+	float: right;
+	clear: both;
+	margin: 0.5em;
+	border: 0.4pt solid Black;
+}
+dd.image-caption {
+	text-align:left;
+	padding: 0; margin:0;
+}
+dl.captioned {
+	padding: 0.8em;
+}
+.newsImageContainer {
+	float:right;
+	margin: 0 0 0.5em 1em;
+	width: 16em;
+}
+}

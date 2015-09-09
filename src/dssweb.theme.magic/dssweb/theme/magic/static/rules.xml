@@ -45,7 +45,7 @@
 	  
 	  <!--copy javascript in from registry -->
 	  <!--Copy script tags from Plone head to end of body-->
-      <after css:theme="html body" css:content="html head script" />
+      <before css:theme="html body" css:content="html head script" />
 	  <!--BugHerd. Two rules to accomodate pages from dssmaster -->
      <before css:theme-children="html head" css:if-content=".site-psychology">
 		 <script type='text/javascript'>
@@ -373,6 +373,37 @@
  		</rules> 
 	    <!--T11 Calendar -->
 	    <rules css:if-content=".template-solgemafullcalendar_view">
+			<!-- add in plone css -->
+			
+			<!--after theme-children="/html/head" content=" /html/head/style" /-->
+			<!--after theme-children="/html/head" attributes="style" css:content=".label.SubjectcolorIndex*" /-->
+			
+			
+			
+			<after css:theme-children="head"         css:content="link[href$='collective.js.jqueryui.custom.min.css']" />
+			<after css:theme-children="head"         css:content="link[href$='solgemafullcalendar_colors.css']" />
+			<after css:theme-children="head" css:content="link[href$='++resource++collective.js.fullcalendar/fullcalendar.css']"	/>
+			<after css:theme-children="head" css:content="link[href$='forms.css']"	/>
+			<after css:theme-children="head" css:content="link[href$='++resource++jquery.css']"	/>
+			<after css:theme-children="head" css:content="link[href$='++resource++plone.formwidget.autocomplete/jquery.autocomplete.min.js']" />
+			
+			<!--style media="all" type="text/css">label.SubjectcolorIndex-0 {
+			    color: #335379; -->
+				
+			<!--after css:theme-children="head">
+<style type="text/css" media="all">@import url(++resource++jquery.css);</style>
+<style type="text/css" media="all">@import url(++resource++jquery.select2uislider.css);</style
+><style type="text/css" media="screen">@import url(dropdown-menu.css);</style>
+<style type="text/css" media="all">@import url(SyntaxHighlighter.css);</style>
+<style type="text/css" media="all">@import url(clouseau.css);</style>
+<style type="text/css" media="screen">@import url(++resource++collective.js.colorpicker.css);</style>
+<style type="text/css" media="screen">@import url(++resource++plone.formwidget.contenttree/contenttree.css);</style>
+<style type="text/css" media="all">@import url(++resource++ftw.subsite-ressources/subsite.css);</style>
+<style type="text/css" media="all">@import url(++resource++Products.Doormat.stylesheets/doormat.css);</style>
+<style type="text/css" media="screen">@import url(++resource++collective.tinyaccordion/plomino_accordion/accordion.css);</style>
+<style type="text/css" media="all">@import url(solgema_contextualcontentmenu.css);</style>
+			</after-->
+	
 	 	   <replace css:theme-children="#calendar" css:content="#calendar" />
 	 	   <!--replace css:theme-children=".widget-fieldset" css:content="#fieldset-Subject" /-->
 		   <replace css:theme-children=".panel" css:content="#SFQuery" />
