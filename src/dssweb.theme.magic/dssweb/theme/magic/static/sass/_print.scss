@@ -4,11 +4,10 @@
 	
 	@page { margin: 0.25in; }
 	
-	/* If background colors desired (mileage varies):
+   /*If background colors desired (mileage varies):
 	-webkit-print-color-adjust: exact;
-	print-color-adjust: exact;
-	*/
-	
+	print-color-adjust: exact */
+
 	
 
 body {
@@ -40,8 +39,18 @@ h1, h2 {
 	letter-spacing: -0.05em;
 }
 li#uti-logo {
-    float: right;
+	float:right;
 }
+li#uti-logo a.blue {
+	display:none;
+}
+li#uti-logo a.gold {
+	float:right;
+	border-bottom:0px;
+
+}
+
+
 
 .top-bar-section ul {
 	display:none;
@@ -70,6 +79,10 @@ div.doormatColumn.column-1, div.doormatColumn.column-2 {
 	text-align:center;
 	width:100%;
     /* width: 26%; */
+}
+#event-description > div.col-xs-12.col-sm-12.col-md-8.col-lg-8 > div {
+	margin-top: -45px;
+	padding-left: 35%;
 }
 #content {
 	width:100%;

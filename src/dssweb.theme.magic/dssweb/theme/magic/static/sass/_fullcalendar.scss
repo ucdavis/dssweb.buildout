@@ -196,6 +196,12 @@ a.fc-event.colorIndex-0.Subject.colorIndex-0{
 	border:1px solid $evergreen;
 	color:#fff;
 }
+a.fc-event.fc-event-vert.fc-event-start.fc-event-end.contextualContentMenuEnabled.state-published.type-Event.colorIndex-0.Subject > div.fc-event-inner > div.fc-event-time {
+	color:#fff !important;
+}
+a.fc-event.fc-event-vert.fc-event-start.fc-event-end.contextualContentMenuEnabled.state-published.type-Event.colorIndex-0.Subject > div.fc-event-inner > div.fc-event-title {
+	color:#fff !important;
+}
 label.colorIndex-0 {
     color: $evergreen;
 }
@@ -232,7 +238,13 @@ a.fc-event.colorIndex-3.Subject.colorIndex-3 {
     background-color: $wine_grape;
     border-color: $wine_grape;
 	color:#fff !important;
+} a.fc-event.fc-event-vert.fc-event-start.fc-event-end.contextualContentMenuEnabled.state-published.type-Event.colorIndex-3.Subject > div.fc-event-inner > div.fc-event-time {
+	color:#fff !important;
 }
+a.fc-event.fc-event-vert.fc-event-start.fc-event-end.contextualContentMenuEnabled.state-published.type-Event.colorIndex-3.Subject > div.fc-event-inner > div.fc-event-title {
+	color:#fff !important;
+}
+
 label.colorIndex-3 {
     color: $wine_grape;
 }
