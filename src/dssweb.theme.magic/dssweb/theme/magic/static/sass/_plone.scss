@@ -1649,6 +1649,23 @@ body.mceContentBody div.plomino-accordion-content {
 	
 	background: url("../images/icons/blue-100-right-arrow.png") no-repeat scroll 96% 50%;
 }
+/* lists */
+@media screen{
+#content ol, dl.portlet ol, .portletStaticText ol {
+    margin-left: 2em;
+}}
+ol.listTypeDecimal {
+    list-style-type: decimal;
+    list-style-image: none;
+}
+ol.listTypeLowerRoman {
+    list-style-type: lower-roman;
+    list-style-image: none;
+}
+ol.listTypeUpperRoman {
+    list-style-type: upper-roman;
+    list-style-image: none;
+}
 
 
 /* @end */

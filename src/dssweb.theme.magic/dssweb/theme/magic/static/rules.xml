@@ -13,8 +13,8 @@
 	    <theme href="index.html" css:if-content="body.portaltype-front-page" />
 
 
-            <theme href="t13_event_b.html" css:if-content="body.portaltype-event" />
-			<theme href="t13_event_b.html" css:if-content="body.portaltype-dsscourse" />
+        <theme href="t13_event_b.html" css:if-content="body.portaltype-event" />
+	    <theme href="t13_event_b.html" css:if-content="body.portaltype-dsscourse" />
 		<theme href="t3_bio.html" css:if-content="body.portaltype-fsdperson" />
 		<theme href="t2_ourpeople.html" css:if-content="body.template-facetednavigation_view" />
 		<theme href="t7_contact.html" css:if-content="body.portaltype-dsscontact" />
@@ -138,7 +138,7 @@
 					              css:content=".front-page-news"
 					              css:theme="#container-2 > div > div > div.bcontroller > a"  />
 					    
-						<drop content='//*[@id="portaltab-about"]' /> 
+						<!--drop content='//*[@id="portaltab-about"]' /--> 
 						  </rules>
 
 			  		  <!-- Events Happy Box -->

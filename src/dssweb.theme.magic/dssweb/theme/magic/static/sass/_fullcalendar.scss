@@ -191,98 +191,98 @@ label.colorIndex-undefined {
     color: #AAAAAA;
 }
 
-#calendar div.fc-event.colorIndex-0 {
-    border:1px solid #4ca9ff;
-}
-#calendar div.fc-event.colorIndex-0 a {
-    background-color: #4ca9ff;
+a.fc-event.colorIndex-0.Subject.colorIndex-0{
+    background-color: $evergreen; 
+	border:1px solid $evergreen;
+	color:#fff;
 }
 label.colorIndex-0 {
-    color: #4ca9ff;
+    color: $evergreen;
 }
 
 #calendar a.colorIndex-1 {
-    border:1px solid #96d510;
+    border:1px solid $cal_popp;
 }
 
-#calendar a.colorIndex-1 .fc-event-skin {
-    background-color: #96d510;
-    border-color: #96d510;
+a.fc-event.colorIndex-1.Subject.colorIndex-1 {
+    background-color:$cal_popp;
+    border-color: $cal_popp;
 }
 label.colorIndex-1 {
-    color: #96d510;
+    color: $cal_popp;
 }
 
 #calendar a.colorIndex-2 {
-    border:1px solid #ff1942;
+    border:1px solid $sun_grass;
 }
 
-#calendar a.colorIndex-2 .fc-event-skin {
-    background-color: #ff1942;
-    border-color: #ff1942;
+a.fc-event.colorIndex-2.Subject.colorIndex-2 {
+    background-color: $sun_grass;
+    border-color: $sun_grass;
 }
 label.colorIndex-2 {
-    color: #ff1942;
+    color: $sun_grass;
 }
 
 #calendar a.colorIndex-3 {
-    border:1px solid #ff8900;
+    border:1px solid $wine_grape;
 }
 
-#calendar a.colorIndex-3 .fc-event-skin {
-    background-color: #ff8900;
-    border-color: #ff8900;
+a.fc-event.colorIndex-3.Subject.colorIndex-3 {
+    background-color: $wine_grape;
+    border-color: $wine_grape;
+	color:#fff !important;
 }
 label.colorIndex-3 {
-    color: #ff8900;
+    color: $wine_grape;
 }
 
 #calendar a.colorIndex-4 {
     border:1px solid #1e4ae6;
 }
 
-#calendar a.colorIndex-4 .fc-event-skin {
+a.fc-event.colorIndex-4.Subject.colorIndex-4 {
     background-color: #1e4ae6;
     border-color: #1e4ae6;
 }
 label.colorIndex-4 {
-    color: #1e4ae6;
+    color: $west_redbud;
 }
 
 #calendar a.colorIndex-5 {
     border:1px solid #009934;
 }
 
-#calendar a.colorIndex-5 .fc-event-skin {
+a.fc-event.colorIndex-5.Subject.colorIndex-5 {
     background-color: #009934;
     border-color: #009934;
 }
 label.colorIndex-5 {
-    color: #009934;
+    color: $gold_lup;
 }
 
 #calendar a.colorIndex-6 {
-    border:1px solid #8a0dec;
+    border:1px solid $sky_blue;
 }
 
-#calendar a.colorIndex-6 .fc-event-skin {
-    background-color: #8a0dec;
-    border-color: #8a0dec;
+a.fc-event.colorIndex-6.Subject.colorIndex-6 {
+    background-color: $sky_blue;
+    border-color: $sky_blue;
 }
 label.colorIndex-6 {
-    color: #8a0dec;
+    color: $sky_blue;
 }
 
 #calendar a.colorIndex-7 {
-    border:1px solid #e01e9e;
+    border:1px solid $rec_blue;
 }
 
-#calendar a.colorIndex-7 .fc-event-skin {
-    background-color: #e01e9e;
-    border-color: #e01e9e;
+a.fc-event.colorIndex-7.Subject.colorIndex-7 {
+    background-color: $rec_blue;
+    border-color: $rec_blue;
 }
 label.colorIndex-7 {
-    color: #e01e9e;
+    color: $rec_blue;
 }
 
 #calendar a.colorIndex-8 {
@@ -294,7 +294,7 @@ label.colorIndex-7 {
     border-color: #32ccc2;
 }
 label.colorIndex-8 {
-    color: #32ccc2;
+    color: $cork_oak;
 }
 
 #calendar a.colorIndex-9 {

@@ -14,10 +14,11 @@
 body {
 	font-family: "Helvetica Neue", Arial, FreeSans, sans-serif;
 }
-.col-lg-8 {
-    width: 66.6667%;
+.collapse {
+    display: block !important;
+    height: auto !important;
+	padding-left:15px;
 }
-
 div#util-bar-wrap {
     margin-top: -35px;
 }
