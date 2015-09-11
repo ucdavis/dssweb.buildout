@@ -18,6 +18,7 @@
 		<theme href="t3_bio.html" css:if-content="body.portaltype-fsdperson" />
 		<theme href="t2_ourpeople.html" css:if-content="body.template-facetednavigation_view" />
 		<theme href="t7_contact.html" css:if-content="body.portaltype-dsscontact" />
+		<theme href="t7_contact.html" css:if-content=".section-contact" />
 		<theme href="t8_students.html" css:if-content=".subsection-psychology-major-something-for-iss" />
 
        <theme href="t6_research_lab.html" css:if-content=".subsection-prospective-students"/>
@@ -138,8 +139,9 @@
 					              css:content=".front-page-news"
 					              css:theme="#container-2 > div > div > div.bcontroller > a"  />
 					    
-						<!--drop content='//*[@id="portaltab-about"]' /--> 
+						<drop content='//*[@id="portaltab-about"]' /> 
 						  </rules>
+							  
 
 			  		  <!-- Events Happy Box -->
 			  	    <copy css:content=".front-page-events > dl > dd"
@@ -239,8 +241,8 @@
   		<replace css:theme="h1.content-title"  css:content="h1#parent-fieldname-title" />
   	    </rules>
   		<rules css:if-content="h1.documentFirstHeading">
-  			<replace css:theme="h1.content-title" css:content="h1.documentFirstHeading" />
-  		</rules>
+  			<replace css:theme="h1.content-title" css:content="h1.documentFirstHeading"/>
+	</rules>
   	    <replace content="//h1[contains(@class,'documentFirstHeading')]/@class" if-not-content="/html/body[contains(@class,'portaltype-front-page')]">
     	    <xsl:attribute name="class">
             <xsl:if test='contains(current(),"documentFirstHeading")'>content-title</xsl:if>
@@ -354,7 +356,16 @@
    	     <replace css:theme-children=".panel-body" css:content=".pfg-form" css:if-content=".portaltype-formfolder" />
 				 
 				 
-   	   <!--Contact Page rules -->
+   	   <!--Contact Page rules  -->
+   	   <rules css:if-content=".section-contact" >
+   		   
+   		   <!--replace css:theme-children=".sidebar-1" css:content=".side-contact" /-->
+   		   <replace css:theme-children=".adr-only" css:content=".side-contact" />
+   		   <replace css:theme-children=".sm-contacts" css:content=".key-contacts" />
+		   <replace css:theme-children=".form-wrap" css:content="div.pfg-form" />
+		   <replace css:theme="iframe" css:content="iframe" />
+		  
+   	   </rules>
 	  
    	   <rules css:if-content="body.portaltype-dsscontact" >
    		   
@@ -362,7 +373,8 @@
    		   <replace css:theme-children=".adr-only" css:content=".side-contact" />
    		   <replace css:theme-children=".sm-contacts" css:content=".key-contacts" />
 		   <replace css:theme="#content-core" css:content="#content-core" />
-		   <replace css:theme="#google-map" css:content="#viewlet-above-content-title" />
+		   <replace css:theme="#google-map" css:content="#viewlet-above-content-title"/>
+		   
    	   </rules>
  	  <!--Prospective Students T6-->
  	   <rules css:if-content=".subsection-prospective-students" >
@@ -375,34 +387,17 @@
 	    <rules css:if-content=".template-solgemafullcalendar_view">
 			<!-- add in plone css -->
 			
-			<!--after theme-children="/html/head" content=" /html/head/style" /-->
-			<!--after theme-children="/html/head" attributes="style" css:content=".label.SubjectcolorIndex*" /-->
+			<!--after theme-children="/html/head" content=" /html/head/style" /--> 
 			
-			
-			
+			<!--after css:theme-children="head" css:content="solgemafullcalendar-cachekey-21ad709d01e211df3a8a9153ee2b2aa0.css" />
 			<after css:theme-children="head"         css:content="link[href$='collective.js.jqueryui.custom.min.css']" />
 			<after css:theme-children="head"         css:content="link[href$='solgemafullcalendar_colors.css']" />
 			<after css:theme-children="head" css:content="link[href$='++resource++collective.js.fullcalendar/fullcalendar.css']"	/>
 			<after css:theme-children="head" css:content="link[href$='forms.css']"	/>
 			<after css:theme-children="head" css:content="link[href$='++resource++jquery.css']"	/>
-			<after css:theme-children="head" css:content="link[href$='++resource++plone.formwidget.autocomplete/jquery.autocomplete.min.js']" />
+			<after css:theme-children="head" css:content="link[href$='++resource++plone.formwidget.autocomplete/jquery.autocomplete.min.js']" /-->
 			
-			<!--style media="all" type="text/css">label.SubjectcolorIndex-0 {
-			    color: #335379; -->
-				
-			<!--after css:theme-children="head">
-<style type="text/css" media="all">@import url(++resource++jquery.css);</style>
-<style type="text/css" media="all">@import url(++resource++jquery.select2uislider.css);</style
-><style type="text/css" media="screen">@import url(dropdown-menu.css);</style>
-<style type="text/css" media="all">@import url(SyntaxHighlighter.css);</style>
-<style type="text/css" media="all">@import url(clouseau.css);</style>
-<style type="text/css" media="screen">@import url(++resource++collective.js.colorpicker.css);</style>
-<style type="text/css" media="screen">@import url(++resource++plone.formwidget.contenttree/contenttree.css);</style>
-<style type="text/css" media="all">@import url(++resource++ftw.subsite-ressources/subsite.css);</style>
-<style type="text/css" media="all">@import url(++resource++Products.Doormat.stylesheets/doormat.css);</style>
-<style type="text/css" media="screen">@import url(++resource++collective.tinyaccordion/plomino_accordion/accordion.css);</style>
-<style type="text/css" media="all">@import url(solgema_contextualcontentmenu.css);</style>
-			</after-->
+			
 	
 	 	   <replace css:theme-children="#calendar" css:content="#calendar" />
 	 	   <!--replace css:theme-children=".widget-fieldset" css:content="#fieldset-Subject" /-->
