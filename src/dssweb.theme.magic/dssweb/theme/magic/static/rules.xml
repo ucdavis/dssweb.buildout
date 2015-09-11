@@ -18,7 +18,7 @@
 		<theme href="t3_bio.html" css:if-content="body.portaltype-fsdperson" />
 		<theme href="t2_ourpeople.html" css:if-content="body.template-facetednavigation_view" />
 		<theme href="t7_contact.html" css:if-content="body.portaltype-dsscontact" />
-		<theme href="t7_contact.html" css:if-content=".section-contact" />
+		<theme href="t7_contact.html" css:if-content="body.section-contact" />
 		<theme href="t8_students.html" css:if-content=".subsection-psychology-major-something-for-iss" />
 
        <theme href="t6_research_lab.html" css:if-content=".subsection-prospective-students"/>
