@@ -271,24 +271,24 @@ label.colorIndex-3 {
 }
 
 #calendar a.colorIndex-4 {
-    border:1px solid #1e4ae6;
+    border:1px solid $west_redbud;
 }
 
 a.fc-event.colorIndex-4.Subject.colorIndex-4 {
-    background-color: #1e4ae6;
-    border-color: #1e4ae6;
+    background-color: $west_redbud;
+    border-color: $west_redbud;
 }
 label.colorIndex-4 {
     color: $west_redbud;
 }
 
 #calendar a.colorIndex-5 {
-    border:1px solid #009934;
+    border:1px solid $gold_lup;
 }
 
 a.fc-event.colorIndex-5.Subject.colorIndex-5 {
-    background-color: #009934;
-    border-color: #009934;
+    background-color: $gold_lup;
+    border-color: $gold_lup;
 }
 label.colorIndex-5 {
     color: $gold_lup;
@@ -319,12 +319,12 @@ label.colorIndex-7 {
 }
 
 #calendar a.colorIndex-8 {
-    border:1px solid #32ccc2;
+    border:1px solid $cork_oak;
 }
 
 #calendar a.colorIndex-8 .fc-event-skin {
-    background-color: #32ccc2;
-    border-color: #32ccc2;
+    background-color: $cork_oak;
+    border-color: $cork_oak;
 }
 label.colorIndex-8 {
     color: $cork_oak;
