@@ -141,7 +141,11 @@
 					    
 						<drop content='//*[@id="portaltab-about"]' /> 
 						  </rules>
-							  
+						  <rules css:if-content=".site-mindbrain">
+	  	  			      <copy attributes="href"
+	  	  			              css:content="#portaltab-about > a"
+	  	  			              css:theme="#container-2 > div > div > div.bcontroller" />
+							  </rules>
 
 			  		  <!-- Events Happy Box -->
 			  	    <copy css:content=".front-page-events > dl > dd"
@@ -171,7 +175,9 @@
 			 <drop content='//*[@id="portaltab-contact"]' />
 			 <drop content='//*[@id="portaltab-index_html"]' />
 			 <drop content='//*[@id="portaltab-intranet"]' />
+			 <rules css:if-not-content=".site-mindbrain">
 			 <drop content='//*[@id="portaltab-about"]' />
+		 </rules>
 	      <!--utility menu links -->
 		 <copy attributes="href"
 			 css:content="#portaltab-index_html > a"

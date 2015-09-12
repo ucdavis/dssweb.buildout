@@ -1,5 +1,26 @@
 /* <dtml-with base_properties> (do not remove this :) */
 /* <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either :) */
+.breadcrumb { margin-top: 35px; }
+.breadcrumb p a { font-size: 10px; font-size: 0.625rem; line-height: 13px; line-height: 0.8125rem; }
+
+.breadcrumb, .content-title { z-index: -1; }
+@media screen and (min-width: $screen-md-min) { // width > 992px
+	#content-row {
+		margin-top: 0px;
+	}
+	.breadcrumb, .content-title {
+		margin-left: 235px !important;
+	}
+	.content-title {
+		padding-bottom: 25px !important;
+	}
+	.sidebar-left {
+		margin-top: 5px !important;
+	}
+	.sidebar-left > div {
+		margin-left: 0px;
+	}
+}
 
 table.fc-header td {
     position:relative;
@@ -142,12 +163,12 @@ table.fc-header td {
 
 #SFQuery {
     overflow:hidden;
+	padding-top:8px;
 }
 
 #SFQuery .SFQuery_input {
     float:left;
     margin:0 1% 10px 0;
-    width:32%;
 }
 
 #event_edit_container #content {
