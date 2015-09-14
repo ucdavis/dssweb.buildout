@@ -1,5 +1,23 @@
 
 /* - forms.css - */
+
+@media screen and (min-width: $screen-md-min) { // width > 992px
+	#content-row {
+		margin-top: 0px;
+	}
+	.breadcrumb, .content-title {
+		margin-left: 235px !important;
+	}
+	.content-title {
+		padding-bottom: 25px !important;
+	}
+	.sidebar-left {
+		margin-top: 5px !important;
+	}
+	.sidebar-left > div {
+		margin-left: 0px;
+	}
+}
 @media screen {
 /* @group Forms */
 
