@@ -25,6 +25,7 @@
 	  <theme href="t11_calendar.html" css:if-content=".template-solgemafullcalendar_view" />
 	  <theme href="t14_search.html" css:if-content=".template-search" />
 	  <theme href="t17_fullwidth.html" css:if-content=".portaltype-jqxgrid_page" /> 
+	  <theme href="t17_fullwidth.html" css:if-content=".subsection-fzlindert-peter-linderts-webpage" />
       <theme href="t4_adhoc2.html" />
 
       <!-- Replace title with Plone's page title  -->
