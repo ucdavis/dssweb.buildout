@@ -1,11 +1,206 @@
 <?xml version="1.0"?>
 <object name="portal_css">
+
+
+	 <!-- Set conditions on stylesheets we don't want to pull in -->
+	 <stylesheet
+	     expression="not:request/HTTP_X_THEME_ENABLED | nothing"
+	     id="public.css"
+	     />
+	 <stylesheet
+	     expression="not:request/HTTP_X_THEME_ENABLED | nothing"
+	     id="mobile.css"
+	     />
+	 <stylesheet
+	     expression="not:request/HTTP_X_THEME_ENABLED | nothing"
+	     id="member.css"
+	     />
+	 <stylesheet
+	     expression="not:request/HTTP_X_THEME_ENABLED | nothing"
+	     id="base.css"
+	     />
+	 <stylesheet
+	     expression="not:request/HTTP_X_THEME_ENABLED | nothing"
+	     id="public.css"
+	     />
+	 <stylesheet
+	     expression="not:request/HTTP_X_THEME_ENABLED | nothing"
+	     id="columns.css"
+	     />
+	 <stylesheet
+	     expression="not:request/HTTP_X_THEME_ENABLED | nothing"
+	     id="authoring.css"
+	     />
+	 <stylesheet
+	     expression="not:request/HTTP_X_THEME_ENABLED | nothing"
+	     id="portlets.css" />
+	     
+	 <stylesheet
+	     expression="not:request/HTTP_X_THEME_ENABLED | nothing"
+	     id="deprecated.css"
+	     />
+	 <stylesheet
+	     expression="not:request/HTTP_X_THEME_ENABLED | nothing"
+	     id="navtree.css"
+         />
+	 <stylesheet
+	     expression="not:request/HTTP_X_THEME_ENABLED | nothing"
+	     id="invisibles.css"
+	     />
+	 <stylesheet
+	     expression="not:request/HTTP_X_THEME_ENABLED | nothing"
+	     id="mobile.css" />
+		     
+	 <stylesheet
+	     expression="not:request/HTTP_X_THEME_ENABLED | nothing"
+	     id="facultyStaffDirectory.css"
+	     />
+	 <stylesheet
+	     expression="not:request/HTTP_X_THEME_ENABLED | nothing"
+	     id="reset.css"
+	     />
+	 <stylesheet
+	     expression="not:request/HTTP_X_THEME_ENABLED | nothing"
+	     id="facultyStaffDirectory.css"
+	     />
+	 <stylesheet
+	     expression="not:request/HTTP_X_THEME_ENABLED | nothing"
+	     id="ploneCustom.css"
+	     />
+		 <stylesheet
+		     expression="not:request/HTTP_X_THEME_ENABLED | nothing"
+		     id="++resource++Products.Doormat.stylesheets/doormat.css" />
+		 <stylesheet
+		     expression="not:request/HTTP_X_THEME_ENABLED | nothing"
+		     id="++resource++ftw.subsite-ressources/subsite.css"
+		     />     
+		
 	
-	<stylesheet id="mobile.css" enabled="False" />
-	<stylesheet id="doormat.css" enabled ="False" />
-	<!-- handled by diazo imports -->
-     <!--stylesheet id="dropdown-menu.css" enabled="False"/>
-	<stylesheet id="columns.css" enabled="False" /-->
-	 <stylesheet id="faceted_view.css" enabled="True" />
-	 <stylesheet id="collective.js.jqueryui.custom.min.css" enabled ="True" />
+		
+	 <!-- Add new stylesheets -->
+	 <stylesheet title="" authenticated="False" cacheable="True"
+	    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+	    expression="request/HTTP_X_THEME_ENABLED | nothing"
+	    id="++theme++dssweb.theme.magic/assets/vendor/jquery.cf.happybox.css" media="" rel="stylesheet"
+	    rendering="link"
+	    applyPrefix="True"
+	    />
+		
+   	 <stylesheet title="" authenticated="False" cacheable="True"
+   	    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+   	    expression="request/HTTP_X_THEME_ENABLED | nothing"
+   	    id="++theme++dssweb.theme.magic/assets/vendor/reset.css" media="" rel="stylesheet"
+   	    rendering="link"
+   	    applyPrefix="True"
+   	    />
+	
+   	 <stylesheet title="" authenticated="False" cacheable="True"
+   	    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+   	    expression="request/HTTP_X_THEME_ENABLED | nothing"
+   	    id="++theme++dssweb.theme.magic/assets/vendor/topbar.css" media="" rel="stylesheet"
+   	    rendering="link"
+   	    applyPrefix="True"
+   	    />
+   	 <stylesheet title="" authenticated="False" cacheable="True"
+   	    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+   	    expression="request/HTTP_X_THEME_ENABLED | nothing"
+   	    id="++theme++dssweb.theme.magic/assets/vendor/jquery.cf.happybox.css" media="" rel="stylesheet"
+   	    rendering="link"
+   	    applyPrefix="True"
+   	    />
+   	 <stylesheet title="" authenticated="False" cacheable="True"
+   	    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+   	    expression="request/HTTP_X_THEME_ENABLED | nothing"
+   	    id="++theme++dssweb.theme.magic/bower_components/Wallpaper/jquery.fs.wallpaper.css" media="" rel="stylesheet"
+   	    rendering="link"
+   	    applyPrefix="True"
+   	    />
+   	 <stylesheet title="" authenticated="False" cacheable="True"
+   	    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+   	    expression="request/HTTP_X_THEME_ENABLED | nothing"
+   	    id="++theme++dssweb.theme.magic/assets/sections/about.css" media="" rel="stylesheet"
+   	    rendering="link"
+   	    applyPrefix="True"
+   	    />
+  	 <stylesheet title="" authenticated="False" cacheable="True"
+  	    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+  	    expression="request/HTTP_X_THEME_ENABLED | nothing"
+  	    id="++theme++dssweb.theme.magic/assets/sections/bio.css" media="" rel="stylesheet"
+  	    rendering="link"
+  	    applyPrefix="True"
+  	    />
+    <stylesheet title="" authenticated="False" cacheable="True"
+  	    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+  	    expression="request/HTTP_X_THEME_ENABLED | nothing"
+  	    id="++theme++dssweb.theme.magic/assets/sections/event.css" media="" rel="stylesheet"
+  	    rendering="link"
+  	    applyPrefix="True"
+  	    />	 
+	 <stylesheet title="" authenticated="False" cacheable="True"
+  	    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+  	    expression="request/HTTP_X_THEME_ENABLED | nothing"
+  	    id="++theme++dssweb.theme.magic/assets/sections/index.css" media="" rel="stylesheet"
+  	    rendering="link"
+  	    applyPrefix="True"
+        />
+     <stylesheet title="" authenticated="False" cacheable="True"
+ 	    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+ 	    expression="request/HTTP_X_THEME_ENABLED | nothing"
+ 	    id="++theme++dssweb.theme.magic/assets/sections/ourpeople.css" media="" rel="stylesheet"
+ 	    rendering="link"
+ 	    applyPrefix="True"
+ 	    />
+   	 <stylesheet title="" authenticated="False" cacheable="True"
+     	    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+     	    expression="request/HTTP_X_THEME_ENABLED | nothing"
+     	    id="++theme++dssweb.theme.magic/assets/sections/publications.css" media="" rel="stylesheet"
+     	    rendering="link"
+     	    applyPrefix="True"
+     	    />
+   	 <stylesheet title="" authenticated="False" cacheable="True"
+     	    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+     	    expression="request/HTTP_X_THEME_ENABLED | nothing"
+     	    id="++theme++dssweb.theme.magic/assets/sections/tables.css" media="" rel="stylesheet"
+     	    rendering="link"
+     	    applyPrefix="True"
+     	    />
+	 
+		
+   	 <stylesheet title="" authenticated="False" cacheable="True"
+   	    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+   	    expression="request/HTTP_X_THEME_ENABLED | nothing"
+   	    id="++theme++dssweb.theme.magic/assets/chart.css" media="" rel="stylesheet"
+   	    rendering="link"
+   	    applyPrefix="True"
+   	    />
+		
+   	 <stylesheet title="" authenticated="False" cacheable="True"
+   	    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+   	    expression="request/HTTP_X_THEME_ENABLED | nothing"
+   	    id="++theme++dssweb.theme.magic/assets/global.css" media="" rel="stylesheet"
+   	    rendering="link"
+   	    applyPrefix="True"
+   	    />
+   	 <stylesheet title="" authenticated="False" cacheable="True"
+   	    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+   	    expression="request/HTTP_X_THEME_ENABLED | nothing"
+   	    id="++theme++dssweb.theme.magic/assets/styles_deploy.css" media="" rel="stylesheet"
+   	    rendering="link"
+   	    applyPrefix="True"
+   	    />
+   	 <stylesheet title="" authenticated="False" cacheable="True"
+   	    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+   	    expression="request/HTTP_X_THEME_ENABLED | nothing"
+   	    id="++theme++dssweb.theme.magic/assets/sub-org.css" media="" rel="stylesheet"
+   	    rendering="link"
+   	    applyPrefix="True"
+   	    />
+   	 <stylesheet title="" authenticated="False" cacheable="True"
+   	    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+   	    expression="request/HTTP_X_THEME_ENABLED | nothing"
+   	    id="++theme++dssweb.theme.magic/assets/styles.css" media="" rel="stylesheet"
+   	    rendering="link"
+   	    applyPrefix="True"
+   	    />
+
 </object>

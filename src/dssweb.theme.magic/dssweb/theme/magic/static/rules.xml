@@ -38,6 +38,12 @@
       <before css:theme-children="html head" css:content="html head meta" />
 	  
 	 
+	  <!-- bring in css from plone portal_css, since theme css is now registered -->
+	  <drop theme="/html/head/link" />
+	  <drop theme="/html/head/style" />
+
+	  <!-- Pull in Plone CSS -->
+	  <after theme-children="/html/head" content="/html/head/link | /html/head/style" />
 	  
 	  
       <!-- merge classes from Plone body with theme body -->
@@ -47,19 +53,8 @@
 	  
 	  <!--copy javascript in from registry -->
 	  <!--Copy script tags from Plone head to end of body-->
-      <before css:theme="html body" css:content="html head script" />
-	  <!--BugHerd. Two rules to accomodate pages from dssmaster -->
-     <before css:theme-children="html head" css:if-content=".site-psychology">
-		 <script type='text/javascript'>
-		 (function (d, t) {
-		   var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
-		   bh.type = 'text/javascript';
-		   bh.src = '//www.bugherd.com/sidebarv2.js?apikey=gcpxr8nleubizlym3u8aag';
-		   s.parentNode.insertBefore(bh, s);
-		   })(document, 'script');
-		 </script>
-	 </before>
-    
+      <after css:theme="html body" css:content="html head script" />
+	
 
   <rules css:if-content="body.portaltype-front-page">
       <drop css:content="html head script" />
@@ -392,19 +387,9 @@
  		    	<replace css:theme="#content-core" css:content="#content-core" />
  		    	<drop css:theme=".intro" />
  		</rules> 
-	    <!--T11 Calendar -->
+	    <!--T11 -->
 	    <rules css:if-content=".template-solgemafullcalendar_view">
-			<!-- add in plone css -->
-			
-			<!--after theme-children="/html/head" content=" /html/head/style" /--> 
-			
-			<!--after css:theme-children="head" css:content="solgemafullcalendar-cachekey-21ad709d01e211df3a8a9153ee2b2aa0.css" />
-			<after css:theme-children="head"         css:content="link[href$='collective.js.jqueryui.custom.min.css']" />
-			<after css:theme-children="head"         css:content="link[href$='solgemafullcalendar_colors.css']" />
-			<after css:theme-children="head" css:content="link[href$='++resource++collective.js.fullcalendar/fullcalendar.css']"	/>
-			<after css:theme-children="head" css:content="link[href$='forms.css']"	/>
-			<after css:theme-children="head" css:content="link[href$='++resource++jquery.css']"	/>
-			<after css:theme-children="head" css:content="link[href$='++resource++plone.formwidget.autocomplete/jquery.autocomplete.min.js']" /-->
+		
 			
 			
 	
