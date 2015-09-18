@@ -379,8 +379,8 @@
    	   <rules css:if-content="body.portaltype-dsscontact" >
    		   
    		   <!--replace css:theme-children=".sidebar-1" css:content=".side-contact" /-->
-   		   <replace css:theme-children=".adr-only" css:content=".side-contact" />
-   		   <replace css:theme-children=".sm-contacts" css:content=".key-contacts" />
+   		   <replace css:theme-children=".adr-only" css:content-children=".side-contact" />
+   		   <replace css:theme-children=".sm-contacts" css:content-children=".key-contacts" />
 		   <replace css:theme="#content-core" css:content="#content-core" />
 		   <replace css:theme="#google-map" css:content="#viewlet-above-content-title"/>
 		   
@@ -487,7 +487,7 @@
 
 		  </script>
 	  </append>
-      <append css:theme="#footer" css:if-content-".site-mindbrain">
+       <append css:theme="#footer" css:if-content=".site-mindbrain">
 		  <script>
 		    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
