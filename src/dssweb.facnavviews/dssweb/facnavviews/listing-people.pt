@@ -60,11 +60,9 @@
                       <span tal:condition="personMembershipInformation/getDept_officePhone | nothing" tal:content="personMembershipInformation/getDept_officePhone">
 
 					  
-					  <span tal:content="personMembershipInformation/getDept_officePhone">|</span></span>
+					  <span tal:content="personMembershipInformation/getDept_officePhone"/></span>
 
-					   <a tal:attributes="href string:mailto:${person_email}">
-						  <span class="email" i18n:translate="FacultyStaffDirectory_label_email">Email</span></a>
-
+					   <a class="tile-email" tal:attributes="href string:mailto:${person_email}" tal:content="structure person_email" />
 
                     </p>
 
