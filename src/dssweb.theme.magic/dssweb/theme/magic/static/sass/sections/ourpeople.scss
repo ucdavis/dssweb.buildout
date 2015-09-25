@@ -41,11 +41,25 @@ $ucdtxt_blue: #4D688C; // based on?
 		/* top: -10px; // sync with .caption margin-top  removed by carol */
 		left: 0;
 		background: $empty_blue;
-		width: 90px;
+		width: 100px;
 		position: relative;
-		height: 90px !important;	
+		height: 100px !important;	
 		float: left;
 	}
+}
+/*---- Person tile -----*/
+span.personName {
+position: relative;
+padding-left: 10px;
+display: flex;
+margin-right: 0;
+padding-top: 5px;
+padding-bottom: 0px;
+font-size:0.86em;
+display: -webkit-flex; /* Safari */
+}
+.labs {
+padding-top: 5px;
 }
 .genericTile p, .genericTile p a {
 	@include font_size(13px,!important);
@@ -76,7 +90,8 @@ $ucdtxt_blue: #4D688C; // based on?
 	position: relative;
 	/* margin-top: 10px; dp */
 	/*margin-top: -10px; */
-	margin-left: 100px; // keep contact text from wrapping under photo
+	
+	/*margin-left: 100px; // keep contact text from wrapping under photo */
 	left: 10px;
 
 	p {
@@ -85,7 +100,6 @@ $ucdtxt_blue: #4D688C; // based on?
 	}
 	
 	.personName {
-		padding-bottom: 5px !important;
 		a {
 			font-weight: bold;
 		}
@@ -299,8 +313,8 @@ $ucdtxt_blue: #4D688C; // based on?
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
 	.genericTile {
 		.personEntryWrapper{
-			width: 80px;
-			height: 80px !important;
+			width: 100px;
+			height: 100px !important;
 		}
 	}
 }
