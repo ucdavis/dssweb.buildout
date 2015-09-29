@@ -48,6 +48,16 @@
                     </div>
 				
 				</div>
+	<div class="office-hours adr" 
+	tal:condition="personMembershipInformation/getQuarter">
+		<span class="title">Office Hours for <span tal:replace="personMembershipInformation/getQuarter">Quarter</span>
+		<span tal:condition="personMembershipInformation/getOfficeHours">
+            	 <ul>
+                 <li class="day-time-row" tal:repeat="officeHours personMembershipInformation/getOfficeHours"
+                 tal:content="officeHours"><tal:comment replace="nothing">[Office Hours]</tal:comment></li>
+                 </ul></span>
+			
+	</div>
 			</div>
 			</tal:block>
 				
