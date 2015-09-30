@@ -32,25 +32,27 @@
                 
                   
 				<div class="adr">
-					<div class="street-address" tal:condition="personMembershipInformation/getDept_officeAddress"
-                               tal:replace="structure personMembershipInformation/getDept_officeAddress">
-                    </div>
-					<div class="street-address">
+					<ul>
+					<li class="street-address" tal:condition="personMembershipInformation/getDept_officeAddress">
+						<spam
+                               tal:replace="structure personMembershipInformation/getDept_officeAddress"/>
+                    </li>
+					<li class="street-address">
 						<span tal:condition="personMembershipInformation/getDept_streetAddress"
                                tal:replace="structure personMembershipInformation/getDept_streetAddress">
-                    </span></div>
-					<div class="street-address">Davis, CA 95616 </div>
+                    </span></li>
+					<li class="street-address" tal:condition="personMembershipInformation/getDept_city"><span tal:replace="structure personMembershipInformation/getDept_city"/>,  <span tal:replace="structure personMembershipInformation/getDept_state"/> <span tal:replace="structure personMembershipInformation/getDept_zip"/></li>
 				
 					
 				
-				<div class="tel" tal:condition="personMembershipInformation/getDept_officePhone"
-                               tal:replace="structure personMembershipInformation/getDept_officePhone">
-                    </div>
+				<li class="street-address" tal:condition="personMembershipInformation/getDept_officePhone">
+					<span tal:replace="structure personMembershipInformation/getDept_officePhone" />
+                    </li></ul>
 				
 				</div>
 	<div class="office-hours adr" 
 	tal:condition="personMembershipInformation/getQuarter">
-		<span class="title">Office Hours for <span tal:replace="personMembershipInformation/getQuarter">Quarter</span>
+		<span class="bold">Office Hours for <span tal:replace="personMembershipInformation/getQuarter">Quarter</span>
 		<span tal:condition="personMembershipInformation/getOfficeHours">
             	 <ul>
                  <li class="day-time-row" tal:repeat="officeHours personMembershipInformation/getOfficeHours"
