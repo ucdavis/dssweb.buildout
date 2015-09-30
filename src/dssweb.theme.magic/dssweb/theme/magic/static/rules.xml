@@ -39,11 +39,11 @@
 	  
 	 
 	  <!-- bring in css from plone portal_css, since theme css is now registered -->
-	  <drop theme="/html/head/link" />
-	  <drop theme="/html/head/style" />
+	  <!--drop theme="/html/head/link" />
+	  <drop theme="/html/head/style" /-->
 
 	  <!-- Pull in Plone CSS -->
-	  <after theme-children="/html/head" content="/html/head/link | /html/head/style" />
+	  <!--after theme-children="/html/head" content="/html/head/link | /html/head/style" /-->
 	   
 	  <!-- drop theme Javascript -->
 	  <!--drop theme="/html/body/script" /-->
