@@ -364,7 +364,7 @@
 				 
 				 
 	   <!--Plone Form Gen -->
-   	     <replace css:theme-children=".panel-body" css:content=".pfg-form" css:if-content=".portaltype-formfolder" />
+   	     <!--replace css:theme-children="#content-core" css:content="div.pfg-form" css:if-content=".portaltype-formfolder" /-->
 				 
 				 
    	   <!--Contact Page rules  -->
