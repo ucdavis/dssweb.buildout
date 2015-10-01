@@ -183,6 +183,11 @@ table.fc-header td {
     float:none;
     margin:0px;
 }
+.fc-event-title {
+	font-size: .9rem;
+}
+#content-row div > div.fc-event-title {
+    line-height: 1rem !important;}
 
 /* COLOR INDEXES */
 
@@ -264,6 +269,12 @@ a.fc-event.colorIndex-4.Subject.colorIndex-4 {
 }
 label.colorIndex-4 {
     color: $west_redbud;
+}
+a.fc-event.fc-event-vert.fc-event-start.fc-event-end.contextualContentMenuEnabled.state-published.type-Event.colorIndex-4.Subject > div.fc-event-inner > div.fc-event-time {
+	color:#fff !important;
+}
+a.fc-event.fc-event-vert.fc-event-start.fc-event-end.contextualContentMenuEnabled.state-published.type-Event.colorIndex-4.Subject > div.fc-event-inner > div.fc-event-title {
+	color:#fff !important;
 }
 
 #calendar a.colorIndex-5 {

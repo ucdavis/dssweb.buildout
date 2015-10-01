@@ -365,7 +365,11 @@
 				 
 	   <!--Plone Form Gen -->
    	     <!--replace css:theme-children="#content-core" css:content="div.pfg-form" css:if-content=".portaltype-formfolder" /-->
-				 
+			  <!--Ploneforgen thanks page -->
+			  <rules css:if-content=".portaltype-formthankspage" >
+				  <drop css:theme=".content-title" />
+				  <replace css:theme-children="#content-core" css:content="#content" />
+			  </rules> 
 				 
    	   <!--Contact Page rules  -->
    	   <rules css:if-content=".section-contact" >
