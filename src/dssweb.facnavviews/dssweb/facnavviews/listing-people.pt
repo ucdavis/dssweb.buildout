@@ -25,7 +25,7 @@
             <tal:block define="obj brain/getObject;
                                ">
 
-			<div class="genericTile col-lg-4 col-md-6 col-sm-12 col-xs-12">
+			<div class="genericTile col-md-6 col-sm-12 col-xs-12">
 			<div class="personEntry">
               <div tal:define="
                   description obj/Description|string:;
@@ -57,13 +57,12 @@
                       tal:content="personMembershipInformation/getPosition"
                     />
                     <p class="phone-wrapper">
-                      <span tal:condition="personMembershipInformation/getDept_officePhone | nothing" tal:content="personMembershipInformation/getDept_officePhone">
+	 					   <a class="tile-email" tal:attributes="href string:mailto:${person_email}" tal:content="structure person_email" />
+							<br>
+							 
+                      <span tal:condition="personMembershipInformation/getDept_officePhone | nothing" tal:replace="structure personMembershipInformation/getDept_officePhone"> </span>
 
-					  
-					  <span tal:content="personMembershipInformation/getDept_officePhone"/></span>
-
-					   <a class="tile-email" tal:attributes="href string:mailto:${person_email}" tal:content="structure person_email" />
-
+					   
                     </p>
 
                     <p class="oemail"
