@@ -201,7 +201,7 @@ i {
 					}
 					img.photo {
 						margin-top: 10px; // Note: Check portlet panel-body padding-top
-						margin-bottom: 25px;
+						/*margin-bottom: 25px; */
 						margin-left: auto;
 						margin-right: auto;
 						display: block;
@@ -213,6 +213,7 @@ i {
 						font-weight: bold;
 						margin-left: 35px;
 						margin-right: 35px;
+						margin-top: 25px;
 					}
 					.title.org {
 						padding-left: 0;

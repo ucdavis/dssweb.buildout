@@ -16,6 +16,45 @@ table.fc-header td {
     z-index:100;
     top:0;
 }
+/* Horizontal Events
+------------------------------------------------------------------------*/
+
+.fc-event-hori {
+	border-width: 1px 0;
+	margin-bottom: 1px;
+	}
+
+.fc-ltr .fc-event-hori.fc-event-start,
+.fc-rtl .fc-event-hori.fc-event-end {
+	border-left-width: 1px;
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+	}
+
+.fc-ltr .fc-event-hori.fc-event-end,
+.fc-rtl .fc-event-hori.fc-event-start {
+	border-right-width: 1px;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+	}
+/* Vertical Events */
+/*----------------------------------------------------------	 */
+	.fc-event-vert {
+		border-width: 0 1px;
+		}
+
+	.fc-event-vert.fc-event-start {
+		border-top-width: 1px;
+		border-top-left-radius: 8px;
+		border-top-right-radius: 8px;
+		}
+
+	.fc-event-vert.fc-event-end {
+		border-bottom-width: 1px;
+		border-bottom-left-radius: 8px;
+		border-bottom-right-radius: 8px;
+		}
+	
 
 #sfc-ical-export {
     float: right;
@@ -102,7 +141,6 @@ table.fc-header td {
 }
 
 #content #calendar .fc-content a:link {
-    border:none;
     color:#000000;
 }
 
@@ -144,7 +182,9 @@ table.fc-header td {
     border-radius: 4px;
     border-width: 1px;
 }
-
+.fc-grid .fc-event-time {
+	font-size: .8rem;
+}
 #SFQuery {
     overflow:hidden;
 	padding-top:8px;
@@ -184,7 +224,7 @@ table.fc-header td {
     margin:0px;
 }
 .fc-event-title {
-	font-size: .9rem;
+	font-size: .7rem;
 }
 #content-row div > div.fc-event-title {
     line-height: 1rem !important;}
@@ -201,150 +241,109 @@ label.colorIndex-undefined {
     color: #AAAAAA;
 }
 
-a.fc-event.colorIndex-0.Subject.colorIndex-0{
-    background-color: $evergreen; 
-	border:1px solid $evergreen;
-	color:#fff;
+#calendar a.colorIndex-0 {
+    border:3px solid $evergreen;
+	 background-color:transparent;
 }
-a.fc-event.fc-event-vert.fc-event-start.fc-event-end.contextualContentMenuEnabled.state-published.type-Event.colorIndex-0.Subject > div.fc-event-inner > div.fc-event-time {
-	color:#fff !important;
-}
-a.fc-event.fc-event-vert.fc-event-start.fc-event-end.contextualContentMenuEnabled.state-published.type-Event.colorIndex-0.Subject > div.fc-event-inner > div.fc-event-title {
-	color:#fff !important;
-}
+
+
 label.colorIndex-0 {
     color: $evergreen;
 }
 
 #calendar a.colorIndex-1 {
-    border:1px solid $cal_popp;
+    border:3px solid $cal_popp;
+	 background-color:transparent;
 }
 
-a.fc-event.colorIndex-1.Subject.colorIndex-1 {
-    background-color:$cal_popp;
-    border-color: $cal_popp;
-}
+
 label.colorIndex-1 {
     color: $cal_popp;
 }
 
 #calendar a.colorIndex-2 {
-    border:1px solid $sun_grass;
+    border:3px solid $sun_grass;
+	 background-color:transparent;
 }
 
-a.fc-event.colorIndex-2.Subject.colorIndex-2 {
-    background-color: $sun_grass;
-    border-color: $sun_grass;
-}
+
 label.colorIndex-2 {
     color: $sun_grass;
 }
 
 #calendar a.colorIndex-3 {
-    border:1px solid $wine_grape;
+    border:3px solid $wine_grape;
+	 background-color:transparent;
 }
 
-a.fc-event.colorIndex-3.Subject.colorIndex-3 {
-    background-color: $wine_grape;
-    border-color: $wine_grape;
-	color:#fff !important;
-} a.fc-event.fc-event-vert.fc-event-start.fc-event-end.contextualContentMenuEnabled.state-published.type-Event.colorIndex-3.Subject > div.fc-event-inner > div.fc-event-time {
-	color:#fff !important;
-}
-a.fc-event.fc-event-vert.fc-event-start.fc-event-end.contextualContentMenuEnabled.state-published.type-Event.colorIndex-3.Subject > div.fc-event-inner > div.fc-event-title {
-	color:#fff !important;
-}
 
 label.colorIndex-3 {
     color: $wine_grape;
 }
 
 #calendar a.colorIndex-4 {
-    border:1px solid $west_redbud;
+    border:3px solid $west_redbud;
+	 background-color:transparent;
 }
 
-a.fc-event.colorIndex-4.Subject.colorIndex-4 {
-    background-color: $west_redbud;
-    border-color: $west_redbud;
-}
+
 label.colorIndex-4 {
     color: $west_redbud;
-}
-a.fc-event.fc-event-vert.fc-event-start.fc-event-end.contextualContentMenuEnabled.state-published.type-Event.colorIndex-4.Subject > div.fc-event-inner > div.fc-event-time {
-	color:#fff !important;
-}
-a.fc-event.fc-event-vert.fc-event-start.fc-event-end.contextualContentMenuEnabled.state-published.type-Event.colorIndex-4.Subject > div.fc-event-inner > div.fc-event-title {
-	color:#fff !important;
-}
+ }
 
 #calendar a.colorIndex-5 {
-    border:1px solid $gold_lup;
+    border:3px solid $gold_lup;
+	 background-color:transparent;
 }
 
-a.fc-event.colorIndex-5.Subject.colorIndex-5 {
-    background-color: $gold_lup;
-    border-color: $gold_lup;
-}
+
 label.colorIndex-5 {
     color: $gold_lup;
 }
 
 #calendar a.colorIndex-6 {
     border:1px solid $sky_blue;
+	 background-color:transparent;
 }
 
-a.fc-event.colorIndex-6.Subject.colorIndex-6 {
-    background-color: $sky_blue;
-    border-color: $sky_blue;
-}
 label.colorIndex-6 {
     color: $sky_blue;
 }
 
 #calendar a.colorIndex-7 {
-    border:1px solid $rec_blue;
-}
+    border:3px solid $rec_blue;
+	 background-color:transparent;
 
-a.fc-event.colorIndex-7.Subject.colorIndex-7 {
-    background-color: $rec_blue;
-    border-color: $rec_blue;
 }
 label.colorIndex-7 {
     color: $rec_blue;
 }
 
 #calendar a.colorIndex-8 {
-    border:1px solid $cork_oak;
+    border:3px solid $cork_oak;
+	 background-color:transparent;
 }
 
-#calendar a.colorIndex-8 .fc-event-skin {
-    background-color: $cork_oak;
-    border-color: $cork_oak;
-}
+
 label.colorIndex-8 {
     color: $cork_oak;
 }
 
 #calendar a.colorIndex-9 {
-    border:1px solid #c7d42a;
+    border:3px solid #c7d42a;
+	 background-color:transparent;
 }
 
-#calendar a.colorIndex-9 .fc-event-skin {
-    background-color: #c7d42a;
-    border-color: #c7d42a;
-}
+
 label.colorIndex-9 {
     color: #c7d42a;
 }
 
 #calendar a.colorIndex-10 {
-    border:1px solid #cd6031;
+    border:3px solid #cd6031;
+	  background-color:transparent;
 }
 
-#calendar a.colorIndex-10 .fc-event-skin {
-    background-color: #cd6031;
-    border-color: #cd6031;
-}
 label.colorIndex-10 {
     color: #cd6031;
 }
