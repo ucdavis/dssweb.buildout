@@ -552,4 +552,9 @@ table.fc-border-separate {
 	_overflow: hidden;
 	}
 	
+   .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+     border: 1px solid #bec1c6;
+     background: #ddd url(../images/ui-bg_flat_e5e9ef__40x100.png) 50% 50% repeat-x;
+     color: #000; }
+	
 	
