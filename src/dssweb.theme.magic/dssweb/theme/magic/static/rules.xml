@@ -198,6 +198,15 @@
 	      <copy attributes="href"
 	            css:content=".navTreeItem > .section-uc-davis > a"
 	            css:theme="#uti-logo > a" />
+		<!-- mobile bar buttons -->
+      <copy attributes="href"
+            css:content="#portal-advanced-search > a"
+            css:theme="#search-util-btn > a" />
+      <copy attributes="href"
+            css:content="#portal-advanced-search > a"
+            css:theme="#search-util-btn > p > a" />
+ 
+		
 
 	      <!-- desktop menu bar -->
 	  
@@ -394,9 +403,9 @@
  	  <!--Prospective Students T6-->
  	   <rules css:if-content=".subsection-prospective-students" >
 		   <drop css:content=".image-under-banner" />
-               <replace css:theme=".picture" css:content=".image-under-banner" method="raw" />
- 		    	<replace css:theme="#content-core" css:content="#content-core" />
- 		    	<drop css:theme=".intro" />
+          <replace css:theme=".picture" css:content=".image-under-banner" method="raw" />
+ 		     <replace css:theme="#content-core" css:content="#content-core" />
+ 		   <drop css:theme=".intro" />
  		</rules> 
 	    <!--T11 -->
 	    <rules css:if-content=".template-solgemafullcalendar_view">
@@ -424,7 +433,9 @@
 	</rules>
     <!--related items-->
     <rules css:if-content="#viewlet-below-content-body">
+		 <rules css:if-not-content=".portaltype-front-page">
 	    <after css:theme="#content-core" css:content="#viewlet-below-content-body" />
+	 </rules>
     </rules>
     
         <!--- Footer -->

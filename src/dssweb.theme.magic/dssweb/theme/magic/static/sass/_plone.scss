@@ -1177,6 +1177,23 @@ ol.listTypeUpperRoman {
     list-style-image: none;
 }
 
+/* lab page link bar */
+#content-core h3.lab-bar > a {
+    display: block;
+    height: 70px;
+    width: 100%;
+    background: url("../images/icons/link-white.png") no-repeat scroll 97% 50%;
+}
+#content-core h3.lab-bar > a {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #fff;
+	 background-color: $ucd_blue_100;
+    text-decoration: none;
+    padding-top: .6em;
+    padding-left: 1em;
+}
+
 
 /* @end */
 
