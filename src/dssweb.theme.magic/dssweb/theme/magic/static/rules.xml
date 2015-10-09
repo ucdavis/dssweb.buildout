@@ -216,11 +216,12 @@
 				
       <copy attributes="href"
             css:content="#portaltab-map > a"
-            css:theme="#location-util-btn > a" />
+            css:theme="#location-util-btn > a" method="raw"/>
 
       <copy attributes="href"
             css:content="#portaltab-map > a"
-            css:theme="#location-util-btn > p > a" />
+            css:theme="#location-util-btn > p > a" method="raw"/>
+		<drop css:content-"#portaltab-map" />
 		
 
 
