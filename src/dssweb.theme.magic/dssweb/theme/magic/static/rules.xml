@@ -208,11 +208,11 @@
 				
       <copy attributes="href"
             css:content="#portaltab-contact > a"
-            css:theme="#contact-util-btn > a" />
+            css:theme="#email-util-btn > a" />
 		
       <copy attributes="href"
             css:content="#portaltab-contact > a"
-            css:theme="#contact-util-btn > p > a" />
+            css:theme="#email-util-btn > p > a" />
 				
       <copy attributes="href"
             css:content="#portaltab-map > a"
@@ -221,7 +221,7 @@
       <copy attributes="href"
             css:content="#portaltab-map > a"
             css:theme="#location-util-btn > p > a" method="raw"/>
-		<drop css:content-"#portaltab-map" />
+		<drop css:content="#portaltab-map" />
 		
 
 
