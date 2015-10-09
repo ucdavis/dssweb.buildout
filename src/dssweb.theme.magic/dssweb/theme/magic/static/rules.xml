@@ -205,8 +205,24 @@
       <copy attributes="href"
             css:content="#portal-advanced-search > a"
             css:theme="#search-util-btn > p > a" />
- 
+				
+      <copy attributes="href"
+            css:content="#portaltab-contact > a"
+            css:theme="#contact-util-btn > a" />
 		
+      <copy attributes="href"
+            css:content="#portaltab-contact > a"
+            css:theme="#contact-util-btn > p > a" />
+				
+      <copy attributes="href"
+            css:content="#portaltab-map > a"
+            css:theme="#location-util-btn > a" />
+
+      <copy attributes="href"
+            css:content="#portaltab-map > a"
+            css:theme="#location-util-btn > p > a" />
+		
+
 
 	      <!-- desktop menu bar -->
 	  
