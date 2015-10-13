@@ -34,7 +34,7 @@
 				<div class="adr">
 					<ul>
 					<li class="street-address" tal:condition="personMembershipInformation/getDept_officeAddress">
-						<spam
+						<span
                                tal:replace="structure personMembershipInformation/getDept_officeAddress"/>
                     </li>
 					<li class="street-address">
@@ -84,21 +84,32 @@
                     </a></h4>
                   
                  <div class="adr">
-				<div class="street-address">
+						  <ul>
+				<li class="street-address">
 					<span tal:condition="personMembershipInformation/getLab_officeAddress"
                                tal:replace="structure personMembershipInformation/getLab_officeAddress">
-                    </span></div>
-					<div class="street-address">
+                    </span></li>
+					<li class="street-address">
 						<span tal:condition="personMembershipInformation/getLab_streetAddress"
                                tal:replace="structure personMembershipInformation/getLab_streetAddress">
-                    </span></div>
-					<div class="street-address">Davis, CA 95616 </div>
+                    </span></li>
+					<li class="street-address" tal:condition="personMembershipInformation/getLab_city"><span tal:replace="structure personMembershipInformation/getLab_city"/>,  <span tal:replace="structure personMembershipInformation/getLab_state"/> <span tal:replace="structure personMembershipInformation/getLab_zip"/></li>
 				
 					
 				
 				<div class="tel" tal:condition="personMembershipInformation/getLab_officePhone"
                                tal:replace="structure personMembershipInformation/getLab_officePhone">
                     </div>
+		<div class="office-hours adr" 
+		tal:condition="personMembershipInformation/getQuarter">
+			<span class="bold">Office Hours for <span tal:replace="personMembershipInformation/getQuarter">Quarter</span>
+			<span tal:condition="personMembershipInformation/getOfficeHours">
+	            	 <ul>
+	                 <li class="day-time-row" tal:repeat="officeHours personMembershipInformation/getOfficeHours"
+	                 tal:content="officeHours"><tal:comment replace="nothing">[Office Hours]</tal:comment></li>
+	                 </ul></span>
+			
+		</div>
 					
 			</div>
 		</div>
@@ -114,4 +125,3 @@
 
 </dl>
 </html>
-
