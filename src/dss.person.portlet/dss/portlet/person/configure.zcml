@@ -23,6 +23,10 @@
         id="dss.portlet.person.AddPersonAddressPortlet"
         title="dss.portlet.person_address: Add person address portlet"
         />
+    <permission
+        id="dss.portlet.person.AddPersonSpecialtiesPortlet"
+        title="dss.portlet.person_specialties: Add person specialties portlet"
+        />
 
      <!-- Register the portlet -->
     <plone:portlet
@@ -45,5 +49,15 @@
         addview=".person_address.AddForm"
         editview=".person_address.EditForm"
         />
+     <plone:portlet
+         name="dss.portlet.person.Person_Specialties"
+         interface=".person_specialties.IPersonSpecialtiesPortlet"
+         assignment=".person_specialties.Assignment"
+         view_permission="zope2.View"
+         edit_permission="dss.portlet.person.AddPersonSpecialtiesPortlet"
+         renderer=".person_specialties.Renderer"
+         addview=".person_specialties.AddForm"
+         editview=".person_specialties.EditForm"
+         />
 
 </configure>
