@@ -9,6 +9,7 @@
   
   	
     <rules css:if-content="#visual-portal-wrapper">
+		 
 	    
 	    <theme href="index.html" css:if-content="body.portaltype-front-page" />
 
@@ -74,7 +75,7 @@
 	 
   
   </rules>
-  
+  <!--colors for people portlets -->
   <rules css:if-content=".economics">
     <rules if-path="/people">
     <replace content="//dl[contains(@class,'portlet')]/@class" menthod="raw">
@@ -454,6 +455,11 @@
 	    <after css:theme="#content-core" css:content="#viewlet-below-content-body" />
 	 </rules>
     </rules>
+	 <!--addthis-->
+	 <append css:theme="body">
+		 <!-- Go to www.addthis.com/dashboard to customize your tools -->
+		 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55401c7c42ec2563" async="async"></script>
+        </append>		 
     
         <!--- Footer -->
        <rules css:if-content="#doormat-container">

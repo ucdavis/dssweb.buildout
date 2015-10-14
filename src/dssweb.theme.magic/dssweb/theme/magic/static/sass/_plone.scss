@@ -575,6 +575,16 @@ margin-left: 0px;
 margin-left: 0;
 margin-right: -15px;
 }
+#content-row .portlet .panel-body .vcard.office h4.spec {
+	background-color:transparent !important;
+}
+.no-top {
+	margin-top: -10px;
+}
+.sub {
+	margin-left:45px !important;
+	margin-bottom: -10px;
+}
 /*-- nav portlets ---*/
 
 dl.portlet ul.navTreeLevel0 > .navTreeItem {
@@ -1193,6 +1203,15 @@ ol.listTypeUpperRoman {
     padding-top: .6em;
     padding-left: 1em;
 }
+/*lab bar image */
+h3.lab-bar > a > img.image-left {
+    /* margin: 0; */
+    padding-top: 0;
+    padding-left: 0;
+    display: block;
+    margin-top: -14px;
+    margin-left: -22px;
+ }
 
 
 /* @end */
