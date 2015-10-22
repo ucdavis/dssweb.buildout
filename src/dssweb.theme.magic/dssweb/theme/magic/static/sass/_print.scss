@@ -129,6 +129,20 @@ div.pageBreak {
 	margin-bottom:0.625em;
 	margin-top:0;
 }
+.relatedItems {
+	display:none;
+}
+#category.documentByLine{
+	visibility:hidden;
+}
+#category.documentByLine a {
+	visibility:visible;
+	font-size: 1.5rem;
+	color: $rec_blue;
+	float:right;
+	padding-right:20px;
+	
+}
 /*#content .documentDescription, #content #description {
     margin:0.5em 0 1.31em; 
 } */

@@ -204,19 +204,30 @@ dl.portlet-static-quick-facts dt {
 		dt { background:transparent;
 			padding-left:0;
 		   
+        
 			span {
 			color:$ucd_black_80;
 			text-transform: none;
 			letter-spacing:normal;
 			font-weight:normal;
-			@include font_size(24px, !important);
+			font-size:1.5rem !important;
 			/*padding-top:15px; */
 			padding-bottom:10px;
 			text-align:center;
 			border-bottom: none; 
-	
-				}
+			
+				
 			}
+			
+			@media screen and (max-width: 991px) and (min-width: 768px){
+			      span { 
+     
+			     font-size: 1.125rem !important;	
+				}
+		       }
+	
+		} 
+		
 		a:hover {
 			text-decoration:underline;
 			}
@@ -227,18 +238,24 @@ dl.portlet-static-quick-facts dt {
 		    padding-top: 0;
 			 padding-left:5px;
 			 height:95px;
-			 font-size: 1.5rem !important;
 			 
 	 		 a.tile {
+			   position:absolute;
 	 			padding-top:10px;
 				margin-left:0px;
-		    }
+		        }
+			 img.portletItemDetails.image-left{
+				 margin-top: -15px;
+			      }
 				
 			
 				
-		} 
 
-		}
+		
+	}	
+	 
+	
+ } 
 }
 /* Middle column */
 #middle-front-column.narrow-col {
@@ -250,19 +267,30 @@ dl.portlet-static-quick-facts dt {
 		dt { background:transparent;
 			padding-left:0;
 		   
+        
 			span {
 			color:$ucd_black_80;
 			text-transform: none;
 			letter-spacing:normal;
 			font-weight:normal;
-			@include font_size(24px, !important);
+			font-size:1.5rem !important;
 			/*padding-top:15px; */
 			padding-bottom:10px;
 			text-align:center;
 			border-bottom: none; 
-	
-				}
+			
+				
 			}
+			
+			@media screen and (max-width: 991px) and (min-width: 768px){
+			      span { 
+     
+			     font-size: 1.125rem !important;	
+				}
+		       }
+	
+		} 
+		
 		a:hover {
 			text-decoration:underline;
 			}
@@ -273,19 +301,25 @@ dl.portlet-static-quick-facts dt {
 		    padding-top: 0;
 			 padding-left:5px;
 			 height:95px;
-			 font-size: 1.5rem !important;
 			 
 	 		 a.tile {
+			   position:absolute;
 	 			padding-top:10px;
+				padding-right:5px;
 				margin-left:0px;
-		    }
+		        }
+			 img.portletItemDetails.image-left{
+				 margin-top: -15px;
+			      }
 				
 			
 				
-		} 
-
-		}
-}
+				}
+		
+	}	
+	 
+	
+ } 
 /* right-column */
 #right-front-column.narrow-col {
 
@@ -293,42 +327,65 @@ dl.portlet-static-quick-facts dt {
 		background-color:transparent;
 		padding-left:0;
 		
-		dt { background:transparent;
+		dl.portlet {
+			background-color:transparent;
 			padding-left:0;
+		
+			dt { background:transparent;
+				padding-left:0;
 		   
-			span {
-			color:$ucd_black_80;
-			text-transform: none;
-			letter-spacing:normal;
-			font-weight:normal;
-			@include font_size(24px, !important);
-			/*padding-top:15px; */
-			padding-bottom:10px;
-			text-align:center;
-			border-bottom: none; 
-	
+        
+				span {
+				color:$ucd_black_80;
+				text-transform: none;
+				letter-spacing:normal;
+				font-weight:normal;
+				font-size:1.5rem !important;
+				/*padding-top:15px; */
+				padding-bottom:10px;
+				text-align:center;
+				border-bottom: none; 
+			
+				
 				}
-			}
-		a:hover {
-			text-decoration:underline;
-			}
-		dd {
-			 margin-left:0;
-		    /*padding-left: 5px; */
-		    padding-right: 5px;
-		    padding-top: 0;
-			 padding-left:5px;
-			 height:95px;
-			 font-size: 1.5rem !important;
+			
+				@media screen and (max-width: 991px) and (min-width: 768px){
+				      span { 
+     
+				     font-size: 1.125rem !important;	
+					}
+			       }
+	
+			} 
+		
+			a:hover {
+				text-decoration:underline;
+				}
+			dd {
+				 margin-left:0;
+			    /*padding-left: 5px; */
+			    padding-right: 5px;
+			    padding-top: 0;
+				 padding-left:5px;
+				 height:95px;
 			 
-	 		 a.tile {
-	 			padding-top:10px;
-				margin-left:0px;
-		    }
+		 		 a.tile {
+				   position:absolute;
+		 			padding-top:10px;
+					margin-left:0px;
+			        }
+				 img.portletItemDetails.image-left{
+					 margin-top: -15px;
+				      }
 				
 			
 				
-		} 
+
+		
+		}	
+	 
+	
+	 } 
 
 		}
 		dl.portlet.portletStaticText{
@@ -343,23 +400,34 @@ dl.portlet-static-quick-facts dt {
 				text-transform: none;
 				letter-spacing:normal;
 				font-weight:normal;
-				@include font_size(24px, !important);
+				
 				/*padding-top:15px; */
 				padding-bottom:10px;
+				padding-top:5px;
 				text-align:center;
 				border-bottom: none; 
 					
 					a, a:link {
 						color:$ucd_black_80;
-						font-size: 24px !important;
+						font-size:1.5rem !important;
+						padding-bottom:10px;
 					     } 
+	  		 	    @media screen and (max-width: 991px) and (min-width: 768px){
+	  		 			  a, a:link { 
+  
+	  		 			     font-size: 1.125rem !important;	
+	  		 				}
+	  		 		       }
+							 
 				   a:hover {
 					   text-decoration:underline;
-					}
-				}
+					       }
+						 
+					 }
+			  }
 				dd {
 					 margin-left:0;
-				    /*padding-left: 5px; */
+					 background-color:transparent;
 				    padding-right: 5px;
 				    padding-top: 0;
 					 padding-left:5px;
@@ -370,7 +438,7 @@ dl.portlet-static-quick-facts dt {
 						margin-left:0px;
 				    }
 				
-				 }
+				 
 				
 				} 
 
