@@ -247,13 +247,29 @@ dl.portlet-static-quick-facts dt {
 			 img.portletItemDetails.image-left{
 				 margin-top: -15px;
 			      }
-				
+					
+			
 			
 				
-
-		
-	}	
-	 
+				}	
+	   @media screen and (max-width: 991px) and (min-width: 768px){
+			dd{
+				height:78px;
+			 }
+				 a { 
+    
+				     font-size: 0.8rem !important;
+				      width: 85%;
+				      white-space: nowrap;
+				      overflow: hidden;
+				      text-overflow: ellipsis;
+					 
+				}
+				img.portletItemDetails.image-left{
+					height:80px;
+					width:80px;
+				}
+			       }
 	
  } 
 }
@@ -307,6 +323,7 @@ dl.portlet-static-quick-facts dt {
 	 			padding-top:10px;
 				padding-right:5px;
 				margin-left:0px;
+				margin-right:4%;
 		        }
 			 img.portletItemDetails.image-left{
 				 margin-top: -15px;
@@ -315,6 +332,24 @@ dl.portlet-static-quick-facts dt {
 			
 				
 				}
+			   @media screen and (max-width: 991px) and (min-width: 768px){
+					dd{
+						height:78px;
+					 }
+						 a { 
+    
+						     font-size: 0.8rem !important;
+						      width: 85%;
+						      white-space: nowrap;
+						      overflow: hidden;
+						      text-overflow: ellipsis;
+					 
+						}
+						img.portletItemDetails.image-left{
+							height:80px;
+							width:80px;
+						}
+					       }
 		
 	}	
 	 
@@ -383,7 +418,24 @@ dl.portlet-static-quick-facts dt {
 
 		
 		}	
-	 
+	   @media screen and (max-width: 991px) and (min-width: 768px){
+			dd{
+				height:78px;
+			 }
+				 a { 
+    
+				     font-size: 0.8rem !important;
+				      width: 85%;
+				      white-space: nowrap;
+				      overflow: hidden;
+				      text-overflow: ellipsis;
+					 
+				}
+				img.portletItemDetails.image-left{
+					height:80px;
+					width:80px;
+				}
+			       }
 	
 	 } 
 
@@ -400,6 +452,7 @@ dl.portlet-static-quick-facts dt {
 				text-transform: none;
 				letter-spacing:normal;
 				font-weight:normal;
+				font-size:1.5rem;
 				
 				/*padding-top:15px; */
 				padding-bottom:10px;
@@ -422,8 +475,15 @@ dl.portlet-static-quick-facts dt {
 				   a:hover {
 					   text-decoration:underline;
 					       }
+		 					
 						 
 					 }
+	  		 	    @media screen and (max-width: 991px) and (min-width: 768px){
+	  		 			  span{ 
+  
+	  		 			     font-size: 1.125rem !important;	
+	  		 				}
+	  		 		       }
 			  }
 				dd {
 					 margin-left:0;
@@ -837,7 +897,14 @@ div.doormatColumn.column-1 {
 	dd.doormatSectionBody {
       margin-bottom: .5rem;
   }
+ 
 }
+}
+@media screen and (max-width: 991px) and (min-width: 768px){
+	div.doormatColumn.column-1 {
+	-webkit-column-count: 2; /* Chrome, Safari, Opera */
+	-moz-column-count: 2; /* Firefox */
+	column-count: 2; }
 }
 div.doormatColumn.column-2 {
 	
@@ -877,6 +944,7 @@ ul#footer-nav {
 	-moz-column-gap:10px;
 
 }
+
 #footer-nav a{
 	color:white;
 	white-space:nowrap;
