@@ -2,6 +2,7 @@ from eea.facetednavigation.interfaces import ICriteria
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
 from zope.component import getMultiAdapter
+import DateTime
 
 
 def _getObjectByUID_cachekey(method, self, UID):
@@ -63,3 +64,31 @@ class FacNavView(BrowserView):
             return self.getObjectByUID(dept_uid)
 
         return None
+    
+    def item_samedate(self, obj):
+        
+        """
+        instancemethod doesn't like math ergo I suffer
+        """
+        item_end = obj.end or obj.EndDate
+        item_start = obj.start or obj.StartDate
+        
+        if DateTime(item_end) - DateTime(item_start) < 1:
+            return True
+        else:
+            return None
+        
+        
+    def item_sametime(self, obj):
+        
+        """
+        instancemethod doesn't like math
+        """
+        item_end = obj.end or obj.EndDate
+        item_start = obj.start or obj.StartDate
+        
+        if DateTime.item_start == DateTime.item_end:
+            return True
+        else:
+            return None
+        

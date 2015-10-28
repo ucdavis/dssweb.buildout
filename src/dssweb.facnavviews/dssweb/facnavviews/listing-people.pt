@@ -34,7 +34,7 @@
                   lastname obj/getLastName;
                   url python:support_view.navRootRelativeUrl(obj);
                   image_thumb exists:obj/image_thumb;
-				  person_email python:obj.getEmail();
+				      person_email python:obj.getEmail();
                   image_tag python:getattr(obj, 'tag', None)">
                 <a tal:attributes="href url;
                                  title desc_or_title" >
