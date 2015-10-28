@@ -1,0 +1,121 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+  xmlns:tal="http://xml.zope.org/namespaces/tal"
+  xmlns:metal="http://xml.zope.org/namespaces/metal"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  metal:use-macro="context/main_template/macros/master"
+  i18n:domain="eea">
+
+<body>
+
+  <metal:content-core fill-slot="content-core">
+
+    <metal:block define-macro="content-core">
+      <div tal:define="
+        folderContents folderContents | python:context.getFolderContents();
+        Batch python:modules['Products.CMFPlone'].Batch;
+        b_start python:request.get('b_start', 0);
+        batch python:isinstance(folderContents, Batch) and folderContents or Batch(folderContents, 100, int(b_start), orphan=2);
+        support_view context/@@facnav_support;
+        department support_view/getFacNavDepartment">
+
+        <div metal:use-macro="context/batch_macros/macros/navigation" />
+
+        <div class="eea-preview-items">
+          <tal:entries repeat="brain batch">
+            <tal:block define="obj brain/getObject; 
+                               ">
+
+			<div class="genericTile col-md-6 col-sm-12 col-xs-12">
+			<div class="eventEntry">
+              <div tal:define="
+                  description obj/Description|string:;
+						obj_type obj/Type;
+						toLocalizedTime nocall: context/@@plone/toLocalizedTime;
+                  title obj/pretty_title_or_id|string:;
+						item_url python:obj.absolute_url();
+                  desc_or_title python:description or title;
+                  navigation_root_url context/@@plone_portal_state/navigation_root_url;
+                  image_thumb exists:obj/image_thumb;
+                  image_tag python:getattr(obj, 'tag', None);
+						item_start python:(obj.start or obj.StartDate) if obj_type == 'Event' else None;
+						item_end python:(obj.end or obj.EndDate) if obj_type == 'Event' else None;
+						item_modified obj/ModificationDate;
+						item_sametime python: item_start == item_end;
+						item_samedate python: (item_end - item_start &lt; 1) if obj_type == 'Event' else False">
+                <a tal:attributes="href item_url;
+                                 title desc_or_title">
+                <span class="eventWrapper" tal:condition="image_thumb">
+                  <img style="border: none" tal:attributes="
+                    title desc_or_title;
+                    alt title;
+                    src string:$url/image_thumb"/>
+                </span>
+
+                <span class="eventName" tal:content="title"> Title </span>
+			       </a>
+					 
+					  <span tal:condition="python: item_sametime"
+					  		i18n:translate="label_event_byline_onlyfrom">
+							<abbr class="dtstart"
+							tal:attributes="title python:item_start"
+							tal:content="python:toLocalizedTime(item_start,long_format=1)"
+							i18n:name="start">from date</abbr>
+							</span>
+							
+							
+					  <span tal:condition="python: item_samedate and not item_sametime"
+														                                                  i18n:translate="label_event_byline_samedate">
+					  <abbr class="dtstart"
+					  tal:attributes="title python:item_start"
+														                                        						tal:content="python:toLocalizedTime(item_start)"
+						 i18n:name="start">from date</abbr> from
+						 <abbr class="dtstart"
+						 tal:attributes="title python:item_start"
+														                                         						tal:content="python:toLocalizedTime(item_start,time_only=1)"
+							i18n:name="starttime">from time</abbr> to
+							<abbr class="dtend"
+							tal:attributes="title python:item_end"
+														                                         						tal:content="python:toLocalizedTime(item_end,time_only=1)"
+							i18n:name="end">to time</abbr>
+						</span>
+						<span tal:condition="python: not item_samedate and not item_sametime"
+						i18n:translate="label_event_byline">
+							from
+							<abbr class="dtstart"
+							tal:attributes="title python:item_start"
+														                                         						tal:content="python:toLocalizedTime(item_start,long_format=1)"
+						i18n:name="start">from date</abbr> to
+						<abbr class="dtend"
+						tal:attributes="title python:item_end"
+														                                         							tal:content="python:toLocalizedTime(item_end,long_format=1)"
+							i18n:name="end">to date</abbr>
+							</span>
+							<span tal:condition="python: obj.location"
+														                                    							i18n:translate="label_event_byline_location">
+																																	
+						<span tal:content="string:${obj/location}"
+							class="location"
+							i18n:name="location">Oslo</span>,
+							</span>
+
+                
+              
+
+              </div> 
+		  </div>
+	  </div>
+
+            </tal:block>
+
+          </tal:entries>
+
+        </div>
+
+        <div metal:use-macro="context/batch_macros/macros/navigation" />
+
+      </div>
+
+    </metal:block>
+  </metal:content-core>
+</body>
+</html>

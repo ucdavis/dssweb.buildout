@@ -65,30 +65,5 @@ class FacNavView(BrowserView):
 
         return None
     
-    def item_samedate(self, obj):
-        
-        """
-        instancemethod doesn't like math ergo I suffer
-        """
-        item_end = obj.end or obj.EndDate
-        item_start = obj.start or obj.StartDate
-        
-        if DateTime(item_end) - DateTime(item_start) < 1:
-            return True
-        else:
-            return None
-        
-        
-    def item_sametime(self, obj):
-        
-        """
-        instancemethod doesn't like math
-        """
-        item_end = obj.end or obj.EndDate
-        item_start = obj.start or obj.StartDate
-        
-        if DateTime.item_start == DateTime.item_end:
-            return True
-        else:
-            return None
+    
         
