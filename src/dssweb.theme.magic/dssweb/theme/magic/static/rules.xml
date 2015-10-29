@@ -352,6 +352,7 @@
 	       <rules css:if-content="body.portaltype-event">
 	         <replace theme='//*[@id="content"]/h1'
 	                  content='//*[@id="parent-fieldname-title"]' />
+			  
         
 	         <!--drop theme='//*[@id="content-core"]/div[1]' />
 	         <replace css:theme="div.zebra.rows"

@@ -362,10 +362,6 @@ dl.portlet-static-quick-facts dt {
 		background-color:transparent;
 		padding-left:0;
 		
-		dl.portlet {
-			background-color:transparent;
-			padding-left:0;
-		
 			dt { background:transparent;
 				padding-left:0;
 		   
@@ -390,12 +386,12 @@ dl.portlet-static-quick-facts dt {
 				     font-size: 1.125rem !important;	
 					}
 			       }
-	
-			} 
+	  
 		
-			a:hover {
+			 a:hover {
 				text-decoration:underline;
-				}
+				 }
+			  }
 			dd {
 				 margin-left:0;
 			    /*padding-left: 5px; */
@@ -417,11 +413,11 @@ dl.portlet-static-quick-facts dt {
 				
 
 		
-		}	
-	   @media screen and (max-width: 991px) and (min-width: 768px){
-			dd{
-				height:78px;
-			 }
+		        }	
+	      @media screen and (max-width: 991px) and (min-width: 768px){
+			  dd{
+				  height:78px;
+				  
 				 a { 
     
 				     font-size: 0.8rem !important;
@@ -430,15 +426,15 @@ dl.portlet-static-quick-facts dt {
 				      overflow: hidden;
 				      text-overflow: ellipsis;
 					 
-				}
+				       }
 				img.portletItemDetails.image-left{
 					height:80px;
 					width:80px;
-				}
-			       }
-	
-	 } 
-
+				      }
+			       }  
+	          }
+	        
+			
 		}
 		dl.portlet.portletStaticText{
 			background-color:transparent;
@@ -1251,6 +1247,10 @@ h3.lab-bar > a > img.image-left {
     display: block;
     margin-top: -14px;
     margin-left: -22px;
+ }
+ /* event Tile */
+ .eventTile {
+	 min-height: 225px;
  }
 
 
