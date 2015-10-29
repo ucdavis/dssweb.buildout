@@ -37,8 +37,8 @@
                   navigation_root_url context/@@plone_portal_state/navigation_root_url;
                   image_thumb exists:obj/image_thumb;
                   image_tag python:getattr(obj, 'tag', None);
-						item_start python:(obj.start or obj.StartDate) if obj_type == 'Event' else None;
-						item_end python:(obj.end or obj.EndDate) if obj_type == 'Event' else None;
+						item_start python:(obj.startDate) if obj_type == 'Event' else None;
+						item_end python:(obj.endDate) if obj_type == 'Event' else None;
 						item_modified obj/ModificationDate;
 						item_sametime python: item_start == item_end;
 						item_samedate python: (item_end - item_start &lt; 1) if obj_type == 'Event' else False">
