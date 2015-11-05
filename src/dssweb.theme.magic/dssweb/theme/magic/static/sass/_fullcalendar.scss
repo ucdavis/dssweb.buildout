@@ -177,7 +177,14 @@ table.fc-header td {
 .ui-resizable-s {
     color: #333333 !important;
 }
-
+#event_edit_container{
+.ui-dialog {
+	max-width: 600px; }
+	#div.content > div {
+		width:65% !important;
+	}
+	h3 {text-transform: none;}
+}
 .fc-event .fc-event-inner{
     border-radius: 4px;
     border-width: 1px;

@@ -134,6 +134,7 @@
 			              css:content="#portaltab-quick-facts > a"
 			              css:theme="#container-2 > div > div > div.bcontroller > a" />
 					  </rules>
+	  				
 					  <rules css:if-content=".site-economics">
 	  			        <copy attributes="href"
 	  			              css:content="#portaltab-about > a"
@@ -148,7 +149,11 @@
 						  <rules css:if-content=".site-mindbrain">
 	  	  			      <copy attributes="href"
 	  	  			              css:content="#portaltab-about > a"
-	  	  			              css:theme="#container-2 > div > div > div.bcontroller" />
+	  	  			              css:theme="#container-2 > div > div > div.bcontroller > a" />
+									  <!--color hack -->
+			 					    <merge attributes="class"
+			 					      css:content=".front-page-news"
+			 					      css:theme="#container-2 > div > div > div.bcontroller > a"  />
 							  </rules>
 
 			  		  <!-- Events Happy Box -->
@@ -292,15 +297,32 @@
       </replace>
 <!-- Generic rules, apply to all by front page -->
 		  <rules css:if-not-content=".portaltype-front-page">
+			  <rules css:if-not-content=".template-solgemafullcalendar_view" >
 		  <before css:theme="#content-core" css:content="#parent-fieldname-description" />
 		  <replace css:theme-children=".panel-body" css:content-children="#content-core" />
 	       </rules>
+		 </rules>
 		   <!-- swap out in the title text on the homepage -->
 		   <replace theme-children="//*[@id='middle-row']/h2" content="//h1[@id='parent-fieldname-title']/text()" if-content="//h1[@id='parent-fieldname-title']" />
 		   <!-- mobile front bar titles, aka quickfacts -->
 		   <replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.left-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content=".left-front-column > dl > dt > a > span" css:if-content=".left-front-column" />
 		   <replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.middle-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content=".middle-front-column > dl > dt > a > span" css:if-content=".middle-front-column" />
-		   <replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.right-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content-children=".right-front-column > dl > dt > span > a" css:if-content=".right-front-column" />
+			
+			<!--replace theme-children="//*[@id='r-title']/a/span" content="//*[@id='right-front-column']/dl/dt/span[2]/a/text()" /-->
+			<!--replace css:content-children=".portletEvents .portletFooter a"> More events </replace-->
+		  <rules css:if-content=".right-front-column dl.portletStaticText">   
+			<replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.right-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a"> The Latest</replace>
+		</rules>
+		<rules css:if-not-content=".right-front-column dl.portletStaticText"> 
+		  <replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.right-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content=".right-front-column > dl > dt > a > span" css:if-content=".right-front-column" />
+	  </rules>
+		
+			
+		   <!--replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.right-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content=".right-front-column > dl > dt > span > a" css:if-content=".right-front-column dl.portletStaticText" /-->
+			
+	      <!--copy attributes="href"
+	            css:content=".right-front-column > dl > dt > span > a"
+	            css:theme="#content-core > div.panel.panel-default.bottom-panel.right-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:if-content=".right-front-column dl.portletStaticText" /-->
 		   
 		 
 	      <!-- Search Fixups -->
@@ -429,16 +451,15 @@
 	    <!--T11 -->
 	    <rules css:if-content=".template-solgemafullcalendar_view">
 		
-			
-			
-	
 	 	   <replace css:theme-children="#calendar" css:content="#calendar" />
 	 	   <!--replace css:theme-children=".widget-fieldset" css:content="#fieldset-Subject" /-->
-		   <replace css:theme-children=".panel" css:content="#SFQuery" />
+		   <replace css:theme=".widget-fieldset" css:content="#SFQuery" />
 	 	   <copy attributes="href"
 	 		 css:content="a#sfc-ical-export"
 	 		 css:theme="#ical-icon > a" />
-	    <drop css:theme="#rss-icon" />		 
+	    <drop css:theme="#rss-icon" />
+		 <drop css:theme="#subject-all" />
+		 <drop css:theme="#left-area > div > div.panel-heading > p" />
 	  
 	    </rules>
 		<!--windowz-->
@@ -462,10 +483,10 @@
 	 </rules>
     </rules>
 	 <!--addthis-->
-	 <append css:theme="body">
-		 <!-- Go to www.addthis.com/dashboard to customize your tools -->
-		 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55401c7c42ec2563" async="async"></script>
-        </append>		 
+		 <append css:theme="body">
+			 <!-- Go to www.addthis.com/dashboard to customize your tools -->
+			 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55401c7c42ec2563" async="async"></script>
+	        </append>	
     
         <!--- Footer -->
        <rules css:if-content="#doormat-container">
