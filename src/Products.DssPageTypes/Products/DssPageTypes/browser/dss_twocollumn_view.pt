@@ -64,7 +64,7 @@
 
     <div tal:replace="structure provider:plone.abovecontentbody" />
             <div id="content-core">
-                               <div id="nested-left" class="col-xs-12 col-sm-12 col-md-4 col-lg-4" tal:condition="context/getInsetcolumn">
+                               <div id="nested-left" class="cell position-0 width-4 col-xs-12 col-sm-12 col-md-4 col-lg-4" tal:condition="context/getInsetcolumn">
 								   <h3 id="nested-left-title" class="uc blue-head">
 									   <metal:field use-macro="python:context.widget('insettitle', mode='view')">
 							Inset Collumn Text </metal:field></h3>
@@ -72,7 +72,7 @@
 							Inset Collumn Text
 						</metal:field>
                                   </div>
-                              <div id="nested-right" class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                              <div id="nested-right" class="cell position-1:4 width-12 col-xs-12 col-sm-12 col-md-8 col-lg-8">
                                 <metal:field use-macro="python:context.widget('text', mode='view')">
                                    Body text
                                  </metal:field>
