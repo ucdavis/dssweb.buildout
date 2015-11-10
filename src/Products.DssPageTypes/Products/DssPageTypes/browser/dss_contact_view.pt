@@ -2,6 +2,7 @@
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+	  xmlns:browser="http://namespaces.zope.org/browser"
       lang="en"
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="Products.DssPageTypes">
@@ -63,7 +64,9 @@
                         </div>
 
 	    <!--tal:block tal:define="contact_form context/contactform" tal:replace="structure contact_form"-->
-	     <tal:block tal:replace="structure view/render_form"> Form here </tal:block>
+		 <tal:block tal:define="form nocall:contact-form/@@embedded;
+		                    dummy python:form.setPrefix('mypfg')"
+		        tal:replace="structure form"/>
     </div>
 	    
 	  </div>  
