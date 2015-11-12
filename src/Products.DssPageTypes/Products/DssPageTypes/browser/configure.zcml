@@ -28,6 +28,14 @@
 	      template="dss_twocolumn_view.pt"
 	      permission="zope2.View"
 	         />
+	   <browser:page
+	      for="Products.DssPageTypes.interfaces.IDssTwoCollumnPage"
+		 class=".DssPageViews.DssTwoCollumnView"
+	      layer="..interfaces.IDssPageTypesSpecific"
+	      name="two_collumn_view"
+	      template="dss_twocollumn_view.pt"
+	      permission="zope2.View"
+			/>
  	   <browser:page
  	      for="Products.DssPageTypes.interfaces.IDssCourse"
  		 class=".DssPageViews.DssCourseView"

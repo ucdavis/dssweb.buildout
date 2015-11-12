@@ -8,6 +8,7 @@ from Products.Archetypes import atapi
 from Products.CMFCore import utils
 from content import dsscontact
 from content import dsstwocolumnpage
+from content import dsstwocollumnpage
 
 # Define a message factory for when this product is internationalised.
 # This will be imported with the special name "_" in most modules. Strings
