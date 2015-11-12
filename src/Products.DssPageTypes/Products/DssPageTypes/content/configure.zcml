@@ -13,6 +13,7 @@
         interface="Products.DssPageTypes.interfaces.IDssTwoColumnPage"
         />
   </class>
+  
   <class class=".dsscourse.DssCourse">
     <require
         permission="zope2.View"
