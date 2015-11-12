@@ -10,13 +10,13 @@ __pycache__/
 
 #sass
 *.sass-cache
-dssweb/theme/magic/static/assets/styles.css
-dssweb/theme/magic/static/assets/sub-org.css
-dssweb/theme/magic/static/assets/global.css
-dssweb/theme/magic/static/assets/components
-dssweb/theme/magic/static/assets/sections/*.css
-dssweb/theme/magic/static/assets/vendor/bootstrap.css
-dssweb/theme/magic/static/assets/vendor/jquery.cf.happybox.css
+#dssweb/theme/magic/static/assets/styles.css
+#dssweb/theme/magic/static/assets/sub-org.css
+#dssweb/theme/magic/static/assets/global.css
+#dssweb/theme/magic/static/assets/components
+#dssweb/theme/magic/static/assets/sections/*.css
+#dssweb/theme/magic/static/assets/vendor/bootstrap.css
+#dssweb/theme/magic/static/assets/vendor/jquery.cf.happybox.css
 
 #codekit
 config.codekit
