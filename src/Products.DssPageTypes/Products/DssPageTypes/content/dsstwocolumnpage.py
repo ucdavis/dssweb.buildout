@@ -23,7 +23,7 @@ DssTwoColumnPageSchema = document.ATDocumentSchema.copy() + atapi.Schema((
            name="medTopImage",
            widget=atapi.ImageWidget(
                label=u"Top Image",
-               description=u"this is a large top image",
+               description=u"this is a large top image - optimum size is 1100x418 px",
                
            ),
        ),
@@ -68,8 +68,11 @@ schemata.finalizeATCTSchema( DssTwoColumnPageSchema, moveDiscussion=False)
   
    #Move inset column field before bodytext so it's first on the form
 
-DssTwoColumnPageSchema.moveField('insetcolumn',after='description')
-DssTwoColumnPageSchema.moveField('insettitle',after='description')   
+DssTwoColumnPageSchema.moveField('medTopImage',after='description')
+DssTwoColumnPageSchema.moveField('imageCaption',after='medTopImage')
+DssTwoColumnPageSchema.moveField('insettitle',after='imageCaption')
+DssTwoColumnPageSchema.moveField('insetcolumn',after='insettitle')
+
 
 class DssTwoColumnPage(base.ATCTContent):
        """Two column Page"""
