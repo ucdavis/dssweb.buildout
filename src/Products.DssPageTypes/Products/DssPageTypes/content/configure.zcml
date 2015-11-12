@@ -6,12 +6,7 @@
   <!-- configure your content components here -->
   
   <!-- -*- extra stuff goes here -*- -->
-  <class class=".dsscontact.DssContact">
-    <require
-        permission="zope2.View"
-        interface="Products.DssPageTypes.interfaces.IDssContact"
-        />
-  </class>
+  
   <class class=".dsstwocollumnpage.DssTwoCollumnPage">
     <require
         permission="zope2.View"

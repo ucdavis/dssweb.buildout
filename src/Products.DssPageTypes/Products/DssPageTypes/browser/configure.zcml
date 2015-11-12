@@ -4,6 +4,12 @@
     i18n_domain="Products.DssContact">
 
   <include package="plone.app.contentmenu" />
+  
+      <!-- Publish static files -->
+      <browser:resourceDirectory
+          name="Products.DssPageTypes"
+          directory="static"
+          />
  
 	   <browser:page
 	      for="Products.DssPageTypes.interfaces.IDssContact"

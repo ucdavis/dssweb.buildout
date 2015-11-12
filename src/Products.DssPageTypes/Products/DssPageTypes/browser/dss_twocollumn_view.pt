@@ -22,7 +22,7 @@
 			   	             <div
 			   	                tal:define="here_url context/@@plone_context_state/object_url;
 							             MedTopImage context/getMedTopImage;"
-			   	                tal:attributes="href string:$here_url/image/image_view_fullscreen"
+			   	                tal:attributes="href string:$here_url/image/image_preview"
 							 id="parent-fieldname-image">
 							   <img class="img-responsive" tal:attributes="src string:${context/absolute_url}/medTopImage" alt="Graduate Students" />
 							               </div>
@@ -64,7 +64,8 @@
 
     <div tal:replace="structure provider:plone.abovecontentbody" />
             <div id="content-core">
-                               <div id="nested-left" class="cell position-0 width-4 col-xs-12 col-sm-12 col-md-4 col-lg-4" tal:condition="context/getInsetcolumn">
+				
+                               <div id="nested-left" class="cell position-0 width-4 col-xs-12 col-sm-12 col-md-4 col-lg-4" tal:condition="context/getInsetcolumn" >
 								   <h3 id="nested-left-title" class="uc blue-head">
 									   <metal:field use-macro="python:context.widget('insettitle', mode='view')">
 							Inset Collumn Text </metal:field></h3>
@@ -72,14 +73,22 @@
 							Inset Collumn Text
 						</metal:field>
                                   </div>
-                              <div id="nested-right" class="cell position-1:4 width-12 col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                               <div tal:condition="context/insetcolumn" id="nested-right" class="cell position-1:4 width-12 col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                 <metal:field use-macro="python:context.widget('text', mode='view')">
+                                    Body text
+                                  </metal:field>
+                              </div>
+                              <div tal:condition="python:not context.insetcolumn" id="nested-right">
                                 <metal:field use-macro="python:context.widget('text', mode='view')">
                                    Body text
                                  </metal:field>
                              </div>
-                            </div>
+					 
+				 
+			 </div>
+		 </div>
 
-         </div>
+			
         
     <div tal:replace="structure provider:plone.belowcontentbody" />
 
