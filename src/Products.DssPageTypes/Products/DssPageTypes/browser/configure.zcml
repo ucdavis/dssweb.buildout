@@ -21,11 +21,11 @@
 	      permission="zope2.View"
 	          />
 	   <browser:page
-	      for="Products.DssPageTypes.interfaces.IDssTwoCollumnPage"
-		 class=".DssPageViews.DssTwoCollumnView"
+	      for="Products.DssPageTypes.interfaces.IDssTwoColumnPage"
+		 class=".DssPageViews.DssTwoColumnView"
 	      layer="..interfaces.IDssPageTypesSpecific"
-	      name="two_collumn_view"
-	      template="dss_twocollumn_view.pt"
+	      name="two_column_view"
+	      template="dss_twocolumn_view.pt"
 	      permission="zope2.View"
 	         />
  	   <browser:page
