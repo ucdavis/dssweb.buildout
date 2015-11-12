@@ -10,13 +10,13 @@ from Products.ATContentTypes.content import document
 
 # -*- Message Factory Imported Here -*-
 
-from Products.DssPageTypes.interfaces import IDssTwoColumnPage
+from Products.DssPageTypes.interfaces import IDssTwoCollumnPage
 from Products.DssPageTypes.config import PROJECTNAME
 from Products.ATExtensions.ateapi import *
 
 
 
-DssTwoColumnPageSchema = document.ATDocumentSchema.copy() + atapi.Schema((
+DssTwoCollumnPageSchema = document.ATDocumentSchema.copy() + atapi.Schema((
   
     
        atapi.ImageField(
@@ -37,7 +37,7 @@ DssTwoColumnPageSchema = document.ATDocumentSchema.copy() + atapi.Schema((
       atapi.StringField(
           name="insettitle",
           widget=atapi.StringWidget(
-              label=u"Small column Title",
+              label=u"Small Collumn Title",
               description=u"This text will be blue"
           ),
       ),     
@@ -61,26 +61,26 @@ DssTwoColumnPageSchema = document.ATDocumentSchema.copy() + atapi.Schema((
    # Set storage on fields copied from ATContentTypeSchema, making sure
    # they work well with the python bridge properties.
 
-DssTwoColumnPageSchema['title'].storage = atapi.AnnotationStorage()
-DssTwoColumnPageSchema['description'].storage = atapi.AnnotationStorage()
+DssTwoCollumnPageSchema['title'].storage = atapi.AnnotationStorage()
+DssTwoCollumnPageSchema['description'].storage = atapi.AnnotationStorage()
 
-schemata.finalizeATCTSchema( DssTwoColumnPageSchema, moveDiscussion=False)
+schemata.finalizeATCTSchema( DssTwoCollumnPageSchema, moveDiscussion=False)
   
-   #Move inset column field before bodytext so it's first on the form
+   #Move inset collumn field before bodytext so it's first on the form
 
-DssTwoColumnPageSchema.moveField('insetcolumn',after='description')
-DssTwoColumnPageSchema.moveField('insettitle',after='description')   
+DssTwoCollumnPageSchema.moveField('insetcolumn',after='description')
+DssTwoCollumnPageSchema.moveField('insettitle',after='description')   
 
-class DssTwoColumnPage(base.ATCTContent):
-       """Two column Page"""
-       implements(IDssTwoColumnPage)
+class DssTwoCollumnPage(base.ATCTContent):
+       """Two Collumn Page"""
+       implements(IDssTwoCollumnPage)
 
-       meta_type = "DssTwoColumnPage"
-       schema = DssTwoColumnPageSchema
+       meta_type = "DssTwoCollumnPage"
+       schema = DssTwoCollumnPageSchema
 
        title = atapi.ATFieldProperty('title')
        description = atapi.ATFieldProperty('description')
 
        # -*- Your ATSchema to Python Property Bridges Here ... -*-
 
-atapi.registerType(DssTwoColumnPage, PROJECTNAME)
+atapi.registerType(DssTwoCollumnPage, PROJECTNAME)

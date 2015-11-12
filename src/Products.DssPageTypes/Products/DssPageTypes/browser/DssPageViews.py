@@ -24,7 +24,7 @@ class DssContactView(BrowserView):
                 
             
             
-class DssTwoColumnView(BrowserView):
+class DssTwoCollumnView(BrowserView):
 
   
     def __init__(self, context, request):

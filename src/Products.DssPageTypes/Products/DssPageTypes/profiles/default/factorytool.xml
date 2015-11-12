@@ -12,7 +12,7 @@
     <!-- -*- extra stuff goes here -*- -->
     <type portal_type="DssContact" />
     <!-- -*- extra stuff goes here -*- -->
-    <type portal_type="DssTwoColumnPage" />
+    <type portal_type="DssTwoCollumnPage" />
 	<type portal_type="DssCourse" />
   </factorytypes>
 </object>

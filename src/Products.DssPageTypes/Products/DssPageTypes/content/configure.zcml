@@ -7,10 +7,10 @@
   
   <!-- -*- extra stuff goes here -*- -->
   
-  <class class=".dsstwocolumnpage.DssTwoColumnPage">
+  <class class=".dsstwocollumnpage.DssTwoCollumnPage">
     <require
         permission="zope2.View"
-        interface="Products.DssPageTypes.interfaces.IDssTwoColumnPage"
+        interface="Products.DssPageTypes.interfaces.IDssTwoCollumnPage"
         />
   </class>
   <class class=".dsscourse.DssCourse">
