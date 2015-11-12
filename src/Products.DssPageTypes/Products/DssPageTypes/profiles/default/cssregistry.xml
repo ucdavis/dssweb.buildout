@@ -25,10 +25,10 @@
       -->
 
  <stylesheet title=""
-    id="++resource++Products.DssPageTypes/styles/twocollumn.css"
+    id="++resource++Products.DssPageTypes/styles/twocolumn.css"
     media="screen" rel="stylesheet" rendering="import"
     cacheable="True" compression="safe" cookable="True"
     applyPrefix="True"
-    enabled="1" expression="python:context.restrictedTraverse('@@plone_interface_info').provides('Products.DssPageTypes.interfaces.IDssTwoCollumnPage') or '++add++DssTwoCollumnPage' in context.REQUEST.ACTUAL_URL" />
+    enabled="1" expression="python:context.restrictedTraverse('@@plone_interface_info').provides('Products.DssPageTypes.interfaces.IDssTwoColumnPage') or '++add++DssTwoColumnPage' in context.REQUEST.ACTUAL_URL" />
 
 </object>
