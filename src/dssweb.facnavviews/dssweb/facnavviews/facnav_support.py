@@ -1,7 +1,11 @@
 from eea.facetednavigation.interfaces import ICriteria
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from Acquisition import aq_inner
 from zope.component import getMultiAdapter
+from collective.contentleadimage.config import IMAGE_FIELD_NAME
+from collective.contentleadimage.config import IMAGE_CAPTION_FIELD_NAME
 import DateTime
 
 
@@ -64,8 +68,21 @@ class FacNavView(BrowserView):
             return self.getObjectByUID(dept_uid)
 
         return None
+        
+    def tag(self, obj, css_class='tileImage'):
+            scale - 'thumb'
+            context = aq_inner(obj)
+            field = context.getField(IMAGE_FIELD_NAME)
+            titlef = context.getField(IMAGE_CAPTION_FIELD_NAME)
+            if titlef is not None:
+                title = titlef.get(context)
+            else:
+                title = ''
+            if field is not None:
+                if field.get_size(context) != 0:
+                    return field.tag(context, scale=scale, css_class=css_class, title=title)
+            return ''
     
-
             
             
             

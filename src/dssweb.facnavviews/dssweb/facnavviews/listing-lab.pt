@@ -1,0 +1,67 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+  xmlns:tal="http://xml.zope.org/namespaces/tal"
+  xmlns:metal="http://xml.zope.org/namespaces/metal"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  metal:use-macro="context/main_template/macros/master"
+  i18n:domain="eea">
+
+<body>
+
+  <metal:content-core fill-slot="content-core">
+
+    <metal:block define-macro="content-core">
+      <div tal:define="
+        folderContents folderContents | python:context.getFolderContents();
+        Batch python:modules['Products.CMFPlone'].Batch;
+        b_start python:request.get('b_start', 0);
+        batch python:isinstance(folderContents, Batch) and folderContents or Batch(folderContents, 100, int(b_start), orphan=2);
+        support_view context/@@facnav_support;">
+
+        <div metal:use-macro="context/batch_macros/macros/navigation" />
+
+        <div class="eea-preview-items">
+          <tal:entries repeat="brain batch">
+            <tal:block define="obj brain/getObject;
+                               ">
+
+			<div class="labTile col-md-6 col-sm-12 col-xs-12">
+			<div class="LabEntry">
+              <div class="labLink" tal:define="
+                  description obj/Description|string:;
+                  title obj/pretty_title_or_id|string:;
+                  desc_or_title python:description or title;
+                  url python:support_view.navRootRelativeUrl(obj);
+                  image_thumb exists:obj/image_thumb;
+	                    image_tag python:getattr(obj, 'tag', None)">
+	                  <a tal:attributes="href url;
+	                                   title desc_or_title" >
+	                  <span class="labWrapper" tal:condition="image_thumb">
+	                    <img style="border: none" tal:attributes="
+	                      title desc_or_title;
+	                      alt title;
+	                      src string:$url/image_thumb"/>
+	                  </span>
+
+	                  <span class="labName" tal:content="title">Title</span>
+	  			    </a>
+				  <div class="desc wrapper">
+				  <span class="desc" tal:content="description">Description </span>
+			  </div>
+                  
+               </div>
+				</div>
+			</div>   
+            </tal:block>
+
+          </tal:entries>
+
+        </div>
+
+        <div metal:use-macro="context/batch_macros/macros/navigation" />
+
+      </div>
+
+    </metal:block>
+  </metal:content-core>
+</body>
+</html>
