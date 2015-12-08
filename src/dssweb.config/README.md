@@ -1,4 +1,4 @@
-dss.web
-=======
+dssweb.config
+=============
 
-Skins for the dss Web Remodel Project
+Config files for the dssweb project

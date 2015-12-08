@@ -2,13 +2,12 @@
 from setuptools import setup, find_packages
 import os
 
-version = open(os.path.join("dss", "web", "version.txt")).read().strip()
+version = open(os.path.join("dssweb", "config", "version.txt")).read().strip()
 
-setup(name='dss.web',
+setup(name='dssweb.config',
       version=version,
-      description="Themes for Plone/Diazo powered sites",
-      long_description=open(os.path.join("README.md")).read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+      description="Config Files for Dssweb Poject",
+
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         "Framework :: Plone",
@@ -23,14 +22,13 @@ setup(name='dss.web',
       url='http://it.dss.ucdavis.edu/',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
-      namespace_packages=['dss',],
+      namespace_packages=['dssweb',],
       include_package_data=True,
       zip_safe=False,
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
-          'plone.app.theming',
-          'webcouturier.dropdownmenu'
+         
       ],
       entry_points={
           'z3c.autoinclude.plugin': 'target = plone',
