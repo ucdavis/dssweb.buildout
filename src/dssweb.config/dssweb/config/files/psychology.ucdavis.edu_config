@@ -1,0 +1,14 @@
+# nginx configuration
+location /faculty_sites {
+rewrite ^/faculty_sites/[Ss]imonton.* http://simonton.faculty.ucdavis.edu/ redirect;
+rewrite ^/faculty_sites(/.*|$) http://psc.dss.ucdavis.edu/faculty_sites/$1 redirect;
+}
+location /rainbow {
+rewrite ^/rainbow(/.*|$) http://psc.dss.ucdavis.edu/rainbow$1 redirect;
+}
+rewrite ^/[Hh]erek(/.*|$) http://psc.dss.ucdavis.edu/herek$1 redirect;
+rewrite ^/[Ss]imonton(/.*|$) http://simonton.faculty.ucdavis.edu/ redirect;
+rewrite ^/[Ss]ommer[Bb](/.*|$) http://psc.dss.ucdavis.edu/sommerb$1 redirect;
+rewrite ^/[Ss]ommer[Rr](/.*|$) http://psc.dss.ucdavis.edu/sommerr$1 redirect;
+rewrite "^/people$" /"directory-of-people" redirect;
+
