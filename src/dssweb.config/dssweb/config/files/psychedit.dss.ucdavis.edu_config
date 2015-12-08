@@ -1,0 +1,12 @@
+
+allow 169.237.160.75;
+allow 169.237.156.129/25;
+allow 169.237.90.0/24;
+allow 169.237.237.65/26;
+allow 169.237.84.0/24;
+allow 169.237.144.129/25;
+allow 74.82.115.43;
+deny all;
+
+rewrite ^/people$ /directory-of-people redirect;
+
