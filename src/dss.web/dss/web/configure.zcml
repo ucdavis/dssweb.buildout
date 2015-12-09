@@ -29,4 +29,14 @@
           provides="Products.GenericSetup.interfaces.EXTENSION"
           />
 
+
+    <genericsetup:upgradeDepends
+        source="1000"
+        destination="1001"
+        title="Add tiled event listing view"
+        description="adds view to folder, collection and topic types"
+        profile="dss.web:default"
+        import_steps="typeinfo"
+        />
+
 </configure>
