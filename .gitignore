@@ -1,6 +1,7 @@
 *.pyc
 *.swp
 .mr.developer.cfg
+.installed.cfg
 parts/
 src/
 eggs/
@@ -11,3 +12,4 @@ bin/
 downloads/*
 extends/*
 .sass-cache
+*.sublime*
