@@ -19,11 +19,39 @@
         class=".search.Search"
         permission="zope2.View"
         for="Products.CMFCore.interfaces.IFolderish"
-        template="updated_search.pt"
         layer="dssweb.theme.magic.interfaces.IThemeSpecific"
+        template="updated_search.pt"
         />
-		
 
-	
+    <browser:page
+        name="tiled-event-listing"
+        class=".unified_view.CollectionUnifiedView"
+        permission="zope2.View"
+        for="plone.app.collection.interfaces.ICollection"
+        template="tiled_events.pt"
+        />
+
+    <browser:page
+        name="tiled-event-listing"
+        class=".unified_view.TopicUnifiedView"
+        permission="zope2.View"
+        for="Products.ATContentTypes.interfaces.IATTopic"
+        template="tiled_events.pt"
+        />
+
+    <browser:page
+        name="tiled-event-listing"
+        class=".unified_view.FolderUnifiedView"
+        permission="zope2.View"
+        for="Products.ATContentTypes.interfaces.IATFolder"
+        template="tiled_events.pt"
+        />
+    <browser:menuItem
+        for="*"
+        menu="plone_displayviews"
+        title="Tiled event listing"
+        action="tiled-event-listing"
+        description="List events here in a tiled display"
+    />
 
 </configure>
