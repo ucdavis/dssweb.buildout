@@ -10,7 +10,37 @@
 
   <div metal:fill-slot="content-core">
     <metal:block define-macro="content-core">
-        foo
+      <div tal:define="Batch python:modules['plone.batching'].Batch;
+                       OldBatch python:modules['Products.CMFPlone'].Batch;
+                       b_start python:request.get('b_start', 0);
+                       contentFilter contentFilter|request/contentFilter|nothing;
+                       contentFilter python:contentFilter and dict(contentFilter) or {};
+                       limit_display limit_display|request/limit_display|nothing;
+                       limit_display python:limit_display and int(limit_display) or None;
+                       results python:view.query(b_start=b_start, custom_query=contentFilter, b_size=limit_display);
+                       is_batch python:isinstance(results, Batch) or isinstance(results, OldBatch);
+                       batch python:is_batch and results or Batch(results, 40, int(b_start), orphan=2);
+                       toLocalizedTime nocall: context/@@plone/toLocalizedTime;">
+        <div metal:use-macro="context/batch_macros/macros/navigation" />
+        <div class="dssweb-tiled-events">
+         <tal:entries repeat="brain batch">
+          <div class="event-tile" tal:define="title brain/Title;
+                                              url brain/getURL;
+                                              date brain/start;">
+            <a href="#" title=""
+               tal:attributes="href url;
+                               title title;">
+              <img src="http://lorempixel.com/g/250/250/" height="250" width="250" />
+              <div class="event-details">
+                <p class="event-date" tal:content="python:date.strftime('%B %-d, %Y')">December 5th, 2015</p>
+                <h3 tal:content="title">[event title]</h3>
+              </div>
+            </a>
+          </div>
+         </tal:entries>
+        </div>
+        <div metal:use-macro="context/batch_macros/macros/navigation" />
+      </div>
     </metal:block>
   </div>
 </body>
