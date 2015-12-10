@@ -31,13 +31,13 @@
         template="tiled_events.pt"
         />
 
-    <browser:page
+<!--     <browser:page
         name="tiled-event-listing"
         class=".unified_view.TopicUnifiedView"
         permission="zope2.View"
         for="Products.ATContentTypes.interfaces.IATTopic"
         template="tiled_events.pt"
-        />
+        /> -->
 
     <browser:page
         name="tiled-event-listing"
