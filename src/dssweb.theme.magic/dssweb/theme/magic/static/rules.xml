@@ -399,6 +399,8 @@
 			   
 		   <!-- two collumn page -->
 	   	<rules css:if-content=".portaltype-dsstwocollumnpage">
+		      
+	
 
                     <before css:theme="#content-row"
                                  css:content=".photo-row" />
@@ -408,6 +410,10 @@
 
                                  </rules>
                         <rules css:if-content=".portaltype-dsstwocolumnpage">
+							      <replace content="//img[contains(@class,'newsImage')]/@class" menthod="raw">
+							         <!--replace content="//dt[contains(@class,'portletHeader')]" method="raw"-->
+							        <xsl:attribute name="class">newsImage two-col-img</xsl:attribute>
+							      </replace>
 
                             <before css:theme="#content-row"
                                          css:content=".photo-row" />

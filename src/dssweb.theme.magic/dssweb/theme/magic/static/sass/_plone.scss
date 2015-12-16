@@ -758,7 +758,7 @@ div.error.warning {
 div.error.warning input {
     border: 2px solid $wine_grape;
 }
-/*--Two Collumn Page View ----*/
+/*--Two Column Page View ----*/
 p.figcaption {
 float: right;
 padding-right: 5px;
@@ -769,6 +769,11 @@ padding-right: 5px;
 div#nested-left > div > p > a {
 font-size: small;
 }
+.newsImage.two-col-img {
+    height: 70px;
+    width: 70px;
+    padding-top: 1px; }
+	 
 /*------Collection Summary View with Images -------*/
 tileItem.visualIEFloatFix {
 padding-top: 3%;
