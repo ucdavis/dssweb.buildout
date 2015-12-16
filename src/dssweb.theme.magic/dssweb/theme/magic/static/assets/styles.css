@@ -5435,9 +5435,10 @@ form.searchPage h1.documentFirstHeading .highlightedSearchTerm {
     padding-left: 110px; }
 
   /*dp */
-  /*.lab {
-  float: right;
-  } */
+  /* line 356, ../sass/_faceted.scss */
+  .lab {
+    float: right; }
+
   /*dp*/
   /*dp*/
   /* - ++resource++eea.facetednavigation.widgets.tagscloud.view.css - */
@@ -8238,60 +8239,6 @@ a.ogg-icon {
   background: url(../images/icons/filetype/ogg.gif) 0 50% no-repeat; }
 
 /* /_icons.scss */
-/* components/_tiled-events.scss */
-/* line 3, ../sass/components/_tiled-events.scss */
-#dssweb-tiled-events {
-  width: 100%; }
-  /* line 14, ../sass/vendor/bootstrap/mixins/_clearfix.scss */
-  #dssweb-tiled-events:before, #dssweb-tiled-events:after {
-    content: " ";
-    display: table; }
-  /* line 19, ../sass/vendor/bootstrap/mixins/_clearfix.scss */
-  #dssweb-tiled-events:after {
-    clear: both; }
-  /* line 7, ../sass/components/_tiled-events.scss */
-  #dssweb-tiled-events .event-tile {
-    border: 1px solid #B2B2B2;
-    background-color: #f2f2f2;
-    width: 250px;
-    height: 350px;
-    overflow: hidden;
-    float: left;
-    margin: 0px 15px 15px 0px;
-    text-align: center; }
-    /* line 17, ../sass/components/_tiled-events.scss */
-    #dssweb-tiled-events .event-tile .event-image {
-      height: 250px;
-      width: 250px;
-      overflow: hidden;
-      background: transparent url("../images/cow.jpg") center no-repeat;
-      border-bottom: 5px solid #008EAA; }
-      /* line 23, ../sass/components/_tiled-events.scss */
-      #dssweb-tiled-events .event-tile .event-image img {
-        border-bottom: 5px solid #008EAA;
-        height: 250px;
-        width: 250px; }
-    /* line 30, ../sass/components/_tiled-events.scss */
-    #dssweb-tiled-events .event-tile .event-details {
-      height: 100px;
-      padding: 0.5em;
-      border: none;
-      overflow: hidden; }
-      /* line 36, ../sass/components/_tiled-events.scss */
-      #dssweb-tiled-events .event-tile .event-details .event-date {
-        margin: 0;
-        padding: 0;
-        font-size: 125%;
-        font-weight: 800;
-        padding-bottom: 0.5em; }
-      /* line 43, ../sass/components/_tiled-events.scss */
-      #dssweb-tiled-events .event-tile .event-details h3 {
-        margin: 0;
-        padding: 0;
-        text-align: left;
-        line-height: 125%; }
-
-/* components/_tiled-events.scss */
 /* Removes certain elements when printing, and apply basic font styles
    for the remaining content. */
 @media print {
