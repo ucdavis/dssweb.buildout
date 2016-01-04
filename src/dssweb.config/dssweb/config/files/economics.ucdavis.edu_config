@@ -13,4 +13,4 @@ rewrite ^/graduate/(.*)$ http://old.econ.ucdavis.edu/graduate/$1 redirect;
 }
 rewrite ^/people$ /directory-of-people redirect; 
 
-rewrite ^/people/faculty$ /directory-of-people/econ-faculty redirect';
+rewrite ^/people/faculty$ /directory-of-people/econ-faculty redirect;
