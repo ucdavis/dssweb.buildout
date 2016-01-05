@@ -434,7 +434,13 @@
 			  <rules css:if-content=".portaltype-formthankspage" >
 				  <drop css:theme=".content-title" />
 				  <replace css:theme-children="#content-core" css:content="#content" />
-			  </rules> 
+			  </rules>
+			  
+			  <rules css:if-content=".template-fg_base_view_p3">
+				  <drop css:theme=".content-title" />
+				  <replace css:theme-children="#content-core" css:content="#content" />
+				  
+			  </rules>
 				 
    	   <!--Contact Page rules  -->
    	   <rules css:if-content=".section-contact" >
