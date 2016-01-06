@@ -11,11 +11,11 @@ location /graduate/ {
 rewrite ^/graduate/gbasso.*$ http://gaetanobasso.ucdavis.edu/ redirect;
 rewrite ^/graduate/(.*)$ http://old.econ.ucdavis.edu/graduate/$1 redirect;
 }
-location /psychology(?:/(.*))?$ {
+location /psychology$ {
         deny all;
         return 404;
         }
-location /people/szschei(?:/(.*))?$ {
+location /people/szschei$ {
         deny all;
         return 404;
         }
