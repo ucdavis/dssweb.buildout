@@ -1,0 +1,16 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="Products.IssEvent">
+
+  <include package="plone.app.contentmenu" />
+
+  <!-- -*- extra stuff goes here -*- -->
+   <!-- this is our custom view -->
+       <browser:page
+           name="iss_event_view"
+           for="*"
+           permission="zope2.View"
+           class=".IssEventView.IssEventView"
+           />
+</configure>
