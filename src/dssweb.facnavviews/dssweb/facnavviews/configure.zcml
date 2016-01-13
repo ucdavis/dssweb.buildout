@@ -1,0 +1,38 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:faceted="http://namespaces.zope.org/faceted"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="dssweb.facnavviews">
+
+  <!-- five:registerPackage package="." initialize=".initialize" / -->
+
+  <include package="eea.facetednavigation" file="meta.zcml" />
+
+  <faceted:view
+    name="faceted-listing-people"
+    template="listing-people.pt"
+    title="Faceted person listing"
+    permission="zope2.View"
+    />
+  <faceted:view
+    name="faceted-listing-events"
+    template="listing-event.pt"
+    title="Faceted events listing"
+    permission="zope2.View"
+    />
+  <faceted:view
+    name="faceted-listing-labs"
+    template="listing-lab.pt"
+    title="Faceted lab listing"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    name="facnav_support"
+    for="zope.interface.Interface"
+    class=".facnav_support.FacNavView"
+    permission="zope2.View"
+    />
+
+</configure>
