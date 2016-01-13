@@ -1,0 +1,170 @@
+/* components/_banners.scss */
+
+.jumbotron {
+	padding: 0 !important;
+	margin: 0 !important;
+	text-align: center; 
+	margin-top: 20px; 
+	background-color: transparent;
+	
+  h1{
+		font-weight: normal;
+		display: none;
+  }
+	
+	// Make absolute so we don't need negative margin-top on home/index
+	// Comment .wall styles
+	position: absolute;
+	z-index: -100; // arrange wallpaper to back position
+	width: 100%;
+	
+}
+// Fix wallpaper placement
+.wall {
+	//position: absolute; // don't need if jumbotron is absolute
+	//z-index: -100; // arrange wallpaper to back position
+	top: 0;
+	width: 100%;
+	height: 500px !important;
+	&.shadow-graphic {
+		height: 176px !important;
+	}
+}
+
+@media screen and (max-width: $screen-md-min) {
+	#util-bar-wrap { 
+		.util-bar {
+			margin-top: 0;
+		}
+	}
+}
+
+
+/*----- Mobile breakpoint --------*/
+@media screen and (max-width: $screen-sm-min) { // width < 768
+	// handle banners on mobile 
+	body.home {
+		.siders {
+			.wall {
+				//display: none;
+			}
+		}
+	}
+	.siders {
+		.wall {
+			&.shadow-graphic {
+	    	height: 85px !important;
+			}
+		}
+	}
+
+}
+
+/*----- Tablet breakpoint -------*/
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-md-min) { // 1200px max-width, was 992px
+	.siders {
+		.wall {
+			&.shadow-graphic {
+	    	height: 85px !important;
+			}
+		}
+	}
+	body.home {
+		.siders {
+			// Note: This removes the 15px white strip to right of the wallpaper when 
+			// initial-scale=1.0 is removed from the meta
+			// TODO: Determine underlying cause -> test on other tablets
+			margin-right: -12px !important; 
+		}
+	}
+	
+}
+/*----- Desktop or tablet breakpoint -------*/
+@media screen and (min-width: $screen-sm-min) { // $screen-lg-min: 1200px / $screen-md-min: 992px
+
+	/* 3-column banner panel set - intended to use happybox behavior / plugin */
+	.top-panel {
+		.action-element {
+			.narrow-col {
+				width: 80%;
+				color: #FFF;
+				background-color: $ucd_blue_100;
+				//border: 1px solid $ucd_blue_100;
+				//@include opacity(0.70);
+				a {
+					color: #FFF;
+					text-decoration: none;
+				}
+				li {
+					background-image: url(../images/bullets/white-square.gif);
+				}
+				h2 {
+					margin-top: 0 !important;
+					font-weight: normal !important;
+					margin-bottom: 0;
+				}
+				h3 { // Note: These are headlines within the happy boxes
+					
+				}
+				.content {
+					margin-left: 0;
+					h3:first-child {
+						padding-top: 0 !important;
+						margin-top: 0;
+					}
+				}
+				.bcontroller {
+					.btn-home.btn-primary {
+						width: 100%;
+						height: 40px;
+						line-height: 40px;
+						display: inline-block;
+						background: url(../images/icons/white-arrow-up.png) 50% 100% no-repeat $rec_blue;
+						text-align: center;
+						//color: #000 !important;
+					}
+				}
+				
+				&:hover {
+					//background-color: $ucd_blue_80;
+					cursor: pointer;
+				}
+			}
+		}
+		&.left-panel {
+			.action-element {
+				padding-right: 0;
+			}
+			.narrow-col {
+				margin-left: auto;
+			}
+		}
+		&.middle-panel {
+			.action-element {
+				padding-left: 0;
+				padding-right: 0;
+			}
+			.narrow-col {
+				margin: 0 auto;
+				text-align: left !important;
+				h2 {
+					text-align: center !important;
+				}
+			}
+		}
+		&.right-panel {
+			.action-element {
+				padding-left: 0;
+			}
+			.narrow-col {
+				margin-right: auto;
+				margin-left: 0;
+				h2 {
+					text-align: center !important;
+				}
+			}
+		}
+	}
+	
+}
+/* /components/_banners.scss */

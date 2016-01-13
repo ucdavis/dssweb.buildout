@@ -1,0 +1,149 @@
+@charset "utf-8";
+@import "variables"; // for BASE font size and mixin font_size()
+@import "ucd-variables";
+@import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
+
+/* Our People */
+
+/* Colors */
+$cardbg_blue: $ucd_blue_10;
+$empty_blue: $ucd_blue_20;
+$cardbg_gray: #e5e5e5;
+$ucdtxt_blue: #4D688C; // based on?
+
+
+
+/*------OUR PEOPLE---*/
+.genericTile {
+	padding-left:0;
+	border: 3px solid white;
+	background-color:$cardbg_blue;
+	.personEntryWrapper{
+		top:-10px;
+		left:0;
+		background:$empty_blue;
+		width:90px;
+		position:relative;
+		height:90px !important;	
+		float:left;
+	}
+}
+.facultyStaffDirectory{
+	padding-right:0;
+}
+.op-sidebar-title {
+	text-align:left;
+	text-transform:uppercase;
+	
+	span{
+		@include font_size(16px);
+		color:#000;
+	}
+}
+.sidebar{
+	background:none;
+	margin-top:20px;
+	color:$ucdtxt_blue;
+	.collapsible{
+		background:none;
+	}
+}
+#devel-psy{
+	float:right;
+	p{
+		margin:0;
+	}
+}
+#c5{
+	text-align:left;
+}
+#c5-all{
+	text-align:left;
+	border:none;
+	color:#000;
+	text-transform:uppercase;
+	letter-spacing:1px;
+	margin-top:10px;
+	//margin-left:3px;
+	margin-bottom:3px;
+}
+.checkForm{
+	h4{
+		text-align:center;
+	}
+}
+.caption{
+	position:relative;
+	margin-top:10px;
+	left:10px;
+	.personName{
+		padding-bottom:5px;
+	}
+	a{
+		color:$ucdtxt_blue;
+	}
+	p{
+		@include font_size(12px);
+		margin:0px;
+	}
+}
+#dropdown-icon{
+	float:right;
+}
+.lab{
+	clear:left;
+	padding:5px 0;
+	padding-left:30px;
+
+}
+.faceted_letter{
+	border-right: 1px solid black;
+	padding-right:6px;
+	padding-left:2px;
+}
+.checkForm{
+	text-align:left;
+	@include font_size(12px);
+	label{
+		font-weight:normal;
+	}
+	h4{
+		text-align:left;
+		color:#000;
+		@include font_size(12px);
+		text-transform:uppercase;
+		
+	}
+	#help{
+		color:#000;
+	}
+}
+.table-header{
+	margin-bottom:10px;
+	background:$rec_blue;
+	color:#fff;
+	padding-top:7px;
+	padding-left:10px;
+	height:35px;
+}
+.job{
+	font-style:italic;
+}
+// Hmm, do we need min-width ... it should be implied with a max-width
+@media screen and (min-width: 0px) and (max-width: $screen-sm-min) {
+	.sidebar{
+		background:$cardbg_gray;
+	}
+	.collapsible{
+		background:$cardbg_gray;
+	}
+	.facultyStaffDirectory{
+		padding:20px 20px;
+	
+	}
+	.panel-body{
+		padding:10px 0 !important;
+	}
+}
+
+/*------END PEOPLE------*/

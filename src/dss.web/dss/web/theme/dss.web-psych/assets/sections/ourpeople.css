@@ -1,0 +1,97 @@
+/* Example use case:
+ %abstract-class { font-family: Verdana; }  #my-div { @extend %abstract-class; }  #my-other-div { @extend %abstract-class; }
+ ... compiles as: #my-div, #my-other-div { font-family: Verdana; }
+
+*/
+/* 2013-05-12 RAK: Bootstrap overrides moved from default gem installation that placed overrides directly in the _variables.scss file */
+#breadcrumb .breadcrumb { padding: 0; margin-bottom: 0; list-style: none; background-color: transparent; border-radius: 0; }
+#breadcrumb .breadcrumb > li { display: auto; }
+#breadcrumb .breadcrumb > li + li:before { padding: 0; color: auto; content: auto; }
+#breadcrumb .breadcrumb > .active { color: auto; }
+
+/*Used for overriding underlined text */
+.nounderline > a { color: inherit; text-decoration: none; }
+
+.panel-body-overriden { padding-top: 15px; padding-right: 15px; padding-bottom: 0px; padding-left: 15px; }
+
+.panel-group .panel + .panel { margin-top: 0 !important; }
+
+.panel { outline: none; border: none !important; -webkit-box-shadow: none !important; -moz-box-shadow: none !important; box-shadow: none !important; }
+
+/* _typography.scss */
+body, div, p, li { color: #000; color: #000; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.3125em; }
+
+@font-face { font-family: 'lucida sans bold'; src: url("fonts/lucida/LucidaSansBold.ttf"); font-weight: normal; font-style: normal; }
+.content-main p, .content-main li, .content-main ol, .content-main div, .content-main span { line-height: 24px !important; line-height: 1.5rem !important; }
+.content-main p { font-size: 15px; font-size: 0.9375rem; line-height: 18px; line-height: 1.125rem; }
+.content-main p.intro { font-size: 18px; font-size: 1.125rem; line-height: 30px !important; line-height: 1.875rem !important; }
+.content-main .breadcrumb p { font-size: 12px; font-size: 0.75rem; line-height: 15px; line-height: 0.9375rem; margin-bottom: 0; }
+.content-main .breadcrumb p a { text-decoration: none; }
+.content-main .breadcrumb p a:hover { text-decoration: underline; }
+.content-main figure figcaption { text-align: right; font-size: 10.65px; font-size: 0.66563rem; text-transform: uppercase; }
+
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: 768px) { .top-panel { /*
+&.left-panel {
+	//text-align: right;
+}
+&.middle-panel {
+	//text-align: center;
+}
+&.right-panel {
+	//text-align: left;
+}
+*/ }
+  .top-panel .content-main .narrow-col { color: #FFF; }
+  .top-panel .content-main .narrow-col h2 { text-align: center !important; }
+  .top-panel .content-main .narrow-col h3, .top-panel .content-main .narrow-col p { text-align: left !important; }
+  .top-panel.left-panel h2, .top-panel.left-panel h2, .top-panel.left-panel h2 { text-align: center !important; } }
+/* /_typography.scss */
+/* Our People */
+/* Colors */
+/*------OUR PEOPLE---*/
+.genericTile { padding-left: 0; border: 3px solid white; background-color: #e5e9ef; }
+.genericTile .personEntryWrapper { top: -10px; left: 0; background: #ccd4e0; width: 90px; position: relative; height: 90px !important; float: left; }
+
+.facultyStaffDirectory { padding-right: 0; }
+
+.op-sidebar-title { text-align: left; text-transform: uppercase; }
+.op-sidebar-title span { font-size: 16px; font-size: 1rem; color: #000; }
+
+.sidebar { background: none; margin-top: 20px; color: #4d688c; }
+.sidebar .collapsible { background: none; }
+
+#devel-psy { float: right; }
+#devel-psy p { margin: 0; }
+
+#c5 { text-align: left; }
+
+#c5-all { text-align: left; border: none; color: #000; text-transform: uppercase; letter-spacing: 1px; margin-top: 10px; margin-bottom: 3px; }
+
+.checkForm h4 { text-align: center; }
+
+.caption { position: relative; margin-top: 10px; left: 10px; }
+.caption .personName { padding-bottom: 5px; }
+.caption a { color: #4d688c; }
+.caption p { font-size: 12px; font-size: 0.75rem; margin: 0px; }
+
+#dropdown-icon { float: right; }
+
+.lab { clear: left; padding: 5px 0; padding-left: 30px; }
+
+.faceted_letter { border-right: 1px solid black; padding-right: 6px; padding-left: 2px; }
+
+.checkForm { text-align: left; font-size: 12px; font-size: 0.75rem; }
+.checkForm label { font-weight: normal; }
+.checkForm h4 { text-align: left; color: #000; font-size: 12px; font-size: 0.75rem; text-transform: uppercase; }
+.checkForm #help { color: #000; }
+
+.table-header { margin-bottom: 10px; background: #008eaa; color: #fff; padding-top: 7px; padding-left: 10px; height: 35px; }
+
+.job { font-style: italic; }
+
+@media screen and (min-width: 0px) and (max-width: 768px) { .sidebar { background: #e5e5e5; }
+  .collapsible { background: #e5e5e5; }
+  .facultyStaffDirectory { padding: 20px 20px; }
+  .panel-body { padding: 10px 0 !important; } }
+/*------END PEOPLE------*/

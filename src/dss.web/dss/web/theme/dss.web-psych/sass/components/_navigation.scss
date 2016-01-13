@@ -1,0 +1,355 @@
+/* _navigation.scss */
+//@import "variables"; // for BASE font size and mixin font_size()
+//@import "ucd-variables";
+//@import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
+
+// Secondary (top) gold menu
+.util-bar{
+	
+	background: $ucd_bright_gold;	
+	height:40px;
+
+	margin-top:56px;
+	margin-left:auto;
+	//margin-right:15px; // changes with addition of row wrap ... 105px was previous disabled value 
+	ul{
+		height:100%;
+		
+		li{
+			float:left;
+			padding-left:3px;
+			padding-right:3px;
+			//display:inline;
+			height:100%;
+			text-align: center;
+			border-right:1px solid #fff;
+			a{
+				display:inline-block;
+				margin-top: 12px;
+				
+				margin-right:auto;
+				margin-left:auto;
+				
+				text-decoration:none;
+				color:#000;
+				text-transform: uppercase;
+				@include font_size(14px);
+				letter-spacing: 0.050em;
+				text-align: center;
+				
+			}
+			input{
+				width:190px;
+				height: 35px;
+				text-transform: uppercase;
+				@include font_size(14px);
+				letter-spacing: 0.050em;
+				margin-top: 2px;
+				text-align:left;
+				padding-left:10px;
+			}
+		}
+	}
+	#uti-news{
+		width:21.92%; //160px
+	}
+	#uti-events{
+		width:10.96%; //80px
+	}
+	#uti-give{
+		width:10.96%; //80px
+	}
+	#uti-search{
+		width:28.36%;//207px
+	}
+	#uti-share{
+		width: 5%; //44px
+		a {
+			display: inline-block;
+			width: 15px;
+			height: 17px;
+			background: url(../images/icons/share.png) top left no-repeat;
+		}
+	}
+	#uti-logo{
+		border-right-width: 0;
+		width: 125px;
+	}
+}
+.caret{
+	margin-left:15px;
+}
+.menu-icon{
+	//display:none;
+	background:#e5e5e5;
+	position:relative;
+	top:-25px;
+
+	span::after {
+			content: "";
+			position: absolute;
+			display: block;
+			height: 0;			
+			box-shadow: 0 0px 0 2px #000, 0 7px 0 2px #000, 0 14px 0 2px #000, 0 21px 0 2px #000  !important;
+			width: 25px !important; 
+		}
+}
+
+// Blue primary menu
+.top-bar{
+	background:$ucd_blue_100;
+	
+	// WARNING: Setting top-bar height is problem for the foundation top-bar function across responsive breakpoints ... be careful
+	// height: 80px; // WARNING: THIS BLOWS HIDING THE SUB MENU
+	// padding-bottom: 35px; // without box-sizing
+	padding-bottom: 80px; // with box-sizing
+	
+	.title-area{	
+		
+		/* top:15px; THIS NEGATIVELY IMPACTS THE FORMAT OF THE TOPBAR MENU */
+		.name {
+			
+			a{
+				border-right: 1px solid white;
+				display: inline-block;
+				width: 430px;
+				height: 80px;	
+				padding-left: 0;
+				
+				text-decoration: none;
+				&#name-icon {
+					//background: url(../images/logos/name.gif) top left no-repeat; // set image in HTML code to retain scalable/responsive image
+					img {
+						height: 100%;
+						display: block;
+					}
+				}
+			}
+		}
+	}
+	
+	// NOTE: To MODIFY POSITION OF PRIMARY MENU ITEMS use the width % below under > li and &#fac-serv-btn
+	// fac-serv-btn is an example for a button title that needs special width.
+	
+	.top-bar-section{
+		height:100%;
+		
+		/* .right {} if we have markup with left drops */
+		
+		.left {
+			// Determins width of primary menu to right of name image
+			width: 65%; // was 60px
+			height: 100% !important;
+			
+			// Parent level buttons
+			 > li{
+				background: $ucd_blue_100 !important;
+				width: 9.6%; // was 18% with .right. width of primary menu items
+				height: 80px; // was 100%
+				text-align: center;
+				
+				&#fac-serv-btn {
+					width: 17%; // was 28% with .right. 
+				}
+				// Menu hover medium blue
+				&:hover{
+					background:$ucd_blue_70 !important;
+				}
+				
+				> a {
+					//margin-top: 17px;
+					height: 80px;
+					line-height: 80px !important;
+				}
+				a{
+					//position:relative;
+					//top:17px;
+					
+					width:100%;
+					background:transparent !important;
+					
+					text-decoration: none;
+					@include font_size(17px);
+					@include line_height(28px);
+					
+					letter-spacing: 0.025em;
+					padding:0 !important;
+					
+					&:hover {
+						//text-decoration: underline;
+					}
+					
+					// gets rid of carets in nav
+					&:after{
+						display:none !important;
+					}
+					
+					white-space: normal; // to let sub menu text wrap
+					
+				}
+				// First level dropdown
+				ul {
+					//top: 100%; // expand height of primary menus: TODO: Do this another way since it kills the menu feature and address next level UL
+					li {
+						background:$ucd_blue_100 !important;
+						
+						a {
+							padding: 6px 0 !important;
+							@include line_height(24px);
+							&:after{
+								display:block !important;
+								margin-top: 0;
+								line-height: 0.5 !important;
+							}
+							&:hover {
+								background:$ucd_blue_70 !important;
+							}
+						}
+						&:last-child {
+							a {
+								padding-bottom: 12px !important;
+							}
+						}
+						ul { // third level
+							top: 0 !important;
+						}
+					}
+				}
+				/*.dropdown{ // TODO: Don't need this specific selector ...
+					top:100%;
+					li{
+						background:$ucd_blue_100 !important;
+					}
+				}*/
+			}
+		}
+	}
+}
+
+/*----- Mobile breakpoint -------*/
+@media screen and (max-width: $screen-sm-max) { // width < 768px
+
+	// reset row negative margins
+	#util-bar-wrap, #top-bar-wrap {
+		margin-left: 0 !important; // logo / unit title left margin (was negative)
+		//margin-right: 0 !important; // pulls collapsed menu icon to left in desktop but creates right margin on iphone landscape
+		//margin-right: -15px !important; // no effect across devices
+	}
+	
+	// To have util bar slide into place rather than being same width as navigation
+	.util-bar {
+		max-width: 650px;
+		ul li input {
+			width: 170px;
+		}
+	}
+
+	.top-bar{
+		// Do not set height of top-bar in mobile!
+
+		padding-bottom: 0;
+		
+		// Downscale name.gif 
+		.title-area{	
+			.name {
+				a {
+					//padding-left: 15px;
+					width: 215px !important;
+					height: 40px !important;
+				}
+			}
+		}
+		.toggle-topbar {
+			&.menu-icon {
+		    margin-top: 0;
+		    top: 0;
+				height: 45px; // was 42px without box sizing
+				padding-top: 3px;
+			}
+		}
+		&.expanded {
+			.title-area {
+				background-color: $ucd_blue_100;
+			}
+			.top-bar-section {
+				.left {
+					width: 100%;
+					> li {
+						width: 100% !important;
+						height: 40px;
+						> a {
+							margin-top: 0 !important;
+							line-height: 40px !important;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+/*----- Tablet breakpoint -------*/
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-md-min) { // 768px < width < 992px
+
+	#util-bar-wrap, #top-bar-wrap {
+		//border: 1px solid red;
+		margin-left: -10px !important; // fixes margin issue on ipad landscape
+		margin-right: -20px !important; // needed in iphone landscape orientation to pull in collapsed menu icon
+	}
+	// remove top nav margins on tablet
+	/*#util-bar-wrap {
+		border: 1px solid red;
+		margin-left: -9px !important;
+		margin-right: -21px !important;
+		.util-bar {
+			margin-left: 0 !important;
+		}
+	}
+	#top-bar-wrap {
+		margin-left: -15px !important;
+		margin-right: -5px !important; // TODO: 5px???
+	}
+	
+	.util-bar {
+		border: 1px solid red;
+		//width: 100%;
+	}*/
+
+	.top-bar {
+		.title-area {
+			.name {
+				a{
+					padding-left: 0;
+					width: 200px !important;
+					height: 40px !important;
+				}
+			}
+		}
+	}
+
+}
+
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: $screen-md-min) { // width > 992px
+	.util-bar {
+		max-width: 768px;
+	}
+	.top-bar {
+		.top-bar-section {
+			ul {
+				ul.dropdown {
+					width: 200px !important;
+					li {
+						a {
+							padding: 4px !important;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+/* /_navigation.scss */
