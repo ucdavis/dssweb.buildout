@@ -1,0 +1,130 @@
+@font-face {
+  font-family: 'lsr';
+  src: url("fonts/lucida/LucidaSansRegular.ttf");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'lsb';
+  src: url("fonts/lucida/LucidaSansBold.ttf");
+  font-weight: normal;
+  font-style: normal; }
+/* Example use case:
+
+  %abstract-class {
+    font-family: Verdana;
+  }
+ 
+  #my-div {
+    @extend %abstract-class;
+  }
+ 
+  #my-other-div {
+    @extend %abstract-class;
+  }
+
+  ... compiles as:
+  #my-div, #my-other-div {
+    font-family: Verdana;
+  }
+
+*/
+/* 2014-05-12 RAK: Bootstrap overrides moved from default gem installation that placed overrides directly in the _variables.scss file */
+/* UCD Identity - Colors (http://identitystandards.ucdavis.edu/graphic-standards/colors.html) */
+/* Other Custom colors */
+/* 
+		Sub Unit / Organization Style Overrides 
+		
+		Use this file directly or as a template to override DSS responsive theme styles.
+		Note: Breakpoint definitions below with ("N") represent breakpoints at which additional
+		JavaScript processing occurs during "browser resizing" on desktop browsers.
+
+*/
+/*----- Example custom breakpoint --------*/
+@media screen and (max-width: 440px) {
+  /* Replace with your styles */ }
+/*----- STANDARD STYLE TARGETS -------*/
+/*----- Mobile breakpoint ("S") --------*/
+@media screen and (max-width: 767px) {
+  /* Style adjustments for the wall banners */
+  /* line 27, ../sass/sub-org.scss */
+  body.home .wall {
+    height: 275px !important; } }
+/*----- Tablet breakpoint ("M") -------*/
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  /* Style adjustments for the wall banners */
+  /* line 40, ../sass/sub-org.scss */
+  body.home .wall {
+    height: 432px !important; }
+
+  /* Name-logo and navigation adjustments for psychology navigation on tablet */
+  /* line 47, ../sass/sub-org.scss */
+  .top-bar .title-area .name a {
+    margin-top: 20px;
+    padding-right: 0; }
+  /* line 53, ../sass/sub-org.scss */
+  .top-bar .top-bar-section ul li a {
+    font-size: 12px !important;
+    font-size: 0.75rem !important; }
+  /* line 57, ../sass/sub-org.scss */
+  .top-bar .top-bar-section ul li ul.dropdown {
+    width: 200px !important; }
+    /* line 60, ../sass/sub-org.scss */
+    .top-bar .top-bar-section ul li ul.dropdown li a {
+      line-height: 15px !important;
+      line-height: 0.9375rem !important;
+      padding: 8px 12px; }
+  /* line 68, ../sass/sub-org.scss */
+  .top-bar .top-bar-section ul li#fac-serv-btn ul.dropdown {
+    width: 174px !important; }
+  /* line 74, ../sass/sub-org.scss */
+  .top-bar .top-bar-section ul li#people-btn ul.dropdown ul.dropdown {
+    width: 50px !important; }
+
+  /* line 83, ../sass/sub-org.scss */
+  .genericTile {
+    min-height: 195px !important; } }
+/*----- Tablet up breakpoint -------*/
+@media screen and (min-width: 768px) {
+  /* line 93, ../sass/sub-org.scss */
+  .top-bar .top-bar-section ul {
+    /* Note: Update formatting for navigation submenus here */ }
+
+  /* line 109, ../sass/sub-org.scss */
+  .genericTile {
+    min-height: 172px; } }
+/*----- Desktop breakpoint ("L") -------*/
+@media screen and (min-width: 991px) {
+  /* Style adjustments for the wall banners */
+  /* line 120, ../sass/sub-org.scss */
+  body.home .wall {
+    height: 540px !important; } }
+/*----- IRREGULAR STYLE TARGETS -------*/
+@media screen and (min-width: 991px) and (max-width: 1310px) {
+  /* line 131, ../sass/sub-org.scss */
+  .top-bar .top-bar-section ul > li a {
+    padding-right: 16px !important;
+    padding-left: 16px !important; } }
+/*----- Target tablet, desktop, and higher -------*/
+@media screen and (min-width: 768px) {
+  /* Replace with your styles */ }
+/*----- Target mobile and tablet -------*/
+@media screen and (max-width: 991px) {
+  /* Replace with your styles */ }
+/*----- Target tablet up to 1310 width on desktop -------*/
+@media screen and (min-width: 768px) and (max-width: 1310px) {
+  /* Replace with your styles */ }
+/*----- Use this section to quickly test layout elements ... -------*/
+/*
+.wall {
+	border: 1px solid yellow;
+}
+.landscape {
+	border: 1px solid green;
+	.panel-group#content-accordion {
+		border: 1px solid red;
+		#top-panel-row {
+			border: 1px solid blue; 
+		}
+	}
+}
+*/

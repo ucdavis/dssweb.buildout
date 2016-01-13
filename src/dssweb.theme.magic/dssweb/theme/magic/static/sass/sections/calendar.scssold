@@ -1,0 +1,802 @@
+/* Calendar.scss */
+@charset "utf-8";
+@import "variables"; // for BASE font size and mixin font_size()
+@import "ucd-variables";
+@import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
+
+#content-row {
+	margin-top: 35px;
+}
+
+#content, #am-content {
+	div.fc-event-inner {
+		@include line_height(16px,!important);
+	}
+}
+.breadcrumb {
+	margin-top: 35px;
+	p a {
+		@include font_size(10px);
+		@include line_height(13px);
+	}	
+}
+.breadcrumb, .content-title {
+	z-index: -1; // set behind main menu
+}
+
+p {
+	margin-top: 0;
+}
+
+.color-box {
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+.eventful { // cell has an event
+    background-color: $ucd_blue_10;
+}
+.selected-day { // cell was clicked
+   background-color: $ucd_blue_80;
+	 .date {
+		 color: #FFF !important;
+	 }
+}
+
+#events {
+	margin-bottom: 15px;
+	.todays-event {
+		width: auto;
+		margin: auto auto auto auto;
+	}
+	.event-item {
+		border: 2px solid $ucd_blue_10;
+		margin-bottom: 15px;
+		margin-left: 15px;
+		h3 {
+			padding: 15px;
+		}
+		.fc-event-inner {
+			
+			.fc-event-time, .subjects, .fc-event-title {
+				display: block !important;
+				@include font_size(16px,!important);
+			}
+			.fc-event-time {
+				padding-left: 4px;
+			}
+			.fc-event-title {
+				//background-color: $ucd_blue_80;
+				a {
+					color: #FFF;
+					text-decoration: none;
+					padding: 20px;
+					padding-right: 30px;
+					display: block;
+					width: 100%;
+					background-color: transparent;
+					background: url(../../images/icons/white-arrow-right-sm.png) 96% 50% no-repeat $ucd_blue_80 !important;
+					&:hover {
+						background-color: $ucd_blue_70 !important;
+					}
+				}
+			}
+			.fc-event-time, .subjects {
+				margin: 15px;
+			}
+		}
+	}
+}
+
+.sb-subitems.calendar-processed {
+	width: 250px;
+	text-align: center;
+	position: static;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	li {
+		margin: 0;
+		width: auto !important;
+		display: inline-block;
+		a {
+			width: auto !important;
+		}
+		&#ical-icon {
+			margin-right: 25px !important;
+		}
+	}
+}
+
+#calendar {
+	padding: 0;
+	
+	div, p, td, li, a {
+		@include font_size(15px);
+	}
+	.fc-event-title, .fc-event-time {
+		a {
+			@include font_size(13px,!important);
+		}
+	}
+	
+	#view-filter {
+		text-align: right;
+		float: right;	
+		padding-right: 0px;
+		padding-top: 8px;
+		.vf-selector {
+			background-color: $ucd_blue_10;
+			display: inline-block;
+			width: 82px;
+			margin-left: 2px;
+			padding-top: 8px;
+			padding-bottom: 15px;
+			margin-bottom: 10px;
+			//height: 25px;
+			height: 40px !important;
+			text-align: center;
+			a {
+				text-decoration: none;
+				@include font_size(13px);
+			}
+		}
+		.selected {
+			background-color: $ucd_blue_80;
+			a {
+				color: #fff; 
+			}
+		} 
+	}
+	
+	#month-pager {
+		float: left;
+		text-align: left;
+
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-left: 0px;
+		.pager-string {
+			position: relative;
+			top: -5px;
+			margin-left: 10px;
+			margin-right: 10px;
+			@include font_size(24px);
+			//@include font_size(18px);
+			vertical-align: bottom;
+		}
+		.pager-prev, .pager-next {		
+			a {
+				width: 40px;
+				height: 40px;
+				background-color: $ucd_blue_10;
+				padding-top: 15px;
+				background-position: center;
+			}
+		}
+	}
+	
+	#month { // calendar table element
+		
+		top: 10px;
+		width: 100%;
+		position: relative;
+		margin-bottom: 70px;
+		thead {
+			background-color: $rec_blue;
+			color: #fff;
+			th { 		
+				height: 30px;
+				width: 124px;
+				padding-top: 5px;
+				border-left: 1px solid #fff;
+				.first {
+					border-left: none !important;
+				}
+				
+			}
+		}
+		td {
+			.fc-event-time {
+				display: block;
+				margin-top: 4px;
+			}
+			border: 1px solid $ucd_blue_20;
+			//	display: inline-block;
+			min-height: 90px;
+			vertical-align: top;
+			.date {
+				float: right;
+				padding-right: 10px;
+			}
+			.day {
+				margin-top: 30px;
+				min-height: 120px;
+				a {
+					text-decoration: none;
+				}
+				.fc-event {	// individual calendar cells
+					.fc-event-inner { 
+						color: $ucd_blue_80;					
+						margin: 3px 3px 5px 3px;
+						padding: 10px;
+						background-color: $ucd_blue_10;
+						@include font_size(11px);
+						.subjects {						
+							.subject-box {
+								margin-bottom: 5px;
+								margin: 0px;							
+							}
+						}
+					}
+				}
+			}
+			&	.previous, .next {
+				.date {
+					color: $ucd_black_30;
+				}
+			}	
+		}
+	
+	}
+}
+
+.sidebar {
+	.panel-heading {
+		.panel-title {
+			a {
+				background: url(../../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat $rec_blue_40;
+				&.collapsed {
+					color: #000 !important;
+					background: url(../../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat $rec_blue;
+				}
+				&:hover {
+					background: url(../../images/icons/blue-100-right-arrow-down.png) 98% 50% no-repeat $rec_blue_40;
+				}
+			}
+		}
+	}
+	&#left-area {
+		// TODO: Need?
+	}
+	&.sidebar-left {
+		
+		/*
+		top: 35px;
+		//top: 0;
+		margin-top: 25px;
+		margin-bottom: 30px;
+		padding-left: 0;
+		
+		.panel {
+			margin-left: 0;	
+		}
+		*/
+		
+		// Filter component
+		#sbA {
+			/*
+			position: relative;
+	
+			#filter-by {
+				position: absolute;
+				top: 10px;
+				left: 140px;	
+				a {
+					@include font_size(13px);
+				}
+			}
+	*/
+			
+			.panel-body {
+				
+				#subject-all {
+					/*height: 40px;
+					width: 80px;
+					float: left;
+					//margin: 15px 30px 0 30px !important;
+					margin-top: 15px;
+					margin-bottom: 15px;
+					text-transform: uppercase;
+					*/
+					.view-all {
+						background-color: $ucd_blue_10;
+						text-align: center;			
+						padding-top: 8px;
+						padding-bottom: 8px;
+						height: 40px;
+						text-transform: none;
+						a {
+							display: inline-block;
+							@include font_size(13px);
+							@include line_height(40px);
+						}
+					}
+		
+					a {		
+						text-decoration: none;
+					}
+				}
+				
+				
+				.widget-fieldset {
+					//margin-top: 25px;
+			
+					.checkForm {
+						
+						margin-top: 0px !important;
+						li {
+							min-height: 25px;
+							//position: relative;
+							//padding-bottom: 0 !important;
+							//vertical-align: center;
+							//float: left;
+							//width: 50%;
+							.color-box {
+								//margin-right: 10px;
+								//position: absolute;
+								//left: 0;
+								//top: 30%;
+							}
+							input {
+								width: 15px;
+								height: 15px;
+								/*margin-bottom: 5px;
+								margin-top: 0px;
+								margin-left: 0px;
+								*/
+								
+							}
+							label {
+								//position: absolute;
+								//padding-left: 30px;
+								@include font_size(13px);
+							}
+						}		
+					}
+					
+					#criterion-subject-econometrics {
+						.color-box {
+							background-color: $evergreen;
+						}
+					}
+					#criterion-subject-economic-history {
+						.color-box {
+							background-color: $west_redbud;
+						}
+					}
+					#criterion-subject-energy-environmental-economics {
+						.color-box {
+							background-color: $cal_popp;
+						}
+					}
+					#criterion-subject-international-economics {
+						.color-box {
+							background-color: $gold_lup;
+						}
+					}
+					#criterion-subject-macroeconomics {
+						.color-box {
+							background-color: $sun_grass;
+						}
+					}
+					#criterion-subject-public-finance-labor {
+						.color-box {
+							background-color: $sky_blue;
+						}
+					}
+					#criterion-subject-theory {
+						.color-box {
+							background-color: $wine_grape;
+						}
+					}
+				}
+				.sb-subitems {
+					
+					/*position: absolute;	
+					top: -30px;
+					right: 0;
+					*/
+					li {
+						display: inline-block;
+						height: auto !important;
+						width: 100px;
+						a {
+							display: block;
+							height: auto !important;
+							@include font_size(13px);
+							@include line_height(35px,!important);
+							text-decoration: none;
+							color: $ucd_blue_80;			
+						}
+						p {
+							display: inline;
+							a {
+								@include font_size(11px);
+							}
+						}
+					}
+				}
+			}
+			
+		} // /#sbA
+	} // /.sidebar-left
+} // /.sidebar
+
+@media screen and (max-width: $screen-xs-max) { // width < 767 (was $screen-sm-min 768)
+	
+	.eventful {
+		cursor: pointer;
+	}
+	.content-title {
+		@include font_size(26px);
+	}
+	#content {
+		margin-top: 90px !important;
+	}
+	.breadcrumb {
+  	//margin-top: 10px;
+	}
+	#view-filter, #month-pager {
+		text-align: center;
+	}
+	#view-filter {
+		margin-bottom: 20px;
+		div {
+			border-right: 1px solid #FFF !important;
+			&:last-child {
+				border-right-width: 0 !important;
+			}
+		}
+	}
+	#calendar {
+		padding-left: 15px;
+		#month {
+			margin-bottom: 0 !important;
+		}
+	}
+	#subject-all {
+		position: absolute;
+		left: -9999px;
+	}
+	
+	#month {
+		td {
+			height: 40px ;
+			width: 39px;
+			
+			.day {
+				min-height: 40px !important;
+				margin-top: 0 !important;
+				
+			}
+		}
+		.fc-event {	
+			display: none;
+		}
+	}
+	.todays-event {
+		
+		height: 200px;
+		width: 280px;
+		margin: 30px auto 50px auto;	
+		.fc-event-title, .fc-event-time {
+			@include font_size(12px);
+			@include line_height(10px);
+		}
+		
+		.fc-event-title {			
+			background-color: $ucd_blue_80;
+			a	{
+				color: #fff;
+				text-decoration: none;
+				
+			}
+		}
+	}
+	.panel-title, .panel-title a, .panel-heading {
+			//background: none !important;
+			background-color: #fff !important;
+	}
+	.panel {
+		width: 100%;
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+	.panel-body {
+		padding-top: 0;
+		border: 2px solid $ucd_blue_10;
+	
+	}
+	
+	.view-all {
+		position: absolute;
+		top: -30px;
+		left: 73%;			
+		@include font_size(10px);	
+		
+	}
+	
+	
+	.wall {
+		display: none;
+	}
+	
+	.breadcrumb, .content-title {
+		position: absolute;
+	}
+	.breadcrumb {
+		top: 60px;
+		left: 20px;
+	}
+	.content-title {
+		top: 125px;
+		left: 17px; 
+		//@include font_size(22px);
+	}
+	#month-pager {
+		padding: 0px;
+		margin-top: -20px;
+		text-align: center !important;
+		.pager-prev {
+			float: left;
+			text-align: left;
+		}
+		.pager-next {
+			float: right;
+			text-align: right;
+			a {
+				margin-right: 0;
+			}
+		}
+		.pager-string {
+			padding-top: 15px;
+			display: inline-block;
+			@include font_size(18px);
+		}
+	}
+	#view-filter {
+		padding: 0;
+		.vf-selector {
+			width: 25% !important;
+			margin-left: 0 !important;
+		}
+	}
+
+	.sb-subitems {
+		display: none;
+	}
+	.fc-event-inner {
+		
+	}
+
+	/*
+	#sbA {
+		
+		.widget-fieldset {
+			
+			.checkForm {
+				li {
+					float: initial !important;
+					width: 100%;
+					margin-left: auto;
+					margin-right: auto;	
+				}
+			
+			}
+		}
+	}
+*/
+	
+	.sidebar#left-area  {
+		position: relative;
+		background-color: transparent;
+		margin-left: 0 !important;
+		margin-top: 0;
+		margin-right: 0;
+		padding-right: 0;
+		> div {
+			margin-left: 0 !important;
+			background-color: transparent;
+		}		
+		// Mobile filter-by menu-icon
+		h3 {
+			position: absolute;
+			top: -35px;
+			right: 0;
+			p {
+				display: inline;
+				a { // this is the menu-icon container
+					z-index: 2;
+					background-image: none;
+					position: absolute;
+					top: 10px;
+					right: 0 !important;
+					padding: 0 !important;
+					margin: 0 !important;
+					height: 60px;
+					width: 60px;
+					//margin-right: 4px;
+					.menu-icon {
+						position: absolute;
+						//position: relative;
+						top: 0;
+						left: 0;
+				    display: block;
+				    height: 60px;
+				    width: 60px;
+						padding: 0 !important;
+						margin: 0 !important;
+						
+						background-color: transparent;
+				    border: 4px solid #e5e5e5;
+				    
+						span {
+							position: absolute;
+							//width: 60px;
+							background-color: #FFF;
+							@include line_height(1px);
+							&:after {
+						    display: block;
+						    left: 14px;
+						    top: 15px;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		#sbA {
+			background-color: rgba(255,255,255, 0.98);
+			border: 2px solid $ucd_blue_10;
+			
+			position: absolute;
+			z-index: 2;
+			.panel-body {
+				
+				border-left-width: 0 !important;
+				border-bottom-width: 0 !important;
+				border-right-width: 0 !important;
+				//margin-right: 4px !important;
+				height: 300px;
+				.widget-fieldset {
+					margin-top: 25px;
+					margin-right: auto;
+					//margin: 0 auto 33px auto;
+					margin-left: auto;
+					margin-right: auto;
+					width: 100%;
+					form {
+						border-width: 0;
+					}
+					.checkForm {
+						width: 100%;
+						margin-left: 15px;
+						margin-right: 15px;
+						margin-bottom: 0;
+						li {
+							float: left;
+							width: 100% !important;
+							margin-bottom: 10px !important;
+							padding-bottom: 0 !important;
+							min-height: auto !important;
+							.color-box {
+								margin-right: 10px;
+							}
+						}		
+					}
+				}
+			}
+		}
+	}
+	
+}
+
+/*----- Tablet up breakpoint -------*/
+@media screen and (min-width: $screen-sm-min) { // width > 768px
+	.breadcrumb, .content-title {
+		margin-left: 14px;
+	}
+	/*#subject-all {
+		margin-left: 15px !important;
+	}*/
+	.panel{
+		margin-left: 0 !important;
+	}
+}
+
+/*----- Tablet breakpoint ("M") -------*/
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
+	#content-row {
+		margin-top: 0 !important;
+	}
+	.content-title {
+		margin-bottom: 0 !important;
+		padding-bottom: 0 !important;
+	}
+	
+	// Moved left sidebar to cover 768 - 1310
+}
+
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: $screen-md-min) { // width > 992px
+	#content-row {
+		margin-top: 0px;
+	}
+	.breadcrumb, .content-title {
+		margin-left: 235px !important;
+	}
+	.content-title {
+		padding-bottom: 25px !important;
+	}
+	.sidebar-left {
+		margin-top: 5px !important;
+	}
+}
+
+/*----- Tablet breakpoint ("M") -------*/
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-lg-min) { // 768 < width < 1310
+	.breadcrumb, .content-title {
+		margin-left: 15px !important;
+	}
+	#left-area #filter-by {
+    top: 0 !important;
+	}
+	.sidebar-left {
+		padding-left: 0 !important;
+		#sbA {
+			position: relative;
+	
+			#filter-by {
+				position: absolute;
+				top: 10px;
+				left: 140px;	
+				a {
+					@include font_size(13px);
+				}
+			}
+			.panel-body {
+				#subject-all {
+					height: 40px;
+					width: 80px;
+					float: left;
+					margin: 0 30px 0 30px !important;
+					text-transform: uppercase;
+				}
+				.widget-fieldset { 
+					margin-top: 25px;
+					margin-bottom: 15px;
+					.checkForm {
+						li {
+							float: left;
+							width: 50%;
+							padding-bottom: 0 !important;
+							input {
+								margin-bottom: 15px !important;
+							}
+							label {
+				
+							}
+						}
+					}
+				}
+				.sb-subitems {
+					position: absolute;	
+					top: -30px;
+					right: 0;
+				}
+			}
+		}
+	}
+
+}
+
+/*----- Large Desktop breakpoint -------*/
+@media screen and (min-width: $screen-lg-min) { // width > 1310
+	.breadcrumb, .content-title {
+		margin-left: 365px !important;
+	}
+}
