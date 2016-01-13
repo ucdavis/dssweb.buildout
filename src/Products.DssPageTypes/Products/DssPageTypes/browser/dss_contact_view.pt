@@ -1,0 +1,80 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+	  xmlns:browser="http://namespaces.zope.org/browser"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="Products.DssPageTypes">
+
+<body>
+
+<metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main">
+
+    <div id="viewlet-above-content-title" 
+            tal:define="mapurl context/mapurl";
+                              "width context/mapwidth";
+                              "height context/mapheight";
+                               "style context/mapstyle;";
+						>
+            
+           <iframe src="mapurl"
+                name="googlemap"
+                id="googlemap"
+                marginwidth="0"
+                marginheight="0"
+                width="100%"
+                height="500px"
+                frameborder="0"
+                tal:attributes="src context/mapurl;
+                   
+                                width context/mapwidth;
+                                height context/mapheight;">
+            <span i18n:translate="link_address">The link address is:</span>
+            <a href="#" tal:attributes="href here/mapurl"
+                        tal:content="here/mapurl">mapurl</a>
+        </iframe>
+    </div>
+
+    <metal:title define-slot="content-title">
+                                 <metal:comment tal:content="nothing">
+                                     If you write a custom title always use
+                                     <h1 class="documentFirstHeading"></h1> for it
+                                 </metal:comment>
+                                 <h1 metal:use-macro="context/kss_generic_macros/macros/generic_title_view">
+                                     Generic KSS Title. Is rendered with class="documentFirstHeading".
+                                 </h1>
+                             </metal:title>
+
+    <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+    
+    <div tal:replace="structure provider:plone.abovecontentbody" />
+		
+       <div id="content-core">
+
+	      <div class="form-wrap">
+       
+        <div id="main-content">
+                            <metal:field use-macro="python:context.widget('text', mode='view')">
+                               Body text
+                             </metal:field>
+                         
+                        </div>
+
+	    <!--tal:block tal:define="contact_form context/contactform" tal:replace="structure contact_form"-->
+		 <tal:block tal:define="form nocall:contact-form/@@embedded;
+		                    dummy python:form.setPrefix('mypfg')"
+		        tal:replace="structure form"/>
+    </div>
+	    
+	  </div>  
+	   
+    <div tal:replace="structure provider:plone.belowcontentbody" />
+
+    </tal:main-macro>
+</metal:main>
+
+</body>
+</html>

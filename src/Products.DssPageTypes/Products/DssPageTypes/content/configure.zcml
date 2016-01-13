@@ -1,0 +1,30 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    i18n_domain="Products.DssPageTypes">
+
+  <!-- configure your content components here -->
+  
+  <!-- -*- extra stuff goes here -*- -->
+  
+  <class class=".dsstwocolumnpage.DssTwoColumnPage">
+    <require
+        permission="zope2.View"
+        interface="Products.DssPageTypes.interfaces.IDssTwoColumnPage"
+        />
+  </class>
+  <class class=".dsstwocollumnpage.DssTwoCollumnPage">
+    <require
+        permission="zope2.View"
+        interface="Products.DssPageTypes.interfaces.IDssTwoCollumnPage"
+        />
+  </class>
+  
+  <class class=".dsscourse.DssCourse">
+    <require
+        permission="zope2.View"
+        interface="Products.DssPageTypes.interfaces.IDssCourse"
+        />
+  </class>
+
+</configure>

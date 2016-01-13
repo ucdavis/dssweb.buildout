@@ -1,0 +1,47 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="Products.DssContact">
+
+  <include package="plone.app.contentmenu" />
+  
+      <!-- Publish static files -->
+      <browser:resourceDirectory
+          name="Products.DssPageTypes"
+          directory="static"
+          />
+ 
+	   <browser:page
+	      for="Products.DssPageTypes.interfaces.IDssContact"
+	      layer="..interfaces.IDssPageTypesSpecific"
+		 class=".DssPageViews.DssContactView"
+	      name="contact_page_view"
+	      template="dss_contact_view.pt"
+		 allowed_attributes = "portal_state"
+	      permission="zope2.View"
+	          />
+	   <browser:page
+	      for="Products.DssPageTypes.interfaces.IDssTwoColumnPage"
+		 class=".DssPageViews.DssTwoColumnView"
+	      layer="..interfaces.IDssPageTypesSpecific"
+	      name="two_column_view"
+	      template="dss_twocolumn_view.pt"
+	      permission="zope2.View"
+	         />
+	   <browser:page
+	      for="Products.DssPageTypes.interfaces.IDssTwoCollumnPage"
+		 class=".DssPageViews.DssTwoCollumnView"
+	      layer="..interfaces.IDssPageTypesSpecific"
+	      name="two_collumn_view"
+	      template="dss_twocollumn_view.pt"
+	      permission="zope2.View"
+			/>
+ 	   <browser:page
+ 	      for="Products.DssPageTypes.interfaces.IDssCourse"
+ 		 class=".DssPageViews.DssCourseView"
+ 	      layer="..interfaces.IDssPageTypesSpecific"
+ 	      name="course_view"
+ 	      template="dss_course_view.pt"
+ 	      permission="zope2.View"
+ 	         />
+</configure>

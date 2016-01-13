@@ -1,0 +1,81 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+
+<metal:content-core fill-slot="content-core">
+    <metal:content-core define-macro="content-core">
+       <metal:title define-slot="top-image">
+  	 <div class="picture flush-bottom"
+  	              tal:condition="context/getInlineTopImage">
+  	             <a href="#"
+  	                tal:define="here_url context/@@plone_context_state/object_url;
+			             inlineTopImage context/getInlineTopImage;"
+  	                tal:attributes="href string:$here_url/image/image_view_fullscreen"
+			 id="parent-fieldname-image">
+			   <img class="img-responsive" tal:attributes="src string:${context/absolute_url}/inlineTopImage" alt="Course Image" />
+			               </a>
+			 
+			 
+	
+  	             <p class="figcaption" tal:condition="context/imageCaption">
+  	               <metal:field use-macro="python:context.widget('imageCaption', mode='view')">
+  	               Image Caption
+  	               </metal:field>
+  	             </p>
+  	         </div>
+  	 </metal:title>
+	
+	<div class="zebra rows">
+	 <div class="row">
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+			<h3 class="uc">Faculty</h3>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+        <metal:field use-macro="python:context.widget('faculty', mode='view')">
+            faculty
+        </metal:field>
+	</div>
+  </div>
+		<div class="row">
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+			<h3 class="uc">Units</h3>
+		</div>
+		<div id="units" class="col-xs-12 col-sm-12 col-md-8 col-lg-8" tal:condition="context/getUnits" tal:content="context/getUnits">
+			Units
+		</div>
+	</div>
+	   <div class="row">
+   		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+   			<h3 class="uc">Prerequisites</h3>
+   		</div>
+		<div id="prerequs" class="col-xs-12 col-sm-12 col-md-8 col-lg-8" tal:condition="context/getPrerequs" tal:content="context/getPrerequs"> Prerequisites </div>
+	</div>
+	   <div class="row">
+  		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+  			<h3 class="uc">Quarters</h3>
+  		</div>
+		<div id="quarters" class="col-xs-12 col-sm-12 col-md-8 col-lg-8" tal:condition="context/getQuarters" tal:content="context/getQuarters"> Quarters 
+		</div>
+		</div>
+		<div id="event-description" class="row">
+			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+				<h3 class="uc">Description</h3>
+			</div>
+		<div class="ccol-xs-12 col-sm-12 col-md-8 col-lg-8">
+		 <div class="inline-content">
+        <metal:field use-macro="python:context.widget('text', mode='view')"  >
+            Body text
+        </metal:field>
+	</div>
+	    </div>
+	</div>
+    </metal:content-core>
+</metal:content-core>
+
+</body>
+</html>
