@@ -1,0 +1,23 @@
+<configure
+  xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns:faceted="http://namespaces.zope.org/faceted"
+  i18n_domain="eea">
+
+  <faceted:widget factory=".widget.Widget" />
+
+  <browser:resource
+    name="dssweb.theme.magic.datepicker.view.js"
+    file="./view.js"
+   />
+
+  <browser:resource
+    name="dssweb.theme.magic.datepicker.edit.js"
+    file="./edit.js"
+   />
+
+  <browser:resource
+    name="dssweb.theme.magic.datepicker.view.css"
+    file="./view.css"
+   />
+
+</configure>
