@@ -14,6 +14,26 @@ Updating the theme (this happens automatically when running buildout):
 
     bin/compass compile -c src/dssweb.theme.magic/config.rb --app-dir src/dssweb.theme.magic
 
+Tagging a New Release
+---------------------
+
+When new code is ready for production, you'll want to update any dependency versions and
+tag a new release for deployment.  The revisions of released add-ons are set in
+``cfg/versions.cfg``, and the versions of unreleased add-ons are set in ``cfg/sources.cfg``
+(for stable unreleased addons) and ``cfg/production_sources.cfg`` (for add-ons that are 
+under active development).  Once the version updates and code has been tested, you should
+tag a release.  First list the existing tags:
+
+    git tag
+    
+Then create a new tag and push it to the origin:
+
+    git tag 3.3.1
+    git push origin 3.3.1
+    
+To deploy the new tag in OpsWorks, edit the ``plone instances`` App, and update the
+Branch/Revision to your new tag number.  Then deploy the app to any running
+application instances.
 
 OpsWorks Overview
 -----------------
