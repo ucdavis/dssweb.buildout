@@ -134,7 +134,6 @@ jQuery.fn.calendarPicker = function(options) {
       }
     }
 
-
     fillYears(date);
     fillMonths(date);
     fillDays(date);
@@ -149,30 +148,6 @@ jQuery.fn.calendarPicker = function(options) {
       calendar.changeDate(new Date(parseInt(el.attr("millis"))));
     }
   });
-
-
-  // //if mousewheel
-  // if ($.event.special.mousewheel && options.useWheel) {
-  //   divYears.mousewheel(function(event, delta) {
-  //     var d = new Date(calendar.currentDate.getTime());
-  //     d.setFullYear(d.getFullYear() + delta);
-  //     calendar.changeDate(d);
-  //     return false;
-  //   });
-  //   divMonths.mousewheel(function(event, delta) {
-  //     var d = new Date(calendar.currentDate.getTime());
-  //     d.setMonth(d.getMonth() + delta);
-  //     calendar.changeDate(d);
-  //     return false;
-  //   });
-  //   divDays.mousewheel(function(event, delta) {
-  //     var d = new Date(calendar.currentDate.getTime());
-  //     d.setDate(d.getDate() + delta);
-  //     calendar.changeDate(d);
-  //     return false;
-  //   });
-  // }
-
 
   calendar.changeDate(options.date);
 
@@ -191,38 +166,19 @@ Faceted.DSSDatepickerWidget = function(wid){
   this.button = jQuery('input[type=submit]', this.widget);
   this.datepicker = this.widget.find('div.datepicker');
 
-  // Handle change
   var js_widget = this;
-  jQuery('form', this.widget).submit(function(){
-    js_widget.text_change(js_widget.button);
-    return false;
-  });
 
   // Default value
   var input = jQuery('#' + this.wid);
-  var value = input.val();
+  var value = this.datepicker.data('picked-date')
   if(value){
-    this.selected = input;
+    this.selected = this.datepicker;
     Faceted.Query[this.wid] = [value];
   }
 
-  this.datepicker.calendarPicker({
-    // monthNames:["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-    // dayNames: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-    //useWheel:true,
-    //callbackDelay:500,
-    //years:1,
-    //months:3,
-    //days:4,
-    //showDayArrows:false,
-    callback:function(cal) {
-        var curDate = cal.currentDate;
-        console.log(curDate);
-        console.log(curDate.getFullYear());
-        console.log(curDate.getMonth());
-        console.log(curDate.getDate());
-      $("#wtf").html("Selected date: " + cal.currentDate);
-    }});
+  this.datepicker.calendarPicker({callback: function(cal) {
+    js_widget.do_query(cal)
+  }});
 
   // Bind events
   jQuery(Faceted.Events).bind(Faceted.Events.QUERY_CHANGED, function(evt){
@@ -235,31 +191,25 @@ Faceted.DSSDatepickerWidget = function(wid){
 
 Faceted.DSSDatepickerWidget.prototype = {
   text_change: function(element, evt){
-    this.do_query(element);
+    this.do_query(this.datepicker);
     jQuery(element).removeClass("submitting");
   },
 
-  do_query: function(element){
+  do_query: function(cal) {
     var input = jQuery('#' + this.wid);
-    var value = input.val();
-    value = value ? [value] : [];
+    var date = cal.currentDate;
+    var value = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
 
-    if(!element){
+    if(!cal){
       this.selected = [];
       return Faceted.Form.do_query(this.wid, []);
     }
-    this.selected = [input];
-
-    var where = jQuery('input[type=radio]:checked', this.widget);
-    where = where.length == 1 ? where.val() : 'all';
-    if(where == 'all'){
-      return Faceted.Form.do_query(this.wid, value);
-    }
+    this.selected = [cal];
 
     var current = Faceted.Query[this.wid];
     current = current ? current : [];
-    if(value.length && !(value[0] in current)){
-      current.push(value[0]);
+    if(value && !(value in current)){
+      current = [value];
     }
     return Faceted.Form.do_query(this.wid, current);
   },
@@ -267,6 +217,7 @@ Faceted.DSSDatepickerWidget.prototype = {
   reset: function(){
     this.selected = [];
     jQuery('#' + this.wid).val('');
+    this.datepicker.data('data-picked-date', '');
   },
 
   synchronize: function(){
@@ -276,9 +227,16 @@ Faceted.DSSDatepickerWidget.prototype = {
       return;
     }
 
-    var input = jQuery('#' + this.wid);
-    input.attr('value', value);
-    this.selected = [input];
+    if (value === this.datepicker.data('picked-date')) {
+      return;
+    }
+
+    // var input = jQuery('#' + this.wid);
+    var date = new Date(value);
+    // input.attr('value', value);
+    var js_widget = this;
+    this.datepicker.data('picked-date', value);
+    this.selected = [this.datepicker];
   },
 
   criteria: function(){

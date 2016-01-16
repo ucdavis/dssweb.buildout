@@ -37,6 +37,11 @@
 	  
       <!-- Copy meta tags from Plone head -->
       <before css:theme-children="html head" css:content="html head meta" />
+
+      <!-- include faceted navigation css if we are viewing a faceted navigation page -->
+      <after css:theme-children="html head">
+        <link rel="stylesheet" type="text/css" media="screen" href="portal_css/Sunburst%20Theme/faceted_view.css" />
+      </after>
 	  
 	 
 	  <!-- bring in css from plone portal_css, since theme css is now registered -->
