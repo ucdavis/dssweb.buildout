@@ -51,7 +51,10 @@
 	  
 	  	  
 	  <!--pull in script tags from Plone head to end of body-->
-     <after css:theme="html head" css:content="html head script" />
+	  
+     <after css:theme="html head" css:content="html head script" css:if-content=".portaltype-front-page" />
+	  
+     <after css:theme="html body" css:content="html head script" css:if-not-content=".portaltype-front-page" />
 	  
 	  
 	  
@@ -62,20 +65,17 @@
 	  
 	  <!--copy javascript in from registry -->
 	  
-	
+	  <rules css:if-content="div.economics"> 
+		  <rules if-path="/people">
+			  <replace content="/html/body/@class" method="raw">
+				  <xsl:attribute name="class"><xsl:value-of select="."/> subsite-econ</xsl:attribute>
+			  </replace>
+		  </rules>
+	  </rules>
+    
 
 	  
-  <!--colors for people portlets -->
-  <!--rules css:if-content=".economics"-->
-  
-  <!--replace css:content="#portletwrapper-706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f4453532d4d61737465720a6e657773 > dl" method="raw"-->
  
-    <!--replace content="//dl[contains(@class,'portlet')]/@class" method="raw"-->
-       <!--replace content="//dt[contains(@class,'portletHeader')]" method="raw"-->
-      <!--xsl:attribute name="class"><xsl:value-of select="."/> cork-oak</xsl:attribute>
-    </replace-->
-	
-  <!--rules--> 
 
 	  <before css:theme="#util-bar-wrap > nav" css:content="#iss-top" />
 	  <!--front-page -->
@@ -124,15 +124,16 @@
 				  <rules css:if-content=".site-economics">
   			        <copy attributes="href"
   			              css:content="#portaltab-about > a"
-  			              css:theme="#container-2 > div > div > div.bcontroller > a" />	
+  			              css:theme="#container-2 > div > div > div.bcontroller > a" />
+				   </rules>
 						  <!--color hack -->
 				      <!--merge attributes="class"
 				              css:content=".front-page-news"
 				              css:theme="#container-2 > div > div > div.bcontroller > a"  />
 				    
 					   <drop content='//*[@id="portaltab-about"]' /> 
-					 </rules>
-					 <rules css:if-content=".site-mindbrain">
+					 </rules-->
+					 <!--rules css:if-content=".site-mindbrain">
   	  			      <copy attributes="href"
   			              css:content="#portaltab-about > a"
   			              css:theme="#container-2 > div > div > div.bcontroller > a" /-->
@@ -195,6 +196,7 @@
       <copy attributes="href"
             css:content=".navTreeItem > .section-uc-davis > a"
             css:theme="#uti-logo > a" />
+				
 		<!-- mobile bar buttons -->
       <copy attributes="href"
             css:content="#portal-advanced-search > a"
@@ -241,7 +243,11 @@
 		  
 		  <!-- color hack -->
 		      
+
 		  
+	  
+   
+
 			  
 		  	  
 		  
@@ -272,7 +278,7 @@
 			  
   		<!--various rules to handle different template titles plus some magic to add the correct classes -->
   	    <rules css:if-content="h1#parent-fieldname-title">
-  		<replace css:theme="h1.content-title"  css:content="h1#parent-fieldname-title" />
+  		 <replace css:theme="h1.content-title"  css:content="h1#parent-fieldname-title" />
   	    </rules>
   		<rules css:if-content="h1.documentFirstHeading">
   			<replace css:theme="h1.content-title" css:content="h1.documentFirstHeading"/>
@@ -399,7 +405,7 @@
          <rules css:if-content=".portaltype-dsstwocolumnpage">
                <replace content="//img[contains(@class,'newsImage')]/@class" menthod="raw">
 							         <!--replace content="//dt[contains(@class,'portletHeader')]" method="raw"-->
-							        a<xsl:attribute name="class">newsImage two-col-img</xsl:attribute>
+							        <xsl:attribute name="class">newsImage two-col-img</xsl:attribute>
 							      </replace>
 
                             <before css:theme="#content-row"
