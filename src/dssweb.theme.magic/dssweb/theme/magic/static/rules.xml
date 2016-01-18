@@ -126,7 +126,7 @@
   			              css:content="#portaltab-about > a"
   			              css:theme="#container-2 > div > div > div.bcontroller > a" />	
 						  <!--color hack -->
-				      <merge attributes="class"
+				      <!--merge attributes="class"
 				              css:content=".front-page-news"
 				              css:theme="#container-2 > div > div > div.bcontroller > a"  />
 				    
@@ -135,12 +135,12 @@
 					 <rules css:if-content=".site-mindbrain">
   	  			      <copy attributes="href"
   			              css:content="#portaltab-about > a"
-  			              css:theme="#container-2 > div > div > div.bcontroller > a" />
+  			              css:theme="#container-2 > div > div > div.bcontroller > a" /-->
 							  <!--color hack -->
-	 					    <merge attributes="class"
+	 					    <!--merge attributes="class"
 	 					      css:content=".front-page-news"
 	 					      css:theme="#container-2 > div > div > div.bcontroller > a"  />
-					 </rules>
+					 </rules-->
 
 			  		  <!-- Events Happy Box -->
 			  	    <copy css:content=".front-page-events > dl > dd"
@@ -228,6 +228,7 @@
 		  <drop theme='//*[@id="uti-share"]' />
 
 	      <!-- mobile menu bar -->
+			<replace css:theme-children="ul.left" css:content-children="#portal-globalnav" />
 	      <replace content="//li[contains(@class,'dropdown')]/@class">
 	          <xsl:attribute name="class">has-dropdown</xsl:attribute>
 	      </replace>
@@ -236,7 +237,7 @@
 			  <xsl:attribute name="style">margin-top: 0px;</xsl:attribute>
 	      </replace>
 	      
-			 <replace css:theme-children="ul.left" css:content-children="#portal-globalnav" />
+			 
 		  
 		  <!-- color hack -->
 		      
