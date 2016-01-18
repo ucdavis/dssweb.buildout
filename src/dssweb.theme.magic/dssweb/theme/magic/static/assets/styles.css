@@ -3867,6 +3867,9 @@ h3.lab-bar > a > img.image-left {
 .eventTile {
   min-height: 225px; }
 
+body.site-DSS-Master div#main-container.container div#content-row.row.no-gutter-md div.sidebar.sidebar-right div#accordion-sr.panel-group div dl.portlet dt {
+  background-color: pink; }
+
 /* @end */
 /*_search.scss */
 /* search page styles */
@@ -6814,5 +6817,8 @@ a.ogg-icon {
   .newsImageContainer {
     float: right;
     margin: 0 0 0.5em 1em;
-    width: 16em; } }
+    width: 16em; }
+
+  body.site-DSS-Master div#main-container.container div#content-row.row.no-gutter-md div.sidebar.sidebar-right.col-xs-12.col-sm-12.col-md-4.col-lg-4 div#accordion-sr.panel-group div#portletwrapper-706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f4453532d4d61737465720a6e657773.portletWrapper.kssattr-portlethash-706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f4453532d4d61737465720a6e657773 dl.portlet dt {
+    background-color: pink; } }
 /* /styles.scss */

@@ -83,6 +83,15 @@ class FacNavView(BrowserView):
                     return field.tag(context, scale=scale, css_class=css_class, title=title)
             return ''
     
+    def getPiName(self, obj):
+        pi = obj.getPi()
+        brains = context.portal_catalog(id=pi) 
+        peep = brains[0].getObject() 
+        name = peep.Title()
+        return name
+        
+        
+    
             
             
             

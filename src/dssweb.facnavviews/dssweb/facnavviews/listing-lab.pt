@@ -24,26 +24,29 @@
             <tal:block define="obj brain/getObject;
                                ">
 
-			<div class="labTile col-md-6 col-sm-12 col-xs-12">
+			<div class="labTile col-lg-4 col-md-6 col-sm-12 col-xs-12">
 			<div class="LabEntry">
               <div class="labLink" tal:define="
                   description obj/Description|string:;
                   title obj/pretty_title_or_id|string:;
+						pi python:support_view.getPiName(obj);
                   desc_or_title python:description or title;
                   url python:support_view.navRootRelativeUrl(obj);
                   image_thumb exists:obj/image_thumb;
 	                    image_tag python:getattr(obj, 'tag', None)">
 	                  <a tal:attributes="href url;
-	                                   title desc_or_title" >
+	                                   title title" >
 	                  <span class="labWrapper" tal:condition="image_thumb">
-	                    <img style="border: none" tal:attributes="
-	                      title desc_or_title;
+	                    <img style="border: none" class="lab-image" tal:attributes="
+	                      title title;
 	                      alt title;
 	                      src string:$url/image_thumb"/>
 	                  </span>
 
 	                  <span class="labName" tal:content="title">Title</span>
+							
 	  			    </a>
+					  <span class="lab_pi" tal:condition="pi" tal:content="pi">PI</span>
 				  <div class="desc wrapper">
 				  <span class="desc" tal:content="description">Description </span>
 			  </div>
