@@ -14,27 +14,6 @@ Updating the theme (this happens automatically when running buildout):
 
     bin/compass compile -c src/dssweb.theme.magic/config.rb --app-dir src/dssweb.theme.magic
 
-Tagging a New Release
----------------------
-
-When new code is ready for production, you'll want to update any dependency versions and
-tag a new release for deployment.  The revisions of released add-ons are set in
-``cfg/versions.cfg``, and the versions of unreleased add-ons are set in ``cfg/sources.cfg``
-(for stable unreleased addons) and ``cfg/production_sources.cfg`` (for add-ons that are 
-under active development).  Once the version updates and code has been tested, you should
-tag a release.  First list the existing tags:
-
-    git tag
-    
-Then create a new tag and push it to the origin:
-
-    git tag 3.3.1
-    git push origin 3.3.1
-    
-To deploy the new tag in OpsWorks, edit the ``plone instances`` App, and update the
-Branch/Revision to your new tag number.  Then deploy the app to any running
-application instances.
-
 OpsWorks Overview
 -----------------
 
@@ -87,6 +66,28 @@ install the dependencies for layers, or update all packages or even the OS
 configuration automatically updates OS packages nightly.
 
 
+Tagging a New Release
+---------------------
+
+When new code is ready for production, you'll want to update any dependency versions and
+tag a new release for deployment.  The revisions of released add-ons are set in
+``cfg/versions.cfg``, and the versions of unreleased add-ons are set in ``cfg/sources.cfg``
+(for stable unreleased addons) and ``cfg/production_sources.cfg`` (for add-ons that are 
+under active development).  Once the version updates and code has been tested, you should
+tag a release.  First list the existing tags:
+
+    git tag
+
+Then create a new tag and push it to the origin:
+
+    git tag 3.3.1
+    git push origin 3.3.1
+
+To deploy the new tag in OpsWorks, edit the ``plone instances`` App, and update the
+Branch/Revision to your new tag number.  Then deploy the app to any running
+application instances.
+
+
 Deploying Code Changes
 ----------------------
 
@@ -97,10 +98,10 @@ and if the configuration has changed, re-run buildout and restart the
 instances (with an optional rolling delay) on all selected servers.
 
 
-Configuring the Deployment
---------------------------
+Configuring the Stack and Application
+-------------------------------------
 
-The deployment is configured from the `Stack` panel in the OpsWorks console
+The stack is configured from the `Stack` panel in the OpsWorks console
 using the `Stack Settings` button.  From there you can see and edit the JSON
 configuration for the stack.  For details on specific settings see the
 [opsworks plone buildout documentation](https://github.com/alecpm/opsworks-web-python/tree/master/plone_buildout).
@@ -310,3 +311,32 @@ If donwtime isn't a problem, you can simply stop the instance, edit it to
 change the instance type, and then start it again.  There will be some
 limitations on instance type, based on the originally selected instance type
 (e.g. whether it is EBS or instance store backed)
+
+
+Staging Stack
+-------------
+
+You can create a staging stack by cloning the existing stack (minus the
+application and instances).
+
+Once that's done, you can create a clone of the production DB by navigating to
+the snapshots section of the RDS control panel, selecting the latest nightly
+snapshot and using 'Restore Snapshot' to create a new RDS instance from that
+snapshot. Generally speaking you'll want to make staging a non Multi-AZ RDS
+instance in the same Availability Zone as your stack instance with maintenance
+and backups disabled.  This process can take up to 15 minutes, depending on
+the size of the DB.
+
+Once that's done you can create an RDS Layer in you Stack pointing to your new
+RDS instance, and an App pointing to the RDS DB and the Repo/Branch for the
+buildout you want to use for staging.  Finally, you can add an instance to the
+stack layers (no need to include the packing/backup layers for staging).
+You'll probably also want to edit to nginx configuration in the Stack
+configuration, since most of the virtualhosting config is not relevant to a
+staging server.
+
+Once the stack is configured, you can stop and start the instance as needed.
+You can also terminate the RDS instance, if you don't want it running.  When
+starting up the instances again, you'll want to first create a new RDS
+instance from a snapshot, and  update the RDS layer in the stack to point
+to your new RDS instance before starting the stack instances.
