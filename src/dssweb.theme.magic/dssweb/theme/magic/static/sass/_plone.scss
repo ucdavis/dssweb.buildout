@@ -1270,6 +1270,9 @@ h3.lab-bar > a > img.image-left {
  .eventTile {
 	 min-height: 225px;
  }
+body.template-folder_leadimage_view div#main-container.container div#content-row.row div#content.col-xs-12.col-sm-12.col-md-8.col-lg-8 div#content-core div#accordionB.panel-group div div.tileItem p.tileFooter {
+	display:none;
+}
 
 
 /* @end */

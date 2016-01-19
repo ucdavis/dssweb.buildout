@@ -6,9 +6,10 @@
 
     <!-- Apply the following rules to standard Plone pages -->
   
-  
+	 
   	
     <rules css:if-content="#visual-portal-wrapper">
+		 
 		 
 	    
 	    <theme href="index.html" css:if-content="body.portaltype-front-page" />
@@ -76,9 +77,11 @@
   
   </rules>
   <!--colors for people portlets -->
-  <rules css:if-content=".economics">
-    <rules if-path="/people">
-    <replace content="//dl[contains(@class,'portlet')]/@class" menthod="raw">
+  <rules css:if-content="dd.doormatSectionBody div.economics">
+    <rules if-path="/people"> 
+		 
+	 
+    <replace content="//dl[contains(@class,'portlet')]/@class" method="raw">
        <!--replace content="//dt[contains(@class,'portletHeader')]" method="raw"-->
       <xsl:attribute name="class"><xsl:value-of select="."/> cork-oak</xsl:attribute>
     </replace>
