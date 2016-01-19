@@ -8,36 +8,35 @@
   
   
   	
-    <rules css:if-content="#visual-portal-wrapper">
-		 
-	    
-	    <theme href="index.html" css:if-content="body.portaltype-front-page" />
+<rules css:if-content="#visual-portal-wrapper">
 
 
-        <theme href="t13_event_b.html" css:if-content="body.portaltype-event" />
-	    <theme href="t13_event_b.html" css:if-content="body.portaltype-dsscourse" />
-		<theme href="t3_bio.html" css:if-content="body.portaltype-fsdperson" />
-		<theme href="t2_ourpeople.html" css:if-content="body.template-facetednavigation_view" />
-		<theme href="t7_contact.html" css:if-content="body.portaltype-dsscontact" />
-		<theme href="t7_contact.html" css:if-content="body.section-contact" />
-		<!--theme href="t8_students.html" css:if-content=".subsection-psychology-major" /-->
+	<theme href="index.html" css:if-content="body.portaltype-front-page" />
 
-       <theme href="t6_research_lab.html" css:if-content=".subsection-prospective-students"/>
-	  <theme href="t11_calendar.html" css:if-content=".template-solgemafullcalendar_view" />
-	  <theme href="t14_search.html" css:if-content=".template-search" />
-	  <theme href="t17_fullwidth.html" css:if-content=".portaltype-jqxgrid_page" /> 
-	  <theme href="t17_fullwidth.html" css:if-content=".subsection-fzlindert-peter-linderts-webpage" />
-      <theme href="t4_adhoc2.html" />
 
-      <!-- Replace title with Plone's page title  -->
-      <replace css:theme="html head title" css:content="html head title" />
+	<theme href="t13_event_b.html" css:if-content="body.portaltype-event" />
+	<theme href="t13_event_b.html" css:if-content="body.portaltype-dsscourse" />
+	<theme href="t3_bio.html" css:if-content="body.portaltype-fsdperson" />
+	<theme href="t2_ourpeople.html" css:if-content="body.template-facetednavigation_view" />
+	<theme href="t7_contact.html" css:if-content="body.portaltype-dsscontact" />
+	<theme href="t7_contact.html" css:if-content="body.section-contact" />
+	<!--theme href="t8_students.html" css:if-content=".subsection-psychology-major" /-->
 
-      <!-- Copy base tag from Plone -->
-      <before css:theme-children="html head" css:content="html head base" />
-	  
-      <!-- Copy meta tags from Plone head -->
-      <before css:theme-children="html head" css:content="html head meta" />
-	  
+	<theme href="t11_calendar.html" css:if-content=".template-solgemafullcalendar_view" />
+	<theme href="t14_search.html" css:if-content=".template-search" />
+	<theme href="t17_fullwidth.html" css:if-content=".portaltype-jqxgrid_page" /> 
+	
+	<theme href="t4_adhoc2.html" />
+
+	<!-- Replace title with Plone's page title  -->
+	<replace css:theme="html head title" css:content="html head title" />
+
+	<!-- Copy base tag from Plone -->
+	<before css:theme-children="html head" css:content="html head base" />
+
+	<!-- Copy meta tags from Plone head -->
+	<before css:theme-children="html head" css:content="html head meta" />
+
 	 
 	  <!-- bring in css from plone portal_css, since theme css is now registered -->
 	  <!--drop theme="/html/head/link" />
@@ -51,13 +50,13 @@
 	  
 	  	  
 	  <!--pull in script tags from Plone head to end of body-->
-      <after css:theme="html head" css:content="html head script" />
-	  
-	  
-	  
-      <!-- merge classes from Plone body with theme body -->
-      <merge attributes="class" css:theme="body" css:content="body" />
-	  
+	<after css:theme="html head" css:content="html head script" />
+
+
+
+	<!-- merge classes from Plone body with theme body -->
+	<merge attributes="class" css:theme="body" css:content="body" />
+
 	  <!-- drop theme js -->
 	  
 	  <!--copy javascript in from registry -->
@@ -85,7 +84,6 @@
 </rules>
   </rules> 
 
-     <before css:theme="#util-bar-wrap > nav" css:content="#iss-top" />
   <!--front-page -->
   
   
@@ -108,127 +106,124 @@
 	   
   <!--Other sites-->	   
   <!--front page -->
-        <rules css:if-content="body.portaltype-front-page" >	  
-	         <replace css:theme-children="#left-front-column"
-	                  css:content-children=".left-front-column" />
-	         <replace css:theme-children="#middle-front-column"
-	                  css:content-children=".middle-front-column" />
-	         <replace css:theme-children="#right-front-column"
-	                  css:content-children=".right-front-column" />
+	<rules css:if-content="body.portaltype-front-page" >	  
+		<replace css:theme-children="#left-front-column"
+		css:content-children="div.left-front-column" />		
+		<replace css:theme-children="#middle-front-column"
+		css:content-children="div.middle-front-column" />
+		<replace css:theme-children="#right-front-column"
+		css:content-children="div.right-front-column" />
 
-			        <!-- News Happy Box -->
-			        <replace css:content=".front-page-news > dl > dd"
-			                 css:theme-children="#container-1 > div > div > div.content-wrap"  />
-			        <copy attributes="href"
-			              css:content=".front-page-news > dl > dd.portletFooter > span:nth-child(2) > a"
-			              css:theme="#container-1 > div > div > div.bcontroller > a"  />
-						  <merge attributes="class"
-				              css:content=".front-page-news"
-				              css:theme="#container-1 > div > div > div.bcontroller > a"  />
+		<!-- News Happy Box -->
+		<replace css:content=".front-page-news > dl > dd"
+		css:theme-children="#container-1 > div > div > div.content-wrap"  />
+		<copy attributes="href"
+		css:content=".front-page-news > dl > dd.portletFooter > span:nth-child(2) > a"
+		css:theme="#container-1 > div > div > div.bcontroller > a"  />
+		<merge attributes="class"
+		css:content=".front-page-news"
+		css:theme="#container-1 > div > div > div.bcontroller > a"  />
 
-			        <!--  About Happy Box -->
-			        <replace css:content-children="#content-core"
-			                 css:theme-children="#container-2 div.content-wrap"  />
-				<rules css:if-content=".site-psychology">
-			        <copy attributes="href"
-			              css:content="#portaltab-quick-facts > a"
-			              css:theme="#container-2 > div > div > div.bcontroller > a" />
-					  </rules>
-	  				
-					  <rules css:if-content=".site-economics">
-	  			        <copy attributes="href"
-	  			              css:content="#portaltab-about > a"
-	  			              css:theme="#container-2 > div > div > div.bcontroller > a" />	
-							  <!--color hack -->
-					    <merge attributes="class"
-					              css:content=".front-page-news"
-					              css:theme="#container-2 > div > div > div.bcontroller > a"  />
-					    
-						<drop content='//*[@id="portaltab-about"]' /> 
-						  </rules>
-						  <rules css:if-content=".site-mindbrain">
-	  	  			      <copy attributes="href"
-	  	  			              css:content="#portaltab-about > a"
-	  	  			              css:theme="#container-2 > div > div > div.bcontroller > a" />
-									  <!--color hack -->
-			 					    <merge attributes="class"
-			 					      css:content=".front-page-news"
-			 					      css:theme="#container-2 > div > div > div.bcontroller > a"  />
-							  </rules>
+		<!--  About Happy Box -->
+		<replace css:content-children="#content-core"
+		css:theme-children="#container-2 div.content-wrap"  />
+		<rules css:if-content=".site-psychology">
+			   <copy attributes="href"
+				css:content="#portaltab-quick-facts > a"
+				css:theme="#container-2 > div > div > div.bcontroller > a" />
+		</rules>
 
-			  		  <!-- Events Happy Box -->
-			  	    <copy css:content=".front-page-events > dl > dd"
-			              css:theme="#container-3 > div > div > div.content-wrap" />
-			    		<copy attributes="href"
-			              css:content=".front-page-events > dl > dd.portletFooter > span:nth-child(2) > a"
-			              css:theme="#container-3 > div > div > div.bcontroller > a"  />
-						  <merge attributes="class"
-				              css:content=".front-page-events"
-				              css:theme="#container-3 > div > div > div.bcontroller > a"  />
-						  
+		<rules css:if-content=".site-economics">
+			<copy attributes="href"
+				css:content="#portaltab-about > a"
+				css:theme="#container-2 > div > div > div.bcontroller > a" />	
+				<!--color hack -->
+			<merge attributes="class"
+				css:content=".front-page-news"
+				css:theme="#container-2 > div > div > div.bcontroller > a"  />
 
-			    		<!-- Front Page -->
-			    		<!--copy css:content="#parent-fieldname-title" css:theme="#middle-row" /-->
-	   		   </rules> <!--end front page rules-->
+				<drop content='//*[@id="portaltab-about"]' /> 
+		</rules>
+		<rules css:if-content=".site-mindbrain">
+			<copy attributes="href"
+			css:content="#portaltab-about > a"
+			css:theme="#container-2 > div > div > div.bcontroller > a" />
+			<!--color hack -->
+			<merge attributes="class"
+			css:content=".front-page-news"
+			css:theme="#container-2 > div > div > div.bcontroller > a"  />
+		</rules>
+
+		<!-- Events Happy Box -->
+		<copy css:content=".front-page-events > dl > dd"
+		css:theme="#container-3 > div > div > div.content-wrap" />
+		<copy attributes="href"
+		css:content=".front-page-events > dl > dd.portletFooter > span:nth-child(2) > a"
+		css:theme="#container-3 > div > div > div.bcontroller > a"  />
+		<merge attributes="class"
+		css:content=".front-page-events"
+		css:theme="#container-3 > div > div > div.bcontroller > a"  />
+
+
+	
+	</rules> <!--end front page rules-->
      <!-- rule to set up title to replace static logo on ipad/mobile -->
      <replace css:theme-children=".justname h1">
         <xsl:for-each css:select="a#portal-logo">
           <xsl:value-of select="@title" />
         </xsl:for-each>
      </replace>
-	 <!--drop the events and giving tabs so they can be moved to the utility menu -->
-	      <drop content='//*[@id="portaltab-events"]' />
-		 <drop content='//*[@id="portaltab-give"]' />
-	         <drop content='//*[@id="portaltab-news"]' />
-	         <drop content='//*[@id="portaltab-quick-facts"]' />
-			 <drop content='//*[@id="portaltab-contact"]' />
-			 <drop content='//*[@id="portaltab-index_html"]' />
-			 <drop content='//*[@id="portaltab-intranet"]' />
-			 <rules css:if-not-content=".site-mindbrain">
-			 <drop content='//*[@id="portaltab-about"]' />
+	 <!--drop the tabs that we don't need -->
+	      <drop content=
+			'/html/body/div[1]/div[1]/div/div/div[1]/ul/li[@id="portaltab-events"]' />
+		   <drop content='/html/body/div[1]/div[1]/div/div/div[1]/ul/li[@id="portaltab-give"]' />
+	      <drop content='/html/body/div[1]/div[1]/div/div/div[1]/ul/li[@id="portaltab-news"]' />
+	      <drop content='/html/body/div[1]/div[1]/div/div/div[1]/ul/li[@id="portaltab-quick-facts"]' />
+			 <drop content='/html/body/div[1]/div[1]/div/div/div[1]/ul/li[@id="portaltab-contact"]' />
+			 <drop content='/html/body/div[1]/div[1]/div/div/div[1]/ul/li[@id="portaltab-index_html"]' />
+			 <drop content='/html/body/div[1]/div[1]/div/div/div[1]/ul/li[@id="portaltab-intranet"]' />
+			 <rules css:if-not-content="body.site-mindbrain">
+			 <drop content='/html/body/div[1]/div[1]/div/div/div[1]/ul/li[@id="portaltab-about"]' />
 		 </rules>
 	      <!--utility menu links -->
-		 <copy attributes="href"
-			 css:content="#portaltab-index_html > a"
-			 css:theme="#uti-home > a" />
-	   <!--replace css:theme="#uti-home > a"
-	                   css:content="#portaltab-index_html > a" method="raw" /-->       
-		   <replace css:theme="#uti-contact > a"
-		                   css:content="#portaltab-contact > a" method="raw" />
-	      <replace css:theme="#uti-events > a"
-	               css:content="#portaltab-events > a" method="raw" />
-	      <replace css:theme="li#uti-news > a" css:content="#portaltab-news > a" />
-		    <copy attributes="href"
-	            css:content="#portaltab-give > a"
-	            css:theme="#uti-give > a" />
-	      <copy attributes="href"
-	            css:content=".navTreeItem > .section-uc-davis > a"
-	            css:theme="#uti-logo > a" />
-		<!-- mobile bar buttons -->
-      <copy attributes="href"
-            css:content="#portal-advanced-search > a"
-            css:theme="#search-util-btn > a" />
-      <copy attributes="href"
-            css:content="#portal-advanced-search > a"
-            css:theme="#search-util-btn > p > a" />
-				
-      <copy attributes="href"
-            css:content="#portaltab-contact > a"
-            css:theme="#email-util-btn > a" />
+		<copy attributes="href"
+		css:content="li#portaltab-index_html > a"
+		css:theme="li#uti-home > a" />
+		<!--replace css:theme="#uti-home > a"
+		          css:content="#portaltab-index_html > a" method="raw" /-->       
+		<replace css:theme="li#uti-contact > a"
+		             css:content="li#portaltab-contact > a" method="raw" />
+		<replace css:theme="li#uti-events > a"
+		      css:content="li#portaltab-events > a" method="raw" />
+		<replace css:theme="li#uti-news > a" css:content="li#portaltab-news > a" />
+		<copy attributes="href"
+		   css:content="li#portaltab-give > a"
+		   css:theme="li#uti-give > a" />
 		
-      <copy attributes="href"
-            css:content="#portaltab-contact > a"
-            css:theme="#email-util-btn > p > a" />
-				
-      <copy attributes="href"
-            css:content="#portaltab-map > a"
-            css:theme="#location-util-btn > a" method="raw"/>
+		<copy attributes="href"
+		css:content="#portal-advanced-search > a"
+		css:theme="#search-util-btn > a" />
+		<copy attributes="href"
+		css:content="#portal-advanced-search > a"
+		css:theme="#search-util-btn > p > a" />
 
-      <copy attributes="href"
-            css:content="#portaltab-map > a"
-            css:theme="#location-util-btn > p > a" method="raw"/>
+		<copy attributes="href"
+		css:content="#portaltab-contact > a"
+		css:theme="#email-util-btn > a" />
+
+		<copy attributes="href"
+		css:content="#portaltab-contact > a"
+		css:theme="#email-util-btn > p > a" />
+
+		<copy attributes="href"
+		css:content="#portaltab-map > a"
+		css:theme="#location-util-btn > a" method="raw"/>
+
+		<copy attributes="href"
+		css:content="#portaltab-map > a"
+		css:theme="#location-util-btn > p > a" method="raw"/>
 		<drop css:content="#portaltab-map" />
-		
+
 
 
 	      <!-- desktop menu bar -->

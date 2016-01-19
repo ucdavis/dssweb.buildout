@@ -157,9 +157,7 @@
 	    <copy attributes="href"
             css:content="#portaltab-give > a"
             css:theme="#uti-give > a" />
-      <copy attributes="href"
-            css:content=".navTreeItem > .section-uc-davis > a"
-            css:theme="#uti-logo > a" />
+     
 
       <!-- desktop menu bar -->
 	  
