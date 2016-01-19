@@ -76,9 +76,9 @@
   
   </rules>
   <!--colors for people portlets -->
-  <rules css:if-content=".economics">
+  <rules css:if-content="dd.doormatSectionBody div.economics">
     <rules if-path="/people">
-    <replace content="//dl[contains(@class,'portlet')]/@class" menthod="raw">
+    <replace content="//dl[contains(@class,'portlet')]/@class" method="raw">
        <!--replace content="//dt[contains(@class,'portletHeader')]" method="raw"-->
       <xsl:attribute name="class"><xsl:value-of select="."/> cork-oak</xsl:attribute>
     </replace>
