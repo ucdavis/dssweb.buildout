@@ -336,7 +336,7 @@ configuration, since most of the virtualhosting config is not relevant to a
 staging server.
 
 Once the stack is configured, you can stop and start the instance as needed.
-You can also terminate the RDS instance, if you don't want it running.  When
-starting up the instances again, you'll want to first create a new RDS
-instance from a snapshot, and  update the RDS layer in the stack to point
+You can also delete the RDS instance, if you don't want it running.  When
+starting up the staging stack again, you'll want to first create a new RDS
+instance from a snapshot, and update the RDS layer in the stack to point
 to your new RDS instance before starting the stack instances.
