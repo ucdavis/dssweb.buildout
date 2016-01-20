@@ -253,8 +253,11 @@
 	   </replace>
 		  
 		<!-- replace main content and add title class --> 
+		
 		<rules if-not-content="/html/body[contains(@class, 'portaltype-front-page')]">
+			<rules if-not-content="/html/body[contains(@class, 'template-facetednavigation_view')]">
 		<replace theme-children='//*[@id="content"]' content-children='//*[@id="portal-column-content"]' />
+	   </rules>
 	   </rules>
 		
       <replace content="//h1[contains(@class,'documentFirstHeading')]/@class" >
@@ -297,10 +300,11 @@
 		  
 		<!--views -->
 		
-		  <!--portlets -->
+		<!--portlets -->
 
-		  <replace css:theme=".portlet" css:content-children="#portal-column-two" />
-		  <!-- People Page Faceted Nav -->
+		 <replace css:theme="div.portlet" css:content-children="div#portal-column-two" />	
+		 
+		 	 <!-- People Page Faceted Nav -->
    	   <!--Person directory Page Faceted Nav T2 -->
    	   <rules css:if-content=".template-facetednavigation_view">
    		  
