@@ -253,6 +253,7 @@
 	   </replace>
 		  
 		<!-- replace main content and add title class --> 
+		<!--removed our people view, but I think this could be dealt with differently -->
 		
 		<rules if-not-content="/html/body[contains(@class, 'portaltype-front-page')]">
 			<rules if-not-content="/html/body[contains(@class, 'template-facetednavigation_view')]">
@@ -271,19 +272,7 @@
 		<!-- end most page and title replacement -->
   	
 		   
-		  
-			
-			<!--replace theme-children="//*[@id='r-title']/a/span" content="//*[@id='right-front-column']/dl/dt/span[2]/a/text()" /-->
-			<!--replace css:content-children=".portletEvents .portletFooter a"> More events </replace-->
-		  
-		
-			
-		   <!--replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.right-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content=".right-front-column > dl > dt > span > a" css:if-content=".right-front-column dl.portletStaticText" /-->
-			
-	      <!--copy attributes="href"
-	            css:content=".right-front-column > dl > dt > span > a"
-	            css:theme="#content-core > div.panel.panel-default.bottom-panel.right-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:if-content=".right-front-column dl.portletStaticText" /-->
-		   
+
 		 
 	      <!-- Search Fixups -->
 	      <drop css:content=".searchSection" />
@@ -316,33 +305,11 @@
    		    <drop theme='//*[@id="pager-bottom"]' />
 
    	   </rules>
-	   <!-- Featured Courses -->
-	   
-	   <rules css:if-content="body.portaltype-dsscourse">
-		   <replace css:theme="#content-core" css:content="#content-core" />
-		   </rules>
-		   
-		   
-	 	  <!--Person bio-->
-	 	   <rules css:if-content="body.portaltype-fsdperson">
-	 		   <replace css:theme="h1.content-title" css:content="h1.content-title" />
-	 		   <replace theme='//*[@id="content-core"]' content='//*[@id="content-core"]' />
+
+		 
 		  
-	 	   </rules>
-		   <!--Events-->
-		   <!-- these rules apply to the modified event type-->
-	       <rules css:if-content="body.portaltype-event">
-	         <replace theme='//*[@id="content"]/h1'
-	                  content='//*[@id="parent-fieldname-title"]' />
-			  
-        
-	         <!--drop theme='//*[@id="content-core"]/div[1]' />
-	         <replace css:theme="div.zebra.rows"
-	                  css:content="#content-core > div" /-->
-           <replace css:theme="#content-core" css:content="#content-core" />  
-	       </rules>
 		   <!-- NewsImageContainer aka content Lead Image -->
-		   <rules css:if-content=".newsImageContainer">
+		   <!--rules css:if-content=".newsImageContainer">
 			   <rules css:if-not-content=".portaltype-news-item">
 				   <rules css:if-not-content=".template-collapsible_full_view">
 					   <rules css:if-not-content=".template-course_view">
@@ -355,7 +322,7 @@
 			 </rules>
 		 </rules>
 		 </rules>
-	 </rules>
+	 </rules-->
 			   
 		   <!-- two collumn page -->
 	   	<rules css:if-content=".portaltype-dsstwocollumnpage">
