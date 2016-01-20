@@ -400,17 +400,7 @@
 		<rules css:if-content=".tileItem">
 		<replace css:theme=".panel-body" css:content=".tileItem" />
 	</rules>
-    <!--related items-->
-    <rules css:if-content="#viewlet-below-content-body">
-		 <rules css:if-not-content=".portaltype-front-page">
-	    <after css:theme="#content-core" css:content="#viewlet-below-content-body" />
-	 </rules>
-    </rules>
-    <rules css:if-content="#viewlet-below-content">
-		 <rules css:if-not-content=".portaltype-front-page">
-	    <after css:theme="#content-core" css:content="#viewlet-below-content" />
-	 </rules>
-    </rules>
+   
 	 
 		<!-- mobile front bar titles, aka quickfacts -->
 		<replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.left-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content=".left-front-column > dl > dt > a > span" css:if-content=".left-front-column" />
