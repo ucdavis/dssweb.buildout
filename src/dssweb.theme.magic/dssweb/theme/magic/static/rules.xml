@@ -231,59 +231,21 @@
 	      <!-- Disabled Mega <after css:content="#portal-globalnav" css:theme=".top-bar ul.title-area" / -->
 		  <drop theme='//*[@id="uti-share"]' />
 
-	      <!-- mobile menu bar -->
-	      <replace css:theme-children="ul.left" css:content-children="#portal-globalnav" />
-	      <replace content="//ul[contains(@class,'submenu')]/@class">
-	          <xsl:attribute name="class">dropdown</xsl:attribute>
-			  <xsl:attribute name="style">margin-top: 0px;</xsl:attribute>
-	      </replace>
-	      <replace content="//li[contains(@class,'dropdown')]/@class">
-	          <xsl:attribute name="class">has-dropdown</xsl:attribute>
-	      </replace>
+	   <!-- mobile menu bar -->
+	   <replace css:theme-children="ul.left" css:content-children="#portal-globalnav" />
+	   <replace content="//ul[contains(@class,'submenu')]/@class">
+	       <xsl:attribute name="class">dropdown</xsl:attribute>
+		  <xsl:attribute name="style">margin-top: 0px;</xsl:attribute>
+	   </replace>
+	   <replace content="//li[contains(@class,'dropdown')]/@class">
+	       <xsl:attribute name="class">has-dropdown</xsl:attribute>
+	   </replace>
 		  
-		  <!-- color hack -->
-		      
-		  
-			  
-		  	  
-		  
-	  	
-		  
-  		<!--rules css:if-content=".site-economics">
-  		<xsl:template match="//div[contains(@class,'bcontroller')]//a">
-  		        <xsl:copy>
-  		            <xsl:attribute name="class">cork-oak</xsl:attribute>
-  		            <xsl:copy-of select="@*" />
-  		            <xsl:apply-templates />
-  		        </xsl:copy>
-  		    </xsl:template>
-		</rules-->
-		  <!--Handle Titles -->
-  	    <!--replace css:theme="h2.homepage-title" css:content="h1#parent-fieldname-title" />
-  	    <replace content="//h1[contains(@class,'documentFirstHeading')]/@class" if="$home_page">
-  	    <xsl:attribute name="class">
-  	    <xsl:if test='contains(current(),"documentFirstHeading")'>homepage-title</xsl:if>
-  	    </xsl:attribute>
-  	    </replace-->
-		
-              <!--replace content="//h1[contains(@class,'documentFirstHeading')]/@class" if-content="/html/body[contains(@class,'portaltype-front-page')]">
-  	    <xsl:attribute name="class">
-  	    <xsl:if test='contains(current(),"documentFirstHeading")'>homepage-title</xsl:if>
-  	    </xsl:attribute>
-  	    </replace-->
-			  
-  		<!--various rules to handle different template titles plus some magic to add the correct classes -->
-  	    <rules css:if-content="h1#parent-fieldname-title">
-  		<replace css:theme="h1.content-title"  css:content="h1#parent-fieldname-title" />
-  	    </rules>
-  		<rules css:if-content="h1.documentFirstHeading">
-  			<replace css:theme="h1.content-title" css:content="h1.documentFirstHeading"/>
+		<!-- replace main content and add title class --> 
+		<rules if-not-content="/html/body[contains(@class, 'portaltype-front-page')]">
+		<replace theme-children='//*[@id="content"]' content-children='//*[@id="portal-column-content"]' />
 	</rules>
-  	    <replace content="//h1[contains(@class,'documentFirstHeading')]/@class" if-not-content="/html/body[contains(@class,'portaltype-front-page')]">
-    	    <xsl:attribute name="class">
-            <xsl:if test='contains(current(),"documentFirstHeading")'>content-title</xsl:if>
-    	    </xsl:attribute>
-  	    </replace>
+		
   		<!-- Breadcrumbs for all but front page -->
   		<replace css:theme-children=".breadcrumb" css:content="#portal-breadcrumbs" />
   		<drop css:content="#breadcrumbs-you-are-here" />
