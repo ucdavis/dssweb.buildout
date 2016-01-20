@@ -244,14 +244,14 @@
 
 	   <!-- classes for dropdown -->
 	   <replace css:theme-children="ul.left" css:content-children="#portal-globalnav" />
-	   <replace content="//ul[contains(@class,'submenu')]/@class">
+	   <replace content="//ul[@id='portal-globalnav']//ul[contains(@class,'submenu')]/@class">
 	       <xsl:attribute name="class">dropdown</xsl:attribute>
 		  <xsl:attribute name="style">margin-top: 0px;</xsl:attribute>
 	   </replace>
-	   <replace content="//li[contains(@class,'dropdown')]/@class">
+	   <replace content="//ul[@id='portal-globalnav']//li[contains(@class,'dropdown')]/@class">
 	       <xsl:attribute name="class">has-dropdown</xsl:attribute>
 	   </replace>
-		  
+
 		<!-- replace main content and add title class --> 
 		<!--removed our people view, but I think this could be dealt with differently -->
 		
