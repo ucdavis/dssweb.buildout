@@ -244,7 +244,15 @@
 		<!-- replace main content and add title class --> 
 		<rules if-not-content="/html/body[contains(@class, 'portaltype-front-page')]">
 		<replace theme-children='//*[@id="content"]' content-children='//*[@id="portal-column-content"]' />
-	</rules>
+	   </rules>
+      <replace content="//h1[contains(@class,'documentFirstHeading')]/@class" >
+         <!--replace content="//dt[contains(@class,'portletHeader')]" method="raw"-->
+        <xsl:attribute name="class"><xsl:value-of select="."/> content-title</xsl:attribute>
+      </replace>
+      <replace content="//h1[contains(@class,'parent-fieldname-title')]/@class" >
+         <!--replace content="//dt[contains(@class,'portletHeader')]" method="raw"-->
+        <xsl:attribute name="class"><xsl:value-of select="."/> content-title</xsl:attribute>
+      </replace>
 		
   		<!-- Breadcrumbs for all but front page -->
   		<replace css:theme-children=".breadcrumb" css:content="#portal-breadcrumbs" />
