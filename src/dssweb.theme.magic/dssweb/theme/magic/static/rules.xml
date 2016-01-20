@@ -24,7 +24,7 @@
 
 	<theme href="t11_calendar.html" css:if-content=".template-solgemafullcalendar_view" />
 	<theme href="t14_search.html" css:if-content=".template-search" />
-	<theme href="t17_fullwidth.html" css:if-content=".portaltype-jqxgrid_page" /> 
+	<theme href="t17_fullwidth.html" if-not-content='//div[@id="portal-column-two"]' /> 
 	
 	<theme href="t4_adhoc2.html" />
 
@@ -113,6 +113,8 @@
 		css:content-children="div.middle-front-column" />
 		<replace css:theme-children="#right-front-column"
 		css:content-children="div.right-front-column" />
+	   <!-- swap out in the title text on the homepage -->
+	   <replace theme-children="//*[@id='middle-row']/h2" content="//h1[@id='parent-fieldname-title']/text()" if-content="//h1[@id='parent-fieldname-title']" />
 
 		<!-- News Happy Box -->
 		<replace css:content=".front-page-news > dl > dd"
@@ -231,7 +233,7 @@
 	      <!-- Disabled Mega <after css:content="#portal-globalnav" css:theme=".top-bar ul.title-area" / -->
 		  <drop theme='//*[@id="uti-share"]' />
 
-	   <!-- mobile menu bar -->
+	   <!-- classes for dropdown -->
 	   <replace css:theme-children="ul.left" css:content-children="#portal-globalnav" />
 	   <replace content="//ul[contains(@class,'submenu')]/@class">
 	       <xsl:attribute name="class">dropdown</xsl:attribute>
@@ -245,6 +247,7 @@
 		<rules if-not-content="/html/body[contains(@class, 'portaltype-front-page')]">
 		<replace theme-children='//*[@id="content"]' content-children='//*[@id="portal-column-content"]' />
 	   </rules>
+		
       <replace content="//h1[contains(@class,'documentFirstHeading')]/@class" >
          <!--replace content="//dt[contains(@class,'portletHeader')]" method="raw"-->
         <xsl:attribute name="class"><xsl:value-of select="."/> content-title</xsl:attribute>
@@ -253,25 +256,10 @@
          <!--replace content="//dt[contains(@class,'portletHeader')]" method="raw"-->
         <xsl:attribute name="class"><xsl:value-of select="."/> content-title</xsl:attribute>
       </replace>
-		
-  		<!-- Breadcrumbs for all but front page -->
-  		<replace css:theme-children=".breadcrumb" css:content="#portal-breadcrumbs" />
-  		<drop css:content="#breadcrumbs-you-are-here" />
-      <replace css:content=".breadcrumbSeparator">
-        <span class="bread-divider">|</span>
-      </replace>
-<!-- Generic rules, apply to all by front page -->
-		  <rules css:if-not-content=".portaltype-front-page">
-			  <rules css:if-not-content=".template-solgemafullcalendar_view" >
-		  <before css:theme="#content-core" css:content="#parent-fieldname-description" />
-		  <replace css:theme-children=".panel-body" css:content-children="#content-core" />
-	       </rules>
-		 </rules>
-		   <!-- swap out in the title text on the homepage -->
-		   <replace theme-children="//*[@id='middle-row']/h2" content="//h1[@id='parent-fieldname-title']/text()" if-content="//h1[@id='parent-fieldname-title']" />
-		   <!-- mobile front bar titles, aka quickfacts -->
-		   <replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.left-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content=".left-front-column > dl > dt > a > span" css:if-content=".left-front-column" />
-		   <replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.middle-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content=".middle-front-column > dl > dt > a > span" css:if-content=".middle-front-column" />
+		<!-- end most page and title replacement -->
+  	
+		   
+		  
 			
 			<!--replace theme-children="//*[@id='r-title']/a/span" content="//*[@id='right-front-column']/dl/dt/span[2]/a/text()" /-->
 			<!--replace css:content-children=".portletEvents .portletFooter a"> More events </replace-->
@@ -468,6 +456,10 @@
 	    <after css:theme="#content-core" css:content="#viewlet-below-content" />
 	 </rules>
     </rules>
+	 
+		<!-- mobile front bar titles, aka quickfacts -->
+		<replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.left-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content=".left-front-column > dl > dt > a > span" css:if-content=".left-front-column" />
+		<replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.middle-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content=".middle-front-column > dl > dt > a > span" css:if-content=".middle-front-column" />
 	 <!--addthis-->
 		 <append css:theme="body">
 			 <!-- Go to www.addthis.com/dashboard to customize your tools -->
