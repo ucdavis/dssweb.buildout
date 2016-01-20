@@ -5,6 +5,8 @@
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="dssweb.theme.magic">
 
+    <include package=".faceted_views" />
+
     <browser:page
         name="search"
         class=".search.Search"
