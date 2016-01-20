@@ -416,19 +416,7 @@
        <rules css:if-content="#doormat-container">
 		<replace css:theme-children="div.foot-wrap" css:content="#doormat-container" />
 	</rules>
-	<rules css:if-content=".site-psychology">
-        <copy css:content=".department-contact"
-               css:theme="#vcard" />
-        <drop css:content=".footer-nav > .portlet.portletNavigationTree" />
-        <replace css:theme-children="#footer-middle"
-                 css:content=".footer-nav > dl > dd > ul.navTree.navTreeLevel0"
-                 method="raw"/>
-    <replace css:theme-children="#foot-social"
-				  css:content-children=".portlet-static-social-media > ul" />
-        <drop css:theme="#foot-center" />
-        <drop css:theme="#foot-right" />
-	</rules>
-		
+	
   	  <after css:theme=".foot-wrap" css:content="#portal-footer" />
 	  <!--Analytics-->
 	  <append css:theme="#footer" css:if-content=".site-psychology">
