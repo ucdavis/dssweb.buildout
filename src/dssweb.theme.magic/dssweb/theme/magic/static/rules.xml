@@ -200,7 +200,7 @@
 		   css:content="li#portaltab-give > a"
 		   css:theme="li#uti-give > a" />
 		
-		<copy attributes="href"
+		<!--copy attributes="href"
 		css:content="#portal-advanced-search > a"
 		css:theme="#search-util-btn > a" />
 		<copy attributes="href"
@@ -208,8 +208,8 @@
 		css:theme="#search-util-btn > p > a" />
 
 		<copy attributes="href"
-		css:content="#portaltab-contact > a"
-		css:theme="#email-util-btn > a" />
+		css:content="li#portaltab-contact > a"
+		css:theme="li#email-util-btn > a" />
 
 		<copy attributes="href"
 		css:content="#portaltab-contact > a"
@@ -222,7 +222,7 @@
 		<copy attributes="href"
 		css:content="#portaltab-map > a"
 		css:theme="#location-util-btn > p > a" method="raw"/>
-		<drop css:content="#portaltab-map" />
+		<drop css:content="#portaltab-map" /-->
 
 
 
