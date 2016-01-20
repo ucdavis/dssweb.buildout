@@ -244,14 +244,14 @@
 
 	   <!-- classes for dropdown -->
 	   <replace css:theme-children="ul.left" css:content-children="#portal-globalnav" />
-	   <replace content="//ul[contains(@class,'submenu')]/@class">
+	   <replace content="//ul[@id='portal-globalnav']//ul[contains(@class,'submenu')]/@class">
 	       <xsl:attribute name="class">dropdown</xsl:attribute>
 		  <xsl:attribute name="style">margin-top: 0px;</xsl:attribute>
 	   </replace>
-	   <replace content="//li[contains(@class,'dropdown')]/@class">
+	   <replace content="//ul[@id='portal-globalnav']//li[contains(@class,'dropdown')]/@class">
 	       <xsl:attribute name="class">has-dropdown</xsl:attribute>
 	   </replace>
-		  
+
 		<!-- replace main content and add title class --> 
 		<!--removed our people view, but I think this could be dealt with differently -->
 		
@@ -362,15 +362,16 @@
 		  
     </rules>
 	  
-   	   <!--rules css:if-content="body.portaltype-dsscontact" >
+   	   <!-- <rules css:if-content="body.portaltype-dsscontact" >
    		   
-   		   <!--replace css:theme-children=".sidebar-1" css:content=".side-contact" /-->
-   		   <!--><replace css:theme-children=".adr-only" css:content-children=".side-contact" />
+   		   <replace css:theme-children=".sidebar-1" css:content=".side-contact" />
+   		   <replace css:theme-children=".adr-only" css:content-children=".side-contact" />
    		   <replace css:theme-children=".sm-contacts" css:content-children=".key-contacts" />
 		   <replace css:theme="#content-core" css:content="#content-core" />
 		   <replace css:theme="#google-map" css:content="#viewlet-above-content-title"/>
 		   
-   	   </rules-->
+   	   </rules>
+        -->
  	  <!--Prospective Students T6-->
  	   <rules css:if-content=".subsection-prospective-students" >
 		   <drop css:content=".image-under-banner" />
