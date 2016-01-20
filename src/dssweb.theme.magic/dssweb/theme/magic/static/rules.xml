@@ -20,10 +20,10 @@
 	<theme href="t2_ourpeople.html" css:if-content="body.template-facetednavigation_view" />
 	<theme href="t7_contact.html" css:if-content="body.portaltype-dsscontact" />
 	<theme href="t7_contact.html" css:if-content="body.section-contact" />
-	<!--theme href="t8_students.html" css:if-content=".subsection-psychology-major" /-->
+
 
 	<theme href="t11_calendar.html" css:if-content=".template-solgemafullcalendar_view" />
-	<theme href="t14_search.html" css:if-content=".template-search" />
+	<!--theme href="t14_search.html" css:if-content=".template-search" /-->
 	<theme href="t17_fullwidth.html" if-not-content='//div[@id="portal-column-two"]' /> 
 	
 	<theme href="t4_adhoc2.html" />
@@ -165,10 +165,19 @@
 		<merge attributes="class"
 		css:content=".front-page-events"
 		css:theme="#container-3 > div > div > div.bcontroller > a"  />
+		
+		<!--rules for the static portlet types that can end up on the front page -->
+		<rules css:if-content=".right-front-column dl.portletStaticText">   
+		<replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.right-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a"> The Latest</replace>
+		</rules>
+		<rules css:if-not-content=".right-front-column dl.portletStaticText"> 
+		<replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.right-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content=".right-front-column > dl > dt > a > span" css:if-content=".right-front-column" />
+		</rules>
 
 
 	
 	</rules> <!--end front page rules-->
+	
      <!-- rule to set up title to replace static logo on ipad/mobile -->
      <replace css:theme-children=".justname h1">
         <xsl:for-each css:select="a#portal-logo">
@@ -263,12 +272,7 @@
 			
 			<!--replace theme-children="//*[@id='r-title']/a/span" content="//*[@id='right-front-column']/dl/dt/span[2]/a/text()" /-->
 			<!--replace css:content-children=".portletEvents .portletFooter a"> More events </replace-->
-		  <rules css:if-content=".right-front-column dl.portletStaticText">   
-			<replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.right-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a"> The Latest</replace>
-		</rules>
-		<rules css:if-not-content=".right-front-column dl.portletStaticText"> 
-		  <replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.right-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content=".right-front-column > dl > dt > a > span" css:if-content=".right-front-column" />
-	  </rules>
+		  
 		
 			
 		   <!--replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.right-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content=".right-front-column > dl > dt > span > a" css:if-content=".right-front-column dl.portletStaticText" /-->
@@ -281,15 +285,14 @@
 	      <!-- Search Fixups -->
 	      <drop css:content=".searchSection" />
 	      <copy css:content="#portal-searchbox" css:theme="#uti-search" />
-		    <replace content="//div[@id='portal-searchbox']//input[@class='searchButton']/@value">
+		   <replace content="//div[@id='portal-searchbox']//input[@class='searchButton']/@value">
 		    <xsl:attribute name="value">GO</xsl:attribute>
 		    </replace>
 			
 		  
   	    <!-- search results page -->
-  	    <rules css:if-content=".template-search">
-  		    <replace css:theme-children="#content-row" css:content="#content" />
-  		    <drop css:theme=".title-box" />
+  	    <rules css:if-content="body.template-search">
+			  <drop css:theme=".title-box" />
   	    </rules>
 		  
 		<!--views -->
