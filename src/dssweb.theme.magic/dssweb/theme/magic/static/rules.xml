@@ -251,7 +251,7 @@
          <xsl:copy>
            <xsl:attribute name="class">dropdown</xsl:attribute>
            <xsl:attribute name="style">margin-top: 0px;</xsl:attribute>
-           <xsl:copy-of select="@*[(local-name() != 'class') or (local-name() != 'style')]" />
+           <xsl:copy-of select="@*[(local-name() != 'class') and (local-name() != 'style')]" />
            <xsl:apply-templates />
          </xsl:copy>
        </replace>
