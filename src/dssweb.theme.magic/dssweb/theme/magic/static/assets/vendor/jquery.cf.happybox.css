@@ -1,56 +1,20 @@
 /* jquery.cf.happybox.scss */
-@font-face {
-  font-family: 'lsr';
-  src: url("fonts/lucida/LucidaSansRegular.ttf");
-  font-weight: normal;
-  font-style: normal; }
-@font-face {
-  font-family: 'lsb';
-  src: url("fonts/lucida/LucidaSansBold.ttf");
-  font-weight: normal;
-  font-style: normal; }
+@font-face { font-family: 'lsr'; src: url("fonts/lucida/LucidaSansRegular.ttf"); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'lsb'; src: url("fonts/lucida/LucidaSansBold.ttf"); font-weight: normal; font-style: normal; }
 /* Example use case:
-
-  %abstract-class {
-    font-family: Verdana;
-  }
- 
-  #my-div {
-    @extend %abstract-class;
-  }
- 
-  #my-other-div {
-    @extend %abstract-class;
-  }
-
-  ... compiles as:
-  #my-div, #my-other-div {
-    font-family: Verdana;
-  }
+ %abstract-class { font-family: Verdana; }  #my-div { @extend %abstract-class; }  #my-other-div { @extend %abstract-class; }
+ ... compiles as: #my-div, #my-other-div { font-family: Verdana; }
 
 */
 /* 2014-05-12 RAK: Bootstrap overrides moved from default gem installation that placed overrides directly in the _variables.scss file */
 /* UCD Identity - Colors (http://identitystandards.ucdavis.edu/graphic-standards/colors.html) */
 /* Other Custom colors */
-/* line 7, ../../sass/vendor/jquery.cf.happybox.scss */
-.top-panel .action-element .narrow-col {
-  background: rgba(0, 40, 85, 0.8); }
+.top-panel .action-element .narrow-col { background: rgba(0, 40, 85, 0.8); }
 
 /*----- Mobile breakpoint ("S") --------*/
-@media screen and (max-width: 767px) {
-  /* line 20, ../../sass/vendor/jquery.cf.happybox.scss */
-  #content #top-panel-row .panel-body, #content #bottom-panel-row .panel-body, #am-content #top-panel-row .panel-body, #am-content #bottom-panel-row .panel-body {
-    margin-top: 0; }
-    /* line 23, ../../sass/vendor/jquery.cf.happybox.scss */
-    #content #top-panel-row .panel-body .narrow-col .bcontroller, #content #bottom-panel-row .panel-body .narrow-col .bcontroller, #am-content #top-panel-row .panel-body .narrow-col .bcontroller, #am-content #bottom-panel-row .panel-body .narrow-col .bcontroller {
-      padding: 0 15px 15px 15px; }
-  /* line 31, ../../sass/vendor/jquery.cf.happybox.scss */
-  #content #top-panel-row .panel-heading h4.panel-title, #content #top-panel-row .panel-heading h4.panel-title a, #content #bottom-panel-row .panel-heading h4.panel-title, #content #bottom-panel-row .panel-heading h4.panel-title a, #am-content #top-panel-row .panel-heading h4.panel-title, #am-content #top-panel-row .panel-heading h4.panel-title a, #am-content #bottom-panel-row .panel-heading h4.panel-title, #am-content #bottom-panel-row .panel-heading h4.panel-title a {
-    font-size: 18px !important;
-    font-size: 1.125rem !important; } }
+@media screen and (max-width: 767px) { #content #top-panel-row .panel-body, #content #bottom-panel-row .panel-body, #am-content #top-panel-row .panel-body, #am-content #bottom-panel-row .panel-body { margin-top: 0; }
+  #content #top-panel-row .panel-body .narrow-col .bcontroller, #content #bottom-panel-row .panel-body .narrow-col .bcontroller, #am-content #top-panel-row .panel-body .narrow-col .bcontroller, #am-content #bottom-panel-row .panel-body .narrow-col .bcontroller { padding: 0 15px 15px 15px; }
+  #content #top-panel-row .panel-heading h4.panel-title, #content #top-panel-row .panel-heading h4.panel-title a, #content #bottom-panel-row .panel-heading h4.panel-title, #content #bottom-panel-row .panel-heading h4.panel-title a, #am-content #top-panel-row .panel-heading h4.panel-title, #am-content #top-panel-row .panel-heading h4.panel-title a, #am-content #bottom-panel-row .panel-heading h4.panel-title, #am-content #bottom-panel-row .panel-heading h4.panel-title a { font-size: 18px !important; font-size: 1.125rem !important; } }
 /*----- Target tablet, desktop, and higher -------*/
-@media screen and (min-width: 768px) {
-  /* line 43, ../../sass/vendor/jquery.cf.happybox.scss */
-  .cf-happybox-processed {
-    overflow: hidden; } }
+@media screen and (min-width: 768px) { .cf-happybox-processed { overflow: hidden; } }
 /* /jquery.cf.happybox.scss */

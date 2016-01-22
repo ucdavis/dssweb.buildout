@@ -1,61 +1,21 @@
-@font-face {
-  font-family: 'lsr';
-  src: url("fonts/lucida/LucidaSansRegular.ttf");
-  font-weight: normal;
-  font-style: normal; }
-@font-face {
-  font-family: 'lsb';
-  src: url("fonts/lucida/LucidaSansBold.ttf");
-  font-weight: normal;
-  font-style: normal; }
+@font-face { font-family: 'lsr'; src: url("fonts/lucida/LucidaSansRegular.ttf"); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'lsb'; src: url("fonts/lucida/LucidaSansBold.ttf"); font-weight: normal; font-style: normal; }
 /* Example use case:
-
-  %abstract-class {
-    font-family: Verdana;
-  }
- 
-  #my-div {
-    @extend %abstract-class;
-  }
- 
-  #my-other-div {
-    @extend %abstract-class;
-  }
-
-  ... compiles as:
-  #my-div, #my-other-div {
-    font-family: Verdana;
-  }
+ %abstract-class { font-family: Verdana; }  #my-div { @extend %abstract-class; }  #my-other-div { @extend %abstract-class; }
+ ... compiles as: #my-div, #my-other-div { font-family: Verdana; }
 
 */
 /* 2014-05-12 RAK: Bootstrap overrides moved from default gem installation that placed overrides directly in the _variables.scss file */
 /* UCD Identity - Colors (http://identitystandards.ucdavis.edu/graphic-standards/colors.html) */
 /* Other Custom colors */
-/* line 7, ../../sass/sections/publications.scss */
-#content-core button {
-  width: auto; }
-  /* line 9, ../../sass/sections/publications.scss */
-  #content-core button a {
-    padding: 5px;
-    text-decoration: none;
-    color: #000;
-    font-size: 14px;
-    font-size: 0.875rem; }
-/* line 16, ../../sass/sections/publications.scss */
-#content-core ul#pubs {
-  margin: 5px 0 15px 2px; }
-  /* line 18, ../../sass/sections/publications.scss */
-  #content-core ul#pubs li {
-    margin-top: 10px; }
+#content-core button { width: auto; }
+#content-core button a { padding: 5px; text-decoration: none; color: #000; font-size: 14px; font-size: 0.875rem; }
+#content-core ul#pubs { margin: 5px 0 15px 2px; }
+#content-core ul#pubs li { margin-top: 10px; }
 
 /*----- Mobile breakpoint --------*/
-/* line 25, ../../sass/sections/publications.scss */
-i {
-  font-style: italic !important; }
+i { font-style: italic !important; }
 
 /*----- "M" breakpoint -------*/
 /*----- Desktop breakpoint -------*/
-@media screen and (min-width: 992px) {
-  /* line 45, ../../sass/sections/publications.scss */
-  .sidebar-right {
-    margin-top: 116px; } }
+@media screen and (min-width: 992px) { .sidebar-right { margin-top: 116px; } }

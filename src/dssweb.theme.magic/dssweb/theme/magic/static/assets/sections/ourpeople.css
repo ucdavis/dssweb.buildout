@@ -1,31 +1,8 @@
-@font-face {
-  font-family: 'lsr';
-  src: url("fonts/lucida/LucidaSansRegular.ttf");
-  font-weight: normal;
-  font-style: normal; }
-@font-face {
-  font-family: 'lsb';
-  src: url("fonts/lucida/LucidaSansBold.ttf");
-  font-weight: normal;
-  font-style: normal; }
+@font-face { font-family: 'lsr'; src: url("fonts/lucida/LucidaSansRegular.ttf"); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'lsb'; src: url("fonts/lucida/LucidaSansBold.ttf"); font-weight: normal; font-style: normal; }
 /* Example use case:
-
-  %abstract-class {
-    font-family: Verdana;
-  }
- 
-  #my-div {
-    @extend %abstract-class;
-  }
- 
-  #my-other-div {
-    @extend %abstract-class;
-  }
-
-  ... compiles as:
-  #my-div, #my-other-div {
-    font-family: Verdana;
-  }
+ %abstract-class { font-family: Verdana; }  #my-div { @extend %abstract-class; }  #my-other-div { @extend %abstract-class; }
+ ... compiles as: #my-div, #my-other-div { font-family: Verdana; }
 
 */
 /* 2014-05-12 RAK: Bootstrap overrides moved from default gem installation that placed overrides directly in the _variables.scss file */
@@ -36,292 +13,80 @@
 /*#container-1, #container-2 {
 	visibility: hidden;
 }*/
-/* line 23, ../../sass/sections/ourpeople.scss */
-#content a {
-  text-decoration: none; }
-  /* line 25, ../../sass/sections/ourpeople.scss */
-  #content a:hover {
-    text-decoration: underline; }
+#content a { text-decoration: none; }
+#content a:hover { text-decoration: underline; }
 
-/* line 31, ../../sass/sections/ourpeople.scss */
-#am-content p {
-  line-height: 18px !important;
-  line-height: 1.125rem !important; }
+#am-content p { line-height: 18px !important; line-height: 1.125rem !important; }
 
-/* line 35, ../../sass/sections/ourpeople.scss */
-.genericTile {
-  padding-left: 0;
-  padding-right: 20px;
-  border: 5px solid white;
-  background-color: #e5e9ef; }
-  /* line 40, ../../sass/sections/ourpeople.scss */
-  .genericTile .personEntryWrapper {
-    /* top: -10px; // sync with .caption margin-top  removed by carol */
-    left: 0;
-    background: #ccd4e0;
-    width: 100px;
-    position: relative;
-    height: 100px !important;
-    float: left; }
+.genericTile { padding-left: 0; padding-right: 20px; border: 5px solid white; background-color: #e5e9ef; }
+.genericTile .personEntryWrapper { /* top: -10px; // sync with .caption margin-top  removed by carol */ left: 0; background: #ccd4e0; width: 100px; position: relative; height: 100px !important; float: left; }
 
 /*---- Person tile -----*/
-/* line 51, ../../sass/sections/ourpeople.scss */
-span.personName {
-  position: relative;
-  padding-left: 10px;
-  display: flex;
-  margin-right: 0;
-  padding-top: 5px;
-  padding-bottom: 0px;
-  font-size: 0.86em;
-  display: -webkit-flex;
-  /* Safari */ }
+span.personName { position: relative; padding-left: 10px; display: flex; margin-right: 0; padding-top: 5px; padding-bottom: 0px; font-size: 0.86em; display: -webkit-flex; /* Safari */ }
 
-/* line 61, ../../sass/sections/ourpeople.scss */
-.labs {
-  padding-top: 5px; }
+.labs { padding-top: 5px; }
 
-/* line 64, ../../sass/sections/ourpeople.scss */
-.genericTile p, .genericTile p a {
-  font-size: 13px !important;
-  font-size: 0.8125rem !important;
-  font-size: 0.77rem !important; }
+.genericTile p, .genericTile p a { font-size: 13px !important; font-size: 0.8125rem !important; font-size: 0.77rem !important; }
 
-/* line 69, ../../sass/sections/ourpeople.scss */
-#am-content {
-  padding: 0 0 15px 20px; }
+#am-content { padding: 0 0 15px 20px; }
 
-/* line 72, ../../sass/sections/ourpeople.scss */
-.op-sidebar-title {
-  text-align: left;
-  text-transform: uppercase; }
-  /* line 76, ../../sass/sections/ourpeople.scss */
-  .op-sidebar-title span {
-    font-size: 16px;
-    font-size: 1rem;
-    color: #000; }
+.op-sidebar-title { text-align: left; text-transform: uppercase; }
+.op-sidebar-title span { font-size: 16px; font-size: 1rem; color: #000; }
 
-/* line 81, ../../sass/sections/ourpeople.scss */
-.sidebar {
-  margin-top: 20px;
-  color: #4D688C; }
-  /* line 84, ../../sass/sections/ourpeople.scss */
-  .sidebar > div {
-    margin-left: 0; }
+.sidebar { margin-top: 20px; color: #4D688C; }
+.sidebar > div { margin-left: 0; }
 
-/* line 89, ../../sass/sections/ourpeople.scss */
-.caption {
-  position: relative;
-  /* margin-top: 10px; dp */
-  /*margin-top: -10px; */
-  /*margin-left: 100px; // keep contact text from wrapping under photo */
-  left: 10px; }
-  /* line 97, ../../sass/sections/ourpeople.scss */
-  .caption p {
-    padding: 0 !important;
-    margin: 0 !important; }
-  /* line 103, ../../sass/sections/ourpeople.scss */
-  .caption .personName a {
-    font-weight: bold; }
-  /* line 107, ../../sass/sections/ourpeople.scss */
-  .caption a {
-    color: #4d688c; }
-  /* line 110, ../../sass/sections/ourpeople.scss */
-  .caption .job {
-    font-size: 11px !important;
-    font-size: 0.6875rem !important;
-    font-style: italic; }
+.caption { position: relative; /* margin-top: 10px; dp */ /*margin-top: -10px; */ /*margin-left: 100px; // keep contact text from wrapping under photo */ left: 10px; }
+.caption p { padding: 0 !important; margin: 0 !important; }
+.caption .personName a { font-weight: bold; }
+.caption a { color: #4d688c; }
+.caption .job { font-size: 11px !important; font-size: 0.6875rem !important; font-style: italic; }
 
-/* line 115, ../../sass/sections/ourpeople.scss */
-.caption.no-photo {
-  margin-left: 20px; }
+.caption.no-photo { margin-left: 20px; }
 
-/* line 118, ../../sass/sections/ourpeople.scss */
-#dropdown-icon {
-  float: right; }
+#dropdown-icon { float: right; }
 
-/* line 121, ../../sass/sections/ourpeople.scss */
-.lab {
-  clear: left;
-  padding: 5px 0;
-  padding-left: 15px;
-  padding-bottom: 0px; }
+.lab { clear: left; padding: 5px 0; padding-left: 15px; padding-bottom: 0px; }
 
-/* line 129, ../../sass/sections/ourpeople.scss */
-.table-header {
-  margin-bottom: 2px;
-  background: #008EAA;
-  color: #fff;
-  padding-left: 10px;
-  height: 50px;
-  line-height: 50px;
-  line-height: 3.125rem; }
+.table-header { margin-bottom: 2px; background: #008EAA; color: #fff; padding-left: 10px; height: 50px; line-height: 50px; line-height: 3.125rem; }
 
-/* line 140, ../../sass/sections/ourpeople.scss */
-#top-panel-row .bcontroller .btn-home.btn-primary {
-  padding-top: 7px !important;
-  background-position: 50% 14px !important; }
+#top-panel-row .bcontroller .btn-home.btn-primary { padding-top: 7px !important; background-position: 50% 14px !important; }
 
-@media screen and (max-width: 767px) {
-  /* line 149, ../../sass/sections/ourpeople.scss */
-  #sbA {
-    background-color: rgba(255, 255, 255, 0.98);
-    border: 2px solid #e5e9ef;
-    margin-right: -2px;
-    position: absolute;
-    top: 50px;
-    z-index: 2; }
-
-  /* line 159, ../../sass/sections/ourpeople.scss */
-  #container-3 {
-    z-index: 20; }
-    /* line 161, ../../sass/sections/ourpeople.scss */
-    #container-3 h2 {
-      display: none; }
-    /* line 165, ../../sass/sections/ourpeople.scss */
-    #container-3 h3 a {
-      color: #FFF; }
-    /* line 169, ../../sass/sections/ourpeople.scss */
-    #container-3 p {
-      color: #FFF; }
-    /* line 172, ../../sass/sections/ourpeople.scss */
-    #container-3 .panel-body {
-      margin-top: 0;
-      padding-top: 0 !important;
-      padding-bottom: 0 !important;
-      padding-left: 15px !important;
-      background-color: #008EAA; }
-      /* line 178, ../../sass/sections/ourpeople.scss */
-      #container-3 .panel-body .content-wrap {
-        padding-top: 15px;
-        padding-bottom: 0 !important; }
-    /* line 183, ../../sass/sections/ourpeople.scss */
-    #container-3 .bcontroller {
-      margin-left: 15px; }
-      /* line 185, ../../sass/sections/ourpeople.scss */
-      #container-3 .bcontroller .btn-primary {
-        margin-top: 0 !important;
-        background-image: none;
-        background-color: transparent;
-        color: #FFF !important; }
-        /* line 190, ../../sass/sections/ourpeople.scss */
-        #container-3 .bcontroller .btn-primary span {
-          display: none; }
-
-  /* line 198, ../../sass/sections/ourpeople.scss */
-  #content .menu-icon-right {
-    margin-right: 75px; }
-  /* line 201, ../../sass/sections/ourpeople.scss */
-  #content a:hover {
-    text-decoration: none; }
-  /* line 204, ../../sass/sections/ourpeople.scss */
-  #content #top-panel-row {
-    margin-top: 115px; }
-    /* line 207, ../../sass/sections/ourpeople.scss */
-    #content #top-panel-row .right-panel .panel-heading {
-      width: 50%;
-      margin-left: 50%;
-      background-color: rgba(0, 40, 85, 0.8); }
-      /* line 211, ../../sass/sections/ourpeople.scss */
-      #content #top-panel-row .right-panel .panel-heading .panel-title {
-        text-transform: uppercase; }
-        /* line 213, ../../sass/sections/ourpeople.scss */
-        #content #top-panel-row .right-panel .panel-heading .panel-title a {
-          background-color: transparent;
-          font-size: 16px !important;
-          font-size: 1rem !important;
-          background: url(../../images/icons/white-arrow-down-sm.png) 90% 50% no-repeat transparent; }
-          /* line 217, ../../sass/sections/ourpeople.scss */
-          #content #top-panel-row .right-panel .panel-heading .panel-title a.collapsed {
-            background: url(../../images/icons/white-arrow-right-sm.png) 90% 50% no-repeat transparent; }
-          /* line 220, ../../sass/sections/ourpeople.scss */
-          #content #top-panel-row .right-panel .panel-heading .panel-title a:hover {
-            background: url(../../images/icons/white-arrow-down-sm.png) 90% 50% no-repeat transparent; }
-
-  /* line 233, ../../sass/sections/ourpeople.scss */
-  .sidebar .panel-heading {
-    z-index: 3;
-    position: absolute;
-    top: 5px;
-    right: 18px;
-    background-color: transparent !important; }
-    /* line 241, ../../sass/sections/ourpeople.scss */
-    .sidebar .panel-heading .op-sidebar-title {
-      display: inline; }
-      /* line 243, ../../sass/sections/ourpeople.scss */
-      .sidebar .panel-heading .op-sidebar-title a {
-        background-image: none !important; }
-    /* line 247, ../../sass/sections/ourpeople.scss */
-    .sidebar .panel-heading .panel-title a, .sidebar .panel-heading .panel-title a:hover {
-      position: static !important;
-      background-color: transparent !important;
-      background: none;
-      text-align: right;
-      width: 60px;
-      height: 60px; }
-      /* line 254, ../../sass/sections/ourpeople.scss */
-      .sidebar .panel-heading .panel-title a .menu-icon, .sidebar .panel-heading .panel-title a:hover .menu-icon {
-        position: relative;
-        display: block;
-        width: 60px;
-        height: 60px;
-        background-color: #FFF;
-        border: 4px solid #e5e5e5; }
-        /* line 261, ../../sass/sections/ourpeople.scss */
-        .sidebar .panel-heading .panel-title a .menu-icon span:after, .sidebar .panel-heading .panel-title a:hover .menu-icon span:after {
-          display: block;
-          top: 15px;
-          left: 14px; }
-  /* line 269, ../../sass/sections/ourpeople.scss */
-  .sidebar .collapsible {
-    background: #e5e5e5; }
-  /* line 272, ../../sass/sections/ourpeople.scss */
-  .sidebar .panel-body {
-    padding: 15px 20px 20px 20px !important; }
-    /* line 277, ../../sass/sections/ourpeople.scss */
-    .sidebar .panel-body #c5 span {
-      font-size: 30px !important;
-      font-size: 1.875rem !important;
-      line-height: 30px;
-      line-height: 1.875rem;
-      height: 30px !important;
-      width: 32px !important;
-      text-align: center; }
-    /* line 284, ../../sass/sections/ourpeople.scss */
-    .sidebar .panel-body .checkForm {
-      padding-top: 8px !important;
-      margin-bottom: 8px; }
-      /* line 287, ../../sass/sections/ourpeople.scss */
-      .sidebar .panel-body .checkForm li {
-        margin-bottom: 15px; }
-
-  /* line 294, ../../sass/sections/ourpeople.scss */
-  #am-content {
-    padding: 0 20px 20px 20px; }
-
-  /* line 297, ../../sass/sections/ourpeople.scss */
-  .panel-body {
-    padding: 10px 0 !important; }
-
-  /* line 301, ../../sass/sections/ourpeople.scss */
-  .genericTile {
-    border: 3px solid white;
-    background: url(../../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat #e5e5e5; }
-    /* line 304, ../../sass/sections/ourpeople.scss */
-    .genericTile .oemail-label, .genericTile .officeLocation, .genericTile .lab {
-      display: none; } }
-@media screen and (min-width: 768px) {
-  /* line 310, ../../sass/sections/ourpeople.scss */
-  .sidebar {
-    margin-top: 65px; } }
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  /* line 316, ../../sass/sections/ourpeople.scss */
-  .genericTile .personEntryWrapper {
-    width: 100px;
-    height: 100px !important; } }
+@media screen and (max-width: 767px) { #sbA { background-color: rgba(255, 255, 255, 0.98); border: 2px solid #e5e9ef; margin-right: -2px; position: absolute; top: 50px; z-index: 2; }
+  #container-3 { z-index: 20; }
+  #container-3 h2 { display: none; }
+  #container-3 h3 a { color: #FFF; }
+  #container-3 p { color: #FFF; }
+  #container-3 .panel-body { margin-top: 0; padding-top: 0 !important; padding-bottom: 0 !important; padding-left: 15px !important; background-color: #008EAA; }
+  #container-3 .panel-body .content-wrap { padding-top: 15px; padding-bottom: 0 !important; }
+  #container-3 .bcontroller { margin-left: 15px; }
+  #container-3 .bcontroller .btn-primary { margin-top: 0 !important; background-image: none; background-color: transparent; color: #FFF !important; }
+  #container-3 .bcontroller .btn-primary span { display: none; }
+  #content .menu-icon-right { margin-right: 75px; }
+  #content a:hover { text-decoration: none; }
+  #content #top-panel-row { margin-top: 115px; }
+  #content #top-panel-row .right-panel .panel-heading { width: 50%; margin-left: 50%; background-color: rgba(0, 40, 85, 0.8); }
+  #content #top-panel-row .right-panel .panel-heading .panel-title { text-transform: uppercase; }
+  #content #top-panel-row .right-panel .panel-heading .panel-title a { background-color: transparent; font-size: 16px !important; font-size: 1rem !important; background: url(../../images/icons/white-arrow-down-sm.png) 90% 50% no-repeat transparent; }
+  #content #top-panel-row .right-panel .panel-heading .panel-title a.collapsed { background: url(../../images/icons/white-arrow-right-sm.png) 90% 50% no-repeat transparent; }
+  #content #top-panel-row .right-panel .panel-heading .panel-title a:hover { background: url(../../images/icons/white-arrow-down-sm.png) 90% 50% no-repeat transparent; }
+  .sidebar .panel-heading { z-index: 3; position: absolute; top: 5px; right: 18px; background-color: transparent !important; }
+  .sidebar .panel-heading .op-sidebar-title { display: inline; }
+  .sidebar .panel-heading .op-sidebar-title a { background-image: none !important; }
+  .sidebar .panel-heading .panel-title a, .sidebar .panel-heading .panel-title a:hover { position: static !important; background-color: transparent !important; background: none; text-align: right; width: 60px; height: 60px; }
+  .sidebar .panel-heading .panel-title a .menu-icon, .sidebar .panel-heading .panel-title a:hover .menu-icon { position: relative; display: block; width: 60px; height: 60px; background-color: #FFF; border: 4px solid #e5e5e5; }
+  .sidebar .panel-heading .panel-title a .menu-icon span:after, .sidebar .panel-heading .panel-title a:hover .menu-icon span:after { display: block; top: 15px; left: 14px; }
+  .sidebar .collapsible { background: #e5e5e5; }
+  .sidebar .panel-body { padding: 15px 20px 20px 20px !important; }
+  .sidebar .panel-body #c5 span { font-size: 30px !important; font-size: 1.875rem !important; line-height: 30px; line-height: 1.875rem; height: 30px !important; width: 32px !important; text-align: center; }
+  .sidebar .panel-body .checkForm { padding-top: 8px !important; margin-bottom: 8px; }
+  .sidebar .panel-body .checkForm li { margin-bottom: 15px; }
+  #am-content { padding: 0 20px 20px 20px; }
+  .panel-body { padding: 10px 0 !important; }
+  .genericTile { border: 3px solid white; background: url(../../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat #e5e5e5; }
+  .genericTile .oemail-label, .genericTile .officeLocation, .genericTile .lab { display: none; } }
+@media screen and (min-width: 768px) { .sidebar { margin-top: 65px; } }
+@media screen and (min-width: 768px) and (max-width: 991px) { .genericTile .personEntryWrapper { width: 100px; height: 100px !important; } }
 /*----- Desktop breakpoint -------*/
-@media screen and (min-width: 991px) {
-  /* line 325, ../../sass/sections/ourpeople.scss */
-  .sidebar {
-    padding-right: 85px; } }
+@media screen and (min-width: 991px) { .sidebar { padding-right: 85px; } }
 /* /ourpeople.scss */

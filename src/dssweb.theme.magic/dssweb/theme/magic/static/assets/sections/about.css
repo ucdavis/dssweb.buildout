@@ -1,52 +1,19 @@
 /* BIO Page */
-/* line 4, ../../sass/sections/about.scss */
-#about-bio-h3-anchors {
-  margin-left: 0; }
+#about-bio-h3-anchors { margin-left: 0; }
 
-/* line 9, ../../sass/sections/about.scss */
-.content-bio-container {
-  margin-top: 50px; }
+.content-bio-container { margin-top: 50px; }
 
-/* line 13, ../../sass/sections/about.scss */
-#sidebar-bio {
-  height: 100%;
-  padding: 0;
-  min-width: 190px;
-  height: auto;
-  text-align: center;
-  background-color: #e5e5e5; }
+#sidebar-bio { height: 100%; padding: 0; min-width: 190px; height: auto; text-align: center; background-color: #e5e5e5; }
 
-/* line 21, ../../sass/sections/about.scss */
-#portrait {
-  height: 225px;
-  max-width: 250px;
-  width: 100%; }
+#portrait { height: 225px; max-width: 250px; width: 100%; }
 
-/* line 27, ../../sass/sections/about.scss */
-#sidebar-info {
-  text-align: left;
-  margin-left: 35px;
-  margin-bottom: 15px;
-  padding-top: 10px;
-  list-style-type: circle; }
+#sidebar-info { text-align: left; margin-left: 35px; margin-bottom: 15px; padding-top: 10px; list-style-type: circle; }
 
-/* line 35, ../../sass/sections/about.scss */
-#sidebar-contact {
-  border-bottom: 1px solid black; }
+#sidebar-contact { border-bottom: 1px solid black; }
 
-/* line 40, ../../sass/sections/about.scss */
-#about-bio .panel-body {
-  font-family: arial;
-  padding-right: 10px;
-  background: #fff; }
-/* line 45, ../../sass/sections/about.scss */
-#about-bio h3 {
-  font-size: 20px;
-  padding-top: 25px;
-  padding-bottom: 25px; }
+#about-bio .panel-body { font-family: arial; padding-right: 10px; background: #fff; }
+#about-bio h3 { font-size: 20px; padding-top: 25px; padding-bottom: 25px; }
 
-/* line 51, ../../sass/sections/about.scss */
-.bio-people {
-  height: auto; }
+.bio-people { height: auto; }
 
 /* /BIO Page */
