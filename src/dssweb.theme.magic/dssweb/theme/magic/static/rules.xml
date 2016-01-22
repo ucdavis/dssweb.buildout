@@ -77,9 +77,12 @@
   <!--colors for people portlets -->
   <rules css:if-content="dd.doormatSectionBody div.economics">
     <rules if-path="/people">
-    <replace content="//dl[contains(@class,'portlet')]/@class" method="raw">
-       <!--replace content="//dt[contains(@class,'portletHeader')]" method="raw"-->
-      <xsl:attribute name="class"><xsl:value-of select="."/> cork-oak</xsl:attribute>
+    <replace content="//dl[contains(@class,'portlet')]" method="raw">
+      <xsl:copy>
+        <xsl:attribute name="class"><xsl:value-of select="@class"/> cork-oak</xsl:attribute>
+        <xsl:copy-of select="@*[local-name() != 'class']" />
+        <xsl:appy-templates />
+      </xsl:copy>
     </replace>
 </rules>
   </rules> 
@@ -244,13 +247,21 @@
 
 	   <!-- classes for dropdown -->
 	   <replace css:theme-children="ul.left" css:content-children="#portal-globalnav" />
-	   <replace content="//ul[@id='portal-globalnav']//ul[contains(@class,'submenu')]/@class">
-	       <xsl:attribute name="class">dropdown</xsl:attribute>
-		  <xsl:attribute name="style">margin-top: 0px;</xsl:attribute>
-	   </replace>
-	   <replace content="//ul[@id='portal-globalnav']//li[contains(@class,'dropdown')]/@class">
-	       <xsl:attribute name="class">has-dropdown</xsl:attribute>
-	   </replace>
+       <replace content="//ul[@id='portal-globalnav']//ul[contains(@class,'submenu')]">
+         <xsl:copy>
+           <xsl:attribute name="class">dropdown</xsl:attribute>
+           <xsl:attribute name="style">margin-top: 0px;</xsl:attribute>
+           <xsl:copy-of select="@*[(local-name() != 'class') or (local-name() != 'style')]" />
+           <xsl:apply-templates />
+         </xsl:copy>
+       </replace>
+       <replace content="//ul[@id='portal-globalnav']//li[contains(@class,'dropdown')]">
+         <xsl:copy>
+           <xsl:attribute name="class">has-dropdown</xsl:attribute>
+           <xsl:copy-of select="@*[local-name() != 'class']" />
+           <xsl:apply-templates />
+         </xsl:copy>
+       </replace>
 
 		<!-- replace main content and add title class --> 
 		<!--removed our people view, but I think this could be dealt with differently -->
@@ -261,13 +272,19 @@
 	   </rules>
 	   </rules>
 
-      <replace content="//h1[contains(@class,'documentFirstHeading')]/@class" >
-         <!--replace content="//dt[contains(@class,'portletHeader')]" method="raw"-->
-        <xsl:attribute name="class"><xsl:value-of select="."/> content-title</xsl:attribute>
+      <replace content="//h1[contains(@class,'documentFirstHeading')]">
+        <xsl:copy>
+          <xsl:attribute name="class"><xsl:value-of select="@class"/> content-title</xsl:attribute>
+          <xsl:copy-of select="@*[local-name() != 'class']" />
+          <xsl:apply-templates />
+        </xsl:copy>
       </replace>
-      <replace content="//h1[contains(@class,'parent-fieldname-title')]/@class" >
-         <!--replace content="//dt[contains(@class,'portletHeader')]" method="raw"-->
-        <xsl:attribute name="class"><xsl:value-of select="."/> content-title</xsl:attribute>
+      <replace content="//h1[contains(@class,'parent-fieldname-title')]" >
+        <xsl:copy>
+          <xsl:attribute name="class"><xsl:value-of select="@class"/> content-title</xsl:attribute>
+          <xsl:copy-of select="@*[local-name() != 'class']" />
+          <xsl:apply-templates />
+        </xsl:copy>
       </replace>
 		<!-- end most page and title replacement -->
   	
@@ -277,10 +294,14 @@
 	      <!-- Search Fixups -->
 	      <drop css:content=".searchSection" />
 	      <copy css:content="#portal-searchbox" css:theme="#uti-search" />
-		   <replace content="//div[@id='portal-searchbox']//input[@class='searchButton']/@value">
-		    <xsl:attribute name="value">GO</xsl:attribute>
-		    </replace>
-		  
+          <replace content="//div[@id='portal-searchbox']//input[@class='searchButton']">
+              <xsl:copy>
+                  <xsl:attribute name="value">GO</xsl:attribute>
+                  <xsl:copy-of select="@*[local-name() != 'value']" />
+                  <xsl:apply-templates />
+              </xsl:copy>
+          </replace>
+
   	    <!-- search results page -->
   	    <rules css:if-content="body.template-search">
 			  <drop css:theme=".title-box" />
@@ -317,9 +338,12 @@
 
                                  </rules>
                         <rules css:if-content=".portaltype-dsstwocolumnpage">
-							      <replace content="//img[contains(@class,'newsImage')]/@class" method="raw">
-                                     <!--replace content="//dt[contains(@class,'portletHeader')]" method="raw"-->
-                                    <xsl:attribute name="class">newsImage two-col-img</xsl:attribute>
+							      <replace content="//img[contains(@class,'newsImage')]" method="raw">
+                                    <xsl:copy>
+                                      <xsl:attribute name="class">newsImage two-col-img</xsl:attribute>
+                                      <xsl:copy-of select="@*[local-name() != 'class']" />
+                                      <xsl:apply-templates />
+                                    </xsl:copy>
 							      </replace>
 
                             <before css:theme="#content-row"
