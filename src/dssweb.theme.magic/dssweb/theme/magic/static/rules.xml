@@ -22,7 +22,7 @@
 	<theme href="t7_contact.html" css:if-content="body.section-contact" />
 
 
-	<theme href="t11_calendar.html" css:if-content=".template-solgemafullcalendar_view" />
+	<theme href="t11_calendar.html" css:if-content="body.template-solgemafullcalendar_view" />
 	<!--theme href="t14_search.html" css:if-content=".template-search" /-->
 	<theme href="t17_fullwidth.html" if-not-content='//div[@id="portal-column-two"]' /> 
 	
@@ -132,13 +132,13 @@
 		<!--  About Happy Box -->
 		<replace css:content-children="#content-core"
 		css:theme-children="#container-2 div.content-wrap"  />
-		<rules css:if-content=".site-psychology">
+		<rules css:if-content="body.site-psychology">
 			   <copy attributes="href"
 				css:content="#portaltab-quick-facts > a"
 				css:theme="#container-2 > div > div > div.bcontroller > a" />
 		</rules>
 
-		<rules css:if-content=".site-economics">
+		<rules css:if-content="body.site-economics">
 			<copy attributes="href"
 				css:content="#portaltab-about > a"
 				css:theme="#container-2 > div > div > div.bcontroller > a" />	
@@ -149,7 +149,7 @@
 
 				<drop content='//*[@id="portaltab-about"]' /> 
 		</rules>
-		<rules css:if-content=".site-mindbrain">
+		<rules css:if-content="body.site-mindbrain">
 			<copy attributes="href"
 			css:content="#portaltab-about > a"
 			css:theme="#container-2 > div > div > div.bcontroller > a" />
@@ -268,7 +268,7 @@
 		<!--removed our people view, but I think this could be dealt with differently -->
 		
 		<rules if-not-content="/html/body[contains(@class, 'portaltype-front-page')]">
-			<rules if-not-content="/html/body[contains(@class, 'template-facetednavigation_view')]">
+        <rules if-not-content="/html/body[contains(@class, 'template-facetednavigation_view')]">
 		<replace theme-children='//*[@id="content"]' content-children='//*[@id="portal-column-content"]' />
 	   </rules>
 	   </rules>
@@ -293,8 +293,8 @@
 
 		 
 	      <!-- Search Fixups -->
-	      <drop css:content=".searchSection" />
-	      <copy css:content="#portal-searchbox" css:theme="#uti-search" />
+	      <drop css:content="div.searchSection" />
+	      <copy css:content="div#portal-searchbox" css:theme="#uti-search" />
           <replace content="//div[@id='portal-searchbox']//input[@class='searchButton']">
               <xsl:copy>
                   <xsl:attribute name="value">GO</xsl:attribute>
@@ -316,21 +316,21 @@
 		 
 		 	 <!-- People Page Faceted Nav -->
    	   <!--Person directory Page Faceted Nav T2 -->
-   	   <rules css:if-content=".template-facetednavigation_view">
+       <rules css:if-content="body.template-facetednavigation_view">
    		  
-   			<replace css:theme="#am-content > p" css:content=".documentDescription" />
-   		    <replace css:theme="h4.table-header" css:content="#faceted-center-column" />
-   			<replace css:theme="#search-results" css:content="#faceted-results" />
-   			<replace css:theme-children="#left-area" css:content-children="#left-area" />
-   			<drop theme='//*[@id="pager-top"]' />
-   		    <drop theme='//*[@id="pager-bottom"]' />
+            <replace css:theme="#am-content > p" css:content="div.documentDescription" />
+            <replace css:theme="h4.table-header" css:content="div#faceted-center-column" />
+            <replace css:theme="#search-results" css:content="div#faceted-results" />
+            <replace css:theme-children="#left-area" css:content-children="div#left-area" />
+            <drop theme='//div[@id="pager-top"]' />
+            <drop theme='//div[@id="pager-bottom"]' />
 
    	   </rules>
 
 		 
 			   
 		   <!-- two collumn page -->
-	   	<rules css:if-content=".portaltype-dsstwocollumnpage">
+        <rules css:if-content="body.portaltype-dsstwocollumnpage">
 		       <before css:theme="#content-row"
                                  css:content=".photo-row" />
                                    <!--mobile collapse bar -->
@@ -338,7 +338,7 @@
 
 
                                  </rules>
-                        <rules css:if-content=".portaltype-dsstwocolumnpage">
+                            <rules css:if-content="body.portaltype-dsstwocolumnpage">
 							      <replace content="//img[contains(@class,'newsImage')]" method="raw">
                                     <xsl:copy>
                                       <xsl:attribute name="class">newsImage two-col-img</xsl:attribute>
@@ -355,7 +355,7 @@
 
                                          </rules>
 				 <!--jqxgrid pages course listings courses -->
-				 <rules css:if-content=".portaltype-jqxgrid_page" >
+				 <rules css:if-content="body.portaltype-jqxgrid_page" >
 				 </rules>
 				 <!--fullpage general t-17 -->
 				 
@@ -397,14 +397,14 @@
    	   </rules>
         -->
  	  <!--Prospective Students T6-->
- 	   <rules css:if-content=".subsection-prospective-students" >
-		   <drop css:content=".image-under-banner" />
-          <replace css:theme=".picture" css:content=".image-under-banner" method="raw" />
+        <rules css:if-content="body.subsection-prospective-students" >
+		   <drop css:content="img.image-under-banner" />
+          <replace css:theme=".picture" css:content="img.image-under-banner" method="raw" />
  		     <replace css:theme="#content-core" css:content="#content-core" />
  		   <drop css:theme=".intro" />
  		</rules> 
 	    <!--T11 -->
-	    <rules css:if-content=".template-solgemafullcalendar_view">
+	    <rules css:if-content="body.template-solgemafullcalendar_view">
 		
 	 	   <replace css:theme-children="#calendar" css:content="#calendar" />
 	 	   <!--replace css:theme-children=".widget-fieldset" css:content="#fieldset-Subject" /-->
@@ -418,7 +418,7 @@
 	  
 	    </rules>
 		<!--windowz-->
-		<rules css:if-content=".portaltype-window">
+		<rules css:if-content="body.portaltype-window">
 		  <replace css:theme="#content-core" css:content="iframe#windowZ" />
 		</rules>
 	   
@@ -439,12 +439,12 @@
     
         <!--- Footer -->
        <rules css:if-content="#doormat-container">
-		<replace css:theme-children="div.foot-wrap" css:content="#doormat-container" />
+       <replace css:theme-children="div.foot-wrap" css:content="#doormat-container" />
 	</rules>
 	
-  	  <after css:theme=".foot-wrap" css:content="#portal-footer" />
+      <after css:theme="div.foot-wrap" css:content="#portal-footer" />
 	  <!--Analytics-->
-	  <append css:theme="#footer" css:if-content=".site-psychology">
+	  <append css:theme="#footer" css:if-content="body.site-psychology">
 		 
 		  <script>
 		      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -457,7 +457,7 @@
 
 		  </script>
 	  </append>
-	  <append css:theme="#footer" css:if-content=".site-ISS">
+	  <append css:theme="#footer" css:if-content="body.site-ISS">
 		  <script>
 		    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -469,7 +469,7 @@
 
 		  </script>
 	  </append>
-	  <append css:theme="#footer" css:if-content=".site-economics">
+	  <append css:theme="#footer" css:if-content="body.site-economics">
 		  <script>
 		    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -481,7 +481,7 @@
 
 		  </script>
 	  </append>
-       <append css:theme="#footer" css:if-content=".site-mindbrain">
+       <append css:theme="#footer" css:if-content="body.site-mindbrain">
 		  <script>
 		    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
