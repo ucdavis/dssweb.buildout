@@ -187,19 +187,7 @@
           <xsl:value-of select="@title" />
         </xsl:for-each>
      </replace>
-	 <!--drop the tabs that we don't need -->
-	      <drop content=
-			'/html/body/div[1]/div[1]/div/div/div[1]/ul/li[@id="portaltab-events"]' />
-		   <drop content='/html/body/div[1]/div[1]/div/div/div[1]/ul/li[@id="portaltab-give"]' />
-	      <drop content='/html/body/div[1]/div[1]/div/div/div[1]/ul/li[@id="portaltab-news"]' />
-	      <drop content='/html/body/div[1]/div[1]/div/div/div[1]/ul/li[@id="portaltab-quick-facts"]' />
-			 <drop content='/html/body/div[1]/div[1]/div/div/div[1]/ul/li[@id="portaltab-contact"]' />
-			 <drop content='/html/body/div[1]/div[1]/div/div/div[1]/ul/li[@id="portaltab-index_html"]' />
-			 <drop content='/html/body/div[1]/div[1]/div/div/div[1]/ul/li[@id="portaltab-intranet"]' />
-			 <rules css:if-not-content="body.site-mindbrain">
-			 <drop content='/html/body/div[1]/div[1]/div/div/div[1]/ul/li[@id="portaltab-about"]' />
-		 </rules>
-	      <!--utility menu links -->
+        <!--utility menu links -->
 		<copy attributes="href"
 		css:content="li#portaltab-index_html > a"
 		css:theme="li#uti-home > a" />
@@ -245,8 +233,8 @@
 	      <!-- Disabled Mega <after css:content="#portal-globalnav" css:theme=".top-bar ul.title-area" / -->
 		  <drop theme='//*[@id="uti-share"]' />
 
-	   <!-- classes for dropdown -->
-	   <replace css:theme-children="ul.left" css:content-children="#portal-globalnav" />
+       <!-- classes for dropdown -->
+       <replace css:theme-children="ul.left" css:content-children="#portal-globalnav" />
        <replace content="//ul[@id='portal-globalnav']//ul[contains(@class,'submenu')]">
          <xsl:copy>
            <xsl:attribute name="class">dropdown</xsl:attribute>
@@ -256,11 +244,13 @@
          </xsl:copy>
        </replace>
        <replace content="//ul[@id='portal-globalnav']//li[contains(@class,'dropdown')]">
-         <xsl:copy>
-           <xsl:attribute name="class">has-dropdown</xsl:attribute>
-           <xsl:copy-of select="@*[local-name() != 'class']" />
-           <xsl:apply-templates />
-         </xsl:copy>
+         <xsl:if test="@id!='portaltab-events' and @id!='portaltab-give' and @id!='portaltab-events' and @id!='portaltab-news' and @id!='portaltab-quick-facts' and @id!='portaltab-contact' and @id!='portaltab-index_html' and @id!='portaltab-intranet' and (not(/html/body[contains(@class, 'site-mindbrain')]) and @id!='portaltab-about')">
+           <xsl:copy>
+             <xsl:attribute name="class">has-dropdown</xsl:attribute>
+             <xsl:copy-of select="@*[local-name() != 'class']" />
+            <xsl:apply-templates />
+           </xsl:copy>
+         </xsl:if>
        </replace>
 
 		<!-- replace main content and add title class --> 
