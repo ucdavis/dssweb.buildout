@@ -440,9 +440,11 @@
 	        </append>	
     
         <!--- Footer -->
-       <rules css:if-content="#doormat-container">
-       <replace css:theme-children="div.foot-wrap" css:content="#doormat-container" />
-	</rules>
+		  
+					  
+				<replace css:theme-children="div.foot-wrap"
+					           css:content="#doormat-container" />
+	
 	
       <after css:theme="div.foot-wrap" css:content="#portal-footer" />
 	  <!--Analytics-->
