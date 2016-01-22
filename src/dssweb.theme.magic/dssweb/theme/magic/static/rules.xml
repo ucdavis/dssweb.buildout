@@ -187,17 +187,7 @@
           <xsl:value-of select="@title" />
         </xsl:for-each>
      </replace>
-	 <!--drop the tabs that we don't need -->
-    <drop content="//li[@id='portaltab-events']" />
-    <drop content="//li[@id='portaltab-give']" />
-    <drop content="//li[@id='portaltab-news']" />
-    <drop content="//li[@id='portaltab-quick-facts']" />
-	 <drop content="//li[@id='portaltab-contact']" />
-	 <drop content="//li[@id='portaltab-index_html']" />
-	 <drop content="//li[@id='portaltab-intranet']" />
-	 <rules css:if-not-content="body.site-mindbrain">
-	      <drop content="//li[@id='portaltab-about']" />
-     </rules>
+	 
 		
 	      <!--utility menu links -->
 		<copy attributes="href"
@@ -263,6 +253,17 @@
          </xsl:copy>
        </replace>
 
+	<!--drop the tabs that we don't need -->
+    <drop content="//li[@id='portaltab-events']" />
+    <drop content="//li[@id='portaltab-give']" />
+    <drop content="//li[@id='portaltab-news']" />
+    <drop content="//li[@id='portaltab-quick-facts']" />
+	 <drop content="//li[@id='portaltab-contact']" />
+	 <drop content="//li[@id='portaltab-index_html']" />
+	 <drop content="//li[@id='portaltab-intranet']" />
+	 <rules css:if-not-content="body.site-mindbrain">
+	      <drop content="//li[@id='portaltab-about']" />
+     </rules>
 		<!-- replace main content and add title class --> 
 		<!--removed our people view, but I think this could be dealt with differently -->
 		
