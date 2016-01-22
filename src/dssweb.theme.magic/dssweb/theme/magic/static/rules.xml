@@ -409,7 +409,7 @@
 	    <rules css:if-content="body.template-solgemafullcalendar_view">
 		
 	 	   <replace css:theme-children="#calendar" css:content="#calendar" />
-	 	   <!--replace css:theme-children=".widget-fieldset" css:content="#fieldset-Subject" /-->
+	 	   
 		   <replace css:theme=".widget-fieldset" css:content="#SFQuery" />
 	 	   <copy attributes="href"
 	 		 css:content="a#sfc-ical-export"
