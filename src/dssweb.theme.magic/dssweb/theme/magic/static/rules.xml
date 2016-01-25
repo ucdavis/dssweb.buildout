@@ -331,12 +331,14 @@
 
 		 
 			   
+			   
 		   <!-- two collumn page -->
-        <rules css:if-content="body.portaltype-dsstwocollumnpage">
-		       <before css:theme="#content-row"
-                                 css:content=".photo-row" />
+<rules css:if-content="body.portaltype-dsstwocollumnpage">
+ <before css:theme="#content-row" css:content="div#banner-row.photo-row" method="raw"/>
                                    <!--mobile collapse bar -->
-                                   <replace css:theme-children="#content-panel-heading > h4 > a" css:content="h3#nested-left-title.uc.blue-head > span" />
+ <replace css:theme-children="#content-panel-heading > h4 > a" css:content="h3#nested-left-title.uc.blue-head > span" />
+ <drop css:content="div#banner-row.photo-row" />
+  
 
 
                                  </rules>
