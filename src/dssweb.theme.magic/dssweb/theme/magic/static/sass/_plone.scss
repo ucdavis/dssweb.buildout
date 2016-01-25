@@ -1266,6 +1266,7 @@ h3.lab-bar > a > img.image-left {
     margin-top: -14px;
     margin-left: -22px;
  }
+
  /* event Tile */
  .eventTile {
 	 min-height: 225px;
@@ -1276,7 +1277,8 @@ h3.lab-bar > a > img.image-left {
  body.portaltype-dsscourse div#main-container.container div#content-row.row div#content.col-xs-12.col-sm-12.col-md-8.col-lg-8 div div#content div#viewlet-above-content-body div.newsImageContainer {
 	 display:none;
  }
-
-
+ body.site-economics #content #top-panel-row .narrow-col .bcontroller .btn-primary, body.home #am-content #top-panel-row .narrow-col .bcontroller .btn-primary {
+	 background-color: $cork_oak;
+ }
 /* @end */
 
