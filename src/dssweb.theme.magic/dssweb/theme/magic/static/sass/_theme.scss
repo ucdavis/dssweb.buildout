@@ -727,6 +727,10 @@ body.contact-type {
 		width: 82%;
 	}
 
+	.row {
+		margin-left: 0;
+		margin-right: 0;
+	}
 	.row#content-row {
 		margin-left: 0 !important;
 		margin-right: 0 !important;
@@ -748,7 +752,9 @@ body.contact-type {
 			}
 		}
 	}
-
+	.panel-group {
+		margin-right: 0;
+	}
 	// remove extra padding to right on mobile
 	.row > div {
 		padding-right: 0 !important;
@@ -1063,6 +1069,9 @@ body.contact-type {
 	#content {
 	  min-width:192px;
 		clear:both;
+		img {
+			max-width: 100%;
+		}
 	}
 	#am-content {
 	  min-width:192px;
@@ -1092,6 +1101,21 @@ body.contact-type {
 	}
 	.op-sidebar-title {
 		text-align:left !important;
+	}
+
+	// Don't push down content when opening menu
+	#top-bar-wrap{
+		height: 55px;
+	}
+	.top-bar {
+		position: absolute;
+		left: 0;
+		width: 100%;
+		z-index: 10000;
+		.toggle-topbar {
+			position: absolute;
+			right: 0;
+		}
 	}
 }
 
