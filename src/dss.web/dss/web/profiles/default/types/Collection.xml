@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
-<object name="Folder">
+<object name="Collection">
  <property name="view_methods" purge="False">
-  <element value="collapsible_summary_view"/>
-  <element value="collapsible_full_view"/>
   <element value="tiled-event-listing"/>
  </property>
 </object>
