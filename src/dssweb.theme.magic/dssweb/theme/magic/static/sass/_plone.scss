@@ -713,11 +713,6 @@ margin: 1em 0;
 .error input#title {
     width: 99%;
 }
-div.field > img {
-padding-top: 5px;
-padding-bottom: 5px;
-float: right;
-}
 
 .fieldRequired {
     background: url(required.png) center left no-repeat;
@@ -773,6 +768,13 @@ font-size: small;
     height: 70px;
     width: 70px;
     padding-top: 1px; }
+
+.formHelp {
+  color: #555;
+  margin: 0 0 0.2em 0;
+  display: block;
+  font-weight: normal;
+}
 	 
 /*------Collection Summary View with Images -------*/
 tileItem.visualIEFloatFix {
