@@ -262,9 +262,10 @@
 	 <drop content="//li[@id='portaltab-contact']" />
 	 <drop content="//li[@id='portaltab-index_html']" />
 	 <drop content="//li[@id='portaltab-intranet']" />
-	 <rules css:if-not-content="body.site-mindbrain">
-	      <drop content="//li[@id='portaltab-about']" />
-     </rules>
+	
+	  <drop content="//li[@id='portaltab-about']" />
+     
+		 
 	  <drop content="//li[@id='portaltab-map']" />
 		<!-- replace main content and add title class --> 
 		<!--removed our people view, but I think this could be dealt with differently -->
