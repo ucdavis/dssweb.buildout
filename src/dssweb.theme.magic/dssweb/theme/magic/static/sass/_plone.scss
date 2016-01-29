@@ -1282,5 +1282,8 @@ h3.lab-bar > a > img.image-left {
  body.site-economics #content #top-panel-row .narrow-col .bcontroller .btn-primary, body.home #am-content #top-panel-row .narrow-col .bcontroller .btn-primary {
 	 background-color: $cork_oak;
  }
+ body.template-folder_leadimage_view div#main-container div#content-row.row div#content div div#content div div.tileItem p.tileFooter {
+ display:none;
+ }
 /* @end */
 
