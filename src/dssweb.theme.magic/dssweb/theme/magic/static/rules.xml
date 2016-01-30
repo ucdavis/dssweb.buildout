@@ -98,14 +98,12 @@
     <copy attributes="href"
           css:content="#portaltab-support-iss > a"
           css:theme="#uti-give > a" />
-	<drop content='//*[@id="portaltab-support-iss"]' />   
+	<drop content='//*[@id="portaltab-support-iss"]' />
+   <replace css:theme="#uti-contact > a"
+         css:content="#portaltab-subscribe > a" />
+			<drop content='//li[@id="portaltab-subscribe"]' />
   </rules>
-  <!--testing a theory -->
-  <rules css:if-content="subsection-psychology-major-something-for-iss">
-	  <replace css:theme="#nested-left" css:content=".nested-left" /> 
-	  <replace css:theme-children="#nested-right" css:content="#nested-right" />
-	  
-  </rules>
+  
 	   
   <!--Other sites-->	   
   <!--front page -->
@@ -195,7 +193,7 @@
 		<!--replace css:theme="#uti-home > a"
 		          css:content="#portaltab-index_html > a" method="raw" /-->       
 		<replace css:theme="li#uti-contact > a"
-		             css:content="li#portaltab-contact > a" method="raw" />
+		             css:content="li#portaltab-contact > a" method="raw" css:if-not-content="body.site-ISS"/>
 		<replace css:theme="li#uti-events > a"
 		      css:content="li#portaltab-events > a" method="raw" />
 		<replace css:theme="li#uti-news > a" css:content="li#portaltab-news > a" />
