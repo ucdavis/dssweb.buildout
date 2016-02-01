@@ -94,7 +94,7 @@
               css:content="#portal-logo"  />
  
   <!--ISS Specific Rules -->
-  <rules css:if-content="body.site-ISS">
+  <rules css:if-content="body.site-iss">
     <copy attributes="href"
           css:content="#portaltab-support-iss > a"
           css:theme="#uti-give > a" />
