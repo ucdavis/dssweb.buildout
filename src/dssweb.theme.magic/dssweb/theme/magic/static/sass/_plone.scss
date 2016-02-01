@@ -713,11 +713,6 @@ margin: 1em 0;
 .error input#title {
     width: 99%;
 }
-div.field > img {
-padding-top: 5px;
-padding-bottom: 5px;
-float: right;
-}
 
 .fieldRequired {
     background: url(required.png) center left no-repeat;
@@ -773,6 +768,13 @@ font-size: small;
     height: 70px;
     width: 70px;
     padding-top: 1px; }
+
+.formHelp {
+  color: #555;
+  margin: 0 0 0.2em 0;
+  display: block;
+  font-weight: normal;
+}
 	 
 /*------Collection Summary View with Images -------*/
 tileItem.visualIEFloatFix {
@@ -1279,6 +1281,9 @@ h3.lab-bar > a > img.image-left {
  }
  body.site-economics #content #top-panel-row .narrow-col .bcontroller .btn-primary, body.home #am-content #top-panel-row .narrow-col .bcontroller .btn-primary {
 	 background-color: $cork_oak;
+ }
+ body.template-folder_leadimage_view div#main-container div#content-row.row div#content div div#content div div.tileItem p.tileFooter {
+ display:none;
  }
 /* @end */
 
