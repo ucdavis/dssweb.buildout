@@ -94,7 +94,7 @@
               css:content="#portal-logo"  />
  
   <!--ISS Specific Rules -->
-  <rules css:if-content="body.site-ISS">
+  <rules css:if-content="body.site-iss">
     <copy attributes="href"
           css:content="#portaltab-support-iss > a"
           css:theme="#uti-give > a" />
@@ -348,21 +348,16 @@
 
                                  </rules>
                             <rules css:if-content="body.portaltype-dsstwocolumnpage">
-							      <replace content="//img[contains(@class,'newsImage')]" method="raw">
-                                    <xsl:copy>
-                                      <xsl:attribute name="class">newsImage two-col-img</xsl:attribute>
-                                      <xsl:copy-of select="@*[local-name() != 'class']" />
-                                      <xsl:apply-templates />
-                                    </xsl:copy>
-							      </replace>
+								       <before css:theme="#content-row"
+						                                 css:content=".photo-row" method="raw"/>
+																	
+																	<drop css:content="div.newsImageContainer" />
+						                                   <!--mobile collapse bar -->
+						                                   <!--replace css:theme-children="#content-panel-heading > h4 > a" css:content="h3#nested-left-title.uc.blue-head > span" /-->
+						  <drop css:content="div#banner-row.photo-row" />
+						 
+</rules>
 
-                            <before css:theme="#content-row"
-                                         css:content=".photo-row" />
-                                           <!--mobile collapse bar -->
-                                           <replace css:theme-children="#content-panel-heading > h4 > a" css:content="h3#nested-left-title.uc.blue-head > span" />
-
-
-                                         </rules>
 				 <!--jqxgrid pages course listings courses -->
 				 <rules css:if-content="body.portaltype-jqxgrid_page" >
 				 </rules>
