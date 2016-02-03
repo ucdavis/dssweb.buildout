@@ -147,7 +147,7 @@ div.pageBreak {
     margin:0.5em 0 1.31em; 
 } */
 #footer .foot-wrap {
-    margin-top: 0px;
+   display:none;
 }
 
 
@@ -235,8 +235,5 @@ dl.captioned {
 	float:right;
 	margin: 0 0 0.5em 1em;
 	width: 16em;
-}
- body.portaltype-event.site-economics div#footer {
-	display:none;
 }
 }
