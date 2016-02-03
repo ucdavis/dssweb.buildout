@@ -28,7 +28,7 @@ location /iss {
 			deny all;
 			return 404;
 			}
-location /midnbrain {
+location /mindbrain {
 			deny all;
 			return 404;
 			}    

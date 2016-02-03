@@ -1,3 +1,4 @@
+#nginx config file
 location /psychology {
         deny all;
         return 404;
