@@ -11,5 +11,24 @@ rewrite ^/[Ss]imonton(/.*|$) http://simonton.faculty.ucdavis.edu/ redirect;
 rewrite ^/[Ss]ommer[Bb](/.*|$) http://psc.dss.ucdavis.edu/sommerb$1 redirect;
 rewrite ^/[Ss]ommer[Rr](/.*|$) http://psc.dss.ucdavis.edu/sommerr$1 redirect;
 rewrite ^/people/academic-personnel-analyst$ /directory-of-people redirect;
-rewrite ^/people$ /directory-of-people redirect;
+rewrite ^/people$ /directory-of-people redirect;}
+
+location /economics {
+			deny all;
+			return 404;
+			}
+location /communication {
+ 			deny all;
+			return 404;
+			}
+location /iss {
+			deny all;
+			return 404;
+			}
+location /midnbrain {
+			deny all;
+			return 404;
+			}
+
+
 

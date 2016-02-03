@@ -20,7 +20,18 @@ location /people/szschei {
         return 404;
         }
 
-    
+location /communication {
+ 			deny all;
+			return 404;
+			}
+location /iss {
+			deny all;
+			return 404;
+			}
+location /midnbrain {
+			deny all;
+			return 404;
+			}    
 rewrite ^/people$ /directory-of-people redirect; 
 
 rewrite ^/people/faculty(.*)$ /directory-of-people/econ-faculty redirect;

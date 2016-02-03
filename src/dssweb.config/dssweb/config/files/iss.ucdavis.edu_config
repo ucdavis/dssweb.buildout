@@ -1,0 +1,18 @@
+
+location /economics {
+			deny all;
+			return 404;
+			}
+location /communication {
+ 			deny all;
+			return 404;
+			}
+location /psychology {
+			deny all;
+			return 404;
+			}
+    
+location /mindbrain {
+			deny all;
+			return 404;
+			}

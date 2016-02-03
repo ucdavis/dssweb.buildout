@@ -1,0 +1,22 @@
+location /psychology {
+        deny all;
+        return 404;
+        }
+location /economics {
+			deny all;
+			return 404;
+			}
+location /communication {
+ 			deny all;
+			return 404;
+			}
+location /iss {
+			deny all;
+			return 404;
+			}
+
+rewrite ^/about-us/directions-to-the-cmb /directions redirect; 
+rewrite ^/people$ /directory-of-people redirect; 
+
+rewrite ^/people/faculty(.*)$ /directory-of-people/corefaculty redirect;
+
