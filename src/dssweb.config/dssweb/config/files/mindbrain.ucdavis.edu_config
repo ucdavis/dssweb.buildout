@@ -17,7 +17,9 @@ location /iss {
 			}
 
 rewrite ^/about-us/directions-to-the-cmb /directions redirect; 
-rewrite ^/people$ /directory-of-people redirect; 
+rewrite ^/people$ /directory-of-people redirect;
+rewrite ^/people/$ /directory-of-people redirect;
+
 
 rewrite ^/people/faculty(.*)$ /directory-of-people/corefaculty redirect;
 

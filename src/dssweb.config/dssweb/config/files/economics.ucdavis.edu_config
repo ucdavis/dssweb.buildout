@@ -33,5 +33,7 @@ location /mindbrain {
 			return 404;
 			}    
 rewrite ^/people$ /directory-of-people redirect; 
+rewrite ^/people/$ /directory-of-people redirect;
+
 
 rewrite ^/people/faculty(.*)$ /directory-of-people/econ-faculty redirect;

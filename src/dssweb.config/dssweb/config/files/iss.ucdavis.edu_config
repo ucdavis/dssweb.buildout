@@ -17,3 +17,7 @@ location /mindbrain {
 			deny all;
 			return 404;
 			}
+location /people {
+			deny all;
+			return 404;
+			}
