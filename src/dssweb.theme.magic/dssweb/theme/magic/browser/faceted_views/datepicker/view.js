@@ -10,10 +10,10 @@ jQuery.fn.calendarPicker = function(options) {
     options.years=1;
 
   if (typeof(options.months) == "undefined")
-    options.months=3;
+	  options.months=6;
 
   if (typeof(options.days) == "undefined")
-    options.days=4;
+    options.days=14;
 
   if (typeof(options.showDayArrows) == "undefined")
     options.showDayArrows=true;
