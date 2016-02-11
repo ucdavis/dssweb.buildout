@@ -19,5 +19,6 @@
     name="dssweb.theme.magic.datepicker.view.css"
     file="./view.css"
    />
+ 
 
 </configure>
