@@ -1,4 +1,5 @@
 'use strict';
+
 var Z63 = (function (parent, $) {
 
     var MediaQueryListener = function() {
@@ -44,17 +45,18 @@ var Z63 = (function (parent, $) {
 }(Z63 || {}, jQuery));
 
 $(window).on('breakpoint-change', function(e, breakpoint) {
+	
+	debugger;
 
     if(breakpoint === 'bp-small') {
-       oday=14;
+       window.oday=14;
     }
 
     if(breakpoint === 'bp-medium') {
-        oday=8;
+        window.oday=8;
     }
 
     if(breakpoint === 'bp-large') {
-        oday=3;
+        window.oday=3;
     }
-	 return oday;
 });
