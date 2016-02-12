@@ -108,7 +108,16 @@ span.calElement:hover {
     padding: 1em 0.5em 0.5em 0.5em;
     border: 1px solid #002855;
 }
-
+/* Drop date and month on mobile */
+@media screen and (max-width: 440px) {
+	div.calYear {
+		display:none;
+	}
+	div.calMonth {
+		display:none;
+	}
+	
+}
 
 
 
