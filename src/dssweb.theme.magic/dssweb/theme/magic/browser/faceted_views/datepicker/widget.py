@@ -56,7 +56,7 @@ def ensure_date_format(date_input):
 class Widget(AbstractWidget):
     widget_type = 'datepicker'
     widget_label = _(u'Date Picker')
-    view_js = '++resource++dssweb.theme.magic.datepicker.view.js'
+    view_js = ('++resource++dssweb.theme.magic.datepicker.breakpointdetector.js','++resource++dssweb.theme.magic.datepicker.view.js')
     edit_js = '++resource++dssweb.theme.magic.datepicker.edit.js'
     view_css = '++resource++dssweb.theme.magic.datepicker.view.css'
 

@@ -13,7 +13,7 @@ jQuery.fn.calendarPicker = function(options) {
 	  options.months=6;
 
   if (typeof(options.days) == "undefined")
-    options.days=14;
+    options.days=15;
 
   if (typeof(options.showDayArrows) == "undefined")
     options.showDayArrows=true;

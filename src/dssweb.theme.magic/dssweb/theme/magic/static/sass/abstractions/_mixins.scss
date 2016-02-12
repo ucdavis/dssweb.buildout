@@ -116,3 +116,27 @@ $ellipsiswidth: 3em !default;
 	}
 
 }
+@mixin bp-huge {
+  @media only screen and (min-width: 992px) {
+    @content;    
+  }  
+}
+
+@mixin bp-medium {
+  @media only screen and (min-width: 768px) {
+    @content;    
+  }  
+}
+
+@mixin bp-small {
+  @media only screen and (min-width: 440px) {
+    @content;    
+  }  
+}
+@mixin define-breakpoint($name) {
+  &:after {
+    content: $name;
+    display: none;
+  }
+}
+
