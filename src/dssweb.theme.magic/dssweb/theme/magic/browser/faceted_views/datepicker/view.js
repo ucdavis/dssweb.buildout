@@ -10,10 +10,10 @@ jQuery.fn.calendarPicker = function(options) {
     options.years=1;
 
   if (typeof(options.months) == "undefined")
-    options.months=3;
+	  options.months=6;
 
   if (typeof(options.days) == "undefined")
-    options.days=4;
+    options.days=14;
 
   if (typeof(options.showDayArrows) == "undefined")
     options.showDayArrows=true;
@@ -31,7 +31,7 @@ jQuery.fn.calendarPicker = function(options) {
     options.dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   // --------------------------  end default option values --------------------------
-
+  
   var calendar = {currentDate: options.date};
   calendar.options = options;
 
@@ -102,7 +102,7 @@ jQuery.fn.calendarPicker = function(options) {
       var t = new Date();
       divDays.empty();
       var nc = options.days*2+1;
-      var w = parseInt((theDiv.width()-4-(options.showDayArrows?12:0)-(nc)*4)/(nc-(options.showDayArrows?2:0)))+"px";
+      var w = parseInt((theDiv.width()-4-(options.showDayArrows?32:0)-(nc)*4)/(nc-(options.showDayArrows?2:0)))+"px";
       for (var i = -options.days; i <= options.days; i++) {
         var d = new Date(date);
         d.setDate(day + i)
@@ -175,10 +175,28 @@ Faceted.DSSDatepickerWidget = function(wid){
     this.selected = this.datepicker;
     Faceted.Query[this.wid] = [value];
   }
+  //Values based on width
+  var width = $(window).width();
+  var oday = 10;
+  if (width > 992) {
+	  oday = 15;
+  } else if (width < 768 && width > 451) {
+  oday = 10; 
+  }
+  else {
+	  oday = 2; }
 
-  this.datepicker.calendarPicker({callback: function(cal) {
+  
+  this.datepicker.calendarPicker({
+    callback: function(cal) {
+      js_widget.do_query(cal)
+    },
+    days: oday
+  });
+
+  /*this.datepicker.calendarPicker({callback: function(cal) {
     js_widget.do_query(cal)
-  }});
+  }}); */
 
   // Bind events
   jQuery(Faceted.Events).bind(Faceted.Events.QUERY_CHANGED, function(evt){

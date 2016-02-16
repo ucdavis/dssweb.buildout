@@ -1,8 +1,19 @@
 /*Plone Styles */
 @charset "utf-8";
 @import "variables";
+body {
+    @include bp-small(){
+        @include define-breakpoint("bp-small");
+    }  
 
+    @include bp-medium(){
+        @include define-breakpoint("bp-medium");
+    }
 
+    @include bp-huge(){
+        @include define-breakpoint("bp-large");
+    }
+}
 /* override wallpaper height without breaking cakefarm theme  */
 .wall .wallpaper .notsobig {
 	height:540px !important;

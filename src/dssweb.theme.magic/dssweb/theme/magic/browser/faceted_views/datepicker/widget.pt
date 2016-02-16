@@ -14,7 +14,7 @@
     python:view.translate(title)" i18n:translate="">Text Widget</legend>
   <form action="." method="get"
     tal:on-error="structure python:error_view(error=error, cid=wid)">
-  <div class="datepicker" style="width:240px"
+  <div class="datepicker" style="width:100%"
        tal:attributes="data-picked-date default_value;"></div>
 
   </form>
