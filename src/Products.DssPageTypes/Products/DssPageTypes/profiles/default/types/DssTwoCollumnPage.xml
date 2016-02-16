@@ -4,7 +4,7 @@
    i18n:domain="Products.DssPageTypes" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
   <property name="title" i18n:translate="">Dss Two collumn Page</property>
   <property name="description"
-    i18n:translate="">Contact Page DSS website</property>
+    i18n:translate="">not this onee</property>
   <property name="content_meta_type">DssTwoColumnPage</property>
   <property name="content_icon">document_icon.png</property>
   <property name="product">Products.DssPageTypes</property>

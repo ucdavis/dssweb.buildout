@@ -1,0 +1,23 @@
+#nginx config file
+
+location /economics {
+			deny all;
+			return 404;
+			}
+location /communication {
+ 			deny all;
+			return 404;
+			}
+location /psychology {
+			deny all;
+			return 404;
+			}
+    
+location /mindbrain {
+			deny all;
+			return 404;
+			}
+location /people {
+			deny all;
+			return 404;
+			}

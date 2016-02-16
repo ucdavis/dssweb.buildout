@@ -1,19 +1,28 @@
-# nginx configuration
-location /faculty_sites {
-rewrite ^/faculty_sites/[Ss]imonton.* http://simonton.faculty.ucdavis.edu/ redirect;
-rewrite ^/faculty_sites(/.*|$) http://psc.dss.ucdavis.edu/faculty_sites/$1 redirect;
-}
-location /rainbow {
-rewrite ^/rainbow(/.*|$) http://psc.dss.ucdavis.edu/rainbow$1 redirect;
-}
-rewrite ^/[Hh]erek(/.*|$) http://psc.dss.ucdavis.edu/herek$1 redirect;
-rewrite ^/[Ss]imonton(/.*|$) http://simonton.faculty.ucdavis.edu/ redirect;
-rewrite ^/[Ss]ommer[Bb](/.*|$) http://psc.dss.ucdavis.edu/sommerb$1 redirect;
-rewrite ^/[Ss]ommer[Rr](/.*|$) http://psc.dss.ucdavis.edu/sommerr$1 redirect;
-rewrite ^/people/academic-personnel-analyst$ /directory-of-people redirect;
+#nginx config file
+location /psychology {
+        deny all;
+        return 404;
+        }
+location /economics {
+			deny all;
+			return 404;
+			}
+location /communication {
+ 			deny all;
+			return 404;
+			}
+location /iss {
+			deny all;
+			return 404;
+			}
+
+rewrite ^/about-us/directions-to-the-cmb /directions redirect; 
 rewrite ^/people$ /directory-of-people redirect;
-rewrite ^/people/$ /directory-of-people redirect;rewrite ^/people/grad-students /directory-of-people redirect;
-rewrite ^/people/faculty /directory-of-people/faculty redirect;
+rewrite ^/people/$ /directory-of-people redirect;
+
+
+rewrite ^/people/faculty(.*)$ /directory-of-people/corefaculty redirect;
+rewrite ^/people/grad-students /directory-of-people redirect;
 rewrite ^/people/affiated-faculty /directory-of-people redirect;
 rewrite ^/people/emeriti /directory-of-people redirect;
 rewrite ^/people/business-office-staff /directory-of-people redirect;
@@ -35,24 +44,4 @@ rewrite ^/people/iss-editors /directory-of-people redirect;
 rewrite ^/people/postdoctoral-scholars /directory-of-people redirect;
 rewrite ^/people/research-staff /directory-of-people redirect;
 rewrite ^/people/psych-editors /directory-of-people redirect;
-
-location /economics {
-			deny all;
-			return 404;
-			}
-location /communication {
- 			deny all;
-			return 404;
-			}
-location /iss {
-			deny all;
-			return 404;
-			}
-location /mindbrain {
-			deny all;
-			return 404;
-			}
-		
-
-
 

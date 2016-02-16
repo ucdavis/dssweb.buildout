@@ -17,7 +17,12 @@
 	<theme href="t13_event_b.html" css:if-content="body.portaltype-event" />
 	<theme href="t13_event_b.html" css:if-content="body.portaltype-dsscourse" />
 	<theme href="t3_bio.html" css:if-content="body.portaltype-fsdperson" />
-	<theme href="t2_ourpeople.html" css:if-content="body.template-facetednavigation_view" />
+	<!--rules if-path="/DSS-Master/economics/directory-of-people"-->
+	
+	<theme href="t2_ourpeople.html" css:if-content="body.template-facetednavigation_view"/>
+	
+
+   <!--/rules-->
 	<theme href="t7_contact.html" css:if-content="body.portaltype-dsscontact" />
 	<theme href="t7_contact.html" css:if-content="body.section-contact" />
 
@@ -86,6 +91,28 @@
     </replace>
 </rules>
   </rules> 
+  <rules css:if-content="dd.doormatSectionBody div.mindbrain">
+    <rules if-path="/people">
+    <replace content="//dl[contains(@class,'portlet')]" method="raw">
+      <xsl:copy>
+        <xsl:attribute name="class"><xsl:value-of select="@class"/> winter-sky</xsl:attribute>
+        <xsl:copy-of select="@*[local-name() != 'class']" />
+        <xsl:appy-templates />
+      </xsl:copy>
+    </replace>
+</rules>
+  </rules> 
+  <rules css:if-content="dd.doormatSectionBody div.communication">
+    <rules if-path="/people">
+    <replace content="//dl[contains(@class,'portlet')]" method="raw">
+      <xsl:copy>
+        <xsl:attribute name="class"><xsl:value-of select="@class"/> wine-grape</xsl:attribute>
+        <xsl:copy-of select="@*[local-name() != 'class']" />
+        <xsl:appy-templates />
+      </xsl:copy>
+    </replace>
+</rules>
+  </rules> 
 
   <!--front-page -->
   
@@ -94,18 +121,16 @@
               css:content="#portal-logo"  />
  
   <!--ISS Specific Rules -->
-  <rules css:if-content="body.site-ISS">
+  <rules css:if-content="body.site-iss">
     <copy attributes="href"
           css:content="#portaltab-support-iss > a"
           css:theme="#uti-give > a" />
-	<drop content='//*[@id="portaltab-support-iss"]' />   
+	<drop content='//*[@id="portaltab-support-iss"]' />
+   <replace css:theme="#uti-contact > a"
+         css:content="#portaltab-subscribe > a" />
+			<drop content='//li[@id="portaltab-subscribe"]' />
   </rules>
-  <!--testing a theory -->
-  <rules css:if-content="subsection-psychology-major-something-for-iss">
-	  <replace css:theme="#nested-left" css:content=".nested-left" /> 
-	  <replace css:theme-children="#nested-right" css:content="#nested-right" />
-	  
-  </rules>
+  
 	   
   <!--Other sites-->	   
   <!--front page -->
@@ -180,6 +205,13 @@
 
 
 	</rules> <!--end front page rules-->
+
+	<!-- Breadcrumbs for all but front page -->
+	
+	<drop css:content="#breadcrumbs-you-are-here" />
+   <replace css:content=".breadcrumbSeparator">
+     <span class="bread-divider">|</span>
+   </replace>
 	
      <!-- rule to set up title to replace static logo on ipad/mobile -->
      <replace css:theme-children=".justname h1">
@@ -195,7 +227,7 @@
 		<!--replace css:theme="#uti-home > a"
 		          css:content="#portaltab-index_html > a" method="raw" /-->       
 		<replace css:theme="li#uti-contact > a"
-		             css:content="li#portaltab-contact > a" method="raw" />
+		             css:content="li#portaltab-contact > a" method="raw" css:if-not-content="body.site-ISS"/>
 		<replace css:theme="li#uti-events > a"
 		      css:content="li#portaltab-events > a" method="raw" />
 		<replace css:theme="li#uti-news > a" css:content="li#portaltab-news > a" />
@@ -262,18 +294,18 @@
 	 <drop content="//li[@id='portaltab-contact']" />
 	 <drop content="//li[@id='portaltab-index_html']" />
 	 <drop content="//li[@id='portaltab-intranet']" />
-	 <rules css:if-not-content="body.site-mindbrain">
-	      <drop content="//li[@id='portaltab-about']" />
-     </rules>
+	
+	  <drop content="//li[@id='portaltab-about']" />
+     
+		 
 	  <drop content="//li[@id='portaltab-map']" />
 		<!-- replace main content and add title class --> 
-		<!--removed our people view, but I think this could be dealt with differently -->
 		
 		<rules if-not-content="/html/body[contains(@class, 'portaltype-front-page')]">
         <rules if-not-content="/html/body[contains(@class, 'template-facetednavigation_view')]">
 		<replace theme-children='//*[@id="content"]' content-children='//*[@id="portal-column-content"]' />
 	   </rules>
-	   </rules>
+	</rules>
 
       <replace content="//h1[contains(@class,'documentFirstHeading')]">
         <xsl:copy>
@@ -319,15 +351,30 @@
 		 	 <!-- People Page Faceted Nav -->
    	   <!--Person directory Page Faceted Nav T2 -->
        <rules css:if-content="body.template-facetednavigation_view">
-   		  
+			 <rules if-path="directory-of-people" >
             <replace css:theme="#am-content > p" css:content="div.documentDescription" />
             <replace css:theme="h4.table-header" css:content="div#faceted-center-column" />
             <replace css:theme="#search-results" css:content="div#faceted-results" />
             <replace css:theme-children="#left-area" css:content-children="div#left-area" />
             <drop theme='//div[@id="pager-top"]' />
             <drop theme='//div[@id="pager-bottom"]' />
-
+			</rules>
    	   </rules>
+			
+			<rules css:if-content="body.template-facetednavigation_view">
+			 <rules if-not-path="directory-of-people" >
+				 <!-- include faceted navigation css if we are viewing a faceted navigation page -->
+				       <after css:theme-children="html head">
+				         <link rel="stylesheet" type="text/css" media="screen" href="portal_css/Sunburst%20Theme/faceted_view.css" />
+				    
+				       </after>
+						 <replace css:theme-children="#content-row" css:content-children="#content" />
+		
+			 </rules>
+		 </rules>
+				 
+			
+
 
 		 
 			   
@@ -342,21 +389,16 @@
 
                                  </rules>
                             <rules css:if-content="body.portaltype-dsstwocolumnpage">
-							      <replace content="//img[contains(@class,'newsImage')]" method="raw">
-                                    <xsl:copy>
-                                      <xsl:attribute name="class">newsImage two-col-img</xsl:attribute>
-                                      <xsl:copy-of select="@*[local-name() != 'class']" />
-                                      <xsl:apply-templates />
-                                    </xsl:copy>
-							      </replace>
+								       <before css:theme="#content-row"
+						                                 css:content=".photo-row" method="raw"/>
+																	
+																	<drop css:content="div.newsImageContainer" />
+						                                   <!--mobile collapse bar -->
+						                                   <!--replace css:theme-children="#content-panel-heading > h4 > a" css:content="h3#nested-left-title.uc.blue-head > span" /-->
+						  <drop css:content="div#banner-row.photo-row" />
+						 
+</rules>
 
-                            <before css:theme="#content-row"
-                                         css:content=".photo-row" />
-                                           <!--mobile collapse bar -->
-                                           <replace css:theme-children="#content-panel-heading > h4 > a" css:content="h3#nested-left-title.uc.blue-head > span" />
-
-
-                                         </rules>
 				 <!--jqxgrid pages course listings courses -->
 				 <rules css:if-content="body.portaltype-jqxgrid_page" >
 				 </rules>

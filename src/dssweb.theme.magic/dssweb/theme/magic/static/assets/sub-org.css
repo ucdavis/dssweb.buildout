@@ -20,27 +20,54 @@
 @media screen and (max-width: 440px) { /* Replace with your styles */ }
 /*----- STANDARD STYLE TARGETS -------*/
 /*----- Mobile breakpoint ("S") --------*/
-@media screen and (max-width: 767px) { /* Style adjustments for the wall banners */
-  body.home .wall { height: 275px !important; } }
+
+@media screen and (max-width: 767px) {
+  /* Style adjustments for the wall banners */
+  body.home .wall {
+    height: 275px !important; } }
 /*----- Tablet breakpoint ("M") -------*/
-@media screen and (min-width: 768px) and (max-width: 991px) { /* Style adjustments for the wall banners */
-  body.home .wall { height: 432px !important; }
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  /* Style adjustments for the wall banners */
+  body.home .wall {
+    height: 432px !important; }
+
   /* Name-logo and navigation adjustments for psychology navigation on tablet */
-  .top-bar .title-area .name a { margin-top: 20px; padding-right: 0; }
-  .top-bar .top-bar-section ul li a { font-size: 12px !important; font-size: 0.75rem !important; }
-  .top-bar .top-bar-section ul li ul.dropdown { width: 200px !important; }
-  .top-bar .top-bar-section ul li ul.dropdown li a { line-height: 15px !important; line-height: 0.9375rem !important; padding: 8px 12px; }
-  .top-bar .top-bar-section ul li#fac-serv-btn ul.dropdown { width: 174px !important; }
-  .top-bar .top-bar-section ul li#people-btn ul.dropdown ul.dropdown { width: 50px !important; }
-  .genericTile { min-height: 195px !important; } }
+  .top-bar .title-area .name a {
+    margin-top: 20px;
+    padding-right: 0; }
+  .top-bar .top-bar-section ul li a {
+    font-size: 12px !important;
+    font-size: 0.75rem !important; }
+  .top-bar .top-bar-section ul li ul.dropdown {
+    width: 200px !important; }
+    .top-bar .top-bar-section ul li ul.dropdown li a {
+      line-height: 15px !important;
+      line-height: 0.9375rem !important;
+      padding: 8px 12px; }
+  .top-bar .top-bar-section ul li#fac-serv-btn ul.dropdown {
+    width: 174px !important; }
+  .top-bar .top-bar-section ul li#people-btn ul.dropdown ul.dropdown {
+    width: 50px !important; }
+
+  .genericTile {
+    min-height: 195px !important; } }
 /*----- Tablet up breakpoint -------*/
-@media screen and (min-width: 768px) { .top-bar .top-bar-section ul { /* Note: Update formatting for navigation submenus here */ }
-  .genericTile { min-height: 172px; } }
+@media screen and (min-width: 768px) {
+  .top-bar .top-bar-section ul {
+    /* Note: Update formatting for navigation submenus here */ }
+
+  .genericTile {
+    min-height: 172px; } }
 /*----- Desktop breakpoint ("L") -------*/
-@media screen and (min-width: 991px) { /* Style adjustments for the wall banners */
-  body.home .wall { height: 540px !important; } }
+@media screen and (min-width: 991px) {
+  /* Style adjustments for the wall banners */
+  body.home .wall {
+    height: 540px !important; } }
 /*----- IRREGULAR STYLE TARGETS -------*/
-@media screen and (min-width: 991px) and (max-width: 1310px) { .top-bar .top-bar-section ul > li a { padding-right: 16px !important; padding-left: 16px !important; } }
+@media screen and (min-width: 991px) and (max-width: 1310px) {
+  .top-bar .top-bar-section ul > li a {
+    padding-right: 16px !important;
+    padding-left: 16px !important; } }
 /*----- Target tablet, desktop, and higher -------*/
 @media screen and (min-width: 768px) { /* Replace with your styles */ }
 /*----- Target mobile and tablet -------*/
