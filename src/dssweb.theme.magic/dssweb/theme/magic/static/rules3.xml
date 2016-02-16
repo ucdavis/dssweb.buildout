@@ -14,11 +14,7 @@
             <theme href="t13_event_b.html" css:if-content="body.portaltype-event" />
 			<theme href="t13_event_b.html" css:if-content="body.portaltype-dsscourse" />
 		<theme href="t3_bio.html" css:if-content="body.portaltype-fsdperson" />
-		<rules if-path = "/directory-of-people/" >
-			<rules css:if-content="body.template-facetednavigation_view">
-		<theme href="t2_ourpeople.html" if-path="/directory-of-people/" />
-	</rules>
-</rules>
+		
 		<theme href="t7_contact.html" css:if-content="body.portaltype-dsscontact" />
 
        <theme href="t5_generic_landing.html" css:if-content=".subsection-prospective-students"/>
