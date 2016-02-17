@@ -55,9 +55,6 @@
         action="tiled-event-listing"
         description="List events here in a tiled display"
     />
-    <browser:resourceDirectory
-          name="faceted_views_images"
-          directory="faceted_views/images"
-          />
+    
 
 </configure>
