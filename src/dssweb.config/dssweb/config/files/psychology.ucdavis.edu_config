@@ -422,10 +422,7 @@ location /people/superztt {
  			deny all;
 			return 404;
 			}
-location /people/starrett {
- 			deny all;
-			return 404;
-			}
+
 		
 		
 

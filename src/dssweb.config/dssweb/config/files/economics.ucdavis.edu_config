@@ -62,3 +62,7 @@ rewrite ^/people/iss-editors /directory-of-people redirect;
 rewrite ^/people/postdoctoral-scholars /directory-of-people redirect;
 rewrite ^/people/research-staff /directory-of-people redirect;
 rewrite ^/people/psych-editors /directory-of-people redirect;
+location /people/starrett {
+ 			deny all;
+			return 404;
+			}
