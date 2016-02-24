@@ -176,7 +176,7 @@
 		</rules>
 		<rules css:if-content="body.site-mindbrain">
 			<copy attributes="href"
-			css:content="#portaltab-about > a"
+			css:content="#portaltab-about-us > a"
 			css:theme="#container-2 > div > div > div.bcontroller > a" />
 			<!--color hack -->
 			<merge attributes="class"
