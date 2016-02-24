@@ -1192,8 +1192,11 @@ line-height: 2em;
 /*---overrides ---*/
 #thumb-section .panel-group section .panel-heading .panel-title a .thumb-txt {
   display: block;
-  margin-left: 130px;
+  margin-left: 25px;
   letter-spacing: -0.01em;
+}
+#thumb-section .panel-group section .panel-body {
+	margin-left:120px;
 }
 
 
@@ -1309,6 +1312,9 @@ h3.lab-bar > a > img.image-left {
  }
  body.template-folder_leadimage_view div#main-container div#content-row.row div#content div div#content div div.tileItem p.tileFooter {
  display:none;
+ }
+ img.thumb {
+	 padding-right: 10px;
  }
 /* @end */
 
