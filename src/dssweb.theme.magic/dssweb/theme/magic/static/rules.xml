@@ -223,11 +223,11 @@
    </replace>
 	
      <!-- rule to set up title to replace static logo on ipad/mobile -->
-     <replace css:theme-children=".justname h1">
+     <!--replace css:theme-children=".justname h1">
         <xsl:for-each css:select="a#portal-logo">
           <xsl:value-of select="@title" />
         </xsl:for-each>
-     </replace>
+     </replace-->
 
         <!--utility menu links -->
 		<copy attributes="href"
