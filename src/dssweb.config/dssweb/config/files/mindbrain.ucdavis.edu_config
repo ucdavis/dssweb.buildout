@@ -420,6 +420,10 @@ location /people/economics {
 	deny all;
 	return 404;
 	}
+location /people/psychology {
+	deny all;
+	return 404;
+	}
 location /people/communication {
         deny all;
         return 404;
