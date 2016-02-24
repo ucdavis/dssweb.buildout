@@ -21,3 +21,27 @@ location /people {
 			deny all;
 			return 404;
 			}
+location /people/psychology {
+        deny all;
+        return 404;
+        }
+location /people/economics {
+	deny all;
+	return 404;
+	}
+location /people/mindbrain {
+        deny all;
+        return 404;
+        }
+location /people/communication {
+        deny all;
+        return 404;
+        }
+location /people/blue-cluster-staff {
+	deny all;
+	return 404;
+	}
+location /people/yellow-cluster-staff {
+	deny all;
+	return 404;
+	}
