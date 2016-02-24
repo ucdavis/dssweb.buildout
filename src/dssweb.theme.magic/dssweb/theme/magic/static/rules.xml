@@ -183,6 +183,15 @@
 			css:content=".front-page-news"
 			css:theme="#container-2 > div > div > div.bcontroller > a"  />
 		</rules>
+		<rules css:if-content="body.site-communication">
+			<copy attributes="href"
+			css:content="#portaltab-about > a"
+			css:theme="#container-2 > div > div > div.bcontroller > a" />
+			<!--color hack -->
+			<merge attributes="class"
+			css:content=".front-page-news"
+			css:theme="#container-2 > div > div > div.bcontroller > a"  />
+		</rules>
 
 		<!-- Events Happy Box -->
 		<copy css:content=".front-page-events > dl > dd"
