@@ -1241,6 +1241,12 @@ body.mceContentBody div.plomino-accordion-content {
 	padding-top: .5em;
 	padding-left:1em;
 }
+@media screen and (max-width: $screen-sm-min) {
+	#content-core h3.plomino-accordion-header > a{
+		font-size:1.15rem !important;
+	}
+	
+}
 #content-core h3.plomino-accordion-header:hover {
     background: $ucd_bright_gold_40;
 }
