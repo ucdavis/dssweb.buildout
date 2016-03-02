@@ -216,24 +216,9 @@ dl.portlet-static-quick-facts dt {
 /*--events happy box ----*/
 /*------events happy box smaller ----*/
 
-#container-3 div.panel-body div.narrow-col dt.portletHeader{
-	padding-top:15px;
+#container-3 > div > div > h2 > a {
 
-
- span{
-	display:inline;
-	
-
-   a.tile {
-		letter-spacing: 0.05em;
-		font-weight:normal !important;
-		color:#ffffff;
-		text-transform:uppercase;
-		font-size: 1.5rem !important;
-		text-align:center !important;
-
-}
-}
+	font-size:1.5rem !important;
 }
 div.right-panel div.panel-heading.hidden-lg.hidden-md {
 	text-align:center;
@@ -243,7 +228,7 @@ div.right-panel div.panel-heading.hidden-lg.hidden-md {
 	}
 }
 @media screen and (max-width: 991px) and (min-width: 768px) {
-	#container-3 div.panel-body div.narrow-col dt.portletHeader span a.tile {
+	#container-3 > div > div > h2 > a { 
 		font-size:1.125rem !important;
 	}
 }

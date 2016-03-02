@@ -203,10 +203,27 @@
 			css:theme="#container-2 > div > div > div.bcontroller > a"  />
 		</rules>
 
-		<!-- fix this code. events happy box -->
-		<replace css:theme="#container-3 > div > div.narrow-col h2" css:content=".front-page-events > dl > dt.portletHeader" />
+		<!-- events happy box static-->
+		<!--replace css:theme-children="#container-3 > div > div.narrow-col h2" css:content=".front-page-events > dl > dt > a" /-->
+		<rules css:if-content="div.front-page-events-static">
+		<replace css:theme-children="#container-3 > div > div.narrow-col h2" css:content=".front-page-events-static > dl > dt > span:nth-child(2) > a" />
+		<!--mobile front page rule static -->
+		<replace css:theme-children="#top-panel-row > div.panel.panel-default.top-panel.right-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content-children="div.front-page-events-static > dl > dt > span:nth-child(2) > a" />
+			<copy css:content=".front-page-events-static > dl > dd"
+			css:theme="#container-3 > div > div > div.content-wrap" />
+			<copy attributes="href"
+			css:content=".front-page-events-static > dl > dd.portletFooter > span:nth-child(2) > a"
+			css:theme="#container-3 > div > div > div.bcontroller > a"  />
+			<merge attributes="class"
+			css:content=".front-page-events-static"
+			css:theme="#container-3 > div > div > div.bcontroller > a"  />
+	   <!--events happy box contentleadimage -->
+		</rules>
+		<rules css:if-content="div.front-page-events">
+		<replace css:theme-children="#container-3 > div > div.narrow-col h2" css:content=".front-page-events > dl > dt > a" />
 		
-		<replace theme='//*[@id="top-panel-row"]/div[4]/div[1]/h4/text()' content='//*[@id="portletwrapper-706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f4453532d4d61737465722f636f6d6d756e69636174696f6e2f646973636f7665722d65636f6e6f6d6963730a7768792d636f6d6d756e69636174696f6e"]/dl/dt/span[2]/a/text()' />
+		
+		
 		
 		<copy css:content=".front-page-events > dl > dd"
 		css:theme="#container-3 > div > div > div.content-wrap" />
@@ -216,7 +233,7 @@
 		<merge attributes="class"
 		css:content=".front-page-events"
 		css:theme="#container-3 > div > div > div.bcontroller > a"  />
-		
+	</rules>
 		<!--rules for the static portlet types that can end up on the front page -->
 		<rules css:if-content=".right-front-column dl.portletStaticText">   
 		<replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.right-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a"> The Latest</replace>
