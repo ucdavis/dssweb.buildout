@@ -130,6 +130,16 @@
          css:content="#portaltab-subscribe > a" />
 			<drop content='//li[@id="portaltab-subscribe"]' />
   </rules>
+
+  <!--speed watch -->
+  <rules css:if-content="body.site-communication" >
+	  <!--replace css:theme="#container-3 div.panel-body div.narrow-col h2"
+		  css:content="dl.portlet-static-why-communication dt a.tile" /-->
+	
+	
+	  
+    </rules>
+
   
 	   
   <!--Other sites-->	   
@@ -193,7 +203,11 @@
 			css:theme="#container-2 > div > div > div.bcontroller > a"  />
 		</rules>
 
-		<!-- Events Happy Box -->
+		<!-- fix this code. events happy box -->
+		<replace css:theme="#container-3 > div > div.narrow-col h2" css:content=".front-page-events > dl > dt.portletHeader" />
+		
+		<replace theme='//*[@id="top-panel-row"]/div[4]/div[1]/h4/text()' content='//*[@id="portletwrapper-706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f4453532d4d61737465722f636f6d6d756e69636174696f6e2f646973636f7665722d65636f6e6f6d6963730a7768792d636f6d6d756e69636174696f6e"]/dl/dt/span[2]/a/text()' />
+		
 		<copy css:content=".front-page-events > dl > dd"
 		css:theme="#container-3 > div > div > div.content-wrap" />
 		<copy attributes="href"
