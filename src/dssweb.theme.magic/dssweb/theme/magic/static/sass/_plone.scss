@@ -1,8 +1,19 @@
 /*Plone Styles */
 @charset "utf-8";
 @import "variables";
+body {
+    @include bp-small(){
+        @include define-breakpoint("bp-small");
+    }  
 
+    @include bp-medium(){
+        @include define-breakpoint("bp-medium");
+    }
 
+    @include bp-huge(){
+        @include define-breakpoint("bp-large");
+    }
+}
 /* override wallpaper height without breaking cakefarm theme  */
 .wall .wallpaper .notsobig {
 	height:540px !important;
@@ -28,6 +39,17 @@ div.winter-sky > dl > dt {
 #top-panel-row .bcontroller .btn-home.btn-primary.winter-sky{
 	background-color: $winter_sky;
 }
+dl.wine-grape dt.portletHeader {
+	background-color: $wine_grape !important;
+}
+div.wine-grape > dl > dt {
+	background-color: $wine_grape !important;
+	
+}
+#top-panel-row .bcontroller .btn-home.btn-primary.wine-grape{
+	background-color: $wine_grape;
+}
+
 
 .hiddenStructure {
     background: none repeat scroll 0 0 transparent;
@@ -79,6 +101,15 @@ a#portal-logo img {
 	    display: inline-block;
 	    margin: 0 0;
 	    padding-top: 0px;
+}
+@media screen and (max-width: 991px) and (min-width: 768px) {
+	#portal-logo {
+		    display: inline-block;
+		    margin-top: 20px;
+		    height: 100%;
+			 
+	}
+	
 }
 
 #portal-searchbox {
@@ -182,6 +213,27 @@ dl.portlet-static-quick-facts dt {
 	line-height: normal;
     font-size: 120%;
 }
+/*--events happy box ----*/
+/*------events happy box smaller ----*/
+
+#container-3 > div > div > h2 > a {
+
+	font-size:1.5rem !important;
+}
+div.right-panel div.panel-heading.hidden-lg.hidden-md {
+	text-align:center;
+	
+	a {
+		text-decoration:none;
+	}
+}
+@media screen and (max-width: 991px) and (min-width: 768px) {
+	#container-3 > div > div > h2 > a { 
+		font-size:1.125rem !important;
+	}
+}
+
+
 /*----- homepage title ------*/
 .homepage-title {
 	font-size: 36px !important;
@@ -713,11 +765,6 @@ margin: 1em 0;
 .error input#title {
     width: 99%;
 }
-div.field > img {
-padding-top: 5px;
-padding-bottom: 5px;
-float: right;
-}
 
 .fieldRequired {
     background: url(required.png) center left no-repeat;
@@ -773,6 +820,13 @@ font-size: small;
     height: 70px;
     width: 70px;
     padding-top: 1px; }
+
+.formHelp {
+  color: #555;
+  margin: 0 0 0.2em 0;
+  display: block;
+  font-weight: normal;
+}
 	 
 /*------Collection Summary View with Images -------*/
 tileItem.visualIEFloatFix {
@@ -831,6 +885,9 @@ padding-left: 35px;
 /*--Basic rec pool Blue Portlet --*/
 
 /*--tables --*/
+td.half-width {
+	width:50%;
+}
 table.listing tbody th {
     
 }
@@ -1055,7 +1112,7 @@ line-height: 1.4em;
 }
 
 @media screen and (max-width: $screen-md-min){
-	li.name > a#portal-logo {
+	/*li.name > a#portal-logo {
 		display: none;
 	}
 	.justname h1 {
@@ -1067,16 +1124,16 @@ line-height: 1.4em;
 	     padding-left: 10px;
 	     letter-spacing: 0.1em;
 	     font-weight: bold;
-}		
+}	*/	
     .homepage-title	{
     	font-size:1.8rem !important;
     }
 
-}
+} 
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768px < width < 991px
-	li.name > a#portal-logo {
+/*	li.name > a#portal-logo {
 		display: none;
-	}
+	} 
 	.justname h1 {
 		font-family:Verdana;
 	     color: white;
@@ -1087,7 +1144,7 @@ line-height: 1.4em;
 		padding-right: 10px;
 	     letter-spacing: 0.1em;
 	     font-weight: bold;
-}		
+}	*/	
     .homepage-title	{
     	font-size:1.8rem !important;
     }
@@ -1165,8 +1222,11 @@ line-height: 2em;
 /*---overrides ---*/
 #thumb-section .panel-group section .panel-heading .panel-title a .thumb-txt {
   display: block;
-  margin-left: 130px;
+  margin-left: 25px;
   letter-spacing: -0.01em;
+}
+#thumb-section .panel-group section .panel-body {
+	margin-left:120px;
 }
 
 
@@ -1201,6 +1261,18 @@ body.mceContentBody div.plomino-accordion-content {
 	text-decoration: none;
 	padding-top: .5em;
 	padding-left:1em;
+}
+@media screen and (max-width: $screen-sm-min) {
+	#content-core h3.plomino-accordion-header > a{
+		font-size:1.15rem !important;
+	}
+	div.doormatColumn.column-1 dl.doormatSection dd.doormatSectionBody{
+		margin-bottom:0;
+	}
+	#footer a {
+		font-size:.75rem;
+	}
+	
 }
 #content-core h3.plomino-accordion-header:hover {
     background: $ucd_bright_gold_40;
@@ -1266,11 +1338,30 @@ h3.lab-bar > a > img.image-left {
     margin-top: -14px;
     margin-left: -22px;
  }
+
  /* event Tile */
  .eventTile {
 	 min-height: 225px;
  }
-
-
+ body.template-folder_leadimage_view div#main-container.container div#content-row.row div#content.col-xs-12.col-sm-12.col-md-8.col-lg-8 div#content-core div#accordionB.panel-group div div.tileItem p.tileFooter {
+	display:none;
+}
+ body.portaltype-dsscourse div#main-container.container div#content-row.row div#content.col-xs-12.col-sm-12.col-md-8.col-lg-8 div div#content div#viewlet-above-content-body div.newsImageContainer {
+	 display:none;
+ }
+ body.site-economics #content #top-panel-row .narrow-col .bcontroller .btn-primary, body.home #am-content #top-panel-row .narrow-col .bcontroller .btn-primary {
+	 background-color: $cork_oak;
+ }
+ body.template-folder_leadimage_view div#main-container div#content-row.row div#content div div#content div div.tileItem p.tileFooter {
+ display:none;
+ }
+ img.thumb {
+	 padding-right: 10px;
+ }
+ .sticky .util-nav ul.util li .util-btn a.addthis_button img {
+	 display: block;
+	 margin-left: auto;
+	 margin-right: auto;
+ }
 /* @end */
 

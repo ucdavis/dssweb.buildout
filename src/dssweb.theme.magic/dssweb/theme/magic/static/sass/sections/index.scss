@@ -230,7 +230,7 @@
 	// home page ...	
 	.panel-group { // #content-accordion
 		
-		margin-right: -15px !important; // compensate 15px parent (indirect ancestor) right margin
+		margin-right: 0;
 		> .panel { // #top-panel-row
 			margin-bottom: 0;
 			.panel {
