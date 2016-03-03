@@ -29,7 +29,8 @@
               <div class="labLink" tal:define="
                   description obj/Description|string:;
                   title obj/pretty_title_or_id|string:;
-						pi python:support_view.getPiName(obj);
+						pi obj/getPi;
+						pi_name python:support_view.getPiName(obj);
                   desc_or_title python:description or title;
                   url python:support_view.navRootRelativeUrl(obj);
                   image_thumb exists:obj/image_thumb;
@@ -46,7 +47,12 @@
 	                  <span class="labName" tal:content="title">Title</span>
 							
 	  			    </a>
-					  <span class="lab_pi" tal:condition="pi" tal:content="pi">PI</span>
+                <a tal:attributes="href pi;
+                                   title title" >
+					  <span class="lab_pi" tal:condition="pi" tal:content="pi">PI</span> 
+				     </a>
+					  <span tal:content="pi_name">because for fucks's sake</span>
+                
 				  <div class="desc wrapper">
 				  <span class="desc" tal:content="description">Description </span>
 			  </div>
