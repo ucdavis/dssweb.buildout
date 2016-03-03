@@ -102,6 +102,15 @@ a#portal-logo img {
 	    margin: 0 0;
 	    padding-top: 0px;
 }
+@media screen and (max-width: 991px) and (min-width: 768px) {
+	#portal-logo {
+		    display: inline-block;
+		    margin-top: 20px;
+		    height: 100%;
+			 
+	}
+	
+}
 
 #portal-searchbox {
 	float: none;
@@ -204,6 +213,27 @@ dl.portlet-static-quick-facts dt {
 	line-height: normal;
     font-size: 120%;
 }
+/*--events happy box ----*/
+/*------events happy box smaller ----*/
+
+#container-3 > div > div > h2 > a {
+
+	font-size:1.5rem !important;
+}
+div.right-panel div.panel-heading.hidden-lg.hidden-md {
+	text-align:center;
+	
+	a {
+		text-decoration:none;
+	}
+}
+@media screen and (max-width: 991px) and (min-width: 768px) {
+	#container-3 > div > div > h2 > a { 
+		font-size:1.125rem !important;
+	}
+}
+
+
 /*----- homepage title ------*/
 .homepage-title {
 	font-size: 36px !important;
@@ -1082,7 +1112,7 @@ line-height: 1.4em;
 }
 
 @media screen and (max-width: $screen-md-min){
-	li.name > a#portal-logo {
+	/*li.name > a#portal-logo {
 		display: none;
 	}
 	.justname h1 {
@@ -1094,16 +1124,16 @@ line-height: 1.4em;
 	     padding-left: 10px;
 	     letter-spacing: 0.1em;
 	     font-weight: bold;
-}		
+}	*/	
     .homepage-title	{
     	font-size:1.8rem !important;
     }
 
-}
+} 
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768px < width < 991px
-	li.name > a#portal-logo {
+/*	li.name > a#portal-logo {
 		display: none;
-	}
+	} 
 	.justname h1 {
 		font-family:Verdana;
 	     color: white;
@@ -1114,7 +1144,7 @@ line-height: 1.4em;
 		padding-right: 10px;
 	     letter-spacing: 0.1em;
 	     font-weight: bold;
-}		
+}	*/	
     .homepage-title	{
     	font-size:1.8rem !important;
     }
@@ -1192,8 +1222,11 @@ line-height: 2em;
 /*---overrides ---*/
 #thumb-section .panel-group section .panel-heading .panel-title a .thumb-txt {
   display: block;
-  margin-left: 130px;
+  margin-left: 25px;
   letter-spacing: -0.01em;
+}
+#thumb-section .panel-group section .panel-body {
+	margin-left:120px;
 }
 
 
@@ -1228,6 +1261,18 @@ body.mceContentBody div.plomino-accordion-content {
 	text-decoration: none;
 	padding-top: .5em;
 	padding-left:1em;
+}
+@media screen and (max-width: $screen-sm-min) {
+	#content-core h3.plomino-accordion-header > a{
+		font-size:1.15rem !important;
+	}
+	div.doormatColumn.column-1 dl.doormatSection dd.doormatSectionBody{
+		margin-bottom:0;
+	}
+	#footer a {
+		font-size:.75rem;
+	}
+	
 }
 #content-core h3.plomino-accordion-header:hover {
     background: $ucd_bright_gold_40;
@@ -1309,6 +1354,14 @@ h3.lab-bar > a > img.image-left {
  }
  body.template-folder_leadimage_view div#main-container div#content-row.row div#content div div#content div div.tileItem p.tileFooter {
  display:none;
+ }
+ img.thumb {
+	 padding-right: 10px;
+ }
+ .sticky .util-nav ul.util li .util-btn a.addthis_button img {
+	 display: block;
+	 margin-left: auto;
+	 margin-right: auto;
  }
 /* @end */
 

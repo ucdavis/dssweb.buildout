@@ -1201,7 +1201,7 @@ body.contact-type {
 	// Adjust formatting of bottom Featured Courses, etc. titles
 	#bottom-panel-row {
 		.narrow-col {
-			h2 {
+			h2, h2 a {
 				letter-spacing: 0 !important;
 			}
 		}

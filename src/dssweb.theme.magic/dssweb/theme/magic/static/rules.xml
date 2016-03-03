@@ -130,6 +130,16 @@
          css:content="#portaltab-subscribe > a" />
 			<drop content='//li[@id="portaltab-subscribe"]' />
   </rules>
+
+  <!--speed watch -->
+  <rules css:if-content="body.site-communication" >
+	  <!--replace css:theme="#container-3 div.panel-body div.narrow-col h2"
+		  css:content="dl.portlet-static-why-communication dt a.tile" /-->
+	
+	
+	  
+    </rules>
+
   
 	   
   <!--Other sites-->	   
@@ -176,6 +186,15 @@
 		</rules>
 		<rules css:if-content="body.site-mindbrain">
 			<copy attributes="href"
+			css:content="#portaltab-about-us > a"
+			css:theme="#container-2 > div > div > div.bcontroller > a" />
+			<!--color hack -->
+			<merge attributes="class"
+			css:content=".front-page-news"
+			css:theme="#container-2 > div > div > div.bcontroller > a"  />
+		</rules>
+		<rules css:if-content="body.site-communication">
+			<copy attributes="href"
 			css:content="#portaltab-about > a"
 			css:theme="#container-2 > div > div > div.bcontroller > a" />
 			<!--color hack -->
@@ -184,7 +203,28 @@
 			css:theme="#container-2 > div > div > div.bcontroller > a"  />
 		</rules>
 
-		<!-- Events Happy Box -->
+		<!-- events happy box static-->
+		<!--replace css:theme-children="#container-3 > div > div.narrow-col h2" css:content=".front-page-events > dl > dt > a" /-->
+		<rules css:if-content="div.front-page-events-static">
+		<replace css:theme-children="#container-3 > div > div.narrow-col h2" css:content=".front-page-events-static > dl > dt > span:nth-child(2) > a" />
+		<!--mobile front page rule static -->
+		<replace css:theme-children="#top-panel-row > div.panel.panel-default.top-panel.right-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content-children="div.front-page-events-static > dl > dt > span:nth-child(2) > a" />
+			<copy css:content=".front-page-events-static > dl > dd"
+			css:theme="#container-3 > div > div > div.content-wrap" />
+			<copy attributes="href"
+			css:content=".front-page-events-static > dl > dd.portletFooter > span:nth-child(2) > a"
+			css:theme="#container-3 > div > div > div.bcontroller > a"  />
+			<merge attributes="class"
+			css:content=".front-page-events-static"
+			css:theme="#container-3 > div > div > div.bcontroller > a"  />
+	   <!--events happy box contentleadimage -->
+		</rules>
+		<rules css:if-content="div.front-page-events">
+		<replace css:theme-children="#container-3 > div > div.narrow-col h2" css:content=".front-page-events > dl > dt > a" />
+		
+		
+		
+		
 		<copy css:content=".front-page-events > dl > dd"
 		css:theme="#container-3 > div > div > div.content-wrap" />
 		<copy attributes="href"
@@ -193,7 +233,7 @@
 		<merge attributes="class"
 		css:content=".front-page-events"
 		css:theme="#container-3 > div > div > div.bcontroller > a"  />
-		
+	</rules>
 		<!--rules for the static portlet types that can end up on the front page -->
 		<rules css:if-content=".right-front-column dl.portletStaticText">   
 		<replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.right-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a"> The Latest</replace>
@@ -214,11 +254,11 @@
    </replace>
 	
      <!-- rule to set up title to replace static logo on ipad/mobile -->
-     <replace css:theme-children=".justname h1">
+     <!--replace css:theme-children=".justname h1">
         <xsl:for-each css:select="a#portal-logo">
           <xsl:value-of select="@title" />
         </xsl:for-each>
-     </replace>
+     </replace-->
 
         <!--utility menu links -->
 		<copy attributes="href"
