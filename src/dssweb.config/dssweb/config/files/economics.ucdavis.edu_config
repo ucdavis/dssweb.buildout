@@ -94,3 +94,7 @@ location /people/yellow-cluster-staff {
 	deny all;
 	return 404;
 	}
+location /people/pkaliman {
+	deny all;
+	return 404;
+	}
