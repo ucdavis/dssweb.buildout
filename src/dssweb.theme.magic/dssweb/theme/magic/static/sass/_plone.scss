@@ -1114,39 +1114,14 @@ line-height: 1.4em;
 }
 
 @media screen and (max-width: $screen-md-min){
-	/*li.name > a#portal-logo {
-		display: none;
-	}
-	.justname h1 {
-		font-family:Verdana;
-	     color: white;
-	     text-transform: uppercase;
-	     font-size: 150%;
-	     margin-top: -40px;
-	     padding-left: 10px;
-	     letter-spacing: 0.1em;
-	     font-weight: bold;
-}	*/	
+	
     .homepage-title	{
     	font-size:1.8rem !important;
     }
 
 } 
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768px < width < 991px
-/*	li.name > a#portal-logo {
-		display: none;
-	} 
-	.justname h1 {
-		font-family:Verdana;
-	     color: white;
-	     text-transform: uppercase;
-	     font-size: 125%;
-	     margin-top: -30px;
-	     padding-left: 15px;
-		padding-right: 10px;
-	     letter-spacing: 0.1em;
-	     font-weight: bold;
-}	*/	
+
     .homepage-title	{
     	font-size:1.8rem !important;
     }

@@ -253,13 +253,6 @@
      <span class="bread-divider">|</span>
    </replace>
 	
-     <!-- rule to set up title to replace static logo on ipad/mobile -->
-     <!--replace css:theme-children=".justname h1">
-        <xsl:for-each css:select="a#portal-logo">
-          <xsl:value-of select="@title" />
-        </xsl:for-each>
-     </replace-->
-
         <!--utility menu links -->
 		<copy attributes="href"
 		css:content="li#portaltab-index_html > a"
