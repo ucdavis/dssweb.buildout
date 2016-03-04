@@ -215,10 +215,14 @@ dl.portlet-static-quick-facts dt {
 }
 /*--events happy box ----*/
 /*------events happy box smaller ----*/
-
 #container-3 > div > div > h2 > a {
 
 	font-size:1.5rem !important;
+	
+	span {
+		font-size:1.5rem;
+	}
+
 }
 div.right-panel div.panel-heading.hidden-lg.hidden-md {
 	text-align:center;
@@ -226,6 +230,7 @@ div.right-panel div.panel-heading.hidden-lg.hidden-md {
 	a {
 		text-decoration:none;
 	}
+
 }
 @media screen and (max-width: 991px) and (min-width: 768px) {
 	#container-3 > div > div > h2 > a { 
