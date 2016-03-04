@@ -215,13 +215,10 @@ dl.portlet-static-quick-facts dt {
 }
 /*--events happy box ----*/
 /*------events happy box smaller ----*/
-#container-3 > div > div > h2 > a {
-
-	font-size:1.5rem !important;
-	
-	span {
-		font-size:1.5rem;
-	}
+div#container-3 div.panel-body div.narrow-col h2 a
+     {
+	    
+		 font-size:1.5rem !important;
 
 }
 div.right-panel div.panel-heading.hidden-lg.hidden-md {
