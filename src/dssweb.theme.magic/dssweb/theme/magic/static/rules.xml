@@ -119,7 +119,8 @@
   
      <replace css:theme-children="#top-bar-wrap > nav > ul > li.name"
               css:content="#portal-logo"  />
- 
+				  
+				  <drop attributes="title" css:content="ul#portal-globalnav li a" /> 
   <!--ISS Specific Rules -->
   <rules css:if-content="body.site-iss">
     <copy attributes="href"
@@ -131,14 +132,7 @@
 			<drop content='//li[@id="portaltab-subscribe"]' />
   </rules>
 
-  <!--speed watch -->
-  <rules css:if-content="body.site-communication" >
-	  <!--replace css:theme="#container-3 div.panel-body div.narrow-col h2"
-		  css:content="dl.portlet-static-why-communication dt a.tile" /-->
-	
-	
-	  
-    </rules>
+ 
 
   
 	   
