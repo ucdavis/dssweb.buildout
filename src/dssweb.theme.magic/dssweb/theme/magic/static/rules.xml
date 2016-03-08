@@ -206,7 +206,7 @@
 			<copy css:content=".front-page-events-static > dl > dd"
 			css:theme="#container-3 > div > div > div.content-wrap" />
 			<copy attributes="href"
-			css:content=".front-page-events-static > dl > dd.portletFooter > span:nth-child(2) > a"
+			css:content="div.front-page-events-static > dl > dt > span:nth-child(2) > a"
 			css:theme="#container-3 > div > div > div.bcontroller > a"  />
 			<merge attributes="class"
 			css:content=".front-page-events-static"
