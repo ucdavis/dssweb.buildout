@@ -253,8 +253,7 @@
 		css:theme="li#uti-home > a" />
 		<!--replace css:theme="#uti-home > a"
 		          css:content="#portaltab-index_html > a" method="raw" /-->       
-		<replace css:theme="li#uti-contact > a"
-		             css:content="li#portaltab-contact > a" method="raw" css:if-not-content="body.site-ISS"/>
+	
 		<replace css:theme="li#uti-events > a"
 		      css:content="li#portaltab-events > a" method="raw" />
 		<replace css:theme="li#uti-news > a" css:content="li#portaltab-news > a" />
