@@ -17,6 +17,10 @@ location /mindbrain {
 			deny all;
 			return 404;
 			}
+location /DSS-Master {
+		 	deny all;
+			return 404;
+			}
 location /people {
 			deny all;
 			return 404;

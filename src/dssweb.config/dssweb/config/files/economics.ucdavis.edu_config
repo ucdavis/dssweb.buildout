@@ -35,7 +35,11 @@ location /mindbrain {
 location /people/aroyston {
 			deny all;
 			return 404;
-			}    
+			}
+location /DSS-Master {
+		 	deny all;
+			return 404;
+			}
 rewrite ^/people$ /directory-of-people redirect; 
 rewrite ^/people/$ /directory-of-people redirect;
 
