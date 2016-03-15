@@ -1,29 +1,13 @@
-location /faculty {
-rewrite ^/faculty/fzfeens/(.*)$ http://www.robertfeenstra.info/$1 redirect;
-rewrite ^/faculty/mepage(.*)$ http://economics.ucdavis.edu/people/mepage/$1 redirect;
-rewrite ^/faculty/fzlinder^(.*)$ http://lindert.econ.ucdavis.edu/$1 redirect;
-rewrite ^/faculty/cmm(.*)$ http://economics.ucdavis.edu/people/cmm/$1 redirect;
-rewrite ^/faculty/gperi(.*)$ http://economics.ucdavis.edu/people/gperi/$1 redirect;
-rewrite ^/faculty/(.*)$ http://faculty.econ.ucdavis.edu/faculty/$1 redirect;
-}
-location = /google5d619727837d5b53.html {
-            rewrite ^/(.*)  $1;
-            return 200 "google-site-verification: $uri";
-    }
-location /graduate/ {
-rewrite ^/graduate/gbasso.*$ http://gaetanobasso.ucdavis.edu/ redirect;
-rewrite ^/graduate/(.*)$ http://old.econ.ucdavis.edu/graduate/$1 redirect;
-}
+#nginx config file
 location /psychology {
         deny all;
         return 404;
         }
-location /people/szschei {
-        deny all;
-        return 404;
-        }
-
-location /communication {
+location /economics {
+			deny all;
+			return 404;
+			}
+location /mindbrain{
  			deny all;
 			return 404;
 			}
@@ -31,22 +15,21 @@ location /iss {
 			deny all;
 			return 404;
 			}
-location /mindbrain {
-			deny all;
-			return 404;
-			}
-location /people/aroyston {
-			deny all;
-			return 404;
-			}
 location /DSS-Master {
 		 	deny all;
 			return 404;
 			}
-rewrite ^/people$ /directory-of-people redirect; 
+location = /google5d619727837d5b53.html {
+            rewrite ^/(.*)  $1;
+            return 200 "google-site-verification: $uri";
+    }
+
+
+rewrite ^/people$ /directory-of-people redirect;
 rewrite ^/people/$ /directory-of-people redirect;
 
-rewrite ^/people/faculty(.*)$ /directory-of-people/econ-faculty redirect;
+
+rewrite ^/people/faculty(.*)$ /directory-of-people/faculty redirect;
 rewrite ^/people/grad-students /directory-of-people redirect;
 rewrite ^/people/affiated-faculty /directory-of-people redirect;
 rewrite ^/people/emeriti /directory-of-people redirect;
@@ -69,11 +52,9 @@ rewrite ^/people/iss-editors /directory-of-people redirect;
 rewrite ^/people/postdoctoral-scholars /directory-of-people redirect;
 rewrite ^/people/research-staff /directory-of-people redirect;
 rewrite ^/people/psych-editors /directory-of-people redirect;
-location /people/starrett {
- 			deny all;
-			return 404;
-			}
-location /undergrad-program/people {
+
+
+location /people/economics {
 	deny all;
 	return 404;
 	}
@@ -82,17 +63,13 @@ location /people/psychology {
 	return 404;
 	}
 location /people/mindbrain {
-	deny all;
-	return 404;
- 	}
-location /people/communication {
-	deny all;
-	return 404;
-	}
+        deny all;
+        return 404;
+        }
 location /people/socialsciences {
-	deny all;
-	return 404;
-	}
+        deny all;
+        return 404;
+        }
 location /people/blue-cluster-staff {
 	deny all;
 	return 404;
@@ -101,7 +78,4 @@ location /people/yellow-cluster-staff {
 	deny all;
 	return 404;
 	}
-location /people/pkaliman {
-	deny all;
-	return 404;
-	}
+
