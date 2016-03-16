@@ -794,6 +794,12 @@ div.field.error {
     padding: 0.5em;
     margin:  1em 0;
 }
+#content li.formTab a.required span:after, #content-core li.formTab a.required span:after, div.field span.required:after {
+ 	content: "(required)";
+ 	color: $rec_blue;
+ 	padding-left: 0.2em;
+	font-size: 1.0rem;
+}
 .error .fieldRequired {
     color: #d00;
 }
