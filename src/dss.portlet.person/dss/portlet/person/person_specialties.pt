@@ -11,7 +11,9 @@
 	<span class="portletTopRight"></span>
 	
 </dt>
-<div class="collapsible panel-collapse collapse in">
+<div tal:define="checkPermission nocall: context/portal_membership/checkPermission;
+                 isEditor python:checkPermission('Modify portal content', context);"
+					  class="collapsible panel-collapse collapse in">
 	<div class="portlet-content panel-body">
 		<div class="vcard office">
 		
