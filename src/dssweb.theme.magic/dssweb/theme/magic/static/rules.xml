@@ -132,7 +132,12 @@
 			<drop content='//li[@id="portaltab-subscribe"]' />
   </rules>
 
- 
+ <rules css:if-not-content="body.site-iss">
+  <replace css:theme="#uti-contact > a"
+        css:content="#portaltab-contact > a" />
+	<drop content='//li[@id="portaltab-contact"]' />
+</rules>
+	
 
   
 	   
