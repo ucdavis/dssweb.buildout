@@ -134,6 +134,27 @@ class="portlet portletPersonAddress default-color">
 		</div>
 					
 			</div>
+              <span tal:condition="python:checkPermission('Modify portal content', context)" class="normal">
+                <a tal:attributes="href python:'%s/edit' % personMembershipInformation.absolute_url()">
+              
+                 <li  tal:condition="not:personMembershipInformation/getPosition"
+                            i18n:translate="FacultyStaffDirectory_assignPosition">Assign a position</li>
+   
+                 <li tal:condition="not:personMembershipInformation/getLab_officeAddress"
+                            i18n:translate="FacultyStaffDirectory_assignLab_officeAddress">Assign an office address</li>
+               
+			 
+                 
+                 <li tal:condition="not:personMembershipInformation/getLab_officePhone"
+                            i18n:translate="FacultyStaffDirectory_assignLab_officePhone">Assign a phone number</li>
+                 <li tal:condition="not:personMembershipInformation/getSummarybio"
+                            i18n:translate="FacultyStaffDirectory_assignSummarybio">Add a Department Short Bio</li>
+                 
+		   <li tal:condition="personMembershipInformation/getPosition"
+                            i18n:translate="FacultyStaffDirectory_editPosition">Edit any of the above information</li>
+                 
+                </a>
+              </span>
 		</div>
 			</tal:block>
 				
