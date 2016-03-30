@@ -153,15 +153,33 @@
 	   <!-- swap out in the title text on the homepage -->
 	   <replace theme-children="//*[@id='middle-row']/h2" content="//h1[@id='parent-fieldname-title']/text()" if-content="//h1[@id='parent-fieldname-title']" />
 
-		<!-- News Happy Box -->
-		<replace css:content=".front-page-news > dl > dd"
-		css:theme-children="#container-1 > div > div > div.content-wrap"  />
+		<!-- News aka Left Happy Box -->
+		<!-- left-page happy box static -->
+		<rules css:if-content="div.front-page-news-static">
+		<replace css:theme-children="#container-1 > div > div.narrow-col h2" css:content=".front-page-news-static > dl > dt > span:nth-child(2) > a" />
+		<!--mobile front page rule static -->
+		<replace css:theme-children="#top-panel-row > div.panel.panel-default.top-panel.left-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content-children="div.front-page-events-static > dl > dt > span:nth-child(2) > a" />
+			<copy css:content=".front-page-news-static > dl > dd"
+			css:theme="#container-3 > div > div > div.content-wrap" />
+			<copy attributes="href"
+			css:content="div.front-page-news-static > dl > dt > span:nth-child(2) > a"
+			css:theme="#container-1 > div > div > div.bcontroller > a"  />
+			<merge attributes="class"
+			css:content=".front-page-news-static"
+			css:theme="#container-1 > div > div > div.bcontroller > a"  />
+		</rules>
+		<rules css:if-content="div.front-page-news">
+		<replace css:theme-children="#container-1 > div > div.narrow-col h2" css:content=".front-page-news > dl > dt > a" />
+		
+		<copy css:content=".front-page-news > dl > dd"
+		css:theme="#container-1 > div > div > div.content-wrap" />
 		<copy attributes="href"
 		css:content=".front-page-news > dl > dd.portletFooter > span:nth-child(2) > a"
 		css:theme="#container-1 > div > div > div.bcontroller > a"  />
 		<merge attributes="class"
 		css:content=".front-page-news"
 		css:theme="#container-1 > div > div > div.bcontroller > a"  />
+	</rules>
 
 		<!--  About Happy Box -->
 		<replace css:content-children="#content-core"
@@ -202,7 +220,7 @@
 			css:theme="#container-2 > div > div > div.bcontroller > a"  />
 		</rules>
 
-		<!-- events happy box static-->
+		<!-- events aka happy box static-->
 		<!--replace css:theme-children="#container-3 > div > div.narrow-col h2" css:content=".front-page-events > dl > dt > a" /-->
 		<rules css:if-content="div.front-page-events-static">
 		<replace css:theme-children="#container-3 > div > div.narrow-col h2" css:content=".front-page-events-static > dl > dt > span:nth-child(2) > a" />
@@ -216,13 +234,10 @@
 			<merge attributes="class"
 			css:content=".front-page-events-static"
 			css:theme="#container-3 > div > div > div.bcontroller > a"  />
-	   <!--events happy box contentleadimage -->
+	   <!--events right happy box contentleadimage -->
 		</rules>
 		<rules css:if-content="div.front-page-events">
 		<replace css:theme-children="#container-3 > div > div.narrow-col h2" css:content=".front-page-events > dl > dt > a" />
-		
-		
-		
 		
 		<copy css:content=".front-page-events > dl > dd"
 		css:theme="#container-3 > div > div > div.content-wrap" />

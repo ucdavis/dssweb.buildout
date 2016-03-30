@@ -220,6 +220,9 @@ div#container-3 div.panel-body div.narrow-col h2 a
 	    
 		 font-size:1.5rem !important;
 
+   }
+div#container-1 div.panel-body div.narrow-col h2 a {
+	 font-size:1.5rem !important;
 }
 div.right-panel div.panel-heading.hidden-lg.hidden-md {
 	text-align:center;
@@ -229,8 +232,18 @@ div.right-panel div.panel-heading.hidden-lg.hidden-md {
 	}
 
 }
+div.left-panel div.panel-heading.hidden-lg.hidden-md {
+	
+	text-align:center;
+	
+	a {
+		text-decoration:none;
+	}
+
+	
+}
 @media screen and (max-width: 991px) and (min-width: 768px) {
-	#container-3 > div > div > h2 > a { 
+	#container-3 > div > div > h2 > a, #container-1 > div > div > h2 > a{ 
 		font-size:1.125rem !important;
 	}
 }
