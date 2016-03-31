@@ -88,17 +88,20 @@ span.calElement.next:hover, span.calElement.prev:hover {
 }
 
 
-.calElement.selected {
-  background-color: #002855;
+.calMonth .calElement.selected {
+  background-color: #ddd;
   border: 1px solid #002855;
   -moz-border-radius: 3px
 }
 
 span.calElement:hover {
-  background-color: #002855;
+  background-color: #ddd;
   border: 1px solid #002855;
   -moz-border-radius: 3px;
   cursor: pointer;
+}
+.calDay .calElement:hover {
+   color: #002855;
 }
 
 .calElement.today {
