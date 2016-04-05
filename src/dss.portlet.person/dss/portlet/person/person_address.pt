@@ -25,7 +25,7 @@ class="portlet portletPersonAddress default-color">
         
               <tal:block tal:repeat="eachDepartment departmentsList" >
 					<div tal:define="personMembershipInformation python:eachDepartment.getMembershipInformation(context);"
-						tal:condition="personMembershipInformation/getDept_officeAddress">
+						>
 						
                     <h4 class="org"><a class="url" tal:attributes="href python:eachDepartment.getDept_url()">
                       <span  tal:content="eachDepartment/Title" />
@@ -67,15 +67,18 @@ class="portlet portletPersonAddress default-color">
                 <a tal:attributes="href python:'%s/edit' % personMembershipInformation.absolute_url()">
               
                  <li  tal:condition="not:personMembershipInformation/getPosition"
-                            i18n:translate="FacultyStaffDirectory_assignPosition">Assign a position</li>
+                            i18n:translate="FacultyStaffDirectory_assignPosition">Add a position</li>
    
                  <li tal:condition="not:personMembershipInformation/getDept_officeAddress"
-                            i18n:translate="FacultyStaffDirectory_assignDept_officeAddress">Assign an office address</li>
+                            i18n:translate="FacultyStaffDirectory_assignDept_officeAddress">Add an office address</li>
+									 
+                  <li tal:condition="not:personMembershipInformation/getOfficeHours"
+                             i18n:translate="FacultyStaffDirectory_assignOfficeHours">Add Office Hours</li>
                
 			 
                  
                  <li tal:condition="not:personMembershipInformation/getDept_officePhone"
-                            i18n:translate="FacultyStaffDirectory_assignDept_officePhone">Assign a phone number</li>
+                            i18n:translate="FacultyStaffDirectory_assignDept_officePhone">Add a phone number</li>
                  <li tal:condition="not:personMembershipInformation/getSummarybio"
                             i18n:translate="FacultyStaffDirectory_assignSummarybio">Add a Department Short Bio</li>
                  
@@ -86,6 +89,7 @@ class="portlet portletPersonAddress default-color">
               </span>
 			  </div>
 			  </tal:block>
+                
 			  </dd>
 		  </tal:block>
 	</div>
@@ -99,7 +103,7 @@ class="portlet portletPersonAddress default-color">
               
                 <tal:block tal:repeat="eachLab labsList" >
 					<div tal:define="personMembershipInformation python:eachLab.getMembershipInformation(context);"
-						tal:condition="personMembershipInformation/getLab_officeAddress">
+						>
 					
                     <h4 class="org"><a class="url" tal:attributes="href python:eachLab.getDept_url()">
                       <span  tal:content="eachLab/Title" />
@@ -139,6 +143,10 @@ class="portlet portletPersonAddress default-color">
               
                  <li  tal:condition="not:personMembershipInformation/getPosition"
                             i18n:translate="FacultyStaffDirectory_assignPosition">Assign a position</li>
+									 
+                  <li tal:condition="not:personMembershipInformation/getOfficeHours"
+                             i18n:translate="FacultyStaffDirectory_assigOfficeHours">Add Office Hours</li>
+						
    
                  <li tal:condition="not:personMembershipInformation/getLab_officeAddress"
                             i18n:translate="FacultyStaffDirectory_assignLab_officeAddress">Assign an office address</li>
