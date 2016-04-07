@@ -1,0 +1,7 @@
+/* portletperson.css */
+/*css for person portlets*/
+
+a.person-edit {
+	color:red !important;
+	font-size:1.2rem !important;
+}

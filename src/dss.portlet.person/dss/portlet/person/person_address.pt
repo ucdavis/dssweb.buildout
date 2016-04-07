@@ -64,7 +64,7 @@ class="portlet portletPersonAddress default-color">
 	      </div>
 			
               <span tal:condition="python:checkPermission('Modify portal content', context)" class="normal">
-                <a tal:attributes="href python:'%s/edit' % personMembershipInformation.absolute_url()">
+                <a class="person-edit" tal:attributes="href python:'%s/edit' % personMembershipInformation.absolute_url()">
               
                  <li  tal:condition="not:personMembershipInformation/getPosition"
                             i18n:translate="FacultyStaffDirectory_assignPosition">Add a position</li>
@@ -139,7 +139,7 @@ class="portlet portletPersonAddress default-color">
 					
 			</div>
               <span tal:condition="python:checkPermission('Modify portal content', context)" class="normal">
-                <a tal:attributes="href python:'%s/edit' % personMembershipInformation.absolute_url()">
+                <a class="person-edit" tal:attributes="href python:'%s/edit' % personMembershipInformation.absolute_url()">
               
                  <li  tal:condition="not:personMembershipInformation/getPosition"
                             i18n:translate="FacultyStaffDirectory_assignPosition">Assign a position</li>

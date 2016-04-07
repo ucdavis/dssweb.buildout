@@ -29,7 +29,8 @@
     media="screen" rel="stylesheet" rendering="import"
     cacheable="True" compression="safe" cookable="True"
     applyPrefix="True"
-    enabled="1" 
+    enabled="1"
+	 insert-after="portlet.css"
 	  />
 
 </object>

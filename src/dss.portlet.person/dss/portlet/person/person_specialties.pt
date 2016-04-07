@@ -38,7 +38,7 @@
                         </tal:block>
                         <span tal:condition="python:checkPermission('Modify portal content', context)"
                               class="discreet">[
-                          <a tal:attributes="href python:'%s/edit' % personSpecialtyData.absolute_url()">
+                          <a class="person-edit" tal:attributes="href python:'%s/edit' % personSpecialtyData.absolute_url()">
                             <tal:block tal:condition="researchTopic"
                                        i18n:translate="FacultyStaffDirectory_editResearchTopic">Edit research topic</tal:block>
                             <tal:block tal:condition="not:researchTopic"

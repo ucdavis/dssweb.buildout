@@ -43,7 +43,11 @@ location /economics {
 location /communication {
  			deny all;
 			return 404;
-			}
+			
+location /history {
+		deny all;
+		return 404;
+		}
 location /iss {
 			deny all;
 			return 404;
@@ -435,6 +439,10 @@ location /people/communication {
         return 404;
         }
 location /people/socialsciences {
+        deny all;
+        return 404;
+        }
+location /people/history {
         deny all;
         return 404;
         }
