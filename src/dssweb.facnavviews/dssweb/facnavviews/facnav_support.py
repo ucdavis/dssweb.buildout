@@ -82,10 +82,24 @@ class FacNavView(BrowserView):
                 if field.get_size(context) != 0:
                     return field.tag(context, scale=scale, css_class=css_class, title=title)
             return ''
-            
+    
+
+    def getPiName(self, obj):
+         context = aq_inner(obj)
+         
+         if pifield is not None:
+             title = pifield.get(context)
+         else:
+             pifield = ''
+         if field is not None:
+             
+           return pifield.tag(context, scale=scale, css_class=css_class, title=title)
+         return ''
+         
+        
+          
     def getPiPersonInfo(self, obj):
         pi_person = obj.getPi().Title()
         return pi_person
-            
             
             

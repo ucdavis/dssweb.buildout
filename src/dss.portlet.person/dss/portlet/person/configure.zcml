@@ -6,7 +6,10 @@
     i18n_domain="dss">
 
     <five:registerPackage package="." />
-
+	
+    <!-- Include the sub-packages that use their own configure.zcml files. -->
+    <include package=".browser" />
+    
     <genericsetup:registerProfile
         name="default"
         title="person text portlets"

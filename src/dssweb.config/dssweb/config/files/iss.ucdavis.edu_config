@@ -16,7 +16,11 @@ location /communication {
 location /psychology {
 			deny all;
 			return 404;
-			}
+			
+location /history {
+		deny all;
+		return 404;
+		}
     
 location /mindbrain {
 			deny all;
@@ -43,6 +47,10 @@ location /people/mindbrain {
         return 404;
         }
 location /people/communication {
+        deny all;
+        return 404;
+        }
+location /people/history {
         deny all;
         return 404;
         }

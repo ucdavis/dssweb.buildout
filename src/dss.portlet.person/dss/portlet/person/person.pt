@@ -13,7 +13,8 @@
 
 
 	<dd class="portlet-content">
-	  <div class="vcard">
+	  <div class="vcard" tal:define="checkPermission nocall: context/portal_membership/checkPermission;
+                 isEditor python:checkPermission('Modify portal content', context);">
 		
 		<tal:block>
 		          <div class="photo"
@@ -29,6 +30,12 @@
 				<span class="family-name" tal:content="context/getLastName"><tal:comment replace="nothing">[Last Name]</tal:comment></span>
 				<span class="honorific-suffix" tal:content="context/getSuffix"><tal:comment replace="nothing">[ suffix i.e. Dr]</tal:comment></span>
 			</h4>
+	      <span tal:condition="python:checkPermission('Modify portal content', context)"
+	            class="discreet">[
+	        <a class="photo-url person-edit" tal:attributes="href python:'base_edit?fieldset=photo'">
+	          <tal:block i18n:translate="FacultyStaffDirectory_editImage">Add or Edit Your Photo</tal:block>
+	        </a>
+	      ]</span>
 		</tal:block>
 		<div class="title org">
 
@@ -87,7 +94,7 @@
 				  									<li class="hidden-lg hidden-md"><span class="office"><a href="http://maps.google.com" target="_blank"><span class="item-label">OFFICE</span></a></span></li>
 				    </ul>
 					  				  
-					  	
+      	  	
 					
 
     	
