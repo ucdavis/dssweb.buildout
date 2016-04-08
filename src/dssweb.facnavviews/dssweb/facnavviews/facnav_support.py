@@ -97,4 +97,9 @@ class FacNavView(BrowserView):
          return ''
          
         
-    
+          
+    def getPiPersonInfo(self, obj):
+        pi_person = obj.getPi().Title()
+        return pi_person
+            
+            
