@@ -10,15 +10,11 @@
 <metal:content-core fill-slot="content-core">
     <metal:content-core define-macro="content-core">
        <metal:title define-slot="top-image">
-  	 <div class="picture flush-bottom"
+  	      <div class="picture flush-bottom"
   	              tal:condition="context/getInlineTopImage">
-  	             <a href="#"
-  	                tal:define="here_url context/@@plone_context_state/object_url;
-			             inlineTopImage context/getInlineTopImage;"
-  	                tal:attributes="href string:$here_url/image/image_view_fullscreen"
-			 id="parent-fieldname-image">
+  	         <span style="max-width:100%;">
 			   <img class="img-responsive" tal:attributes="src string:${context/absolute_url}/inlineTopImage" alt="Course Image" />
-			               </a>
+			    </span>
 			 
 			 
 	
