@@ -83,11 +83,5 @@ class FacNavView(BrowserView):
                     return field.tag(context, scale=scale, css_class=css_class, title=title)
             return ''
     
-    
-         
-        
-        
-    
-            
-            
+
             

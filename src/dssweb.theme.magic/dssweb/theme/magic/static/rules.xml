@@ -119,7 +119,8 @@
   
      <replace css:theme-children="#top-bar-wrap > nav > ul > li.name"
               css:content="#portal-logo"  />
- 
+				  
+				  <drop attributes="title" css:content="ul#portal-globalnav li a" /> 
   <!--ISS Specific Rules -->
   <rules css:if-content="body.site-iss">
     <copy attributes="href"
@@ -131,14 +132,12 @@
 			<drop content='//li[@id="portaltab-subscribe"]' />
   </rules>
 
-  <!--speed watch -->
-  <rules css:if-content="body.site-communication" >
-	  <!--replace css:theme="#container-3 div.panel-body div.narrow-col h2"
-		  css:content="dl.portlet-static-why-communication dt a.tile" /-->
+ <rules css:if-not-content="body.site-iss">
+  <replace css:theme="#uti-contact > a"
+        css:content="#portaltab-contact > a" />
+	<drop content='//li[@id="portaltab-contact"]' />
+</rules>
 	
-	
-	  
-    </rules>
 
   
 	   
@@ -154,15 +153,33 @@
 	   <!-- swap out in the title text on the homepage -->
 	   <replace theme-children="//*[@id='middle-row']/h2" content="//h1[@id='parent-fieldname-title']/text()" if-content="//h1[@id='parent-fieldname-title']" />
 
-		<!-- News Happy Box -->
-		<replace css:content=".front-page-news > dl > dd"
-		css:theme-children="#container-1 > div > div > div.content-wrap"  />
+		<!-- News aka Left Happy Box -->
+		<!-- left-page happy box static -->
+		<rules css:if-content="div.front-page-news-static">
+		<replace css:theme-children="#container-1 > div > div.narrow-col h2" css:content=".front-page-news-static > dl > dt > span:nth-child(2) > a" />
+		<!--mobile front page rule static -->
+		<replace css:theme-children="#top-panel-row > div.panel.panel-default.top-panel.left-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content-children="div.front-page-events-static > dl > dt > span:nth-child(2) > a" />
+			<copy css:content=".front-page-news-static > dl > dd"
+			css:theme="#container-3 > div > div > div.content-wrap" />
+			<copy attributes="href"
+			css:content="div.front-page-news-static > dl > dt > span:nth-child(2) > a"
+			css:theme="#container-1 > div > div > div.bcontroller > a"  />
+			<merge attributes="class"
+			css:content=".front-page-news-static"
+			css:theme="#container-1 > div > div > div.bcontroller > a"  />
+		</rules>
+		<rules css:if-content="div.front-page-news">
+		<replace css:theme-children="#container-1 > div > div.narrow-col h2" css:content=".front-page-news > dl > dt > a" />
+		
+		<copy css:content=".front-page-news > dl > dd"
+		css:theme="#container-1 > div > div > div.content-wrap" />
 		<copy attributes="href"
 		css:content=".front-page-news > dl > dd.portletFooter > span:nth-child(2) > a"
 		css:theme="#container-1 > div > div > div.bcontroller > a"  />
 		<merge attributes="class"
 		css:content=".front-page-news"
 		css:theme="#container-1 > div > div > div.bcontroller > a"  />
+	</rules>
 
 		<!--  About Happy Box -->
 		<replace css:content-children="#content-core"
@@ -203,7 +220,7 @@
 			css:theme="#container-2 > div > div > div.bcontroller > a"  />
 		</rules>
 
-		<!-- events happy box static-->
+		<!-- events aka happy box static-->
 		<!--replace css:theme-children="#container-3 > div > div.narrow-col h2" css:content=".front-page-events > dl > dt > a" /-->
 		<rules css:if-content="div.front-page-events-static">
 		<replace css:theme-children="#container-3 > div > div.narrow-col h2" css:content=".front-page-events-static > dl > dt > span:nth-child(2) > a" />
@@ -212,18 +229,15 @@
 			<copy css:content=".front-page-events-static > dl > dd"
 			css:theme="#container-3 > div > div > div.content-wrap" />
 			<copy attributes="href"
-			css:content=".front-page-events-static > dl > dd.portletFooter > span:nth-child(2) > a"
+			css:content="div.front-page-events-static > dl > dt > span:nth-child(2) > a"
 			css:theme="#container-3 > div > div > div.bcontroller > a"  />
 			<merge attributes="class"
 			css:content=".front-page-events-static"
 			css:theme="#container-3 > div > div > div.bcontroller > a"  />
-	   <!--events happy box contentleadimage -->
+	   <!--events right happy box contentleadimage -->
 		</rules>
 		<rules css:if-content="div.front-page-events">
 		<replace css:theme-children="#container-3 > div > div.narrow-col h2" css:content=".front-page-events > dl > dt > a" />
-		
-		
-		
 		
 		<copy css:content=".front-page-events > dl > dd"
 		css:theme="#container-3 > div > div > div.content-wrap" />
@@ -253,21 +267,13 @@
      <span class="bread-divider">|</span>
    </replace>
 	
-     <!-- rule to set up title to replace static logo on ipad/mobile -->
-     <!--replace css:theme-children=".justname h1">
-        <xsl:for-each css:select="a#portal-logo">
-          <xsl:value-of select="@title" />
-        </xsl:for-each>
-     </replace-->
-
         <!--utility menu links -->
 		<copy attributes="href"
 		css:content="li#portaltab-index_html > a"
 		css:theme="li#uti-home > a" />
 		<!--replace css:theme="#uti-home > a"
 		          css:content="#portaltab-index_html > a" method="raw" /-->       
-		<replace css:theme="li#uti-contact > a"
-		             css:content="li#portaltab-contact > a" method="raw" css:if-not-content="body.site-ISS"/>
+	
 		<replace css:theme="li#uti-events > a"
 		      css:content="li#portaltab-events > a" method="raw" />
 		<replace css:theme="li#uti-news > a" css:content="li#portaltab-news > a" />
@@ -544,7 +550,7 @@
 
 		  </script>
 	  </append>
-	  <append css:theme="#footer" css:if-content="body.site-ISS">
+	  <append css:theme="#footer" css:if-content="body.site-iss">
 		  <script>
 		    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -580,6 +586,18 @@
 
 		  </script>
 	  </append>
+     <append css:theme="#footer" css:if-content="body.site-communication">
+		  <script>
+		    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		    ga('create', 'UA-1958864-15', 'auto');
+		    ga('send', 'pageview');
+
+		  </script>
+  </append>
 		 
 		  
 	  

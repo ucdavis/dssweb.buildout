@@ -16,6 +16,21 @@ location /iss {
 			return 404;
 			}
 
+location /history {
+		deny all;
+		return 404;
+		}
+
+location /DSS-Master {
+		 	deny all;
+			return 404;
+			}
+location = /google5d619727837d5b53.html {
+            rewrite ^/(.*)  $1;
+            return 200 "google-site-verification: $uri";
+    }
+
+
 rewrite ^/about-us/directions-to-the-cmb /directions redirect; 
 rewrite ^/people$ /directory-of-people redirect;
 rewrite ^/people/$ /directory-of-people redirect;
@@ -428,6 +443,11 @@ location /people/socialsciences {
         deny all;
         return 404;
         }
+location /people/history {
+        deny all;
+        return 404;
+        }
+
 location /people/blue-cluster-staff {
 	deny all;
 	return 404;

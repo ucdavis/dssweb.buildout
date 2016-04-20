@@ -30,9 +30,11 @@
                   desc_or_title python:description or title;
                   url python:support_view.navRootRelativeUrl(obj);
                   image_thumb exists:obj/image_thumb;
+
 	                image_tag python:getattr(obj, 'tag', None)">
 				<div class="labHeader">
               <span class="labLink" >
+
 	                  <a tal:attributes="href url;
 	                                   title title" >
 	                  <span class="labWrapper" tal:condition="image_thumb">
@@ -45,6 +47,7 @@
 	                  <span class="labName" tal:content="title">Title</span>
 							
 	  			    </a>
+
 				  </span>
 				 </div>
 					 <div class="pi-name"
@@ -68,6 +71,7 @@
 			     </div>
                   
               
+
 			</div>   
          </tal:block>
 
