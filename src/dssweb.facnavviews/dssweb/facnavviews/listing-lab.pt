@@ -19,20 +19,20 @@
 
         <div metal:use-macro="context/batch_macros/macros/navigation" />
 
-        <div class="eea-preview-items">
+        <div id="dssweb-tiled-events" class="eea-preview-items">
           <tal:entries repeat="brain batch">
             <tal:block define="obj brain/getObject;
-                               ">
+                              ">
 
-			<div class="labTile col-lg-4 col-md-6 col-sm-12 col-xs-12">
-			<div class="LabEntry">
-              <div class="labLink" tal:define="
+			<div class="LabEntry event-tile" tal:define="
                   description obj/Description|string:;
                   title obj/pretty_title_or_id|string:;
                   desc_or_title python:description or title;
                   url python:support_view.navRootRelativeUrl(obj);
                   image_thumb exists:obj/image_thumb;
-	                    image_tag python:getattr(obj, 'tag', None)">
+	                image_tag python:getattr(obj, 'tag', None)">
+				<div class="labHeader">
+              <span class="labLink" >
 	                  <a tal:attributes="href url;
 	                                   title title" >
 	                  <span class="labWrapper" tal:condition="image_thumb">
@@ -45,6 +45,8 @@
 	                  <span class="labName" tal:content="title">Title</span>
 							
 	  			    </a>
+				  </span>
+				 </div>
 					 <div class="pi-name"
 					 	                  tal:define="piList obj/getPi"
 					 	                  tal:condition="piList">
@@ -57,18 +59,17 @@
 					                        </a>
 
 					 						</tal:block></p>
-										</div>
+					</div>
 					 
                 
 				
 				  <div class="desc wrapper">
 				  <span class="desc" tal:content="description">Description </span>
-			  </div>
+			     </div>
                   
-               </div>
-				</div>
+              
 			</div>   
-            </tal:block>
+         </tal:block>
 
           </tal:entries>
 
