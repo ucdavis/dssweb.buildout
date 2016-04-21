@@ -1,0 +1,1 @@
+rewrite ^/(.*) http://socialscience.ucdavis.edu/mx16 redirect;

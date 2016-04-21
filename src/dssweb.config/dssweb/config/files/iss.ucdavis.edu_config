@@ -62,3 +62,8 @@ location /people/yellow-cluster-staff {
 	deny all;
 	return 404;
 	}
+location /people/jdr {
+	deny all;
+	return 404;
+	}
+		
