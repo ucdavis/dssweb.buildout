@@ -3,7 +3,9 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       tal:omit-tag="">
 	  
- <dl class="portlet portletPersonAddress default-color">
+ <dl tal:define="checkPermission nocall: context/portal_membership/checkPermission;
+                 isEditor python:checkPermission('Modify portal content', context);"
+class="portlet portletPersonAddress default-color">
 
 <dt class="portletHeader">
 	<span class="portletTopLeft"></span>
@@ -13,17 +15,17 @@
 </dt>
 <div class="collapsible panel-collapse collapse in">
 	<div class="portlet-content panel-body">
-		<div class="vcard office">
+	<div class="vcard office">
 		
-		<tal:block>
+		 <tal:block>
 			<!--dd to avoid previous css rules -->
-            <dd class="departments"
+           <dd class="departments"
                  tal:define="departmentsList context/getDepartments",
                  tal:condition="python: departmentsList">
         
-                <tal:block tal:repeat="eachDepartment departmentsList" >
+              <tal:block tal:repeat="eachDepartment departmentsList" >
 					<div tal:define="personMembershipInformation python:eachDepartment.getMembershipInformation(context);"
-						tal:condition="personMembershipInformation/getDept_officeAddress">
+						>
 						
                     <h4 class="org"><a class="url" tal:attributes="href python:eachDepartment.getDept_url()">
                       <span  tal:content="eachDepartment/Title" />
@@ -31,7 +33,7 @@
                   
                 
                   
-				<div class="adr">
+				  <div class="adr">
 					<ul>
 					<li class="street-address" tal:condition="personMembershipInformation/getDept_officeAddress">
 						<span
@@ -45,12 +47,12 @@
 				
 					
 				
-				<li class="street-address" tal:condition="personMembershipInformation/getDept_officePhone">
+				   <li class="street-address" tal:condition="personMembershipInformation/getDept_officePhone">
 					<span tal:replace="structure personMembershipInformation/getDept_officePhone" />
                     </li></ul>
+				  </div>
 				
-				</div>
-	<div class="office-hours adr" 
+	      <div class="office-hours adr" 
 	tal:condition="personMembershipInformation/getQuarter">
 		<span class="bold">Office Hours for <span tal:replace="personMembershipInformation/getQuarter">Quarter</span>
 		<span tal:condition="personMembershipInformation/getOfficeHours">
@@ -59,13 +61,37 @@
                  tal:content="officeHours"><tal:comment replace="nothing">[Office Hours]</tal:comment></li>
                  </ul></span>
 			
-	</div>
-			</div>
-			</tal:block>
-				
-			</dd>
-		
-		</tal:block>
+	      </div>
+			
+              <span tal:condition="python:checkPermission('Modify portal content', context)" class="normal">
+                <a class="person-edit" tal:attributes="href python:'%s/edit' % personMembershipInformation.absolute_url()">
+              
+                 <li  tal:condition="not:personMembershipInformation/getPosition"
+                            i18n:translate="FacultyStaffDirectory_assignPosition">Add a position</li>
+   
+                 <li tal:condition="not:personMembershipInformation/getDept_officeAddress"
+                            i18n:translate="FacultyStaffDirectory_assignDept_officeAddress">Add an office address</li>
+									 
+                  <li tal:condition="not:personMembershipInformation/getOfficeHours"
+                             i18n:translate="FacultyStaffDirectory_assignOfficeHours">Add Office Hours</li>
+               
+			 
+                 
+                 <li tal:condition="not:personMembershipInformation/getDept_officePhone"
+                            i18n:translate="FacultyStaffDirectory_assignDept_officePhone">Add a phone number</li>
+                 <li tal:condition="not:personMembershipInformation/getSummarybio"
+                            i18n:translate="FacultyStaffDirectory_assignSummarybio">Add a Department Short Bio</li>
+                 
+		   <li tal:condition="personMembershipInformation/getPosition"
+                            i18n:translate="FacultyStaffDirectory_editPosition">Edit any of the above information</li>
+                 
+                </a>
+              </span>
+			  </div>
+			  </tal:block>
+                
+			  </dd>
+		  </tal:block>
 	</div>
 		<div class="vcard office">
 		
@@ -77,7 +103,7 @@
               
                 <tal:block tal:repeat="eachLab labsList" >
 					<div tal:define="personMembershipInformation python:eachLab.getMembershipInformation(context);"
-						tal:condition="personMembershipInformation/getLab_officeAddress">
+						>
 					
                     <h4 class="org"><a class="url" tal:attributes="href python:eachLab.getDept_url()">
                       <span  tal:content="eachLab/Title" />
@@ -112,6 +138,31 @@
 		</div>
 					
 			</div>
+              <span tal:condition="python:checkPermission('Modify portal content', context)" class="normal">
+                <a class="person-edit" tal:attributes="href python:'%s/edit' % personMembershipInformation.absolute_url()">
+              
+                 <li  tal:condition="not:personMembershipInformation/getPosition"
+                            i18n:translate="FacultyStaffDirectory_assignPosition">Assign a position</li>
+									 
+                  <li tal:condition="not:personMembershipInformation/getOfficeHours"
+                             i18n:translate="FacultyStaffDirectory_assigOfficeHours">Add Office Hours</li>
+						
+   
+                 <li tal:condition="not:personMembershipInformation/getLab_officeAddress"
+                            i18n:translate="FacultyStaffDirectory_assignLab_officeAddress">Assign an office address</li>
+               
+			 
+                 
+                 <li tal:condition="not:personMembershipInformation/getLab_officePhone"
+                            i18n:translate="FacultyStaffDirectory_assignLab_officePhone">Assign a phone number</li>
+                 <li tal:condition="not:personMembershipInformation/getSummarybio"
+                            i18n:translate="FacultyStaffDirectory_assignSummarybio">Add a Department Short Bio</li>
+                 
+		   <li tal:condition="personMembershipInformation/getPosition"
+                            i18n:translate="FacultyStaffDirectory_editPosition">Edit any of the above information</li>
+                 
+                </a>
+              </span>
 		</div>
 			</tal:block>
 				

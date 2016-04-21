@@ -1,5 +1,10 @@
 #nginx config file
 
+location = /google5d619727837d5b53.html {
+            rewrite ^/(.*)  $1;
+            return 200 "google-site-verification: $uri";
+    }
+
 location /economics {
 			deny all;
 			return 404;
@@ -11,10 +16,18 @@ location /communication {
 location /psychology {
 			deny all;
 			return 404;
-			}
+			
+location /history {
+		deny all;
+		return 404;
+		}
     
 location /mindbrain {
 			deny all;
+			return 404;
+			}
+location /DSS-Master {
+		 	deny all;
 			return 404;
 			}
 location /people {
@@ -34,6 +47,10 @@ location /people/mindbrain {
         return 404;
         }
 location /people/communication {
+        deny all;
+        return 404;
+        }
+location /people/history {
         deny all;
         return 404;
         }

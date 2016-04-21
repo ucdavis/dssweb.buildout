@@ -3,6 +3,10 @@ location /faculty_sites {
 rewrite ^/faculty_sites/[Ss]imonton.* http://simonton.faculty.ucdavis.edu/ redirect;
 rewrite ^/faculty_sites(/.*|$) http://psc.dss.ucdavis.edu/faculty_sites/$1 redirect;
 }
+location = /google5d619727837d5b53.html {
+            rewrite ^/(.*)  $1;
+            return 200 "google-site-verification: $uri";
+    }
 location /rainbow {
 rewrite ^/rainbow(/.*|$) http://psc.dss.ucdavis.edu/rainbow$1 redirect;
 }
@@ -43,13 +47,21 @@ location /economics {
 location /communication {
  			deny all;
 			return 404;
-			}
+			
+location /history {
+		deny all;
+		return 404;
+		}
 location /iss {
 			deny all;
 			return 404;
 			}
 location /mindbrain {
 			deny all;
+			return 404;
+			}
+location /DSS-Master {
+		 	deny all;
 			return 404;
 			}
 location /people/lmacedon {
@@ -438,11 +450,19 @@ location /people/socialsciences {
         deny all;
         return 404;
         }
+location /people/history {
+        deny all;
+        return 404;
+        }
 location /people/blue-cluster-staff {
 	deny all;
 	return 404;
 	}
 location /people/yellow-cluster-staff {
+	deny all;
+	return 404;
+	}
+location /people/pkaliman {
 	deny all;
 	return 404;
 	}

@@ -7,7 +7,9 @@
   overflow:hidden;
 }
 
-
+#c0_widget > fieldset > legend {
+	display:none;
+}
 
 .calBox {
   background-color: transparent;
@@ -24,6 +26,7 @@
 }
 
 .calYear {
+	display:none;
   font-size: 20px;
   border-bottom: 1px dashed #666;
   padding-bottom: 5px;
@@ -32,8 +35,8 @@
 
 .calYear .calElement {
   border: 1px solid #999999;
-  background-color: #999999;
-  color:#fff;
+ /* background-color: #999999; */
+  
 }
 
 .calMonth {
@@ -45,8 +48,7 @@
 .calMonth .calElement {
   font-size: 14px;
   border: 1px solid #999999;
-  background-color: #999999;
-  color:#fff;
+/*  background-color: #999999; */
 }
 
 .calDay {
@@ -86,17 +88,20 @@ span.calElement.next:hover, span.calElement.prev:hover {
 }
 
 
-.calElement.selected {
-  background-color: #002855;
+.calMonth .calElement.selected {
+  background-color: #ddd;
   border: 1px solid #002855;
   -moz-border-radius: 3px
 }
 
 span.calElement:hover {
-  background-color: #002855;
+  background-color: #ddd;
   border: 1px solid #002855;
   -moz-border-radius: 3px;
   cursor: pointer;
+}
+.calDay .calElement:hover {
+   color: #002855;
 }
 
 .calElement.today {
@@ -106,7 +111,7 @@ span.calElement:hover {
 #faceted-form fieldset {
     margin: 0.5em;
     padding: 1em 0.5em 0.5em 0.5em;
-    border: 1px solid #002855;
+   /* border: 1px solid #002855; */
 }
 /* Drop date and month on mobile */
 @media screen and (max-width: 440px) {

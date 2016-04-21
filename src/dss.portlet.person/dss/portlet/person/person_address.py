@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 import re
 import logging
-
+from AccessControl import ClassSecurityInfo, getSecurityManager
+from Products.CMFCore.permissions import View, ManageProperties, ModifyPortalContent
 from plone.i18n.normalizer.interfaces import IIDNormalizer
 from plone.portlets.interfaces import IPortletDataProvider
 from plone.app.form.widgets.wysiwygwidget import WYSIWYGWidget
@@ -27,6 +28,7 @@ class IPersonAddressPortlet(IPortletDataProvider):
     data that is being rendered and the portlet assignment itself are the
     same.
     """
+    
 
     header = schema.TextLine(
         title=_(u"Portlet header"),
@@ -62,7 +64,7 @@ class Assignment(base.Assignment):
     """
 
     implements(IPersonAddressPortlet)
-
+    
     header = _(u"title_person_address_portlet", default=u"Person Address Portlet")
     omit_border = True
     footer = u""
@@ -82,7 +84,7 @@ class Assignment(base.Assignment):
         static string if title not defined.
         """
         return self.header or _(u'portlet_person_address', default=u"Person Address Portlet")
-
+     
 
 class Renderer(base.Renderer):
     """Portlet renderer.
@@ -91,8 +93,8 @@ class Renderer(base.Renderer):
     rendered, and the implicit variable 'view' will refer to an instance
     of this """
     
-    render = ViewPageTemplateFile('person_address.pt')
-
+    render = ViewPageTemplateFile('person_address.pt') 
+    
 
     def css_class(self):
         """Generate a CSS class from the portlet header

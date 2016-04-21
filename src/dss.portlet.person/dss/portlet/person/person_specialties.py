@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 import re
 import logging
-
+from AccessControl import ClassSecurityInfo, getSecurityManager
+from Products.CMFCore.permissions import View, ManageProperties, ModifyPortalContent
 from plone.i18n.normalizer.interfaces import IIDNormalizer
 from plone.portlets.interfaces import IPortletDataProvider
 from plone.app.form.widgets.wysiwygwidget import WYSIWYGWidget
