@@ -122,3 +122,8 @@ location /people/pkaliman {
 	deny all;
 	return 404;
 	}
+location /people/jdr {
+	deny all;
+	return 404;
+	}
+		
