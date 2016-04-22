@@ -46,7 +46,7 @@ location /economics {
 			}
 location /communication {
  			deny all;
-			return 404;
+			return 404; }
 			
 location /history {
 		deny all;

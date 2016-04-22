@@ -16,6 +16,7 @@ location /communication {
 location /psychology {
 			deny all;
 			return 404;
+			}
 			
 location /history {
 		deny all;
