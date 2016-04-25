@@ -25,8 +25,8 @@
             <tal:block define="obj brain/getObject; 
                                ">
 
-			<div class="eventTile col-lg-3 col-md-4 col-sm-6 col-xs-6">
-			<div class="eventEntry">
+			<div class="labTile col-lg-3 col-md-4 col-sm-6 col-xs-6">
+			<div class="labEntry">
               <div tal:define="
                   description obj/Description|string:;
 						obj_type obj/Type;

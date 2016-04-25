@@ -19,12 +19,12 @@
 
         <div metal:use-macro="context/batch_macros/macros/navigation" />
 
-        <div id="dssweb-tiled-events" class="eea-preview-items">
+        <div id="dssweb-tiled-labs" class="eea-preview-items">
           <tal:entries repeat="brain batch">
             <tal:block define="obj brain/getObject;
                               ">
 
-			<div class="LabEntry event-tile" tal:define="
+			<div class="LabEntry lab-tile" tal:define="
                   description obj/Description|string:;
                   title obj/pretty_title_or_id|string:;
                   desc_or_title python:description or title;
@@ -53,6 +53,7 @@
 					 <div class="pi-name"
 					 	                  tal:define="piList obj/getPi"
 					 	                  tal:condition="piList">
+											
 					 	               <p i18n:translate="FacultyStaffDirectory_label_pis_heading">PI:
 					 	                 <tal:block tal:repeat="eachPi piList">
 
@@ -60,9 +61,11 @@
 					 	                       <span tal:content="eachPi/Title" />
 
 					                        </a>
-
-					 						</tal:block></p>
-					</div>
+													<tal:comma condition="not:repeat/eachPi/end"> & </tal:comma>
+											 </tal:block> </p>
+											
+						
+					     </div>
 					 
                 
 				
