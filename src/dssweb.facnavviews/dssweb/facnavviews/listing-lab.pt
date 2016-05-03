@@ -33,22 +33,25 @@
 
 	                image_tag python:getattr(obj, 'tag', None)">
 				<div class="labHeader">
-              <span class="labLink" >
+              <div class="labLink" >
 
 	                  <a tal:attributes="href url;
 	                                   title title" >
-	                  <span class="labWrapper" tal:condition="image_thumb">
-	                    <img style="border: none" class="lab-image" tal:attributes="
+	                  <span class="labWrapper" >
+							
+	                       <img style="border: none" class="lab-image" tal:attributes="
 	                      title title;
 	                      alt title;
 	                      src string:$url/image_thumb"/>
+							 
 	                  </span>
+							<span class="fade"></span>
 
 	                  <span class="labName" tal:content="title">Title</span>
 							
 	  			    </a>
 
-				  </span>
+				  </div>
 				 </div>
 					 <div class="pi-name"
 					 	                  tal:define="piList obj/getPi"
@@ -69,8 +72,8 @@
 					 
                 
 				
-				  <div class="desc wrapper">
-				  <span class="desc" tal:content="description">Description </span>
+				  <div class="tile-desc desc wrapper">
+				  <span class="desc truncate" tal:content="description">Description </span>
 			     </div>
                   
               
