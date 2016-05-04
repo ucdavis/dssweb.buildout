@@ -1,0 +1,1 @@
+rewrite ^/(.*) http://people.dss.ucdavis.edu/people;
