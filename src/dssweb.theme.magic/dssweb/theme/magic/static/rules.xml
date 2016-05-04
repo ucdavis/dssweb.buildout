@@ -223,7 +223,7 @@
 		<!-- events aka happy box static-->
 		<!--replace css:theme-children="#container-3 > div > div.narrow-col h2" css:content=".front-page-events > dl > dt > a" /-->
 		<rules css:if-content="div.front-page-events-static">
-		<replace css:theme-children="#container-3 > div > div.narrow-col h2" css:content=".front-page-events-static > dl > dt > span:nth-child(2) > a" />
+		<replace css:theme-children="#container-3 > div > div.narrow-col h2" css:content=".front-page-events-static > dl > dt > span:nth-child(2) > a" />  
 		<!--mobile front page rule static -->
 		<replace css:theme-children="#top-panel-row > div.panel.panel-default.top-panel.right-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content-children="div.front-page-events-static > dl > dt > span:nth-child(2) > a" />
 			<copy css:content=".front-page-events-static > dl > dd"
