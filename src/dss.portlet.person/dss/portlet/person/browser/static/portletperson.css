@@ -4,4 +4,6 @@
 a.person-edit {
 	color:#75ad0a !important;
 	font-size:1.2rem !important;
+	border: #75ad0a 1px solid;
+	padding: 3px 3px 3px 3px;
 }
