@@ -218,6 +218,15 @@
 			css:content=".front-page-news"
 			css:theme="#container-2 > div > div > div.bcontroller > a"  />
 		</rules>
+		<rules css:if-content="body.site-history">
+			<copy attributes="href"
+			css:content="#portaltab-about-us > a"
+			css:theme="#container-2 > div > div > div.bcontroller > a" />
+			<!--color hack -->
+			<merge attributes="class"
+			css:content=".front-page-news"
+			css:theme="#container-2 > div > div > div.bcontroller > a"  />
+		</rules>
 
 		<!-- events aka happy box static-->
 		<!--replace css:theme-children="#container-3 > div > div.narrow-col h2" css:content=".front-page-events > dl > dt > a" /-->
