@@ -4,6 +4,9 @@
      style="display:"
     >
     Wallpaper for this page:
+	 <metal:block use-macro="here/slideshow_macros/macros/slideshow">
+	 slideshow here...
+	 </metal:block>
     <span tal:content="bview/wallpaperURL"
           tal:attributes="class bview/divStyle; id bview/contentId" />
 </div>
