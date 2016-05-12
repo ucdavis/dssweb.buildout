@@ -12,6 +12,7 @@
 
 
 	<theme href="index.html" css:if-content="body.portaltype-front-page" />
+	<theme href="index.html" css:if-content=".template-front_page_view" />
 
 
 	<theme href="t13_event_b.html" css:if-content="body.portaltype-event" />
@@ -598,16 +599,16 @@
 
 		  </script>
   </append>
-		 
+  <replace css:theme-children=".siders" css:content="#jumboslides" />
 		  
 	  
-       <replace css:theme="#wallpaper_fix">
+       <!--replace css:theme="#wallpaper_fix">
          <script id="wallpaper_fix">
            $(".wall").wallpaper({
-               source: "div.portletPics"
+               source: "@@slideshow_macros_front"
            });
          </script>
-       </replace> 
+       </replace--> 
 	   
 	  </rules>
   </rules>
