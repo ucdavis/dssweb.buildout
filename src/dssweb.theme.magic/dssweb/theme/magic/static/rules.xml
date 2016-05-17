@@ -599,7 +599,7 @@
 
 		  </script>
   </append>
-  <replace css:theme-children="div.wallpaper-container" css:content="#jumboslides" />
+  <replace css:theme-children="div.wall" css:content="#jumboslides" />
 		  
 	  
        <!--replace css:theme="#wallpaper_fix">
