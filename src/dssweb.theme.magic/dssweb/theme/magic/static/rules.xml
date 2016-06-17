@@ -602,13 +602,15 @@
   <replace css:theme-children="div.wall" css:content="#jumboslides" />
 		  
 	  
-       <!--replace css:theme="#wallpaper_fix">
+       <replace css:theme="#wallpaper_fix">
          <script id="wallpaper_fix">
-           $(".wall").wallpaper({
-               source: "@@slideshow_macros_front"
-           });
+            $(".wall").vegas({
+				slides: [
+                {src: "@@banner-image"}
+					  ]
+            });
          </script>
-       </replace--> 
+       </replace> 
 	   
 	  </rules>
   </rules>
