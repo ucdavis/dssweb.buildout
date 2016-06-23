@@ -495,6 +495,12 @@
  		</rules> 
 	    <!--T11 -->
 	    <rules css:if-content="body.template-solgemafullcalendar_view">
+			 <before css:theme-children="html head">
+			 	    <style type="text/css" media="all">@import url(portal_css/Sunburst%20Theme/solgema_contextualcontentmenu.css);</style>
+			          <link rel="stylesheet" type="text/css" media="screen" href="portal_css/Sunburst%20Theme/++resource++collective.js.fullcalendar/fullcalendar.css" />
+						 <link rel="stylesheet" type="text/css" media="screen" href="portal_css/Sunburst%20Theme/collective.js.jqueryui.custom.min.css" />
+    
+			        </before>
 		
 	 	   <replace css:theme-children="#calendar" css:content="#calendar" />
 	 	   
