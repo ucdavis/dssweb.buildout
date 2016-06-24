@@ -10,17 +10,44 @@
 /*@import "forms"; */
 /*@import "fullcalendarorig"; */
 
+/* event pop up ui overrides */
+.ui-dialog-content div#content h3 {
+    text-transform: none !important;
+    letter-spacing: 0.05em !important;
+}
+
 /* COLOR INDEXES */
 
 a#sfc-ical-export {
     float: right;
 }
+.fc-today{
+	background: #E5E9EF;
+	border:none;
+}
+.fc-event {
+	font-size:.85em;
+}
+.fc-grid .fc-event-time {
+    font-size: .8rem; }
+	 
+	 .fc-event-time, .fc-event-title {
+	     padding: 0 1px;
+	 }
+	 .fc-event-title {
+	     font-size: .7rem;
+	 }
+	 
 .fc-event.fc-event-vert.fc-event-start.fc-event-end {border-radius:8px;}
 
 /* I kow this looks like a duplicate, but it's an override */
 .fc-event, .fc-event-vert, .fc-event-start, .fc-event-inner, .fc-event-end , .fc-event-bg {
 	border-radius:8px;
 }
+.fc-ltr .fc-event-hori.fc-event-end, .fc-rtl .fc-event-hori.fc-event-start {
+	border-radius:8px;
+}
+
 
 /*.fc-event .fc-event-inner {
     border-radius: 4px;
