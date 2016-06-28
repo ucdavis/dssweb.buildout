@@ -870,7 +870,7 @@ p.tileFooter {
 	clear:both;
 }
 /*--- Album or thumbnail view ---*/
-.photoAlbumEntry {
+div.photoAlbumEntry {
     float: left;
     position: relative;
     overflow: hidden;
@@ -882,7 +882,7 @@ p.tileFooter {
     background-image: url('../images/polaroid-single.png');
     background-repeat: no-repeat;
  }
- .photoAlbumEntry a {
+ div.photoAlbumEntry a {
      display: block;
      text-decoration: none;
      font-size: .85rem;
@@ -890,12 +890,12 @@ p.tileFooter {
      width: 130px;
      margin: 16px auto 0px;
  }
- .photoAlbumEntry img {
+span.photoAlbumEntryWrapper img {
      border: 1px solid #ccc;
      display: block;
      margin: 0 auto;
  }
- .photoAlbumEntryTitle {
+ span.photoAlbumEntryTitle {
      display: block;
 	  padding-top:2px;
      width: 128px;
