@@ -870,6 +870,9 @@ p.tileFooter {
 	clear:both;
 }
 /*--- Album or thumbnail view ---*/
+body.full-width.template-atct_album_view.portaltype-folder div#main-container.container div#content-row.row div#content.col-lg-12 div div#content div#viewlet-above-content-body div.newsImageContainer {
+	display:none;
+}
 div.photoAlbumEntry {
     float: left;
     position: relative;
