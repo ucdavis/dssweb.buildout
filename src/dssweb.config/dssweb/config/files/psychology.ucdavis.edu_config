@@ -39,6 +39,7 @@ rewrite ^/people/iss-editors /directory-of-people redirect;
 rewrite ^/people/postdoctoral-scholars /directory-of-people redirect;
 rewrite ^/people/research-staff /directory-of-people redirect;
 rewrite ^/people/psych-editors /directory-of-people redirect;
+rewrite ^/people/psychology /directory-of-people redirect;
 
 location /economics {
 			deny all;
@@ -52,6 +53,11 @@ location /history {
 		deny all;
 		return 404;
 		}
+		
+	location /politicalscience{
+	 			deny all;
+				return 404;
+				}
 location /iss {
 			deny all;
 			return 404;
@@ -454,6 +460,10 @@ location /people/history {
         deny all;
         return 404;
         }
+location /people/politicalscience {
+	deny all;
+	return 404;
+	}
 location /people/blue-cluster-staff {
 	deny all;
 	return 404;

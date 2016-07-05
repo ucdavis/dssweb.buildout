@@ -9,6 +9,7 @@ location /economics {
 			deny all;
 			return 404;
 			}
+
 location /communication {
  			deny all;
 			return 404;
@@ -22,6 +23,12 @@ location /history {
 		deny all;
 		return 404;
 		}
+		
+
+location /politicalscience{
+ 			deny all;
+			return 404;
+			}
     
 location /mindbrain {
 			deny all;
@@ -39,6 +46,10 @@ location /people/psychology {
         deny all;
         return 404;
         }
+location /people/politicalscience {
+	deny all;
+	return 404;
+	}
 location /people/economics {
 	deny all;
 	return 404;

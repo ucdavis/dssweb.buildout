@@ -21,6 +21,16 @@ location /history {
 		return 404;
 		}
 
+location /politicalscience{
+ 			deny all;
+			return 404;
+			}
+		
+location /people/politicalscience {
+	deny all;
+	return 404;
+	}
+
 location /DSS-Master {
 		 	deny all;
 			return 404;
@@ -59,6 +69,8 @@ rewrite ^/people/iss-editors /directory-of-people redirect;
 rewrite ^/people/postdoctoral-scholars /directory-of-people redirect;
 rewrite ^/people/research-staff /directory-of-people redirect;
 rewrite ^/people/psych-editors /directory-of-people redirect;
+rewrite ^/people/mindbrain /directory-of-people redirect;
+
 
 location /people/econjim  {
  			deny all;

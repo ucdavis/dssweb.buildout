@@ -5,6 +5,7 @@ rewrite ^/faculty/fzlinder^(.*)$ http://lindert.econ.ucdavis.edu/$1 redirect;
 rewrite ^/faculty/cmm(.*)$ http://economics.ucdavis.edu/people/cmm/$1 redirect;
 rewrite ^/faculty/gperi(.*)$ http://economics.ucdavis.edu/people/gperi/$1 redirect;
 rewrite ^/faculty/(.*)$ http://faculty.econ.ucdavis.edu/faculty/$1 redirect;
+rewrite ^/people/history /directory-of-people redirect;
 
 }
 
@@ -12,7 +13,6 @@ location /graduate/ {
 rewrite ^/graduate/gbasso.*$ http://gaetanobasso.ucdavis.edu/ redirect;
 rewrite ^/graduate/(.*)$ http://old.econ.ucdavis.edu/graduate/$1 redirect;
 }
-
 location /caslogin {
 			deny all;
 			return 404;
