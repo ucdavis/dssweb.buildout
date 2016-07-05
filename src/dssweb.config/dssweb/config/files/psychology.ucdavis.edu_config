@@ -8,9 +8,13 @@ location = /google5d619727837d5b53.html {
             return 200 "google-site-verification: $uri";
     }
 location /rainbow {
-rewrite ^/rainbow(/.*|$) http://psc.dss.ucdavis.edu/rainbow$1 redirect;
+rewrite ^/rainbow(/.*|$) http://facultysites.dss.ucdavis.edu/~gmherek/rainbow$1 redirect;
 }
-rewrite ^/[Hh]erek(/.*|$) http://psc.dss.ucdavis.edu/herek$1 redirect;
+rewrite ^/[Hh]erek(/.*|$) http://psc.dss.ucdavis.edu/~gmherek/Herek$1 redirect;
+#location /rainbow {
+#rewrite ^/rainbow(/.*|$) http://psc.dss.ucdavis.edu/rainbow$1 redirect;
+#}
+#rewrite ^/[Hh]erek(/.*|$) http://psc.dss.ucdavis.edu/herek$1 redirect;
 rewrite ^/[Ss]imonton(/.*|$) http://simonton.faculty.ucdavis.edu/ redirect;
 rewrite ^/[Ss]ommer[Bb](/.*|$) http://psc.dss.ucdavis.edu/sommerb$1 redirect;
 rewrite ^/[Ss]ommer[Rr](/.*|$) http://psc.dss.ucdavis.edu/sommerr$1 redirect;
