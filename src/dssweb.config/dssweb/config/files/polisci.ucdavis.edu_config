@@ -3,10 +3,7 @@ location /caslogin {
 			deny all;
 			return 404;
 			}
-location /people/politicalscience {
-	deny all
-	return 404;
-	}
+
 location /login {
 			deny all;
 			return 404;

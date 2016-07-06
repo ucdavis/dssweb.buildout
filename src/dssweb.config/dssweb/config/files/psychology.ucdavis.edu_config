@@ -10,7 +10,7 @@ location = /google5d619727837d5b53.html {
 location /rainbow {
 rewrite ^/rainbow(/.*|$) http://facultysites.dss.ucdavis.edu/~gmherek/rainbow$1 redirect;
 }
-rewrite ^/[Hh]erek(/.*|$) http://psc.dss.ucdavis.edu/~gmherek/Herek$1 redirect;
+rewrite ^/[Hh]erek(/.*|$) http://facultysites.dss.ucdavis.edu/~gmherek/Herek$1 redirect;
 #location /rainbow {
 #rewrite ^/rainbow(/.*|$) http://psc.dss.ucdavis.edu/rainbow$1 redirect;
 #}
