@@ -1,24 +1,10 @@
-location /faculty {
-rewrite ^/faculty/fzfeens/(.*)$ http://www.robertfeenstra.info/$1 redirect;
-rewrite ^/faculty/mepage(.*)$ http://economics.ucdavis.edu/people/mepage/$1 redirect;
-rewrite ^/faculty/fzlinder^(.*)$ http://lindert.econ.ucdavis.edu/$1 redirect;
-rewrite ^/faculty/cmm(.*)$ http://economics.ucdavis.edu/people/cmm/$1 redirect;
-rewrite ^/faculty/gperi(.*)$ http://economics.ucdavis.edu/people/gperi/$1 redirect;
-rewrite ^/faculty/(.*)$ http://faculty.econ.ucdavis.edu/faculty/$1 redirect;
-rewrite ^/people/history /directory-of-people redirect;
 
-}
-
-location /graduate/ {
-rewrite ^/graduate/gbasso.*$ http://gaetanobasso.ucdavis.edu/ redirect;
-rewrite ^/graduate/(.*)$ http://old.econ.ucdavis.edu/graduate/$1 redirect;
-}
 location /caslogin {
 			deny all;
 			return 404;
 			}
 location /people/politicalscience {
-	deny all;
+	deny all
 	return 404;
 	}
 location /login {
@@ -30,10 +16,7 @@ location /psychology {
         return 404;
         }
 
-location /politicalscience{
- 			deny all;
-			return 404;
-			}
+
 location /history {
         deny all;
         return 404;
@@ -74,7 +57,6 @@ location /people/rabell {
 rewrite ^/people$ /directory-of-people redirect; 
 rewrite ^/people/$ /directory-of-people redirect;
 
-rewrite ^/people/faculty(.*)$ /directory-of-people/econ-faculty redirect;
 rewrite ^/people/grad-students /directory-of-people redirect;
 rewrite ^/people/affiated-faculty /directory-of-people redirect;
 rewrite ^/people/emeriti /directory-of-people redirect;

@@ -74,7 +74,6 @@ location /people/rabell {
 rewrite ^/people$ /directory-of-people redirect; 
 rewrite ^/people/$ /directory-of-people redirect;
 
-rewrite ^/people/faculty(.*)$ /directory-of-people/econ-faculty redirect;
 rewrite ^/people/grad-students /directory-of-people redirect;
 rewrite ^/people/affiated-faculty /directory-of-people redirect;
 rewrite ^/people/emeriti /directory-of-people redirect;
