@@ -4,6 +4,15 @@
 a.person-edit {
 	color:#75ad0a !important;
 	font-size:1.2rem !important;
-	border: #75ad0a 1px solid;
+	border: #75ad0a 3px solid;
 	padding: 3px 3px 3px 3px;
+	border-radius:8px;
+}
+a.person-edit-block{
+	color:#75ad0a !important;
+	font-size:1.2rem !important;
+	border: #75ad0a 3px solid;
+	padding: 3px 3px 3px 3px;
+	border-radius:8px;
+	display:block;
 }
