@@ -1368,6 +1368,10 @@ h3.lab-bar > a > img.image-left {
     display: block;
     margin-top: -14px;
     margin-left: -22px;
+ } 
+ /*hide contentleadImage when using faceted nav as a view*/
+body.template-facetednavigation_view div#main-container.container div#content div#content-row.row div#viewlet-above-content-body div.newsImageContainer {
+	 display:none;
  }
 
  /* event Tile */
