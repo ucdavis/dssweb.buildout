@@ -304,5 +304,264 @@ location /people/abc123 {
         deny all;
         return 404;
         }
-
+ location /people/aemarino { 
+ deny all; 
+ return 404; 
+ }
+ location /people/aserpafl { 
+ deny all; 
+ return 404; 
+ }
+ location /people/egrennan { 
+ deny all; 
+ return 404; 
+ }
+ location /people/cknudten { 
+ deny all; 
+ return 404; 
+ }
+ location /people/eazelnik { 
+ deny all; 
+ return 404; 
+ }
+ location /people/laragen { 
+ deny all; 
+ return 404; 
+ }
+ location /people/schubael { 
+ deny all; 
+ return 404; 
+ }
+ location /people/khafee14 { 
+ deny all; 
+ return 404; 
+ }
+ location /people/joshjht { 
+ deny all; 
+ return 404; 
+ }
+ location /people/lcabrams { 
+ deny all; 
+ return 404; 
+ }
+ location /people/lmmortim { 
+ deny all; 
+ return 404; 
+ }
+ location /people/mpeinado { 
+ deny all; 
+ return 404; 
+ }
+ location /people/manovoa { 
+ deny all; 
+ return 404; 
+ }
+ location /people/mghagger { 
+ deny all; 
+ return 404; 
+ }
+ location /people/msacmali { 
+ deny all; 
+ return 404; 
+ }
+ location /people/ngallman { 
+ deny all; 
+ return 404; 
+ }
+ location /people/niagarci { 
+ deny all; 
+ return 404; 
+ }
+ location /people/ppalma { 
+ deny all; 
+ return 404; 
+ }
+ location /people/raegli { 
+ deny all; 
+ return 404; 
+ }
+ location /people/rsaroni { 
+ deny all; 
+ return 404; 
+ }
+ location /people/sgilkers { 
+ deny all; 
+ return 404; 
+ }
+ location /people/seanmg { 
+ deny all; 
+ return 404; 
+ }
+ location /people/zoelin { 
+ deny all; 
+ return 404; 
+ }
+ location /people/snrobert { 
+ deny all; 
+ return 404; 
+ }
+ location /people/sjsilver { 
+ deny all; 
+ return 404; 
+ }
+ location /people/tommyo { 
+ deny all; 
+ return 404; 
+ }
+ location /people/carrie { 
+ deny all; 
+ return 404; 
+ }
+ location /people/talexa { 
+ deny all; 
+ return 404; 
+ }
+ location /people/nnamin { 
+ deny all; 
+ return 404; 
+ }
+ location /people/jrblake { 
+ deny all; 
+ return 404; 
+ }
+ location /people/mpcasey { 
+ deny all; 
+ return 404; 
+ }
+ location /people/lmbowles { 
+ deny all; 
+ return 404; 
+ }
+ location /people/gchieh { 
+ deny all; 
+ return 404; 
+ }
+ location /people/scclark { 
+ deny all; 
+ return 404; 
+ }
+ location /people/jbclemen { 
+ deny all; 
+ return 404; 
+ }
+ location /people/lwclend { 
+ deny all; 
+ return 404; 
+ }
+ location /people/kkipp22 { 
+ deny all; 
+ return 404; 
+ }
+ location /people/sdcox { 
+ deny all; 
+ return 404; 
+ }
+ location /people/mpdries { 
+ deny all; 
+ return 404; 
+ }
+ location /people/nfarnia { 
+ deny all; 
+ return 404; 
+ }
+ location /people/eharwell { 
+ deny all; 
+ return 404; 
+ }
+ location /people/brenda15 { 
+ deny all; 
+ return 404; 
+ }
+ location /people/ashig { 
+ deny all; 
+ return 404; 
+ }
+ location /people/lhodges { 
+ deny all; 
+ return 404; 
+ }
+ location /people/gjarquin { 
+ deny all; 
+ return 404; 
+ }
+ location /people/clj4884 { 
+ deny all; 
+ return 404; 
+ }
+ location /people/dekjohns { 
+ deny all; 
+ return 404; 
+ }
+ location /people/kkean { 
+ deny all; 
+ return 404; 
+ }
+ location /people/kknoblau { 
+ deny all; 
+ return 404; 
+ }
+ location /people/bklayton { 
+ deny all; 
+ return 404; 
+ }
+ location /people/dleigh { 
+ deny all; 
+ return 404; 
+ }
+ location /people/jmedelto { 
+ deny all; 
+ return 404; 
+ }
+ location /people/yamasani { 
+ deny all; 
+ return 404; 
+ }
+ location /people/jamong { 
+ deny all; 
+ return 404; 
+ }
+ location /people/jordaz { 
+ deny all; 
+ return 404; 
+ }
+ location /people/nperrone { 
+ deny all; 
+ return 404; 
+ }
+ location /people/lrichard { 
+ deny all; 
+ return 404; 
+ }
+ location /people/marosale { 
+ deny all; 
+ return 404; 
+ }
+ location /people/wsmartin { 
+ deny all; 
+ return 404; 
+ }
+ location /people/mssen { 
+ deny all; 
+ return 404; 
+ }
+ location /people/pabsilva { 
+ deny all; 
+ return 404; 
+ }
+ location /people/jcaseys { 
+ deny all; 
+ return 404; 
+ }
+ location /people/ltavolac { 
+ deny all; 
+ return 404; 
+ }
+ location /people/jvirgen { 
+ deny all; 
+ return 404; 
+ }
+ location /people/jzandler { 
+ deny all; 
+ return 404; 
+ }
 		
