@@ -45,6 +45,14 @@ rewrite ^/people/research-staff /directory-of-people redirect;
 rewrite ^/people/psych-editors /directory-of-people redirect;
 rewrite ^/people/psychology /directory-of-people redirect;
 
+location /philosophy {
+ 			deny all;
+			return 404;
+			}
+location /anthropology {
+        deny all;
+        return 404;
+        }
 location /economics {
 			deny all;
 			return 404;
@@ -480,7 +488,14 @@ location /people/pkaliman {
 	deny all;
 	return 404;
 	}
-
+location /people/philosophy {
+ 			deny all;
+			return 404;
+			}
+location /people/anthropology {
+        deny all;
+        return 404;
+        }
 		
 
 

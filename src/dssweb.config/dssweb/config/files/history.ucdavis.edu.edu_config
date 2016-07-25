@@ -30,6 +30,15 @@ location /psychology {
         return 404;
         }
 
+
+location /philosophy {
+ 			deny all;
+			return 404;
+			}
+location /anthropology {
+        deny all;
+        return 404;
+        }
 location /politicalscience{
  			deny all;
 			return 404;
@@ -129,6 +138,18 @@ location /people/blue-cluster-staff {
 	return 404;
 	}
 location /people/yellow-cluster-staff {
+	deny all;
+	return 404;
+	}
+location /people/orange-cluster-staff {
+	deny all;
+	return 404;
+	}
+location /people/philosophy{
+	deny all;
+	return 404;
+	}
+location /people/anthropology {
 	deny all;
 	return 404;
 	}

@@ -24,7 +24,14 @@ location /history {
 		return 404;
 		}
 		
-
+location /philosophy {
+ 			deny all;
+			return 404;
+			}
+location /anthropology {
+        deny all;
+        return 404;
+        }
 location /politicalscience{
  			deny all;
 			return 404;
@@ -78,4 +85,12 @@ location /people/jdr {
 	deny all;
 	return 404;
 	}
+location /people/philosophy {
+ 			deny all;
+			return 404;
+			}
+location /people/anthropology {
+        deny all;
+        return 404;
+        }
 		
