@@ -292,7 +292,7 @@ location /people/azientek {
     deny all;
 	 return 404;
 	 }
-locattion /people/rabell {
+location /people/rabell {
 	deny all;
 	return 404;
 	}
