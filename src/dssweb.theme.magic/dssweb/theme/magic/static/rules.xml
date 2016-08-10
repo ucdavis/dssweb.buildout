@@ -218,6 +218,15 @@
 			css:content=".front-page-news"
 			css:theme="#container-2 > div > div > div.bcontroller > a"  />
 		</rules>
+		<rules css:if-content="body.site-politicalscience">
+			<copy attributes="href"
+			css:content="#portaltab-about > a"
+			css:theme="#container-2 > div > div > div.bcontroller > a" />
+			<!--color hack -->
+			<merge attributes="class"
+			css:content=".front-page-news"
+			css:theme="#container-2 > div > div > div.bcontroller > a"  />
+		</rules>
 		<rules css:if-content="body.site-history">
 			<copy attributes="href"
 			css:content="#portaltab-about-us > a"
@@ -551,6 +560,7 @@
 		    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 		    ga('create', 'UA-6453965-1', 'auto');
+			 ga('require', 'linkid');
 		    ga('send', 'pageview');
 
 		  </script>
@@ -563,6 +573,7 @@
 		    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 		    ga('create', 'UA-1958864-20', 'auto');
+			 ga('require', 'linkid');
 		    ga('send', 'pageview');
 
 		  </script>
@@ -575,6 +586,7 @@
 		    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 		    ga('create', 'UA-1958864-13', 'auto');
+			 ga('require', 'linkid');
 		    ga('send', 'pageview');
 
 		  </script>
@@ -587,6 +599,7 @@
 		    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 		    ga('create', 'UA-1958864-1', 'auto');
+			 ga('require', 'linkid');
 		    ga('send', 'pageview');
 
 		  </script>
@@ -599,6 +612,7 @@
 		    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 		    ga('create', 'UA-1958864-15', 'auto');
+			 ga('require', 'linkid');
 		    ga('send', 'pageview');
 
 		  </script>
@@ -611,6 +625,7 @@
 		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 		  ga('create', 'UA-1958864-9', 'auto');
+		  ga('require', 'linkid');
 		  ga('send', 'pageview');
 
 		</script>
