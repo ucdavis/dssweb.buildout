@@ -53,9 +53,9 @@
 	  <!--drop theme="/html/body/script" /-->
 	  
 	  	  
+	 
 	  <!--pull in script tags from Plone head to end of body-->
-	<after css:theme="html head" css:content="html head script" />
-
+	  	<after css:theme="html head" css:content="html head script" />
 
 
 	<!-- merge classes from Plone body with theme body -->
@@ -64,8 +64,7 @@
 	  <!-- drop theme js -->
 	  
 	  <!--copy javascript in from registry -->
-	  
-	
+  
 
   <rules css:if-content="body.portaltype-front-page">
       <!--drop css:content="html head script" /-->
@@ -536,6 +535,8 @@
 		<!-- mobile front bar titles, aka quickfacts -->
 		<replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.left-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content=".left-front-column > dl > dt > a > span" css:if-content=".left-front-column" />
 		<replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.middle-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content=".middle-front-column > dl > dt > a > span" css:if-content=".middle-front-column" />
+		
+		
 	 <!--addthis-->
 		 <append css:theme="body">
 			 <!-- Go to www.addthis.com/dashboard to customize your tools -->
