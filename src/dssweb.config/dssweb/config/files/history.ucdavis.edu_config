@@ -70,6 +70,14 @@ location /people/sdhobbs {
 			deny all;
 			return 404;
 			} 
+location /people/people {
+         deny all;
+			return 404;
+			}
+location /people/jarett {
+         deny all;
+			return 404;
+			}
 rewrite ^/people$ /directory-of-people redirect; 
 rewrite ^/people/$ /directory-of-people redirect;
 

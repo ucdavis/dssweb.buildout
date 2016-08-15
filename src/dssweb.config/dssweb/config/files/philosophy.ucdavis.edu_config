@@ -39,6 +39,10 @@ location = /google5d619727837d5b53.html {
             rewrite ^/(.*)  $1;
             return 200 "google-site-verification: $uri";
     }
+location /people/people {
+         deny all;
+			return 404;
+			}
 
 
 rewrite ^/people$ /directory-of-people redirect;

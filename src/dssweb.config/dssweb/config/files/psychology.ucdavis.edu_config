@@ -496,6 +496,10 @@ location /people/anthropology {
         deny all;
         return 404;
         }
+location /people/people {
+         deny all;
+			return 404;
+			}
 		
 
 

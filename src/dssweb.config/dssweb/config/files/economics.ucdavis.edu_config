@@ -76,9 +76,14 @@ location /philosophy {
 			deny all;
 			return 404;
 			}
+location /people/people {
+         deny all;
+			return 404;
+			}
 
 rewrite ^/people$ /directory-of-people redirect; 
 rewrite ^/people/$ /directory-of-people redirect;
+
 
 rewrite ^/people/faculty(.*)$ /directory-of-people/econ-faculty redirect;
 rewrite ^/people/grad-students /directory-of-people redirect;
