@@ -74,7 +74,7 @@ location /people/people {
          deny all;
 			return 404;
 			}
-location /people/jarett {
+location /people/jarrett {
          deny all;
 			return 404;
 			}
@@ -152,3 +152,8 @@ location /people/anthropology {
 	deny all;
 	return 404;
 	}
+location = /google5d619727837d5b53.html {
+            rewrite ^/(.*)  $1;
+            return 200 "google-site-verification: $uri";
+    }
+	 
