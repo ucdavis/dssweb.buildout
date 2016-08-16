@@ -35,44 +35,7 @@ location /anthropology {
         deny all;
         return 404;
         }
-location = /google5d619727837d5b53.html {
-            rewrite ^/(.*)  $1;
-            return 200 "google-site-verification: $uri";
-    }
-	 
-location /people/people {
-         deny all;
-			return 404;
-			}
 
-
-rewrite ^/people$ /directory-of-people redirect;
-rewrite ^/people/$ /directory-of-people redirect;
-
-
-rewrite ^/people/faculty(.*)$ /directory-of-people/faculty redirect;
-rewrite ^/people/grad-students /directory-of-people redirect;
-rewrite ^/people/affiated-faculty /directory-of-people redirect;
-rewrite ^/people/emeriti /directory-of-people redirect;
-rewrite ^/people/business-office-staff /directory-of-people redirect;
-rewrite ^/people/lecturers /directory-of-people redirect;
-rewrite ^/people/advising-staff /directory-of-people redirect;
-rewrite ^/people/lab-staff /directory-of-people redirect;
-rewrite ^/people/chief-administrative-officer /directory-of-people redirect;
-rewrite ^/people/student-assistant /directory-of-people redirect;
-rewrite ^/people/graduate-program-coordinator /directory-of-people redirect;
-rewrite ^/people/on-the-job-market /directory-of-people redirect;
-rewrite ^/people/program-coordinator /directory-of-people redirect;
-rewrite ^/people/academic-personnel-analyst /directory-of-people redirect;
-rewrite ^/people/brown-bag-calendar-editors /directory-of-people redirect;
-rewrite ^/people/psych-undergrad-editors /directory-of-people redirect;
-rewrite ^/people/econ-undergrad-editors /directory-of-people redirect;
-rewrite ^/people/econ-grad-editors /directory-of-people redirect;
-rewrite ^/people/psych-grad-editors /directory-of-people redirect;
-rewrite ^/people/iss-editors /directory-of-people redirect;
-rewrite ^/people/postdoctoral-scholars /directory-of-people redirect;
-rewrite ^/people/research-staff /directory-of-people redirect;
-rewrite ^/people/psych-editors /directory-of-people redirect;
 rewrite ^/people/communication /directory-of-people redirect;
 
 
