@@ -113,33 +113,6 @@
   </rules> 
 
   <!--front-page -->
-  
-  
-     <replace css:theme-children="#top-bar-wrap > nav > ul > li.name"
-              css:content="#portal-logo"  />
-				  
-				  <drop attributes="title" css:content="ul#portal-globalnav li a" /> 
-  <!--ISS Specific Rules -->
-  <rules css:if-content="body.site-iss">
-    <copy attributes="href"
-          css:content="#portaltab-support-iss > a"
-          css:theme="#uti-give > a" />
-	<drop content='//*[@id="portaltab-support-iss"]' />
-   <replace css:theme="#uti-contact > a"
-         css:content="#portaltab-subscribe > a" />
-			<drop content='//li[@id="portaltab-subscribe"]' />
-  </rules>
-
- <rules css:if-not-content="body.site-iss">
-  <replace css:theme="#uti-contact > a"
-        css:content="#portaltab-contact > a" />
-	<drop content='//li[@id="portaltab-contact"]' />
-</rules>
-	
-
-  
-	   
-  <!--Other sites-->	   
   <!--front page -->
 	<rules css:if-content="body.portaltype-front-page" >	  
 		<replace css:theme-children="#left-front-column"
@@ -275,6 +248,34 @@
 
 
 	</rules> <!--end front page rules-->
+  
+  
+     <replace css:theme-children="#top-bar-wrap > nav > ul > li.name"
+              css:content="#portal-logo"  />
+				  
+				  <drop attributes="title" css:content="ul#portal-globalnav li a" /> 
+  <!--ISS Specific Rules -->
+  <rules css:if-content="body.site-iss">
+    <copy attributes="href"
+          css:content="#portaltab-support-iss > a"
+          css:theme="#uti-give > a" />
+	<drop content='//*[@id="portaltab-support-iss"]' />
+   <replace css:theme="#uti-contact > a"
+         css:content="#portaltab-subscribe > a" />
+			<drop content='//li[@id="portaltab-subscribe"]' />
+  </rules>
+
+ <rules css:if-not-content="body.site-iss">
+  <replace css:theme="#uti-contact > a"
+        css:content="#portaltab-contact > a" />
+	<drop content='//li[@id="portaltab-contact"]' />
+</rules>
+	
+
+  
+	   
+  <!--Other sites-->	   
+ 
 
 	<!-- Breadcrumbs for all but front page -->
 	
@@ -442,7 +443,7 @@
 			   
 		   <!-- two collumn page -->
         <rules css:if-content="body.portaltype-dsstwocollumnpage">
-		       <before css:theme="#content-row"
+		    <before css:theme="#content-row"
                                  css:content=".photo-row" method="raw"/>
                                    <!--mobile collapse bar -->
                                    <replace css:theme-children="#content-panel-heading > h4 > a" css:content="h3#nested-left-title.uc.blue-head > span" />
