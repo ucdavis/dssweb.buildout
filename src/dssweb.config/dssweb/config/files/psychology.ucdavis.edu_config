@@ -7,7 +7,10 @@ location = /google5d619727837d5b53.html {
             rewrite ^/(.*)  $1;
             return 200 "google-site-verification: $uri";
     }
-location /rainbow {
+location ~ /rainbow$ {
+rewrite /rainbow /rainbow/ break;
+}
+location /rainbow/ {
 rewrite ^/rainbow(/.*)$ $1 break;
 proxy_pass http://lgbpsychology.org;
 proxy_set_header X-Real-IP $remote_addr;
