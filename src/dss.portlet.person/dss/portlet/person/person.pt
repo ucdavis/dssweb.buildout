@@ -55,9 +55,17 @@
 				<br>
 				<span class="org"><span tal:content="eachDepartment/Title" /></p>
 			</tal:block>
+			
+			
+			
 		</div>
+      <p tal:condition="python: context.getJobTitles()"
+         class="title"
+         tal:repeat="jobTitle context/getJobTitles"
+         tal:content="jobTitle"><tal:comment replace="nothing">[job title]</tal:comment>
+      </p>
 		</div> <!--title org -->
-					 
+                
 		  
 			<tal:block tal:condition="python: context.getWebsites()">	
 					  				  
