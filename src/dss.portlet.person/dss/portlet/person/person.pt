@@ -30,12 +30,12 @@
 				<span class="family-name" tal:content="context/getLastName"><tal:comment replace="nothing">[Last Name]</tal:comment></span>
 				<span class="honorific-suffix" tal:content="context/getSuffix"><tal:comment replace="nothing">[ suffix i.e. Dr]</tal:comment></span>
 			</h4>
-	      <span tal:condition="python:checkPermission('Modify portal content', context)"
+	      <div class="port-edit" tal:condition="python:checkPermission('Modify portal content', context)"
 	            class="discreet">
 	        <a class="photo-url person-edit" tal:attributes="href python:'base_edit?fieldset=photo'">
 	          <tal:block i18n:translate="FacultyStaffDirectory_editImage">Add or Edit Your Photo</tal:block>
 	        </a>
-	      </span>
+	      </div>
 		</tal:block>
 		<div class="title org">
 
