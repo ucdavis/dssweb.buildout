@@ -481,7 +481,14 @@
 				  <replace css:theme-children="#content-core" css:content="#content" />
 				  
 			  </rules-->
-				 
+			  <!--drop content lead image on folder with collapsible view -->
+	  <rules css:if-content="body.template-collapsible_full_view" >
+		  <drop css:content="div.newsImageContainer" />
+	  </rules>
+	  <rules css:if-content="body.template-collapsible_summary_view" >
+		  <drop css:content="div.newsImageContainer" />
+	  </rules>
+
    	   <!--Contact Page rules  -->
     <rules css:if-content="body.template-fg_base_view_p3.section-contact" >
    		   
