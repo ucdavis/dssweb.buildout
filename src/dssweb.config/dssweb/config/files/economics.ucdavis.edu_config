@@ -233,7 +233,7 @@ location /people/sgmiller {
     deny all;
 	 return 404;
 	 }
-location /people/fzolmst {
+location /people/fzkolmst {
     deny all;
 	 return 404;
 	 }
