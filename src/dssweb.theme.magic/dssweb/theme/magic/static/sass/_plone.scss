@@ -1400,5 +1400,9 @@ body.template-facetednavigation_view div#main-container.container div#content di
 	 margin-left: auto;
 	 margin-right: auto;
  }
+ /* drop the odd double read more */
+ div.collapsible div.inline-content p.more {
+     display: none;
+  }
 /* @end */
 
