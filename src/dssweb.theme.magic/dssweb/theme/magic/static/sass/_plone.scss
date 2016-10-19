@@ -1295,6 +1295,13 @@ body.mceContentBody div.plomino-accordion-content {
 	padding-top: .5em;
 	padding-left:1em;
 }
+//gold bar titles smaller for congitive Neuroscience
+@media and (min-width: $screen-sm-max) and (max-width:1300px){
+	.panel-title a .thumb-txt {
+		font-size: 1.3rem;
+		
+	}
+}
 @media screen and (max-width: $screen-sm-min) {
 	#content-core h3.plomino-accordion-header > a{
 		font-size:1.15rem !important;
