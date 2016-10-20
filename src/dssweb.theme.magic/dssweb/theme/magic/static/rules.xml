@@ -230,8 +230,18 @@
 		
 		<copy css:content=".front-page-events > dl > dd"
 		css:theme="#container-3 > div > div > div.content-wrap" />
+		<rules css:if-not-content="body.site-economics" />
+			<copy attributes="href"
+			css:content=".front-page-events > dl > dd.portletFooter > span:nth-child(2) > a"
+			css:theme="#container-3 > div > div > div.bcontroller > a"  />
+			<merge attributes="class"
+			css:content=".front-page-events"
+			css:theme="#container-3 > div > div > div.bcontroller > a"  />
+	   </rules>
+    
+	<rules css:if-content="body.site-economics">
 		<copy attributes="href"
-		css:content=".front-page-events > dl > dd.portletFooter > span:nth-child(2) > a"
+		css:content="#portaltab-events > a"
 		css:theme="#container-3 > div > div > div.bcontroller > a"  />
 		<merge attributes="class"
 		css:content=".front-page-events"
