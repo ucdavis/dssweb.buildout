@@ -15,10 +15,7 @@ location /iss {
 			deny all;
 			return 404;
 			}
-location /DSS-Master {
-		 	deny all;
-			return 404;
-			}
+
 location /history{
  			deny all;
 			return 404;
