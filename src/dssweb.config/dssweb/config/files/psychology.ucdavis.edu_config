@@ -7,43 +7,49 @@ location = /google5d619727837d5b53.html {
             rewrite ^/(.*)  $1;
             return 200 "google-site-verification: $uri";
     }
-location /rainbow {
-rewrite ^/rainbow(/.*|$) http://facultysites.dss.ucdavis.edu/~gmherek/rainbow$1 redirect;
+location ~ /rainbow$ {
+rewrite /rainbow /rainbow/ break;
 }
+location /rainbow/ {
+rewrite ^/rainbow(/.*)$ $1 break;
+proxy_pass http://lgbpsychology.org;
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header X-Forwarded-Proto $scheme;
+}
+
 rewrite ^/[Hh]erek(/.*|$) http://facultysites.dss.ucdavis.edu/~gmherek/Herek$1 redirect;
-#location /rainbow {
-#rewrite ^/rainbow(/.*|$) http://psc.dss.ucdavis.edu/rainbow$1 redirect;
-#}
-#rewrite ^/[Hh]erek(/.*|$) http://psc.dss.ucdavis.edu/herek$1 redirect;
+
+
 rewrite ^/[Ss]imonton(/.*|$) http://simonton.faculty.ucdavis.edu/ redirect;
 rewrite ^/[Ss]ommer[Bb](/.*|$) http://psc.dss.ucdavis.edu/sommerb$1 redirect;
 rewrite ^/[Ss]ommer[Rr](/.*|$) http://psc.dss.ucdavis.edu/sommerr$1 redirect;
-rewrite ^/people/academic-personnel-analyst$ /directory-of-people redirect;
-rewrite ^/people$ /directory-of-people redirect;
-rewrite ^/people/$ /directory-of-people redirect;rewrite ^/people/grad-students /directory-of-people redirect;
-rewrite ^/people/faculty /directory-of-people/faculty redirect;
-rewrite ^/people/affiated-faculty /directory-of-people redirect;
-rewrite ^/people/emeriti /directory-of-people redirect;
-rewrite ^/people/business-office-staff /directory-of-people redirect;
-rewrite ^/people/lecturers /directory-of-people redirect;
-rewrite ^/people/advising-staff /directory-of-people redirect;
-rewrite ^/people/lab-staff /directory-of-people redirect;
-rewrite ^/people/chief-administrative-officer /directory-of-people redirect;
-rewrite ^/people/student-assistant /directory-of-people redirect;
-rewrite ^/people/graduate-program-coordinator /directory-of-people redirect;
-rewrite ^/people/on-the-job-market /directory-of-people redirect;
-rewrite ^/people/program-coordinator /directory-of-people redirect;
-rewrite ^/people/academic-personnel-analyst /directory-of-people redirect;
-rewrite ^/people/brown-bag-calendar-editors /directory-of-people redirect;
-rewrite ^/people/psych-undergrad-editors /directory-of-people redirect;
-rewrite ^/people/econ-undergrad-editors /directory-of-people redirect;
-rewrite ^/people/econ-grad-editors /directory-of-people redirect;
-rewrite ^/people/psych-grad-editors /directory-of-people redirect;
-rewrite ^/people/iss-editors /directory-of-people redirect;
-rewrite ^/people/postdoctoral-scholars /directory-of-people redirect;
-rewrite ^/people/research-staff /directory-of-people redirect;
-rewrite ^/people/psych-editors /directory-of-people redirect;
-rewrite ^/people/psychology /directory-of-people redirect;
+rewrite /people/academic-personnel-analyst$ /directory-of-people redirect;
+rewrite /people$ /directory-of-people redirect;
+rewrite /people/$ /directory-of-people redirect;rewrite /people/grad-students /directory-of-people redirect;
+rewrite /people/faculty /directory-of-people/faculty redirect;
+rewrite /people/affiated-faculty /directory-of-people redirect;
+rewrite /people/emeriti /directory-of-people redirect;
+rewrite /people/business-office-staff /directory-of-people redirect;
+rewrite /people/lecturers /directory-of-people redirect;
+rewrite /people/advising-staff /directory-of-people redirect;
+rewrite /people/lab-staff /directory-of-people redirect;
+rewrite /people/chief-administrative-officer /directory-of-people redirect;
+rewrite /people/student-assistant /directory-of-people redirect;
+rewrite /people/graduate-program-coordinator /directory-of-people redirect;
+rewrite /people/on-the-job-market /directory-of-people redirect;
+rewrite /people/program-coordinator /directory-of-people redirect;
+rewrite /people/academic-personnel-analyst /directory-of-people redirect;
+rewrite /people/brown-bag-calendar-editors /directory-of-people redirect;
+rewrite /people/psych-undergrad-editors /directory-of-people redirect;
+rewrite /people/econ-undergrad-editors /directory-of-people redirect;
+rewrite /people/econ-grad-editors /directory-of-people redirect;
+rewrite /people/psych-grad-editors /directory-of-people redirect;
+rewrite /people/iss-editors /directory-of-people redirect;
+rewrite /people/postdoctoral-scholars /directory-of-people redirect;
+rewrite /people/research-staff /directory-of-people redirect;
+rewrite /people/psych-editors /directory-of-people redirect;
+rewrite /people/psychology /directory-of-people redirect;
 
 location /philosophy {
  			deny all;
