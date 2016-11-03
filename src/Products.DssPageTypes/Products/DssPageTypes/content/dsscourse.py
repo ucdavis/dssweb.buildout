@@ -13,6 +13,8 @@ from Products.ATContentTypes.content import document
 from Products.DssPageTypes.interfaces import IDssCourse
 from Products.DssPageTypes.config import PROJECTNAME
 from Products.ATExtensions.ateapi import *
+from Products.ATContentTypes.lib.historyaware import HistoryAwareMixin
+
 
 
 

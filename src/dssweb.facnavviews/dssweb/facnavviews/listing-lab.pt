@@ -36,7 +36,6 @@
 						 pi_name python:support_view.getPiPersonInfo(obj);
 	                image_tag python:getattr(obj, 'tag', None)">
 	                  <a tal:attributes="href url;
-<<<<<<< Local Changes
 	                                   title title" >
 									  
 	                  <span class="labWrapper" >
@@ -44,15 +43,13 @@
 							
 	                       <img style="border: none" class="lab-image" tal:attributes="
 	                      title title;
-=======
 	                                   title desc_or_title" >
 	                  <span class="labWrapper" tal:condition="image_thumb">
 	                    <img style="border: none" tal:attributes="
 	                      title desc_or_title;
->>>>>>> External Changes
 	                      alt title;
 	                      src string:$url/image_thumb"/>
-<<<<<<< Local Changes
+
 							 
 	                     </span>
 								<img style="border: none" class="lab-image" tal:attributes="
@@ -62,9 +59,6 @@
 						  
 						   </span>
 							<span class="fade"></span>
-=======
-	                  </span>
->>>>>>> External Changes
 
 	                  <span class="labName" tal:content="title">Title</span>
 	  			    </a>
