@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<rolemap>
+  <permissions>
+    <permission name="Products.DssPageTypes: Add Dss Contact"
+                acquire="True">
+      <role name="Manager"/>
+      <role name="Site Administrator"/>
+      <role name="Owner"/>
+      <role name="Contributor"/>
+    </permission>
+  
+    <permission name="Products.DssPagetypes: Add Two column Page"
+                acquire="True">
+      <role name="Manager"/>
+      <role name="Site Administrator"/>
+      <role name="Owner"/>
+      <role name="Contributor"/>
+    </permission>
+  
+  <permission name="Products.DssPageTypes: Add Dss Course"
+              acquire="True">
+    <role name="Manager"/>
+    <role name="Site Administrator"/>
+    <role name="Owner"/>
+    <role name="Contributor"/>
+  </permission>
+  </permissions>
+
+</rolemap>

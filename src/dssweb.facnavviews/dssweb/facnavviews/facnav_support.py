@@ -101,5 +101,8 @@ class FacNavView(BrowserView):
     def getPiPersonInfo(self, obj):
         pi_person = obj.getPi().Title()
         return pi_person
-            
+   
+    def getFirstWebsite(self, obj):
+        website = obj.getWebsites()[0]
+        return website 
             
