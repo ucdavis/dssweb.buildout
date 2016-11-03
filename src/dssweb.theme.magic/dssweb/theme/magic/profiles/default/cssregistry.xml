@@ -8,4 +8,6 @@
 	<stylesheet id="columns.css" enabled="False" /-->
 	 <stylesheet id="faceted_view.css" enabled="True" />
 	 <stylesheet id="collective.js.jqueryui.custom.min.css" enabled ="True" />
+	 <stylesheet id="++resource++collective.js.fullcalendar/fullcalendar.css" enabled="True" />
+
 </object>

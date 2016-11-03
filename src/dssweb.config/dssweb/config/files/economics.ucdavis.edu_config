@@ -7,6 +7,8 @@ rewrite ^/faculty/fzlinder^(.*)$ http://lindert.econ.ucdavis.edu/$1 redirect;
 rewrite ^/faculty/cmm(.*)$ http://economics.ucdavis.edu/people/cmm/$1 redirect;
 rewrite ^/faculty/gperi(.*)$ http://economics.ucdavis.edu/people/gperi/$1 redirect;
 rewrite ^/faculty/(.*)$ http://faculty.econ.ucdavis.edu/faculty/$1 redirect;
+rewrite ^/people/economics /directory-of-people redirect;
+
 }
 location = /google5d619727837d5b53.html {
             rewrite ^/(.*)  $1;
@@ -31,7 +33,14 @@ location /psychology {
         deny all;
         return 404;
         }
-		  
+location /history {
+ 			deny all;
+			return 404;
+			}
+location /politicalscience {
+ 			deny all;
+			return 404;
+			}		  
 location /economics {
 			deny all;
 			return 404;
@@ -58,9 +67,23 @@ location /DSS-Master {
 		 	deny all;
 			return 404;
 			}
+location /anthropology {
+			deny all;
+			return 404;
+			}
+
+location /philosophy {
+			deny all;
+			return 404;
+			}
+location /people/people {
+         deny all;
+			return 404;
+			}
 
 rewrite ^/people$ /directory-of-people redirect; 
 rewrite ^/people/$ /directory-of-people redirect;
+
 
 rewrite ^/people/faculty(.*)$ /directory-of-people/econ-faculty redirect;
 rewrite ^/people/grad-students /directory-of-people redirect;
@@ -90,6 +113,10 @@ location /undergrad-program/people {
 	deny all;
 	return 404;
 	}
+location /people/politicalscience {
+	deny all;
+	return 404;
+	}
 location /people/psychology {
 	deny all;
 	return 404;
@@ -102,7 +129,7 @@ location /people/communication {
 	deny all;
 	return 404;
 	}
-location /people/economics {
+location /people/history {
 	deny all;
 	return 404;
 	}
@@ -122,7 +149,429 @@ location /people/pkaliman {
 	deny all;
 	return 404;
 	}
+
 location /people/ssatkuna {
 	deny all;
 	return 404;
 }
+location /people/jdr {
+	deny all;
+	return 404;
+	}
+location /people/anthropology {
+	deny all;
+	return 404;
+	}
+location /people/philosophy {
+ 	deny all;
+	return 404;
+	}
+location /people/aanoosha {
+    deny all;
+	 return 404;
+	 }
+location /people/biagioli  {
+    deny all;
+	 return 404;
+	 }
+location /people/dbiale {
+    deny all;
+	 return 404;
+	 }
+location /people/bossler {
+    deny all;
+	 return 404;
+	 }
+location /people/icampbell {
+    deny all;
+	 return 404;
+	 }
+location /people/mdcolin {
+    deny all;
+	 return 404;
+	 }
+location /people/geovet {
+    deny all;
+	 return 404;
+	 }
+location /people/crdecker {
+    deny all;
+	 return 404;
+	 }
+location /people/akharris {
+    deny all;
+	 return 404;
+	 }
+location /people/omniae {
+    deny all;
+	 return 404;
+	 }
+location /people/bhopkins {
+    deny all;
+	 return 404;
+	 }
+location /people/qdjaver {
+    deny all;
+	 return 404;
+	 }
+location /people/rjeanbap {
+    deny all;
+	 return 404;
+	 }
+location /people/kyukim {
+    deny all;
+	 return 404;
+	 }
+location /people/jauhon {
+    deny all;
+	 return 404;
+	 }
+location /people/lgmaters {
+    deny all;
+	 return 404;
+	 }
+location /people/sjmckee {
+    deny all;
+	 return 404;
+	 }
+location /people/sgmiller {
+    deny all;
+	 return 404;
+	 }
+location /people/fzkolmst {
+    deny all;
+	 return 404;
+	 }
+location /people/lboropeza {
+    deny all;
+	 return 404;
+	 }
+location /people/rauchway {
+    deny all;
+	 return 404;
+	 }
+location /people/resendez {
+    deny all;
+	 return 404;
+	 }
+location /people/mtsaler {
+    deny all;
+	 return 404;
+	 }
+location /people/jdselwyn {
+    deny all;
+	 return 404;
+	 }
+location /people/ssen {
+    deny all;
+	 return 404;
+	 }
+location /people/jdsmolens {
+    deny all;
+	 return 404;
+	 }
+location /people/fzvasili {
+    deny all;
+	 return 404;
+	 }
+location /people/dstolz {
+    deny all;
+	 return 404;
+	 }
+location /people/fzgoofy {
+    deny all;
+	 return 404;
+	 }
+location /people/btezcan {
+    deny all;
+	 return 404;
+	 }
+location /people/cmtsu {
+    deny all;
+	 return 404;
+	 }
+location /people/cfwalker {
+    deny all;
+	 return 404;
+	 }
+location /people/lswarren {
+    deny all;
+	 return 404;
+	 }
+location /people/azientek {
+    deny all;
+	 return 404;
+	 }
+location /people/rabell {
+	deny all;
+	return 404;
+	}
+location /people/xxx123 {
+        deny all;
+        return 404;
+        }
+location /people/abc123 {
+        deny all;
+        return 404;
+        }
+ location /people/aemarino { 
+ deny all; 
+ return 404; 
+ }
+ location /people/aserpafl { 
+ deny all; 
+ return 404; 
+ }
+ location /people/egrennan { 
+ deny all; 
+ return 404; 
+ }
+ location /people/cknudten { 
+ deny all; 
+ return 404; 
+ }
+ location /people/eazelnik { 
+ deny all; 
+ return 404; 
+ }
+ location /people/laragen { 
+ deny all; 
+ return 404; 
+ }
+ location /people/schubael { 
+ deny all; 
+ return 404; 
+ }
+ location /people/khafee14 { 
+ deny all; 
+ return 404; 
+ }
+ location /people/joshjht { 
+ deny all; 
+ return 404; 
+ }
+ location /people/lcabrams { 
+ deny all; 
+ return 404; 
+ }
+ location /people/lmmortim { 
+ deny all; 
+ return 404; 
+ }
+ location /people/mpeinado { 
+ deny all; 
+ return 404; 
+ }
+ location /people/manovoa { 
+ deny all; 
+ return 404; 
+ }
+ location /people/mghagger { 
+ deny all; 
+ return 404; 
+ }
+ location /people/msacmali { 
+ deny all; 
+ return 404; 
+ }
+ location /people/ngallman { 
+ deny all; 
+ return 404; 
+ }
+ location /people/niagarci { 
+ deny all; 
+ return 404; 
+ }
+ location /people/ppalma { 
+ deny all; 
+ return 404; 
+ }
+ location /people/raegli { 
+ deny all; 
+ return 404; 
+ }
+ location /people/rsaroni { 
+ deny all; 
+ return 404; 
+ }
+ location /people/sgilkers { 
+ deny all; 
+ return 404; 
+ }
+ location /people/seanmg { 
+ deny all; 
+ return 404; 
+ }
+ location /people/zoelin { 
+ deny all; 
+ return 404; 
+ }
+ location /people/snrobert { 
+ deny all; 
+ return 404; 
+ }
+ location /people/sjsilver { 
+ deny all; 
+ return 404; 
+ }
+ location /people/tommyo { 
+ deny all; 
+ return 404; 
+ }
+ location /people/carrie { 
+ deny all; 
+ return 404; 
+ }
+ location /people/talexa { 
+ deny all; 
+ return 404; 
+ }
+ location /people/nnamin { 
+ deny all; 
+ return 404; 
+ }
+ location /people/jrblake { 
+ deny all; 
+ return 404; 
+ }
+ location /people/mpcasey { 
+ deny all; 
+ return 404; 
+ }
+ location /people/lmbowles { 
+ deny all; 
+ return 404; 
+ }
+ location /people/gchieh { 
+ deny all; 
+ return 404; 
+ }
+ location /people/scclark { 
+ deny all; 
+ return 404; 
+ }
+ location /people/jbclemen { 
+ deny all; 
+ return 404; 
+ }
+ location /people/lwclend { 
+ deny all; 
+ return 404; 
+ }
+ location /people/kkipp22 { 
+ deny all; 
+ return 404; 
+ }
+ location /people/sdcox { 
+ deny all; 
+ return 404; 
+ }
+ location /people/mpdries { 
+ deny all; 
+ return 404; 
+ }
+ location /people/nfarnia { 
+ deny all; 
+ return 404; 
+ }
+ location /people/eharwell { 
+ deny all; 
+ return 404; 
+ }
+ location /people/brenda15 { 
+ deny all; 
+ return 404; 
+ }
+ location /people/ashig { 
+ deny all; 
+ return 404; 
+ }
+ location /people/lhodges { 
+ deny all; 
+ return 404; 
+ }
+ location /people/gjarquin { 
+ deny all; 
+ return 404; 
+ }
+ location /people/clj4884 { 
+ deny all; 
+ return 404; 
+ }
+ location /people/dekjohns { 
+ deny all; 
+ return 404; 
+ }
+ location /people/kkean { 
+ deny all; 
+ return 404; 
+ }
+ location /people/kknoblau { 
+ deny all; 
+ return 404; 
+ }
+ location /people/bklayton { 
+ deny all; 
+ return 404; 
+ }
+ location /people/dleigh { 
+ deny all; 
+ return 404; 
+ }
+ location /people/jmedelto { 
+ deny all; 
+ return 404; 
+ }
+ location /people/yamasani { 
+ deny all; 
+ return 404; 
+ }
+ location /people/jamong { 
+ deny all; 
+ return 404; 
+ }
+ location /people/jordaz { 
+ deny all; 
+ return 404; 
+ }
+ location /people/nperrone { 
+ deny all; 
+ return 404; 
+ }
+ location /people/lrichard { 
+ deny all; 
+ return 404; 
+ }
+ location /people/marosale { 
+ deny all; 
+ return 404; 
+ }
+ location /people/wsmartin { 
+ deny all; 
+ return 404; 
+ }
+ location /people/mssen { 
+ deny all; 
+ return 404; 
+ }
+ location /people/pabsilva { 
+ deny all; 
+ return 404; 
+ }
+ location /people/jcaseys { 
+ deny all; 
+ return 404; 
+ }
+ location /people/ltavolac { 
+ deny all; 
+ return 404; 
+ }
+ location /people/jvirgen { 
+ deny all; 
+ return 404; 
+ }
+ location /people/jzandler { 
+ deny all; 
+ return 404; 
+ }
+ 

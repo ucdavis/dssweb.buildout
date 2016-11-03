@@ -15,43 +15,25 @@ location /iss {
 			deny all;
 			return 404;
 			}
-location /DSS-Master {
-		 	deny all;
+
+location /history{
+ 			deny all;
 			return 404;
 			}
-location = /google5d619727837d5b53.html {
-            rewrite ^/(.*)  $1;
-            return 200 "google-site-verification: $uri";
-    }
+location /politicalscience{
+ 			deny all;
+			return 404;
+			}
+location /philosophy {
+ 			deny all;
+			return 404;
+			}
+location /anthropology {
+        deny all;
+        return 404;
+        }
 
-
-rewrite ^/people$ /directory-of-people redirect;
-rewrite ^/people/$ /directory-of-people redirect;
-
-
-rewrite ^/people/faculty(.*)$ /directory-of-people/faculty redirect;
-rewrite ^/people/grad-students /directory-of-people redirect;
-rewrite ^/people/affiated-faculty /directory-of-people redirect;
-rewrite ^/people/emeriti /directory-of-people redirect;
-rewrite ^/people/business-office-staff /directory-of-people redirect;
-rewrite ^/people/lecturers /directory-of-people redirect;
-rewrite ^/people/advising-staff /directory-of-people redirect;
-rewrite ^/people/lab-staff /directory-of-people redirect;
-rewrite ^/people/chief-administrative-officer /directory-of-people redirect;
-rewrite ^/people/student-assistant /directory-of-people redirect;
-rewrite ^/people/graduate-program-coordinator /directory-of-people redirect;
-rewrite ^/people/on-the-job-market /directory-of-people redirect;
-rewrite ^/people/program-coordinator /directory-of-people redirect;
-rewrite ^/people/academic-personnel-analyst /directory-of-people redirect;
-rewrite ^/people/brown-bag-calendar-editors /directory-of-people redirect;
-rewrite ^/people/psych-undergrad-editors /directory-of-people redirect;
-rewrite ^/people/econ-undergrad-editors /directory-of-people redirect;
-rewrite ^/people/econ-grad-editors /directory-of-people redirect;
-rewrite ^/people/psych-grad-editors /directory-of-people redirect;
-rewrite ^/people/iss-editors /directory-of-people redirect;
-rewrite ^/people/postdoctoral-scholars /directory-of-people redirect;
-rewrite ^/people/research-staff /directory-of-people redirect;
-rewrite ^/people/psych-editors /directory-of-people redirect;
+rewrite ^/people/communication /directory-of-people redirect;
 
 
 location /people/economics {
@@ -78,4 +60,20 @@ location /people/yellow-cluster-staff {
 	deny all;
 	return 404;
 	}
+location /people/politicalscience {
+	deny all;
+	return 404;
+	}
+location /people/history {
+	deny all;
+	return 404;
+	}
+location /people/philosophy {
+ 			deny all;
+			return 404;
+			}
+location /people/anthropology {
+        deny all;
+        return 404;
+        }
 

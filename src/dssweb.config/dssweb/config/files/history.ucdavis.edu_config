@@ -1,0 +1,472 @@
+
+location /caslogin {
+			deny all;
+			return 404;
+			}
+location /people/politicalscience {
+	deny all;
+	return 404;
+	}
+location /login {
+			deny all;
+			return 404;
+			}
+location /psychology {
+        deny all;
+        return 404;
+        }
+
+
+location /philosophy {
+ 			deny all;
+			return 404;
+			}
+location /anthropology {
+        deny all;
+        return 404;
+        }
+location /politicalscience{
+ 			deny all;
+			return 404;
+			}
+location /history {
+        deny all;
+        return 404;
+        }
+location /people/szschei {
+        deny all;
+        return 404;
+        }
+
+location /communication {
+ 			deny all;
+			return 404;
+			}
+location /iss {
+			deny all;
+			return 404;
+			}
+location /mindbrain {
+			deny all;
+			return 404;
+			}
+location /people/aroyston {
+			deny all;
+			return 404;
+			}
+location /people/xxx123 {
+			deny all;
+			return 404;
+			} 
+location /people/shubba {
+			deny all;
+			return 404;
+			}
+location /people/rabell {
+			deny all;
+			return 404;
+			} 
+location /people/sdhobbs {
+			deny all;
+			return 404;
+			} 
+location /people/people {
+         deny all;
+			return 404;
+			}
+location /people/jarrett {
+         deny all;
+			return 404;
+			}
+location /people/apshreve { 
+deny all; 
+ return 404; }
+location /people/askunz { 
+deny all; 
+ return 404; }
+location /people/ahosek { 
+deny all; 
+ return 404; }
+location /people/ajgroth { 
+deny all; 
+ return 404; }
+location /people/agushue { 
+deny all; 
+ return 404; }
+location /people/aksticke { 
+deny all; 
+ return 404; }
+location /people/boydstun { 
+deny all; 
+ return 404; }
+location /people/andreytomash { 
+deny all; 
+ return 404; }
+location /people/afarrar { 
+deny all; 
+ return 404; }
+location /people/bhighton { 
+deny all; 
+ return 404; }
+location /people/bsjjones { 
+deny all; 
+ return 404; }
+location /people/bkinne { 
+deny all; 
+ return 404; }
+location /people/briclark { 
+deny all; 
+ return 404; }
+location /people/calgara { 
+deny all; 
+ return 404; }
+location /people/clboudre { 
+deny all; 
+ return 404; }
+location /people/chrishallenbrook { 
+deny all; 
+ return 404; }
+location /people/cdhare { 
+deny all; 
+ return 404; }
+location /people/cpdonnel { 
+deny all; 
+ return 404; }
+location /people/ccahill { 
+deny all; 
+ return 404; }
+location /people/mcphilli { 
+deny all; 
+ return 404; }
+location /people/crbelden { 
+deny all; 
+ return 404; }
+location /people/chouck { 
+deny all; 
+ return 404; }
+location /people/simmonsd { 
+deny all; 
+ return 404; }
+location /people/yuch { 
+deny all; 
+ return 404; }
+location /people/datapiaj { 
+deny all; 
+ return 404; }
+location /people/dshanske { 
+deny all; 
+ return 404; }
+location /people/egcostan { 
+deny all; 
+ return 404; }
+location /people/engstrom { 
+deny all; 
+ return 404; }
+location /people/scheiner { 
+deny all; 
+ return 404; }
+location /people/esandlin { 
+deny all; 
+ return 404; }
+location /people/fanlu22 { 
+deny all; 
+ return 404; }
+location /people/fogunkoy { 
+deny all; 
+ return 404; }
+location /people/montinol { 
+deny all; 
+ return 404; }
+location /people/gentok { 
+deny all; 
+ return 404; }
+location /people/fzwandes { 
+deny all; 
+ return 404; }
+location /people/gmineom { 
+deny all; 
+ return 404; }
+location /people/mckibben { 
+deny all; 
+ return 404; }
+location /people/ihale { 
+deny all; 
+ return 404; }
+location /people/jjack318 { 
+deny all; 
+ return 404; }
+location /people/jfadams { 
+deny all; 
+ return 404; }
+location /people/jhkaplan { 
+deny all; 
+ return 404; }
+location /people/fzmoney { 
+deny all; 
+ return 404; }
+location /people/jrhammon { 
+deny all; 
+ return 404; }
+location /people/jelandis { 
+deny all; 
+ return 404; }
+location /people/john-gates { 
+deny all; 
+ return 404; }
+location /people/jggunn { 
+deny all; 
+ return 404; }
+location /people/jarrett { 
+deny all; 
+ return 404; }
+location /people/jhamzaw { 
+deny all; 
+ return 404; }
+location /people/jkujala { 
+deny all; 
+ return 404; }
+location /people/jbroad { 
+deny all; 
+ return 404; }
+location /people/jdpicek { 
+deny all; 
+ return 404; }
+location /people/fzandrew { 
+deny all; 
+ return 404; }
+location /people/hkhodson { 
+deny all; 
+ return 404; }
+location /people/ktully { 
+deny all; 
+ return 404; }
+location /people/copy_of_ktully { 
+deny all; 
+ return 404; }
+location /people/lfitzpat { 
+deny all; 
+ return 404; }
+location /people/fzberm { 
+deny all; 
+ return 404; }
+location /people/larry-wade { 
+deny all; 
+ return 404; }
+location /people/lperitz { 
+deny all; 
+ return 404; }
+location /people/lawest52 { 
+deny all; 
+ return 404; }
+location /people/mreaston { 
+deny all; 
+ return 404; }
+location /people/mpantoja { 
+deny all; 
+ return 404; }
+location /people/mari10 { 
+deny all; 
+ return 404; }
+location /people/mnlubell { 
+deny all; 
+ return 404; }
+location /people/copy_of_lesenyie { 
+deny all; 
+ return 404; }
+location /people/mbuttice { 
+deny all; 
+ return 404; }
+location /people/lesenyie { 
+deny all; 
+ return 404; }
+location /people/mshugart { 
+deny all; 
+ return 404; }
+location /people/mccage { 
+deny all; 
+ return 404; }
+location /people/mnincic { 
+deny all; 
+ return 404; }
+location /people/nrasho { 
+deny all; 
+ return 404; }
+location /people/nrexford { 
+deny all; 
+ return 404; }
+location /people/obgordon { 
+deny all; 
+ return 404; }
+location /people/lorenzo { 
+deny all; 
+ return 404; }
+location /people/rmsivers { 
+deny all; 
+ return 404; }
+location /people/huckfeld { 
+deny all; 
+ return 404; }
+location /people/rwmcnish { 
+deny all; 
+ return 404; }
+location /people/rstaylor { 
+deny all; 
+ return 404; }
+location /people/shubi17 { 
+deny all; 
+ return 404; }
+location /people/rbutters { 
+deny all; 
+ return 404; }
+location /people/rhubert { 
+deny all; 
+ return 404; }
+location /people/styler { 
+deny all; 
+ return 404; }
+location /people/copy_of_styler { 
+deny all; 
+ return 404; }
+location /people/saraprice { 
+deny all; 
+ return 404; }
+location /people/smprince { 
+deny all; 
+ return 404; }
+location /people/samacken { 
+deny all; 
+ return 404; }
+location /people/shainawestern { 
+deny all; 
+ return 404; }
+location /people/ssatkuna { 
+deny all; 
+ return 404; }
+location /people/harris94 { 
+deny all; 
+ return 404; }
+location /people/shareefa { 
+deny all; 
+ return 404; }
+location /people/serole { 
+deny all; 
+ return 404; }
+location /people/slhill { 
+deny all; 
+ return 404; }
+location /people/shabdank { 
+deny all; 
+ return 404; }
+location /people/tpeterka { 
+deny all; 
+ return 404; }
+location /people/twtaylor { 
+deny all; 
+ return 404; }
+location /people/tracylin { 
+deny all; 
+ return 404; }
+location /people/tpliu { 
+deny all; 
+ return 404; }
+location /people/swingate { 
+deny all; 
+ return 404; }
+location /people/vcevasco { 
+deny all; 
+ return 404; }
+location /people/wstone { 
+deny all; 
+ return 404; }
+location /people/iserlon { 
+deny all; 
+ return 404; }
+location /people/pollee { 
+deny all; 
+ return 404; }
+location /people/hueyli { 
+deny all; 
+ return 404; }
+location /people/maoz { 
+deny all; 
+ return 404; }
+ 
+rewrite ^/people$ /directory-of-people redirect; 
+rewrite ^/people/$ /directory-of-people redirect;
+
+rewrite /people/grad-students /directory-of-people redirect;
+rewrite /people/faculty(.*)$ /directory-of-people/faculty redirect;
+rewrite /people/affiated-faculty /directory-of-people redirect;
+rewrite /people/emeriti /directory-of-people redirect;
+rewrite /people/business-office-staff /directory-of-people redirect;
+rewrite /people/lecturers /directory-of-people redirect;
+rewrite /people/advising-staff /directory-of-people redirect;
+rewrite /people/lab-staff /directory-of-people redirect;
+rewrite /people/chief-administrative-officer /directory-of-people redirect;
+rewrite /people/student-assistant /directory-of-people redirect;
+rewrite /people/graduate-program-coordinator /directory-of-people redirect;
+rewrite /people/on-the-job-market /directory-of-people redirect;
+rewrite /people/program-coordinator /directory-of-people redirect;
+rewrite /people/academic-personnel-analyst /directory-of-people redirect;
+rewrite /people/brown-bag-calendar-editors /directory-of-people redirect;
+rewrite /people/psych-undergrad-editors /directory-of-people redirect;
+rewrite /people/econ-undergrad-editors /directory-of-people redirect;
+rewrite /people/econ-grad-editors /directory-of-people redirect;
+rewrite /people/psych-grad-editors /directory-of-people redirect;
+rewrite /people/iss-editors /directory-of-people redirect;
+rewrite /people/postdoctoral-scholars /directory-of-people redirect;
+rewrite /people/research-staff /directory-of-people redirect;
+rewrite /people/psych-editors /directory-of-people redirect;
+location /people/starrett {
+ 			deny all;
+			return 404;
+			}
+location /undergrad-program/people {
+	deny all;
+	return 404;
+	}
+location /people/psychology {
+	deny all;
+	return 404;
+	}
+location /people/mindbrain {
+	deny all;
+	return 404;
+ 	}
+location /people/communication {
+	deny all;
+	return 404;
+	}
+location /people/history {
+	deny all;
+	return 404;
+	}
+location /people/socialsciences {
+	deny all;
+	return 404;
+	}
+location /people/blue-cluster-staff {
+	deny all;
+	return 404;
+	}
+location /people/yellow-cluster-staff {
+	deny all;
+	return 404;
+	}
+location /people/orange-cluster-staff {
+	deny all;
+	return 404;
+	}
+location /people/philosophy{
+	deny all;
+	return 404;
+	}
+location /people/anthropology {
+	deny all;
+	return 404;
+	}
+location = /google5d619727837d5b53.html {
+            rewrite ^/(.*)  $1;
+            return 200 "google-site-verification: $uri";
+    }
+	 

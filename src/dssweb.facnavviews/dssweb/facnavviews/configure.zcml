@@ -22,6 +22,12 @@
     title="Faceted lab listing"
     permission="zope2.View"
     />
+  <faceted:view
+    name="faceted-listing-jobmarket"
+    template="listing-jobmarket.pt"
+    title="Faceted Job Market listing"
+    permission="zope2.View"
+    />
 
   <browser:page
     name="facnav_support"

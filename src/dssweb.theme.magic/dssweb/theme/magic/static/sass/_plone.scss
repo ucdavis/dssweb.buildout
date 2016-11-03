@@ -150,7 +150,6 @@ a.hasDropDown {
 /*----------Email Links---------*/
 .email-link {
      display: inline-block;
-	text-transform:uppercase;
      height: 16px;
      padding-left: 22px;
      background: url(../images/icons/email.gif) 0 70% no-repeat;
@@ -870,6 +869,41 @@ p.tileFooter {
 	height:1em;
 	clear:both;
 }
+/*--- Album or thumbnail view ---*/
+body.template-atct_album_view.portaltype-folder div#main-container.container div#content-row.row div#content.col-lg-12 div div#content div#viewlet-above-content-body div.newsImageContainer {
+	display:none;
+}
+div.photoAlbumEntry {
+    float: left;
+    position: relative;
+    overflow: hidden;
+    height: 185px;
+    width: 158px;
+    margin: 0em;
+    padding: 0px 6px 0px 9px;
+    text-align: center;
+    background-image: url('../images/polaroid-single.png');
+    background-repeat: no-repeat;
+ }
+ div.photoAlbumEntry a {
+     display: block;
+     text-decoration: none;
+     font-size: .85rem;
+     height: 169px;
+     width: 130px;
+     margin: 16px auto 0px;
+ }
+span.photoAlbumEntryWrapper img {
+     border: 1px solid #ccc;
+     display: block;
+     margin: 0 auto;
+ }
+ span.photoAlbumEntryTitle {
+     display: block;
+	  padding-top:2px;
+     width: 128px;
+     height: 3.6em;
+ }
 /*---Portlets -----*/
 .blockedPortlet .portletBlockedMessage {
     color: white;
@@ -1226,7 +1260,9 @@ line-height: 2em;
 	margin-left:120px;
 }
 
-
+.plomino-accordion-content {
+	margin-left: 15px;
+}
 
 /* tinyaccordions aka gold bars */
 /* styles to mark accordion inside editor */
@@ -1258,6 +1294,13 @@ body.mceContentBody div.plomino-accordion-content {
 	text-decoration: none;
 	padding-top: .5em;
 	padding-left:1em;
+}
+//gold bar titles smaller for congitive Neuroscience
+@media screen and (min-width: $screen-sm-max) and (max-width:1300px){
+	.panel-title a .thumb-txt {
+		font-size: 1.3rem;
+		
+	}
 }
 @media screen and (max-width: $screen-sm-min) {
 	#content-core h3.plomino-accordion-header > a{
@@ -1334,6 +1377,10 @@ h3.lab-bar > a > img.image-left {
     display: block;
     margin-top: -14px;
     margin-left: -22px;
+ } 
+ /*hide contentleadImage when using faceted nav as a view*/
+body.template-facetednavigation_view div#main-container.container div#content div#content-row.row div#viewlet-above-content-body div.newsImageContainer {
+	 display:none;
  }
 
  /* event Tile */
@@ -1360,5 +1407,9 @@ h3.lab-bar > a > img.image-left {
 	 margin-left: auto;
 	 margin-right: auto;
  }
+ /* drop the odd double read more */
+ div.collapsible div.inline-content p.more {
+     display: none;
+  }
 /* @end */
 

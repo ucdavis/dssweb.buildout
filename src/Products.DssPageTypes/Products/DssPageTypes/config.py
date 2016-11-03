@@ -1,6 +1,6 @@
 """Common configuration constants
 """
-
+from Products.CMFCore.permissions import setDefaultRoles
 PROJECTNAME = 'Products.DssPageTypes'
 
 ADD_CONTENT_PERMISSIONS = {

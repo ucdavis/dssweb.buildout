@@ -30,12 +30,12 @@
 				<span class="family-name" tal:content="context/getLastName"><tal:comment replace="nothing">[Last Name]</tal:comment></span>
 				<span class="honorific-suffix" tal:content="context/getSuffix"><tal:comment replace="nothing">[ suffix i.e. Dr]</tal:comment></span>
 			</h4>
-	      <span tal:condition="python:checkPermission('Modify portal content', context)"
-	            class="discreet">[
+	      <div class="port-edit" tal:condition="python:checkPermission('Modify portal content', context)"
+	            class="discreet">
 	        <a class="photo-url person-edit" tal:attributes="href python:'base_edit?fieldset=photo'">
 	          <tal:block i18n:translate="FacultyStaffDirectory_editImage">Add or Edit Your Photo</tal:block>
 	        </a>
-	      ]</span>
+	      </div>
 		</tal:block>
 		<div class="title org">
 
@@ -55,9 +55,17 @@
 				<br>
 				<span class="org"><span tal:content="eachDepartment/Title" /></p>
 			</tal:block>
+			
+			
+			
 		</div>
+      <p tal:condition="python: context.getJobTitles()"
+         class="title"
+         tal:repeat="jobTitle context/getJobTitles"
+         tal:content="jobTitle"><tal:comment replace="nothing">[job title]</tal:comment>
+      </p>
 		</div> <!--title org -->
-					 
+                
 		  
 			<tal:block tal:condition="python: context.getWebsites()">	
 					  				  
