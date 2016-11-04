@@ -32,6 +32,7 @@
                   title obj/pretty_title_or_id|string:;
                   desc_or_title python:description or title;
                   lastname obj/getLastName;
+						website python:support_view.getFirstWebsite(obj);
                   url python:support_view.navRootRelativeUrl(obj);
                   image_thumb exists:obj/image_thumb;
 				      person_email python:obj.getEmail();
@@ -60,7 +61,9 @@
 	 					   <a class="tile-email" tal:attributes="href string:mailto:${person_email}" tal:content="structure person_email" />
 							<br>
 							 
-                      <span tal:condition="personMembershipInformation/getDept_officePhone | nothing" tal:replace="structure personMembershipInformation/getDept_officePhone"> </span>
+                      <span tal:condition="personMembershipInformation/getDept_officePhone | nothing" tal:replace="structure personMembershipInformation/getDept_officePhone"></span>
+							 <span tal:condition="python:(personMembershipInformation.getDept_officePhone()) and (obj.getWebsites())" > | </span>						 
+								 <span><a tal:condition="website" class="tile-email" tal:attributes="href website">Website</a></span>
 
 					   
                     </p>
