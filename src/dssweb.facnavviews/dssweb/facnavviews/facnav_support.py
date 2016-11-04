@@ -84,6 +84,7 @@ class FacNavView(BrowserView):
             return ''
     
 
+
     def getPiName(self, obj):
          context = aq_inner(obj)
          
@@ -105,4 +106,5 @@ class FacNavView(BrowserView):
     def getFirstWebsite(self, obj):
         website = obj.getWebsites()[0]
         return website 
+
             

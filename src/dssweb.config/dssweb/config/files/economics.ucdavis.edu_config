@@ -149,6 +149,11 @@ location /people/pkaliman {
 	deny all;
 	return 404;
 	}
+
+location /people/ssatkuna {
+	deny all;
+	return 404;
+}
 location /people/jdr {
 	deny all;
 	return 404;
@@ -569,8 +574,4 @@ location /people/abc123 {
  deny all; 
  return 404; 
  }
- location /people/ssatkuna {
- deny all;
- return 404;
- }
-		
+ 

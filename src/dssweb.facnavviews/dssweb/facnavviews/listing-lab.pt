@@ -37,12 +37,30 @@
 
 	                  <a tal:attributes="href url;
 	                                   title title" >
-	                  <span class="labWrapper" tal:condition="image_thumb">
-	                    <img style="border: none" class="lab-image" tal:attributes="
+
+									  
+	                  <span class="labWrapper" >
+								<span tal:condition="image_thumb">	
+							
+	                       <img style="border: none" class="lab-image" tal:attributes="
 	                      title title;
+	                                   title desc_or_title" >
+	                  <span class="labWrapper" tal:condition="image_thumb">
+	                    <img style="border: none" tal:attributes="
+	                      title desc_or_title;
 	                      alt title;
 	                      src string:$url/image_thumb"/>
-	                  </span>
+
+							 
+	                     </span>
+								<img style="border: none" class="lab-image" tal:attributes="
+	                      title title;
+	                      alt title;
+	                      src string: "/>
+						  
+						   </span>
+							<span class="fade"></span>
+
 
 	                  <span class="labName" tal:content="title">Title</span>
 							

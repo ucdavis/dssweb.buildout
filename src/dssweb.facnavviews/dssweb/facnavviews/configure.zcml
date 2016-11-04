@@ -15,12 +15,7 @@
     title="Faceted person listing"
     permission="zope2.View"
     />
-  <faceted:view
-    name="faceted-listing-events"
-    template="listing-event.pt"
-    title="Faceted events listing"
-    permission="zope2.View"
-    />
+  
   <faceted:view
     name="faceted-listing-labs"
     template="listing-lab.pt"
