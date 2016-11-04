@@ -19,65 +19,64 @@
 
         <div metal:use-macro="context/batch_macros/macros/navigation" />
 
-        <div class="eea-preview-items">
+        <div id="dssweb-tiled-labs" class="eea-preview-items">
           <tal:entries repeat="brain batch">
             <tal:block define="obj brain/getObject;
-                               ">
+                              ">
 
-			<div class="labTile col-md-6 col-sm-12 col-xs-12">
-			<div class="LabEntry">
-              <div class="labLink" tal:define="
+			<div class="LabEntry lab-tile" tal:define="
                   description obj/Description|string:;
                   title obj/pretty_title_or_id|string:;
                   desc_or_title python:description or title;
                   url python:support_view.navRootRelativeUrl(obj);
                   image_thumb exists:obj/image_thumb;
-						 pi obj/getPi;
-						 pi_name python:support_view.getPiPersonInfo(obj);
+
 	                image_tag python:getattr(obj, 'tag', None)">
+				<div class="labHeader">
+              <span class="labLink" >
+
 	                  <a tal:attributes="href url;
-
 	                                   title title" >
-									  
-	                  <span class="labWrapper" >
-								<span tal:condition="image_thumb">	
-							
-	                       <img style="border: none" class="lab-image" tal:attributes="
-	                      title title;
-
-	                                   title desc_or_title" >
 	                  <span class="labWrapper" tal:condition="image_thumb">
-	                    <img style="border: none" tal:attributes="
-	                      title desc_or_title;
-
+	                    <img style="border: none" class="lab-image" tal:attributes="
+	                      title title;
 	                      alt title;
 	                      src string:$url/image_thumb"/>
-
-							 
-	                     </span>
-								<img style="border: none" class="lab-image" tal:attributes="
-	                      title title;
-	                      alt title;
-	                      src string: "/>
-						  
-						   </span>
-							<span class="fade"></span>
-
-
+	                  </span>
 
 	                  <span class="labName" tal:content="title">Title</span>
+							
 	  			    </a>
-					 <div tal:condition="pi">
-						 <span tal:content="pi">PI </span>
-					 </div>
+
+				  </span>
+				 </div>
+					 <div class="pi-name"
+					 	                  tal:define="piList obj/getPi"
+					 	                  tal:condition="piList">
+											
+					 	               <p i18n:translate="FacultyStaffDirectory_label_pis_heading">PI:
+					 	                 <tal:block tal:repeat="eachPi piList">
+
+					 	                     <a tal:attributes="href python:eachPi.absolute_url()">
+					 	                       <span tal:content="eachPi/Title" />
+
+					                        </a>
+													<tal:comma condition="not:repeat/eachPi/end"> & </tal:comma>
+											 </tal:block> </p>
+											
+						
+					     </div>
+					 
+                
+				
 				  <div class="desc wrapper">
 				  <span class="desc" tal:content="description">Description </span>
-			  </div>
-                 
-               </div>
-				</div>
+			     </div>
+                  
+              
+
 			</div>   
-            </tal:block>
+         </tal:block>
 
           </tal:entries>
 
