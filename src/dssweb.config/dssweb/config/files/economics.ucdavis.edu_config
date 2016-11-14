@@ -76,6 +76,14 @@ location /philosophy {
 			deny all;
 			return 404;
 			}
+location /mesa {
+			deny all;
+			return 404;
+			}
+location /sts {
+		deny all;
+		return 404;
+		}
 location /people/people {
          deny all;
 			return 404;
@@ -574,4 +582,12 @@ location /people/abc123 {
  deny all; 
  return 404; 
  }
+ location /people/sts {
+ 			deny all;
+ 			return 404;
+ 			}
+ location /people/mesa {
+ 			deny all;
+ 			return 404;
+ 			}
  

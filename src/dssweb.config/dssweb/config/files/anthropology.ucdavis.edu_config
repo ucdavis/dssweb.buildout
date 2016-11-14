@@ -35,6 +35,15 @@ location /philosophy{
         deny all;
         return 404;
         }
+location /mesa {
+			deny all;
+			return 404;
+			}
+location /sts {
+		deny all;
+		return 404;
+		}
+
 location = /google5d619727837d5b53.html {
             rewrite ^/(.*)  $1;
             return 200 "google-site-verification: $uri";
@@ -113,6 +122,14 @@ location /people/philosophy {
         return 404;
         }
 location /people/communication {
+			deny all;
+			return 404;
+			}
+location /people/sts {
+			deny all;
+			return 404;
+			}
+location /people/mesa {
 			deny all;
 			return 404;
 			}

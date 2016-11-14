@@ -32,6 +32,14 @@ location /anthropology {
         deny all;
         return 404;
         }
+location /mesa {
+			deny all;
+			return 404;
+			}
+location /sts {
+		deny all;
+		return 404;
+		}
 location /politicalscience{
  			deny all;
 			return 404;
@@ -93,4 +101,12 @@ location /people/anthropology {
         deny all;
         return 404;
         }
+location /people/sts {
+			deny all;
+			return 404;
+			}
+location /people/mesa {
+			deny all;
+			return 404;
+			}
 		

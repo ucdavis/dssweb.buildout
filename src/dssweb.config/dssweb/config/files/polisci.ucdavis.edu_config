@@ -34,6 +34,14 @@ location /communication {
  			deny all;
 			return 404;
 			}
+location /mesa {
+			deny all;
+			return 404;
+			}
+location /sts {
+		deny all;
+		return 404;
+		}
 location /iss {
 			deny all;
 			return 404;
@@ -58,43 +66,8 @@ location /people/rabell {
 			deny all;
 			return 404;
 			} 
-location /people/people {
-         deny all;
-			return 404;
-			}
-rewrite ^/people$ /directory-of-people redirect; 
-rewrite ^/people/$ /directory-of-people redirect;
 
-rewrite /people/grad-students /directory-of-people redirect;
-rewrite /people/affiated-faculty /directory-of-people redirect;
-rewrite /people/emeriti /directory-of-people redirect;
-rewrite /people/business-office-staff /directory-of-people redirect;
-rewrite /people/lecturers /directory-of-people redirect;
-rewrite /people/advising-staff /directory-of-people redirect;
-rewrite /people/lab-staff /directory-of-people redirect;
-rewrite /people/chief-administrative-officer /directory-of-people redirect;
-rewrite /people/student-assistant /directory-of-people redirect;
-rewrite /people/graduate-program-coordinator /directory-of-people redirect;
-rewrite /people/on-the-job-market /directory-of-people redirect;
-rewrite /people/program-coordinator /directory-of-people redirect;
-rewrite /people/academic-personnel-analyst /directory-of-people redirect;
-rewrite /people/brown-bag-calendar-editors /directory-of-people redirect;
-rewrite /people/psych-undergrad-editors /directory-of-people redirect;
-rewrite /people/econ-undergrad-editors /directory-of-people redirect;
-rewrite /people/econ-grad-editors /directory-of-people redirect;
-rewrite /people/psych-grad-editors /directory-of-people redirect;
-rewrite /people/iss-editors /directory-of-people redirect;
-rewrite /people/postdoctoral-scholars /directory-of-people redirect;
-rewrite /people/research-staff /directory-of-people redirect;
-rewrite /people/psych-editors /directory-of-people redirect;
-location /people/starrett {
- 			deny all;
-			return 404;
-			}
-location /undergrad-program/people {
-	deny all;
-	return 404;
-	}
+
 location /people/psychology {
 	deny all;
 	return 404;
@@ -131,3 +104,11 @@ location /people/anthropology {
         deny all;
         return 404;
         }
+location /people/sts {
+			deny all;
+			return 404;
+			}
+location /people/mesa {
+			deny all;
+			return 404;
+			}

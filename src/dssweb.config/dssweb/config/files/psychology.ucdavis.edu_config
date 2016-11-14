@@ -88,6 +88,14 @@ location /DSS-Master {
 		 	deny all;
 			return 404;
 			}
+location /mesa {
+			deny all;
+			return 404;
+			}
+location /sts {
+		deny all;
+		return 404;
+		}
 location /people/lmacedon {
 			deny all;
 			return 404;
@@ -507,6 +515,13 @@ location /people/people {
 			return 404;
 			}
 		
-
+location /people/sts {
+			deny all;
+			return 404;
+			}
+location /people/mesa {
+			deny all;
+			return 404;
+			}
 
 
