@@ -11,9 +11,15 @@
 /*@import "fullcalendarorig"; */
 
 /* event pop up ui overrides */
-.ui-dialog-content div#content h3 {
-    text-transform: none !important;
-    letter-spacing: 0.05em !important;
+
+div#content.event-popup div div.eventDetails.vcard div.vertical-listing div#event-body.zebra.rows div.row div.popup-nocol {
+	width:100%;
+	
+ 				h3.uc {
+    		  	text-transform: none;
+    			font-weight:bold;
+				letter-spacing: normal!important;
+}
 }
 
 /* COLOR INDEXES */
