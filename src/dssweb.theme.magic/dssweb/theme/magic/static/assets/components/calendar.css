@@ -1419,6 +1419,9 @@ div#content.event-popup div div.eventDetails.vcard div.vertical-listing div#even
     font-weight: bold;
     letter-spacing: normal !important; }
 
+div#content.event-popup p.documentDescription {
+  margin-bottom: 20px; }
+
 /* COLOR INDEXES */
 a#sfc-ical-export {
   float: right; }
