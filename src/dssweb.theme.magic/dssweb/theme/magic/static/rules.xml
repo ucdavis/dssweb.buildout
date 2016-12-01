@@ -13,7 +13,8 @@
 
 	<theme href="index.html" css:if-content="body.portaltype-front-page" />
    <notheme if="$ajax_load" />
-
+	
+	
 	<theme href="t13_event_b.html" css:if-content="body.portaltype-event" />
 	<theme href="t13_event_b.html" css:if-content="body.portaltype-dsscourse" />
 	<theme href="t3_bio.html" css:if-content="body.portaltype-fsdperson" />

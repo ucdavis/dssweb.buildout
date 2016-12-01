@@ -15,6 +15,13 @@
         template="search.pt"
         layer="dssweb.theme.magic.interfaces.IThemeSpecific"
         />
+   <browser:page
+       name="nginx"
+		 class=".nginx_lists.nginxListsView"
+       permission="zope2.View"
+       for="*"
+       layer="dssweb.theme.magic.interfaces.IThemeSpecific"
+       />
 
     <browser:page
         name="updated_search"
