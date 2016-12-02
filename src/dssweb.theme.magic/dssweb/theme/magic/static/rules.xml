@@ -12,7 +12,7 @@
 	
 
 	<theme href="index.html" css:if-content="body.portaltype-front-page" />
-   <notheme if="$ajax_load" />
+   
 	
 	
 	<theme href="t13_event_b.html" css:if-content="body.portaltype-event" />
@@ -32,6 +32,7 @@
 	<theme href="t17_fullwidth.html" if-not-content='//div[@id="portal-column-two"]' /> 
 	
 	<theme href="t4_adhoc2.html" />
+	<notheme if="$ajax_load" />
 
 	<!-- Replace title with Plone's page title  -->
 	<replace css:theme="html head title" css:content="html head title" />
@@ -154,70 +155,13 @@
 	</rules>
 
 		<!--  About Happy Box -->
-		<replace css:content-children="#content-core"
-		css:theme-children="#container-2 div.content-wrap"  />
-		<rules css:if-content="body.site-psychology">
-			   <copy attributes="href"
-				css:content="#portaltab-quick-facts > a"
-				css:theme="#container-2 > div > div > div.bcontroller > a" />
-		</rules>
-
-		<rules css:if-content="body.site-economics">
-			<copy attributes="href"
-				css:content="#portaltab-about > a"
-				css:theme="#container-2 > div > div > div.bcontroller > a" />	
-				<!--color hack -->
-			<merge attributes="class"
-				css:content=".front-page-news"
-				css:theme="#container-2 > div > div > div.bcontroller > a"  />
-
-				<drop content='//*[@id="portaltab-about"]' /> 
-		</rules>
-		<rules css:if-content="body.site-mindbrain">
-			<copy attributes="href"
-			css:content="#portaltab-about-us > a"
-			css:theme="#container-2 > div > div > div.bcontroller > a" />
-			<!--color hack -->
-			<merge attributes="class"
-			css:content=".front-page-news"
-			css:theme="#container-2 > div > div > div.bcontroller > a"  />
-		</rules>
-		<rules css:if-content="body.site-communication">
-			<copy attributes="href"
-			css:content="#portaltab-about > a"
-			css:theme="#container-2 > div > div > div.bcontroller > a" />
-			<!--color hack -->
-			<merge attributes="class"
-			css:content=".front-page-news"
-			css:theme="#container-2 > div > div > div.bcontroller > a"  />
-		</rules>
-		<rules css:if-content="body.site-philosophy">
-			<copy attributes="href"
-			css:content="#portaltab-about > a"
-			css:theme="#container-2 > div > div > div.bcontroller > a" />
-			<!--color hack -->
-			<merge attributes="class"
-			css:content=".front-page-news"
-			css:theme="#container-2 > div > div > div.bcontroller > a"  />
-		</rules>
-		<rules css:if-content="body.site-politicalscience">
-			<copy attributes="href"
-			css:content="#portaltab-about > a"
-			css:theme="#container-2 > div > div > div.bcontroller > a" />
-			<!--color hack -->
-			<merge attributes="class"
-			css:content=".front-page-news"
-			css:theme="#container-2 > div > div > div.bcontroller > a"  />
-		</rules>
-		<rules css:if-content="body.site-history">
-			<copy attributes="href"
-			css:content="#portaltab-about-us > a"
-			css:theme="#container-2 > div > div > div.bcontroller > a" />
-			<!--color hack -->
-			<merge attributes="class"
-			css:content=".front-page-news"
-			css:theme="#container-2 > div > div > div.bcontroller > a"  />
-		</rules>
+		<rules css:if-content="div.front-page-about">
+		<replace css:theme-children="#container-2 > div > div.narrow-col h2" css:content=".front-page-about > dl > dt > span:nth-child(2) > a" />
+		<copy css:content=".front-page-about > dl > dd" css:theme="#container-2 > div > div > div.content-wrap" />
+		<copy attributes="href" css:content=".front-page-about > dl > dt > span > a" css:theme="#container-2 > div > div > div.bcontroller > a" />
+		<merge attributes="class" css:content=".front-page-about" css:theme="#container-2 > div > div > div.bcontroller > a" />
+	   </rules>
+	   
 
 		<!-- events aka happy box static-->
 		<!--replace css:theme-children="#container-3 > div > div.narrow-col h2" css:content=".front-page-events > dl > dt > a" /-->
@@ -273,9 +217,7 @@
 		<replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.right-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content=".right-front-column > dl > dt > a > span" css:if-content=".right-front-column" />
 		</rules>
 
-
-
-	</rules> <!--end front page rules-->
+</rules> <!--end front page rules-->
   
   
      <replace css:theme-children="#top-bar-wrap > nav > ul > li.name"
