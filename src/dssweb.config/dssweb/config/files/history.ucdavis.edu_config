@@ -57,10 +57,7 @@ location /people/sdhobbs {
 			deny all;
 			return 404;
 			} 
-location /people/people {
-         deny all;
-			return 404;
-			}
+
 
 location /people/apshreve { 
 deny all; 
