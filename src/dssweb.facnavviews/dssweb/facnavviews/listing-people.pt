@@ -59,14 +59,15 @@
                     />
                     <p class="phone-wrapper">
 	 					   <a class="tile-email" tal:attributes="href string:mailto:${person_email}" tal:content="structure person_email" />
-							<br>
+							<br></p>
 							 
                       <span tal:condition="personMembershipInformation/getDept_officePhone | nothing" tal:replace="structure personMembershipInformation/getDept_officePhone"></span>
-							 <span tal:condition="python:(personMembershipInformation.getDept_officePhone()) and (obj.getWebsites())" > | </span>						 
-								 <span><a tal:condition="website" class="tile-email" tal:attributes="href website">Website</a></span>
-
+ 							 <div tal:omit-tag="" tal:condition="website">
+ 							  <span tal:condition="personMembershipInformation/getDept_officePhone | nothing"> | </span>			 
+ 							  <a class="tile-email" tal:attributes="href website">Website</a>
+ 							</div>
 					   
-                    </p>
+               
 
                     <p class="oemail"
                       tal:condition="personMembershipInformation/getDept_officeAddress | nothing"
