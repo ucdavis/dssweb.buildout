@@ -68,6 +68,10 @@ location /people/econjim  {
  			deny all;
 			return 404;
 			}
+location /people/knruss {
+         deny all;
+			return 404;
+			}
  			
 location /people/faaviles  {
  			deny all;
