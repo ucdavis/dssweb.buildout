@@ -84,7 +84,7 @@
 				  									<li><span class="vcard-file file"><a tal:attributes="href string:${context/absolute_url}/vCard"><span class="item-label">vCARD</span></a></span></li>
 													
 									                
-				  									<li class="hidden-lg hidden-md"><span class="office"><a href="http://maps.google.com" target="_blank"><span class="item-label">OFFICE</span></a></span></li>
+				  									<li class="hidden-lg hidden-md"><span class="office"><a href="#ady_anchor"" target="_self"><span class="item-label">OFFICE</span></a></span></li>
 				    </ul>
 					  				  
 					  	

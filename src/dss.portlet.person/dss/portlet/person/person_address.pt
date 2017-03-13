@@ -9,7 +9,8 @@ class="portlet portletPersonAddress default-color">
 
 <dt class="portletHeader">
 	<span class="portletTopLeft"></span>
-	<span>Offices &amp; Labs</span>
+	
+	<span id="ady_anchor">Offices &amp; Labs</span>
 	<span class="portletTopRight"></span>
 	
 </dt>
