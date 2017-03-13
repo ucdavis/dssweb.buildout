@@ -49,7 +49,26 @@ div.wine-grape > dl > dt {
 #top-panel-row .bcontroller .btn-home.btn-primary.wine-grape{
 	background-color: $wine_grape;
 }
-
+dl.shingle-brown dt.portletHeader {
+	background-color: $shingle_brown !important;
+}
+div.shingle-brown > dl > dt {
+	background-color: $shingle_brown !important;
+	
+}
+#top-panel-row .bcontroller .btn-home.btn-primary.shingle-brown{
+	background-color: $shingle_brown;
+}
+dl.unitrans-red dt.portletHeader {
+	background-color: $unitrans_red !important;
+}
+div.unitrans-red > dl > dt {
+	background-color: $unitrans_red !important;
+	
+}
+#top-panel-row .bcontroller .btn-home.btn-primary.unitrans-red{
+	background-color: $unitrans_red;
+}
 
 .hiddenStructure {
     background: none repeat scroll 0 0 transparent;
