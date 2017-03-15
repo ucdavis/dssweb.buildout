@@ -57,6 +57,7 @@ location /people/anthropology-evolutionary-wing { deny all; return 404; }
 location /people/anthropology-sociocultural-wing { deny all; return 404; }
 location /people/sts {deny all; return 404; }
 location /people/mesa {deny all; return 404; }
+location /people/mesa-affiliates {deny all; return 404; }
 
 
 
