@@ -1283,6 +1283,30 @@ line-height: 2em;
 .day-time-row {
 	font-weight:normal;
 }
+/* person address portlet bio page */
+@media screen and (max-width: 767px){
+.portletPersonAddress > dt > div.collapsible .collapsed {
+	background: url(../images/icons/white-arrow-right-sm.png) 98% 50% no-repeat;
+	
+}
+}
+/*@media screen and (max-width: 767px){
+.panel-heading .panel-title  {
+    display: inline-block;
+    width: 100%;
+    min-height: 40px;
+    font-weight: normal;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    padding-right: 15px;
+    padding-left: 20px !important;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 22px !important;
+    line-height: 1.375rem !important;
+    text-align: left;
+    background: url(../images/icons/white-arrow-down.png) 98% 50% no-repeat #f0dd99; }
+ } */
 /*---overrides ---*/
 #thumb-section .panel-group section .panel-heading .panel-title a .thumb-txt {
   display: block;

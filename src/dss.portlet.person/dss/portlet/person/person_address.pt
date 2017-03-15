@@ -5,17 +5,17 @@
 	  
  <dl tal:define="checkPermission nocall: context/portal_membership/checkPermission;
                  isEditor python:checkPermission('Modify portal content', context);"
-class="portlet portletPersonAddress default-color">
+class="portlet portletPersonAddress default-color dont-close">
 
-<dt class="portletHeader">
+<dt class="portletHeader dont-close">
 	<span class="portletTopLeft"></span>
 	
 	<span id="ady_anchor">Offices &amp; Labs</span>
 	<span class="portletTopRight"></span>
 	
 </dt>
-<div class="collapsible panel-collapse collapse in">
-	<div class="portlet-content panel-body">
+
+	<div class="portlet-content inline-content dont-close">
 	<div class="vcard office">
 		
 		 <tal:block>
@@ -170,7 +170,7 @@ class="portlet portletPersonAddress default-color">
 			</dd>
 		
 		</tal:block>	
-	</div>	
+			
 			
 </div>
 </div>
