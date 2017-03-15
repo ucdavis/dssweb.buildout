@@ -223,7 +223,12 @@ ul#jumplinks-anchors {
 	text-decoration:underline;
 
 }
-
+/* --- news image container --- */
+div.newsImageContainer p.discreet span {
+  width: 190px;
+  margin-top: 10px;
+  display: block !important; 
+  }
 /*----- About Happy Box ---------*/
 dl.portlet-static-quick-facts dt {
 	padding: 0.42em 1em;
@@ -868,11 +873,7 @@ font-size: small;
     width: 70px;
     padding-top: 1px; }
 	 
-.newsImageContainer p.discreet span {
-  width: 190px;
-  margin-top: 10px;
-  display: block; 
-  }
+
 
 .formHelp {
   color: #555;
@@ -902,6 +903,7 @@ p.tileFooter {
 	height:1em;
 	clear:both;
 }
+
 /*--- Album or thumbnail view ---*/
 body.template-atct_album_view.portaltype-folder div#main-container.container div#content-row.row div#content.col-lg-12 div div#content div#viewlet-above-content-body div.newsImageContainer {
 	display:none;
