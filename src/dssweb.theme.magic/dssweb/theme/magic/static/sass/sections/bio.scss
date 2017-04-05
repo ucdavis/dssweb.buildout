@@ -135,22 +135,27 @@ i {
 			}
 			#summary {
 				margin-bottom: 0;
+				
 				#jumplinks {
 					
 				}
+				
 				#education {
 					width: 100% !important;
 				}
 			}
 		}
+	
+	
 	}
 }
 
 @media screen and (min-width: $screen-sm-min) { // width > 768
 
 	#content-row {
-		#summary {
-			#jumplinks {
+		#summary { display:flex;
+			display: -webkit-flex; // safari mobile
+			#jumplinks { order:1;
 				#jumplinks-anchors {
 					margin-top: 0;
 					border-right: 1px solid $ucd_blue_70;
@@ -165,6 +170,10 @@ i {
 						}
 					}
 				}
+			}
+			
+			#education {
+				order:2;
 			}
 		}
 		.bio-card.portlet {

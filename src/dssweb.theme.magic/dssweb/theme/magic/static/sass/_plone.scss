@@ -69,6 +69,16 @@ div.unitrans-red > dl > dt {
 #top-panel-row .bcontroller .btn-home.btn-primary.unitrans-red{
 	background-color: $unitrans_red;
 }
+dl.sage-green dt.portletHeader {
+	background-color: $sage_green !important;
+}
+div.sage-green > dl > dt {
+	background-color: $sage_green !important;
+	
+}
+#top-panel-row .bcontroller .btn-home.btn-primary.sage-green{
+	background-color: $sage_green;
+}
 
 .hiddenStructure {
     background: none repeat scroll 0 0 transparent;
