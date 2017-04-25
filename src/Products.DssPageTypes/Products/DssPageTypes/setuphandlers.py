@@ -3,6 +3,7 @@ def installVersionedTypes(context):
     if context.readDataFile('installVersionedTypes.txt') is None:
         return
     try:
+        from Products.CMFCore.utils import getToolByName
         from Products.CMFEditions.setuphandlers import DEFAULT_POLICIES
     except ImportError:
         # Use repositorytool.xml instead (Plone 4.1 and above)
