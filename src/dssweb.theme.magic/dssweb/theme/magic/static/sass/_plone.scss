@@ -189,8 +189,14 @@ a.hasDropDown {
 	}
 
 
+/********** call out style ***********/
 
-
+#content .callout, .portletStaticText .callout {
+    background: #eee;
+    padding: 1em;
+    border-left: 1em solid #008EAA;
+    clear: both;
+ }
 
 /*---- Person portlet ---*/
 .adr {
