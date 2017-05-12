@@ -106,7 +106,7 @@ class DssCourse(base.ATCTContent):
        description = atapi.ATFieldProperty('description')
        DssCourseSchema.moveField('imageHelp', before='text')
        DssCourseSchema.moveField('inlineTopImage', after='imageHelp')
-       DssCourseSchema.moveField('imageCaption', after='inLineTopImage')
+       DssCourseSchema.moveField('imageCaption', after='inlineTopImage')
        
 
        # -*- Your ATSchema to Python Property Bridges Here ... -*-
