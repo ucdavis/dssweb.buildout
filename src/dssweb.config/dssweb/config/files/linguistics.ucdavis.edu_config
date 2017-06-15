@@ -35,3 +35,7 @@ location /people/anthropology-sociocultural-wing { deny all; return 404; }
 location /people/sts {deny all; return 404; }
 location /people/mesa {deny all; return 404; }
 location /people/mesa-affiliates {deny all; return 404; }
+location /people/green-cluster-staff {deny all; return 404; }
+location /people/science-and-technology-studies {deny all; return 404; }
+Location /people/affiliated-faculty-science-and-technology-studies { deny all; return 404; }
+ 
