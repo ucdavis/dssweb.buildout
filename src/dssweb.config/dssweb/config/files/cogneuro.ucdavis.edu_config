@@ -1,1 +1,0 @@
-rewrite ^/(.*) http://minbrain.ucdavis.edu/about-us/cognitive-neuroscience-at-uc-davis redirect;

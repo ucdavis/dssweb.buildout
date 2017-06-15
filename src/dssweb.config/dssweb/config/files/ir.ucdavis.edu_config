@@ -1,0 +1,1 @@
+rewrite ^/(.*) http://polisci.ucdavis.edu/undergraduate/majors-and-minors/international-relations-major redirect;
