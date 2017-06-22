@@ -296,7 +296,7 @@
 
 	      <!-- desktop menu bar -->
 	  
-	      <!-- Disabled Mega <after css:content="#portal-globalnav" css:theme=".top-bar ul.title-area" / -->
+	      <!--disabled mega after css:content="#portal-globalnav" css:theme=".top-bar ul.title-area" /-->
 		  <drop theme='//*[@id="uti-share"]' />
 
        <!-- classes for dropdown -->
