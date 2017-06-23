@@ -61,5 +61,29 @@ location /people/rabell {
 			deny all;
 			return 404;
 			} 
+location /people/gkmann {
+			deny all;
+			return 404;
+}
+location /people/gvij {
+			deny all;
+			return 404;
+			}
+location /people/scalvert {
+        		deny all;
+			return 404;
+			}
+location /people/esyed {
+			deny all;
+			return 404;
+			}
+location /people/valudovi {
+			deny all;
+			return 404;
+			}
+location /people/mjmiller {
+			deny all;
+			return 404;
+			}
 
 
