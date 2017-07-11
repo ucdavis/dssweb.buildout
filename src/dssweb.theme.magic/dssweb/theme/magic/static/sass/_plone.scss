@@ -1488,6 +1488,48 @@ body.template-facetednavigation_view div#main-container.container div#content di
  div.collapsible div.inline-content p.more {
      display: none;
   }
-
+  /* person tiles - collection view */
+  
+  .genericTile {
+      padding-left: 0;
+      padding-right: 20px;
+      border: 5px solid white;
+      background-color: #e5e9ef;
+  }
+  .genericTile .personEntryWrapper {
+      left: 0;
+      background: #ccd4e0;
+      width: 100px;
+      position: relative;
+      height: 100px !important;
+      float: left;
+  .personEntry a {
+	      text-decoration: none;
+  }
+}
+  span.personName {
+      position: relative;
+      padding-left: 10px;
+      display: flex;
+      margin-right: 0;
+      padding-top: 5px;
+      padding-bottom: 0px;
+      font-size: 0.86em;
+      display: -webkit-flex;
+  }
+  .caption {
+      position: relative;
+      left: 10px; 
+		
+		 .jobdesc {
+		    font-size: 11px !important;
+		    font-size: 0.6875rem !important;
+		    font-style: italic;
+		 }
+		 p {
+    padding: 0 !important;
+    margin: 0 !important;
+     }
+	}
 /* @end */
 

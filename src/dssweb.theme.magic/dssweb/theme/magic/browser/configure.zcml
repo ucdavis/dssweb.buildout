@@ -39,7 +39,15 @@
        for="plone.app.collection.interfaces.ICollection"
        template="tiled_people.pt"
        />
-
+		
+		 
+	   <browser:page
+	     name="departments-finder"
+	     for="zope.interface.Interface"
+	     class=".departments.DeptNamesView"
+	     permission="zope2.View"
+	     />
+		
 <!--     <browser:page
         name="tiled-event-listing"
         class=".unified_view.TopicUnifiedView"
