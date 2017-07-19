@@ -19,7 +19,7 @@
 		
 	
 	</rules-->
-	<notheme css:if-content=".userrole-member"/>
+
 	
 
 	<theme href="index.html" css:if-content="body.portaltype-front-page" />
