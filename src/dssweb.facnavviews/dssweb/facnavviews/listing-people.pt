@@ -103,10 +103,9 @@
             </tal:block>
 
           </tal:entries>
-
+         <div class="visualClear"> <!--    --></div>
         </div>
-
-        <div metal:use-macro="context/batch_macros/macros/navigation" />
+		          <div metal:use-macro="context/batch_macros/macros/navigation" />
 
       </div>
 
