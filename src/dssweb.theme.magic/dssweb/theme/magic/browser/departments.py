@@ -4,7 +4,10 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone.app.collection import collection
 from Acquisition import aq_inner
 from zope.component import getMultiAdapter 
+
  
+def _getObjectByUID_cachekey(method, self, UID):
+    return UID 
     
 class DeptNamesView(BrowserView):
     
@@ -21,7 +24,7 @@ class DeptNamesView(BrowserView):
         """
             find the object with this UID
         """
-        catalog = getToolByName(self, 'portal_catalog')
+        catalog = getToolByName(self, 'portal_catalog') 
         brains = catalog(UID=UID)
         return brains[0].getObject()
 
