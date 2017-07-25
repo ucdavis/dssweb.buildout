@@ -75,10 +75,9 @@
                     <p class="oemail"
                       tal:condition="personMembershipInformation/getDept_officeAddress | nothing"
                       tal:content="personMembershipInformation/getDept_officeAddress" />
-                  </tal:block>
-                </div> <!--department -->
+                  
 
-                <div class="lab">
+                <div class="lab officehours">
 		          <div class="labs"
 	                  tal:define="labsList obj/getLabs"
 	                  tal:condition="labsList">
@@ -93,8 +92,26 @@
 						</tal:block></p>
 
                    </div>
-  				</div>
-
+					 
+					 <div class="office-hours" tal:condition="python:not obj.getLabs() and personMembershipInformation.getOfficeHours()">
+	  				  		   <p class="phone-wrapper-sm">Office Hours: <span tal:replace="personMembershipInformation/getQuarter">Quarter</span></p>
+	  				  		<span tal:define="officeHours personMembershipInformation/getOfficeHours" tal:condition="personMembershipInformation/getOfficeHours">
+	  				              	 
+	  				                   <p class="phone-wrapper-sm"><span tal:omit-tag="" tal:replace="python:' | '.join(officeHours)">
+												  
+													 Office Hours </span>
+													
+												</p>
+											
+												
+											
+	
+							 </span>
+						 </div>
+  				</div><!-- labs -->
+				
+               </tal:block>
+             </div> <!--caption -->
 
               </div> <!--was an a-->
 		  </div>
@@ -103,10 +120,9 @@
             </tal:block>
 
           </tal:entries>
-
+         <div class="visualClear"> <!--    --></div>
         </div>
-
-        <div metal:use-macro="context/batch_macros/macros/navigation" />
+		          <div metal:use-macro="context/batch_macros/macros/navigation" />
 
       </div>
 

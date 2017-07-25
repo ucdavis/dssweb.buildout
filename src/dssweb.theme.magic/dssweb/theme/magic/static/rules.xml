@@ -10,6 +10,17 @@
   	
 <rules css:if-content="#visual-portal-wrapper">
 	
+	<!--rules css:if-content=".userrole-member">
+		<theme href="lightindex.html"/>
+       <before css:theme-children="html head" css:content="html head base" />
+		<replace css:theme-children="html head" css:content="html head meta" />
+		<after theme-children="/html/head" content="/html/head/link | /html/head/style" />
+		<replace css:theme="html body" css:content="html body" />
+		
+	
+	</rules-->
+
+	
 
 	<theme href="index.html" css:if-content="body.portaltype-front-page" />
    
