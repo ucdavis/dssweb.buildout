@@ -83,9 +83,30 @@
                      <p class="phone-wrapper-sm"
                        tal:condition="personMembershipInformation/getDept_officeAddress | nothing"
                        tal:content="personMembershipInformation/getDept_officeAddress" />
-                   </tal:block>
+							  
+							  
+                   
+	  				  	      <div class="office-hours" tal:condition="personMembershipInformation/getOfficeHours">
+	  				  		   <p class="phone-wrapper-sm">Office Hours: <span tal:replace="personMembershipInformation/getQuarter">Quarter</span></p>
+	  				  		<span tal:define="officeHours personMembershipInformation/getOfficeHours" tal:condition="personMembershipInformation/getOfficeHours">
+	  				              	 
+	  				                   <p class="phone-wrapper-sm"><span tal:omit-tag="" tal:replace="python:' | '.join(officeHours)">
+												  
+													 Office Hours </span>
+													
+												</p>
+											
+												
+											
+	
+							 </span>
+						 </div>
+			         </tal:block>
+	  				  	      
                  </div> <!--caption -->
-           
+					  
+					 
+				  	      
 					
               
         
