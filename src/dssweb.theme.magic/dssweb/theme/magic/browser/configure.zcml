@@ -28,12 +28,25 @@
         template="updated_search.pt"
         />
 
+	 <browser:page
+	 	     name="departments-finder"
+	 	     for="zope.interface.Interface"
+	 	     class=".departments.DeptNamesView"
+	 	     permission="zope2.View"
+	 	     />
     <browser:page
         name="tiled-event-listing"
         class=".unified_view.CollectionUnifiedView"
         permission="zope2.View"
         for="plone.app.collection.interfaces.ICollection"
         template="tiled_events.pt"
+        />
+    <browser:page
+        name="tiled-people-listing"
+        class=".unified_view.CollectionUnifiedView"
+        permission="zope2.View"
+        for="plone.app.collection.interfaces.ICollection"
+        template="tiled_people.pt"
         />
     <browser:page
         name="tiled-event-listing"
@@ -57,6 +70,13 @@
         action="tiled-event-listing"
         description="List events here in a tiled display"
     />
+    <browser:menuItem
+        for="*"
+        menu="plone_displayviews"
+        title="Tiled people listing"
+        action="tiled-people-listing"
+        description="List people here in a tiled display"
+    />
 	  <browser:menuItem
 	        for="plone.app.collection.interfaces.ICollection"
 	        menu="plone_displayviews"
@@ -64,6 +84,13 @@
 	        action="tiled-event-listing"
 	        description="List events here in a tiled display"
 			  />
+   <browser:menuItem
+        for="plone.app.collection.interfaces.ICollection"
+        menu="plone_displayviews"
+        title="Tiled people listing"
+        action="tiled-peopel-listing"
+        description="List people here in a tiled display"
+		  />
     
 
 </configure>
