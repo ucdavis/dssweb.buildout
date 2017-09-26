@@ -426,4 +426,9 @@ location /people/lmacedon {
 	deny all;
 	return 404;
  }
+
+location /people/keminder {
+   deny all;
+	return 404;
+	}
  

@@ -66,7 +66,7 @@ location /people/graduate-group-in-linguistics { deny all; return 404; }
  location /people/aksticke { deny all; } 
  location /people/alavine { deny all; } 
  location /people/alazne { deny all; } 
- location /people/ali { deny all; }
+ location /people/ali/ { deny all; }
  location /people/amang { deny all; } 
  location /people/amarek { deny all; }
  location /people/amccull { deny all; } 
