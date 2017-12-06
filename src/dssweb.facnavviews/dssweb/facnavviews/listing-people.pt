@@ -93,20 +93,20 @@
 
                    </div>
 					 
-					 <div class="office-hours" tal:condition="python:not obj.getLabs() and personMembershipInformation.getOfficeHours()">
+					 <div class="office-hours" tal:condition="python:not obj.getLabs()">
+						 <span tal:condition="personMembershipInformation/getOfficeHours | nothing">
 	  				  		   <p class="phone-wrapper-sm">Office Hours: <span tal:replace="personMembershipInformation/getQuarter">Quarter</span></p>
-	  				  		<span tal:define="officeHours personMembershipInformation/getOfficeHours" tal:condition="personMembershipInformation/getOfficeHours">
+	  				  		<span tal:define="officeHours personMembershipInformation/getOfficeHours">
 	  				              	 
 	  				                   <p class="phone-wrapper-sm"><span tal:omit-tag="" tal:replace="python:' | '.join(officeHours)">
 												  
-													 Office Hours </span>
-													
-												</p>
+													 Office Hours </span> </p>
 											
 												
 											
 	
 							 </span>
+						 </span>
 						 </div>
   				</div><!-- labs -->
 				
