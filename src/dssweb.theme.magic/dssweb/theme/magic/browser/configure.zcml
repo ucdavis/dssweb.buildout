@@ -88,7 +88,7 @@
         for="plone.app.collection.interfaces.ICollection"
         menu="plone_displayviews"
         title="Tiled people listing"
-        action="tiled-peopel-listing"
+        action="tiled-people-listing"
         description="List people here in a tiled display"
 		  />
     
