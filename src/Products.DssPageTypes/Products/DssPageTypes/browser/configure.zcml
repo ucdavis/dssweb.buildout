@@ -46,19 +46,5 @@
  	      template="dss_course_view.pt"
  	      permission="zope2.View"
  	         />
-  	   <browser:page
-  	      for="plone.app.collection.interfaces.ICollection"
-  		  class=".OhHelperView.dss_officeHours_view"
-  	      layer="..interfaces.IDssPageTypesSpecific"
-  	      name="office-hours-view"
-  	      template="dss_officeHours_view.pt"
-  	      permission="zope2.View"
-  	         />
-		<browser:menuItem
-			for="plone.app.collection.interfaces.ICollection"
-			menu="plone_displayviews"
-			title="Office Hour View"
-			action="office-hours-view"
-			description="Displays a list of people with office hours."
-			i18n:attributes="title; description" />
+  	   
 </configure>
