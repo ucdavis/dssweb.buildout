@@ -24,31 +24,45 @@
                        batch python:is_batch and results or Batch(results, 40, int(b_start), orphan=2);">
 		  
         <div metal:use-macro="context/batch_macros/macros/navigation" />
-        
+		<table class="listing collection-listing" summary="Content listing"
+		              i18n:attributes="summary"
+		              tal:define="fields context/selectedViewFields;
+		                          pas_member context/@@pas_member;
+		                          use_view_action python:context.portal_registry.get('plone.types_use_view_action_in_listings');">
+		              <thead>
+		                  <tr>
+		                      <th class="nosort">Name</th>
+							  <th class="nosort">Office and Phone</th>
+							  <th class="nosort">Office Hours</th>
+		                  </tr>
+		              </thead>
+        <tbody>
+			
          <tal:entries repeat="brain batch">
 			<tal:block define="obj brain/getObject;">
-			<div id="dssweb-tiled-people" class="genericTile col-md-6 col-sm-12 col-xs-12">
-			<div class="personEntry">
+			<div id="dssweb-table-people" class="listing">
+		<tr class="personEntry">
+        <tal:entry tal:define="title brain/Title;
+                               url brain/getURL;
+                               date brain/start;
+                               description obj/Description|string:;
+				                  title obj/pretty_title_or_id|string:;
+				                  desc_or_title python:description or title;
+				                  lastname obj/getLastName;
+										website python:support_view.getFirstWebsite(obj);
+				                  url python:support_view.navRootRelativeUrl(obj);
+				                  image_thumb exists:obj/image_thumb;
+								      person_email python:obj.getEmail();
+										department department_finder/getQueryDepartment;
+				                  image_tag python:getattr(obj, 'tag', None);
+								  personMembershipInformation python:department.getMembershipInformation(obj);">
+	
+									
 		
-          <tal:entry tal:define="title brain/Title;
-                                 url brain/getURL;
-                                 date brain/start;
-                                 description obj/Description|string:;
-					                  title obj/pretty_title_or_id|string:;
-					                  desc_or_title python:description or title;
-					                  lastname obj/getLastName;
-											website python:support_view.getFirstWebsite(obj);
-					                  url python:support_view.navRootRelativeUrl(obj);
-					                  image_thumb exists:obj/image_thumb;
-									      person_email python:obj.getEmail();
-											department department_finder/getQueryDepartment;
-					                  image_tag python:getattr(obj, 'tag', None);">
-										
-			
-										
-          <a href="#" title=""
-             tal:attributes="href url;
-                             title title;">
+		<td>							
+        <a href="#" title=""
+           tal:attributes="href url;
+                           title title;">
             
 					<span class="personEntryWrapper" tal:condition="image_thumb">
                 <img style="border: none" tal:attributes="
@@ -59,23 +73,22 @@
 						
 				   <span class="personName" tal:content="title">Title</span>
 				</a>
-              <div class="caption linesm">
-                   <tal:block tal:define="
-                     personMembershipInformation python:department.getMembershipInformation(obj);">
+                 <span class="caption linesm"> 
                      <p class="jobdesc-lg"
                        tal:condition="personMembershipInformation/getPosition | nothing"
                        tal:content="personMembershipInformation/getPosition" />
                      <p class="phone-wrapper-sm">
  	 					   <a class="tile-email" tal:attributes="href string:mailto:${person_email}" tal:content="structure person_email" />
- 							<br>
+ 							</p>
 							 
-                       <span tal:condition="personMembershipInformation/getDept_officePhone | nothing" tal:replace="structure personMembershipInformation/getDept_officePhone"></span>
+						</span>
+ 						</td>
+						
+						<td>
+								 
+                       <p tal:condition="personMembershipInformation/getDept_officePhone | nothing" tal:replace="structure personMembershipInformation/getDept_officePhone">
 							 
-  							 <span tal:omit-tag="" tal:condition="website">
-							
-  							  <span tal:condition="personMembershipInformation/getDept_officePhone | nothing"> | </span>			 
-  							  <a class="tile-email" tal:attributes="href website">Website</a> 
-  							</span>
+  							 
 						</p>
 						
 					       
@@ -84,9 +97,10 @@
                      <p class="phone-wrapper-sm"
                        tal:condition="personMembershipInformation/getDept_officeAddress | nothing"
                        tal:content="personMembershipInformation/getDept_officeAddress" />
+				   </td>
 							  
 							  
-                   
+                            <td>
 	  				  	      <div class="office-hours" tal:condition="personMembershipInformation/getOfficeHours">
 	  				  		   <p class="phone-wrapper-sm">Office Hours: <span tal:replace="personMembershipInformation/getQuarter">Quarter</span></p>
 	  				  		<span tal:define="officeHours personMembershipInformation/getOfficeHours" tal:condition="personMembershipInformation/getOfficeHours">
@@ -102,20 +116,23 @@
 	
 							 </span>
 						 </div>
-			         </tal:block>
+			         </td>
 	  				  	      
-                 </div> <!--caption -->
-					  
+                
 					 
 				  	      
 					
               
         
           </tal:entry>
-		 </div>
+		 
+	 </tr>
+			 
 	 </div>
 		   </tal:block>
          </tal:entries>
+	 </tbody>
+ </table>
 			<div class="visualClear"> <!--    --></div>
 		  
         <div metal:use-macro="context/batch_macros/macros/navigation" />
