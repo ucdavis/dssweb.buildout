@@ -40,7 +40,7 @@
 			
          <tal:entries repeat="brain batch">
 			<tal:block define="obj brain/getObject;">
-			<div id="dssweb-table-people" class="listing">
+			
 		<tr class="personEntry">
         <tal:entry tal:define="title brain/Title;
                                url brain/getURL;
@@ -64,7 +64,7 @@
            tal:attributes="href url;
                            title title;">
             
-					<span class="personEntryWrapper" tal:condition="image_thumb">
+					<span class="personEntryWrapper tile-image" tal:condition="image_thumb">
                 <img style="border: none" tal:attributes="
                   title desc_or_title;
                   alt title;
@@ -74,38 +74,33 @@
 				   <span class="personName" tal:content="title">Title</span>
 				</a>
                  <span class="caption linesm"> 
-                     <p class="jobdesc-lg"
+                     <p class="jobdescsm"
                        tal:condition="personMembershipInformation/getPosition | nothing"
                        tal:content="personMembershipInformation/getPosition" />
-                     <p class="phone-wrapper-sm">
- 	 					   <a class="tile-email" tal:attributes="href string:mailto:${person_email}" tal:content="structure person_email" />
- 							</p>
 							 
 						</span>
  						</td>
 						
 						<td>
 								 
-                       <p tal:condition="personMembershipInformation/getDept_officePhone | nothing" tal:replace="structure personMembershipInformation/getDept_officePhone">
-							 
-  							 
-						</p>
-						
-					       
-               
-
-                     <p class="phone-wrapper-sm"
+                       <p class="phone-wrapper-sm">
+	                       <span class="phone-wrapper-sm">
+	   	 					   <a class="phone-wrapper-sm" tal:attributes="href string:mailto:${person_email}" tal:content="structure person_email" /></span>
+							   <br>
+						    <span class="phone-wrapper-sm ohlist" tal:condition="personMembershipInformation/getDept_officePhone | nothing" tal:content=" personMembershipInformation/getDept_officePhone"></span>
+						<span
                        tal:condition="personMembershipInformation/getDept_officeAddress | nothing"
-                       tal:content="personMembershipInformation/getDept_officeAddress" />
+                       tal:content="personMembershipInformation/getDept_officeAddress"></span>
+				   </p>
 				   </td>
 							  
 							  
                             <td>
 	  				  	      <div class="office-hours" tal:condition="personMembershipInformation/getOfficeHours">
-	  				  		   <p class="phone-wrapper-sm">Office Hours: <span tal:replace="personMembershipInformation/getQuarter">Quarter</span></p>
+	  				  		   <p class="phone-wrapper-sm ohlist">Office Hours: <span tal:replace="personMembershipInformation/getQuarter">Quarter</span></p>
 	  				  		<span tal:define="officeHours personMembershipInformation/getOfficeHours" tal:condition="personMembershipInformation/getOfficeHours">
 	  				              	 
-	  				                   <p class="phone-wrapper-sm"><span tal:omit-tag="" tal:replace="python:' | '.join(officeHours)">
+	  				                   <p class="phone-wrapper-sm ohlist"><span tal:omit-tag="" tal:replace="python:' | '.join(officeHours)">
 												  
 													 Office Hours </span>
 													
@@ -128,7 +123,7 @@
 		 
 	 </tr>
 			 
-	 </div>
+	
 		   </tal:block>
          </tal:entries>
 	 </tbody>

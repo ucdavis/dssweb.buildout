@@ -1526,7 +1526,7 @@ body.template-facetednavigation_view div#main-container.container div#content di
   		    font-size: 0.85rem !important;
   		    font-style: italic;
   		 }
-  		 p {
+  		 p { 
       padding: 0 !important;
       margin: 0 !important; }
 	}
@@ -1538,6 +1538,19 @@ body.template-facetednavigation_view div#main-container.container div#content di
 		}
  #content-row #nested-left li {
      font-size: 0.8125 rem; }
+	 
+	 span.personEntryWrapper.tile-image img {
+	     height: 64px;
+	     width: 64px; 
+         float: left;
+          }
+  #content-row p.jobdescsm {
+         font-size: 0.7rem;
+		 line-height: 1rem !important; }
+ p.ohlist {
+         margin-bottom:0;
+		 }
+  
 
 /* @end */
 
