@@ -29,7 +29,7 @@
 	<theme href="t13_event_b.html" css:if-content="body.portaltype-event" />
 	<theme href="t13_event_b.html" css:if-content="body.portaltype-dsscourse" />
 	<theme href="t3_bio.html" css:if-content="body.portaltype-fsdperson" />
-	<!--rules if-path="/DSS-Master/economics/directory-of-people"-->
+	
 	
 	<theme href="t2_ourpeople.html" css:if-content="body.template-facetednavigation_view"/>
 	
@@ -64,7 +64,6 @@
 	   
 	  <!-- drop theme Javascript -->
 	  <!--drop theme="/html/body/script" /-->
-	  
 	  	  
 	 
 	  <!--pull in script tags from Plone head to end of body-->
@@ -528,10 +527,11 @@
 		
 		
 	 <!--addthis-->
-		 <append css:theme="body">
+		 <append css:theme="body" css:if-not-content="body.template-collection-kiosk-refresh">
 			 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 			 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55401c7c42ec2563" async="async"></script>
-	        </append>	
+	        </append>
+		
     
         <!--- Footer -->
 		  

@@ -1550,7 +1550,38 @@ body.template-facetednavigation_view div#main-container.container div#content di
  p.ohlist {
          margin-bottom:0;
 		 }
-  
-
+ /* Kiosk view */
+ 
+ #categories-kiosk {
+ font-size: 1.1rem;
+ font-style: italic;
+ }
+ .category-kiosk {
+ padding-right: 10px;}
+ 
+.kiosk-description{
+font-size:1.1rem;
+}
+.template-collection-kiosk-refresh #main-container 
+  #util-bar-wrap .util-bar{
+                visibility:hidden;
+               }
+.template-collection-kiosk-refresh #main-container 
+  #top-bar-wrap .top-bar{
+                visibility:hidden;
+               }
+.template-collection-kiosk-refresh #main-container #content-row {
+margin-top:0px;
+}
+.template-collection-kiosk-refresh #main-container #content-row #content #viewlet-above-content #portal-breadcrumbs
+  {
+                display:none;
+               }
+.template-collection-kiosk-refresh #footer{
+                visibility:hidden;
+               }
+.template-collection-kiosk-refresh #footer #div.addthis-smartlayers{
+                display:none;
+               }
 /* @end */
 
