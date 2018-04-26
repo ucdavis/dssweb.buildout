@@ -3,7 +3,7 @@
 #server {
 #    server_name www.iss.ucdavis.edu;
 #    return 301 $scheme://iss.ucdavis.edu$request_uri;
-}#
+#
 
 location /philosophy { deny all; return 404; }
 location /politicalscience { deny all; return 404; }

@@ -432,4 +432,3 @@ location /people/keminder {
    deny all;
 	return 404;
 	}
- location /people/saron/yellow-cluster-staff {deny all; return 404;}
