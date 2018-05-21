@@ -47,6 +47,8 @@
                 </span>
 
                 <span class="personName" tal:content="title">Title</span>
+				
+				Test text here
 			    </a>
 
                 <div class="caption" tal:condition="python:department is not None">
