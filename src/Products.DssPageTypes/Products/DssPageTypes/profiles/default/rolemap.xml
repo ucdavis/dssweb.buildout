@@ -9,7 +9,7 @@
       <role name="Contributor"/>
     </permission>
   
-    <permission name="Products.DssPagetypes: Add Two column Page"
+    <permission name="Products.DssPagetypes: Add Two Column Page"
                 acquire="True">
       <role name="Manager"/>
       <role name="Site Administrator"/>
