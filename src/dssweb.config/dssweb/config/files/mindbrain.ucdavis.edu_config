@@ -48,7 +48,8 @@ location /people/green-cluster-staff {deny all; return 404; }
 location /people/science-and-technology-studies {deny all; return 404; }
 location /people/affiliated-faculty-science-and-technology-studies { deny all; return 404; }
 location /people/graduate-group-in-linguistics { deny all; return 404; }
-
+location /cogsci {deny all; return 404; }
+location /people/cogsci {deny all; return 404; }
 
 
 location /people/econjim  {
