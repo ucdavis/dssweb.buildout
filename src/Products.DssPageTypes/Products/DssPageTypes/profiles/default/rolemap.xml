@@ -16,6 +16,14 @@
       <role name="Owner"/>
       <role name="Contributor"/>
     </permission>
+   
+    <permission name="Products.DssPagetypes: Add Two Collumn Page"
+                acquire="True">
+      <role name="Manager"/>
+      <role name="Site Administrator"/>
+      <role name="Owner"/>
+      <role name="Contributor"/>
+    </permission>
   
   <permission name="Products.DssPageTypes: Add Dss Course"
               acquire="True">
