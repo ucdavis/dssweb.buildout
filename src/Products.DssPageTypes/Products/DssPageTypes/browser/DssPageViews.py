@@ -23,7 +23,12 @@ class DssContactView(BrowserView):
          portal_state = getMultiAdapter((context, self.request), name=u'plone_portal_state')
          return portal_state
                 
-            
+class FrontPageView(BrowserView):
+
+  
+     def __init__(self, context, request):
+             self.context = context
+             self.request = request          
             
 class DssTwoColumnView(BrowserView):
 

@@ -46,5 +46,13 @@
  	      template="dss_course_view.pt"
  	      permission="zope2.View"
  	         />
+  	   <browser:page
+  	      for="Products.DssPageTypes.interfaces.IFrontPage"
+  		   class=".DssPageViews.FrontPageView"
+  	      layer="..interfaces.IDssPageTypesSpecific"
+  	      name="front_page_view"
+  	      template="front_page_view.pt"
+  	      permission="zope2.View"
+  	         />
   	   
 </configure>

@@ -9,7 +9,7 @@
       <role name="Contributor"/>
     </permission>
   
-    <permission name="Products.DssPagetypes: Add Two Column Page"
+    <permission name="Products.DssPageTypes: Add Two Column Page"
                 acquire="True">
       <role name="Manager"/>
       <role name="Site Administrator"/>
@@ -23,6 +23,14 @@
     <role name="Site Administrator"/>
     <role name="Owner"/>
     <role name="Contributor"/>
+  </permission>
+  <permission name="Products.DssPageTypes: Add Front Page"
+              acquire="True">
+    <role name="Manager"/>
+  </permission>
+  <permission name="Products.DssPageTypes: Add Two Collumn Page"
+              acquire="True">
+    <role name="Manager"/>
   </permission>
   </permissions>
 

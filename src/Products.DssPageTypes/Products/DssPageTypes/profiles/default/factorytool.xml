@@ -15,5 +15,6 @@
     <type portal_type="DssTwoColumnPage" />
 	<type portal_type="DssCourse" />
 	<type portal_type="DssTwoCollumnPage" />
+	<type portal_type="FrontPage" />
   </factorytypes>
 </object>

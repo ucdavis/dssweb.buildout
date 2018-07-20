@@ -8,6 +8,9 @@
     <type portal_type="DssCourse">
       <field name="any" difftype="Compound Diff for AT types"/>
     </type>
+    <type portal_type="FrontPage">
+      <field name="any" difftype="Compound Diff for AT types"/>
+    </type>
 
    
   </difftypes>

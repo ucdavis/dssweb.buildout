@@ -26,5 +26,11 @@
         interface="Products.DssPageTypes.interfaces.IDssCourse"
         />
   </class>
+ <class class=".frontpage.FrontPage">
+   <require
+       permission="zope2.View"
+       interface="Products.DssPageTypes.interfaces.IFrontPage"
+       />
+ </class>
 
 </configure>
