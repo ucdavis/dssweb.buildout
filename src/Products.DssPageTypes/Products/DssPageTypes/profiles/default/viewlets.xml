@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<object>
+	
+	<order manager="plone.portalTop" skinname="*" >
+	        <viewlet name="Products.DssPageTypes.FrontPage.portalTop"
+	                 insert-before="*" />
+	    </order>
+	   
+</object>

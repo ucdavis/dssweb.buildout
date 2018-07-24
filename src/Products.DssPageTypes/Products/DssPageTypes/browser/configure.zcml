@@ -54,5 +54,13 @@
   	      template="front_page_view.pt"
   	      permission="zope2.View"
   	         />
+   	<browser:viewlet
+   	    name="Products.DssPageTypes.portalTop"
+		for="Products.DssPageTypes.interfaces.IFrontPage"
+   	    manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+   	    template="front_page_top_viewlet.pt"
+		layer="..interfaces.IDssPageTypesSpecific"
+   	    permission="zope2.View"
+   	/>
   	   
 </configure>
