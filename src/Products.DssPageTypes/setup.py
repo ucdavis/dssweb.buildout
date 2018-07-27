@@ -56,6 +56,7 @@ setup(name='Products.DssPageTypes',
       zip_safe=False,
       install_requires=['setuptools',
                         'Products.ATExtensions',
+                        'z3c.jbot',
                         ],
       tests_require=tests_require,
       extras_require=dict(tests=tests_require),
@@ -65,6 +66,6 @@ setup(name='Products.DssPageTypes',
       [z3c.autoinclude.plugin]
       target = plone
       """,
-      setup_requires=["PasteScript", "z3c.jbot"],
+      setup_requires=["PasteScript"],
       paster_plugins=["ZopeSkel"],
       )

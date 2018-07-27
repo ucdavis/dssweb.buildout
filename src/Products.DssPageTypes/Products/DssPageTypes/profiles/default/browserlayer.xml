@@ -2,4 +2,7 @@
 <layers>
     <layer name="Products.DssPageTypes"
         interface="Products.DssPageTypes.interfaces.IDssPageTypesSpecific" />
+		<layer name="Products.DssPageTypes.FrontPage"
+			interface="Products.DssPageTypes.interfaces.IDssFrontPageSpecific" />
+   	
 </layers>

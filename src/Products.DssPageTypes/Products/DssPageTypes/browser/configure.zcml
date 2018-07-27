@@ -6,6 +6,7 @@
     i18n_domain="Products.DssContact">
 
   <include package="plone.app.contentmenu" />
+  <include package="z3c.jbot" />
   
       <!-- Publish static files -->
       <browser:resourceDirectory
@@ -49,11 +50,15 @@
   	   <browser:page
   	      for="Products.DssPageTypes.interfaces.IFrontPage"
   		   class=".DssPageViews.FrontPageView"
-  	      layer="..interfaces.IDssPageTypesSpecific"
+  	      layer="..interfaces.IDssFrontPageSpecific"
   	      name="front_page_view"
   	      template="front_page_view.pt"
   	      permission="zope2.View"
   	         />
+	   <browser:jbot
+	   	  directory="overrides"
+		  layer="..interfaces.IDssFrontPageSpecific" />
+		  
    	<browser:viewlet
    	    name="Products.DssPageTypes.portalTop"
 		for="Products.DssPageTypes.interfaces.IFrontPage"
