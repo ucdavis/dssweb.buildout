@@ -5,61 +5,11 @@
       lang="en"
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="Products.DssPageTypes">
-
-<body>
-	
-<body tal:define="isRTL portal_state/is_rtl;
-                  sl python:plone_view.have_portlets('plone.leftcolumn', view);
-                  sr python:plone_view.have_portlets('plone.rightcolumn', view);
-                  body_class python:plone_view.bodyClass(template, view);
-                  classes python:context.restrictedTraverse('@@sunburstview').getColumnsClasses(view)"
-    tal:attributes="class body_class;
-                    dir python:isRTL and 'rtl' or 'ltr'">
-
-<div id="visual-portal-wrapper">
-
-        <div id="portal-top"
-            class="row"
-            i18n:domain="plone"
-            tal:condition="not:ajax_load">
-<div class="cell width-full position-0">
-            <div tal:replace="structure provider:plone.portaltop" />
-</div>
-        </div>
-    <div id="portal-columns" class="row">
-
-        <div id="portal-column-content" class="cell" tal:attributes="class classes/content">
-
-            <div id="viewlet-above-content" tal:content="structure provider:plone.abovecontent" tal:condition="not:ajax_load" />
-
-            <metal:block define-slot="content">
-                <div metal:define-macro="content"
-                    tal:define="show_border context/@@plone/showEditableBorder; show_border python:show_border and not ajax_load"
-                    tal:attributes="class python:show_border and 'documentEditable' or ''">
-
-                    <div id="edit-bar"
-                        tal:condition="show_border"
-                        tal:content="structure provider:plone.contentviews" />
-
-                    <div metal:use-macro="context/global_statusmessage/macros/portal_message">
-                     Status message
-                    </div>
-
-                    <metal:slot define-slot="body">
-                        <div id="content">
-
-                            <metal:header define-slot="header" tal:content="nothing">
-                            Visual Header
-                            </metal:header>
-
-	
-
-<metal:main fill-slot="main">
+ <body>
+ <metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main">
-
-    <div tal:replace="structure provider:plone.abovecontenttitle" />
-
-    <metal:title define-slot="content-title">
+     <div tal:replace="structure provider:plone.abovecontenttitle" />
+     <metal:title define-slot="content-title">
                                  <metal:comment tal:content="nothing">
                                      If you write a custom title always use
                                      <h1 class="documentFirstHeading"></h1> for it
@@ -68,8 +18,7 @@
                                      Generic KSS Title. Is rendered with class="documentFirstHeading".
                                  </h1>
                              </metal:title>
-
-    <div tal:replace="structure provider:plone.belowcontenttitle" />
+     <div tal:replace="structure provider:plone.belowcontenttitle" />
      <metal:description define-slot="content-description">
                            <metal:comment tal:content="nothing">
                                If you write a custom description always use
@@ -79,21 +28,18 @@
                                Generic KSS Description. Is rendered with class="documentDescription".
                            </div>
                        </metal:description>
-
-    
+     
     <div tal:replace="structure provider:plone.abovecontentbody" />
 		
        <div id="content-core">
-
-       
+        
         <div id="main-content">
                             <metal:field use-macro="python:context.widget('text', mode='view')">
                                Body text
                              </metal:field>
                          
                       
-
-	    <!--tal:block tal:define="contact_form context/contactform" tal:replace="structure contact_form"-->
+ 	    <!--tal:block tal:define="contact_form context/contactform" tal:replace="structure contact_form"-->
 		 
 		 
     </div>
@@ -101,54 +47,8 @@
 	  </div>  
 	   
     <div tal:replace="structure provider:plone.belowcontentbody" />
-
-    </tal:main-macro>
+     </tal:main-macro>
 </metal:main>
-</div>
-</metal-slot>
-</div>
-            </metal:block>
-
-            <div id="viewlet-below-content" tal:content="structure provider:plone.belowcontent" tal:condition="not:ajax_load" />
-        </div>
-
-        <tal:notajax tal:condition="not:ajax_load">
-        <div id="portal-column-one"
-            class="cell width-1:4 position-0"
-            metal:define-slot="column_one_slot"
-            tal:condition="sl"
-            tal:attributes="class classes/one">
-            <metal:portlets define-slot="portlets_one_slot">
-                <tal:block replace="structure provider:plone.leftcolumn" />
-            </metal:portlets>
-        </div>
-
-        <div id="portal-column-two"
-            class="cell width-1:4 position-3:4"
-            metal:define-slot="column_two_slot"
-            tal:condition="sr"
-            tal:attributes="class classes/two">
-            <metal:portlets define-slot="portlets_two_slot">
-                <tal:block replace="structure provider:plone.rightcolumn" />
-            </metal:portlets>
-        </div>
-        </tal:notajax>
-    </div>
-
-
-    <div id="portal-footer-wrapper"
-        class="row"
-        i18n:domain="plone"
-        tal:condition="not:ajax_load">
-        <div class="cell width-full position-0">
-            <div tal:replace="structure provider:plone.portalfooter" />
-        </div>
-    </div>
-
-
-
-</div>
-</body>
-</html>
-
                         
+ </body>
+</html> 
