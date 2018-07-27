@@ -65,6 +65,6 @@ setup(name='Products.DssPageTypes',
       [z3c.autoinclude.plugin]
       target = plone
       """,
-      setup_requires=["PasteScript"],
+      setup_requires=["PasteScript", "z3c.jbot"],
       paster_plugins=["ZopeSkel"],
       )
