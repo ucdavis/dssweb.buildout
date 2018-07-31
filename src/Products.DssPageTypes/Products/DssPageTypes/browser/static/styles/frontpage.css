@@ -1,11 +1,13 @@
 /* css for the front page content type */
 
 #portal-logo {
-	postion:relative;
+	position:relative;
 	z-index:10;
 }
 #slideshow {
 	z-index:1;
 	position:absolute;
 	margin-top:-170px;
+	min-width:400px;
+	width:100%;
 }

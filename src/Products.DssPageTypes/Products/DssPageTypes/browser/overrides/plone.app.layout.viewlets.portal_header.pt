@@ -1,7 +1,9 @@
 <div id="portal-header">
       
     <div tal:replace="structure provider:plone.portalheader" />
-     <metal:block use-macro="here/slideshow_macros/macros/slideshow">
+	<div id="slideshow-slot">
+     <metal:block use-macro="here/front_page_slideshow_macros/macros/frontPageSlideshow">
 	    slideshow here...    
 </metal:block>
+</div>
 </div>
