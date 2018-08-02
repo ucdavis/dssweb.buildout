@@ -1583,5 +1583,16 @@ margin-top:0px;
 .template-collection-kiosk-refresh #footer #div.addthis-smartlayers{
                 display:none;
                }
+/* front page slider */
+.pics {
+    z-index: 1;
+    position:relative;
+    min-width: 400px;
+    left: 0;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden; }
 /* @end */
+
 

@@ -4,10 +4,11 @@
 	position:relative;
 	z-index:10;
 }
-#slideshow {
-	z-index:1;
+.pics {
+    z-index: 1;
 	position:absolute;
-	margin-top:-170px;
-	min-width:400px;
-	width:100%;
+    /* margin-top: -170px; */
+    min-width: 400px;
+    left: 0;
+    top: 0;
 }
