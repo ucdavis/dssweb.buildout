@@ -1,5 +1,5 @@
 <div id="portal-slider-header">
-	<metal:block use-macro="here/slideshow_macros/macros/slideshow">
+	<metal:block use-macro="here/backslider_macros/macros/backslider">
 	    slideshow here...
 		
 		<div id="portal-header">

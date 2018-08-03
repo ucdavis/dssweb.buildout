@@ -18,23 +18,37 @@
   
     <tal:block tal:replace='structure string:&lt;script type="text/javascript" charset="utf-8"&gt;'></tal:block>
       <tal:translate i18n:translate="">
-      var $ = jQuery;
-      $(document).ready(function(){
-            $('.pics').cycle({
-                fx: '<span tal:replace="python:props['transition']" />',
-                pauseOnHover: <span tal:replace="pause" />,
-                timeout: <span tal:replace="python:props['slide_timeout']" />,
-                speed: <span tal:replace="python:props['transition_speed']" />,
-                random: <span tal:replace="random" />,
-                swipe: true,
-                prev: '#prev',
-                next: '#next'
-                <tal:nav condition="not: nav_off">
-                    ,pagerTemplate: '<a href="#">{{slideNum}}</a>',
-                    pager: '#nav .navNumbers'
-                </tal:nav>
-            });
-        });
+	  
+	    var jq = jQuery;
+	       jq(document).ready(function(){
+	             jq('#slideshow').cycle({
+	                 fx: 'fade',
+	                 pauseOnHover: false,
+	                 timeout: 7000,
+	                 speed: 1000,
+	                 random: false,
+	                 swipe: true,
+	                 next: '#next',
+	                 prev: '#prev'
+	             });
+        
+	             arrowsize = 40;
+
+	             function setSlideNavHeight() {
+	               slideNavHeight = (jq('#slideshow').css('padding-bottom').replace("px", "") / 2) - (arrowsize / 2);
+	               jq('#featured-slideshow-wrapper #nav').css('top', slideNavHeight);
+	             }
+	             setSlideNavHeight();
+	             jq('#featured-slideshow-wrapper #nav').css('display', 'block');
+
+	             jq(window).resize(function() {
+	               setSlideNavHeight();
+	             })
+
+
+	         });
+  
+	   
       </tal:translate>
     <tal:block tal:replace='structure string:&lt;/script&gt;'></tal:block>
     

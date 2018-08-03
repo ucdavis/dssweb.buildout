@@ -62,6 +62,21 @@
 	       template="front_page_slideshow.pt"
 	       permission="zope.Public"
 	       />
+	   <browser:page
+	       for="*"
+	       name="backgroundslider_view"
+	       class=".background-slider.BackgroundSlideshowView"
+	       permission="zope.Public"
+	       allowed_interface=".interfaces.IBackgroundSliderView"
+	       />
+		   
+	   <browser:page
+	       for="*"
+	       name="backslider_macros"
+	       template="background-slider.pt"
+	       permission="zope.Public"
+	       />
+	   
 	   <browser:jbot
 	   	  directory="overrides"
 		  layer="..interfaces.IDssFrontPageSpecific" />

@@ -29,3 +29,6 @@ class IDssFrontPageSpecific(IDefaultPloneLayer):
     """Marker interface that defines a Zope 3 skin layer for this product.
 
     """
+class IBackgroundSliderView(Interface):
+    """ View class for the Slideshow
+    """
