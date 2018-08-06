@@ -81,13 +81,13 @@
 	   	  directory="overrides"
 		  layer="..interfaces.IDssFrontPageSpecific" />
 		  
-   	<browser:viewlet
+   	<!--browser:viewlet
    	    name="Products.DssPageTypes.portalTop"
 		for="Products.DssPageTypes.interfaces.IFrontPage"
    	    manager="plone.app.layout.viewlets.interfaces.IPortalTop"
    	    template="front_page_top_viewlet.pt"
 		layer="..interfaces.IDssPageTypesSpecific"
    	    permission="zope2.View"
-   	/>
+   	/-->
   	   
 </configure>
