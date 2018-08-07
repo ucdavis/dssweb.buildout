@@ -23,10 +23,7 @@
 	
 
 	<theme href="index.html" css:if-content="body.portaltype-front-page" />
-	
 	<theme href="index.html" css:if-content="body.portaltype-frontpage" />
-	
-	
    
 	
 	
@@ -721,14 +718,13 @@
 
 
 		  
-	  
-       <replace css:theme=".wall" css:content="div#slideshow-slot" />
-         <!--script id="wallpaper_fix">
+	  <replace css:theme=".wall" css:content="div#slideshow-slot" />
+       <!--replace css:theme="#wallpaper_fix">
+         <script id="wallpaper_fix">
            $(".wall").wallpaper({
                source: "@@banner-image"
            });
          </script>
-		 
        </replace--> 
 	   
 	  </rules>
