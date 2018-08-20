@@ -445,6 +445,7 @@
 
 				 <!--jqxgrid pages course listings courses -->
 				 <rules css:if-content="body.portaltype-jqxgrid_page" >
+					 
 				 </rules>
 				 <!--fullpage general t-17 -->
 				 

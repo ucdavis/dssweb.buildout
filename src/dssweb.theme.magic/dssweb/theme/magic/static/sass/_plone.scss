@@ -1499,6 +1499,24 @@ body.template-facetednavigation_view div#main-container.container div#content di
  div.collapsible div.inline-content p.more {
      display: none;
   }
+ /*psychology research areas bug */
+ 
+ @media screen and (max-width: 991px) and (min-width: 768px) {
+ 
+.subsection-research-areas .container #content-row #content #content #content-core #thumb-section .panel-group section .panel-heading .panel-title a .thumb-txt {
+     display: block;
+     margin-left: 25px;
+     letter-spacing: -0.01em;
+     font-size: .8rem;
+ }
+ }
+ @media screen and (max-width: 991px) and (min-width: 768px) {
+ .subsection-research-areas .container #content-row #content #content #content-core #thumb-section .panel-group section .panel-heading .panel-title a img {
+     height: 45px;
+     width: 70px;
+	 }
+ }
+ 
   /* person tiles - collection view */
   
     .genericTile {
