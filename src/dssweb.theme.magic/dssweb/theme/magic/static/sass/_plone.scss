@@ -49,7 +49,36 @@ div.wine-grape > dl > dt {
 #top-panel-row .bcontroller .btn-home.btn-primary.wine-grape{
 	background-color: $wine_grape;
 }
-
+dl.shingle-brown dt.portletHeader {
+	background-color: $shingle_brown !important;
+}
+div.shingle-brown > dl > dt {
+	background-color: $shingle_brown !important;
+	
+}
+#top-panel-row .bcontroller .btn-home.btn-primary.shingle-brown{
+	background-color: $shingle_brown;
+}
+dl.unitrans-red dt.portletHeader {
+	background-color: $unitrans_red !important;
+}
+div.unitrans-red > dl > dt {
+	background-color: $unitrans_red !important;
+	
+}
+#top-panel-row .bcontroller .btn-home.btn-primary.unitrans-red{
+	background-color: $unitrans_red;
+}
+dl.sage-green dt.portletHeader {
+	background-color: $sage_green !important;
+}
+div.sage-green > dl > dt {
+	background-color: $sage_green !important;
+	
+}
+#top-panel-row .bcontroller .btn-home.btn-primary.sage-green{
+	background-color: $sage_green;
+}
 
 .hiddenStructure {
     background: none repeat scroll 0 0 transparent;
@@ -102,6 +131,15 @@ a#portal-logo img {
 	    margin: 0 0;
 	    padding-top: 0px;
 }
+@media screen and (max-width: 991px) and (min-width: 768px) {
+	#portal-logo {
+		    display: inline-block;
+		    margin-top: 20px;
+		    height: 100%;
+			 
+	}
+	
+}
 
 #portal-searchbox {
 	float: none;
@@ -141,7 +179,6 @@ a.hasDropDown {
 /*----------Email Links---------*/
 .email-link {
      display: inline-block;
-	text-transform:uppercase;
      height: 16px;
      padding-left: 22px;
      background: url(../images/icons/email.gif) 0 70% no-repeat;
@@ -152,8 +189,14 @@ a.hasDropDown {
 	}
 
 
+/********** call out style ***********/
 
-
+#content .callout, .portletStaticText .callout {
+    background: #eee;
+    padding: 1em;
+    border-left: 1em solid #008EAA;
+    clear: both;
+ }
 
 /*---- Person portlet ---*/
 .adr {
@@ -196,7 +239,12 @@ ul#jumplinks-anchors {
 	text-decoration:underline;
 
 }
-
+/* --- news image container --- */
+div.newsImageContainer p.discreet span {
+  width: 190px;
+  margin-top: 10px;
+  display: block !important; 
+  }
 /*----- About Happy Box ---------*/
 dl.portlet-static-quick-facts dt {
 	padding: 0.42em 1em;
@@ -204,6 +252,50 @@ dl.portlet-static-quick-facts dt {
 	line-height: normal;
     font-size: 120%;
 }
+div#container-2 div.panel-body div.narrow-col h2 a
+{
+	font-size:1.5rem !important;
+}
+div#container-2 div.panel-body div.narrow-col div.content-wrap dd {
+	padding-right: 10px;
+	padding-left: 10px;
+}
+/*--events happy box ----*/
+/*------events happy box smaller ----*/
+div#container-3 div.panel-body div.narrow-col h2 a
+     {
+	    
+		 font-size:1.5rem !important;
+
+   }
+div#container-1 div.panel-body div.narrow-col h2 a {
+	 font-size:1.5rem !important;
+}
+div.right-panel div.panel-heading.hidden-lg.hidden-md {
+	text-align:center;
+	
+	a {
+		text-decoration:none;
+	}
+
+}
+div.left-panel div.panel-heading.hidden-lg.hidden-md {
+	
+	text-align:center;
+	
+	a {
+		text-decoration:none;
+	}
+
+	
+}
+@media screen and (max-width: 991px) and (min-width: 768px) {
+	#container-3 > div > div > h2 > a, #container-1 > div > div > h2 > a{ 
+		font-size:1.125rem !important;
+	}
+}
+
+
 /*----- homepage title ------*/
 .homepage-title {
 	font-size: 36px !important;
@@ -377,6 +469,17 @@ dl.portlet-static-quick-facts dt {
 	 
 	
  } 
+ #middle-front-column.narrow-col dl.portlet.portletStaticText dt span {
+     color: #333;
+     text-transform: none;
+     letter-spacing: normal;
+     font-weight: normal;
+     font-size: 1.5rem;
+     padding-bottom: 10px;
+     padding-top: 5px;
+     text-align: center;
+     border-bottom: none;
+ }
 /* right-column */
 #right-front-column.narrow-col {
 
@@ -700,7 +803,7 @@ margin-left: 2em;
 }
 #content-core dt {
 font-weight: bold;
-margin-bottom: 0;
+margin-bottom: 10px;
 margin-right: 0;
 }
 dd.portletItem > h4.org{
@@ -762,6 +865,12 @@ div.field.error {
     padding: 0.5em;
     margin:  1em 0;
 }
+#content li.formTab a.required span:after, #content-core li.formTab a.required span:after, div.field span.required:after {
+ 	content: "(required)";
+ 	color: $rec_blue;
+ 	padding-left: 0.2em;
+	font-size: 1.0rem;
+}
 .error .fieldRequired {
     color: #d00;
 }
@@ -790,6 +899,8 @@ font-size: small;
     height: 70px;
     width: 70px;
     padding-top: 1px; }
+	 
+
 
 .formHelp {
   color: #555;
@@ -819,6 +930,42 @@ p.tileFooter {
 	height:1em;
 	clear:both;
 }
+
+/*--- Album or thumbnail view ---*/
+body.template-atct_album_view.portaltype-folder div#main-container.container div#content-row.row div#content.col-lg-12 div div#content div#viewlet-above-content-body div.newsImageContainer {
+	display:none;
+}
+div.photoAlbumEntry {
+    float: left;
+    position: relative;
+    overflow: hidden;
+    height: 185px;
+    width: 158px;
+    margin: 0em;
+    padding: 0px 6px 0px 9px;
+    text-align: center;
+    background-image: url('../images/polaroid-single.png');
+    background-repeat: no-repeat;
+ }
+ div.photoAlbumEntry a {
+     display: block;
+     text-decoration: none;
+     font-size: .85rem;
+     height: 169px;
+     width: 130px;
+     margin: 16px auto 0px;
+ }
+span.photoAlbumEntryWrapper img {
+     border: 1px solid #ccc;
+     display: block;
+     margin: 0 auto;
+ }
+ span.photoAlbumEntryTitle {
+     display: block;
+	  padding-top:2px;
+     width: 128px;
+     height: 3.6em;
+ }
 /*---Portlets -----*/
 .blockedPortlet .portletBlockedMessage {
     color: white;
@@ -855,6 +1002,9 @@ padding-left: 35px;
 /*--Basic rec pool Blue Portlet --*/
 
 /*--tables --*/
+td.half-width {
+	width:50%;
+}
 table.listing tbody th {
     
 }
@@ -889,6 +1039,7 @@ table.listing {
 table.listing tbody tr:nth-child(even) td {
     border-right: 1px solid $box_light_gray;
 }
+
 /*-------footer-------*/
 #doormat-container {
 	
@@ -907,6 +1058,7 @@ dd.doormatSectionBody p{
 	font-size: 0.8125rem;
 	color: #FFF;
 	letter-spacing: 0.014em;
+	line-height:1.2rem;
 	text-decoration: none;
 	
 	> a {font-size: 0.875rem;
@@ -1079,39 +1231,14 @@ line-height: 1.4em;
 }
 
 @media screen and (max-width: $screen-md-min){
-	li.name > a#portal-logo {
-		display: none;
-	}
-	.justname h1 {
-		font-family:Verdana;
-	     color: white;
-	     text-transform: uppercase;
-	     font-size: 150%;
-	     margin-top: -40px;
-	     padding-left: 10px;
-	     letter-spacing: 0.1em;
-	     font-weight: bold;
-}		
+	
     .homepage-title	{
     	font-size:1.8rem !important;
     }
 
-}
+} 
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768px < width < 991px
-	li.name > a#portal-logo {
-		display: none;
-	}
-	.justname h1 {
-		font-family:Verdana;
-	     color: white;
-	     text-transform: uppercase;
-	     font-size: 125%;
-	     margin-top: -30px;
-	     padding-left: 15px;
-		padding-right: 10px;
-	     letter-spacing: 0.1em;
-	     font-weight: bold;
-}		
+
     .homepage-title	{
     	font-size:1.8rem !important;
     }
@@ -1186,14 +1313,44 @@ line-height: 2em;
 .day-time-row {
 	font-weight:normal;
 }
+/* person address portlet bio page */
+@media screen and (max-width: 767px){
+.portletPersonAddress > dt > div.collapsible .collapsed {
+	background: url(../images/icons/white-arrow-right-sm.png) 98% 50% no-repeat;
+	
+}
+}
+/*@media screen and (max-width: 767px){
+.panel-heading .panel-title  {
+    display: inline-block;
+    width: 100%;
+    min-height: 40px;
+    font-weight: normal;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    padding-right: 15px;
+    padding-left: 20px !important;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 22px !important;
+    line-height: 1.375rem !important;
+    text-align: left;
+    background: url(../images/icons/white-arrow-down.png) 98% 50% no-repeat #f0dd99; }
+ } */
 /*---overrides ---*/
 #thumb-section .panel-group section .panel-heading .panel-title a .thumb-txt {
   display: block;
-  margin-left: 130px;
+  margin-left: 25px;
   letter-spacing: -0.01em;
 }
+#thumb-section .panel-group section .panel-body {
+	margin-left:120px;
+}
 
-
+.plomino-accordion-content {
+	margin-left: 15px;
+	font-size: 0.9375rem;
+}
 
 /* tinyaccordions aka gold bars */
 /* styles to mark accordion inside editor */
@@ -1225,6 +1382,25 @@ body.mceContentBody div.plomino-accordion-content {
 	text-decoration: none;
 	padding-top: .5em;
 	padding-left:1em;
+}
+//gold bar titles smaller for congitive Neuroscience
+@media screen and (min-width: $screen-sm-max) and (max-width:1300px){
+	.panel-title a .thumb-txt {
+		font-size: 1.3rem;
+		
+	}
+}
+@media screen and (max-width: $screen-sm-min) {
+	#content-core h3.plomino-accordion-header > a{
+		font-size:1.15rem !important;
+	}
+	div.doormatColumn.column-1 dl.doormatSection dd.doormatSectionBody{
+		margin-bottom:0;
+	}
+	#footer a {
+		font-size:.75rem;
+	}
+	
 }
 #content-core h3.plomino-accordion-header:hover {
     background: $ucd_bright_gold_40;
@@ -1289,6 +1465,10 @@ h3.lab-bar > a > img.image-left {
     display: block;
     margin-top: -14px;
     margin-left: -22px;
+ } 
+ /*hide contentleadImage when using faceted nav as a view*/
+body.template-facetednavigation_view div#main-container.container div#content div#content-row.row div#viewlet-above-content-body div.newsImageContainer {
+	 display:none;
  }
 
  /* event Tile */
@@ -1307,5 +1487,130 @@ h3.lab-bar > a > img.image-left {
  body.template-folder_leadimage_view div#main-container div#content-row.row div#content div div#content div div.tileItem p.tileFooter {
  display:none;
  }
+ img.thumb {
+	 padding-right: 10px;
+ }
+ .sticky .util-nav ul.util li .util-btn a.addthis_button img {
+	 display: block;
+	 margin-left: auto;
+	 margin-right: auto;
+ }
+ /* drop the odd double read more */
+ div.collapsible div.inline-content p.more {
+     display: none;
+  }
+ /*psychology research areas bug */
+ 
+ @media screen and (max-width: 991px) and (min-width: 768px) {
+ 
+.subsection-research-areas .container #content-row #content #content #content-core #thumb-section .panel-group section .panel-heading .panel-title a .thumb-txt {
+     display: block;
+     margin-left: 25px;
+     letter-spacing: -0.01em;
+     font-size: .8rem;
+ }
+ }
+ @media screen and (max-width: 991px) and (min-width: 768px) {
+ .subsection-research-areas .container #content-row #content #content #content-core #thumb-section .panel-group section .panel-heading .panel-title a img {
+     height: 45px;
+     width: 70px;
+	 }
+ }
+ 
+  /* person tiles - collection view */
+  
+    .genericTile {
+        padding-left: 0;
+        padding-right: 20px;
+        border: 5px solid white;
+        background-color: #e5e9ef;
+    }
+    .genericTile .personEntryWrapper {
+        left: 0;
+        background: #ccd4e0;
+        width: 100px;
+        position: relative;
+        height: 100px !important;
+        float: left;
+    .personEntry a {
+  	      text-decoration: none;
+    }
+  }
+    span.personName {
+        position: relative;
+        padding-left: 10px;
+        display: flex;
+        margin-right: 0;
+        padding-top: 5px;
+        padding-bottom: 0px;
+        font-size: 0.86rem;
+        display: -webkit-flex;
+    }
+    .caption {
+        position: relative;
+        left: 10px; 
+		
+  		 .jobdesc-lg {
+  		   /* font-size: 11px !important; */
+  		    font-size: 0.85rem !important;
+  		    font-style: italic;
+  		 }
+  		 p { 
+      padding: 0 !important;
+      margin: 0 !important; }
+	}
+		    .phone-wrapper-sm {
+			 font-size: 0.75rem !important	;
+		}
+		#content-row div.caption.linesm p {
+			line-height: 1.2rem !important;
+		}
+ #content-row #nested-left li {
+     font-size: 0.8125 rem; }
+	 
+	 span.personEntryWrapper.tile-image img {
+	     height: 64px;
+	     width: 64px; 
+         float: left;
+          }
+  #content-row p.jobdescsm {
+         font-size: 0.7rem;
+		 line-height: 1rem !important; }
+ p.ohlist {
+         margin-bottom:0;
+		 }
+ /* Kiosk view */
+ 
+ #categories-kiosk {
+ font-size: 1.1rem;
+ font-style: italic;
+ }
+ .category-kiosk {
+ padding-right: 10px;}
+ 
+.kiosk-description{
+font-size:1.1rem;
+}
+.template-collection-kiosk-refresh #main-container 
+  #util-bar-wrap .util-bar{
+                visibility:hidden;
+               }
+.template-collection-kiosk-refresh #main-container 
+  #top-bar-wrap .top-bar{
+                visibility:hidden;
+               }
+.template-collection-kiosk-refresh #main-container #content-row {
+margin-top:0px;
+}
+.template-collection-kiosk-refresh #main-container #content-row #content #viewlet-above-content #portal-breadcrumbs
+  {
+                display:none;
+               }
+.template-collection-kiosk-refresh #footer{
+                visibility:hidden;
+               }
+.template-collection-kiosk-refresh #footer #div.addthis-smartlayers{
+                display:none;
+               }
 /* @end */
 

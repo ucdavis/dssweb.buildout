@@ -1,6 +1,8 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
+	xmlns:plone="http://namespaces.plone.org/plone"
+	xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="Products.DssContact">
 
   <include package="plone.app.contentmenu" />
@@ -30,7 +32,7 @@
 	         />
 	   <browser:page
 	      for="Products.DssPageTypes.interfaces.IDssTwoCollumnPage"
-		 class=".DssPageViews.DssTwoCollumnView"
+		  class=".DssPageViews.DssTwoCollumnView"
 	      layer="..interfaces.IDssPageTypesSpecific"
 	      name="two_collumn_view"
 	      template="dss_twocollumn_view.pt"
@@ -38,10 +40,11 @@
 			/>
  	   <browser:page
  	      for="Products.DssPageTypes.interfaces.IDssCourse"
- 		 class=".DssPageViews.DssCourseView"
+ 		   class=".DssPageViews.DssCourseView"
  	      layer="..interfaces.IDssPageTypesSpecific"
  	      name="course_view"
  	      template="dss_course_view.pt"
  	      permission="zope2.View"
  	         />
+  	   
 </configure>

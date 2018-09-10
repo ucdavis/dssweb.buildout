@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="dss.portlet.person">
+
+  
+      <!-- Publish static files -->
+      <browser:resourceDirectory
+          name="dss.portlet.person"
+          directory="static"
+          />
+			 
+			 
+</configure>
+ 

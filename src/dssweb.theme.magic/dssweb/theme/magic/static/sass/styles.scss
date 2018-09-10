@@ -29,8 +29,12 @@
 @import "plone";
 @import "search";
 @import "faceted";
-@import "fullcalendar";
 
+
+
+/* @import "fullcalendar"; */
+/*
+>>>>>>> master
 /* *** PARTIALS - Modular partial styles **** */
 // Note: Partials not imported here are specific to sections (e.g., index (home), about, and ourpeople)
 // Section partials should only be linked on pages that directly need them to minimize overhead
@@ -44,5 +48,6 @@
 @import "components/pager"; // styles for facetted search form
 @import "components/icons"; // icon styles in conjunction with JS processing
 @import "components/tiled-events"; // tiled event layout styles
+@import "components/tiled-labs"; //tiled lab layout styles
 @import "_print"; // print stylesheet	
 /* /styles.scss */

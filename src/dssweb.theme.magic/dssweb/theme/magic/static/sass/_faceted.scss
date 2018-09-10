@@ -91,7 +91,7 @@ font-size: 1.25rem;
   font-weight: bold;
 }
 #c3_widget > fieldset > legend {
-	color:white;
+	color:#808080;
 }
 dl#c3 {
   display: flex;
@@ -487,8 +487,8 @@ li.faceted-tag-disabled:hover {
   display: none;
 }
 
-.faceted-criteria-widget {
-	background-color:$rec_blue;
+.search-selection-widget {
+	border: 1px solid $rec_blue;
 }
 
 /* - ++resource++eea.facetednavigation.widgets.date.view.css - */

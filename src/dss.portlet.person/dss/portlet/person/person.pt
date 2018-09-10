@@ -13,13 +13,14 @@
 
 
 	<dd class="portlet-content">
-	  <div class="vcard">
+	  <div class="vcard" tal:define="checkPermission nocall: context/portal_membership/checkPermission;
+                 isEditor python:checkPermission('Modify portal content', context);">
 		
 		<tal:block>
 		          <div class="photo"
 		            tal:condition="context/image_normal|nothing">
 		             <img src="" alt=""
-		             tal:replace="structure python:context.getWrappedField('image').tag(context, scale='normal',  css_class='photo')" />
+		             tal:replace="structure python:context.getWrappedField('image').tag(context, scale='normal',  css_class='img-responsive photo')" />
 		           </div>
 		 </tal:block>
            <tal:block>                             
@@ -29,6 +30,12 @@
 				<span class="family-name" tal:content="context/getLastName"><tal:comment replace="nothing">[Last Name]</tal:comment></span>
 				<span class="honorific-suffix" tal:content="context/getSuffix"><tal:comment replace="nothing">[ suffix i.e. Dr]</tal:comment></span>
 			</h4>
+	      <div class="port-edit" tal:condition="python:checkPermission('Modify portal content', context)"
+	            class="discreet">
+	        <a class="photo-url person-edit" tal:attributes="href python:'base_edit?fieldset=photo'">
+	          <tal:block i18n:translate="FacultyStaffDirectory_editImage">Add or Edit Your Photo</tal:block>
+	        </a>
+	      </div>
 		</tal:block>
 		<div class="title org">
 
@@ -48,9 +55,17 @@
 				<br>
 				<span class="org"><span tal:content="eachDepartment/Title" /></p>
 			</tal:block>
+			
+			
+			
 		</div>
+      <p tal:condition="python: context.getJobTitles()"
+         class="title"
+         tal:repeat="jobTitle context/getJobTitles"
+         tal:content="jobTitle"><tal:comment replace="nothing">[job title]</tal:comment>
+      </p>
 		</div> <!--title org -->
-					 
+                
 		  
 			<tal:block tal:condition="python: context.getWebsites()">	
 					  				  
@@ -84,10 +99,10 @@
 				  									<li><span class="vcard-file file"><a tal:attributes="href string:${context/absolute_url}/vCard"><span class="item-label">vCARD</span></a></span></li>
 													
 									                
-				  									<li class="hidden-lg hidden-md"><span class="office"><a href="http://maps.google.com" target="_blank"><span class="item-label">OFFICE</span></a></span></li>
+				  									<li class="hidden-lg hidden-md"><span class="office"><a href="#ady_anchor"><span class="item-label">OFFICE</span></a></span></li>
 				    </ul>
 					  				  
-					  	
+      	  	
 					
 
     	

@@ -169,7 +169,7 @@ Custom JSON.  The nginx server can be updated and reloaded as described above.
 
 Info on writing Nginx configuration directives can be found in the [Nginx
 documentation](http://nginx.org/en/docs/).  Specific info on converting Apache
-Rewrite Rules can be found
+rewrite Rules can be found
 [here](http://nginx.org/en/docs/http/converting_rewrite_rules.html).  More
 info on URL rewriting can be found
 [here](http://nginx.org/en/docs/http/ngx_http_rewrite_module.html).  When

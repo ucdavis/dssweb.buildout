@@ -60,6 +60,8 @@ class CollectionUnifiedView(UnifiedContentMixin, BrowserView):
         kwargs = {k: kwargs[k] for k in keys if k not in do_not_pass and kwargs[k]}
 
         return self.context.results(**kwargs)
+        
+        
 
 
 # is this really required?  It appears impossible to build an old-style

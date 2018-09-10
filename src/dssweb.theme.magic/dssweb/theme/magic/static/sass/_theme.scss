@@ -708,7 +708,7 @@ body.contact-type {
 	p {
 		iframe {
 			width: 97% !important;
-			height: auto !important;
+			/* height: auto !important; */
 		}
 	}
 	
@@ -952,7 +952,7 @@ body.contact-type {
 		}
 		iframe {
 			width: 100%;
-			height: auto !important;
+			/* height: auto !important; */
 		}
 	}
 	
@@ -1201,7 +1201,7 @@ body.contact-type {
 	// Adjust formatting of bottom Featured Courses, etc. titles
 	#bottom-panel-row {
 		.narrow-col {
-			h2 {
+			h2, h2 a {
 				letter-spacing: 0 !important;
 			}
 		}
@@ -1345,6 +1345,8 @@ body.contact-type {
 		//margin-left: -31px;
 		//margin-right: -49px;
 	}
+	
+	
 	
 	#more-content-button {
 		left: -6px;

@@ -13,6 +13,8 @@ from Products.ATContentTypes.content import document
 from Products.DssPageTypes.interfaces import IDssCourse
 from Products.DssPageTypes.config import PROJECTNAME
 from Products.ATExtensions.ateapi import *
+from Products.ATContentTypes.lib.historyaware import HistoryAwareMixin
+
 
 
 
@@ -31,7 +33,7 @@ DssCourseSchema = document.ATDocumentSchema.copy() + atapi.Schema((
             name="inlineTopImage",
             widget=atapi.ImageWidget(
                 label=u"Top Image",
-                description=u"this is a medium image.  Optimum resolutiom is 750x422",
+                description=u"this is a medium image.  Optimum resolution is 750x422",
                
             ),
         ),
@@ -102,6 +104,10 @@ class DssCourse(base.ATCTContent):
 
        title = atapi.ATFieldProperty('title')
        description = atapi.ATFieldProperty('description')
+       DssCourseSchema.moveField('imageHelp', before='text')
+       DssCourseSchema.moveField('inlineTopImage', after='imageHelp')
+       DssCourseSchema.moveField('imageCaption', after='inlineTopImage')
+       
 
        # -*- Your ATSchema to Python Property Bridges Here ... -*-
 

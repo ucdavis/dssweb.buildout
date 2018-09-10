@@ -217,11 +217,13 @@
 
 				$(selector+" .panel-title a").attr('data-toggle','collapse'); // for open/close
 				
+				
 				// Prevent the panel-title headers from redirecting the page and shows .panel-body content
         $(selector+" .panel-title a").click(function (e) {
             e.preventDefault();
             $($(this).data("target")).show();			
-				});	
+				});
+			
     };
 		
 		// BOOTSTRAPIFY //////////////////////////////////////////////////

@@ -1,0 +1,44 @@
+#nginx config file
+location /philosophy { deny all; return 404; }
+location /politicalscience { deny all; return 404; }
+location /linguistics { deny all; return 404; }
+location /economics { deny all; return 404; }
+location /psychology { deny all; return 404; }
+location /mindbrain { deny all; return 404; }
+location /anthropology { deny all; return 404; }
+location /iss { deny all; return 404; }
+location /communication { deny all; return 404; }
+location /history { deny all; return 404; }
+location /subsite-skeleton { deny all; return 404; }
+location /mesa {deny all; return 404;}
+location /sociology {deny all; return 404; }
+location /cogsci {deny all; return 404; }
+
+
+location /people/philosophy { deny all; return 404; }
+location /people/politicalscience { deny all; return 404; }
+location /people/linguistics { deny all; return 404; }
+location /people/economics { deny all; return 404; }
+location /people/psychology { deny all; return 404; }
+location /people/mindbrain { deny all; return 404; }
+location /people/socialsciences { deny all; return 404; }
+location /people/yellow-cluster-staff { deny all; return 404; }
+location /people/blue-cluster-staff { deny all; return 404; }
+location /people/dssit-service-center { deny all; return 404; }
+location /people/affiliated-faculty-center-for-mind-and-brain { deny all; return 404; }
+location /people/affiliated-faculty-department-of-psychology { deny all; return 404; }
+location /people/communication { deny all; return 404; }
+location /people/orange-cluster-staff { deny all; return 404; }
+location /people/history { deny all; return 404; }
+location /people/affiliated-faculty-department-of-communication { deny all; return 404; }
+location /people/anthropology-evolutionary-wing { deny all; return 404; }
+location /people/anthropology-sociocultural-wing { deny all; return 404; }
+location /people/sociology {deny all; return 404; }
+location /people/mesa {deny all; return 404; }
+location /people/mesa-affiliates {deny all; return 404; }
+location /people/green-cluster-staff {deny all; return 404; }
+location /people/science-and-technology-studies {deny all; return 404; }
+location /people/affiliated-faculty-science-and-technology-studies { deny all; return 404; }
+location /people/affilated-faculty-in-linguistics { deny all; return 404; }
+location /people/affilated-faculty-in-cognitive-science { deny all; return 404; }
+location /people/cognitive-science { deny all; return 404; }
