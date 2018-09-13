@@ -384,6 +384,11 @@
   	    <rules css:if-content="body.template-search">
 			  <drop css:theme=".title-box" />
   	    </rules>
+		<!-- editing -->
+		<rules css:if-content=".documentEditable">
+			
+			<replace css:theme="content" css:content=".documentEditable"/>
+			</rules>
 		  
 		<!--views -->
 		
@@ -539,9 +544,10 @@
 					  
 				<replace css:theme-children="div.foot-wrap"
 					           css:content="#doormat-container" />
-	
+	          
 	
       <after css:theme="div.foot-wrap" css:content="#portal-footer" />
+	  <after css:theme="div.foot-wrap" css:content="#portal-personaltools-wrapper" />
 	  <!--Analytics-->
 	  <append css:theme="#footer" css:if-content="body.site-psychology">
 		 

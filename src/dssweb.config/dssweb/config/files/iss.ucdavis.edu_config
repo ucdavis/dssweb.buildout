@@ -5,7 +5,7 @@
 #    return 301 $scheme://iss.ucdavis.edu$request_uri;
 #
 rewrite /aspire(.*)$ http://mindbrain.ucdavis.edu/participate/aspire$1 permanent;
-rewrite /iss-journal/features/cyber-support-bo-feng$1 http://communication/research/research-spotlight/cyber-support-bo-feng$1 permanent;
+rewrite /iss-journal/features/cyber-support-bo-feng(.*)$  http://communication/research/research-spotlight/cyber-support-bo-feng$1 permanent;
 
 location /philosophy { deny all; return 404; }
 location /politicalscience { deny all; return 404; }
