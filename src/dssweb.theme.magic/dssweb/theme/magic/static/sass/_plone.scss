@@ -388,6 +388,16 @@ div.left-panel div.panel-heading.hidden-lg.hidden-md {
  } 
 }
 /* Middle column */
+#middle-front-column .portletStaticText dt span a.tile {
+    color: #333;
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: normal;
+    font-size: 1.5rem !important;
+    padding-bottom: 10px;
+    text-align: center;
+    border-bottom: none;
+}
 #middle-front-column.narrow-col {
 
 	dl.portlet {
@@ -1932,7 +1942,7 @@ margin-top:0px;
 					   -webkit-box-shadow: 0;
 					   box-shadow: none;
 				   }
-				   
+				  
 				   
 
 			   }
