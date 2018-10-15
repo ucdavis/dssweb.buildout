@@ -1589,6 +1589,9 @@ body.template-facetednavigation_view div#main-container.container div#content di
  p.ohlist {
          margin-bottom:0;
 		 }
+		 /* hide caselogin till I'm ready to launch it */
+ a#personaltools-CASLogin {
+     visibility: hidden; }
  /* Kiosk view */
  
  #categories-kiosk {
