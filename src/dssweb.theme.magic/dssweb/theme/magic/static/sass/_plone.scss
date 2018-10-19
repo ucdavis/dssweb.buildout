@@ -1592,7 +1592,30 @@ body.template-facetednavigation_view div#main-container.container div#content di
 		 /* hide caselogin till I'm ready to launch it */
  a#personaltools-CASLogin {
      visibility: hidden; }
+	 
  /* Kiosk view */
+	 
+	 /* button */
+	 p.button a {
+	     font-size: 1.2em;
+	     color: #000; }
+	 
+	 p.button {
+	     background-color: #E1B833;
+		 -webkit-border-radius:15px;
+		 -moz-border-radius:15px;
+	     border-radius: 15px;
+	     padding: 5px;
+	     text-align: center;
+		 -moz-box-shadow: 2px 2px #888888;
+		 -webkit-box-shadow:2px 2px #888888 ;
+		 box-shadow: 2px 2px #888888;
+	 }
+	 p.button a:hover {
+	     text-decoration: none;
+	     color: #5B7F95!important;
+	 }
+	 
  
  #categories-kiosk {
  font-size: 1.1rem;

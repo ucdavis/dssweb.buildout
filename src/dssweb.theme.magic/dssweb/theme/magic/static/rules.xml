@@ -35,7 +35,7 @@
 	
 
    <!--/rules-->
-	<theme href="t7_contact.html" css:if-content="body.section-contact" />
+	<!--theme href="t7_contact.html" css:if-content="body.section-contact" /-->
 
 
 	<theme href="t11_calendar.html" css:if-content="body.template-solgemafullcalendar_view" />
@@ -76,6 +76,7 @@
 	  <!-- drop theme js -->
 	  
 	  <!--copy javascript in from registry -->
+	
   
 
   <rules css:if-content="body.portaltype-front-page">
