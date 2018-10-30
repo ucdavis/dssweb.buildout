@@ -7,6 +7,63 @@
 rewrite /aspire(.*)$ http://mindbrain.ucdavis.edu/participate/aspire$1 permanent;
 rewrite /iss-journal/features/cyber-support-bo-feng(.*)$  http://communication/research/research-spotlight/cyber-support-bo-feng$1 permanent;
 
+rewrite /scrutinizing-crime-chris-smith http://sociology.ucdavis.edu/research/faculty-research-spotlight/scrutinizing-crime-chris-smith permanent;
+rewrite /hidden-histories-susan-gilson-miller http://history.ucdavis.edu/directory-of-people/featured-faculty/hidden-histories-susan-gilson-miller permanent;
+rewrite /economics-past-and-present-christopher-m-meissner http://economics.ucdavis.edu/directory-of-people/featured-faculty/economics-past-and-present-christopher-m-meissner permanent;
+rewrite /pondering-perception-zoe-drayson http://philosophy.ucdavis.edu/directory-of-people/featured/pondering-perception-zoe-drayson permanent;
+rewrite /getting-to-grips-with-groups-cristina-moya http://anthropology.ucdavis.edu/directory-of-people/who-are-we/getting-to-grips-with-groups-cristina-moya permanent;
+
+#rewrite /translating-data-into-knowledge-the-data-science-initiative https://ls.ucdavis.edu/iss-translating-data-knowledge-data-science-initiative permanent;
+#rewrite /new-social-sciences-faculty-part-two-1 https://ls.ucdavis.edu/iss-new-social-sciences-faculty permanent;
+#rewrite /new-social-sciences-faculty-part-one-1 https://ls.ucdavis.edu/iss-new-social-sciences-faculty permanent;
+rewrite /analyzing-arms-brandon-kinne http://polisci.ucdavis.edu/directory-of-people/featured-faculty/analyzing-arms-brandon-kinne permanent;
+rewrite /processing-language-kenji-sagae http://linguistics.ucdavis.edu/research/faculty-research-projects/processing-language-kenji-sagae permanent;
+rewrite /monitoring-militarization-erin-hamilton http://sociology.ucdavis.edu/research/faculty-research-spotlight/monitoring-militarization-erin-hamilton permanent;
+rewrite /sounds-statistics-and-software-santiago-barreda http://linguistics.ucdavis.edu/research/faculty-research-projects/sounds-statistics-and-software-santiago-barreda permanent;
+rewrite /recognizing-reconstruction-gregory-downs http://history.ucdavis.edu/directory-of-people/featured-faculty/recognizing-reconstruction-gregory-downs permanent;
+rewrite /the-metaphysics-of-mortals-cody-gilmore http://philosophy.ucdavis.edu/directory-of-people/featured/the-metaphysics-of-mortals-cody-gilmore permanent;
+rewrite /interacting-with-intent-nicholas-a-palomares http://communication.ucdavis.edu/research/research-spotlight/interacting-with-intent-nicholas-a-palomares permanent;
+rewrite /manipulating-memory-brian-wiltgen http://psychology.ucdavis.edu/directory-of-people/featured-faculty/manipulating-memory-brian-wiltgen permanent;
+rewrite /intergenerational-economics-marianne-page http://economics.ucdavis.edu/directory-of-people/featured-faculty/intergenerational-economics-marianne-page permanent;
+rewrite /gender-and-colonialism-corrie-decker http://history.ucdavis.edu/directory-of-people/featured-faculty/gender-and-colonialism-corrie-decker permanent;
+rewrite /the-economics-of-assimilation-katherine-eriksson http://economics.ucdavis.edu/directory-of-people/featured-faculty/the-economics-of-assimilation-katherine-eriksson permanent;
+#rewrite /towards-transparency-simine-vazire https://lettersandscience.ucdavis.edu/iss-towards-transparency-simine-vazire permanent;
+rewrite /features/jeffrey-s-kahn http://anthropology.ucdavis.edu/directory-of-people/who-are-we/jeffrey-s-kahn permanent;
+#rewrite /new-social-sciences-faculty-part-two https://ls.ucdavis.edu/iss-new-social-sciences-faculty-0 permanent;
+rewrite /the-future-of-climate-change-john-r-hall http://sociology.ucdavis.edu/research/faculty-research-spotlight/the-future-of-climate-change-john-r-hall permanent;
+#rewrite /new-social-sciences-faculty-part-one https://ls.ucdavis.edu/iss-new-social-sciences-faculty-0 permanent;
+rewrite /extraordinary-responsibility-shalini-satkunanandan http://polisci.ucdavis.edu/directory-of-people/featured-faculty/extraordinary-responsibility-shalini-satkunanandan permanent;
+#rewrite /risk-and-rescue-tina-rulli https://ls.ucdavis.edu/risk-and-rescue-tina-rulli permanent;
+rewrite /confronting-crimmigration-caitlin-patler http://sociology.ucdavis.edu/research/faculty-research-spotlight/confronting-crimmigration-caitlin-patler permanent;
+rewrite /ruling-the-russian-frontier-ian-campbells-knowledge-and-the-ends-of-empire http://history.ucdavis.edu/directory-of-people/featured-faculty/ruling-the-russian-frontier-ian-campbells-knowledge-and-the-ends-of-empire permanent;
+#rewrite /crossing-boundaries-comparative-border-studies https://ls.ucdavis.edu/iss-crossing-boundaries-comparative-border-studies permanent;
+rewrite /migrations-of-the-mind-david-kyle http://sociology.ucdavis.edu/research/faculty-research-spotlight/migrations-of-the-mind-david-kyle permanent;
+#rewrite /roosevelt-and-recovery-eric-rauchways-the-money-makers https://ls.ucdavis.edu/iss-roosevelt-and-recovery-eric-rauchways-money-makers permanent;
+rewrite /looking-for-utopia-smriti-srinivas http://anthropology.ucdavis.edu/directory-of-people/who-are-we/looking-for-utopia-smriti-srinivas permanent;
+#rewrite /features/ojeda https://ls.ucdavis.edu/iss-describing-colonial-art-almerindo-ojeda permanent;
+#rewrite /separating-gmo-fiction-from-fact https://ls.ucdavis.edu/iss-separating-gmo-fiction-fact permanent;
+#rewrite /reversing-the-gaze-sunaina-maira https://ls.ucdavis.edu/iss-reversing-gaze-sunaina-maira permanent;
+#rewrite /challenging-the-construction-of-ethiopia2019s-gibe-iii-dam https://ls.ucdavis.edu/iss-challenging-construction-ethiopias-gibe-iii-dam permanent;
+rewrite /red-baiting-and-the-birth-of-modern-conservatism http://history.ucdavis.edu/directory-of-people/featured-faculty/red-baiting-and-the-birth-of-modern-conservatism permanent;
+rewrite /turning-big-data-into-big-knowledge http://communication.ucdavis.edu/research/research-spotlight/turning-big-data-into-big-knowledge permanent;
+#rewrite /memory-and-music https://ls.ucdavis.edu/iss-memory-and-music permanent;
+#rewrite /a-parent2019s-imprisonment-takes-a-long-lasting-financial-and-emotional-toll-on-children-and-families https://ls.ucdavis.edu/imprisonment-takes-long-lasting-tolls-children-and-families permanent;
+#rewrite /21st-century-linguistics https://ls.ucdavis.edu/iss-21st-century-linguistics permanent;
+rewrite /gps-tracking-shows-differences-between-human-and-primate-societies http://anthropology.ucdavis.edu/directory-of-people/who-are-we/gps-tracking-shows-differences-between-human-and-primate-societies permanent;
+rewrite /virtual-worlds-and-their-carryovers-into-reality https://ls.ucdavis.edu/iss-virtual-worlds-and-their-carryovers-reality permanent;
+#rewrite /doublets-network-analysis-reveals-the-complexity-of-the-english-language http://linguistics.ucdavis.edu/research/faculty-research-projects/doublets-network-analysis-reveals-the-complexity-of-the-english-language permanent;
+rewrite /mating-market-trumps-biology-in-relationships http://anthropology.ucdavis.edu/directory-of-people/who-are-we/mating-market-trumps-biology-in-relationships permanent;
+#rewrite /the-pink-and-blue-toy-divide https://ls.ucdavis.edu/iss-pink-and-blue-toy-divide permanent;
+rewrite /this-grant-sent-jeremy-mikecz-to-map-the-spanish-conquest-of-Peru http://history.ucdavis.edu/directory-of-people/featured-graduate-students/this-grant-sent-jeremy-mikecz-to-map-the-spanish-conquest-of-Peru permanent;
+#rewrite /cloudy-water-affects-the-health-of-rural-immigrants https://ls.ucdavis.edu/iss-cloudy-water-affects-health-rural-immigrants permanent;
+
+#rewrite /even-those-who-know-better-find-junk-food-irresistable https://ls.ucdavis.edu/iss-even-those-who-know-better-find-junk-food-irresistible permanent;
+rewrite /what-happened-when-how-the-brain-stores-memories-by-time-1 http://psychology.ucdavis.edu/directory-of-people/featured-faculty/what-happened-when-how-the-brain-stores-memories-by-time-1 permanent;
+Media/can-sharing-a-husband-be-good-for-women http://anthropology.ucdavis.edu/news/can-sharing-a-husband-be-good-for-women permanent;
+
+
+
+location /people/{deny all; return 404;}
 location /philosophy { deny all; return 404; }
 location /politicalscience { deny all; return 404; }
 location /linguistics { deny all; return 404; }
