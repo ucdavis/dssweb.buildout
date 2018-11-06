@@ -13,6 +13,9 @@ location /subsite-skeleton { deny all; return 404; }
 location /mesa {deny all; return 404;}
 location /sts {deny all; return 404; }
 location /cogsci {deny all; return 404; }
+location /hia {deny all; return 404;}
+location /eas {deny all; return 404;}
+location /orange-cluster-administration {deny all; return 404;}
 
 
 location /people/philosophy { deny all; return 404; }

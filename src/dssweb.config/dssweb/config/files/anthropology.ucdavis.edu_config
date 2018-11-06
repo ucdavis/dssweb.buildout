@@ -13,6 +13,9 @@ location /subsite-skeleton { deny all; return 404; }
 location /mesa {deny all; return 404;}
 location /sts {deny all; return 404; }
 location /cogsci {deny all; return 404; }
+location /orange-cluster-administration {deny all; return 404;}
+location /hia {deny all; return 404;}
+location /eas {deny all; return 404;}
 
 
 
@@ -42,5 +45,6 @@ location /people/affiliated-faculty-science-and-technology-studies { deny all; r
 location /people/affilated-faculty-in-linguistics { deny all; return 404; }
 location /people/affilated-faculty-in-cognitive-science { deny all; return 404; }
 location /people/cognitive-science { deny all; return 404; }
+
 
  
