@@ -1600,7 +1600,12 @@ body.template-facetednavigation_view div#main-container.container div#content di
 		 div#portal-personaltools-wrapper {
 		     display: none;
 		 }
-    
+		 /* Staff cluster menus */
+.site-orange-cluster-administration{
+	#uti-contact, #uti-news, #uti-events, #uti-give {
+		display:none;
+	}
+}
 	 
  /* Kiosk view */
 	 
