@@ -1597,12 +1597,9 @@ body.template-facetednavigation_view div#main-container.container div#content di
          margin-bottom:0;
 		 }
 		 /* hide caselogin till I'm ready to launch it */
- a#personaltools-CASLogin {
-     visibility: hidden; }
-	 
-li#anon-personalbar {
-	display:none;
-}
+		 div#portal-personaltools-wrapper {
+		     display: none;
+		 }
     
 	 
  /* Kiosk view */
