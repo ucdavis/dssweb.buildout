@@ -1433,6 +1433,13 @@ body.mceContentBody div.plomino-accordion-content {
     margin-top: -18px;
     margin-left: -24px;
  }
+@media screen and (max-width: $screen-xs-max) {
+#content-core h3.plomino-accordion-header > a > img.image-left {
+    width: 80px;
+    margin-top: -13px;
+    margin-left: -17px;
+ }
+ }
 #content-core h3.plomino-accordion-header.collapsed > a{
 	display: block;
 	height: 70px;
