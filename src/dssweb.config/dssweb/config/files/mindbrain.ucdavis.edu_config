@@ -438,3 +438,7 @@ location /people/keminder {
    deny all;
 	return 404;
 	}
+location /people/bhighton {
+   deny all;
+   return 404;
+   }
