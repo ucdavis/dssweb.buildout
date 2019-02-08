@@ -548,7 +548,8 @@
 	          
 	
       <after css:theme="div.foot-wrap" css:content="#portal-footer" />
-	  <after css:theme="div.foot-wrap" css:content="#portal-personaltools-wrapper" />
+	  <!--after css:theme="div.foot-wrap" css:content="#portal-personaltools-wrapper" /-->
+	  <!-- disabled because of siteimprove checking -->
 	  <!--Analytics-->
 	  <append css:theme="#footer" css:if-content="body.site-psychology">
 		 
