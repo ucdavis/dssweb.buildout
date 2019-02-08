@@ -3,7 +3,7 @@ src/dssweb.theme.magic/dssweb/theme/magic/static/assets/sub-org.css
 src/dssweb.theme.magic/dssweb/theme/magic/static/assets/global.css
 src/dssweb.theme.magic/dssweb/theme/magic/static/assets/components
 src/dssweb.theme.magic/dssweb/theme/magic/static/assets/components/*.css
-src/dssweb.theme.magic/dssweb/theme/magic/static/assets/sections
+#src/dssweb.theme.magic/dssweb/theme/magic/static/assets/sections
 src/dssweb.theme.magic/dssweb/theme/magic/static/assets/sections/*.css
 src/dssweb.theme.magic/dssweb/theme/magic/static/assets/vendor/
 src/dssweb.theme.magic/dssweb/theme/magic/static/assets/vendor/bootstrap.css
