@@ -1016,6 +1016,9 @@ ul.navTree {
 
 .portletNavigationTree > dd {
 padding-left: 35px;
+a { text-decoration:none;
+    font-weight: normal;}
+        
 }
 /*--Basic rec pool Blue Portlet --*/
 
@@ -1360,6 +1363,7 @@ line-height: 2em;
   display: block;
   margin-left: 25px;
   letter-spacing: -0.01em;
+  font-weight:normal;
 }
 #thumb-section .panel-group section .panel-body {
 	margin-left:120px;
@@ -1405,6 +1409,7 @@ body.mceContentBody div.plomino-accordion-content {
 @media screen and (min-width: $screen-sm-max) and (max-width:1300px){
 	.panel-title a .thumb-txt {
 		font-size: 1.3rem;
+		font-weight:normal;
 		
 	}
 }
@@ -1533,6 +1538,7 @@ body.template-facetednavigation_view div#main-container.container div#content di
      margin-left: 25px;
      letter-spacing: -0.01em;
      font-size: .8rem;
+	 font-weight: normal;
  }
  }
  @media screen and (max-width: 991px) and (min-width: 768px) {
@@ -1550,6 +1556,9 @@ body.template-facetednavigation_view div#main-container.container div#content di
         border: 5px solid white;
         background-color: #e5e9ef;
     }
+	.genericTile a {
+		font-weight: normal;
+	}
     .genericTile .personEntryWrapper {
         left: 0;
         background: #ccd4e0;
