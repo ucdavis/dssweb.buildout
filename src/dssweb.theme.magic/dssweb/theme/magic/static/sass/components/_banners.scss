@@ -409,11 +409,11 @@ body.has-shadow-am {
 /*----- Desktop breakpoint ("L") -------*/
 @media screen and (min-width: $screen-sm-max) { // width > 991
 	
-	body.home {
+  /*	body.home {
 		.wall {
 			height: 720px; // was 650px
 		}
-	}
+	} */
 	
 	#banner-caption {
 		//right: 80px; // tablet focus

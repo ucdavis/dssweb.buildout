@@ -650,7 +650,8 @@ div.left-panel div.panel-heading.hidden-lg.hidden-md {
 	}
 
 dl.portlet a:link {
-  color: $ucd_blue_100;
+  color: $link_color;
+  text-decoration:underline;
   border-bottom: none;
 }
 dl.portlet a:hover {

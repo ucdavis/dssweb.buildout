@@ -10,6 +10,7 @@ body, div, p, li, a, input, textarea, select, button {
 
 a { 
 	color: $link_color;
+	font-weight: bold;
 }
 
 em {
@@ -406,7 +407,7 @@ body.bio {
 		@include line_height(24px,!important); 
 	}
 	p {
-		@include font_size(15px);
+		@include font_size(16px);
 		@include line_height(24px);
 		&.intro {
 			@include font_size(18px);
@@ -414,7 +415,7 @@ body.bio {
 		}
 	}
 	li, ol, li a {
-		@include font_size(15px);
+		@include font_size(16px);
 		@include line_height(24px);
 	}
 	.breadcrumb {
