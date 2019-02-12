@@ -1016,7 +1016,7 @@ ul.navTree {
 
 .portletNavigationTree > dd {
 padding-left: 35px;
-a { text-decoration:none;
+a { text-decoration:none !important;
     font-weight: normal;}
         
 }
