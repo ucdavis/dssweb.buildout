@@ -1363,7 +1363,7 @@ line-height: 2em;
   display: block;
   margin-left: 25px;
   letter-spacing: -0.01em;
-  font-weight:normal;
+  font-weight: normal;
 }
 #thumb-section .panel-group section .panel-body {
 	margin-left:120px;
@@ -1557,7 +1557,7 @@ body.template-facetednavigation_view div#main-container.container div#content di
         background-color: #e5e9ef;
     }
 	.genericTile a {
-		font-weight: normal;
+		font-weight: normal !important;
 	}
     .genericTile .personEntryWrapper {
         left: 0;
@@ -1569,6 +1569,10 @@ body.template-facetednavigation_view div#main-container.container div#content di
     .personEntry a {
   	      text-decoration: none;
     }
+	.personEntry a{
+		font-weight:normal;
+	}
+	
   }
     span.personName {
         position: relative;
