@@ -22,7 +22,7 @@
 			   	             <div
 			   	                tal:define="here_url context/@@plone_context_state/object_url;
 							             MedTopImage context/getMedTopImage;"
-			   	                tal:attributes="href string:$here_url/image/image_preview"
+			   	                
 							 id="parent-fieldname-image">
 							   <img class="img-responsive" tal:attributes="src string:${context/absolute_url}/medTopImage" alt="Graduate Students" />
 							               </div>
