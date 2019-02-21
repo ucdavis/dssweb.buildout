@@ -6942,6 +6942,13 @@
 		"oAP": "\/dssweb\/theme\/magic\/static\/readme.txt",
 		"oF": 0
 		},
+	"\/dssweb\/theme\/magic\/static\/rules.xml": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/dssweb\/theme\/magic\/static\/rules.xml",
+		"oF": 0
+		},
 	"\/dssweb\/theme\/magic\/static\/rules3.xml": {
 		"cB": 0,
 		"ft": 8192,
@@ -7851,6 +7858,20 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/dssweb\/theme\/magic\/static\/t3_bio.html",
+		"oF": 0
+		},
+	"\/dssweb\/theme\/magic\/static\/t4_adhoc.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/dssweb\/theme\/magic\/static\/t4_adhoc.html",
+		"oF": 0
+		},
+	"\/dssweb\/theme\/magic\/static\/t4_adhoc2.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/dssweb\/theme\/magic\/static\/t4_adhoc2.html",
 		"oF": 0
 		},
 	"\/dssweb\/theme\/magic\/static\/t4c_publications.html": {
