@@ -46,7 +46,7 @@
   <div class="container" id="main">
     
     <div id="util-bar-wrap" class="row">
-      <nav class="util-bar">
+      <nav aria-label="utility-menu" class="util-bar">
         <ul>
           <li class="hidden-xs" id="uti-news">
             <a href="#">Latest News</a>
@@ -75,7 +75,7 @@
     </div>
 		
 		<div id="top-bar-wrap" class="row">
-	    <nav class="top-bar" data-topbar="">
+	    <nav aria-label="main-menu" class="top-bar" data-topbar="">
 	      <!-- Title -->
 	      <ul class="title-area">
 	        <li class="name">
