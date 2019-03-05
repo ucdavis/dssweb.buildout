@@ -442,3 +442,69 @@ location /people/bhighton {
    deny all;
    return 404;
    }
+   location /people/fzandrew {
+   deny all;
+   return 404;}
+   location /people/clboudre {
+   deny all;
+   return 404;}
+   location /people/ogarciap {
+   deny all;
+   return 404;}
+   location /people/cdhare{
+   deny all;
+   return 404;}
+
+   location /people/rhubert {
+   deny all;
+   return 404;}
+
+   location /people/huckfeld {
+   deny all;
+   return 404; }
+   location /people/bsjjones {
+   deny all;
+   return 404;}
+   location /people/bkinne {
+   deny all;
+   return 404; }
+   location /people/yuch {
+   deny all;
+   return 404;
+   }
+   location /people/samacken {
+   deny all;
+   return 404;}
+   location /people/maoz {
+   deny all;
+   return 404; }
+   location /people/mckibben {
+   deny all;
+   return 404;}
+   location /people/fzmoney {
+   deny all;
+   return 404;}
+   location /people/montinol {
+   deny all;
+   return 404;}
+   location /people/lperitz {
+   deny all;
+   return 404;}
+   location /people/lreid {
+   deny all;
+   return 404;}
+   location /people/ssatkuna {
+   deny all;
+   return 404;}
+   location /people/scheiner {
+   deny all;
+   return 404;}
+   location /people/dshanske {
+   deny all;
+   return 404;}
+   location /people/mshugart {
+   deny all;
+   return 404;}
+   location /people/leyou {
+   deny all;
+   return 404;}

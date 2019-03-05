@@ -47,3 +47,10 @@ location /people/cognitive-science { deny all; return 404; }
 location /people/moya { deny all; return 404; }
 location /people/sfahren {deny all; return 404;}
 location /news/people/.*{ deny all; return 404; }
+
+location /people/ogarciap {
+deny all;
+return 404;}
+location /people/fzmoney {
+deny all;
+return 404;}

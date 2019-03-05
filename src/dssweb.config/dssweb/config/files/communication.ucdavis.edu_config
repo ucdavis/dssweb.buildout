@@ -46,3 +46,6 @@ location /people/affilated-faculty-in-linguistics { deny all; return 404; }
  location /people/affilated-faculty-in-cognitive-science { deny all; return 404; }
  location /people/cognitive-science { deny all; return 404; }
  
+ location /people/boydstun {
+ deny all;
+ return 404;}

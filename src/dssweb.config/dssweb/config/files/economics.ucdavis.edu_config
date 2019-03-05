@@ -495,3 +495,51 @@ location /people/tideange {
  deny all;
  return 404;
 }
+location /people/fzandrew {
+deny all;
+return 404;}
+location /people/boydstun {
+deny all;
+return 404;}
+location /people/cdhare{
+deny all;
+return 404;}
+location /people/bhighton {
+deny all;
+return 404; }
+location /people/huckfeld {
+deny all;
+return 404; }
+location /people/bkinne {
+deny all;
+return 404; }
+location /people/yuch {
+deny all;
+return 404;
+}
+location /people/samacken {
+deny all;
+return 404;}
+location /people/maoz {
+deny all;
+return 404; }
+location /people/mckibben {
+deny all;
+return 404;} 
+
+
+location /people/fzmoney {
+deny all;
+return 404;}
+location /people/jarrett {
+deny all;
+return 404;}
+location /people/dshanske {
+deny all;
+return 404;}
+location /people/mshugart {
+deny all;
+return 404;}
+location /people/leyou {
+deny all;
+return 404;}
