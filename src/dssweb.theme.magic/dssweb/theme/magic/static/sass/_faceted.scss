@@ -465,7 +465,11 @@ li.faceted-tag-disabled:hover {
 }
 .faceted-criteria dd{
   margin-left: 1.5em;
-  font-weight: normal;
+  font-weight: bold;
+  padding-left: 5px;
+  padding-right:5px;
+  color:white;
+  background-color:$rec_blue;
 }
 
 .faceted-criteria-reset {
