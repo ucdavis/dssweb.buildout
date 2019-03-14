@@ -400,7 +400,7 @@
 		 	 <!-- People Page Faceted Nav -->
    	   <!--Person directory Page Faceted Nav T2 -->
        <rules css:if-content="body.template-facetednavigation_view">
-			 <rules if-path="directory-of-people" >
+			 
 				 <replace css:theme="#am-content > h1" css:content="h1#parent-fieldname-title" />
             <replace css:theme="#am-content > p" css:content="div.documentDescription" />
             <replace css:theme="h4.table-header" css:content="div#faceted-center-column" />
@@ -408,7 +408,7 @@
             <replace css:theme-children="#left-area" css:content-children="div#left-area" />
             <drop theme='//div[@id="pager-top"]' />
             <drop theme='//div[@id="pager-bottom"]' />
-			</rules>
+			
    	   </rules>
 			
 			<rules css:if-content="body.template-facetednavigation_view">
