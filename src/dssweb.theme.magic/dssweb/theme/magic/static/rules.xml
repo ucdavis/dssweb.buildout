@@ -753,6 +753,8 @@
            $(".wall").wallpaper({
                source: "@@banner-image"
            });
+		  
+		     
          </script>
        </replace> 
 	   
