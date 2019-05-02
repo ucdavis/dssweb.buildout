@@ -110,4 +110,8 @@ return 404;}
 location /people/leyou {
 deny all;
 return 404;}
+	location /people/oclerge {
+	deny all;
+	return 404;
+	}
 

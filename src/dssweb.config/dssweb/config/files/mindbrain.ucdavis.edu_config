@@ -508,3 +508,7 @@ location /people/bhighton {
    location /people/leyou {
    deny all;
    return 404;}
+location /people/oclerge {
+deny all;
+return 404;
+}

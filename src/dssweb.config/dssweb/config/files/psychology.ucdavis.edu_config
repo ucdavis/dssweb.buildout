@@ -453,6 +453,10 @@ location /people/pkaliman {
 	deny all;
 	return 404;
 	}
+	location /people/oclerge {
+	deny all;
+	return 404;
+	}
 
 
 
