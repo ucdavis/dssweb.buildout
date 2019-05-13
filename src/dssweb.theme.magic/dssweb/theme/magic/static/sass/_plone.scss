@@ -2022,9 +2022,15 @@ margin-top:0px;
 			   
 			   /* LS Logo */
 			  .LSLogo {
-				  margin-top:10px;
 				  margin-bottom:15px;
 			  }
-			   
+			  @media screen and (min-width:922px) {
+			  	
+				  #right-front-column.narrow-col .portletHeader span a {
+				  font-weight: normal;
+			  }
+		  }
+			  
+			  
 /* @end */
 
