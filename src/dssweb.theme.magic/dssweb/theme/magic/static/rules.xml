@@ -347,7 +347,9 @@
 		
 		<rules if-not-content="/html/body[contains(@class, 'portaltype-front-page')]">
         <rules if-not-content="/html/body[contains(@class, 'template-facetednavigation_view')]">
-		<replace theme-children='//*[@id="content"]' content-children='//*[@id="portal-column-content"]' />
+			
+		 <replace theme-children='//*[@id="content"]' content-children='//*[@id="content"]' />
+		 <before theme='//*[@id="content"]' content='//*[@id="viewlet-above-content"]'  />
 	   </rules>
 	</rules>
 
