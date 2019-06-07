@@ -9,8 +9,12 @@
 <body>
 
   <div metal:fill-slot="content-core">
+	  
     <metal:block define-macro="content-core">
-      <div tal:define="Batch python:modules['plone.batching'].Batch;
+      <div tal:define="kssClassesView context/@@kss_field_decorator_view;
+                             getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
+							 templateId template/getId;
+	                    Batch python:modules['plone.batching'].Batch;
                        OldBatch python:modules['Products.CMFPlone'].Batch;
                        b_start python:request.get('b_start', 0);
 							  support_view context/@@facnav_support;
@@ -22,7 +26,8 @@
                        results python:view.query(b_start=b_start, custom_query=contentFilter, b_size=limit_display);
                        is_batch python:isinstance(results, Batch) or isinstance(results, OldBatch);
                        batch python:is_batch and results or Batch(results, 40, int(b_start), orphan=2);">
-		  
+					   
+		<div metal:use-macro="context/standard_view/text-field-view" />  
         <div metal:use-macro="context/batch_macros/macros/navigation" />
         
          <tal:entries repeat="brain batch">

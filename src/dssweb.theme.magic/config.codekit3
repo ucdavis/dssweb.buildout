@@ -3737,6 +3737,16 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/dssweb/theme/magic/static/assets/vendor/topbar-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/dssweb/theme/magic/static/assets/vendor/topbar-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/dssweb/theme/magic/static/assets/vendor/topbar.css": {
 		"aP": 1,
 		"bl": 0,
