@@ -2033,7 +2033,14 @@ margin-top:0px;
 		  div#viewlet-above-content {
 		      padding-bottom: 1em;
 		  }
-			  
+		  /* last modified date in footer */
+		  span.documentModified {
+		      float: right;
+		      font-size: 0.8rem;
+		      margin-right: 10%;
+		      color: white;
+			  font-style:italic;
+		  }
 			  
 /* @end */
 
