@@ -356,9 +356,9 @@
 	<!-- document byline* -->
 	<drop css:content="span.documentAuthor" />
 	
-	<append css:theme="#footer" css:content="span.documentModified" />
+	<after css:theme=".foot-wrap" css:content="span.documentModified" />
 	<drop css:content=".documentByLine" />
-
+	
 
       <replace content="//h1[contains(@class,'documentFirstHeading')]">
         <xsl:copy>
