@@ -490,6 +490,10 @@ div.left-panel div.panel-heading.hidden-lg.hidden-md {
      text-align: center;
      border-bottom: none;
  }
+ /*rules for static text middle col */
+ #middle-front-column.narrow-col dl.portletStaticText dd {
+     height: 100%;
+ }
 /* right-column */
 #right-front-column.narrow-col {
 

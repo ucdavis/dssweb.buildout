@@ -229,6 +229,12 @@
 		</rules>
 
 </rules> <!--end front page rules-->
+ 
+<rules css:if-content=".site-yellow-cluster-administration">
+	<drop css:theme="li#uti-contact" />
+	<drop css:theme="li#uti-news" />
+	<drop css:theme="li#uti-events" />
+</rules>
   
   
      <replace css:theme-children="#top-bar-wrap > nav > ul > li.name"
