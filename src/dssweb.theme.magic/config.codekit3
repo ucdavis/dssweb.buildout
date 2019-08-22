@@ -8132,6 +8132,14 @@
 		"oAP": "/dssweb/theme/magic/static/Templates/wireframe.dwt",
 		"oF": 0
 		},
+	"/dssweb/theme/magic/static/ycindex.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/dssweb/theme/magic/static/ycindex.html",
+		"oF": 0
+		},
 	"/dssweb/theme/magic/template_overrides/plone.app.layout.viewlets.colophon.pt": {
 		"cB": 0,
 		"ft": 8192,

@@ -39,6 +39,7 @@
 
 
 	<theme href="t11_calendar.html" css:if-content="body.template-solgemafullcalendar_view" />
+	<theme href="ycindex.html" css:if-content=".template-subsite_view.site-yc-admin" />
 	<!--theme href="t14_search.html" css:if-content=".template-search" /-->
 	<theme href="t17_fullwidth.html" if-not-content='//div[@id="portal-column-two"]' /> 
 	
@@ -229,6 +230,35 @@
 		</rules>
 
 </rules> <!--end front page rules-->
+
+<!--Other sites-->
+<!--yellow cluster front page -->
+
+<rules css:if-content=".template-subsite_view.site-yc-admin" >
+  <drop css:content="#portal-breadcrumbs" />
+  <drop css:content="#subsite-column-4" />
+  <replace css:theme-children="#left-front-column.narrow-col.col1" css:content="#subsite-column-1.column" />
+  
+  <replace css:theme-children="#middle-front-column.narrow-col.col2" css:content="#subsite-column-2.column" />
+   <replace css:theme-children="#right-front-column.narrow-col.col3" css:content="#subsite-column-3.column" />
+   
+   <replace css:theme-children="#left-front-column.narrow-col.col4" css:content="#subsite-column-5.column" />
+  
+   <replace css:theme-children="#middle-front-column.narrow-col.col5" css:content="#subsite-column-6.column" />
+    <replace css:theme-children="#right-front-column.narrow-col.col6" css:content="#subsite-column-7.column" />
+   <!-- fix mobile headings -->
+   <replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.left-panel.bottom1 > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content="#subsite-column-1.column dl dt span:nth-child(2)" />
+   <replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.middle-panel.bottom1 > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content="#subsite-column-2.column dl dt span:nth-child(2)" />
+   <replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.right-panel.bottom1 > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content="#subsite-column-3.column dl dt span:nth-child(2)" />
+   <replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.left-panel.bottom2 > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content-children="#subsite-column-5.column dl dt a" />
+   <replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.middle-panel.bottom2 > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content-children="#subsite-column-6.column dl dt a" />
+   <replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.right-panel.bottom2 > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content="#subsite-column-7.column dl dt span:nth-child(2)" />
+   
+   
+   
+  
+  
+</rules>
  
 <rules css:if-content=".site-yellow-cluster-administration">
 	<drop css:theme="li#uti-contact" />
@@ -261,7 +291,7 @@
 
   
 	   
-  <!--Other sites-->	   
+ 
  
 
 	<!-- Breadcrumbs for all but front page -->
@@ -353,11 +383,13 @@
 		
 		<rules if-not-content="/html/body[contains(@class, 'portaltype-front-page')]">
         <rules if-not-content="/html/body[contains(@class, 'template-facetednavigation_view')]">
+			<rules if-not-content="/html/body[contains(@class, 'template-subsite_view')]">
 			
 		 <replace theme-children='//*[@id="content"]' content-children='//*[@id="content"]' />
 		 <before theme='//*[@id="content"]' content='//*[@id="viewlet-above-content"]'  />
 	   </rules>
 	</rules>
+</rules>
 	
 	<!-- document byline* -->
 	<drop css:content="span.documentAuthor" />
