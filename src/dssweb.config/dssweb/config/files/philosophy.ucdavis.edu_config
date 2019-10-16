@@ -19,6 +19,7 @@ location /eas {deny all; return 404;}
 
 
 location /people/economics { deny all; return 404; }
+location /events/people/index.html {deny all; return 404;}
 location /people/politicalscience { deny all; return 404; }
 location /people/linguistics { deny all; return 404; }
 location /people/sociology { deny all; return 404; }
