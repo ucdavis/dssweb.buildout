@@ -2112,38 +2112,9 @@ margin-top:0px;
 		  .column.row2 .portletStaticText {
 		  	
 		  }
-		  /* hide titles of top row of portlets for yellow cluster */
-		  .ychome .container #above-content #content #content-accordion #bottom-panel-row #content-core .panel .panel-body #left-front-column.narrow-col.col1 dl.portlet dt span{
-			  display:none; }
-			  
-			  
-		   
-		  
-		  .ychome .container #above-content #content #content-accordion #bottom-panel-row #content-core .panel .panel-body #middle-front-column.narrow-col.col2 dl.portlet dt span{
-			  display:none;
+		  .template-course_view img.newsImage {
+		      display: none;
 		  }
-		  .ychome .container #above-content #content #content-accordion #bottom-panel-row #content-core .panel .panel-body #right-front-column.narrow-col.col3 dl.portlet dt span{
-			  display:none;}
-		
-		  .ychome .container #above-content #content #content-accordion #bottom-panel-row #content-core .panel .panel-body #left-front-column.narrow-col dl.portlet dt a, dl.portlet dt a:link {
-			  color:#fff;
-		  }
-	   .ychome .container #above-content #content #content-accordion #bottom-panel-row #content-core .panel .panel-body .narrow-col dl.portlet dd 
-	   {height:auto;}
-	     
-	   .ychome .container #above-content #content #content-accordion #bottom-panel-row #content-core .panel .panel-body .narrow-col dl.portlet dt
-	   {background-color: #E1BB33;
-		   span, a {color:#fff;
-			   padding-left:1em;
-			   font-weight: bold;
-			       text-transform: uppercase;
-			       font-size: 1rem;
-			        text-align:center;}
-	   }
-	   .ychome .container #above-content #content #content-accordion #bottom-panel-row #content-core .panel .panel-body .narrow-col .row2 dl.portlet
-	   {background-color:#F8EECC;}
-	   
-	   .ychome .container #above-content #content #content-accordion #bottom-panel-row #content-core .panel.bottom1 .panel-body .narrow-col dl dd.portletItem {background-color:transparent;}
 		 
 /* @end */
 
