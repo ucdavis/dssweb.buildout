@@ -351,6 +351,14 @@
 		"oAP": "/dssweb/theme/magic/browser/tiled_events.pt",
 		"oF": 0
 		},
+	"/dssweb/theme/magic/browser/tiled_jobmarket.pt": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/dssweb/theme/magic/browser/tiled_jobmarket.pt",
+		"oF": 0
+		},
 	"/dssweb/theme/magic/browser/tiled_people.pt": {
 		"cB": 0,
 		"ft": 8192,

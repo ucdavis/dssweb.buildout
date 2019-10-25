@@ -49,6 +49,13 @@
         template="tiled_people.pt"
         />
     <browser:page
+        name="tiled-jobmarket-listing"
+        class=".unified_view.CollectionUnifiedView"
+        permission="zope2.View"
+        for="plone.app.collection.interfaces.ICollection"
+        template="tiled_jobmarket.pt"
+        />
+    <browser:page
         name="tiled-event-listing"
         class=".unified_view.TopicUnifiedView"
         permission="zope2.View"
