@@ -2115,6 +2115,17 @@ margin-top:0px;
 		  .template-course_view img.newsImage {
 		      display: none;
 		  }
-		 
+		  /*tile view fixes*/
+		  .caption .job {
+		      font-size: 11px !important;
+		      font-size: 0.6875rem !important;
+			  line-height: 1.125rem !important;
+		      font-style: italic;
+		  }
+
+		  .caption p {
+		      padding: 0 !important;
+		      margin: 0 !important;
+		  }
 /* @end */
 
