@@ -46,7 +46,7 @@ location /people/affiliated-faculty-science-and-technology-studies { deny all; r
 location /people/affilated-faculty-in-linguistics { deny all; return 404; }
 location /people/affilated-faculty-in-cognitive-science { deny all; return 404; }
 location /people/cognitive-science { deny all; return 404; }
-llocation /people/jfadams { deny all; return 404; }
+location /people/jfadams { deny all; return 404; }
 location /people/calgara { deny all; return 404; }
 location /people/galonso2 { deny all; return 404; }
 location /people/samlani { deny all; return 404; }
