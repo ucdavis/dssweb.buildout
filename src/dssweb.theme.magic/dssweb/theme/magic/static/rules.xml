@@ -440,7 +440,6 @@
 				 
 			
 
-
 		 
 			   
 		   <!-- two collumn page -->
@@ -544,8 +543,16 @@
    
 	 
 		<!-- mobile front bar titles, aka quickfacts -->
+		<rules css:if-content=".left-front-column.static">
+			<replace css:theme-children="div.panel.left-panel > div.panel-heading.hidden-lg.hidden-md h4 a" css:content=".left-front-column.static dl dt span a.tile" />
+		</rules>
 		<replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.left-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content=".left-front-column > dl > dt > a > span" css:if-content=".left-front-column" />
+	
+		   
 		<replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.middle-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content=".middle-front-column > dl > dt > a > span" css:if-content=".middle-front-column" />
+		
+		<!-- mobile static -->
+		
 		
 		
 	 <!--addthis-->

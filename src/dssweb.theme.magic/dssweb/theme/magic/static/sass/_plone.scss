@@ -1551,8 +1551,23 @@ body.template-facetednavigation_view div#main-container.container div#content di
      width: 70px;
 	 }
  }
+ /*solgema event popup window */
  
-  /* person tiles - collection view */
+	 #event_edit_container #content div {
+	     width: 120%;
+	 }
+	 #event_edit_container #content div h3 {
+	     text-transform: none;
+	     font-weight: 600;
+	     letter-spacing: .05em !important;
+	 }
+	 
+@media screen and (max-width:767px){
+	.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.ui-draggable.ui-resizable {
+		width:100% !important;
+	}
+}  
+/* person tiles - collection view */
   
     .genericTile {
         padding-left: 0;
@@ -2127,5 +2142,40 @@ margin-top:0px;
 		      padding: 0 !important;
 		      margin: 0 !important;
 		  }
+		  #left-front-column .portletStaticText dt span a.tile {
+		      color: #333;
+		      text-transform: none;
+		      letter-spacing: normal;
+		      font-weight: normal;
+		      font-size: 1.5rem !important;
+		      padding-bottom: 10px;
+		      text-align: center;
+		      border-bottom: none;
+		  }
+		  .portlet-static-apply dd.portletItem {
+			  background-color: #008EAA;
+			  border: solid 4px #008EAA;
+			  color:#fff;
+			  height: 100% !important;
+			  padding-bottom: 0;
+			  border-radius: 16px;
+			  -webkit-transition-duration: 0.4s; /* Safari */
+			    transition-duration: 0.4s;
+				
+
+			  :hover {
+			    background-color: #fff; /* Green */
+			    color: #000;
+  			  height: 100% !important;
+			  margin-top:4px;
+			  margin-bottom:4px !important;
+  			  border-radius: 16px;
+			  
+				
+			 
+		  }
+	  }
+		  	
+		  
 /* @end */
 
