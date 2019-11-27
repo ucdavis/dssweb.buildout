@@ -1551,10 +1551,17 @@ body.template-facetednavigation_view div#main-container.container div#content di
      width: 70px;
 	 }
  }
+ /* portlet h2 content on front page */
+ @media screen and (max-width:$screen-xs-max){
+	 dd.portletItem h2 {
+		 display:block !important;
+	 }
+ }
+
  /*solgema event popup window */
  
 	 #event_edit_container #content div {
-	     width: 120%;
+	     width: 100% !important;
 	 }
 	 #event_edit_container #content div h3 {
 	     text-transform: none;
@@ -2175,7 +2182,11 @@ margin-top:0px;
 			 
 		  }
 	  }
-		  	
+	  .spiffy-button {
+		  font-size: 1.25rem !important;
+		  color:#fff !important;
+		  text-decoration:none !important;
+	  } 	
 		  
 /* @end */
 

@@ -544,7 +544,10 @@
 	 
 		<!-- mobile front bar titles, aka quickfacts -->
 		<rules css:if-content=".left-front-column.static">
-			<replace css:theme-children="div.panel.left-panel > div.panel-heading.hidden-lg.hidden-md h4 a" css:content=".left-front-column.static dl dt span a.tile" />
+			<replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.left-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content-children=".left-front-column.static > dl > dt > span:nth-child(2) > a"/>
+			<!--replace css:theme-children="#content-core .left-panel panel-heading.hidden-lg. h4 a" css:content-children=".left-front-column.static dl dt span a"  /-->
+			<!--replace theme-children="//*[@id='content-core']/div[1]/div[1]/h4/a[1]" content-children="//*[@id='portletwrapper-706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f4453532d4d61737465722f6d696e64627261696e2f646973636f7665722d7468652d63656e7465722d666f722d6d696e642d616e642d627261696e0a6170706c79']/dl/dt/span[2]/a" /-->
+			
 		</rules>
 		<replace css:theme-children="#content-core > div.panel.panel-default.bottom-panel.left-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content=".left-front-column > dl > dt > a > span" css:if-content=".left-front-column" />
 	
