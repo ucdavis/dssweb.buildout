@@ -90,12 +90,17 @@
      <drop css:content="dd.portletFooter"/>
 	 
 	
-	 <rules css:if-content=".portlet-static-alert-banner">
-		<before css:theme="#middle-row" css:content=".portlet-static-alert-banner" css:if-content="body.portaltype-front-page" />
-	</rules>
-		
+	
   
   </rules>
+  
+	 <rules css:if-content=".portlet-static-alert-banner">
+		<before css:theme="#middle-row" css:content=".portlet-static-alert-banner" css:if-content="body.portaltype-front-page" />
+		<after css:theme="#top-bar-wrap" css:content=".portlet-static-alert-banner" css:if-not-content="body.portaltype-front-page" />
+		<!--before css:theme="#content-row" css:content=".portlet-static-alert-banner" css:if-not-content="body.portaltype-front-page" /-->
+		<after css:theme="#top-bar-wrap" css:content=".portlet-static-alert-banner" css:if-content=".template-facetednavigation_view" />
+	
+</rules>
   <!--colors for people portlets -->
   <rules css:if-content="dd.doormatSectionBody div.economics">
     <rules if-path="/people">
@@ -414,8 +419,7 @@
 		<!--views -->
 		
 		<!--portlets -->
-
-		 <replace css:theme="div.portlet" css:content-children="div#portal-column-two" />	
+		 <replace css:theme="div.portlet" css:content-children="div#portal-column-two" /> 
 		 
 		 	 <!-- People Page Faceted Nav -->
    	   <!--Person directory Page Faceted Nav T2 -->
