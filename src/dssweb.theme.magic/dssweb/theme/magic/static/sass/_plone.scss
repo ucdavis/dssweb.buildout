@@ -2186,7 +2186,21 @@ margin-top:0px;
 		  font-size: 1.25rem !important;
 		  color:#fff !important;
 		  text-decoration:none !important;
-	  } 	
+	  } 
+	  /* alert-banner */
+	  
+	  portlet.portletStaticText.portlet-static-alert-banner {
+		  margin-top: 15px;
+	  }
+	  
+    .portlet.portletStaticText.portlet-static-alert-banner dd {
+    background-color: #e6a65d;
+    border: 1px solid #C6007E;
+}
+    .portlet.portletStaticText.portlet-static-alert-banner dt {
+    	display:none;
+    }
+	   
 		  
 /* @end */
 

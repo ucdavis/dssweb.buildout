@@ -89,6 +89,11 @@
      <drop css:content="dd.portlet-footer" />
      <drop css:content="dd.portletFooter"/>
 	 
+	
+	 <rules css:if-content=".portlet-static-alert-banner">
+		<before css:theme="#middle-row" css:content=".portlet-static-alert-banner" css:if-content="body.portaltype-front-page" />
+	</rules>
+		
   
   </rules>
   <!--colors for people portlets -->
