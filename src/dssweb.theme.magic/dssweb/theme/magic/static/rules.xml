@@ -576,7 +576,22 @@
 	  <!--after css:theme="div.foot-wrap" css:content="#portal-personaltools-wrapper" /-->
 	  <!-- disabled because of siteimprove checking -->
 	  <!--Analytics-->
+	  
+	  
 	  <!-- Global site tag (gtag.js) - Google Analytics -->
+	  <before css:theme-childres="html head" css:if-content="body.site-cogsci">
+	  <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-1958864-34"></script>
+	  <script>
+	    window.dataLayer = window.dataLayer || [];
+	    function gtag(){dataLayer.push(arguments);}
+	    gtag('js', new Date());
+
+	    gtag('config', 'UA-1958864-34');
+	  </script>
+  </before>
+	  
+	  
+	  
 	  <before css:theme-childres="html head" css:if-content="body.site-hia">
 	  <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-1958864-22"></script>
 	  <script>
