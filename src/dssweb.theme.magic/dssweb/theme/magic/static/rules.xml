@@ -98,7 +98,7 @@
 		<before css:theme="#middle-row" css:content=".portlet-static-alert-banner" css:if-content="body.portaltype-front-page" />
 		<after css:theme="#top-bar-wrap" css:content=".portlet-static-alert-banner" css:if-not-content="body.portaltype-front-page" />
 		<!--before css:theme="#content-row" css:content=".portlet-static-alert-banner" css:if-not-content="body.portaltype-front-page" /-->
-		<after css:theme="#top-bar-wrap" css:content=".portlet-static-alert-banner" css:if-content=".template-facetednavigation_view" />
+		
 	
 </rules>
   <!--colors for people portlets -->
