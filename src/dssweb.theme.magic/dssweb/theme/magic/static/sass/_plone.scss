@@ -2200,6 +2200,9 @@ margin-top:0px;
     .portlet.portletStaticText.portlet-static-alert-banner dt {
     	display:none;
     }
+	.portletStaticText.portlet-static-alert-banner dd a {
+		font-size: inherit;
+	}
 	   
 		  
 /* @end */
