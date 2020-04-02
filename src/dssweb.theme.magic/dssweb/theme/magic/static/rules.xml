@@ -60,8 +60,8 @@
 	  <!--drop theme="/html/head/link" />
 	  <drop theme="/html/head/style" /-->
 
-	  <!-- Pull in Plone CSS -->
-	  <!--after theme-children="/html/head" content="/html/head/link | /html/head/style" /-->
+	  <!-- Pull in PloneCustom CSS -->
+	  <after theme-children="/html/head" css:content="head link[href*='ploneCustom']" />
 	   
 	  <!-- drop theme Javascript -->
 	  <!--drop theme="/html/body/script" /-->

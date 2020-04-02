@@ -2204,6 +2204,10 @@ margin-top:0px;
 		font-size: inherit;
 	}
 	   
+	/*hide lead imag on collections */
+.portaltype-collection .newsImageContainer {
+	display:none;
+}
 		  
 /* @end */
 
