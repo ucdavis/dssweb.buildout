@@ -45,3 +45,4 @@ location /people/affiliated-faculty-science-and-technology-studies { deny all; r
 location /people/affilated-faculty-in-linguistics { deny all; return 404; }
 location /people/affilated-faculty-in-cognitive-science { deny all; return 404; }
 location /people/cognitive-science { deny all; return 404; }
+location /people/lcsaco {deny all; return 404; }

@@ -553,3 +553,4 @@ location /people/shainawestern { deny all; return 404; }
 location /people/seanwill { deny all; return 404; }
 location /people/leyou { deny all; return 404; }
 location /people/shubi17 { deny all; return 404; }
+location /people/lcsaco {deny all; return 404; }

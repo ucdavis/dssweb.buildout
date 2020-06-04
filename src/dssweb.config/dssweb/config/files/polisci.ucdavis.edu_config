@@ -94,4 +94,5 @@ location /people/mjmiller {
 			return 404;
 			}
 
+location /people/lcsaco {deny all; return 404; }
 

@@ -683,3 +683,5 @@ location /people/staff-specialties/green-cluster-staff {deny all; return 404;}
  location /people/zxlin { deny all; }
 location /people/jfadams { deny all; } 
 location /people/econjim { deny all; }
+location /people/lcsaco {deny all; return 404; }
+
