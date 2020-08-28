@@ -7,7 +7,7 @@
 		"uuidString": "A5A78F16-2CFD-49D2-B812-32E9B9913FEB"
 		}
 	],
-"creatorBuild": "31927",
+"creatorBuild": "32186",
 "files": {
 	"/.gitignore": {
 		"cB": 0,
@@ -26,7 +26,9 @@
 		"oF": 0
 		},
 	"/config.rb": {
-		"ft": 131072,
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/config.rb",
 		"oF": 0
@@ -6385,586 +6387,586 @@
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/dssweb/theme/magic/static/assets/foundation.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/_functions.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_functions.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/_settings.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_settings.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_accordion.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_accordion.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_alert-boxes.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_alert-boxes.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_block-grid.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_block-grid.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_breadcrumbs.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_breadcrumbs.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_button-groups.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_button-groups.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_buttons.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_buttons.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_clearing.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_clearing.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_dropdown-buttons.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_dropdown-buttons.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_dropdown.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_dropdown.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_flex-video.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_flex-video.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_forms.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_forms.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_global.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_global.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_grid.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_grid.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_icon-bar.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_icon-bar.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_iconbar.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_iconbar.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_inline-lists.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_inline-lists.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_joyride.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_joyride.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_keystrokes.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_keystrokes.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_labels.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_labels.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_magellan.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_magellan.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_offcanvas.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_offcanvas.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_orbit.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_orbit.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_pagination.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_pagination.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_panels.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_panels.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_pricing-tables.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_pricing-tables.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_progress-bars.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_progress-bars.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_range-slider.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_range-slider.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_reveal-new.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_reveal-new.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_reveal.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_reveal.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_side-nav.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_side-nav.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_split-buttons.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_split-buttons.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_sub-nav.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_sub-nav.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_switches.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_switches.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_tables.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_tables.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_tabs.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_tabs.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_thumbs.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_thumbs.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_toolbar.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_toolbar.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_tooltips.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_tooltips.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_top-bar.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_top-bar.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_type.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_type.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/foundation/components/_visibility.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_visibility.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/foundation/scss/normalize.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/dssweb/theme/magic/static/assets/normalize.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/js/jquery.cf.main.js": {
 		"bF": 0,
@@ -7136,807 +7138,807 @@
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_collective.js.custom.jquerymin.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/_departmentcolors.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_departmentcolors.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/_faceted.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_faceted.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/_forms.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_forms.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/_fullcalendar.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_fullcalendar.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/_fullcalendarorig.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_fullcalendarorig.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/_mega.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_mega.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/_plone.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_plone.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/_print.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_print.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/_printold.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_printold.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/_search.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_search.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/_theme.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_theme.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/_ucd-variables.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_ucd-variables.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/_variables.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_variables.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/abstractions/_mixins.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_mixins.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/abstractions/_placeholders.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_placeholders.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/components/_banners.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_banners.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/components/_facetted-form.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_facetted-form.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/components/_icons.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_icons.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/components/_navigation.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_navigation.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/components/_pager.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_pager.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/components/_rwd-tables.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_rwd-tables.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/components/_search.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_search.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/components/_tiled-events.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_tiled-events.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/components/_tiled-labs.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_tiled-labs.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/components/blocks/_block.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_block.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/components/blocks/_portlet.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_portlet.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/components/calendar.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/dssweb/theme/magic/static/assets/calendar.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/components/chart.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/dssweb/theme/magic/static/assets/chart.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/components/typography/_typography-normal.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_typography-normal.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/components/typography/_typography.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_typography.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/global.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/dssweb/theme/magic/static/assets/global.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/sections/_plonetables.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_plonetables.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/sections/about.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/dssweb/theme/magic/static/assets/about.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/sections/bio.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/dssweb/theme/magic/static/assets/bio.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/sections/event.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/dssweb/theme/magic/static/assets/event.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/sections/index.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/dssweb/theme/magic/static/assets/index.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/sections/jqx.base.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/dssweb/theme/magic/static/assets/jqx.base.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/sections/ourpeople.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/dssweb/theme/magic/static/assets/ourpeople.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/sections/publications.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/dssweb/theme/magic/static/assets/publications.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/sections/tables.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/dssweb/theme/magic/static/assets/tables.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/styles.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/dssweb/theme/magic/static/assets/styles.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/sub-org.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/dssweb/theme/magic/static/assets/sub-org.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/vendor/_bootstrap-override-variables.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_bootstrap-override-variables.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/vendor/_bootstrap_overrides.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_bootstrap_overrides.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/vendor/bootstrap.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/bootstrap.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/vendor/bootstrap/_component-animations.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_component-animations.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/vendor/bootstrap/_grid.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_grid.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/vendor/bootstrap/_mixins.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_mixins.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/vendor/bootstrap/_modals.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_modals.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/vendor/bootstrap/_panels.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_panels.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/vendor/bootstrap/_responsive-utilities.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_responsive-utilities.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/vendor/bootstrap/_utilities.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_utilities.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/vendor/bootstrap/_variables.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_variables.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/vendor/bootstrap/mixins/_center-block.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_center-block.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/vendor/bootstrap/mixins/_clearfix.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_clearfix.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/vendor/bootstrap/mixins/_grid-framework.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_grid-framework.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/vendor/bootstrap/mixins/_grid.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_grid.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/vendor/bootstrap/mixins/_hide-text.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_hide-text.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/vendor/bootstrap/mixins/_panels.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_panels.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/vendor/bootstrap/mixins/_responsive-visibility.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/dssweb/theme/magic/static/assets/_responsive-visibility.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/sass/vendor/jquery.cf.happybox.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 1,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/dssweb/theme/magic/static/assets/jquery.cf.happybox.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/dssweb/theme/magic/static/t10_graduate_students.html": {
 		"cB": 0,
@@ -8732,6 +8734,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"default-case-last": {
+			"active": 0,
+			"optionString": ""
+			},
 		"default-param-last": {
 			"active": 0,
 			"optionString": ""
@@ -8787,6 +8793,10 @@
 		"global-require": {
 			"active": 0,
 			"optionString": ""
+			},
+		"grouped-accessor-pairs": {
+			"active": 0,
+			"optionString": "'anyOrder'"
 			},
 		"guard-for-in": {
 			"active": 0,
@@ -8964,6 +8974,10 @@
 			"active": 1,
 			"optionString": "{'checkLoops': true}"
 			},
+		"no-constructor-return": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-continue": {
 			"active": 0,
 			"optionString": ""
@@ -8989,6 +9003,10 @@
 			"optionString": ""
 			},
 		"no-dupe-class-members": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-dupe-else-if": {
 			"active": 1,
 			"optionString": ""
 			},
@@ -9132,6 +9150,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"no-loss-of-precision": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-magic-numbers": {
 			"active": 0,
 			"optionString": "{'ignore': [], 'ignoreArrayIndexes': true, 'enforceConst': false, 'detectObjects': false}"
@@ -9248,6 +9270,10 @@
 			"active": 1,
 			"optionString": ""
 			},
+		"no-restricted-exports": {
+			"active": 0,
+			"optionString": "{'restrictedNamedExports': []}"
+			},
 		"no-restricted-globals": {
 			"active": 0,
 			"optionString": "'event', 'fdescribe'"
@@ -9290,6 +9316,10 @@
 			},
 		"no-sequences": {
 			"active": 0,
+			"optionString": ""
+			},
+		"no-setter-return": {
+			"active": 1,
 			"optionString": ""
 			},
 		"no-shadow": {
@@ -9387,6 +9417,10 @@
 		"no-use-before-define": {
 			"active": 0,
 			"optionString": "{'functions': true, 'classes': true, 'variables': true}"
+			},
+		"no-useless-backreference": {
+			"active": 0,
+			"optionString": ""
 			},
 		"no-useless-call": {
 			"active": 0,
@@ -9495,6 +9529,10 @@
 		"prefer-destructuring": {
 			"active": 0,
 			"optionString": "{'array': true, 'object': true}, {'enforceForRenamedProperties': false}"
+			},
+		"prefer-exponentiation-operator": {
+			"active": 0,
+			"optionString": ""
 			},
 		"prefer-named-capture-group": {
 			"active": 0,
@@ -10124,7 +10162,6 @@
 		"autoOutputPathStyle": 0,
 		"createSourceMap": 1,
 		"enableJavascript": 0,
-		"ieCompatibility": 1,
 		"mathStyle": 0,
 		"outputStyle": 0,
 		"rewriteURLStyle": 0,
@@ -10193,13 +10230,13 @@
 		"autoOutputPathReplace1": "sass",
 		"autoOutputPathReplace2": "css",
 		"autoOutputPathStyle": 0,
+		"compilerType": 1,
 		"createSourceMap": 0,
-		"debugStyle": 1,
 		"decimalPrecision": 10,
+		"emitCharset": 1,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
-		"shouldRunBless": 0,
-		"useLibsass": 1
+		"shouldRunBless": 0
 		},
 	"languageDefaultsSLIM": {
 		"autoOutputAction": 0,

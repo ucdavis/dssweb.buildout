@@ -175,7 +175,15 @@
 		css:content=".front-page-news"
 		css:theme="#container-1 > div > div > div.bcontroller > a"  />
 	</rules>
-
+        <!-- About Happy box History -->
+		<rules css:if-content=".site-history">
+			<rules css:if-content=".front-page-publications">
+				<replace css:theme-children="#container-2 > div > div.narrow-col h2" css:content=".front-page-publications > dl > dt > span:nth-child(2) > a" />
+					<copy css:content=".front-page-publications > dl > dd" css:theme="#container-2 > div > div > div.content-wrap" />
+					<copy attributes="href" css:content=".front-page-publications > dl > dt > span > a" css:theme="#container-2 > div > div > div.bcontroller > a" />
+					<merge attributes="class" css:content=".front-page-publications" css:theme="#container-2 > div > div > div.bcontroller > a" />
+				   </rules>
+			   </rules>
 		<!--  About Happy Box -->
 		<rules css:if-content="div.front-page-about">
 		<replace css:theme-children="#container-2 > div > div.narrow-col h2" css:content=".front-page-about > dl > dt > span:nth-child(2) > a" />
@@ -183,6 +191,8 @@
 		<copy attributes="href" css:content=".front-page-about > dl > dt > span > a" css:theme="#container-2 > div > div > div.bcontroller > a" />
 		<merge attributes="class" css:content=".front-page-about" css:theme="#container-2 > div > div > div.bcontroller > a" />
 	   </rules>
+	   
+	   
 	   
 
 		<!-- events aka happy box static-->
