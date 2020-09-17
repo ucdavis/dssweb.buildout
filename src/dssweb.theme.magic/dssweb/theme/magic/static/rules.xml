@@ -93,14 +93,22 @@
 	
   
   </rules>
+  <rules css:if-content=".alert-banner">
+	  <before css:theme-children="#middle-row" css:content=".alert-banner" css:if-content="body.portaltype-front-page"/>
+	  <before css:theme-children="#content-row" css:content=".alert-banner" css:if-not-content="body.portaltype-front-page"/>
+  </rules>
   
-	 <rules css:if-content=".portlet-static-alert-banner">
+	 <!--rules css:if-content=".portlet-static-alert-banner">
 		<before css:theme="#middle-row" css:content=".portlet-static-alert-banner" css:if-content="body.portaltype-front-page" />
 		<after css:theme="#top-bar-wrap" css:content=".portlet-static-alert-banner" css:if-not-content="body.portaltype-front-page" />
-		<!--before css:theme="#content-row" css:content=".portlet-static-alert-banner" css:if-not-content="body.portaltype-front-page" /-->
-		
 	
-</rules>
+		
+		
+</rules-->
+<!--rules css:if-content=".portlet-static-alert-banner-blue">
+<before css:theme="#middle-row" css:content=".portlet-static-alert-banner-blue" css:if-content="body.portaltype-front-page" />
+<after css:theme="#top-bar-wrap" css:content=".portlet-static-alert-banner-blue" css:if-not-content="body.portaltype-front-page" />
+</rules-->
   <!--colors for people portlets -->
   <rules css:if-content="dd.doormatSectionBody div.economics">
     <rules if-path="/people">
