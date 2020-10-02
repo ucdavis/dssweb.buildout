@@ -148,3 +148,13 @@ location /people/shainawestern { deny all; return 404; }
 location /people/seanwill { deny all; return 404; }
 location /people/leyou { deny all; return 404; }
 location /people/shubi17 { deny all; return 404; }
+location people/lrbrandt {deny all; return 404; }
+location people/sadafban {deny all; return 404; }
+location people/ngonzal2 {deny all; return 404; }
+location people/agrompon {deny all; return 404; }
+location people/csmanley {deny all; return 404; }
+location people/dpmorale {deny all; return 404; }
+location people/jtochoa {deny all; return 404; }
+location people/tpastis {deny all; return 404; }
+location people/yzhan01 {deny all; return 404; }
+location people/sunnyyan {deny all; return 404; }
