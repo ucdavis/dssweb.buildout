@@ -606,7 +606,7 @@
 	  
 	  
 	  <!-- Global site tag (gtag.js) - Google Analytics -->
-	  <before css:theme-childres="html head" css:if-content="body.site-cogsci">
+	  <before css:theme-children="html head" css:if-content="body.site-cogsci">
 	  <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-1958864-34"></script>
 	  <script>
 	    window.dataLayer = window.dataLayer || [];
@@ -619,28 +619,6 @@
 	  
 	  
 	  
-	  <before css:theme-childres="html head" css:if-content="body.site-hia">
-	  <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-1958864-22"></script>
-	  <script>
-	    window.dataLayer = window.dataLayer || [];
-	    function gtag(){dataLayer.push(arguments);}
-	    gtag('js', new Date());
-
-	    gtag('config', 'UA-1958864-22');
-	  </script>
-  </before>
-  <before css:theme-childres="html head" css:if-content="body.site-eastasian">
-	  <!-- Global site tag (gtag.js) - Google Analytics -->
-	  <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-1958864-23"></script>
-	  <script>
-	    window.dataLayer = window.dataLayer || [];
-	    function gtag(){dataLayer.push(arguments);}
-	    gtag('js', new Date());
-
-	    gtag('config', 'UA-1958864-23');
-	  </script>
-  
-</before>
 	  
 	  <before css:theme-children="html head" css:if-content="body.site-psychology" >
 		  
