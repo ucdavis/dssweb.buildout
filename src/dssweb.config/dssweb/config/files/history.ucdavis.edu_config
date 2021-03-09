@@ -49,639 +49,639 @@ location /people/staff-specialties/green-cluster-staff {deny all; return 404;}
 
 
 
- location /people/abeckner { deny all; } 
- location /people/aboik { deny all; }
- location /people/aborders { deny all; } 
- location /people/abrezaee { deny all; }
- location /people/acarvajal { deny all; }
- location /people/acskwara { deny all; } 
- location /people/addunlea { deny all; } 
- location /people/adrien { deny all; } 
- location /people/aeguyer { deny all; } 
- location /people/afarrar { deny all; } 
- location /people/agnmarti { deny all; } 
- location /people/agold { deny all; } 
- location /people/agschwar { deny all; } 
- location /people/agushue { deny all; } 
- location /people/ahamidi { deny all; } 
- location /people/ahines { deny all; }
- location /people/ahosek { deny all; } 
- location /people/ahsteven { deny all; }
- location /people/aignat { deny all; }
- location /people/ajgillis { deny all; } 
- location /people/ajgroth { deny all; } 
- location /people/ajpadova { deny all; }
- location /people/akiras { deny all; }
- location /people/aksticke { deny all; } 
- location /people/alavine { deny all; } 
- location /people/alazne { deny all; } 
- location /people/ali/ { deny all; }
- location /people/amang { deny all; } 
- location /people/amarek { deny all; }
- location /people/amccull { deny all; } 
- location /people/aml { deny all; } 
- location /people/amrivers { deny all; } 
- location /people/ams415 { deny all; } 
- location /people/amseelke { deny all; } 
- location /people/amsimmon { deny all; } 
- location /people/amtaylor { deny all; }
- location /people/andreytomash { deny all; } 
- location /people/aney { deny all; } 
- location /people/angelana { deny all; } 
- location /people/anorman { deny all; } 
- location /people/ant0nia { deny all; } 
- location /people/antovich { deny all; } 
- location /people/apshreve { deny all; } 
- location /people/arblaloc { deny all; } 
- location /people/arian { deny all; }
- location /people/aroyston { deny all; } 
- location /people/askessle { deny all; } 
- location /people/askoll { deny all; } 
- location /people/askowalc { deny all; } 
- location /people/askunz { deny all; } 
- location /people/atherto1 { deny all; } 
- location /people/azanesco { deny all; } 
- location /people/bballis { deny all; }
- location /people/bbigger { deny all; } 
- location /people/bentrinh { deny all; } 
- location /people/bergin { deny all; }
- location /people/bfeng { deny all; } 
- location /people/bgking { deny all; } 
- location /people/bhighton { deny all; } 
- location /people/bitler { deny all; }
- location /people/bkhurley { deny all; } 
- location /people/bkinne { deny all; } 
- location /people/bkolarik { deny all; } 
- location /people/blissmor { deny all; } 
- location /people/blpiper { deny all; } 
- location /people/bmcgee { deny all; } 
- location /people/bmk { deny all; } 
- location /people/bmodjtah { deny all; }
- location /people/bousquet { deny all; } 
- location /people/boydstun { deny all; } 
- location /people/briclark { deny all; } 
- location /people/brinatti { deny all; }
- location /people/brothert { deny all; } 
- location /people/bsjjones { deny all; } 
- location /people/bstankev { deny all; } 
- location /people/btrainor { deny all; } 
- location /people/bushnell { deny all; }
- location /people/bwiltgen { deny all; } 
- location /people/bwyazel { deny all; } 
- location /people/cacoughl { deny all; } 
- location /people/caillaud { deny all; } 
- location /people/caitmcca { deny all; } 
- location /people/calexopo { deny all; } 
- location /people/calgara { deny all; } 
- location /people/carlisnb { deny all; } 
- location /people/carlyl { deny all; } 
- location /people/ccahill { deny all; } 
- location /people/ccameron { deny all; }
- location /people/cclee { deny all; } 
- location /people/cdhare { deny all; } 
- location /people/cdinh { deny all; }
- location /people/cepeacoc { deny all; } 
- location /people/ceth { deny all; } 
- location /people/cfassben { deny all; } 
- location /people/cfsaez { deny all; }
- location /people/cghealow { deny all; } 
- location /people/cgiordan { deny all; } 
- location /people/challiwell { deny all; }
- location /people/charan { deny all; } 
- location /people/chole { deny all; } 
- location /people/chouck { deny all; } 
- location /people/chrishallenbrook { deny all; } 
- location /people/chuangfu { deny all; }
- location /people/cjclayto { deny all; } 
- location /people/clboudre { deny all; } 
- location /people/cmllee { deny all; }
- location /people/cmm { deny all; }
- location /people/cmuth { deny all; } 
- location /people/cnmli { deny all; }
- location /people/corina { deny all; } 
- location /people/cpdonnel { deny all; } 
- location /people/cpickett { deny all; } 
- location /people/cpj20 { deny all; }
- location /people/cpuck { deny all; } 
- location /people/crbelden { deny all; } 
- location /people/crcasell { deny all; } 
- location /people/crofoot { deny all; } 
- location /people/crrogers { deny all; } 
- location /people/cservin { deny all; } 
- location /people/csr { deny all; }
- location /people/cuhuh { deny all; } 
- location /people/cuishen { deny all; } 
- location /people/cvdwerf { deny all; }
- location /people/cytsai { deny all; }
- location /people/dakyungs { deny all; }
- location /people/dalley { deny all; } 
- location /people/dannorton { deny all; } 
- location /people/dapopov { deny all; }
- location /people/datapiaj { deny all; } 
- location /people/dbederi { deny all; } 
- location /people/dbracken { deny all; } 
- location /people/dcingel { deny all; } 
- location /people/dcopp { deny all; } 
- location /people/dfdantas { deny all; } 
- location /people/dfox { deny all; } 
- location /people/dgweissm { deny all; } 
- location /people/djcarlos { deny all; }
- location /people/dldonham { deny all; } 
- location /people/dlsacchi { deny all; } 
- location /people/dlwoods { deny all; } 
- location /people/drdebba { deny all; } 
- location /people/drjtang { deny all; }
- location /people/drury { deny all; }
- location /people/dselmecz { deny all; } 
- location /people/dshanske { deny all; } 
- location /people/dsrapson { deny all; }
- location /people/dsstest { deny all; } 
- location /people/dstimel { deny all; }
- location /people/dstolzen { deny all; } 
- location /people/dswenson { deny all; }
- location /people/dumit { deny all; } 
- location /people/eafrenke { deny all; }
- location /people/eaisham { deny all; } 
- location /people/eastwick { deny all; } 
- location /people/eboorman { deny all; } 
- location /people/ebshear { deny all; } 
- location /people/ecoliao { deny all; }
- location /people/ecwright { deny all; } 
- location /people/efeilich { deny all; }
- location /people/eferrer { deny all; } 
- location /people/efourie { deny all; } 
- location /people/egcostan { deny all; } 
- location /people/egjohnso { deny all; } 
- location /people/ehembach { deny all; } 
- location /people/ejbeier { deny all; } 
- location /people/ejkrohn { deny all; }
- location /people/ekose { deny all; }
- location /people/ekstrom { deny all; } 
- location /people/elkinnal { deny all; } 
- location /people/emfreed { deny all; } 
- location /people/emlandry { deny all; } 
- location /people/emrard { deny all; } 
- location /people/emschepe { deny all; } 
- location /people/emuehleg { deny all; }
- location /people/engstrom { deny all; } 
- location /people/erowen { deny all; } 
- location /people/esandlin { deny all; } 
- location /people/esievers { deny all; } 
- location /people/everde { deny all; } 
- location /people/evolkov { deny all; }
- location /people/ezgikurt { deny all; }
- location /people/faaviles { deny all; }
- location /people/fabiodcl { deny all; } 
- location /people/fanda { deny all; } 
- location /people/fanlu22 { deny all; } 
- location /people/fbacigal { deny all; } 
- location /people/fdrogers { deny all; } 
- location /people/fferreir { deny all; } 
- location /people/ffviola { deny all; }
- location /people/finklk { deny all; } 
- location /people/fogunkoy { deny all; } 
- location /people/fzandrew { deny all; } 
- location /people/fzberger { deny all; } 
- location /people/fzberm { deny all; } 
- location /people/fzborger { deny all; } 
- location /people/fzcapit { deny all; } 
- location /people/fzfeens { deny all; }
- location /people/fzgoodmn { deny all; } 
- location /people/fzjoseph { deny all; } 
- location /people/fzlinder { deny all; }
- location /people/fzlong { deny all; } 
- location /people/fzmoney { deny all; } 
- location /people/fzmotley { deny all; } 
- location /people/fzolmstd { deny all; }
- location /people/fzquinzi { deny all; }
- location /people/fzshaver { deny all; } 
- location /people/fzshef { deny all; }
- location /people/fzsimon { deny all; } 
- location /people/fzwandes { deny all; } 
- location /people/fzwoo { deny all; }
- location /people/fzyoneli { deny all; } 
- location /people/gaspelin { deny all; } 
- location /people/gbarnett { deny all; } 
- location /people/gbasante { deny all; }
- location /people/gbonanno { deny all; }
- location /people/gelardik { deny all; } 
- location /people/gentok { deny all; } 
- location /people/georgesh { deny all; } 
- location /people/geromich { deny all; }
- location /people/ghrecanz { deny all; } 
- location /people/ghwolff { deny all; } 
- location /people/gilmore { deny all; } 
- location /people/gj { deny all; } 
- location /people/gmherek { deny all; } 
- location /people/gmineom { deny all; } 
- location /people/goldfarb { deny all; } 
- location /people/gotgent { deny all; } 
- location /people/gperi { deny all; }
- location /people/graffh { deny all; } 
- location /people/grbene { deny all; } 
- location /people/grelewij { deny all; }
- location /people/gschnorr { deny all; }
- location /people/gshields { deny all; } 
- location /people/gybae { deny all; } 
- location /people/hangzhou { deny all; }
- location /people/hanhe { deny all; }
- location /people/hannah83 { deny all; } 
- location /people/hanqee { deny all; }
- location /people/harris94 { deny all; } 
- location /people/hc1116 { deny all; }
- location /people/hesmithj { deny all; } 
- location /people/hheather { deny all; } 
- location /people/hilbert { deny all; } 
- location /people/hjkramer { deny all; } 
- location /people/hknike20 { deny all; } 
- location /people/hochi176 { deny all; } 
- location /people/hossom87 { deny all; } 
- location /people/hostinar { deny all; } 
- location /people/hoverstl { deny all; } 
- location /people/hpshen { deny all; }
- location /people/hrrees { deny all; } 
- location /people/hrzucker { deny all; } 
- location /people/hseitani { deny all; }
- location /people/htohid { deny all; } 
- location /people/huckfeld { deny all; } 
- location /people/hueyli { deny all; } 
- location /people/hwilliams { deny all; } 
- location /people/hyokjung { deny all; }
- location /people/hyperz { deny all; } 
- location /people/hyun1889 { deny all; } 
- location /people/ibahceci { deny all; } 
- location /people/idkim { deny all; } 
- location /people/ihale { deny all; } 
- location /people/ihcho { deny all; }
- location /people/ika { deny all; } 
- location /people/inhoff { deny all; } 
- location /people/innoshu { deny all; }
- location /people/ireenlz { deny all; } 
- location /people/iscchen { deny all; } 
- location /people/iserlon { deny all; } 
- location /people/jaherrin { deny all; } 
- location /people/jannathg { deny all; } 
- location /people/jarrett { deny all; } 
- location /people/jasparks { deny all; } 
- location /people/javanwes { deny all; } 
- location /people/jblan { deny all; }
- location /people/jbroad { deny all; } 
- location /people/jbruiz { deny all; } 
- location /people/jburris { deny all; } 
- location /people/jcho06 { deny all; } 
- location /people/jcschank { deny all; } 
- location /people/jdmussel { deny all; } 
- location /people/jdpicek { deny all; } 
- location /people/jdr { deny all; } 
- location /people/jdstokes { deny all; } 
- location /people/jecd { deny all; } 
- location /people/jegqpsyc { deny all; } 
- location /people/jelandis { deny all; } 
- location /people/jemorr4 { deny all; } 
- location /people/jeongmi { deny all; } 
- location /people/jessicas { deny all; } 
- location /people/jesssun { deny all; } 
- location /people/jfabrika { deny all; } 
- location /people/jflath { deny all; }
- location /people/jgemille { deny all; } 
- location /people/jgeng { deny all; } 
- location /people/jggunn { deny all; } 
- location /people/jhamzaw { deny all; } 
- location /people/jhkaplan { deny all; } 
- location /people/jhwilmot { deny all; } 
- location /people/jhyechoi { deny all; } 
- location /people/jiangke { deny all; } 
- location /people/jillrayh { deny all; } 
- location /people/jimcal { deny all; } 
- location /people/jinchen { deny all; } 
- location /people/jiwonlee { deny all; }
- location /people/jjack318 { deny all; } 
- location /people/jjbengso { deny all; } 
- location /people/jjquintanilla { deny all; }
- location /people/jkbell { deny all; } 
- location /people/jkopecky { deny all; }
- location /people/jkujala { deny all; } 
- location /people/jlee31 { deny all; } 
- location /people/jmfalin { deny all; } 
- location /people/jmhender { deny all; } 
- location /people/jmszaif { deny all; } 
- location /people/john-gates { deny all; } 
- location /people/jonjohns { deny all; } 
- location /people/joohdism { deny all; }
- location /people/jordi { deny all; }
- location /people/jpena { deny all; } 
- location /people/jpokorny { deny all; } 
- location /people/jprabhak { deny all; } 
- location /people/jrgriese { deny all; } 
- location /people/jrkerlin { deny all; } 
- location /people/jsgrady { deny all; } 
- location /people/jskahn { deny all; } 
- location /people/jsmit { deny all; } 
- location /people/jtkarita { deny all; } 
- location /people/jvelasquez { deny all; } 
- location /people/jweerken { deny all; } 
- location /people/jwzzhang { deny all; } 
- location /people/jyiwang { deny all; } 
- location /people/kaerikss { deny all; }
- location /people/karimi { deny all; } 
- location /people/kce3679 { deny all; } 
- location /people/kdchrist { deny all; } 
- location /people/kdhoover { deny all; }
- location /people/kdsalyer { deny all; }
- location /people/kekexili { deny all; }
- location /people/kennedy3 { deny all; } 
- location /people/kfortune { deny all; }
- location /people/kfranko { deny all; } 
- location /people/kgrafest { deny all; } 
- location /people/khkheira { deny all; }
- location /people/khlaga { deny all; } 
- location /people/kittens { deny all; }
- location /people/kkramer { deny all; }
- location /people/kkunze { deny all; }
- location /people/klbales { deny all; } 
- location /people/klima { deny all; } 
- location /people/kmfinn { deny all; } 
- location /people/kmhjorts { deny all; } 
- location /people/knruss { deny all; }
- location /people/kojaaae { deny all; }
- location /people/kpfannes { deny all; } 
- location /people/krpuhger { deny all; } 
- location /people/ktadams { deny all; } 
- location /people/ktully { deny all; } 
- location /people/kuma17 { deny all; } 
- location /people/kwanlee { deny all; }
- location /people/kwteeple { deny all; }
- location /people/kztanaka { deny all; } 
- location /people/laisbell { deny all; } 
- location /people/lalawyer { deny all; } 
- location /people/larry-wade { deny all; } 
- location /people/lawest52 { deny all; } 
- location /people/lbkdeer { deny all; } 
- location /people/lcbowman { deny all; } 
- location /people/lcgonzal { deny all; } 
- location /people/ldt { deny all; } 
- location /people/leahkrub { deny all; } 
- location /people/leavalos { deny all; }
- location /people/leighks { deny all; } 
- location /people/lesenyie { deny all; } 
- location /people/leticiaj { deny all; }
- location /people/lfitzpat { deny all; } 
- location /people/lgmx721 { deny all; } 
- location /people/lisacan { deny all; } 
- location /people/lizhang { deny all; } 
- location /people/ljyin { deny all; }
- location /people/lkberger { deny all; } 
- location /people/lkrisst { deny all; } 
- location /people/llwegge { deny all; }
- location /people/lmacedon { deny all; }
- location /people/lmhuang { deny all; } 
- location /people/lmliang { deny all; } 
- location /people/lmoakes { deny all; } 
- location /people/lpaigers { deny all; } 
- location /people/lparra { deny all; } 
- location /people/lperitz { deny all; } 
- location /people/lreid { deny all; } 
- location /people/lrlusher { deny all; }
- location /people/lrwitcza { deny all; } 
- location /people/lscole { deny all; } 
- location /people/lxwllms { deny all; } 
- location /people/mab { deny all; } 
- location /people/mangun { deny all; } 
- location /people/maoz { deny all; } 
- location /people/maparks { deny all; } 
- location /people/mari10 { deny all; } 
- location /people/mayerhe { deny all; } 
- location /people/mbrg { deny all; }
- location /people/mbuttice { deny all; } 
- location /people/mccage { deny all; } 
- location /people/mckibben { deny all; } 
- location /people/mcphilli { deny all; } 
- location /people/mcraft { deny all; } 
- location /people/mcurtis { deny all; }
- location /people/mdebolt { deny all; } 
- location /people/mdelac { deny all; } 
- location /people/megbeth { deny all; } 
- location /people/mengchen { deny all; } 
- location /people/menglund { deny all; } 
- location /people/mepage { deny all; }
- location /people/mgrosz { deny all; }
- location /people/mijke { deny all; } 
- location /people/mike17 { deny all; } 
- location /people/millerlm { deny all; } 
- location /people/mins { deny all; }
- location /people/misiordi { deny all; } 
- location /people/mk { deny all; } 
- location /people/mkubo { deny all; }
- location /people/mkurai { deny all; } 
- location /people/mkweinst { deny all; } 
- location /people/mlowder { deny all; } 
- location /people/mlv { deny all; }
- location /people/mmcterna { deny all; } 
- location /people/mmnolan { deny all; } 
- location /people/mnincic { deny all; } 
- location /people/mnlubell { deny all; } 
- location /people/molyneux { deny all; } 
- location /people/montinol { deny all; } 
- location /people/moshana { deny all; } 
- location /people/mpantoja { deny all; } 
- location /people/mramey { deny all; } 
- location /people/mritchey { deny all; } 
- location /people/mrsolomo { deny all; }
- location /people/mrzelder { deny all; }
- location /people/msazma { deny all; } 
- location /people/mshugart { deny all; } 
- location /people/msiegler { deny all; }
- location /people/msinghal { deny all; }
- location /people/mxli24 { deny all; }
- location /people/myousuf { deny all; }
- location /people/najuzz { deny all; }
- location /people/nap { deny all; } 
- location /people/nathanbs { deny all; } 
- location /people/navenm { deny all; }
- location /people/ndiquatt { deny all; } 
- location /people/nehring { deny all; }
- location /people/neurobie { deny all; } 
- location /people/ngasteig { deny all; } 
- location /people/nkumari { deny all; } 
- location /people/nljoshirichard { deny all; } 
- location /people/nrasho { deny all; } 
- location /people/nrexford { deny all; } 
- location /people/nsblaloc { deny all; } 
- location /people/nsorlova { deny all; }
- location /people/ntroxel { deny all; } 
- location /people/nwzane { deny all; } 
- location /people/nyegiyan { deny all; } 
- location /people/nzwyns { deny all; } 
- location /people/obgordon { deny all; } 
- location /people/ogarciap { deny all; } 
- location /people/ojorda { deny all; }
- location /people/olichney { deny all; } 
- location /people/palfan { deny all; }
- location /people/papaior { deny all; } 
- location /people/pdavoud { deny all; } 
- location /people/pdesaute { deny all; } 
- location /people/pdhphd { deny all; } 
- location /people/pdskeels { deny all; } 
- location /people/pjanata { deny all; } 
- location /people/pkaliman { deny all; } 
- location /people/ppfunari { deny all; }
- location /people/prast { deny all; } 
- location /people/qconklin { deny all; } 
- location /people/rabell { deny all; } 
- location /people/radelraz { deny all; } 
- location /people/raemmons { deny all; } 
- location /people/ram1279 { deny all; } 
- location /people/rathom { deny all; } 
- location /people/rboddy { deny all; } 
- location /people/rbutters { deny all; } 
- location /people/rchahal { deny all; } 
- location /people/rcmay { deny all; } 
- location /people/rdconger { deny all; } 
- location /people/rdemeo { deny all; } 
- location /people/realcala { deny all; } 
- location /people/rgcoss { deny all; } 
- location /people/rhubert { deny all; } 
- location /people/rhutchin { deny all; } 
- location /people/risa { deny all; } 
- location /people/rlbettin { deny all; } 
- location /people/rlmillst { deny all; } 
- location /people/rmsivers { deny all; } 
- location /people/robing77 { deny all; } 
- location /people/robins { deny all; } 
- location /people/rps24 { deny all; } 
- location /people/rsimon23 { deny all; } 
- location /people/rsiregar { deny all; }
- location /people/rsoohoo { deny all; } 
- location /people/rstaylor { deny all; } 
- location /people/rwmcnish { deny all; } 
- location /people/samacken { deny all; } 
- location /people/samlani { deny all; } 
- location /people/sansouci { deny all; } 
- location /people/saraprice { deny all; } 
- location /people/saron { deny all; } 
- location /people/sblozis { deny all; } 
- location /people/scalla { deny all; } 
- location /people/scarrell { deny all; }
- location /people/sccollitt { deny all; } 
- location /people/sccorina { deny all; } 
- location /people/scheiner { deny all; } 
- location /people/schipper { deny all; }
- location /people/sddlee { deny all; }
- location /people/sdhobbs { deny all; } 
- location /people/sdilor1 { deny all; } 
- location /people/sdurand { deny all; } 
- location /people/sennet { deny all; } 
- location /people/serole { deny all; } 
- location /people/sfallas { deny all; } 
- location /people/sfdahmed { deny all; } 
- location /people/sghetti { deny all; } 
- location /people/shainawestern { deny all; } 
- location /people/shamille { deny all; } 
- location /people/sherm { deny all; } 
- location /people/shil { deny all; }
- location /people/shubba { deny all; } 
- location /people/shubi17 { deny all; }
- location /people/simmonsd { deny all; } 
- location /people/sina { deny all; }
- location /people/sjluck { deny all; } 
- location /people/skahle { deny all; } 
- location /people/slhill { deny all; } 
- location /people/smprince { deny all; } 
- location /people/smriti { deny all; } 
- location /people/smsawyer { deny all; } 
- location /people/sokeefe { deny all; }
- location /people/squincy { deny all; }
- location /people/srbrunne { deny all; } 
- location /people/sregmi { deny all; } 
- location /people/srivera { deny all; } 
- location /people/ssatkuna { deny all; } 
- location /people/ssdunham { deny all; } 
- location /people/stanshen { deny all; } 
- location /people/starrett { deny all; } 
- location /people/stevesun { deny all; }
- location /people/styler { deny all; } 
- location /people/subuhi { deny all; } 
- location /people/sukjoon { deny all; }
- location /people/sunyqs { deny all; } 
- location /people/superztt { deny all; }
- location /people/supreetm { deny all; } 
- location /people/svazire { deny all; } 
- location /people/swaab { deny all; } 
- location /people/swingate { deny all; } 
- location /people/sychan19 { deny all; } 
- location /people/szschei { deny all; } 
- location /people/szsymons { deny all; } 
- location /people/tclamarr { deny all; } 
- location /people/tcsim7 { deny all; } 
- location /people/tdeluce { deny all; }
- location /people/tdweaver { deny all; } 
- location /people/telhaik { deny all; } 
- location /people/testeele { deny all; } 
- location /people/tgilopez { deny all; } 
- location /people/thalder { deny all; }
- location /people/theobald { deny all; } 
- location /people/tideange { deny all; } 
- location /people/tiernan { deny all; } 
- location /people/timbell { deny all; } 
- location /people/tinam7 { deny all; } 
- location /people/tjhouk { deny all; } 
- location /people/tkchoy { deny all; } 
- location /people/tkfisher { deny all; } 
- location /people/tonyxia { deny all; }
- location /people/tpeterka { deny all; } 
- location /people/tpliu { deny all; } 
- location /people/tracylin { deny all; } 
- location /people/traxler { deny all; } 
- location /people/trhayes { deny all; } 
- location /people/trulli { deny all; } 
- location /people/tschneid { deny all; } 
- location /people/tschwaba { deny all; } 
- location /people/tshahin { deny all; } 
- location /people/tu10 { deny all; }
- location /people/txbanh { deny all; } 
- location /people/vejnoska { deny all; } 
- location /people/vlliu { deny all; } 
- location /people/vohamil { deny all; } 
- location /people/vtyazhel { deny all; }
- location /people/walrus { deny all; } 
- location /people/wangbin8 { deny all; } 
- location /people/wbleidor { deny all; } 
- location /people/wbreilly { deny all; } 
- location /people/wichois { deny all; } 
- location /people/wilson { deny all; } 
- location /people/wiltshjc { deny all; }
- location /people/wimivo { deny all; }
- location /people/wineberg { deny all; } 
- location /people/wstone { deny all; } 
- location /people/wswanson { deny all; }
- location /people/xerxes { deny all; }
- location /people/xtsu { deny all; }
- location /people/xueqing { deny all; }
- location /people/xumf { deny all; }
- location /people/xuxuwuwu { deny all; }
- location /people/xxnene { deny all; } 
- location /people/xyu8 { deny all; } 
- location /people/yanafan { deny all; } 
- location /people/yangz { deny all; } 
- location /people/yarovaya { deny all; } 
- location /people/yasenov { deny all; }
- location /people/yining { deny all; } 
- location /people/yiychen { deny all; }
- location /people/yjung { deny all; }
- location /people/ykumon { deny all; }
- location /people/ylawang { deny all; } 
- location /people/yoyozhan { deny all; } 
- location /people/yqniu { deny all; } 
- location /people/ytota91 { deny all; } 
- location /people/yuch { deny all; } 
- location /people/yujsuh { deny all; }
- location /people/yxli { deny all; }
- location /people/zdrayson { deny all; } 
- location /people/zhenrlu { deny all; } 
- location /people/zheyang { deny all; }
- location /people/zimbres { deny all; } 
- location /people/zxlin { deny all; }
-location /people/jfadams { deny all; } 
-location /people/econjim { deny all; }
+ location /people/abeckner { deny all; return 404; } 
+ location /people/aboik { deny all; return 404; }
+ location /people/aborders { deny all; return 404; } 
+ location /people/abrezaee { deny all; return 404; }
+ location /people/acarvajal { deny all; return 404; }
+ location /people/acskwara { deny all; return 404; } 
+ location /people/addunlea { deny all; return 404; } 
+ location /people/adrien { deny all; return 404; } 
+ location /people/aeguyer { deny all; return 404; } 
+ location /people/afarrar { deny all; return 404; } 
+ location /people/agnmarti { deny all; return 404; } 
+ location /people/agold { deny all; return 404; } 
+ location /people/agschwar { deny all; return 404; } 
+ location /people/agushue { deny all; return 404; } 
+ location /people/ahamidi { deny all; return 404; } 
+ location /people/ahines { deny all; return 404; }
+ location /people/ahosek { deny all; return 404; } 
+ location /people/ahsteven { deny all; return 404; }
+ location /people/aignat { deny all; return 404; }
+ location /people/ajgillis { deny all; return 404; } 
+ location /people/ajgroth { deny all; return 404; } 
+ location /people/ajpadova { deny all; return 404; }
+ location /people/akiras { deny all; return 404; }
+ location /people/aksticke { deny all; return 404; } 
+ location /people/alavine { deny all; return 404; } 
+ location /people/alazne { deny all; return 404; } 
+ location /people/ali/ { deny all; return 404; }
+ location /people/amang { deny all; return 404; } 
+ location /people/amarek { deny all; return 404; }
+ location /people/amccull { deny all; return 404; } 
+ location /people/aml { deny all; return 404; } 
+ location /people/amrivers { deny all; return 404; } 
+ location /people/ams415 { deny all; return 404; } 
+ location /people/amseelke { deny all; return 404; } 
+ location /people/amsimmon { deny all; return 404; } 
+ location /people/amtaylor { deny all; return 404; }
+ location /people/andreytomash { deny all; return 404; } 
+ location /people/aney { deny all; return 404; } 
+ location /people/angelana { deny all; return 404; } 
+ location /people/anorman { deny all; return 404; } 
+ location /people/ant0nia { deny all; return 404; } 
+ location /people/antovich { deny all; return 404; } 
+ location /people/apshreve { deny all; return 404; } 
+ location /people/arblaloc { deny all; return 404; } 
+ location /people/arian { deny all; return 404; }
+ location /people/aroyston { deny all; return 404; } 
+ location /people/askessle { deny all; return 404; } 
+ location /people/askoll { deny all; return 404; } 
+ location /people/askowalc { deny all; return 404; } 
+ location /people/askunz { deny all; return 404; } 
+ location /people/atherto1 { deny all; return 404; } 
+ location /people/azanesco { deny all; return 404; } 
+ location /people/bballis { deny all; return 404; }
+ location /people/bbigger { deny all; return 404; } 
+ location /people/bentrinh { deny all; return 404; } 
+ location /people/bergin { deny all; return 404; }
+ location /people/bfeng { deny all; return 404; } 
+ location /people/bgking { deny all; return 404; } 
+ location /people/bhighton { deny all; return 404; } 
+ location /people/bitler { deny all; return 404; }
+ location /people/bkhurley { deny all; return 404; } 
+ location /people/bkinne { deny all; return 404; } 
+ location /people/bkolarik { deny all; return 404; } 
+ location /people/blissmor { deny all; return 404; } 
+ location /people/blpiper { deny all; return 404; } 
+ location /people/bmcgee { deny all; return 404; } 
+ location /people/bmk { deny all; return 404; } 
+ location /people/bmodjtah { deny all; return 404; }
+ location /people/bousquet { deny all; return 404; } 
+ location /people/boydstun { deny all; return 404; } 
+ location /people/briclark { deny all; return 404; } 
+ location /people/brinatti { deny all; return 404; }
+ location /people/brothert { deny all; return 404; } 
+ location /people/bsjjones { deny all; return 404; } 
+ location /people/bstankev { deny all; return 404; } 
+ location /people/btrainor { deny all; return 404; } 
+ location /people/bushnell { deny all; return 404; }
+ location /people/bwiltgen { deny all; return 404; } 
+ location /people/bwyazel { deny all; return 404; } 
+ location /people/cacoughl { deny all; return 404; } 
+ location /people/caillaud { deny all; return 404; } 
+ location /people/caitmcca { deny all; return 404; } 
+ location /people/calexopo { deny all; return 404; } 
+ location /people/calgara { deny all; return 404; } 
+ location /people/carlisnb { deny all; return 404; } 
+ location /people/carlyl { deny all; return 404; } 
+ location /people/ccahill { deny all; return 404; } 
+ location /people/ccameron { deny all; return 404; }
+ location /people/cclee { deny all; return 404; } 
+ location /people/cdhare { deny all; return 404; } 
+ location /people/cdinh { deny all; return 404; }
+ location /people/cepeacoc { deny all; return 404; } 
+ location /people/ceth { deny all; return 404; } 
+ location /people/cfassben { deny all; return 404; } 
+ location /people/cfsaez { deny all; return 404; }
+ location /people/cghealow { deny all; return 404; } 
+ location /people/cgiordan { deny all; return 404; } 
+ location /people/challiwell { deny all; return 404; }
+ location /people/charan { deny all; return 404; } 
+ location /people/chole { deny all; return 404; } 
+ location /people/chouck { deny all; return 404; } 
+ location /people/chrishallenbrook { deny all; return 404; } 
+ location /people/chuangfu { deny all; return 404; }
+ location /people/cjclayto { deny all; return 404; } 
+ location /people/clboudre { deny all; return 404; } 
+ location /people/cmllee { deny all; return 404; }
+ location /people/cmm { deny all; return 404; }
+ location /people/cmuth { deny all; return 404; } 
+ location /people/cnmli { deny all; return 404; }
+ location /people/corina { deny all; return 404; } 
+ location /people/cpdonnel { deny all; return 404; } 
+ location /people/cpickett { deny all; return 404; } 
+ location /people/cpj20 { deny all; return 404; }
+ location /people/cpuck { deny all; return 404; } 
+ location /people/crbelden { deny all; return 404; } 
+ location /people/crcasell { deny all; return 404; } 
+ location /people/crofoot { deny all; return 404; } 
+ location /people/crrogers { deny all; return 404; } 
+ location /people/cservin { deny all; return 404; } 
+ location /people/csr { deny all; return 404; }
+ location /people/cuhuh { deny all; return 404; } 
+ location /people/cuishen { deny all; return 404; } 
+ location /people/cvdwerf { deny all; return 404; }
+ location /people/cytsai { deny all; return 404; }
+ location /people/dakyungs { deny all; return 404; }
+ location /people/dalley { deny all; return 404; } 
+ location /people/dannorton { deny all; return 404; } 
+ location /people/dapopov { deny all; return 404; }
+ location /people/datapiaj { deny all; return 404; } 
+ location /people/dbederi { deny all; return 404; } 
+ location /people/dbracken { deny all; return 404; } 
+ location /people/dcingel { deny all; return 404; } 
+ location /people/dcopp { deny all; return 404; } 
+ location /people/dfdantas { deny all; return 404; } 
+ location /people/dfox { deny all; return 404; } 
+ location /people/dgweissm { deny all; return 404; } 
+ location /people/djcarlos { deny all; return 404; }
+ location /people/dldonham { deny all; return 404; } 
+ location /people/dlsacchi { deny all; return 404; } 
+ location /people/dlwoods { deny all; return 404; } 
+ location /people/drdebba { deny all; return 404; } 
+ location /people/drjtang { deny all; return 404; }
+ location /people/drury { deny all; return 404; }
+ location /people/dselmecz { deny all; return 404; } 
+ location /people/dshanske { deny all; return 404; } 
+ location /people/dsrapson { deny all; return 404; }
+ location /people/dsstest { deny all; return 404; } 
+ location /people/dstimel { deny all; return 404; }
+ location /people/dstolzen { deny all; return 404; } 
+ location /people/dswenson { deny all; return 404; }
+ location /people/dumit { deny all; return 404; } 
+ location /people/eafrenke { deny all; return 404; }
+ location /people/eaisham { deny all; return 404; } 
+ location /people/eastwick { deny all; return 404; } 
+ location /people/eboorman { deny all; return 404; } 
+ location /people/ebshear { deny all; return 404; } 
+ location /people/ecoliao { deny all; return 404; }
+ location /people/ecwright { deny all; return 404; } 
+ location /people/efeilich { deny all; return 404; }
+ location /people/eferrer { deny all; return 404; } 
+ location /people/efourie { deny all; return 404; } 
+ location /people/egcostan { deny all; return 404; } 
+ location /people/egjohnso { deny all; return 404; } 
+ location /people/ehembach { deny all; return 404; } 
+ location /people/ejbeier { deny all; return 404; } 
+ location /people/ejkrohn { deny all; return 404; }
+ location /people/ekose { deny all; return 404; }
+ location /people/ekstrom { deny all; return 404; } 
+ location /people/elkinnal { deny all; return 404; } 
+ location /people/emfreed { deny all; return 404; } 
+ location /people/emlandry { deny all; return 404; } 
+ location /people/emrard { deny all; return 404; } 
+ location /people/emschepe { deny all; return 404; } 
+ location /people/emuehleg { deny all; return 404; }
+ location /people/engstrom { deny all; return 404; } 
+ location /people/erowen { deny all; return 404; } 
+ location /people/esandlin { deny all; return 404; } 
+ location /people/esievers { deny all; return 404; } 
+ location /people/everde { deny all; return 404; } 
+ location /people/evolkov { deny all; return 404; }
+ location /people/ezgikurt { deny all; return 404; }
+ location /people/faaviles { deny all; return 404; }
+ location /people/fabiodcl { deny all; return 404; } 
+ location /people/fanda { deny all; return 404; } 
+ location /people/fanlu22 { deny all; return 404; } 
+ location /people/fbacigal { deny all; return 404; } 
+ location /people/fdrogers { deny all; return 404; } 
+ location /people/fferreir { deny all; return 404; } 
+ location /people/ffviola { deny all; return 404; }
+ location /people/finklk { deny all; return 404; } 
+ location /people/fogunkoy { deny all; return 404; } 
+ location /people/fzandrew { deny all; return 404; } 
+ location /people/fzberger { deny all; return 404; } 
+ location /people/fzberm { deny all; return 404; } 
+ location /people/fzborger { deny all; return 404; } 
+ location /people/fzcapit { deny all; return 404; } 
+ location /people/fzfeens { deny all; return 404; }
+ location /people/fzgoodmn { deny all; return 404; } 
+ location /people/fzjoseph { deny all; return 404; } 
+ location /people/fzlinder { deny all; return 404; }
+ location /people/fzlong { deny all; return 404; } 
+ location /people/fzmoney { deny all; return 404; } 
+ location /people/fzmotley { deny all; return 404; } 
+ location /people/fzolmstd { deny all; return 404; }
+ location /people/fzquinzi { deny all; return 404; }
+ location /people/fzshaver { deny all; return 404; } 
+ location /people/fzshef { deny all; return 404; }
+ location /people/fzsimon { deny all; return 404; } 
+ location /people/fzwandes { deny all; return 404; } 
+ location /people/fzwoo { deny all; return 404; }
+ location /people/fzyoneli { deny all; return 404; } 
+ location /people/gaspelin { deny all; return 404; } 
+ location /people/gbarnett { deny all; return 404; } 
+ location /people/gbasante { deny all; return 404; }
+ location /people/gbonanno { deny all; return 404; }
+ location /people/gelardik { deny all; return 404; } 
+ location /people/gentok { deny all; return 404; } 
+ location /people/georgesh { deny all; return 404; } 
+ location /people/geromich { deny all; return 404; }
+ location /people/ghrecanz { deny all; return 404; } 
+ location /people/ghwolff { deny all; return 404; } 
+ location /people/gilmore { deny all; return 404; } 
+ location /people/gj { deny all; return 404; } 
+ location /people/gmherek { deny all; return 404; } 
+ location /people/gmineom { deny all; return 404; } 
+ location /people/goldfarb { deny all; return 404; } 
+ location /people/gotgent { deny all; return 404; } 
+ location /people/gperi { deny all; return 404; }
+ location /people/graffh { deny all; return 404; } 
+ location /people/grbene { deny all; return 404; } 
+ location /people/grelewij { deny all; return 404; }
+ location /people/gschnorr { deny all; return 404; }
+ location /people/gshields { deny all; return 404; } 
+ location /people/gybae { deny all; return 404; } 
+ location /people/hangzhou { deny all; return 404; }
+ location /people/hanhe { deny all; return 404; }
+ location /people/hannah83 { deny all; return 404; } 
+ location /people/hanqee { deny all; return 404; }
+ location /people/harris94 { deny all; return 404; } 
+ location /people/hc1116 { deny all; return 404; }
+ location /people/hesmithj { deny all; return 404; } 
+ location /people/hheather { deny all; return 404; } 
+ location /people/hilbert { deny all; return 404; } 
+ location /people/hjkramer { deny all; return 404; } 
+ location /people/hknike20 { deny all; return 404; } 
+ location /people/hochi176 { deny all; return 404; } 
+ location /people/hossom87 { deny all; return 404; } 
+ location /people/hostinar { deny all; return 404; } 
+ location /people/hoverstl { deny all; return 404; } 
+ location /people/hpshen { deny all; return 404; }
+ location /people/hrrees { deny all; return 404; } 
+ location /people/hrzucker { deny all; return 404; } 
+ location /people/hseitani { deny all; return 404; }
+ location /people/htohid { deny all; return 404; } 
+ location /people/huckfeld { deny all; return 404; } 
+ location /people/hueyli { deny all; return 404; } 
+ location /people/hwilliams { deny all; return 404; } 
+ location /people/hyokjung { deny all; return 404; }
+ location /people/hyperz { deny all; return 404; } 
+ location /people/hyun1889 { deny all; return 404; } 
+ location /people/ibahceci { deny all; return 404; } 
+ location /people/idkim { deny all; return 404; } 
+ location /people/ihale { deny all; return 404; } 
+ location /people/ihcho { deny all; return 404; }
+ location /people/ika { deny all; return 404; } 
+ location /people/inhoff { deny all; return 404; } 
+ location /people/innoshu { deny all; return 404; }
+ location /people/ireenlz { deny all; return 404; } 
+ location /people/iscchen { deny all; return 404; } 
+ location /people/iserlon { deny all; return 404; } 
+ location /people/jaherrin { deny all; return 404; } 
+ location /people/jannathg { deny all; return 404; } 
+ location /people/jarrett { deny all; return 404; } 
+ location /people/jasparks { deny all; return 404; } 
+ location /people/javanwes { deny all; return 404; } 
+ location /people/jblan { deny all; return 404; }
+ location /people/jbroad { deny all; return 404; } 
+ location /people/jbruiz { deny all; return 404; } 
+ location /people/jburris { deny all; return 404; } 
+ location /people/jcho06 { deny all; return 404; } 
+ location /people/jcschank { deny all; return 404; } 
+ location /people/jdmussel { deny all; return 404; } 
+ location /people/jdpicek { deny all; return 404; } 
+ location /people/jdr { deny all; return 404; } 
+ location /people/jdstokes { deny all; return 404; } 
+ location /people/jecd { deny all; return 404; } 
+ location /people/jegqpsyc { deny all; return 404; } 
+ location /people/jelandis { deny all; return 404; } 
+ location /people/jemorr4 { deny all; return 404; } 
+ location /people/jeongmi { deny all; return 404; } 
+ location /people/jessicas { deny all; return 404; } 
+ location /people/jesssun { deny all; return 404; } 
+ location /people/jfabrika { deny all; return 404; } 
+ location /people/jflath { deny all; return 404; }
+ location /people/jgemille { deny all; return 404; } 
+ location /people/jgeng { deny all; return 404; } 
+ location /people/jggunn { deny all; return 404; } 
+ location /people/jhamzaw { deny all; return 404; } 
+ location /people/jhkaplan { deny all; return 404; } 
+ location /people/jhwilmot { deny all; return 404; } 
+ location /people/jhyechoi { deny all; return 404; } 
+ location /people/jiangke { deny all; return 404; } 
+ location /people/jillrayh { deny all; return 404; } 
+ location /people/jimcal { deny all; return 404; } 
+ location /people/jinchen { deny all; return 404; } 
+ location /people/jiwonlee { deny all; return 404; }
+ location /people/jjack318 { deny all; return 404; } 
+ location /people/jjbengso { deny all; return 404; } 
+ location /people/jjquintanilla { deny all; return 404; }
+ location /people/jkbell { deny all; return 404; } 
+ location /people/jkopecky { deny all; return 404; }
+ location /people/jkujala { deny all; return 404; } 
+ location /people/jlee31 { deny all; return 404; } 
+ location /people/jmfalin { deny all; return 404; } 
+ location /people/jmhender { deny all; return 404; } 
+ location /people/jmszaif { deny all; return 404; } 
+ location /people/john-gates { deny all; return 404; } 
+ location /people/jonjohns { deny all; return 404; } 
+ location /people/joohdism { deny all; return 404; }
+ location /people/jordi { deny all; return 404; }
+ location /people/jpena { deny all; return 404; } 
+ location /people/jpokorny { deny all; return 404; } 
+ location /people/jprabhak { deny all; return 404; } 
+ location /people/jrgriese { deny all; return 404; } 
+ location /people/jrkerlin { deny all; return 404; } 
+ location /people/jsgrady { deny all; return 404; } 
+ location /people/jskahn { deny all; return 404; } 
+ location /people/jsmit { deny all; return 404; } 
+ location /people/jtkarita { deny all; return 404; } 
+ location /people/jvelasquez { deny all; return 404; } 
+ location /people/jweerken { deny all; return 404; } 
+ location /people/jwzzhang { deny all; return 404; } 
+ location /people/jyiwang { deny all; return 404; } 
+ location /people/kaerikss { deny all; return 404; }
+ location /people/karimi { deny all; return 404; } 
+ location /people/kce3679 { deny all; return 404; } 
+ location /people/kdchrist { deny all; return 404; } 
+ location /people/kdhoover { deny all; return 404; }
+ location /people/kdsalyer { deny all; return 404; }
+ location /people/kekexili { deny all; return 404; }
+ location /people/kennedy3 { deny all; return 404; } 
+ location /people/kfortune { deny all; return 404; }
+ location /people/kfranko { deny all; return 404; } 
+ location /people/kgrafest { deny all; return 404; } 
+ location /people/khkheira { deny all; return 404; }
+ location /people/khlaga { deny all; return 404; } 
+ location /people/kittens { deny all; return 404; }
+ location /people/kkramer { deny all; return 404; }
+ location /people/kkunze { deny all; return 404; }
+ location /people/klbales { deny all; return 404; } 
+ location /people/klima { deny all; return 404; } 
+ location /people/kmfinn { deny all; return 404; } 
+ location /people/kmhjorts { deny all; return 404; } 
+ location /people/knruss { deny all; return 404; }
+ location /people/kojaaae { deny all; return 404; }
+ location /people/kpfannes { deny all; return 404; } 
+ location /people/krpuhger { deny all; return 404; } 
+ location /people/ktadams { deny all; return 404; } 
+ location /people/ktully { deny all; return 404; } 
+ location /people/kuma17 { deny all; return 404; } 
+ location /people/kwanlee { deny all; return 404; }
+ location /people/kwteeple { deny all; return 404; }
+ location /people/kztanaka { deny all; return 404; } 
+ location /people/laisbell { deny all; return 404; } 
+ location /people/lalawyer { deny all; return 404; } 
+ location /people/larry-wade { deny all; return 404; } 
+ location /people/lawest52 { deny all; return 404; } 
+ location /people/lbkdeer { deny all; return 404; } 
+ location /people/lcbowman { deny all; return 404; } 
+ location /people/lcgonzal { deny all; return 404; } 
+ location /people/ldt { deny all; return 404; } 
+ location /people/leahkrub { deny all; return 404; } 
+ location /people/leavalos { deny all; return 404; }
+ location /people/leighks { deny all; return 404; } 
+ location /people/lesenyie { deny all; return 404; } 
+ location /people/leticiaj { deny all; return 404; }
+ location /people/lfitzpat { deny all; return 404; } 
+ location /people/lgmx721 { deny all; return 404; } 
+ location /people/lisacan { deny all; return 404; } 
+ location /people/lizhang { deny all; return 404; } 
+ location /people/ljyin { deny all; return 404; }
+ location /people/lkberger { deny all; return 404; } 
+ location /people/lkrisst { deny all; return 404; } 
+ location /people/llwegge { deny all; return 404; }
+ location /people/lmacedon { deny all; return 404; }
+ location /people/lmhuang { deny all; return 404; } 
+ location /people/lmliang { deny all; return 404; } 
+ location /people/lmoakes { deny all; return 404; } 
+ location /people/lpaigers { deny all; return 404; } 
+ location /people/lparra { deny all; return 404; } 
+ location /people/lperitz { deny all; return 404; } 
+ location /people/lreid { deny all; return 404; } 
+ location /people/lrlusher { deny all; return 404; }
+ location /people/lrwitcza { deny all; return 404; } 
+ location /people/lscole { deny all; return 404; } 
+ location /people/lxwllms { deny all; return 404; } 
+ location /people/mab { deny all; return 404; } 
+ location /people/mangun { deny all; return 404; } 
+ location /people/maoz { deny all; return 404; } 
+ location /people/maparks { deny all; return 404; } 
+ location /people/mari10 { deny all; return 404; } 
+ location /people/mayerhe { deny all; return 404; } 
+ location /people/mbrg { deny all; return 404; }
+ location /people/mbuttice { deny all; return 404; } 
+ location /people/mccage { deny all; return 404; } 
+ location /people/mckibben { deny all; return 404; } 
+ location /people/mcphilli { deny all; return 404; } 
+ location /people/mcraft { deny all; return 404; } 
+ location /people/mcurtis { deny all; return 404; }
+ location /people/mdebolt { deny all; return 404; } 
+ location /people/mdelac { deny all; return 404; } 
+ location /people/megbeth { deny all; return 404; } 
+ location /people/mengchen { deny all; return 404; } 
+ location /people/menglund { deny all; return 404; } 
+ location /people/mepage { deny all; return 404; }
+ location /people/mgrosz { deny all; return 404; }
+ location /people/mijke { deny all; return 404; } 
+ location /people/mike17 { deny all; return 404; } 
+ location /people/millerlm { deny all; return 404; } 
+ location /people/mins { deny all; return 404; }
+ location /people/misiordi { deny all; return 404; } 
+ location /people/mk { deny all; return 404; } 
+ location /people/mkubo { deny all; return 404; }
+ location /people/mkurai { deny all; return 404; } 
+ location /people/mkweinst { deny all; return 404; } 
+ location /people/mlowder { deny all; return 404; } 
+ location /people/mlv { deny all; return 404; }
+ location /people/mmcterna { deny all; return 404; } 
+ location /people/mmnolan { deny all; return 404; } 
+ location /people/mnincic { deny all; return 404; } 
+ location /people/mnlubell { deny all; return 404; } 
+ location /people/molyneux { deny all; return 404; } 
+ location /people/montinol { deny all; return 404; } 
+ location /people/moshana { deny all; return 404; } 
+ location /people/mpantoja { deny all; return 404; } 
+ location /people/mramey { deny all; return 404; } 
+ location /people/mritchey { deny all; return 404; } 
+ location /people/mrsolomo { deny all; return 404; }
+ location /people/mrzelder { deny all; return 404; }
+ location /people/msazma { deny all; return 404; } 
+ location /people/mshugart { deny all; return 404; } 
+ location /people/msiegler { deny all; return 404; }
+ location /people/msinghal { deny all; return 404; }
+ location /people/mxli24 { deny all; return 404; }
+ location /people/myousuf { deny all; return 404; }
+ location /people/najuzz { deny all; return 404; }
+ location /people/nap { deny all; return 404; } 
+ location /people/nathanbs { deny all; return 404; } 
+ location /people/navenm { deny all; return 404; }
+ location /people/ndiquatt { deny all; return 404; } 
+ location /people/nehring { deny all; return 404; }
+ location /people/neurobie { deny all; return 404; } 
+ location /people/ngasteig { deny all; return 404; } 
+ location /people/nkumari { deny all; return 404; } 
+ location /people/nljoshirichard { deny all; return 404; } 
+ location /people/nrasho { deny all; return 404; } 
+ location /people/nrexford { deny all; return 404; } 
+ location /people/nsblaloc { deny all; return 404; } 
+ location /people/nsorlova { deny all; return 404; }
+ location /people/ntroxel { deny all; return 404; } 
+ location /people/nwzane { deny all; return 404; } 
+ location /people/nyegiyan { deny all; return 404; } 
+ location /people/nzwyns { deny all; return 404; } 
+ location /people/obgordon { deny all; return 404; } 
+ location /people/ogarciap { deny all; return 404; } 
+ location /people/ojorda { deny all; return 404; }
+ location /people/olichney { deny all; return 404; } 
+ location /people/palfan { deny all; return 404; }
+ location /people/papaior { deny all; return 404; } 
+ location /people/pdavoud { deny all; return 404; } 
+ location /people/pdesaute { deny all; return 404; } 
+ location /people/pdhphd { deny all; return 404; } 
+ location /people/pdskeels { deny all; return 404; } 
+ location /people/pjanata { deny all; return 404; } 
+ location /people/pkaliman { deny all; return 404; } 
+ location /people/ppfunari { deny all; return 404; }
+ location /people/prast { deny all; return 404; } 
+ location /people/qconklin { deny all; return 404; } 
+ location /people/rabell { deny all; return 404; } 
+ location /people/radelraz { deny all; return 404; } 
+ location /people/raemmons { deny all; return 404; } 
+ location /people/ram1279 { deny all; return 404; } 
+ location /people/rathom { deny all; return 404; } 
+ location /people/rboddy { deny all; return 404; } 
+ location /people/rbutters { deny all; return 404; } 
+ location /people/rchahal { deny all; return 404; } 
+ location /people/rcmay { deny all; return 404; } 
+ location /people/rdconger { deny all; return 404; } 
+ location /people/rdemeo { deny all; return 404; } 
+ location /people/realcala { deny all; return 404; } 
+ location /people/rgcoss { deny all; return 404; } 
+ location /people/rhubert { deny all; return 404; } 
+ location /people/rhutchin { deny all; return 404; } 
+ location /people/risa { deny all; return 404; } 
+ location /people/rlbettin { deny all; return 404; } 
+ location /people/rlmillst { deny all; return 404; } 
+ location /people/rmsivers { deny all; return 404; } 
+ location /people/robing77 { deny all; return 404; } 
+ location /people/robins { deny all; return 404; } 
+ location /people/rps24 { deny all; return 404; } 
+ location /people/rsimon23 { deny all; return 404; } 
+ location /people/rsiregar { deny all; return 404; }
+ location /people/rsoohoo { deny all; return 404; } 
+ location /people/rstaylor { deny all; return 404; } 
+ location /people/rwmcnish { deny all; return 404; } 
+ location /people/samacken { deny all; return 404; } 
+ location /people/samlani { deny all; return 404; } 
+ location /people/sansouci { deny all; return 404; } 
+ location /people/saraprice { deny all; return 404; } 
+ location /people/saron { deny all; return 404; } 
+ location /people/sblozis { deny all; return 404; } 
+ location /people/scalla { deny all; return 404; } 
+ location /people/scarrell { deny all; return 404; }
+ location /people/sccollitt { deny all; return 404; } 
+ location /people/sccorina { deny all; return 404; } 
+ location /people/scheiner { deny all; return 404; } 
+ location /people/schipper { deny all; return 404; }
+ location /people/sddlee { deny all; return 404; }
+ location /people/sdhobbs { deny all; return 404; } 
+ location /people/sdilor1 { deny all; return 404; } 
+ location /people/sdurand { deny all; return 404; } 
+ location /people/sennet { deny all; return 404; } 
+ location /people/serole { deny all; return 404; } 
+ location /people/sfallas { deny all; return 404; } 
+ location /people/sfdahmed { deny all; return 404; } 
+ location /people/sghetti { deny all; return 404; } 
+ location /people/shainawestern { deny all; return 404; } 
+ location /people/shamille { deny all; return 404; } 
+ location /people/sherm { deny all; return 404; } 
+ location /people/shil { deny all; return 404; }
+ location /people/shubba { deny all; return 404; } 
+ location /people/shubi17 { deny all; return 404; }
+ location /people/simmonsd { deny all; return 404; } 
+ location /people/sina { deny all; return 404; }
+ location /people/sjluck { deny all; return 404; } 
+ location /people/skahle { deny all; return 404; } 
+ location /people/slhill { deny all; return 404; } 
+ location /people/smprince { deny all; return 404; } 
+ location /people/smriti { deny all; return 404; } 
+ location /people/smsawyer { deny all; return 404; } 
+ location /people/sokeefe { deny all; return 404; }
+ location /people/squincy { deny all; return 404; }
+ location /people/srbrunne { deny all; return 404; } 
+ location /people/sregmi { deny all; return 404; } 
+ location /people/srivera { deny all; return 404; } 
+ location /people/ssatkuna { deny all; return 404; } 
+ location /people/ssdunham { deny all; return 404; } 
+ location /people/stanshen { deny all; return 404; } 
+ location /people/starrett { deny all; return 404; } 
+ location /people/stevesun { deny all; return 404; }
+ location /people/styler { deny all; return 404; } 
+ location /people/subuhi { deny all; return 404; } 
+ location /people/sukjoon { deny all; return 404; }
+ location /people/sunyqs { deny all; return 404; } 
+ location /people/superztt { deny all; return 404; }
+ location /people/supreetm { deny all; return 404; } 
+ location /people/svazire { deny all; return 404; } 
+ location /people/swaab { deny all; return 404; } 
+ location /people/swingate { deny all; return 404; } 
+ location /people/sychan19 { deny all; return 404; } 
+ location /people/szschei { deny all; return 404; } 
+ location /people/szsymons { deny all; return 404; } 
+ location /people/tclamarr { deny all; return 404; } 
+ location /people/tcsim7 { deny all; return 404; } 
+ location /people/tdeluce { deny all; return 404; }
+ location /people/tdweaver { deny all; return 404; } 
+ location /people/telhaik { deny all; return 404; } 
+ location /people/testeele { deny all; return 404; } 
+ location /people/tgilopez { deny all; return 404; } 
+ location /people/thalder { deny all; return 404; }
+ location /people/theobald { deny all; return 404; } 
+ location /people/tideange { deny all; return 404; } 
+ location /people/tiernan { deny all; return 404; } 
+ location /people/timbell { deny all; return 404; } 
+ location /people/tinam7 { deny all; return 404; } 
+ location /people/tjhouk { deny all; return 404; } 
+ location /people/tkchoy { deny all; return 404; } 
+ location /people/tkfisher { deny all; return 404; } 
+ location /people/tonyxia { deny all; return 404; }
+ location /people/tpeterka { deny all; return 404; } 
+ location /people/tpliu { deny all; return 404; } 
+ location /people/tracylin { deny all; return 404; } 
+ location /people/traxler { deny all; return 404; } 
+ location /people/trhayes { deny all; return 404; } 
+ location /people/trulli { deny all; return 404; } 
+ location /people/tschneid { deny all; return 404; } 
+ location /people/tschwaba { deny all; return 404; } 
+ location /people/tshahin { deny all; return 404; } 
+ location /people/tu10 { deny all; return 404; }
+ location /people/txbanh { deny all; return 404; } 
+ location /people/vejnoska { deny all; return 404; } 
+ location /people/vlliu { deny all; return 404; } 
+ location /people/vohamil { deny all; return 404; } 
+ location /people/vtyazhel { deny all; return 404; }
+ location /people/walrus { deny all; return 404; } 
+ location /people/wangbin8 { deny all; return 404; } 
+ location /people/wbleidor { deny all; return 404; } 
+ location /people/wbreilly { deny all; return 404; } 
+ location /people/wichois { deny all; return 404; } 
+ location /people/wilson { deny all; return 404; } 
+ location /people/wiltshjc { deny all; return 404; }
+ location /people/wimivo { deny all; return 404; }
+ location /people/wineberg { deny all; return 404; } 
+ location /people/wstone { deny all; return 404; } 
+ location /people/wswanson { deny all; return 404; }
+ location /people/xerxes { deny all; return 404; }
+ location /people/xtsu { deny all; return 404; }
+ location /people/xueqing { deny all; return 404; }
+ location /people/xumf { deny all; return 404; }
+ location /people/xuxuwuwu { deny all; return 404; }
+ location /people/xxnene { deny all; return 404; } 
+ location /people/xyu8 { deny all; return 404; } 
+ location /people/yanafan { deny all; return 404; } 
+ location /people/yangz { deny all; return 404; } 
+ location /people/yarovaya { deny all; return 404; } 
+ location /people/yasenov { deny all; return 404; }
+ location /people/yining { deny all; return 404; } 
+ location /people/yiychen { deny all; return 404; }
+ location /people/yjung { deny all; return 404; }
+ location /people/ykumon { deny all; return 404; }
+ location /people/ylawang { deny all; return 404; } 
+ location /people/yoyozhan { deny all; return 404; } 
+ location /people/yqniu { deny all; return 404; } 
+ location /people/ytota91 { deny all; return 404; } 
+ location /people/yuch { deny all; return 404; } 
+ location /people/yujsuh { deny all; return 404; }
+ location /people/yxli { deny all; return 404; }
+ location /people/zdrayson { deny all; return 404; } 
+ location /people/zhenrlu { deny all; return 404; } 
+ location /people/zheyang { deny all; return 404; }
+ location /people/zimbres { deny all; return 404; } 
+ location /people/zxlin { deny all; return 404; }
+location /people/jfadams { deny all; return 404; } 
+location /people/econjim { deny all; return 404; }
 location /people/lcsaco {deny all; return 404; }
 
