@@ -7,3 +7,4 @@
     <span tal:content="bview/wallpaperURL"
           tal:attributes="class bview/divStyle; id bview/contentId" />
 </div>
+

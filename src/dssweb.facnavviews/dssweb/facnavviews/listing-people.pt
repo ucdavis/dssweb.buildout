@@ -94,12 +94,15 @@
 
                    </div>
 					 
-					 <div class="office-hours" tal:condition="python:not obj.getLabs()">
+					 <div class="office-hours"
+					 
+					 tal:condition="python:not obj.getLabs()">
 						 <span tal:condition="personMembershipInformation/getOfficeHours | nothing">
 	  				  		   <p class="phone-wrapper-sm">Office Hours: <span tal:replace="personMembershipInformation/getQuarter">Quarter</span></p>
-	  				  		<span tal:define="officeHours personMembershipInformation/getOfficeHours">
+	  				  		<span tal:define="officeHours personMembershipInformation/getOfficeHours;
+							newOh python:support_view.convertUrls(officeHours);">
 	  				              	 
-	  				                   <p class="phone-wrapper-sm"><span tal:omit-tag="" tal:replace="python:' | '.join(officeHours)">
+	  				                   <p class="phone-wrapper-sm officelink"><span tal:omit-tag="" tal:replace="structure newOh">
 												  
 													 Office Hours </span> </p>
 											

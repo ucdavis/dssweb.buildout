@@ -7,6 +7,7 @@ from zope.component import getMultiAdapter
 from collective.contentleadimage.config import IMAGE_FIELD_NAME
 from collective.contentleadimage.config import IMAGE_CAPTION_FIELD_NAME
 import DateTime
+import re
 
 
 def _getObjectByUID_cachekey(method, self, UID):
@@ -107,5 +108,12 @@ class FacNavView(BrowserView):
         if obj.getWebsites():
            website = obj.getWebsites()[0]
            return website
+           
+    def convertUrls(self, officeHours):
+            oh = ' '.join(officeHours)
+            regex = r"(http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+)"
+            linkreplace = r"<a href='\1' target='_blank'>\1</a>"
+            newOfficeHours = re.sub(regex, linkreplace, oh)
+            return newOfficeHours
 
             
