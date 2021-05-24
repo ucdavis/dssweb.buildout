@@ -102,7 +102,6 @@ location /people/yuch { deny all; return 404; }
 location /people/lesenyie { deny all; return 404; }
 location /people/ireenlz { deny all; return 404; }
 location /people/tpliu { deny all; return 404; }
-location /people/kmlopes { deny all; return 404; }
 location /people/mnlubell { deny all; return 404; }
 location /people/samacken { deny all; return 404; }
 location /people/maoz { deny all; return 404; }
