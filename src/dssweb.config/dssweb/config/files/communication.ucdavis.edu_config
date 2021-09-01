@@ -1,3 +1,6 @@
+location /people/hheather {
+  return 301 /people/hjhether;
+}
 location /gkzong {
   return 301 /qkzhong;
 }
