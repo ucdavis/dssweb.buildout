@@ -296,14 +296,17 @@
    <replace css:content=".breadcrumbSeparator">
      <span class="bread-divider">|</span>
    </replace>
-	
+   <rules css-if:content="body.site-psychology">
+	<replace css:theme="li#uti-events > a"
+	      css:content="li#portaltab-courses > a" method="raw" />
+	  </rules>
+		  
         <!--utility menu links -->
 		<copy attributes="href"
 		css:content="li#portaltab-index_html > a"
 		css:theme="li#uti-home > a" />
 		<!--replace css:theme="#uti-home > a"
-		          css:content="#portaltab-index_html > a" method="raw" /-->       
-	
+		          css:content="#portaltab-index_html > a" method="raw" /-->      
 		<replace css:theme="li#uti-events > a"
 		      css:content="li#portaltab-events > a" method="raw" />
 		<replace css:theme="li#uti-news > a" css:content="li#portaltab-news > a" />
