@@ -311,7 +311,7 @@
 		<rules css:if-not-content="body.site-psychology">
 		<replace css:theme="li#uti-events > a"
 		      css:content="li#portaltab-events > a" method="raw" />
-		<rules>
+		</rules>
 		<replace css:theme="li#uti-news > a" css:content="li#portaltab-news > a" />
 		<copy attributes="href"
 		   css:content="li#portaltab-give > a"
