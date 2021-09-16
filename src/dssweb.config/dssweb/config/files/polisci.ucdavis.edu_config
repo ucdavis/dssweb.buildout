@@ -51,7 +51,9 @@ location /people/szschei {
         deny all;
         return 404;
         }
-
+location /people/caherrod {
+		deny all;
+		return 404;}
 
 location /people/aroyston {
 			deny all;
