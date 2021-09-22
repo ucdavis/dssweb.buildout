@@ -86,7 +86,7 @@ location /people/staff-specialties/green-cluster-staff {deny all; return 404;}
  location /people/amsimmon { deny all; return 404; } 
  location /people/amtaylor { deny all; return 404; }
  location /people/andreytomash { deny all; return 404; } 
- location /people/aney { deny all; return 404; } 
+ location /people/aney/ { deny all; return 404; } 
  location /people/angelana { deny all; return 404; } 
  location /people/anorman { deny all; return 404; } 
  location /people/ant0nia { deny all; return 404; } 
