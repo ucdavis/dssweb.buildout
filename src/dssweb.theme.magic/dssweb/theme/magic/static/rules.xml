@@ -304,14 +304,11 @@
 		css:theme="li#uti-home > a" />
 		<!--replace css:theme="#uti-home > a"
 		          css:content="#portaltab-index_html > a" method="raw" /--> 
-	    <rules css:if-content="body.site-psychology">
-	 	<replace css:theme="li#uti-events > a"
-	 	      css:content="li#portaltab-courses > a" method="raw" />
-	 	  </rules>  
-		<rules css:if-not-content="body.site-psychology">
+	    
+		
 		<replace css:theme="li#uti-events > a"
 		      css:content="li#portaltab-events > a" method="raw" />
-		</rules>
+
 		<replace css:theme="li#uti-news > a" css:content="li#portaltab-news > a" />
 		<copy attributes="href"
 		   css:content="li#portaltab-give > a"
