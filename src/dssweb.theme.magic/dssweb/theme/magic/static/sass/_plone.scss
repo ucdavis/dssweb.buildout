@@ -2249,6 +2249,10 @@ margin-top:0px;
     list-style-type: initial;
 	list-style-position: inside;
 }
+/* hide re-tweets on twitter embeds */
+.timeline-Tweet.timeline-Tweet--isRetweet.u-cf.js-tweetIdInfo.js-clickToOpenTarget {
+    display: none;
+}
 
 		  
 /* @end */
