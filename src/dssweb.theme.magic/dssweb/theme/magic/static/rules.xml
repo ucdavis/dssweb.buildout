@@ -160,6 +160,8 @@
 		<!-- left-page happy box static -->
 		<rules css:if-content="div.front-page-news-static">
 		<replace css:theme-children="#container-1 > div > div.narrow-col h2" css:content=".front-page-news-static > dl > dt > span:nth-child(2) > a" />
+		<replace css:theme-children="#container-1 > div > div.narrow-col > div.content-wrap" css:content=".front-page-news-static > dl > dt > dd" />
+		
 		<!--mobile front page rule static -->
 		<replace css:theme-children="#top-panel-row > div.panel.panel-default.top-panel.left-panel > div.panel-heading.hidden-lg.hidden-md > h4 > a" css:content-children="div.front-page-events-static > dl > dt > span:nth-child(2) > a" />
 			<copy css:content=".front-page-news-static > dl > dd"
