@@ -8,6 +8,22 @@ rewrite ^/faculty/(.*)$ http://faculty.econ.ucdavis.edu/faculty/$1 redirect;
 rewrite ^/people/economics /directory-of-people redirect;
 
 }
+location /undergrad-program {
+rewrite /prospective-students/specialization-tracks-1 https://bluecluster.sf.ucdavis.edu/economics permanent;
+rewrite /prospective-students/why-economics-at-uc-davis https://bluecluster.ucdavis.edu/economics-major-requirements permanent;
+rewrite /your-time-at-uc-davis https://bluecluster.ucdavis.edu/navigating-economics permanent;
+rewrite /your-time-at-uc-davis https://bluecluster.ucdavis.edu/navigating-economics permanent;
+rewrite /opportunities-economics/ugrad-research https://bluecluster.ucdavis.edu/research-economics permanent;
+rewrite /opportunities-economics/undergraduate-womxn-in-economics-society-1 https://bluecluster.ucdavis.edu/opportunities-economics permanent;
+rewrite /opportunities-economics/underrepresented-minorities-in-economics-society https://bluecluster.ucdavis.edu/opportunities-economics permanent;
+rewrite /advising https://bluecluster.ucdavis.edu/advising-center permanent;
+rewrite /advising/peer-advisors https://bluecluster.ucdavis.edu/advising-center permanent;
+rewrite /advising/ugrad-faq https://bluecluster.ucdavis.edu/economics permanent;
+rewrite /advising/transferable-and-eap-courses https://bluecluster.ucdavis.edu/transferable-and-eap-courses permanent;
+rewrite /tutoring https://bluecluster.ucdavis.edu/economics-tutorin permanent;
+rewrite /Orientation https://bluecluster.ucdavis.edu/new-students permanent;
+
+}
 
 location /graduate/ {
 rewrite ^/graduate/(.*)$ http://old.econ.ucdavis.edu/graduate/$1 redirect;
@@ -588,3 +604,4 @@ location /people/leyou { deny all; return 404; }
 location /people/shubi17 { deny all; return 404; }
 location /people/lcsaco {deny all; return 404; }
 location /people/emlandry {deny all; return 404; }
+

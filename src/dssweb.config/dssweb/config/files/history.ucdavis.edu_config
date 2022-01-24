@@ -1,3 +1,15 @@
+location /undergraduate {
+rewrite /major-in-history-1/history-major-requirements https://bluecluster.ucdavis.edu/history-major-requirements permanent;
+rewrite /major-in-history-1/history-minor-requirements https://bluecluster.ucdavis.edu/history-minor-requirements permanent;
+rewrite ^/advising$ https://bluecluster.ucdavis.edu/advising-center permanent;
+rewrite /Orientation https://bluecluster.ucdavis.edu/new-students permanent;
+rewrite /honors-opportunities/undergrad-research-and-internships https://bluecluster.ucdavis.edu/research-internships-history permanent;
+rewrite /honors-opportunities/undergrad-scholarships https://bluecluster.ucdavis.edu/scholarships-financial-aid permanent;
+rewrite /honors-opportunities/history-club-at-uc-davis-1 https://bluecluster.ucdavis.edu/opportunities-history permanent;
+rewrite /honors-opportunities/study-abroad https://bluecluster.ucdavis.edu/study-abroad permanent;
+rewrite /planning-the-degree https://bluecluster.ucdavis.edu/navigating-history permanent;
+}
+
 location /philosophy { deny all; return 404; }
 location /politicalscience { deny all; return 404; }
 location /linguistics { deny all; return 404; }
