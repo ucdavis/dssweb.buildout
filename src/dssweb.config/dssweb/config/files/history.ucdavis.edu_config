@@ -1,7 +1,8 @@
 location /undergraduate {
 rewrite /major-in-history-1/history-major-requirements https://bluecluster.ucdavis.edu/history-major-requirements permanent;
 rewrite /major-in-history-1/history-minor-requirements https://bluecluster.ucdavis.edu/history-minor-requirements permanent;
-rewrite ^/advising$ https://bluecluster.ucdavis.edu/advising-center permanent;
+rewrite /advising https://bluecluster.ucdavis.edu/advising-center permanent;
+rewriet /advising/peer-advisors https://bluecluster.ucdavis.edu/advising-center permanent;
 rewrite /Orientation https://bluecluster.ucdavis.edu/new-students permanent;
 rewrite /honors-opportunities/undergrad-research-and-internships https://bluecluster.ucdavis.edu/research-internships-history permanent;
 rewrite /honors-opportunities/undergrad-scholarships https://bluecluster.ucdavis.edu/scholarships-financial-aid permanent;
