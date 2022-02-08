@@ -9,7 +9,17 @@ rewrite /honors-opportunities/undergrad-scholarships https://bluecluster.ucdavis
 rewrite /honors-opportunities/history-club-at-uc-davis-1 https://bluecluster.ucdavis.edu/opportunities-history permanent;
 rewrite /honors-opportunities/study-abroad https://bluecluster.ucdavis.edu/study-abroad permanent;
 rewrite /planning-the-degree https://bluecluster.ucdavis.edu/navigating-history permanent;
+rewrite /major-in-history-1 https://bluecluster.ucdavis.edu/why-study-history permanent;
+rewrite /major-in-history-1/why-study-history-at-uc-davis https://bluecluster.ucdavis.edu/why-study-history permanent;
+rewrite /major-in-history-1/common-career-paths-for-history-majors https://bluecluster.ucdavis.edu/your-future-historian permanent;
+rewrite /major-in-history-1/learning-outcomes  https://bluecluster.ucdavis.edu/student-learning-outcomes-0 permanent;
+rewrite /navigating-history https://bluecluster.ucdavis.edu/navigating-history permanent;
+rewrite /advising https://bluecluster.ucdavis.edu/advising-center permanent;
+rewrite /advising/undergrad-prep-for-grad-school https://bluecluster.ucdavis.edu/preparation-graduate-school-0 permanent;
+rewrite /honors-opportunities https://bluecluster.ucdavis.edu/opportunities-history permanent;
 }
+
+rewrite /undergraduate https://bluecluster.ucdavis.edu/why-study-history permanent;
 
 location /philosophy { deny all; return 404; }
 location /politicalscience { deny all; return 404; }
