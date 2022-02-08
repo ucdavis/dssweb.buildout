@@ -16,11 +16,11 @@ rewrite /your-time-at-uc-davis https://bluecluster.ucdavis.edu/navigating-econom
 rewrite /opportunities-economics/ugrad-research https://bluecluster.ucdavis.edu/research-economics permanent;
 rewrite /opportunities-economics/undergraduate-womxn-in-economics-society-1 https://bluecluster.ucdavis.edu/opportunities-economics permanent;
 rewrite /opportunities-economics/underrepresented-minorities-in-economics-society https://bluecluster.ucdavis.edu/opportunities-economics permanent;
-rewrite /advising https://bluecluster.ucdavis.edu/advising-center permanent;
+rewrite /advising/advising-center-1 https://bluecluster.ucdavis.edu/advising-center permanent;
 rewrite /advising/peer-advisors https://bluecluster.ucdavis.edu/advising-center permanent;
 rewrite /advising/ugrad-faq https://bluecluster.ucdavis.edu/economics permanent;
 rewrite /advising/transferable-and-eap-courses https://bluecluster.ucdavis.edu/transferable-and-eap-courses permanent;
-rewrite /tutoring https://bluecluster.ucdavis.edu/economics-tutorin permanent;
+rewrite /tutoring https://bluecluster.ucdavis.edu/economics-tutoring permanent;
 rewrite /Orientation https://bluecluster.ucdavis.edu/new-students permanent;
 
 }
