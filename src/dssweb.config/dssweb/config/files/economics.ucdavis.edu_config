@@ -6,7 +6,7 @@ rewrite ^/faculty/cmm(.*)$ http://economics.ucdavis.edu/people/cmm/$1 redirect;
 rewrite ^/faculty/gperi(.*)$ http://economics.ucdavis.edu/people/gperi/$1 redirect;
 rewrite ^/faculty/(.*)$ http://faculty.econ.ucdavis.edu/faculty/$1 redirect;
 rewrite ^/people/economics /directory-of-people redirect;
-
+}
 
 location /undergrad-program/{
 rewrite /prospective-students/specialization-tracks-1 https://bluecluster.sf.ucdavis.edu/economics permanent;
