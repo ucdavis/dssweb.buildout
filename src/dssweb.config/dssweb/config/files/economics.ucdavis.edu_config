@@ -7,10 +7,9 @@ rewrite ^/faculty/gperi(.*)$ http://economics.ucdavis.edu/people/gperi/$1 redire
 rewrite ^/faculty/(.*)$ http://faculty.econ.ucdavis.edu/faculty/$1 redirect;
 rewrite ^/people/economics /directory-of-people redirect;
 }
-
-location /undergrad-program/{
 rewrite /prospective-students/specialization-tracks-1 https://bluecluster.sf.ucdavis.edu/economics permanent;
 rewrite /prospective-students/why-economics-at-uc-davis https://bluecluster.ucdavis.edu/economics-major-requirements permanent;
+rewrite /prospective-students/what-is-economics-1 https://bluecluster.ucdavis.edu/what-economics permanent;
 rewrite /your-time-at-uc-davis https://bluecluster.ucdavis.edu/navigating-economics permanent;
 rewrite /your-time-at-uc-davis https://bluecluster.ucdavis.edu/navigating-economics permanent;
 rewrite /opportunities-economics/ugrad-research https://bluecluster.ucdavis.edu/research-economics permanent;
@@ -22,20 +21,23 @@ rewrite /advising/ugrad-faq https://bluecluster.ucdavis.edu/economics permanent;
 rewrite /advising/transferable-and-eap-courses https://bluecluster.ucdavis.edu/transferable-and-eap-courses permanent;
 rewrite /tutoring https://bluecluster.ucdavis.edu/economics-tutoring permanent;
 rewrite /Orientation https://bluecluster.ucdavis.edu/new-students permanent;
-rewrite /prospective-students https://bluecluster.ucdavis.edu/why-study-economics permanent;
+
 rewrite /prospective-students/what-is-economics-1 https://bluecluster.ucdavis.edu/what-economics permanent;
 rewrite /prospective-students/your-future-as-an-economist https://bluecluster.ucdavis.edu/your-future-economist permanent;
 rewrite /prospective-students/student-outcomes https://bluecluster.ucdavis.edu/student-learning-outcomes permanent;
 rewrite /prospective-students/copy_of_why-economics-at-uc-davis https://bluecluster.ucdavis.edu/economics-minor-requirements permanent;
-rewrite /advising https://bluecluster.ucdavis.edu/advising-center permanent;
+
 rewrite /advising/preparation-for-graduate-school-1 https://bluecluster.ucdavis.edu/preparation-graduate-school permanent;
-rewrite /opportunities-economics https://bluecluster.ucdavis.edu/opportunities-economics permanent;
 rewrite /opportunities-economics/internship-and-jobs https://bluecluster.ucdavis.edu/internship-economics permanent;
 rewrite /opportunities-economics/internship-and-jobs/using-internships-for-credit https://bluecluster.ucdavis.edu/internship-economics permanent;
 rewrite /opportunities-economics/honors-and-awards/special-study-for-honors-students-ecn-194ha-and-194hb https://bluecluster.ucdavis.edu/honors-program-0 permanent;
 rewrite /opportunities-economics/honors-and-awards/omicron-delta https://bluecluster.ucdavis.edu/opportunities-economics permanent;
-} 
-rewrite /undergrad-program https://bluecluster.ucdavis.edu/why-study-economics permanent;
+
+rewrite /undergrad-program/opportunities-economics https://bluecluster.ucdavis.edu/opportunities-economics permanent;
+rewrite /undergrad-program/advising https://bluecluster.ucdavis.edu/advising-center permanent;
+rewrite /undergrad-program/prospective-students  https://bluecluster.ucdavis.edu/why-study-economics permanent;
+#rewrite /undergrad-program  https://bluecluster.ucdavis.edu/why-study-economics permanent;
+
 
 location /graduate/ {
 rewrite ^/graduate/(.*)$ http://old.econ.ucdavis.edu/graduate/$1 redirect;

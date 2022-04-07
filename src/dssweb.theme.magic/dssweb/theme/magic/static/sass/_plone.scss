@@ -2250,9 +2250,10 @@ margin-top:0px;
 	list-style-position: inside;
 }
 /* hide re-tweets on twitter embeds */
-.timeline-Tweet.timeline-Tweet--isRetweet.u-cf.js-tweetIdInfo.js-clickToOpenTarget, .timeline-Tweet--isRetweet {
+.timeline-Tweet--isRetweet {
     display: none;
 }
+
 
 		  
 /* @end */
